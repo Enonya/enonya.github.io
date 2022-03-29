@@ -1,0 +1,2309 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="black_trees">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Vim Guide - OI-Collection</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vim" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="OI-Collection" class="md-header__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OI-Collection
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vim Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OI-Collection" class="md-nav__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OI-Collection
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          废稿
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="废稿" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          废稿
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Misctemp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misctemp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Misctemp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fast-key/" class="md-nav__link">
+        常用快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gdb/" class="md-nav__link">
+        GDB 的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gridea/" class="md-nav__link">
+        解决 Gridea 无法同步的问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        友情链接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oi-mem/" class="md-nav__link">
+        OI回忆录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oier-linux-guide/" class="md-nav__link">
+        一个 OIer 的 Linux 使用指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thupc-2022/" class="md-nav__link">
+        THUPC2022 游记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu-gnome-exp/" class="md-nav__link">
+        解决 Ubuntu 20.04 LTS 和 Ubuntu 21.10 图形化界面崩溃的问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vim Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Vim Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    Vim 使用
+  </a>
+  
+    <nav class="md-nav" aria-label="Vim 使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一些注意：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 移动窗口本身（轮换或交换）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 移动窗口并改变其布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youcompleteme" class="md-nav__link">
+    YouCompleteMe
+  </a>
+  
+    <nav class="md-nav" aria-label="YouCompleteMe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-vim-versions" class="md-nav__link">
+    Supported Vim Versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-compilers" class="md-nav__link">
+    Supported Compilers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-64-bit" class="md-nav__link">
+    Linux 64-bit
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 64-bit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start-installing-all-completers" class="md-nav__link">
+    Quick start, installing all completers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-for-the-quick-start" class="md-nav__link">
+    Explanation for the quick start
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    其它插件的 Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termdebug" class="md-nav__link">
+    Termdebug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-vimrc-file" class="md-nav__link">
+    My Vimrc File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Soltemp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Soltemp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Soltemp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-basic-algor/" class="md-nav__link">
+        题目总结 Capter6 基础算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-comp-dp/" class="md-nav__link">
+        题目总结 Chapter1.5 状压DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-dfa-dp/" class="md-nav__link">
+        题目总结 Chapter1.4 状态机模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-dight-dp/" class="md-nav__link">
+        题目总结 Chapter1.8 数位DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-floyd/" class="md-nav__link">
+        题目总结 Chapter 3.2 Floyd及其应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-interval-dp/" class="md-nav__link">
+        题目总结 Chapter1.6 区间DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-lca/" class="md-nav__link">
+        题目总结 Chapter 3.6 最近公共祖先
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-miri-difcon/" class="md-nav__link">
+        题目总结 Chapter 3.4/3.5 负环和差分约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-mono-queue-dp/" class="md-nav__link">
+        题目总结 Chapter 1.9 单调队列优化DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-mst/" class="md-nav__link">
+        题目总结 Chapter 3.3 最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-pack-dp/" class="md-nav__link">
+        题目总结 Capter1.3 背包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-sssp/" class="md-nav__link">
+        题目总结 Chapter 3.1 单源最短路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-tree-dp/" class="md-nav__link">
+        题目总结 Chapter1.7 树形DP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          思考
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="思考" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          思考
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88Tricks/" class="md-nav__link">
+        三月Tricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
+        三月好题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%BA%8C%E6%9C%88Tricks/" class="md-nav__link">
+        二月Tricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%BA%8C%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
+        二月好题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          总结
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="总结" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%BB%E7%BB%93/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        比赛总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%BB%E7%BB%93/%E9%94%99%E8%AF%AF%E5%88%97%E8%A1%A8/" class="md-nav__link">
+        错误列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          动态规划
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="动态规划" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          动态规划
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E4%BB%8E%E9%9B%86%E5%90%88%E8%A7%92%E5%BA%A6%E8%80%83%E8%99%91DP/" class="md-nav__link">
+        从集合角度考虑DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/" class="md-nav__link">
+        区间DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%BC%98%E5%8C%96DP/" class="md-nav__link">
+        单调队列优化DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E4%BD%8DDP/" class="md-nav__link">
+        数位DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        斜率优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%A0%91%E5%BD%A2DP/" class="md-nav__link">
+        树形DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E5%8E%8BDP/" class="md-nav__link">
+        状压DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85DP/" class="md-nav__link">
+        背包DP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          图论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          图论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/2-SAT/" class="md-nav__link">
+        2 SAT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/" class="md-nav__link">
+        二分图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/" class="md-nav__link">
+        双连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/" class="md-nav__link">
+        强连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
+        最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="md-nav__link">
+        最短路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" class="md-nav__link">
+        最近公共祖先
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%AE%80%E5%8D%95%E5%9B%BE%E8%AE%BA%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        简单图论问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E8%B4%9F%E7%8E%AF%E5%92%8C%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        负环和差分约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="md-nav__link">
+        链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB/" class="md-nav__link">
+        偏序关系
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
+        矩阵乘法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
+        单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/" class="md-nav__link">
+        珂朵莉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          杂项
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂项" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          杂项
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E4%BA%8C%E5%88%86/" class="md-nav__link">
+        二分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        位运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%80%8D%E5%A2%9E/" class="md-nav__link">
+        倍增
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%85%B3%E4%BA%8Emt19937/" class="md-nav__link">
+        关于mt19937
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        区间最值问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        差分前缀和
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          题解
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="题解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          题解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Acwing355/" class="md-nav__link">
+        Acwing355
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Bzoj3307/" class="md-nav__link">
+        Bzoj3307
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/CF1637F/" class="md-nav__link">
+        CF1637F
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/CF1651E/" class="md-nav__link">
+        CF1651E
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Uoj105/" class="md-nav__link">
+        Uoj105
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    Vim 使用
+  </a>
+  
+    <nav class="md-nav" aria-label="Vim 使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    一些注意：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 移动窗口本身（轮换或交换）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 移动窗口并改变其布局
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youcompleteme" class="md-nav__link">
+    YouCompleteMe
+  </a>
+  
+    <nav class="md-nav" aria-label="YouCompleteMe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-vim-versions" class="md-nav__link">
+    Supported Vim Versions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-compilers" class="md-nav__link">
+    Supported Compilers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-64-bit" class="md-nav__link">
+    Linux 64-bit
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 64-bit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start-installing-all-completers" class="md-nav__link">
+    Quick start, installing all completers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-for-the-quick-start" class="md-nav__link">
+    Explanation for the quick start
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    其它插件的 Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termdebug" class="md-nav__link">
+    Termdebug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-vimrc-file" class="md-nav__link">
+    My Vimrc File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Vim Guide</h1>
+
+<h2 id="vim">Vim 使用<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h2>
+<p>这里只是我乱写东西用的。</p>
+<p>之后可能会排版一下。</p>
+<p>真正要学Vim只能靠自己的练习。</p>
+<p>这是我现在用的vim</p>
+<p><a href="https://imgtu.com/i/bmpywj"><img alt="bmpywj.png" src="https://s4.ax1x.com/2022/02/27/bmpywj.png" /></a></p>
+<h3 id="_1">一些注意：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>配置 <code>~/.vimrc</code> 的时候，直接 <code>:wq</code> 就可以了。不要 <code>source ~/.vimrc</code> ，会出事。</p>
+<p><code>Ctrl+w+hjkl</code> 可以切换窗口</p>
+<p><code>:! Command</code> 方式写下的命令，会在终端里运行 <code>$ Command</code>。</p>
+<p>Normal模式下按 <code>i</code> 进入插入模式，<code>v</code> 进入可视模式。</p>
+<p>把主题的 <code>.vim</code> 文件存在 <code>~/.vim/colors</code> 下。</p>
+<p>把插件存在 <code>~/.vim/bundle</code> 的对应文件夹下。</p>
+<p>比如 <code>auto-pairs</code> 存在 <code>~/.vim/bundle/auto-pairs</code></p>
+<p>最开始使用插件的时候要手动 <code>git clone</code> 插件管理器 <code>Vundle</code> 到 <code>~/.vim/bundle/Vundle.vim</code>。</p>
+<p>之后装插件也可以直接这么干然后在 vimrc 里面加上插件名字。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+</code></pre></div>
+</td></tr></table>
+<p>在切换主题之后如果发现透明没了，在 <code>colorscheme xxx</code> 前加上 <code>autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg</code></p>
+<p>·在 <code>vimrc</code> 里面写完了 Plugins</p>
+<p>之后，要 <code>:PluginInstall</code>。</p>
+<p>如果需要把系统剪贴板 <code>+y/+p</code>和 Vim  <code>y/p</code>互通，</p>
+<p>加上 <code>set clipboard^=unnamed,unnamedplus</code></p>
+<ul>
+<li>标签页</li>
+<li>
+<p>打开文件在新标签页
+:tabe filename
+:tabnew filename
+:tab split 在新标签页，打开当前缓冲区中的文件</p>
+</li>
+<li>
+<p>显示
+:tabs 显示已打开标签页的列表,并用“&gt;”标识出当前页面，用“+”标识出已更改的页面(即还未保存）。</p>
+</li>
+<li>
+<p>关闭
+:tabc 关闭当前标签页
+:tabo 关闭自己之外所有标签页(other)</p>
+</li>
+<li>
+<p>切换标签页
+:tabn 或 gt 移动到下一个标签页
+:tabp 或 gT 移动到上一个标签页
+:tabfirst 或 :tabr 移动到第一个标签页
+:tablast 移动到最后一个标签页</p>
+</li>
+<li>
+<p>移动标签页
+:tabm number
+请注意，标签页次序是从0开始计数的。比如命令:tabm 1将把当前标签页移动到第2的位置。如果你没有为:tabm命令指定参数，那么当前标签页将会被移动到最后。</p>
+</li>
+<li>
+<p>多标签命令
+:tabdo 命令 可以同时在多个标签页中执行命令
+比如我们打开了多个标签页，需要把这些文件中的“python”都替换成“mypython”，那么就可以使用:tabdo %s/python/mypython/g命令，一次完成对所有文件的替换操作，而不用针对每个文件重复操作。</p>
+</li>
+<li>
+<p>配置标签页
+vimrc中设置
+set showtabline=0 始终不显示标签页
+set showtabline=1 新建了标签页才会在窗口上方显示标签栏
+set showtabline=2 总是显示标签栏</p>
+</li>
+</ul>
+<p>Vim默认最多只能打开10个标签页，你可以用set tabpagemax=15改变这个限制。</p>
+<p>标签页部分原文链接：<a href="https://blog.csdn.net/greybeard/article/details/84222045">https://blog.csdn.net/greybeard/article/details/84222045</a></p>
+<ul>
+<li>多行注释</li>
+</ul>
+<p>首先进入 Vblock 模式。选中<strong>所有</strong>的注释部分，然后 <code>Shift+i</code> ，·输入 <code>//</code> 然后按ESC</p>
+<p>在装了 NerdCommenter 之后可以直接 Vline 选中然后 <code>\ci</code></p>
+<ul>
+<li>取消</li>
+</ul>
+<p>进入 Vblock ，只选中注释条 <code>//</code> 部分，按 <code>d</code>。</p>
+<p>当然如果直接用 Vline 也是可以的，就不用注意太多</p>
+<p>如果需要卸载用 <code>.vmb</code> 安装的插件，在<code>.vim</code> 目录下删除对应文件即可。</p>
+<p><code>term</code> 可以打开终端。</p>
+<p>在 <code>nerdtree</code> 当中， <code>r</code> 可刷新当前目录。</p>
+<h3 id="1">1. 移动窗口本身（轮换或交换）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>Ctrl + w + r：向右或向下方交换窗口，而Ctrl + w + R则和它方向相反。</p>
+<p>光标会随着窗口而移动</p>
+<p>Ctrl + w + x：交换同列或同行的窗口的位置。vim默认交换当前窗口的与它下一个窗口的位置，如果下方没有窗口，则试着与上一个窗口交换位置。亦可在此命令前加上数量，与制定的窗口交换位置。</p>
+<h3 id="2">2. 移动窗口并改变其布局<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>注：下面的第三个字母都是大写，按 Ctrl + w之后，按shif + 相应的字母。后面用^代替Ctrl
+Ctrl + w + K ：移动当前窗口至屏幕顶端，并占用全部宽度
+^wJ： 移动窗口至屏幕底端，并占用全部宽度
+^wH：移动窗口至屏幕左端，并占用全部高度
+^wL：移动窗口至屏幕右端，并占用全部高度</p>
+<p>^wT ：移动窗口至屏新的现有分页</p>
+<p>Commenter :<code>\ci</code> = <code>Ctrl+/</code></p>
+<h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h3>
+<p><a href="http://xqmq.icu/posts/29f03ca6.html">http://xqmq.icu/posts/29f03ca6.html</a></p>
+<p><a href="https://blog.csdn.net/li_666/article/details/52885822">https://blog.csdn.net/li_666/article/details/52885822</a></p>
+<p><a href="https://blog.csdn.net/weixin_38815998/article/details/103589090">https://blog.csdn.net/weixin_38815998/article/details/103589090</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145793963">https://zhuanlan.zhihu.com/p/145793963</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/58816186">https://zhuanlan.zhihu.com/p/58816186</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/81269979">https://zhuanlan.zhihu.com/p/81269979</a></p>
+<p><a href="https://blog.csdn.net/amoscykl/article/details/80616688">https://blog.csdn.net/amoscykl/article/details/80616688</a></p>
+<p><a href="https://blog.csdn.net/panderang/article/details/54175475">https://blog.csdn.net/panderang/article/details/54175475</a></p>
+<p><a href="https://blog.csdn.net/armlinuxww/article/details/94785101">https://blog.csdn.net/armlinuxww/article/details/94785101</a></p>
+<p><a href="https://www.cnblogs.com/huahuayu/p/12235242.html">https://www.cnblogs.com/huahuayu/p/12235242.html</a></p>
+<p><a href="https://oi-wiki.org/tools/editor/vim/">https://oi-wiki.org/tools/editor/vim/</a></p>
+<p><a href="https://www.jianshu.com/p/27c5c01dcab2">https://www.jianshu.com/p/27c5c01dcab2</a></p>
+<p><a href="https://www.cnblogs.com/EasonJim/p/6169985.html">https://www.cnblogs.com/EasonJim/p/6169985.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/337157587">https://zhuanlan.zhihu.com/p/337157587</a></p>
+<p><a href="https://www.bilibili.com/video/BV1Gy4y1q7Co">https://www.bilibili.com/video/BV1Gy4y1q7Co</a></p>
+<h3 id="_2">常用操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In Normal</li>
+</ul>
+<p><code>u</code> ：等于 <code>Ctrl+Z</code></p>
+<p><code>Ctrl+r</code>:等于 <code>Ctrl+Y</code></p>
+<p><code>Ctrl+s</code> 锁定 vim。</p>
+<p>但是快捷键按了，在 Ctrlq之后就会全部dui上去。</p>
+<p><code>Ctrl+q</code> 解除锁定。</p>
+<p>从普通模式进入插入模式有如下数个键位可选：</p>
+<ul>
+<li><code>a</code>：往后挪一个字符插入文本。</li>
+<li><code>A</code>：移动到当前行尾插入文本。</li>
+<li><code>i</code>：在光标当前位置插入文本。</li>
+<li><code>I</code>：移动到当前行头插入文本。</li>
+<li><code>o</code>：在当前行的下一行新建一行，并插入文本。</li>
+<li>
+<p><code>O</code>：在当前行的上一行新建一行，并插入文本。</p>
+</li>
+<li>
+<p>返回普通模式的键位是<code>Esc</code>键；亦可使用快捷键<code>Ctrl+[</code>。</p>
+</li>
+<li><code>cd</code> （没有 <code>!</code>） ：切换工作目录</li>
+<li><code>pwd</code> ：展示当前工作目录。</li>
+</ul>
+<p><code>v</code> ：Visual：如果跨行，只能整选，但在行内可以划分</p>
+<p><code>V (Shift+v)</code>：Visual Line ：只能整行整行选。</p>
+<p><code>y</code> ：Copy</p>
+<p><code>h,j,k,l</code> 左下上右 (方向键也是可以的)</p>
+<p><code>Ctrl+v</code>:Visual Block 如果跨行，可以分割选，选取的时候，选取矩阵的某个角如果缺了，没有事情，那一块也能选入。</p>
+<p>在插入模式下，按 <code>Ctrl+o</code> 即可进入插入 - 普通模式，执行完一次操作后又会自动回到插入模式。</p>
+<p><code>dd</code> 可以删除(cut)一整行；<code>yy</code> 可以复制当前行。</p>
+<p>假设光标在 line1，<code>3dd</code> 则会删除 <code>line 1,2,3</code></p>
+<p><code>gg</code> 命令可跳至代码的开头；<code>G</code> 命令可跳至代码最后一行；<code>G</code> 命令前加数字可跳至指定行。</p>
+<p><code>:12/12G</code> 会跳转到 Line 12。</p>
+<p>普通模式下按/，下方即会出现查找框，输入需要查找的字符，按回车后就能查看搜索结果。如果有多个查找结果，按n即可跳至下一个查找结果；按N可跳至上一个。</p>
+<p><code>file xxx</code> 把当前文件命名为<code>xxx</code>。</p>
+<p><code>x</code> 删除当前光标位置的字符</p>
+<p><code>dw</code> 删除光标所处的单词</p>
+<p><code>d$</code> 删除当前行</p>
+<p><code>d motion</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  w - 从当前光标当前位置直到下一个单词起始处，不包括它的第一个字符。
+  e - 从当前光标当前位置直到单词末尾，包括最后一个字符。
+  $ - 从当前光标当前位置直到当前行末。
+</code></pre></div>
+</td></tr></table>
+<p>这些 motion 也可以在移动，选择，修改当中作为后缀。</p>
+<p>在命令之前添加数字可以让它重复那么多次。</p>
+<p><code>dd</code> 删除整行</p>
+<p><code>%</code> 括号匹配。</p>
+<p><code>/ xxx</code> 正向查找 <code>xxx</code> ， <code>n/N</code> 进入上/下个匹配。</p>
+<p><code>?xxx</code> 是反向</p>
+<p><code>:s/old/new</code> ：替换当前行的第一个匹配的字符串 old 为 new
+  <code>:s/old/new/g</code> ： 当前行所有
+  <code>:%s/old/new/g</code> ：全文
+  <code>:%s/old/new/gc</code> ：全文+询问是否替换</p>
+<p><code>#</code> 也可以全局匹配。</p>
+<p><code>$</code> 跳到行末, <code>^</code> 跳到行首。</p>
+<p>配合 CtrlP插件更好。</p>
+<p>CtrlP 插件是直接文件查找，包括对文件内容查找。</p>
+<p><code>Ctrl+G</code>:：显示当前行。</p>
+<p><code>:split</code>：将当前文件拆分为上下两个区域</p>
+<p><code>:new xxx \ :new</code>：新建文件，窗口（默认在上方）</p>
+<p><code>:vsplit</code>：左右。</p>
+<p><code>:vnew</code> ：默认在左边。</p>
+<p><code>r+一个字符ch</code>：当前光标的字符替换成字符ch</p>
+<p><code>R</code> ：Replace Mode,可以替换多个字符，如果没有字符可以当作 I mode 用。</p>
+<p><code>c+w/e/$</code> ：从当前光标开始，删除（到对应motion 的位置）并进入插入模式（相当于修改）</p>
+<p><code>Shift+q</code> :切换到 Ex mode。</p>
+<p><code>&gt;&gt;</code> 行首缩进</p>
+<p><code>&lt;&lt;</code> 行首反缩进</p>
+<p><code>w/W</code> ：下一个单词（MOVE）</p>
+<p><code>E/e</code> ： 词尾</p>
+<p><code>shift+d</code> ： 等于 <code>d$</code>.</p>
+<p><code>~</code> : 转换大小写。</p>
+<p><code>s</code> ; 删除当前字符并进入插入模式</p>
+<p><code>S</code>: 删除当前行并进入插入模式。</p>
+<ul>
+<li>In Visual</li>
+</ul>
+<p><code>y</code>：Copy</p>
+<p><code>p</code> ：Paste(under Cur)</p>
+<p><code>P</code> : Paste (over cur)</p>
+<p><code>d</code>：Cut(and Del)。</p>
+<p><code>gg,G</code> 功能一样。</p>
+<p>可以利用这个进行全选：<code>ggVG</code> 或者 <code>ggvG$</code> （注意区分可视和可视行模式）</p>
+<ul>
+<li>In Visual-Multi</li>
+</ul>
+<p><code>Ctrl+up/down</code> 多光标</p>
+<p><code>Ctrl+N</code> 选词，<code>q</code> 取消选择当前词。</p>
+<p>然后跟上Insert Mode 的操作即可。</p>
+<h3 id="git">git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<p>使用 gitee+git 或 github+git</p>
+<p>首先<strong>在当前文件夹下</strong> 设置用户名和邮箱：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git config user.name <span class="s2">&quot;usrname&quot;</span>
+git config user.email <span class="s2">&quot;usremail&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>如果需要全局设置可以直接用 <code>--global</code> 参数。</p>
+<p>还需要 remote 远端仓库：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git remote add origin <span class="nv">$url</span> <span class="c1"># $url 是你的仓库地址，如果使用 git 协议要在后面加上 .git</span>
+</code></pre></div>
+</td></tr></table>
+<p>这时候需要鉴权，输入用户名和密码即可。</p>
+<p>连接完之后如果要upload</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git add * <span class="c1"># 更新Code</span>
+git commit -m <span class="s2">&quot;Info&quot;</span> <span class="c1"># 添加Commit，INFO那里填你需要的Commit。</span>
+git push -u origin <span class="s2">&quot;master&quot;</span> <span class="c1"># master 是要上传的分支。</span>
+<span class="c1"># 如果曾经写过 `-u` ，那么可以使用 </span>
+git push origin <span class="s2">&quot;master&quot;</span>
+</code></pre></div>
+</td></tr></table>
+如果需要覆盖远端仓库：
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git add *
+git commit -a <span class="c1"># 此时会用 vim 打开一个界面确认操作并要求填入 commit。</span>
+git push -f --set-upstream origin master:master <span class="c1"># 强制覆盖远端的 master 分支</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="youcompleteme">YouCompleteMe<a class="headerlink" href="#youcompleteme" title="Permanent link">&para;</a></h3>
+<p>这个直接按照官方文档就可以了。</p>
+<p>之后可能会给个简化版翻译。</p>
+<p>这里直接给出<a href="https://github.com/ycm-core/YouCompleteMe/blob/master/README.md">官方文档</a>：</p>
+<p>首先是依赖环境：</p>
+<h4 id="supported-vim-versions">Supported Vim Versions<a class="headerlink" href="#supported-vim-versions" title="Permanent link">&para;</a></h4>
+<p>Our policy is to support the Vim version that's in the latest LTS of Ubuntu.
+That's currently Ubuntu 20.04 which contains <code>vim-nox</code> at <code>v8.1.2269</code>.</p>
+<p>Vim must have a working Python 3.6 runtime, compiled with <code>--enable-shared</code> (or
+<code>--enable-framework</code>). You can check with <code>:py3 import sys; print( sys.version
+)</code>.</p>
+<p>For Neovim users, our policy is to require the latest released version.
+Currently, Neovim 0.5.0 is required.  Please note that some features are not
+available in Neovim, and Neovim is not officially supported.</p>
+<h4 id="supported-compilers">Supported Compilers<a class="headerlink" href="#supported-compilers" title="Permanent link">&para;</a></h4>
+<p>In order to provide the best possible performance and stability, ycmd has
+updated its code to C++17. This requires a version bump of the minimum
+supported compilers. The new requirements are:</p>
+<table>
+<thead>
+<tr>
+<th>Compiler</th>
+<th>Current Min</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GCC</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Clang</td>
+<td>7</td>
+</tr>
+<tr>
+<td>MSVC</td>
+<td>15.7 (VS 2017)</td>
+</tr>
+</tbody>
+</table>
+<p>YCM requires CMake 3.13 or greater. If your CMake is too old, you may be able to
+simply <code>pip install --user cmake</code> to get a really new version.</p>
+<p>然后是 Linux 下的安装方式：</p>
+<h3 id="linux-64-bit">Linux 64-bit<a class="headerlink" href="#linux-64-bit" title="Permanent link">&para;</a></h3>
+<p>The following assume you're using Ubuntu 20.04.</p>
+<h4 id="quick-start-installing-all-completers">Quick start, installing all completers<a class="headerlink" href="#quick-start-installing-all-completers" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Install YCM plugin via [Vundle][]</li>
+<li>Install CMake, Vim and Python</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>apt install build-essential cmake vim-nox python3-dev
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Install mono-complete, go, node, java and npm</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>apt install mono-complete golang nodejs default-jdk npm
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Compile YCM</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --all
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>For plugging an arbitrary LSP server, check <a href="#plugging-an-arbitrary-lsp-server">the relevant section</a></li>
+</ul>
+<h4 id="explanation-for-the-quick-start">Explanation for the quick start<a class="headerlink" href="#explanation-for-the-quick-start" title="Permanent link">&para;</a></h4>
+<p>These instructions (using <code>install.py</code>) are the quickest way to install
+YouCompleteMe, however they may not work for everyone. If the following
+instructions don't work for you, check out the <a href="#full-installation-guide">full installation
+guide</a>.</p>
+<p>Make sure you have a supported version of Vim with Python 3 support, and a
+supported compiler. The latest LTS of Ubuntu is the minimum platform for simple
+installation. For earlier releases or other distributions, you may have to do
+some work to acquire the dependencies.</p>
+<p>If your vim version is too old, you may need to [compile Vim from
+source][vim-build] (don't worry, it's easy).</p>
+<p>Install YouCompleteMe with [Vundle][].</p>
+<p><strong>Remember:</strong> YCM is a plugin with a compiled component. If you <strong>update</strong> YCM
+using Vundle and the <code>ycm_core</code> library APIs have changed (happens rarely), YCM
+will notify you to recompile it. You should then rerun the install process.</p>
+<p>Install development tools, CMake, and Python headers:</p>
+<ul>
+<li>Fedora-like distributions:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo dnf install cmake gcc-c++ make python3-devel
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>Ubuntu LTS:</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install build-essential cmake3 python3-dev
+</code></pre></div>
+</td></tr></table>
+<p>Compiling YCM <strong>with</strong> semantic support for C-family languages through
+<strong>clangd</strong>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --clangd-completer
+</code></pre></div>
+</td></tr></table>
+<p>Compiling YCM <strong>without</strong> semantic support for C-family languages:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cd ~/.vim/bundle/YouCompleteMe
+python3 install.py
+</code></pre></div>
+</td></tr></table>
+<p>The following additional language support options are available:</p>
+<ul>
+<li>C# support: install [Mono][mono-install-linux] and add <code>--cs-completer</code>
+  when calling <code>install.py</code>.</li>
+<li>Go support: install [Go][go-install] and add <code>--go-completer</code> when calling
+  <code>install.py</code>.</li>
+<li>JavaScript and TypeScript support: install [Node.js and npm][npm-install] and
+  add <code>--ts-completer</code> when calling <code>install.py</code>.</li>
+<li>Rust support: add <code>--rust-completer</code> when calling <code>install.py</code>.</li>
+<li>Java support: install [JDK][jdk-install] and add
+  <code>--java-completer</code> when calling <code>install.py</code>.</li>
+</ul>
+<p>To simply compile with everything enabled, there's a <code>--all</code> flag. So, to
+install with all language features, ensure <code>xbuild</code>, <code>go</code>, <code>node</code> and <code>npm</code>
+tools are installed and in your <code>PATH</code>, then simply run:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --all
+</code></pre></div>
+</td></tr></table>
+<p>That's it. You're done. Refer to the <em>User Guide</em> section on how to use YCM.
+Don't forget that if you want the C-family semantic completion engine to work,
+you will need to provide the compilation flags for your project to YCM. It's all
+in the User Guide.</p>
+<p>YCM comes with sane defaults for its options, but you still may want to take a
+look at what's available for configuration. There are a few interesting options
+that are conservatively turned off by default that you may want to turn on.</p>
+<h3 id="install">其它插件的 Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
+<p>直接在 vimrc 里面写上之后 <code>:PluginInstall</code></p>
+<p>或者你可以直接克隆整个仓库或者直接下载源代码解压到 Bundle 的对应文件夹（文件夹名字不要错）</p>
+<p>然后在 vimrc 里面写上 Plugin ，<code>:PluginList</code> 查看是否成功即可</p>
+<p>依赖安装一定需要先解决。</p>
+<p>比如 YCM 的依赖就非常多。</p>
+<p>tagbar 需要 ctags.</p>
+<p>建议先看 Official Docs 然后 Install。</p>
+<h3 id="termdebug">Termdebug<a class="headerlink" href="#termdebug" title="Permanent link">&para;</a></h3>
+<p>vim 自带的 GDB 插件</p>
+<p>需要在 vimrc 里面先写上</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>packadd termdebug
+</code></pre></div>
+</td></tr></table>
+<p>然后在编译完一个 cpp ，得到可执行文件之后，</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Termdebug XXX 
+</code></pre></div>
+</td></tr></table>
+<p>XXX 是可执行文件名。</p>
+<p>然后就可以利用 GDB 调试了。</p>
+<p>Bram 比较良心的给了类似于GUI 的按钮，不过有 gdb 命令行就行了，为啥非要用这个？</p>
+<p>执行完命令之后会打开上中下三个窗口</p>
+<p>上面的是 gdb 命令行，中间的是监视器，下面的是代码（会显示断点）</p>
+<p>输入要在监视器里面。</p>
+<h3 id="my-vimrc-file">My Vimrc File<a class="headerlink" href="#my-vimrc-file" title="Permanent link">&para;</a></h3>
+<p>View on gitee：</p>
+<p><a href="https://gitee.com/black-trees/vimrc">https://gitee.com/black-trees/vimrc</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../ubuntu-gnome-exp/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 解决 Ubuntu 20.04 LTS 和 Ubuntu 21.10 图形化界面崩溃的问题" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              解决 Ubuntu 20.04 LTS 和 Ubuntu 21.10 图形化界面崩溃的问题
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../soltemp/sol-basic-algor/" class="md-footer__link md-footer__link--next" aria-label="下一页: 题目总结 Capter6 基础算法" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              题目总结 Capter6 基础算法
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 @black_trees
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

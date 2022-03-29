@@ -1,0 +1,2710 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="black_trees">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>一个 OIer 的 Linux 使用指南 - OI-Collection</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preface" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="OI-Collection" class="md-header__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OI-Collection
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              一个 OIer 的 Linux 使用指南
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OI-Collection" class="md-nav__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OI-Collection
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          废稿
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="废稿" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          废稿
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Misctemp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misctemp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Misctemp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        关于
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fast-key/" class="md-nav__link">
+        常用快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gdb/" class="md-nav__link">
+        GDB 的使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gridea/" class="md-nav__link">
+        解决 Gridea 无法同步的问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links/" class="md-nav__link">
+        友情链接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oi-mem/" class="md-nav__link">
+        OI回忆录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          一个 OIer 的 Linux 使用指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        一个 OIer 的 Linux 使用指南
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-settings" class="md-nav__link">
+    Basic settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi" class="md-nav__link">
+    Wi-Fi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livepatch" class="md-nav__link">
+    Livepatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    Tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommend-packages" class="md-nav__link">
+    Recommend Packages
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommend Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    Vscode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    Vim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    g++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    gcc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clang" class="md-nav__link">
+    clang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-edge-beta" class="md-nav__link">
+    Microsoft Edge Beta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wps-2019" class="md-nav__link">
+    WPS 2019
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lemonlime" class="md-nav__link">
+    LemonLime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit" class="md-nav__link">
+    exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    alias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-unzip-zip" class="md-nav__link">
+    tar &amp; unzip &amp; zip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpkg" class="md-nav__link">
+    dpkg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    git
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wine" class="md-nav__link">
+    Wine
+  </a>
+  
+    <nav class="md-nav" aria-label="Wine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wine-origin" class="md-nav__link">
+    wine-origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepin-wine-for-ubuntu" class="md-nav__link">
+    deepin-wine-for-ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winetricks" class="md-nav__link">
+    winetricks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beautification" class="md-nav__link">
+    Beautification
+  </a>
+  
+    <nav class="md-nav" aria-label="Beautification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome-tweaks" class="md-nav__link">
+    Gnome-tweaks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zsh" class="md-nav__link">
+    Zsh
+  </a>
+  
+    <nav class="md-nav" aria-label="Zsh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oh-my-zsh" class="md-nav__link">
+    oh-my-zsh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thupc-2022/" class="md-nav__link">
+        THUPC2022 游记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu-gnome-exp/" class="md-nav__link">
+        解决 Ubuntu 20.04 LTS 和 Ubuntu 21.10 图形化界面崩溃的问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vim-guide/" class="md-nav__link">
+        Vim Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Soltemp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Soltemp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Soltemp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-basic-algor/" class="md-nav__link">
+        题目总结 Capter6 基础算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-comp-dp/" class="md-nav__link">
+        题目总结 Chapter1.5 状压DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-dfa-dp/" class="md-nav__link">
+        题目总结 Chapter1.4 状态机模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-dight-dp/" class="md-nav__link">
+        题目总结 Chapter1.8 数位DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-floyd/" class="md-nav__link">
+        题目总结 Chapter 3.2 Floyd及其应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-interval-dp/" class="md-nav__link">
+        题目总结 Chapter1.6 区间DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-lca/" class="md-nav__link">
+        题目总结 Chapter 3.6 最近公共祖先
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-miri-difcon/" class="md-nav__link">
+        题目总结 Chapter 3.4/3.5 负环和差分约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-mono-queue-dp/" class="md-nav__link">
+        题目总结 Chapter 1.9 单调队列优化DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-mst/" class="md-nav__link">
+        题目总结 Chapter 3.3 最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-pack-dp/" class="md-nav__link">
+        题目总结 Capter1.3 背包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-sssp/" class="md-nav__link">
+        题目总结 Chapter 3.1 单源最短路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soltemp/sol-tree-dp/" class="md-nav__link">
+        题目总结 Chapter1.7 树形DP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          思考
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="思考" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          思考
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88Tricks/" class="md-nav__link">
+        三月Tricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
+        三月好题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%BA%8C%E6%9C%88Tricks/" class="md-nav__link">
+        二月Tricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/%E4%BA%8C%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
+        二月好题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          总结
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="总结" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%BB%E7%BB%93/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        比赛总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%80%BB%E7%BB%93/%E9%94%99%E8%AF%AF%E5%88%97%E8%A1%A8/" class="md-nav__link">
+        错误列表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          动态规划
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="动态规划" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          动态规划
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E4%BB%8E%E9%9B%86%E5%90%88%E8%A7%92%E5%BA%A6%E8%80%83%E8%99%91DP/" class="md-nav__link">
+        从集合角度考虑DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/" class="md-nav__link">
+        区间DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%BC%98%E5%8C%96DP/" class="md-nav__link">
+        单调队列优化DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E4%BD%8DDP/" class="md-nav__link">
+        数位DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        斜率优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%A0%91%E5%BD%A2DP/" class="md-nav__link">
+        树形DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E5%8E%8BDP/" class="md-nav__link">
+        状压DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85DP/" class="md-nav__link">
+        背包DP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          图论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          图论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/2-SAT/" class="md-nav__link">
+        2 SAT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/" class="md-nav__link">
+        二分图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/" class="md-nav__link">
+        双连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/" class="md-nav__link">
+        强连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
+        最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="md-nav__link">
+        最短路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" class="md-nav__link">
+        最近公共祖先
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E7%AE%80%E5%8D%95%E5%9B%BE%E8%AE%BA%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        简单图论问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E8%B4%9F%E7%8E%AF%E5%92%8C%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/" class="md-nav__link">
+        负环和差分约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E5%9B%BE%E8%AE%BA/%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F/" class="md-nav__link">
+        链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB/" class="md-nav__link">
+        偏序关系
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95/" class="md-nav__link">
+        矩阵乘法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
+        单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/" class="md-nav__link">
+        珂朵莉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          杂项
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂项" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          杂项
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E4%BA%8C%E5%88%86/" class="md-nav__link">
+        二分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        位运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%80%8D%E5%A2%9E/" class="md-nav__link">
+        倍增
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%85%B3%E4%BA%8Emt19937/" class="md-nav__link">
+        关于mt19937
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        区间最值问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
+        差分前缀和
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          题解
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="题解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          题解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Acwing355/" class="md-nav__link">
+        Acwing355
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Bzoj3307/" class="md-nav__link">
+        Bzoj3307
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/CF1637F/" class="md-nav__link">
+        CF1637F
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/CF1651E/" class="md-nav__link">
+        CF1651E
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Uoj105/" class="md-nav__link">
+        Uoj105
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-settings" class="md-nav__link">
+    Basic settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wi-fi" class="md-nav__link">
+    Wi-Fi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#livepatch" class="md-nav__link">
+    Livepatch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    Tips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommend-packages" class="md-nav__link">
+    Recommend Packages
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommend Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    Vscode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    Vim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    g++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    gcc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clang" class="md-nav__link">
+    clang
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-edge-beta" class="md-nav__link">
+    Microsoft Edge Beta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wps-2019" class="md-nav__link">
+    WPS 2019
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lemonlime" class="md-nav__link">
+    LemonLime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit" class="md-nav__link">
+    exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    alias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-unzip-zip" class="md-nav__link">
+    tar &amp; unzip &amp; zip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    apt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpkg" class="md-nav__link">
+    dpkg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    git
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wine" class="md-nav__link">
+    Wine
+  </a>
+  
+    <nav class="md-nav" aria-label="Wine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wine-origin" class="md-nav__link">
+    wine-origin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepin-wine-for-ubuntu" class="md-nav__link">
+    deepin-wine-for-ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winetricks" class="md-nav__link">
+    winetricks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beautification" class="md-nav__link">
+    Beautification
+  </a>
+  
+    <nav class="md-nav" aria-label="Beautification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome-tweaks" class="md-nav__link">
+    Gnome-tweaks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zsh" class="md-nav__link">
+    Zsh
+  </a>
+  
+    <nav class="md-nav" aria-label="Zsh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oh-my-zsh" class="md-nav__link">
+    oh-my-zsh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>一个 OIer 的 Linux 使用指南</h1>
+
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>我写这篇文章的时候还是一个 OIer，对 <span class="arithmatex">\(\texttt{Linux}\)</span> 的了解不算多，但是至少是能很熟练的使用的。</p>
+<p>毕竟有不会的可以看 Documents 学习啊（啃生肉效果会更好）</p>
+<p>使用的系统是 <span class="arithmatex">\(\texttt{Ubuntu 20.04.3 LTS}\)</span>，<span class="arithmatex">\(\texttt{64 bit}\)</span>，用的是联想的 <span class="arithmatex">\(\texttt{X1 Carbon 8GB} + \texttt{Intel Core i5-8250U CPU @1.60GHz}\)</span></p>
+<p><span class="arithmatex">\(8\)</span> 核。</p>
+<p>另外，感谢 ldrx 学长和 lyl 神仙提供的指导。</p>
+<h2 id="basic-settings">Basic settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h2>
+<h3 id="wi-fi">Wi-Fi<a class="headerlink" href="#wi-fi" title="Permanent link">&para;</a></h3>
+<p>这个设置和Windows 没什么区别。</p>
+<p>在你的左下角找到一个有九个点的图标（软件列表），找到设置。</p>
+<p>然后连接即可。</p>
+<h3 id="livepatch">Livepatch<a class="headerlink" href="#livepatch" title="Permanent link">&para;</a></h3>
+<p>可以帮你自动更新的东西，并且修复当前已知的 Bug。</p>
+<p>需要 Ubuntu 的单点登陆账号。</p>
+<p>这个在 Ubuntu 的官网注册一个就行。</p>
+<p><a href="https://ubuntu.com/">https://ubuntu.com/</a></p>
+<p>然后点击右上角的 Sign In，进去之后选择“我没有 Ubuntu 单点登陆账号”。</p>
+<p>填写信息，用邮箱验证就好了。</p>
+<p>然后在软件列表里面找到 Livepatch</p>
+<p>选择使用 Ubuntu 单点登陆账号登陆。</p>
+<p>之后就可以及时的接收到更新和Bug修复的信息了。</p>
+<p>当然你也可以选择关掉。</p>
+<h3 id="time">Time<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
+<p>没联网的时候时间可能会有偏差。</p>
+<p>连接网络之后再设置&gt;日期和时间里面选择自动设置日期和时间即可。</p>
+<p>时区选 CST。</p>
+<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
+<p>Windows 和 Linux 有很多区别，在初期使用的时候需要注意。</p>
+<p>使用的时候也有一些小技巧，在这里会一并告诉你。</p>
+<ul>
+<li>
+<p><code>Ctrl+C</code> 在终端当中是强制结束终端运行的进程。</p>
+</li>
+<li>
+<p><code>Ctrl+Shift+C/V</code> 才是终端当中的复制（<span class="arithmatex">\(\texttt{Vim}\)</span> 就又要另外提了，有兴趣可以看一看我写的 Vim Guide）</p>
+</li>
+<li>
+<p>但是在 GUI （图形化界面）的时候，<code>Ctrl+C/V/X</code> 又可以复制文件</p>
+</li>
+<li>
+<p>你直接在看见的桌面上只能进行图标的移动，进行复制粘贴操作要在文件管理器当中打开桌面。</p>
+</li>
+<li>
+<p>如果你在浏览器当中一不小心错误地选择了一个部分，而你发现你在别的地方单击无法去除这个选择的时候，在浏览器的搜索框里面点一下，然后再回来点一下就好了。</p>
+</li>
+<li>
+<p>在 <code>Linux</code> 当中，以 <code>.</code> 开头的文件和目录会被隐藏，你可以在文件管理器的三根横线那里进行设置。</p>
+</li>
+<li>
+<p>默认的文本编辑器的名字是 <code>gedit</code> ，但是有的时候没法打开一些文件（无法正常显示），这个时候使用 Vim 就可以了。</p>
+</li>
+<li>
+<p>Vim 可以把行尾序列从 Windows 使用的 [DOS] 改成 Linux 使用的 [Unix] （可以批量把 windows 造的数据变成 Linux 下的格式，也可以倒过来）。</p>
+</li>
+<li>
+<p>如果你在 USB 当中删除了文件, Linux 会生成一个叫 <code>.Trash000</code> 的目录来保存你的删除文件的信息，如果确定不需要了就直接删除这个文件夹即可。</p>
+</li>
+<li>
+<p>默认的终端的透明度可以调，在终端的设置&gt;配置文件首选项&gt;（某个配置文件的名字，默认是未命名）&gt;颜色 里有一栏是</p>
+</li>
+</ul>
+<p><code>Use Transparent background</code> ，可以用来调整，如果没法调整，先把下面的 <code>Usetransparency for system theme</code> 关闭之后再打开 <code>Use Transparent background</code> 即可。</p>
+<ul>
+<li>如果你有了 Ubuntu 的单点登陆账号，那么你就可以使用 Ubuntu 的云剪贴板：<a href="https://pastebin.ubuntu.com/">https://pastebin.ubuntu.com/</a></li>
+</ul>
+<h2 id="recommend-packages">Recommend Packages<a class="headerlink" href="#recommend-packages" title="Permanent link">&para;</a></h2>
+<h3 id="git">git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install git
+</code></pre></div>
+</td></tr></table>
+<p>非常常用的代码托管工具。</p>
+<p>很多东西都可以利用 git 克隆远端仓库来下载。</p>
+<p>你也可以配合 github 和 gitee ，把它变成一个<sub>~网盘客户端</sub>~</p>
+<p>作为新时代的 Linuxer,你怎么能没有 git 呢？</p>
+<h3 id="vscode">Vscode<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h3>
+<p>显而易见，很多人都喜欢用 Vscode。</p>
+<p>啥？DEV-CPP ？想多了，Linux 没有。</p>
+<p>到官网下载 .deb 格式的软件包之后，利用后文会提到的 dpkg 命令安装即可。</p>
+<h3 id="vim">Vim<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h3>
+<p>God of editor。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install vim vim-gtk3
+</code></pre></div>
+</td></tr></table>
+<h3 id="python">python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<p>方便你编译和运行一些脚本，用于下载。</p>
+<p>也可以自己写爬虫。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install python3 python2 pip
+</code></pre></div>
+</td></tr></table>
+<h3 id="g">g++<a class="headerlink" href="#g" title="Permanent link">&para;</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install g++ 
+</code></pre></div>
+</td></tr></table>
+<h3 id="gcc">gcc<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install gcc
+</code></pre></div>
+</td></tr></table>
+<h3 id="clang">clang<a class="headerlink" href="#clang" title="Permanent link">&para;</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install clang
+</code></pre></div>
+</td></tr></table>
+<h3 id="microsoft-edge-beta">Microsoft Edge Beta<a class="headerlink" href="#microsoft-edge-beta" title="Permanent link">&para;</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/microsoft-edge-dev_89.0.767.0-1_amd64.deb
+sudo dpkg -i microsoft-edge-*.deb
+</code></pre></div>
+</td></tr></table>
+<h3 id="wps-2019">WPS 2019<a class="headerlink" href="#wps-2019" title="Permanent link">&para;</a></h3>
+<p>在没有了 Microsoft 的办公软件之后，WPS 一定是第一选择。</p>
+<p>（不要告诉我你想用默认的 LibreOffice）</p>
+<p>在 <a href="https://www.wps.cn/product/wpslinux">https://www.wps.cn/product/wpslinux</a> 下载 .deb 安装包之后用 dpkg 命令解压即可。</p>
+<h3 id="lemonlime">LemonLime<a class="headerlink" href="#lemonlime" title="Permanent link">&para;</a></h3>
+<p>去 <a href="https://github.com/Project-LemonLime/Project_LemonLime/releases/tag/0.3.2.1">https://github.com/Project-LemonLime/Project_LemonLime/releases/tag/0.3.2.1</a> 下载即可。</p>
+<p>安装方式见：<a href="https://github.com/Project-LemonLime/Project_LemonLime/blob/master/BUILD.md">https://github.com/Project-LemonLime/Project_LemonLime/blob/master/BUILD.md</a></p>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h3 id="conventions">Conventions<a class="headerlink" href="#conventions" title="Permanent link">&para;</a></h3>
+<p><code>&lt;Command&gt;</code> 表示一个命令。</p>
+<p><code>-[Option]</code> 或 <code>--[Option]</code> 表示一个选项。</p>
+<p><code># xxxx</code> 表示一个注释。</p>
+<h3 id="sudo">sudo<a class="headerlink" href="#sudo" title="Permanent link">&para;</a></h3>
+<p>准确的说，这应该不算是一个；命令？</p>
+<p>感觉更类似一个 “声明”，也就是声明后面的命令是以 root 权限运行。</p>
+<p><code>sudo &lt;Command&gt;</code></p>
+<p>在当前终端下使用，第一次需要输入密码，第二次就不需要了。</p>
+<p>在 <code>/usr</code> <code>/bin</code> 这种系统目录底下一般都需要。</p>
+<p>在用 <code>apt</code> <code>dpkg</code> 这种软件包管理器进行操作的时候一般也需要。</p>
+<h3 id="cd">cd<a class="headerlink" href="#cd" title="Permanent link">&para;</a></h3>
+<p>用来切换目录。</p>
+<p>常见的几种变形：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/xxx/yyy/zzz <span class="c1"># 切换到 ~/xxx/yyy/zzz 这个目录</span>
+<span class="nb">cd</span> ~ <span class="c1"># 切换到主目录</span>
+<span class="nb">cd</span>   <span class="c1"># 功能同上</span>
+<span class="nb">cd</span> .. <span class="c1"># 回到上一层目录</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cat">cat<a class="headerlink" href="#cat" title="Permanent link">&para;</a></h3>
+<p>直接查看某个文件</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat qwq.cpp <span class="c1"># 查看 qwq.cpp</span>
+cat ~/code/qwq.cpp  <span class="c1"># 如果你不在那个文件的目录就这么写</span>
+<span class="nb">cd</span> ~/code/qwq <span class="o">&amp;&amp;</span> cat qwq.cpp <span class="c1"># 功能同上</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="diff">diff<a class="headerlink" href="#diff" title="Permanent link">&para;</a></h3>
+<p>比较两个文件的差异</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>diff qwq.out qwq.ans <span class="c1"># 比较这两个文件的差异</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="rm">rm<a class="headerlink" href="#rm" title="Permanent link">&para;</a></h3>
+<p>删除某个文件</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>rm -<span class="o">[</span>Option<span class="o">]</span> DictName/FileName
+<span class="c1"># Option 参数如下：</span>
+<span class="c1"># -i 逐一询问</span>
+<span class="c1"># -f 不管是不是只读，全部删除干净</span>
+<span class="c1"># -r 将目录和他里面的所有文件和目录都删除（删除目录需要写上）</span>
+<span class="c1"># &lt;void&gt; （不填） 不询问直接删除（无法在回收站找回）</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="mv">mv<a class="headerlink" href="#mv" title="Permanent link">&para;</a></h3>
+<p>移动某个文件/目录 或者用来改名</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mv -<span class="o">[</span>Option<span class="o">]</span> foo bar
+<span class="c1"># Option 参数列表</span>
+<span class="c1"># -b 当目标文件或目录存在时，在执行覆盖前，会为其创建一个备份</span>
+<span class="c1"># -i 如果指定移动的源目录或文件与目标的目录或文件同名，则会先询问是否覆盖旧文件</span>
+<span class="c1"># -f 不会询问，直接覆盖旧文件</span>
+<span class="c1"># -n 不要覆盖任何已存在的</span>
+<span class="c1"># -u 当源文件比目标文件新或者目标文件不存在时，才执行移动操作</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mv file1 file2 <span class="c1"># 将 file1 改名为 file2</span>
+mv file dict <span class="c1"># 将 file 移动到 dict 目录</span>
+mv dict1 dict2 <span class="c1"># 如果 dict2 已经存在，把 dict1 移动到 dict2</span>
+               <span class="c1"># 否则把 dict1 重命名为 dict2</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="cp">cp<a class="headerlink" href="#cp" title="Permanent link">&para;</a></h3>
+<p>复制某个文件/目录</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cp qwq.cpp ~/code <span class="c1"># 把 qwq.cpp 复制到 ~/code 目录下</span>
+cp -r qwq/ code <span class="c1"># 把 qwq/ 目录下的所有文件复制到 code 目录下 （不要忘记 -r）</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="ls">ls<a class="headerlink" href="#ls" title="Permanent link">&para;</a></h3>
+<p>列出当前目录下的所有文件/目录</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ls <span class="c1"># List all</span>
+ls <span class="p">|</span> grep Touhou <span class="c1"># 列出当前目录下所有含有关键字 Touhou 的文件/目录</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="mkdir">mkdir<a class="headerlink" href="#mkdir" title="Permanent link">&para;</a></h3>
+<p>新建一个文件夹。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir qwq <span class="c1"># 在工作目录下新建一个目录 qwq</span>
+mkdir qwq/qaq <span class="c1"># 在工作目录下新建 qwq/qaq ，并且如果 qwq 不存在会自动建立，如果qwq不存在但是没有 -p，会报错。</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h3>
+<p>退出终端</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">exit</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="alias">alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h3>
+<p>设置一个自定义命令</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">la</span> <span class="o">=</span> ls -all
+</code></pre></div>
+</td></tr></table>
+<h3 id="tar-unzip-zip">tar &amp; unzip &amp; zip<a class="headerlink" href="#tar-unzip-zip" title="Permanent link">&para;</a></h3>
+<p>这个利用 GUI（图形化界面）（手动操作） 吧（</p>
+<p>要说的话太长了记不住。</p>
+<h3 id="apt">apt<a class="headerlink" href="#apt" title="Permanent link">&para;</a></h3>
+<p>软件包管理器。</p>
+<p>下载之前建议先换源。</p>
+<p>在 &gt;全部软件&gt;软件和更新&gt;Ubuntu软件&gt;下载自当中选择并重启。</p>
+<p>建议选择清华源（较为稳定，速度给力） <code>http://mirrors.tuna.tsinghua.edu.cn/ubuntu</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install qwq <span class="c1"># 安装 qwq</span>
+sudo apt -y install qwq <span class="c1"># 安装过程全部 yes</span>
+sudo apt update <span class="c1"># 列出所有的可以更新的软件包</span>
+sudo apt upgrade <span class="c1"># 升级软件包</span>
+sudo apt install qwq qaq ovo <span class="c1"># 安装 qwq,qaq,ovo</span>
+sudo apt remove qwq <span class="c1"># 删除 qwq</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="dpkg">dpkg<a class="headerlink" href="#dpkg" title="Permanent link">&para;</a></h3>
+<p>一个 debian 系的软件包管理器。</p>
+<p>常用的也就三个</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo dpkg -i qwq.deb <span class="c1"># 解压 qwq.deb</span>
+sudo dpkg -l <span class="c1"># 列出已经安装的软件包 ，可以配合 | grep xxx 快速查找对应软件包</span>
+sudo dpkg --remove qwq <span class="c1"># 卸载 qwq</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="git_1">git<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h3>
+<p>这个参考 Vim Guide 当中的说明。</p>
+<h2 id="wine">Wine<a class="headerlink" href="#wine" title="Permanent link">&para;</a></h2>
+<h3 id="wine-origin">wine-origin<a class="headerlink" href="#wine-origin" title="Permanent link">&para;</a></h3>
+<p>这是一个帮助你在 Linux 系统上运行 Windows 软件的环境</p>
+<p>下载：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install wine
+</code></pre></div>
+</td></tr></table>
+<p>使用：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wine qwq.exe
+</code></pre></div>
+</td></tr></table>
+<p>第一次使用的时候会弹出一个界面，提示你 wine 正在初始化配置，这个过程一般需要两分钟。</p>
+<p>注意不要把终端关掉了，不然你的 wine 也会停止工作。</p>
+<h3 id="deepin-wine-for-ubuntu">deepin-wine-for-ubuntu<a class="headerlink" href="#deepin-wine-for-ubuntu" title="Permanent link">&para;</a></h3>
+<p>国内的 deepin 公司做了很多努力，在 wine 的基础上移植了 qq,wechat,TIM 这些软件。</p>
+<p>（他们毕竟需要 setup,而原版 wine 没法利用 setup.exe 安装）</p>
+<p>然后又有两个大神分别把这个移植到了 Ubuntu 上。</p>
+<p>其中一个的项目地址：<a href="https://github.com/zq1997/deepin-wine">https://github.com/zq1997/deepin-wine</a> </p>
+<p>屏幕缩放，图片，字体的问题都在这个项目的 README.MD 当中。</p>
+<h3 id="winetricks">winetricks<a class="headerlink" href="#winetricks" title="Permanent link">&para;</a></h3>
+<p>用来给 wine 打一些运行库的补丁。</p>
+<p>比如 vsrun2005, dxvk 这种</p>
+<p>首先</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install winetricks
+</code></pre></div>
+</td></tr></table>
+<p>下载完之后直接</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>winetricks <span class="o">[</span>PackageName<span class="o">]</span>
+</code></pre></div>
+</td></tr></table>
+<p>就可以打补丁了。</p>
+<p>建议打上这几个：</p>
+<ul>
+<li>dxvk</li>
+<li>directx9</li>
+<li>vsrun2005</li>
+<li>vsrun2009</li>
+</ul>
+<p>可以解决大部分的 wine 无法打开程序的问题。</p>
+<h2 id="beautification">Beautification<a class="headerlink" href="#beautification" title="Permanent link">&para;</a></h2>
+<p>因为 Ubuntu 20.04 系统基于 Gnome 桌面，所以我们可以利用插件进行美化。</p>
+<h3 id="gnome-tweaks">Gnome-tweaks<a class="headerlink" href="#gnome-tweaks" title="Permanent link">&para;</a></h3>
+<p>这是美化的基础工具。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install gnome-tweaks chrome-gnome-shell
+sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf 
+sudo apt install sassc optipng inkscape libcanberra-gtk-module libglib2.0-dev libxml2-utils
+<span class="c1"># 顺便装了一些之后要用的东西</span>
+</code></pre></div>
+</td></tr></table>
+<p>你会在你的软件列表当中的 “工具” 文件组当中发现一个新的软件："优化" （tweaks）</p>
+<p>然后用 <strong>FireFox</strong> 打开 <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a></p>
+<p>点击这个：</p>
+<p><a href="https://imgtu.com/i/HcCNdS"><img alt="linux-1" src="https://s4.ax1x.com/2022/02/14/HcCNdS.jpg" /></a></p>
+<p>然后你会发现浏览器的右上角多了一个脚丫，证明安装已经完成。</p>
+<p>建议下载这几个插件：</p>
+<p><a href="https://imgtu.com/i/HcPKmV"><img alt="linux-2.png" src="https://s4.ax1x.com/2022/02/14/HcPKmV.png" /></a></p>
+<p>Dash to dock 是 Mac Style 的任务栏 （有bug，尽量别用）。</p>
+<p>Dash to Penal 是 Windows Style 的任务栏。</p>
+<p>Look Screen Background 是修改锁屏界面的模糊背景为一张清晰的图片。</p>
+<p>User Themes 是自定义主题。</p>
+<p>Vitals 你等会就知道是啥了。</p>
+<p>然后在 Tweaks 里的 Extension （扩展）打开必要的插件</p>
+<blockquote>
+<p>User Themes 是修改主题必要的，其他的你随意。</p>
+</blockquote>
+<p>然后到这个网站：<a href="https://www.gnome-look.org/">https://www.gnome-look.org/</a></p>
+<p>去下载你喜欢的主题，鼠标……就行了。</p>
+<p>下载下来的主题 Folder 解包之后丢到：<code>/usr/share/themes/</code></p>
+<p>图标和鼠标指针丢到 <code>/usr/share/icons/</code></p>
+<p>然后在 Tweaks 的 Themes （主题） 一栏里进行设置即可：</p>
+<p><a href="https://imgtu.com/i/HcFceP"><img alt="linux-3.png" src="https://s4.ax1x.com/2022/02/14/HcFceP.png" /></a></p>
+<p>我的桌面大概是这样的：</p>
+<p><a href="https://imgtu.com/i/baIGIU"><img alt="baIGIU.png" src="https://s4.ax1x.com/2022/03/04/baIGIU.png" /></a></p>
+<p>图标是我略微有改动的，可以自己在主题文件里面DIY。</p>
+<p>顶栏的右手边那些信息就是 Vitals 插件做的。</p>
+<p>比如我这里是：已分配内存，运行时间，CPU温度，WI-FI质量，风扇转速。</p>
+<h2 id="zsh">Zsh<a class="headerlink" href="#zsh" title="Permanent link">&para;</a></h2>
+<p>这个东西号称 Linux 下的最强 Shell（确实）。</p>
+<p>功能强大：</p>
+<ol>
+<li>自动补全</li>
+<li>历史记录</li>
+<li>自定义</li>
+<li>语法高亮</li>
+<li>自定义主题</li>
+<li>插件支持</li>
+<li>………………</li>
+</ol>
+<p>用它肯定会减少你输入的时间，提升你的效率。</p>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt-get install zsh
+chsh -s /bin/zsh <span class="c1">#设置为默认Shell</span>
+</code></pre></div>
+</td></tr></table>
+<p>然后重启。</p>
+<h3 id="oh-my-zsh">oh-my-zsh<a class="headerlink" href="#oh-my-zsh" title="Permanent link">&para;</a></h3>
+<p>因为 zsh 太难配置，所以有人开发了 <code>oh-my-zsh</code> 来帮助你进行配置。</p>
+<p>首先你需要一个 git</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install git
+</code></pre></div>
+</td></tr></table>
+<p>然后克隆仓库到本地：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</code></pre></div>
+</td></tr></table>
+<p>配置部分可以参考：<a href="https://zhuanlan.zhihu.com/p/62501175">https://zhuanlan.zhihu.com/p/62501175</a></p>
+<p>（主要是我懒得写，之后有时间再补）</p>
+<p>建议使用的主题：<code>ys</code></p>
+<p>建议插件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>plugins=(
+    zsh-autosuggestions # 自动建议
+    zsh-syntax-highlighting # 高亮
+    git # git支持
+    z # 忘了，好像是 autojump 同功能的？
+    sudo # 两次 ESC 补充 sudo
+)
+</code></pre></div>
+</td></tr></table>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../oi-mem/" class="md-footer__link md-footer__link--prev" aria-label="上一页: OI回忆录" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              OI回忆录
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../thupc-2022/" class="md-footer__link md-footer__link--next" aria-label="下一页: THUPC2022 游记" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              THUPC2022 游记
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 @black_trees
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
