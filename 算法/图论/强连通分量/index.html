@@ -737,6 +737,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E6%80%BB%E7%BB%93/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        日常总结
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E6%80%BB%E7%BB%93/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" class="md-nav__link">
         比赛总结
       </a>
@@ -1644,10 +1658,11 @@
 <p>然后在深度优先遍历的时候同时维护一个栈，保存当前能与从这个节点出发的后向边和横叉边构成环的所有节点。</p>
 <p>记 <span class="arithmatex">\(anc_u\)</span> 表示 <span class="arithmatex">\(u\)</span> 在 <span class="arithmatex">\(T\)</span> 上的所有祖先节点，那么栈中保存的实际上就是这两类节点：</p>
 <ol>
-<li><span class="arithmatex">\(v \in anc_u\)</span>，且存在后向边 <span class="arithmatex">\(u \to v\)</span>。</li>
+<li><span class="arithmatex">\(v \in anc_u\)</span>，且有可能存在后向边 <span class="arithmatex">\(u \to v\)</span>。</li>
 <li><span class="arithmatex">\(v \in V\)</span> ，且存在路径 <span class="arithmatex">\(\delta(v\to w),w\in anc_u\)</span>。</li>
 </ol>
 <p>在满足 <span class="arithmatex">\(low_u=dfn_u\)</span> 的时候，把栈的节点不断弹出，直到 <span class="arithmatex">\(u\)</span> 出栈，此时当前被弹出的所有节点就构成一个 SCC。</p>
+<p>这时候弹出的一定是第二类节点，原因显然。</p>
 <p>具体实现：</p>
 <p>每次新访问一个节点的时候初始化 <span class="arithmatex">\(dfn=++time,low=dfn\)</span>。</p>
 <p>然后访问它的所有出边 <span class="arithmatex">\((u,v)\)</span>，如果出边对应的节点 <span class="arithmatex">\(v\)</span> 没有访问过（当前访问的是树边），那么就递归然后用 <span class="arithmatex">\(low_v\)</span> 更新 <span class="arithmatex">\(low_u\)</span>。</p>

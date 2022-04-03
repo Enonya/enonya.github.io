@@ -728,6 +728,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#acwing386" class="md-nav__link">
+    Acwing386 社交网络
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acwing389" class="md-nav__link">
+    Acwing389 直径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acwing390" class="md-nav__link">
+    Acwing390 逃学的小孩
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -817,6 +838,20 @@
           总结
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%80%BB%E7%BB%93/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        日常总结
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1649,6 +1684,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#acwing386" class="md-nav__link">
+    Acwing386 社交网络
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acwing389" class="md-nav__link">
+    Acwing389 直径
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acwing390" class="md-nav__link">
+    Acwing390 逃学的小孩
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1672,6 +1728,12 @@
 
 <h2 id="tricks">三月 Tricks 整理<a class="headerlink" href="#tricks" title="Permanent link">&para;</a></h2>
 <h3 id="zjoi2007">[ZJOI2007] 最大半联通子图<a class="headerlink" href="#zjoi2007" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给定一张有向图 <span class="arithmatex">\(G\)</span>。</p>
+<p>称一个导出子图是“半连通的”，当且仅当对于导出子图当中的任意点对 <span class="arithmatex">\((u,v)\)</span>。</p>
+<p>都有 <span class="arithmatex">\(u\)</span> 可以到达 <span class="arithmatex">\(v\)</span> 或者 <span class="arithmatex">\(v\)</span> 可以到达 <span class="arithmatex">\(u\)</span>。</p>
+<p>求 <span class="arithmatex">\(G\)</span> 的最大半连通子图的大小，和个数。</p>
+</blockquote>
 <p>首先发现强连通分量必然是一个半联通子图。</p>
 <p>所以先缩点得到一个 DAG。</p>
 <p>发现最大半联通子图必然是 DAG 上的一条最长链。</p>
@@ -1743,6 +1805,10 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="acwing361">Acwing361 观光奶牛<a class="headerlink" href="#acwing361" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给定一张图，求图上的一个环使得</p>
+<p>“环上各点的权值之和”除以“环上各边的权值之和”最大。</p>
+</blockquote>
 <p>01分数规划，把点权移动到边权上，</p>
 <p>因为求的是 <span class="arithmatex">\(\max\{\dfrac{\sum f_i}{\sum t_i}\}\)</span>。</p>
 <p>二分答案之后变成判定 <span class="arithmatex">\(mid\)</span> 是否 <span class="arithmatex">\(\le \dfrac{\sum f_i}{\sum t_i}\)</span>  。</p>
@@ -1795,6 +1861,12 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="acwing369-acm">Acwing369 北大ACM队的远足<a class="headerlink" href="#acwing369-acm" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给定一张有向图，有两次乘车的机会，可以再任意地方上下车，但是下车了就用了一次机会。</p>
+<p>每次连续乘车的举例不能超过 <span class="arithmatex">\(q\)</span>。</p>
+<p>求从 <span class="arithmatex">\(s \to t\)</span> 要经过的 “危险路段” 的长度最小是多少。</p>
+<p>“危险路段”定义为 <span class="arithmatex">\(s\to t\)</span> 的必经边。</p>
+</blockquote>
 <p><span class="arithmatex">\(s \to t\)</span> 的必经边的意思就是，任意一条从 <span class="arithmatex">\(s\to t\)</span> 的路径，他们都包含的边。</p>
 <p>首先考虑一个求出有向图的桥（必经边）的算法。</p>
 <p>可以使用支配树先求出必经点集然后做。</p>
@@ -2090,6 +2162,243 @@
 </td></tr></table>
 <hr />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">有向图的必经边</span><span class="o">/</span><span class="n">DP</span><span class="o">/</span><span class="n">拓扑排序</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="acwing386">Acwing386 社交网络<a class="headerlink" href="#acwing386" title="Permanent link">&para;</a></h3>
+<p>要求的式子是：</p>
+<div class="arithmatex">\[I(v) = \sum\limits_{s \not=v,t\not=v}\dfrac{C_{s,t}(v)}{C_{s,t}}\]</div>
+<p>下面的是 <span class="arithmatex">\(s \to t\)</span> 的最短路条数</p>
+<p>上面的是 <span class="arithmatex">\(s\to t\)</span> 的最短路经过 <span class="arithmatex">\(v\)</span> 的条数。</p>
+<p>注意这里是有序点对，要算两次。</p>
+<p>数据范围是 <span class="arithmatex">\(n = 1e2\)</span>。</p>
+<p>然后 <span class="arithmatex">\(s\to v\to t\)</span>，加上多源询问，不难想到 Floyd 解决。</p>
+<p>实际上要做的就是在 Floyd 跑最短路的时候最短路计数即可。</p>
+<p>然后上面的部分只需要判定 <span class="arithmatex">\(dis_{s,v} + dis_{v,t} = dis_{s,t}\)</span> 即可。</p>
+<p>然后答案累加 <span class="arithmatex">\(cnt_{s,v} \times cnt_{v,t}\)</span>。</p>
+<hr />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">最短路计数</span><span class="o">/</span><span class="n">经过指定点最短路计数</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="acwing389">Acwing389 直径<a class="headerlink" href="#acwing389" title="Permanent link">&para;</a></h3>
+<p>求树的直径的必经边。</p>
+<p>发现要求的就是所有直径的公共边。</p>
+<p>可以先求出直径之后对于每一个点判断它是不是两条直径的交点。</p>
+<p>然后分别找所有交点点对里面最靠中间的一对就行了。</p>
+<p>还有一种更好的做法。</p>
+<p><span class="arithmatex">\(dfs\)</span> 记录当前路径上的公共边条数。</p>
+<p>记 <span class="arithmatex">\(las\)</span> 表示最后使直径更新的节点。</p>
+<p>然后如果出现类似 <span class="arithmatex">\(d[u] = x, d[v1] + w1 = y, d[v2] + w2 = y\)</span> 的情况</p>
+<p>假设 <span class="arithmatex">\(v1\)</span> 是更先访问的， </p>
+<ol>
+<li>如果 <span class="arithmatex">\(x &gt; y\)</span>, 那么需要把 <span class="arithmatex">\(u -&gt; v1 -&gt; subtree(v1)\)</span> 当中的边从 <span class="arithmatex">\(cnt\)</span> 里减去 。</li>
+<li>如果 <span class="arithmatex">\(x \le y\)</span>, 那么需要把 <span class="arithmatex">\(d[u]\)</span> 往下走对应的边从 <span class="arithmatex">\(cnt\)</span> 里减去。</li>
+</ol>
+<p>具体实现看代码</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;queue&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">cnt</span><span class="p">,</span><span class="w"> </span><span class="n">las</span><span class="p">;</span><span class="w"></span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
+<span class="n">i64</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dep</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dep</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// * ans = 直径长度</span>
+<span class="w">    </span><span class="c1">// * cnt = 公共边条数（最终答案）</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">fa</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">dep</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">las</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dep</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dep</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// ? 直径被更新，记录 las 并更新 cnt。</span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">ans</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">las</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="p">}</span><span class="w">   </span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">las</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w">               </span>
+<span class="w">            </span><span class="c1">// ? 出现类似 d[u] = x, d[v1] + w1 = y, d[v2] + w2 = y 的情况</span>
+<span class="w">            </span><span class="c1">// ? 假设 v1 是更先访问的，</span>
+<span class="w">            </span><span class="c1">// ? 1. 如果 x &gt; y, 那么需要把 u -&gt; v1 -&gt; subtree(v1) 当中的边从 cnt 里减去 </span>
+<span class="w">            </span><span class="c1">// ? 2. 如果 x &lt;= y, 那么需要把 d[u] 往下走对应的边从 cnt 里减去。</span>
+
+<span class="w">            </span><span class="c1">// * cur 是 2 对应的。</span>
+<span class="w">            </span><span class="c1">// * res 是 1 对应的。</span>
+<span class="w">            </span><span class="c1">// TODO : 具体的可能还要分析一下    </span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dep</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ? 当前分支的公共边长度。</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">w</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">树的直径</span><span class="o">/</span><span class="n">树的直径的必经边</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="acwing390">Acwing390 逃学的小孩<a class="headerlink" href="#acwing390" title="Permanent link">&para;</a></h3>
+<p>可以发现，答案就是枚举直径上每一个点作为出发点的答案的最大值。</p>
+<p>那么一个问题就是，求完 <span class="arithmatex">\(LCA\)</span> 之后，如果树是带权的，该如何快速询问树上两点之间的距离？</p>
+<p>仍旧是倍增，随着倍增 <span class="arithmatex">\(LCA\)</span> 的 <span class="arithmatex">\(f[i][j]\)</span> 同步记录一个 <span class="arithmatex">\(dis[i][j]\)</span> 即可。</p>
+<p>代码：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">dist</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">i64</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">])</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="n">ret</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="n">ret</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">dis</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>当然，也可以记录两个 <span class="arithmatex">\(dep\)</span> ，一个是把树看作无权树时候的 <span class="arithmatex">\(dep\)</span> ，另外一个是把树看作带权树时候的 <span class="arithmatex">\(dep\)</span>。</p>
+<p>然后就可以继续用 <span class="arithmatex">\(d[u] + d[v] - 2d[lca]\)</span> 了。</p>
+<hr />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Tag</span><span class="w"> </span><span class="err">：</span><span class="n">树的直径</span><span class="o">/</span><span class="n">带权树上点对距离</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 

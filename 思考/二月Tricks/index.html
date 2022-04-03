@@ -716,49 +716,49 @@
         
           <li class="md-nav__item">
   <a href="#acwing97" class="md-nav__link">
-    Acwing97
+    Acwing97 约数之和
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing11" class="md-nav__link">
-    Acwing11
+    Acwing11 背包问题求方案数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#acwing-529" class="md-nav__link">
-    Acwing 529
+  <a href="#acwing-529-noip2017" class="md-nav__link">
+    Acwing 529 [NOIP2017] 宝藏
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing1073" class="md-nav__link">
-    Acwing1073
+    Acwing1073 树的中心
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cf708c" class="md-nav__link">
-    CF708C
+  <a href="#cf708c-centroids" class="md-nav__link">
+    CF708C Centroids
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing340" class="md-nav__link">
-    Acwing340
+    Acwing340 通信线路
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing1148" class="md-nav__link">
-    Acwing1148
+    Acwing1148 秘密的牛奶运输
   </a>
   
 </li>
@@ -824,6 +824,20 @@
           总结
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%80%BB%E7%BB%93/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        日常总结
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1616,49 +1630,49 @@
         
           <li class="md-nav__item">
   <a href="#acwing97" class="md-nav__link">
-    Acwing97
+    Acwing97 约数之和
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing11" class="md-nav__link">
-    Acwing11
+    Acwing11 背包问题求方案数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#acwing-529" class="md-nav__link">
-    Acwing 529
+  <a href="#acwing-529-noip2017" class="md-nav__link">
+    Acwing 529 [NOIP2017] 宝藏
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing1073" class="md-nav__link">
-    Acwing1073
+    Acwing1073 树的中心
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cf708c" class="md-nav__link">
-    CF708C
+  <a href="#cf708c-centroids" class="md-nav__link">
+    CF708C Centroids
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing340" class="md-nav__link">
-    Acwing340
+    Acwing340 通信线路
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#acwing1148" class="md-nav__link">
-    Acwing1148
+    Acwing1148 秘密的牛奶运输
   </a>
   
 </li>
@@ -1685,7 +1699,7 @@
   <h1>二月Tricks</h1>
 
 <h2 id="2-tricks">2月 Tricks 整理<a class="headerlink" href="#2-tricks" title="Permanent link">&para;</a></h2>
-<h3 id="acwing97">Acwing97<a class="headerlink" href="#acwing97" title="Permanent link">&para;</a></h3>
+<h3 id="acwing97">Acwing97 约数之和<a class="headerlink" href="#acwing97" title="Permanent link">&para;</a></h3>
 <p>求 <span class="arithmatex">\(A^B\)</span> 的约数之和，要取模。</p>
 <p>把 <span class="arithmatex">\(A\)</span> 分解质因数，然后指数乘上 <span class="arithmatex">\(B\)</span> 可以得到以下式子：</p>
 <p><span class="arithmatex">\(sum=(1+p_1+p_1^2+p_1^3+\dots+p_1^{B\times c_1})\times(1+p_2+p_2^2+p_2^3+\dots+p_2^{B\times c_2})\times\dots \times (1+p_n+p_n^2+p_n^3+\dots+p_n^{B\times c_n})\)</span></p>
@@ -1698,7 +1712,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">分治</span><span class="o">/</span><span class="n">等比数列</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing11">Acwing11<a class="headerlink" href="#acwing11" title="Permanent link">&para;</a></h3>
+<h3 id="acwing11">Acwing11 背包问题求方案数<a class="headerlink" href="#acwing11" title="Permanent link">&para;</a></h3>
 <p>求方案数，先背包，然后 dp 的时候记录一个 <span class="arithmatex">\(g\)</span> 数组，表示使用不超过当前的空间的方案有多少种。</p>
 <p>根据 <span class="arithmatex">\(f\)</span> 转移的两种情况分开讨论就行。</p>
 <p>不知道为啥，我写个 <span class="arithmatex">\(tmp\)</span> 存 <span class="arithmatex">\(f\)</span> 没转移的 <span class="arithmatex">\(val\)</span> 是错的。</p>
@@ -1707,8 +1721,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">背包</span><span class="o">/</span><span class="n">方案数</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing-529">Acwing 529<a class="headerlink" href="#acwing-529" title="Permanent link">&para;</a></h3>
-<p>[NOIP2017] 宝藏</p>
+<h3 id="acwing-529-noip2017">Acwing 529 [NOIP2017] 宝藏<a class="headerlink" href="#acwing-529-noip2017" title="Permanent link">&para;</a></h3>
 <p>发现本题的要求就是求出一颗生成树，使得按照要求得到的权值和最小。</p>
 <p>并且，题目中要求的“从最初的宝藏屋到当前道路的起点经过的宝藏屋个数”，就是以最初的宝藏屋为root，当前道路起点的深度。</p>
 <p>设 <span class="arithmatex">\(f[i,msk]\)</span> 表示集合：当前打通的最大深度为 <span class="arithmatex">\(i\)</span> ，打通了状态为 <span class="arithmatex">\(msk\)</span> 的宝藏屋的所有方案。属性为权值和的 Min。</p>
@@ -1732,7 +1745,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">生成树</span><span class="o">/</span><span class="n">状压DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing1073">Acwing1073<a class="headerlink" href="#acwing1073" title="Permanent link">&para;</a></h3>
+<h3 id="acwing1073">Acwing1073 树的中心<a class="headerlink" href="#acwing1073" title="Permanent link">&para;</a></h3>
 <p>暴力做就是每个点 dfs 然后取 max。</p>
 <p>但是明显 TLE，所以考虑换根DP。</p>
 <p>第一次 dfs 处理出以 <span class="arithmatex">\(1\)</span> 为根的时候，每一个节点能往下走的距离的最大值和次大值。然后考虑处理出从每个节点往上走的最大值。</p>
@@ -1745,7 +1758,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">换根DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="cf708c">CF708C<a class="headerlink" href="#cf708c" title="Permanent link">&para;</a></h3>
+<h3 id="cf708c-centroids">CF708C Centroids<a class="headerlink" href="#cf708c-centroids" title="Permanent link">&para;</a></h3>
 <p>首先可以发现，如果一个节点 <span class="arithmatex">\(u\)</span> 不是重心，那么它的子树当中有且仅有一个的大小会超出 <span class="arithmatex">\(\lfloor \frac{n}{2} \rfloor\)</span>。</p>
 <p>那么我们改造的时候就一定是从这个超出 <span class="arithmatex">\(\lfloor \frac{n}{2} \rfloor\)</span> 的子树当中找到一个子树，使它和 <span class="arithmatex">\(u\)</span> 相连，满足以 <span class="arithmatex">\(u\)</span> 为根的所有子树都不大于 <span class="arithmatex">\(\lfloor \frac{n}{2} \rfloor\)</span>。</p>
 <p>并且这个找出来的子树大小必须是 <span class="arithmatex">\(\le \lfloor \frac{n}{2} \rfloor\)</span> 当中最大的一个，这样才能保证 <span class="arithmatex">\(u\)</span> 被改造为重心之后不可能出现矛盾。</p>
@@ -1761,7 +1774,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">换根DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing340">Acwing340<a class="headerlink" href="#acwing340" title="Permanent link">&para;</a></h3>
+<h3 id="acwing340">Acwing340 通信线路<a class="headerlink" href="#acwing340" title="Permanent link">&para;</a></h3>
 <p>可以分层图最短路。</p>
 <p>实际上就是利用 SPFA DP。</p>
 <p>或者利用 <span class="arithmatex">\(01\)</span> 二分，每次把不超过 <span class="arithmatex">\(mid\)</span> 的设置为 <span class="arithmatex">\(0\)</span> ，其它为 <span class="arithmatex">\(1\)</span>。</p>
@@ -1773,7 +1786,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SPFA</span><span class="o">/</span><span class="mo">01</span><span class="n">二分</span><span class="o">/</span><span class="n">分层图</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing1148">Acwing1148<a class="headerlink" href="#acwing1148" title="Permanent link">&para;</a></h3>
+<h3 id="acwing1148">Acwing1148 秘密的牛奶运输<a class="headerlink" href="#acwing1148" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>求无向联通带权图 <span class="arithmatex">\(G\)</span> 的严格次小生成树。</p>
 </blockquote>
@@ -1787,7 +1800,7 @@
 <p>所以用类似换根 DP 里的 trick。</p>
 <p>记录最大值的同时记录次大值，如果最大值等于被加入的非树边的权值，使用次大值代替最大值更新即可。</p>
 <p><strong>Trick:</strong> 先思考非严格，再考虑严格（特殊 <span class="arithmatex">\(\to\)</span> 一般）</p>
-<p><strong>Trick2:</strong> 非严格 $\to $ 严格 的过程就是去掉相等，在这种最值问题里可以利用记录次最值来解决。</p>
+<p><strong>Trick2:</strong> 非严格 <span class="arithmatex">\(\to\)</span> 严格 的过程就是去掉相等，在这种最值问题里可以利用记录次最值来解决。</p>
 <hr />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">严格次小</span><span class="o">/</span><span class="n">生成树</span><span class="o">/</span><span class="n">LCA</span><span class="o">/</span><span class="n">倍增</span><span class="w"></span>
 </code></pre></div>
