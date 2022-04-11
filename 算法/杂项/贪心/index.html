@@ -15,7 +15,7 @@
     
     
       
-        <title>关于mt19937 - OI-Collection</title>
+        <title>贪心 - OI-Collection</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mt19937" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              关于mt19937
+              贪心
             
           </span>
         </div>
@@ -985,68 +985,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          关于mt19937
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E5%85%B3%E4%BA%8Emt19937/" class="md-nav__link">
         关于mt19937
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mt19937" class="md-nav__link">
-    关于 mt19937
-  </a>
-  
-    <nav class="md-nav" aria-label="关于 mt19937">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1098,11 +1041,61 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E8%B4%AA%E5%BF%83/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          贪心
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         贪心
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    贪心
+  </a>
+  
+    <nav class="md-nav" aria-label="贪心">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    排序不等式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1278,23 +1271,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mt19937" class="md-nav__link">
-    关于 mt19937
+  <a href="#_1" class="md-nav__link">
+    贪心
   </a>
   
-    <nav class="md-nav" aria-label="关于 mt19937">
+    <nav class="md-nav" aria-label="贪心">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
+  <a href="#_2" class="md-nav__link">
+    排序不等式
   </a>
   
 </li>
@@ -1318,90 +1304,30 @@
                 
 
 
-  <h1>关于mt19937</h1>
+  <h1>贪心</h1>
 
-<h2 id="mt19937">关于 mt19937<a class="headerlink" href="#mt19937" title="Permanent link">&para;</a></h2>
-<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
-<p>被松本先生和西村先生于 1998 年设计出来。</p>
-<p>是一个生成高质量，分布均匀的随机数的算法（虽然在 <strong>C++11</strong> 当中是一个 class）</p>
-<p>首先我们可以搞到 <code>rand()</code> 的实现：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-
-<span class="cm">/* RAND_MAX assumed to be 32767 */</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">myrand</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1103515245</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12345</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">((</span><span class="kt">unsigned</span><span class="p">)(</span><span class="n">next</span><span class="o">/</span><span class="mi">65536</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">32768</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">mysrand</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">seed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seed</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="c1">// 利用线性同同余法实现</span>
-</code></pre></div>
-</td></tr></table>
-<p>发现这个玩意儿的循环节只有 <span class="arithmatex">\(32767\)</span>。</p>
-<p>什么意思？</p>
-<p>就是在当你需要生成很大的随机数的时候（比如模拟退火），他很容易生成的时候循环出现某个数。</p>
-<p>回来看 mt19937。</p>
-<p>为啥要叫 mt19937 呢？</p>
-<p>因为它的循环节是 <span class="arithmatex">\(2^{19937}-1\)</span>，也就是梅森（mt）数。</p>
-<p>用它，你可以获得一些很有质量的，分布均匀的随机数。</p>
-<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
-<p>用法如下：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;random&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">random_device</span><span class="w"> </span><span class="n">seedgen</span><span class="p">;</span><span class="w"> </span><span class="c1">// 非确定的均匀随机位生成器</span>
-<span class="w">                                </span><span class="c1">// 在熵池耗尽之前非常高效</span>
-<span class="w">                                </span><span class="c1">// 所以用来当种子生成器</span>
-<span class="w">                                </span><span class="c1">// NOIP 考场最好不用？</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">mt19937</span><span class="w"> </span><span class="n">Myrand</span><span class="p">(</span><span class="n">seedgen</span><span class="p">());</span><span class="w"> </span><span class="c1">// 自定义函数</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="n">RangeInt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">114514</span><span class="p">);</span><span class="w"> </span><span class="c1">// 指定整数范围</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">uniform_real_distribution</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="n">RangeReal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1919810.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 指定实数范围</span>
-
-<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">Myrand</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 没有范围,但是 mt19937 是 32 位的，所以会在 int 以内。</span>
-<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">RangeInt</span><span class="p">(</span><span class="n">Myrand</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 有范围的均匀整数</span>
-<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">RangeReal</span><span class="p">(</span><span class="n">Myrand</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 有范围的均匀实数</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
-<p>还有一个用于 64 位整数版的 mt19937 ：<code>mt19937_64</code></p>
-<p>用法一样，复杂度均摊 <span class="arithmatex">\(\text{O}(1)\)</span>。</p>
+<h2 id="_1">贪心<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>放一些相关的思路。</p>
+<h3 id="_2">排序不等式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>若有序列 <span class="arithmatex">\(f\)</span>，满足 <span class="arithmatex">\(0 \le f_1 \le f_2 \le f_3 \le \dots \le f_n\)</span>。</p>
+<p>并有学列 <span class="arithmatex">\(g\)</span>，满足 <span class="arithmatex">\(0\le g_1\le g_2 \le g_3 \le \dots \le g_n\)</span>。</p>
+<p>设代价函数 <span class="arithmatex">\(c(f,g) = \sum (f_i\times g_j)\)</span>，其中 <span class="arithmatex">\((i,j)\)</span> 表示一组选择。</p>
+<p>即是，从 <span class="arithmatex">\(g\)</span> 中分别给每一个 <span class="arithmatex">\(f_i\)</span> 分配某一个 <span class="arithmatex">\(g_j\)</span>。</p>
+<p>则得到的最大价值必然是：</p>
+<div class="arithmatex">\[\max= f_1g_1 +f_2g_2 + \dots +f_ng_n\]</div>
+<p>得到的最小价值是：</p>
+<div class="arithmatex">\[\min = f_1g_n+f_2g_{n-1} + \dots + f_ng_1\]</div>
+<p>证明可以使用”微扰“法。</p>
+<p>即是证明任何扰动都会使结果变差/优。</p>
+<p>设 <span class="arithmatex">\(f_i &lt; f_j,g_i &lt; g_j,i &lt; j\)</span>。</p>
+<p>则：</p>
+<div class="arithmatex">\[(f_ig_i +f_jg_j)-(f_ig_j+f_jg_i)\]</div>
+<div class="arithmatex">\[= f_i(g_i-g_j)+f_j(g_j-g_i)\]</div>
+<div class="arithmatex">\[=f_i(g_i-g_j)-f_j(g_i-g_j)\]</div>
+<div class="arithmatex">\[=(f_i-f_j)(g_i-g_j) &gt; 0\]</div>
+<p><span class="arithmatex">\(\therefore (f_ig_i +f_jg_j) &gt; (f_ig_j+f_jg_i)\)</span></p>
+<p>归纳后可证明排序不等式。</p>
+<p>一般用于和”排序“相关的贪心问题。</p>
 
               
             </article>
@@ -1415,7 +1341,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../%E5%80%8D%E5%A2%9E/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 倍增" rel="prev">
+        <a href="../%E6%8E%92%E5%BA%8F/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 排序" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1424,20 +1350,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              倍增
+              排序
             </div>
           </div>
         </a>
       
       
         
-        <a href="../%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC%E9%97%AE%E9%A2%98/" class="md-footer__link md-footer__link--next" aria-label="下一页: 区间最值问题" rel="next">
+        <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-footer__link md-footer__link--next" aria-label="下一页: Acwing277" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              区间最值问题
+              Acwing277
             </div>
           </div>
           <div class="md-footer__button md-icon">

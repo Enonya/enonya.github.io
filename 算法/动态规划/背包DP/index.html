@@ -519,6 +519,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%E7%8A%B6%E6%80%81%E5%92%8C%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        怎么设计状态和方程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%E6%95%B0%E4%BD%8DDP/" class="md-nav__link">
         数位DP
       </a>
@@ -1101,6 +1115,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E9%A1%B9/%E8%B4%AA%E5%BF%83/" class="md-nav__link">
+        贪心
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1141,6 +1169,20 @@
           题解
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
+        Acwing277
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1395,16 +1437,18 @@
 <p>状态属性和表示集合与 01 背包一样，不同的地方再于集合的划分。</p>
 <p>这次不是选或者不选了，而是第 <span class="arithmatex">\(i\)</span> 种物品选 <span class="arithmatex">\(n\)</span> 个，（肯定不会拿无穷多个，每种最多也就 <span class="arithmatex">\(\lfloor \frac{m}{v_i} \rfloor = s\)</span> 个）。</p>
 <p>暴力做法就是枚举 <span class="arithmatex">\(s\)</span> 次进行决策，<span class="arithmatex">\(\text{O}(n^3)\)</span>。</p>
-<p>可以考虑把每个子集的式子展开：</p>
-<p>整个集合：</p>
-<p><span class="arithmatex">\(f[i][j]=\max(f[i-1][j],f[i-1][j-v[i]]+w[i],f[i-1][j-2v[i]]+2w[i]\dots ,f[i-1][j-sv[i]]+sw[i])\)</span></p>
-<p>选一个 <span class="arithmatex">\(i\)</span> ：</p>
-<p><span class="arithmatex">\(f[i][j-v[i]]=\max(f[i-1][j-v[i]],f[i-1][j-2v[i]]+w[i],\dots f[i-1][j-sv[i]]+(s-1)w[i])\)</span></p>
-<p>后面的式子也是一样递推定义，我们现在只考虑这两个式子。</p>
-<p>发现括号里的式子非常的类似，给第二个式子的 <span class="arithmatex">\(\max\)</span> 的每一项加上 <span class="arithmatex">\(w_i\)</span> 就变成了第一个式子，</p>
+<p>方程：</p>
+<div class="arithmatex">\[f_{i,j} = \max\limits_{0\le k\le s}\{f_{i-1,j-kv_i}+kw_i\}\]</div>
+<p>可以考虑把每个子集的式子展开： </p>
+<p>整个集合 <span class="arithmatex">\(f_{i,j}\)</span>：</p>
+<div class="arithmatex">\[f_{i,j} = \max(f_{i-1,j},f_{i-1,j-v_i}+w_i,f_{i-1,j-2v_i}+2w_i,\dots f_{i-1,j-sv_i}+sw_i)\cdots \text{Formula A}\]</div>
+<p>选一个 <span class="arithmatex">\(i\)</span> 之后的子集 <span class="arithmatex">\(f_{i,j-v_i}\)</span>：</p>
+<div class="arithmatex">\[f_{i,j-v_i} = \max(f_{i-1,j-v_i},f_{i-1,j-2v_i}+w_i,\dots,f_{i-1,j-sv_i}+(s-1)w_i)\cdots \text{Formula B}\]</div>
+<p>后面的式子也是一样递推定义，我们现在只考虑这两个式子 <span class="arithmatex">\(\text{A,B}\)</span>。</p>
+<p>发现括号里的式子非常的类似，给式子 <span class="arithmatex">\(\text{B}\)</span> 的 <span class="arithmatex">\(\max\)</span> 中的每一项加上 <span class="arithmatex">\(w_i\)</span> 就变成了式子 <span class="arithmatex">\(\text{A}\)</span>，</p>
 <p>所以可以有：</p>
-<p><span class="arithmatex">\(f[i][j]=\max \begin{cases}f[i][j-v[i]]+w[i] &amp; j \ge v_i \\ f[i-1][j] &amp; \text{otherwise.}\end{cases}\)</span></p>
-<p>注意第一种情况是 <span class="arithmatex">\(f[i][j-v[i]]\)</span> 而不是 <span class="arithmatex">\(f[i-1][j-v[i]]\)</span>。</p>
+<div class="arithmatex">\[f_{i,j}=\max \begin{cases}f_{i,j-v_i}+w_i &amp; j \ge v_i \\ f_{i-1,j} &amp; \text{otherwise.}\end{cases}\]</div>
+<p>注意第一种情况是 <span class="arithmatex">\(f_{i,j-v_i}\)</span> 而不是 <span class="arithmatex">\(f_{i-1,j-v_i}\)</span>。</p>
 <p>类似于01背包，它可以化成一维的，不过因为每个物品可以无限使用，并且状态可能在同阶段进行转移。所以<strong>正序循环</strong>。（和01背包略有不同，画图即可）</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1442,19 +1486,24 @@
 <p><span class="arithmatex">\(f_{i,j}\)</span> 表示在前 <span class="arithmatex">\(i\)</span> 种物品里选，空间不超过 <span class="arithmatex">\(j\)</span> 的所有方案，属性为价值和 Max。</p>
 <p>那么考虑枚举的就是每种物品选多少个 （<span class="arithmatex">\(cnt\)</span>）。</p>
 <p>所以有方程：</p>
-<p><span class="arithmatex">\(f_{i,j}=\max\limits_{0 \le cnt \le c_i}\{f_{i-1,j-cnt\times v_i}+cnt\times w_i\}\)</span></p>
+<div class="arithmatex">\[f_{i,j}=\max\limits_{0 \le cnt \le c_i}\{f_{i-1,j-cnt\times v_i}+cnt\times w_i\}\]</div>
+<p>滚动数组之后可以得到方程（<span class="arithmatex">\(f_{i-1,j}\)</span> 直接被继承了，所以不用让 <span class="arithmatex">\(cnt=0\)</span> 了）：</p>
+<div class="arithmatex">\[f_j = \max\limits_{1\le cnt \le c_i}\{f_{j-cnt\times v_i} + cnt \times w_i\}\]</div>
 <p>把式子展开：</p>
-<p><span class="arithmatex">\(f_{i,j}=\max(f_{i-1,j},f_{i-1,j-v_i}+w_i,\dots,f_{i-1,j-c_i\times v_i}+c_i \times w_i)\)</span></p>
-<p>依旧观察 <span class="arithmatex">\(f_{i,j-v_i}\)</span> 项，看是否可以优化：</p>
-<p>（把 <span class="arithmatex">\(f_{i,j-v_i}\)</span> 当作 <span class="arithmatex">\(f_{i,j}\)</span> 代入最上面的方程，此处先不考虑背包够不够用 ）</p>
-<p><span class="arithmatex">\(f_{i,j-v_i}=\max\limits_{0 \le cnt \le c_i} \{f_{i-1,j-v_i-cnt\times v_i}+cnt\times w_i\}\)</span></p>
-<p><span class="arithmatex">\(\Rightarrow f_{i,j-v_i}=\max(f_{i-1,j-v_i},f_{i-1,j_2v_i}+w_i,\dots,f_{i-1,j-(c_i+1)v_i}+c_i\times w_i)\)</span></p>
-<p>然后你会发现，这里没法像完全背包那样优化了，为什么呢？因为第二个式子不只是比第一个式子每项少了 <span class="arithmatex">\(w_i\)</span>。</p>
-<p>并且，第二个式子里没有 <span class="arithmatex">\(f_{i-1,j}\)</span> 这一项，却多了 <span class="arithmatex">\(f_{i-1,j-(c_i+1)v_i}+w_i\)</span> 这一项，所以我们是没办法直接把下面的式子推到第一个式子去的。</p>
-<p>但是我们可以发现一个很有意思的性质：</p>
-<p><a href="https://imgtu.com/i/HYeuUP"><img alt="pack-1.png" src="https://s4.ax1x.com/2022/02/10/HYeuUP.png" /></a></p>
+<div class="arithmatex">\[f_{j}=\max(f_{j},f_{j-v_i}+w_i,\dots,f_{j-c_i\times v_i}+c_i \times w_i) \cdots \text{Formula A}\]</div>
+<p>依旧观察 <span class="arithmatex">\(f_{j-v_i}\)</span> 项，看是否可以优化：</p>
+<p>（把 <span class="arithmatex">\(f_{j-v_i}\)</span> 当作 <span class="arithmatex">\(f_{j}\)</span> 代入最上面的方程，此处先不考虑背包够不够用 ）</p>
+<div class="arithmatex">\[f_{j-v_i}=\max\limits_{1 \le cnt \le c_i} \{f_{j-v_i-cnt\times v_i}+cnt\times w_i\}\]</div>
+<div class="arithmatex">\[\Rightarrow f_{j-v_i}=\max(f_{j-v_i},f_{j-2v_i}+w_i,\dots,f_{j-c_i\times v_i}+(c_i-1)\times w_i,f_{j-(c_i+1)v_i}+c_i\times w_i) \cdots \text{Formula B}\]</div>
+<p>然后你会发现，这里没法像完全背包那样优化了，为什么呢？因为式子 <span class="arithmatex">\(\text{B}\)</span> 不只是比式子 <span class="arithmatex">\(\text{A}\)</span> 每项少了 <span class="arithmatex">\(w_i\)</span>。</p>
+<p>因为式子 <span class="arithmatex">\(\text{B}\)</span> 的决策集合里没有 <span class="arithmatex">\(f_{j}\)</span> 这一项，却多了 <span class="arithmatex">\(f_{j-(c_i+1)v_i}\)</span> 这一项，</p>
+<p>所以我们是没办法直接从式子 <span class="arithmatex">\(\text{B}\)</span> 推到式子 <span class="arithmatex">\(\text{A}\)</span> 去的。</p>
+<p>但是注意到滚动数组之后，方程的样子很类似 <span class="arithmatex">\(f_i = \max\limits_{L(i)\le j \le R(i)}{f_j + val(i,j)}\)</span> 的形式。</p>
+<p>我们又可以发现一个很有意思的性质：</p>
+<p><a href="https://imgtu.com/i/LpIk1e"><img alt="LpIk1e.png" src="https://s1.ax1x.com/2022/04/08/LpIk1e.png" /></a></p>
 <p>决策集合的变化长的咋这么像单调队列呢？</p>
-<p>因为滚动数组之后是倒推的，所以被单调队列的是大一点的 <span class="arithmatex">\(j\)</span>。</p>
+<p>所以可以考虑滚动数组之后利用单调队列优化。</p>
+<p>因为滚动数组之后是倒推的，所以被单调队列先弹出的是 <span class="arithmatex">\(f_j\)</span>，进来的是的 <span class="arithmatex">\(f_{j-(c_i+1)v_i}\)</span>。</p>
 <p>然后你发现，对于同一个 <span class="arithmatex">\(i\)</span> 可以把所有的 <span class="arithmatex">\(j\)</span> 分成 <span class="arithmatex">\(v_i\)</span> 组，依据是除以 <span class="arithmatex">\(v_i\)</span> 的余数</p>
 <ul>
 <li><span class="arithmatex">\(\overline{0}\)</span> 剩余系：<span class="arithmatex">\(\{0,v_i,2v_i\dots\}\)</span></li>
@@ -1569,6 +1618,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+<p>上面写的似乎有点瑕疵 （<span class="arithmatex">\(f_{j-(c_i+1)v_i}\)</span> 这个状态似乎不能存在），不过能理解“决策集合的单调变化”就行了。</p>
 <h3 id="_4">分组背包<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>给你 <span class="arithmatex">\(n\)</span> 组物品，每组有 <span class="arithmatex">\(c_i\)</span> 个，体积分别为 <span class="arithmatex">\(v_{i,j}\)</span> ，价值分别为 <span class="arithmatex">\(w_{i,j}\)</span> ，你有 <span class="arithmatex">\(m\)</span> 的空间，每组最多选一个，求价值Max</p>
@@ -1613,7 +1663,11 @@
 <p><span class="arithmatex">\(u\)</span> 肯定也会有很多子树（除非它是叶子） ，那么就需要对于每一个子树进行讨论，看给它分配多少空间。</p>
 <p>所以状态划分为 <span class="arithmatex">\(u\)</span> 的儿子个数个大子集，分别代表选对应的子树的情况。</p>
 <p>每一个大子集又分成多个小子集，表示给这个子树分配的空间。</p>
-<p>说白了，实际上就是对于 <span class="arithmatex">\(u\)</span> 的所有子树做一个分组背包，每一个子树是一组，它只能分配到一种可能的空间（组里面选出来的物品）。</p>
+<p>这实际上是一个分组背包，问题等价于：</p>
+<p>有 <span class="arithmatex">\(|son(u)|\)</span> 组物品（每个儿子的子树算一组），每组物品都有 <span class="arithmatex">\(j - v_u\)</span> 个。</p>
+<p>其中第 <span class="arithmatex">\(i\)</span> 组第 <span class="arithmatex">\(x\)</span> 个物品的体积是 <span class="arithmatex">\(x\)</span>，价值是 <span class="arithmatex">\(f_{son(u)_i,x}\)</span>，背包的总容积是 <span class="arithmatex">\(j-v_u\)</span>。</p>
+<p>要从每组当中选出不超过一个物品（每个子节点 <span class="arithmatex">\(son(u)_i\)</span> 只能选择一个状态（分配的空间 <span class="arithmatex">\(x\)</span>）转移到 <span class="arithmatex">\(u\)</span>。）。</p>
+<p>并且选出的总体积不能超过 <span class="arithmatex">\(j - v_u\)</span>（必须先选 <span class="arithmatex">\(u\)</span>），求最大价值。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
