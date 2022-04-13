@@ -225,6 +225,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E6%80%9D%E8%80%83/20220413B/" class="md-nav__link">
+        20220413B
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88Tricks/" class="md-nav__link">
         三月Tricks
       </a>
@@ -1522,6 +1536,7 @@
 <p>因为 <span class="arithmatex">\(k\)</span> 是在<strong>单调递减</strong>，所以维护一个决策点 <span class="arithmatex">\(k\)</span> 单调递减，队头为 <span class="arithmatex">\(f_{u+k\times v_i}-kw_i\)</span> 的<strong>最大值</strong>的单调队列。</p>
 <p>每次单调队列的时候，先把队头超过 <span class="arithmatex">\(p-1\)</span> 的弹掉，然后取队头为最优决策进行转移。</p>
 <p>最后把新加入的决策 <span class="arithmatex">\(k=p-c_i-1\)</span> 插入队列的尾部，检查单调性，排除冗杂。</p>
+<p>为什么是 <span class="arithmatex">\(k = p-c_i -1\)</span> 呢？因为原来的下界是 <span class="arithmatex">\(p - c_i\)</span>，而每次入队的都是 <span class="arithmatex">\(cnt\)</span> 小 <span class="arithmatex">\(1\)</span> 的，也就是倍数 <span class="arithmatex">\(k\)</span> 小 <span class="arithmatex">\(1\)</span> 的，自然就是 <span class="arithmatex">\(p-c_i-1\)</span>。</p>
 <p>因为里面两层的循环相当于遍历了 <span class="arithmatex">\([0,m]\)</span>，所以复杂度 <span class="arithmatex">\(\text{O}(nm)\)</span>。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1569,7 +1584,8 @@
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
 <span class="cm"> * @Author: black_trees </span>
 <span class="cm"> * @Date: 2022-02-01 12:49:34 </span>
 <span class="cm"> * @Last Modified by: black_trees</span>
@@ -1605,6 +1621,7 @@
 <span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="o">&lt;=</span><span class="n">tail</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">calc</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="p">])</span><span class="o">&lt;=</span><span class="n">calc</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="o">--</span><span class="n">tail</span><span class="p">;</span><span class="w"></span>
 <span class="w">                </span><span class="n">q</span><span class="p">[</span><span class="o">++</span><span class="n">tail</span><span class="p">]</span><span class="o">=</span><span class="n">k</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="c1">// 把初始的决策集合插入</span>
+<span class="w">            </span><span class="c1">// 此处的决策集合可以理解为图中 &quot;f[j]&quot; 系的决策候选集合。</span>
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">p</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="o">--</span><span class="n">p</span><span class="p">){</span><span class="w"></span>
 <span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="o">&lt;=</span><span class="n">tail</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="n">head</span><span class="p">]</span><span class="o">&gt;</span><span class="n">p</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">++</span><span class="n">head</span><span class="p">;</span><span class="w"> </span><span class="c1">// 过期的弹掉</span>
 <span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="o">&lt;=</span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="o">+</span><span class="n">p</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="o">+</span><span class="n">p</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="n">calc</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">q</span><span class="p">[</span><span class="n">head</span><span class="p">])</span><span class="o">+</span><span class="n">p</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 单调队列非空的时候才可以有max来转移。</span>
