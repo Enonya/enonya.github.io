@@ -1391,29 +1391,31 @@
 <p>而总方案数减去先手必败的方案数仍然等于先手必胜，所以求出先手必败的方案之后等价于求出了先手必胜的方案。</p>
 <p>先手必败的状态数相较于先手必胜，少了最后 <span class="arithmatex">\(j\)</span> 的这一维，对应到本题就是少了 <span class="arithmatex">\(2^n\)</span> 级别个状态。</p>
 <p>所以状态数就变成了 <span class="arithmatex">\(\text{O}(n)\)</span> 个，可以考虑进行 <span class="arithmatex">\(\text{O}(n)\)</span> 的递推。</p>
-<p>设 <span class="arithmatex">\(f_i\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子，先手必败的方案。</p>
+<p>设 <span class="arithmatex">\(f_i\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子，先手必败的方案数。</p>
 <p><span class="arithmatex">\(p_i\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子的总方案数。</p>
 <p>因为石子的数量不能相同，所以得到 <span class="arithmatex">\(p\)</span> 的计算式：</p>
-<div class="arithmatex">\[p_i = \sum\limits_{j = 1}^i((2^n-1)-(j - 1)) = \sum\limits_{j = 1}^i(2^n-j)\]</div>
+<div class="arithmatex">\[p_i = \prod\limits_{j = 1}^i((2^n-1)-(j - 1)) = \prod\limits_{j = 1}^i(2^n-j)\]</div>
 <p>快速幂 <span class="arithmatex">\(\text{O}(\log n)\)</span> 求出 <span class="arithmatex">\(2^n\)</span> 之后可以线性递推。</p>
 <p>然后考虑求 <span class="arithmatex">\(f_{i}\)</span>。</p>
 <p><span class="arithmatex">\(f_i\)</span> 等价于这样一个状态：考虑前 <span class="arithmatex">\(i\)</span> 堆石子，异或和为 <span class="arithmatex">\(0\)</span> 的所有方案。</p>
+<p>可以利用 DP 种 “前一段状态 + 后一段贡献 = 大段状态” 的思想来思考转移方程。</p>
 <p>首先钦定前 <span class="arithmatex">\(i - 1\)</span> 堆的异或和为 <span class="arithmatex">\(0\)</span>，方案数加上 <span class="arithmatex">\(p_{i-1}\)</span>，接下来要做的就是排除和 <span class="arithmatex">\(i\)</span> 相关的不合法的方案。</p>
 <ol>
 <li>
 <p>因为第 <span class="arithmatex">\(i\)</span> 堆不能取到 <span class="arithmatex">\(0\)</span>，所以方案数减去 <span class="arithmatex">\(f_{i-1}\)</span>。</p>
 </li>
 <li>
-<p>如果前 <span class="arithmatex">\(i - 2\)</span> 堆的异或和为 <span class="arithmatex">\(0\)</span>，那么第 <span class="arithmatex">\(i - 1\)</span> 堆就要和第 <span class="arithmatex">\(i\)</span> 堆取到同一个数量，也是不合法的。</p>
+<p>如果前 <span class="arithmatex">\(i - 2\)</span> 堆的异或和为 <span class="arithmatex">\(0\)</span>，</p>
 </li>
 </ol>
+<p>那么<strong>会</strong>导致第 <span class="arithmatex">\(i - 1\)</span> 堆就要和第 <span class="arithmatex">\(i\)</span> 堆取到同一个数量，也是不合法的。</p>
 <p>还要从方案数里减去这种可能的方案数 <span class="arithmatex">\(tmp\)</span>，</p>
-<p>求 <span class="arithmatex">\(tmp\)</span> 时枚举异或和为 <span class="arithmatex">\(0\)</span> 的 <span class="arithmatex">\(i-2\)</span> 堆分别是哪几个，乘上对应的方案数 <span class="arithmatex">\(f_{i-2}\)</span>，</p>
-<p>然后乘上 <span class="arithmatex">\(i - 1\)</span> 和 <span class="arithmatex">\(i\)</span> 能取到的所有 <span class="arithmatex">\(2^n-(i-2)\)</span> 种可能即可。</p>
-<div class="arithmatex">\[tmp = f_{i - 2} \times \text{C}^{i-1}_i\times(2^n - (i - 2))\]</div>
-<div class="arithmatex">\[\Rightarrow f_{i-2} \times (i - 1) \times(2^n-i+2)\]</div>
+<p>求 <span class="arithmatex">\(tmp\)</span> 时，枚举异或和为 <span class="arithmatex">\(0\)</span> 的 <span class="arithmatex">\(i-2\)</span> 堆分别是哪几个（<span class="arithmatex">\(\text{C}_{i-1}^{i-2}\)</span>），乘上对应的方案数 <span class="arithmatex">\(f_{i-2}\)</span>，</p>
+<p>然后再乘上第 <span class="arithmatex">\(i - 1\)</span> 和第 <span class="arithmatex">\(i\)</span> 堆石子能取到的石子个数的所有 <span class="arithmatex">\(2^n-(i-2)\)</span> 种可能即可。</p>
+<div class="arithmatex">\[tmp = f_{i - 2} \times \text{C}^{i-2}_{i-1}\times(2^n - 1 - (i - 2))\]</div>
+<div class="arithmatex">\[\Rightarrow f_{i-2} \times (i - 1) \times(2^n-i+1)\]</div>
 <p>所以得到方程：</p>
-<div class="arithmatex">\[f_{i} = p_{i-1} - f_{i-1} - f_{i-2} \times (i - 1) \times(2^n-i+2)\]</div>
+<div class="arithmatex">\[f_{i} = p_{i-1} - f_{i-1} - f_{i-2} \times (i - 1) \times(2^n-i+1)\]</div>
 <h4 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
