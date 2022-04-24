@@ -1049,20 +1049,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
-        单调队列
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie/" class="md-nav__link">
         可持久化Trie
       </a>
@@ -1093,20 +1079,6 @@
     <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%94%A8Trie%E5%AE%9E%E7%8E%B0%E5%B9%B3%E8%A1%A1%E6%A0%91/" class="md-nav__link">
         用Trie实现平衡树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
-        链表
       </a>
     </li>
   
@@ -1222,6 +1194,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
+        单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
         差分前缀和
       </a>
@@ -1252,6 +1238,20 @@
     <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E8%B4%AA%E5%BF%83/" class="md-nav__link">
         贪心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
       </a>
     </li>
   
@@ -1531,7 +1531,7 @@
 </td></tr></table>
 <h3 id="acwing-529-noip2017">Acwing 529 [NOIP2017] 宝藏<a class="headerlink" href="#acwing-529-noip2017" title="Permanent link">&para;</a></h3>
 <p>发现本题的要求就是求出一颗生成树，使得按照要求得到的权值和最小。</p>
-<p>并且，题目中要求的“从最初的宝藏屋到当前道路的起点经过的宝藏屋个数”，就是以最初的宝藏屋为root，当前道路起点的深度。</p>
+<p>并且，题目中要求的“从最初的宝藏屋到当前道路的起点经过的宝藏屋个数”，就是以最初的宝藏屋为root，到当前道路起点的深度。</p>
 <p>设 <span class="arithmatex">\(f[i,msk]\)</span> 表示集合：当前打通的最大深度为 <span class="arithmatex">\(i\)</span> ，打通了状态为 <span class="arithmatex">\(msk\)</span> 的宝藏屋的所有方案。属性为权值和的 Min。</p>
 <p>那么考虑枚举<strong>上一层</strong>（按照“最后”进行集合划分）的状态 <span class="arithmatex">\(qwq\)</span>，</p>
 <p>那么可以得到一个转移方程：<span class="arithmatex">\(f_{i,msk}=\min\{f_{i,msk},f_{i-1,qwq}+(i-1)\times cost(qwq,msk)\}\)</span></p>
@@ -1548,7 +1548,7 @@
 <p>这个可以在处理可行状态的时候转移出来。</p>
 <p>然后考虑枚举所有可行对的状态之间的差异，比如当前是 <span class="arithmatex">\(i,j\)</span> 这两个状态，只需要枚举他们之前的差异，然后对相应的 <span class="arithmatex">\(r\)</span> 求和即可。</p>
 <p>那么就可以进行转移了，初始化让每个节点分别为根，让对应状态的权值为 <span class="arithmatex">\(0\)</span>，其他的赋值为 <span class="arithmatex">\(+\infty\)</span> 即可。</p>
-<p><strong>Trick:</strong> 在思考DP类的问题时可以先列出一个方程，不管里面的某些东西怎么求，等确定式子是对的（无后效性）之后再考虑计算这些东西。</p>
+<p><strong>Trick:</strong> 在思考DP类的问题时可以先列出一个方程，不管里面的某些东西怎么求，等确定式子是对的（无后效性）之后再考虑计算这些东西。（逐层思考）</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">生成树</span><span class="o">/</span><span class="n">状压DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
@@ -1584,12 +1584,24 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="acwing340">Acwing340 通信线路<a class="headerlink" href="#acwing340" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>可以将图中某条 <span class="arithmatex">\(1\to n\)</span> 的路径上的 <span class="arithmatex">\(K\)</span> 个边权设置为 <span class="arithmatex">\(0\)</span>。</p>
+<p>定义这条路径的花费为设置后路径上所有边权的最大值。</p>
+<p>求花费最小值。</p>
+</blockquote>
 <p>可以分层图最短路。</p>
+<p>设 <span class="arithmatex">\(dis[x,p]\)</span> 表示从 <span class="arithmatex">\(1\)</span> 到 <span class="arithmatex">\(x\)</span>，已经用了 <span class="arithmatex">\(p\)</span> 条免费机会的最小花费。</p>
+<p>那么考虑一个“广义”的最短路，将每个节点都拆成 <span class="arithmatex">\(K + 1\)</span> 个（<span class="arithmatex">\((x,0),(x,1),\dots,(x,K)\)</span>）</p>
+<p>同层之间直接连原来的边权，然后这一层和下一层连边就将边权设置为 <span class="arithmatex">\(0\)</span>。</p>
+<p>具体来说，对于 <span class="arithmatex">\((u,v)\)</span> 这条原图中的边，连接 <span class="arithmatex">\((u,k),(v,k)\)</span>，边权为 <span class="arithmatex">\(w(u,v)\)</span>。</p>
+<p>然后连接 <span class="arithmatex">\((u,k),(v,k + 1)\)</span>，表示这条线路使用免费机会，所以边权为 <span class="arithmatex">\(0\)</span>。</p>
+<p>在这张图上跑一个最短路，最后答案在 <span class="arithmatex">\(dis[n][i]\)</span> 中取 <span class="arithmatex">\(\min\)</span> 即可。</p>
 <p>实际上就是利用 SPFA DP。</p>
 <p>或者利用 <span class="arithmatex">\(01\)</span> 二分，每次把不超过 <span class="arithmatex">\(mid\)</span> 的设置为 <span class="arithmatex">\(0\)</span> ，其它为 <span class="arithmatex">\(1\)</span>。</p>
-<p>然后利用 dijkstra Check 即可。</p>
+<p>然后利用 dijkstra Check <span class="arithmatex">\(dis[n]\)</span> 是否小于等于 <span class="arithmatex">\(K\)</span> 即可。</p>
 <p><strong>Trick:</strong> 把最优问题转化成判定问题时，可以考虑利用 01 二分的思想更方便的 Check。</p>
 <p><strong>Trick2:</strong> 在无向图上 DP 的时候，因为转移可能有后效性，所以可以借助 SPFA 进行 DP。</p>
+<p>此处会有后效性的原因有两个：1. 阶段并不是节点的编号顺序，2. 因为是无向图，无法像 DAG 那样很好的进行无后效性的 DP 转移。</p>
 <p><strong>Trick3:</strong> 可以把图上的节点根据不同的情况拆成多个节点，然后在新图上根据条件连边，问题就可以被转化为最普通的 SSSP。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SPFA</span><span class="o">/</span><span class="mo">01</span><span class="n">二分</span><span class="o">/</span><span class="n">分层图</span><span class="w"></span>
 </code></pre></div>
@@ -1600,9 +1612,11 @@
 </blockquote>
 <p>首先考虑非严格次小生成树怎么做。</p>
 <p>先求出最小生成树，然后枚举每一条非树边 <span class="arithmatex">\((u,v)\)</span>，把这条非树边加入到最小生成树当中。</p>
-<p>这时候必然会出现一个环，所以把这个环上的最大值删去就可以了。</p>
+<p>这时候必然会出现一个环，所以把这个环上除去 <span class="arithmatex">\(w(u,v)\)</span> 的最大值删去就可以了。</p>
 <p>明显的，这个环上的最大值就是 MST 当中 <span class="arithmatex">\(u \to v\)</span> 的路径上的最大值。</p>
-<p>倍增求 LCA 的时候顺便记录一下即可。</p>
+<p>可以在 MST 上用倍增求 LCA，然后记录 <span class="arithmatex">\(u\)</span> 到它的 <span class="arithmatex">\(2^i\)</span> 级祖先路径上的边权的严格最大值。</p>
+<p>这个类似 <span class="arithmatex">\(f\)</span> 数组的记录，初始化 <span class="arithmatex">\(w[u][0] = w(u,fa)\)</span>，然后倍增记录。</p>
+<p>查询 MST 上 <span class="arithmatex">\((u,v)\)</span> 路径上的最大值时，分别询问 <span class="arithmatex">\((u,lca),(v,lca)\)</span> 路径上的严格最大值即可。</p>
 <p>答案就是枚举完所有非树边被加入的情况的最小值。</p>
 <p>然后发现这里和严格次小唯一的区别就是可能加入的边等于被删除的边的权值。</p>
 <p>所以用类似换根 DP 里的 trick。</p>

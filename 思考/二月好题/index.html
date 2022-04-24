@@ -349,20 +349,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#abc240g-teleporting-takahashi" class="md-nav__link">
-    ABC240G Teleporting Takahashi
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cf1642d-repetitions-decoding" class="md-nav__link">
-    CF1642D Repetitions Decoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#cf1642ecf1641c-anonymity-is-important" class="md-nav__link">
     CF1642E/CF1641C Anonymity Is Important
   </a>
@@ -1056,20 +1042,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
-        单调队列
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie/" class="md-nav__link">
         可持久化Trie
       </a>
@@ -1100,20 +1072,6 @@
     <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%94%A8Trie%E5%AE%9E%E7%8E%B0%E5%B9%B3%E8%A1%A1%E6%A0%91/" class="md-nav__link">
         用Trie实现平衡树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
-        链表
       </a>
     </li>
   
@@ -1229,6 +1187,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
+        单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
         差分前缀和
       </a>
@@ -1259,6 +1231,20 @@
     <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E8%B4%AA%E5%BF%83/" class="md-nav__link">
         贪心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
       </a>
     </li>
   
@@ -1471,20 +1457,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#abc240g-teleporting-takahashi" class="md-nav__link">
-    ABC240G Teleporting Takahashi
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cf1642d-repetitions-decoding" class="md-nav__link">
-    CF1642D Repetitions Decoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#cf1642ecf1641c-anonymity-is-important" class="md-nav__link">
     CF1642E/CF1641C Anonymity Is Important
   </a>
@@ -1534,7 +1506,7 @@
 <p>对于操作1，考虑对每个颜色维护一个 <span class="arithmatex">\(tag\)</span> 。</p>
 <p>表示这个颜色当前一共加了多少。</p>
 <p>然后 <code>assign</code> 的时候，对于每一个被改变颜色的块，先利用树状数组把他的值加上 <span class="arithmatex">\(tag\)</span> ，推平之后还要减去新颜色的 <span class="arithmatex">\(tag\)</span>。</p>
-<p>操作2利用树状数组+差分询问之后再加上当前颜色的 <span class="arithmatex">\(tag\)</span> 即可。 </p>
+<p>操作 2 利用树状数组 + 差分询问之后再加上当前颜色的 <span class="arithmatex">\(tag\)</span> 即可。 </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ODT</span><span class="o">/</span><span class="n">树状数组</span><span class="o">/</span><span class="n">差分</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
@@ -1555,8 +1527,7 @@
 <p>第一种关系记作 <span class="arithmatex">\(u \to v\)</span></p>
 <p>第二种关系记作 <span class="arithmatex">\(v\to u\)</span></p>
 <p>这是一个严格偏序关系，所以可以联系到 DAG，使用拓扑排序判断这个严格偏序关系是否成立即可。</p>
-<p>偏序（严格和非严格）的定义看另外的一个blog即可。</p>
-<p>初始位置用拓扑序就好。</p>
+<p>初始位置用拓扑序求解。</p>
 <p><strong>Trick:</strong> 严格偏序关系可以利用拓扑排序来判定/求解。</p>
 <p>参考 <a href="https://zhuanlan.zhihu.com/p/470044525">https://zhuanlan.zhihu.com/p/470044525</a></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">拓扑排序</span><span class="o">/</span><span class="n">二分图</span><span class="o">/</span><span class="n">偏序关系</span><span class="w"></span>
@@ -1602,20 +1573,6 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">并查集</span><span class="o">/</span><span class="n">构造</span><span class="o">/</span><span class="n">思维</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="abc240g-teleporting-takahashi">ABC240G Teleporting Takahashi<a class="headerlink" href="#abc240g-teleporting-takahashi" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>在一个三维坐标系里，每次可以把 <span class="arithmatex">\(x,y,z\)</span> 当中任意的一个 <span class="arithmatex">\(+/-1\)</span>，</p>
-<p>问不超过 <span class="arithmatex">\(k\)</span> 步，从 <span class="arithmatex">\((0,0,0)\to (X,Y,Z)\)</span> 的方案数</p>
-<p>1e7.</p>
-</blockquote>
-<p>不太会的数学题。</p>
-<h3 id="cf1642d-repetitions-decoding">CF1642D Repetitions Decoding<a class="headerlink" href="#cf1642d-repetitions-decoding" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>给你一个序列，每次可以在两个位置中间插入两个完全相同的元素，</p>
-<p>定义一个区间是好的，当且仅当他是 <span class="arithmatex">\(ABC..ABC..\)</span> 的形式。</p>
-<p>问是否可以把原序列经过操作后，分割成多个好区间。</p>
-<p>要求不超过 <span class="arithmatex">\(2\times n^2\)</span> 次操作，并构造方案，无解 -1。</p>
-</blockquote>
 <h3 id="cf1642ecf1641c-anonymity-is-important">CF1642E/CF1641C Anonymity Is Important<a class="headerlink" href="#cf1642ecf1641c-anonymity-is-important" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>给你一个病人的序列，初始不知道任何关于病人的信息。</p>
@@ -1625,6 +1582,14 @@
 </blockquote>
 <p>这题有很多种做法，我的做法有两种，一种是类似 jiangly 做法的一个 <code>std::set</code> 维护。</p>
 <p>另外一种是 odt。</p>
+<ul>
+<li>
+<p>set 做法：</p>
+</li>
+<li>
+<p>odt 做法：</p>
+</li>
+</ul>
 <p>首先考虑利用 odt 维护整个序列，初始插入一个 <span class="arithmatex">\((1,n,-1)\)</span> 的节点表示整个序列都不确定。</p>
 <p>发现 <span class="arithmatex">\(0\)</span> 的优先级是最高的，<span class="arithmatex">\(1\)</span> 不能覆盖它。</p>
 <p>所以如果是 <code>0 l r 0</code> ，直接暴力 <code>assign</code> 即可。</p>

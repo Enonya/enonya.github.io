@@ -1023,20 +1023,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
-        单调队列
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96Trie/" class="md-nav__link">
         可持久化Trie
       </a>
@@ -1067,20 +1053,6 @@
     <li class="md-nav__item">
       <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%94%A8Trie%E5%AE%9E%E7%8E%B0%E5%B9%B3%E8%A1%A1%E6%A0%91/" class="md-nav__link">
         用Trie实现平衡树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
-        链表
       </a>
     </li>
   
@@ -1196,6 +1168,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E9%A1%B9/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" class="md-nav__link">
+        单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E6%9D%82%E9%A1%B9/%E5%B7%AE%E5%88%86%E5%89%8D%E7%BC%80%E5%92%8C/" class="md-nav__link">
         差分前缀和
       </a>
@@ -1226,6 +1212,20 @@
     <li class="md-nav__item">
       <a href="../../%E6%9D%82%E9%A1%B9/%E8%B4%AA%E5%BF%83/" class="md-nav__link">
         贪心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9D%82%E9%A1%B9/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        链表
       </a>
     </li>
   
@@ -1465,7 +1465,7 @@
 <p>可以考虑先按照右端点排序，从牛的工作时间的右端点进行转移，可以设计出方程：</p>
 <div class="arithmatex">\[dp_{b_i} = \min\limits_{a_i -1 \le j &lt; b_i}\{dp_j\} + c_i\]</div>
 <p>枚举 <span class="arithmatex">\(j\)</span> 找到最小值即可，考虑对这个枚举的过程进行优化。</p>
-<p>这里是询问 <span class="arithmatex">\(dp\)</span> 在某一段上的最小值，且 <span class="arithmatex">\(dp\)</span> 随时会发生更新。</p>
+<p>这里是询问 <span class="arithmatex">\(dp\)</span> 在<strong>某一段上的最小值</strong>，且 <span class="arithmatex">\(dp\)</span> <strong>随时会发生更新</strong>。</p>
 <p>所以可以利用线段树直接维护，的时候单点修改，转移的时候区间询问即可。</p>
 <h3 id="the-battle-of-chibi">The Battle Of Chibi<a class="headerlink" href="#the-battle-of-chibi" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -1480,13 +1480,16 @@
 <p>初始化 <span class="arithmatex">\(a_0 = +\infty,f_{0,0} = 1\)</span>，其余 <span class="arithmatex">\(f\)</span> 为 <span class="arithmatex">\(0\)</span>。</p>
 <p>发现当外层循环都固定的时候，如果 <span class="arithmatex">\(j + 1\)</span>，那么 <span class="arithmatex">\(k\)</span> 的取值范围就会从 <span class="arithmatex">\([0,j)\)</span> 变到 <span class="arithmatex">\([0,j+1)\)</span>。</p>
 <p>那么决策集合就只会多 <span class="arithmatex">\(dp_{i-1,j}\)</span> 这个决策。</p>
-<p>然后要做的就是在决策集合里查询所有满足 <span class="arithmatex">\(a_j &gt; a_k\)</span> 的 <span class="arithmatex">\(f_{i-1,k}\)</span> 的和。</p>
-<p>发现直接枚举需要不断判断 <span class="arithmatex">\(a_j &gt; a_k\)</span> 。所以可以干脆在决策集合里按照 <span class="arithmatex">\(a_i\)</span> 排序。</p>
-<p>然后询问就直接问前缀和即可。</p>
+<p>然后要做的就是在决策集合里查询所有满足 <span class="arithmatex">\(a_j &gt; a_k\)</span> 的 <span class="arithmatex">\(dp_{i-1,k}\)</span> 的和。</p>
+<p>发现直接枚举只需要不断判断 <span class="arithmatex">\(a_j &gt; a_k\)</span> ，也就是<strong>只在判断关键码的大小关系</strong>。</p>
+<p>所以可以在决策集合里按照 <span class="arithmatex">\(a_i\)</span> 排序，离散化一下，设  <span class="arithmatex">\(a_j\)</span> 离散化之后的值为 <span class="arithmatex">\(val(a_j)\)</span> 。</p>
+<p>询问时只需要询问 <span class="arithmatex">\(a_j\)</span> 离散化之后的位置 <span class="arithmatex">\(val(a_j)\)</span> 的前缀和即可。</p>
+<p>每次对于 <span class="arithmatex">\(dp_{i,j}\)</span> 的决策<strong>进行完之后</strong>，<strong>再插入</strong> <span class="arithmatex">\(dp_{i-1,j}\)</span> <strong>这个决策</strong>，以保证方程中 <span class="arithmatex">\(k &lt; j\)</span> 这个条件被满足。</p>
+<p>实际上就是类似可持久化 Trie 的“<strong>依次插入</strong>”的思想，以强制去掉（直接不加入它们）<span class="arithmatex">\(j\)</span> 后面的部分的方式使得 <span class="arithmatex">\(k &lt; j\)</span> 始终被满足。 </p>
 <p>这个过程可以使用平衡树。</p>
-<p>不过，因为 <span class="arithmatex">\(n\)</span> 很小，所以可以对 <span class="arithmatex">\(A\)</span> 离散化，然后直接在值域上建立一个树状数组。</p>
-<p>插入决策 <span class="arithmatex">\(f_{i-1,j}\)</span> 的操作，就令 <span class="arithmatex">\(j\)</span> 这个位置加上 <span class="arithmatex">\(f_{i-1,j}\)</span> 即可。</p>
-<p>然后查询直接前缀和就行了，不过需要注意要让 <span class="arithmatex">\(a_0\)</span> 离散化之后的值也被算树状数组进去。</p>
+<p>不过，因为 <span class="arithmatex">\(n\)</span> 很小，所以可以对 <span class="arithmatex">\(A\)</span> 离散化，然后直接<strong>在值域上建立一个树状数组</strong>。</p>
+<p>插入决策 <span class="arithmatex">\(dp_{i-1,j}\)</span> 的操作，就令 <span class="arithmatex">\(j\)</span> 这个位置加上 <span class="arithmatex">\(dp_{i-1,j}\)</span> 即可。</p>
+<p>那么查询直接在树状数组上求出 <span class="arithmatex">\(val(a_j)\)</span> 这个位置的前缀和就行了，不过需要注意要让 <span class="arithmatex">\(a_0\)</span> 离散化之后的值 <span class="arithmatex">\(1\)</span> 也被算树状数组进去。</p>
 <h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>DP 的优化大多都分为两种：</p>
 <ol>
@@ -1496,7 +1499,7 @@
 <p>第一种主要是滚动数组，提取题目信息等层面的优化。</p>
 <p>第二种就是斜率优化，DS优化，费用提前计算这种技巧性的优化。</p>
 <p>其思想大多都是，在外层循环固定的条件下，</p>
-<p>将利用枚举来在决策集合中转移的操作，优化为直接在决策集合中找到最优/总和对应的状态或者信息。</p>
+<p>将利用枚举来在决策集合中转移的操作，优化为<strong>直接在决策集合中找到最优/总和对应的状态或者信息</strong>。</p>
 <p>并根据决策集合的上下界变化，单调性质去选择对应的优化策略。</p>
 <p>DS 优化主要用于<strong>上下界不均匀的变化</strong>（<strong>插入</strong>等变化方式），或者决策集合可能被<strong>修改</strong>而不是去除的情况。</p>
 <p>上方的两道例题，第一道是上下界不均匀变化（对右端点排序过后，左端点不一定是单调的）+ 决策集合中的元素可能随着转移被修改。</p>
