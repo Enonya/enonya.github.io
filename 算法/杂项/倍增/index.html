@@ -225,20 +225,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%80%9D%E8%80%83/20220413B/" class="md-nav__link">
-        20220413B
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88Tricks/" class="md-nav__link">
         三月Tricks
       </a>
@@ -311,34 +297,6 @@
     <li class="md-nav__item">
       <a href="../../../%E6%80%9D%E8%80%83/%E5%9B%9B%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
         四月好题
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%80%9D%E8%80%83/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-nav__link">
-        早期CF和AT杂题
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%80%9D%E8%80%83/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E9%A2%98%E8%A7%A3/" class="md-nav__link">
-        早期CF和AT题解
       </a>
     </li>
   
@@ -1252,6 +1210,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220413B/" class="md-nav__link">
+        20220413B
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1338,6 +1310,34 @@
     <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Uoj105/" class="md-nav__link">
         Uoj105
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-nav__link">
+        早期CF和AT杂题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        早期CF和AT题解
       </a>
     </li>
   
@@ -1452,6 +1452,13 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+<p>倍增推式子的时候都要遵循这样的一个规则：</p>
+<p><a href="https://imgtu.com/i/LIsUWF"><img alt="LIsUWF.png" src="https://s1.ax1x.com/2022/04/25/LIsUWF.png" /></a></p>
+<p><span class="arithmatex">\(u \sim f_{u,i}\)</span> 这一段的信息要由 <span class="arithmatex">\(u \sim f_{u, i -1}\)</span> 和 <span class="arithmatex">\(f_{u,i - 1} \sim f_{f_{u,i-1},i-1}\)</span> 合并来得到。</p>
+<p>（<span class="arithmatex">\(f_{f_{u,i-1},i-1}\)</span> 就是 <span class="arithmatex">\(f_{u,i}\)</span>）</p>
+<p>然后初始化的时候只需要初始化 <span class="arithmatex">\(f_{u,0}\)</span>，然后在递推式子的时候<strong>先正序循环</strong>，保证从小到大更新。</p>
+<p>二进制拆分（或者说：“<strong>拼凑</strong>”） 的时候再使用<strong>倒序循环</strong>。</p>
+<p>可以类比线段树的 <code>pushup</code> 函数。</p>
 
               
             </article>

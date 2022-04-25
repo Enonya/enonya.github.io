@@ -225,20 +225,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%80%9D%E8%80%83/20220413B/" class="md-nav__link">
-        20220413B
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../%E6%80%9D%E8%80%83/%E4%B8%89%E6%9C%88Tricks/" class="md-nav__link">
         三月Tricks
       </a>
@@ -311,34 +297,6 @@
     <li class="md-nav__item">
       <a href="../../../%E6%80%9D%E8%80%83/%E5%9B%9B%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
         四月好题
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%80%9D%E8%80%83/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-nav__link">
-        早期CF和AT杂题
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%80%9D%E8%80%83/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E9%A2%98%E8%A7%A3/" class="md-nav__link">
-        早期CF和AT题解
       </a>
     </li>
   
@@ -1286,6 +1244,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220413B/" class="md-nav__link">
+        20220413B
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1372,6 +1344,34 @@
     <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Uoj105/" class="md-nav__link">
         Uoj105
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-nav__link">
+        早期CF和AT杂题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        早期CF和AT题解
       </a>
     </li>
   
@@ -1469,10 +1469,11 @@
 <p>大概就是给你树上的两个节点，然后问他们共同的祖先里深度最大的那一个。</p>
 <h3 id="_2">倍增<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>考虑设 <span class="arithmatex">\(f_{i,j}\)</span> 表示 <span class="arithmatex">\(i\)</span> 的 <span class="arithmatex">\(2^j\)</span> 级祖先。</p>
-<p>这个可以递推 。 <span class="arithmatex">\(f_{i,j}=f_{f_{i,j-1},j-1}\)</span>。</p>
-<p>然后现在给定一个询问 <span class="arithmatex">\(lca(u,v)\)</span>，考虑把深度较大的那一个往上跳到它的 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 级祖先（每个都试一试，如果这个祖先的深度大于等于原来深度更小的点，就跳到这个祖先）。</p>
+<p>这个可以倍增递推 。 <span class="arithmatex">\(f_{i,j}=f_{f_{i,j-1},j-1}\)</span>。</p>
+<p>然后现在给定一个询问 <span class="arithmatex">\(lca(u,v)\)</span>，考虑把深度较大的那一个往上跳到它的 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 级祖先（此处是<strong>从大到小</strong>枚举）</p>
+<p>（每个都试一试，如果这个祖先 <span class="arithmatex">\(f_{u,i}\)</span> 的深度 <span class="arithmatex">\(dep_{f_{u,i}}\)</span> 大于等于原来深度更小的点的深度 <span class="arithmatex">\(dep_v\)</span>，就跳到这个祖先 <span class="arithmatex">\(f_{u,i}\)</span>）。</p>
 <p>如果此时两个节点重合了，LCA 就是原来深度小的节点。</p>
-<p>否则保持两个节点的深度一致，然后各自往上跳 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 次幂步，并且保持上跳之后仍然不相遇。</p>
+<p>否则<strong>保持两个节点的深度一致</strong>，然后各自往上跳 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 次幂步，并且保持上跳之后仍然不相遇。</p>
 <p>这个过程结束之后， <span class="arithmatex">\(u,v\)</span> 当前的父亲必然相同，这就是要求的 LCA。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1490,10 +1491,16 @@
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">dep</span><span class="p">[</span><span class="n">si_n</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">si_n</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">dep</span><span class="p">[</span><span class="n">si_n</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">si_n</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
 <span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">fa</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">fa</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">fa</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">19</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="mi">-1</span><span class="p">]][</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">19</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="mi">-1</span><span class="p">]][</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">head</span><span class="p">;</span><span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Next</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ver</span><span class="p">;</span><span class="w"> </span>
 <span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="o">==</span><span class="n">fa</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
@@ -1502,9 +1509,13 @@
 <span class="p">}</span><span class="w"></span>
 <span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">lca</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">&lt;</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">])</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">19</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">&gt;=</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">])</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">19</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">&gt;=</span><span class="n">dep</span><span class="p">[</span><span class="n">y</span><span class="p">])</span><span class="w"> </span>
+<span class="w">            </span><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">19</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">19</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="w"> </span>
+<span class="w">            </span><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>

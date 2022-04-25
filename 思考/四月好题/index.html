@@ -227,20 +227,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../20220413B/" class="md-nav__link">
-        20220413B
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../%E4%B8%89%E6%9C%88Tricks/" class="md-nav__link">
         三月Tricks
       </a>
@@ -369,6 +355,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cf1661d-progressions-covering" class="md-nav__link">
+    CF1661D Progressions Covering
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -378,34 +371,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-nav__link">
-        早期CF和AT杂题
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E9%A2%98%E8%A7%A3/" class="md-nav__link">
-        早期CF和AT题解
-      </a>
     </li>
   
 
@@ -1277,6 +1242,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E9%A2%98%E8%A7%A3/20220413B/" class="md-nav__link">
+        20220413B
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1369,6 +1348,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%A2%98%E8%A7%A3/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-nav__link">
+        早期CF和AT杂题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%A2%98%E8%A7%A3/%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        早期CF和AT题解
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1424,6 +1431,13 @@
           <li class="md-nav__item">
   <a href="#cf1672e-notepadexe" class="md-nav__link">
     CF1672E notepad.exe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf1661d-progressions-covering" class="md-nav__link">
+    CF1661D Progressions Covering
   </a>
   
 </li>
@@ -1652,15 +1666,16 @@
 <p>求 <span class="arithmatex">\(a\)</span> 的所有排列中贡献最大的那一个排列，并输出。</p>
 <p><span class="arithmatex">\(n \le 2e5\)</span>。</p>
 </blockquote>
-<p>这是一道结论题，在 zhihu 上看到了一个链接，给出了这个结论的<a href="https://blog.csdn.net/yunxiaoqinghe/article/details/113153795">证明</a></p>
+<p>这是一道关于置换环的结论题，在 zhihu 上看到了一个链接，给出了这个结论的<a href="https://blog.csdn.net/yunxiaoqinghe/article/details/113153795">证明</a></p>
 <p>假设原序列 <span class="arithmatex">\(a\)</span> 是这样的：</p>
 <div class="arithmatex">\[1\ \ 1\ \ 4\ \ 5\ \ 1\ \ 4\]</div>
 <p>排序后的 <span class="arithmatex">\(b\)</span> 是这样的</p>
 <div class="arithmatex">\[1\ \ 4\ \ 5\ \ 1\ \ 1\ \ 4\]</div>
 <p>将他们放到一起：</p>
-<div class="arithmatex">\[a= 1\ \ 1\ \ 4\ \ 5\ \ 1\ \ 4 \\b = 1\ \ 4\ \ 5\ \ 1\ \ 1\ \ 4\]</div>
+<div class="arithmatex">\[a= 1\ \ 1\ \ 4\ \ 5\ \ 1\ \ 4 \]</div>
+<div class="arithmatex">\[b = 1\ \ 4\ \ 5\ \ 1\ \ 1\ \ 4\]</div>
 <p>可以发现，<span class="arithmatex">\(a_2\)</span> 被换到了位置 <span class="arithmatex">\(4\)</span>，<span class="arithmatex">\(a_3\)</span> 被换到了位置 <span class="arithmatex">\(2\)</span>，<span class="arithmatex">\(a_4\)</span> 被换到了位置 <span class="arithmatex">\(3\)</span>。</p>
-<p>用箭头表示就是：$ [3]\to [2], [2] \to [4],[4] \to [3]$，这是一个环状结构，称它为“<strong>置换环</strong>”。</p>
+<p>用箭头表示就是：<span class="arithmatex">\([3]\to [2], [2] \to [4],[4] \to [3]\)</span>，这是一个环状结构，称它为“<strong>置换环</strong>”。</p>
 <p>当然，如果是自己换到自己，也可以算作一个置换环，所以这里的置换环还有 <span class="arithmatex">\([1] \to [1], [5] \to [5], [6] \to [6]\)</span>。</p>
 <p>但是如果是 <span class="arithmatex">\(a_1 = a_5 = b_1 = b_5\)</span> 这种情况，<span class="arithmatex">\([1] \to [5], [5] \to [1]\)</span> 是不能算作一个置换环的，应当单独考虑成 <span class="arithmatex">\([1] \to [1], [5] \to [5]\)</span>。</p>
 <p>也就是说，如果 <span class="arithmatex">\(a_i = b_i\)</span> ，那么 <span class="arithmatex">\(i\)</span> 一定处于自己指向自己的一个置换环上。</p>
@@ -1678,7 +1693,7 @@
 <p>置换环上不能有两个 <span class="arithmatex">\(a_i = a_j\)</span> 的位置 <span class="arithmatex">\(i,j\)</span>。</p>
 </blockquote>
 <p>假设有一个置换环，换上的元素用它的权值表示：</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(5 \to 1 ,1 \to 4, 4 \to 1, 1 \to 5\)</span>\)</span>。</p>
+<div class="arithmatex">\[5 \to 1 ,1 \to 4, 4 \to 1, 1 \to 5\]</div>
 <p>也就是 <span class="arithmatex">\(1 4 1 5\)</span> 变成 <span class="arithmatex">\(4151\)</span>。</p>
 <p>用结论 <span class="arithmatex">\(2\)</span> 可以得到它的最小交换次数是 <span class="arithmatex">\(3\)</span>。</p>
 <p>但是，实际上只需要交换 <span class="arithmatex">\([2],[1]\)</span>，然后交换 <span class="arithmatex">\([3],[4]\)</span>，只需要 <span class="arithmatex">\(2\)</span> 次就可以了。</p>
@@ -1745,6 +1760,27 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">二分</span><span class="o">/</span><span class="n">构造</span><span class="o">/</span><span class="n">贪心</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+<h3 id="cf1661d-progressions-covering">CF1661D Progressions Covering<a class="headerlink" href="#cf1661d-progressions-covering" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给你一个序列 <span class="arithmatex">\(a\)</span>，初始全部为 <span class="arithmatex">\(0\)</span>，给你一个序列 <span class="arithmatex">\(b\)</span>。</p>
+<p>你可以对 <span class="arithmatex">\(a\)</span> 做任意次这样的操作：</p>
+<ul>
+<li>对于一个长度为 <span class="arithmatex">\(k\)</span> 的区间 <span class="arithmatex">\([l,r]\)</span>，分别让 <span class="arithmatex">\(a_l,a_{l + 1},\dots,a_{r}\)</span> 加上 <span class="arithmatex">\(1,2,3,\dots,k\)</span>。</li>
+</ul>
+<p>问使得 <span class="arithmatex">\(\forall i,a_i \ge b_i\)</span> 的最小操作次数。</p>
+</blockquote>
+<p>这是一个关于<strong>等差数列</strong>的经典 Trick。</p>
+<p>区间 <span class="arithmatex">\([l,r]\)</span> 加等差数列，等同于在<strong>差分数组</strong>上的 <span class="arithmatex">\([l + 1,r]\)</span> 做一次<strong>区间加</strong> <span class="arithmatex">\(d\)</span>，然后令 <span class="arithmatex">\(c[l] + \text{BEGIN}\)</span>，<span class="arithmatex">\(c[r+1] - \text{END}\)</span>。</p>
+<p><span class="arithmatex">\(\text{BEGIN,END}\)</span> 分别是首项和末项。</p>
+<p>单点询问只需要询问线段树上的 <span class="arithmatex">\(sum(1,pos)\)</span> 即可。</p>
+<p>发现序列 <span class="arithmatex">\(a\)</span> 开头的元素只能一个一个减去，结尾的元素只能 <span class="arithmatex">\(k\)</span> 个 <span class="arithmatex">\(k\)</span> 个减去，</p>
+<p>最终结果要求最小，所以尽量让每一个元素都多减去大一点的。</p>
+<p>考虑一个贪心，从结尾开始扫，如果当前位置的值 <span class="arithmatex">\(a_i\)</span> 不满足条件，不断加 <span class="arithmatex">\(k\)</span> 直到 <span class="arithmatex">\(b_i \le a_i\)</span>。</p>
+<p>然后这些操作对于前面的贡献也需要算上。</p>
+<p>扫的时候累加答案即可。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">差分</span><span class="o">/</span><span class="n">线段树</span><span class="o">/</span><span class="n">贪心</span><span class="o">/</span><span class="n">等差数列</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
 
               
             </article>
@@ -1774,13 +1810,13 @@
       
       
         
-        <a href="../%E6%97%A9%E6%9C%9FCF%E5%92%8CAT%E6%9D%82%E9%A2%98/" class="md-footer__link md-footer__link--next" aria-label="下一页: 早期CF和AT杂题" rel="next">
+        <a href="../../%E6%80%BB%E7%BB%93/%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" class="md-footer__link md-footer__link--next" aria-label="下一页: 对自己近期目标的一个思考" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              早期CF和AT杂题
+              对自己近期目标的一个思考
             </div>
           </div>
           <div class="md-footer__button md-icon">
