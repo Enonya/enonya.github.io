@@ -1185,6 +1185,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1497,6 +1511,8 @@
 <p>然后重新计算 <span class="arithmatex">\(u\)</span> 对 <span class="arithmatex">\(v\)</span> 的贡献（换根），不过因为 <span class="arithmatex">\(fa\)</span> 在当前情况变成了 <span class="arithmatex">\(u\)</span> 的儿子，所以我们需要先把 <span class="arithmatex">\(fa\)</span> 对 <span class="arithmatex">\(u\)</span> 的贡献计算出来。</p>
 <p>计算完了之后在答案里取个最大值即可。</p>
 <h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>实现</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1624,6 +1640,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>记录最大值和次大值的时候也可以利用<code>std::multiset</code>，把从下到上的时候把所有 <span class="arithmatex">\(trans\)</span> 扔进去，然后从上到下转移的时候判当前的 <span class="arithmatex">\(trans\)</span> 是不是 <code>multiset</code> 当前的最大值就可以，如果是，那么删除这个值并用次大值更新，反之直接用最大值更新即可。 </p>
 <p>不过复杂度会多一个 <span class="arithmatex">\(\log\)</span>。</p>
 <hr />

@@ -1284,6 +1284,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1521,6 +1535,7 @@
 
 <h2 id="_1">三月好题改错<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="cf1646e-power-board">CF1646E Power Board<a class="headerlink" href="#cf1646e-power-board" title="Permanent link">&para;</a></h3>
+<p><code>Mar/05/2022</code></p>
 <blockquote>
 <p>给你一个 <span class="arithmatex">\(n\times m\)</span> 的矩阵，且 <span class="arithmatex">\(a_{i,j}=i^j\)</span>。求这个矩阵当中有多少不同的数。</p>
 <p>1e6。</p>
@@ -1540,6 +1555,8 @@
 <p>写一个暴力即可查询。</p>
 <p>转化到原题，就是对于每一个不是某一个整数的大于等于 <span class="arithmatex">\(2\)</span> 的整数次幂的数求一次。</p>
 <p><code>std::bitset</code> 即可。 思路来自：<a href="https://codeforces.com/blog/entry/100584?#comment-892898">https://codeforces.com/blog/entry/100584?#comment-892898</a> <a href="https://codeforces.com/profile/Suri429">@Suri429</a></p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1591,10 +1608,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">暴力</span><span class="o">/</span><span class="n">bitset</span><span class="o">/</span><span class="n">思维</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="cf1647e-madoka-and-the-sixth-graders">CF1647E Madoka and the Sixth-graders<a class="headerlink" href="#cf1647e-madoka-and-the-sixth-graders" title="Permanent link">&para;</a></h3>
+<p><code>Mar/22/2022</code></p>
 <blockquote>
 <p>给 <span class="arithmatex">\(n\)</span> 张桌子，初始的时候桌子上坐着的学生的编号分别为 <span class="arithmatex">\(a_1, a_2, \dots , a_n\)</span>。</p>
 <p>且 <span class="arithmatex">\(a\)</span> 是一个 <span class="arithmatex">\(n\)</span> 的排列，然后给定几组有向关系 <span class="arithmatex">\((i,j)\)</span>，表示每过一节课，桌子 <span class="arithmatex">\(i\)</span> 的学生会移动到桌子 <span class="arithmatex">\(j\)</span>。</p>
@@ -1630,6 +1649,8 @@
 <p>然后从前往后扫描 <span class="arithmatex">\(a\)</span> 当中所有还没有答案的点，对于当中的某一个点 <span class="arithmatex">\(i\)</span> ，它经过 <span class="arithmatex">\(k\)</span> 轮去到的地方是 <span class="arithmatex">\(dest[i]\)</span>。</p>
 <p>那么它的 <span class="arithmatex">\(a[i]\)</span> 必然要大于所有 <span class="arithmatex">\(dest = dest[i]\)</span> 的点当中编号最小的那个点初始的 <span class="arithmatex">\(a\)</span>，也就是 <span class="arithmatex">\(b[dest[i]]\)</span>。</p>
 <p>所以在集合 <span class="arithmatex">\(S\)</span> 当中二分一个大于 <span class="arithmatex">\(b[dest[i]]\)</span> 的，最小的点填上去就可。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1807,10 +1828,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">倍增</span><span class="o">/</span><span class="n">图论</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="cf1650g-counting-shortcuts">CF1650G Counting Shortcuts<a class="headerlink" href="#cf1650g-counting-shortcuts" title="Permanent link">&para;</a></h3>
+<p><code>Mar/24/2022</code></p>
 <blockquote>
 <p>给定一张无权无向图，问题从某个点 <span class="arithmatex">\(s\)</span> 到某个点 <span class="arithmatex">\(t\)</span> 的好路径的条数对 <span class="arithmatex">\(1e9+7\)</span> 取模。</p>
 <p>一个路径是好的，当且仅当这个路径的长度和 <span class="arithmatex">\(s,t\)</span> 之间的最短路的长度差不超过 <span class="arithmatex">\(1\)</span>。</p>
@@ -1818,7 +1841,9 @@
 </blockquote>
 <p>首先考虑求出 <span class="arithmatex">\(s\)</span> 出发到每一个点的最短路。</p>
 <p>然后 DP 即可。</p>
-<p>方程直接看代码：</p>
+<p>方程比较显然，直接看代码即可：</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1876,10 +1901,12 @@
 <span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">    </span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DP</span><span class="o">/</span><span class="n">图论</span><span class="o">/</span><span class="n">最短路</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="cf1654e-arithmetic-operations">CF1654E Arithmetic Operations<a class="headerlink" href="#cf1654e-arithmetic-operations" title="Permanent link">&para;</a></h3>
+<p><code>Mar/21/2022</code></p>
 <blockquote>
 <p>给一个数列 <span class="arithmatex">\(a\)</span> ，每次操作可以任意修改一个位置的一个数，修改后的数可以是正整数，负整数和零。</p>
 <p>问使得 <span class="arithmatex">\(a\)</span> 成为等差数列的最小的操作次数。</p>
@@ -1888,8 +1915,9 @@
 <p>把每个元素看成一个二维平面上的点 <span class="arithmatex">\((i,a_i)\)</span>。</p>
 <p>然后要求的可以转化为求这个平面上最多有多少个点共线，然后用 <span class="arithmatex">\(n\)</span> 减去这个值即可。</p>
 <p><strong>也就是把等差数列转换成平面直角坐标系上的一条直线。</strong></p>
-<p>这个东西好像是根号分治，不会，所以先空着了。</p>
+<p>但是这个东西好像是根号分治，不会，所以先空着了。</p>
 <h3 id="cf1657f-words-on-tree">CF1657F Words On Tree<a class="headerlink" href="#cf1657f-words-on-tree" title="Permanent link">&para;</a></h3>
+<p><code>Mar/24/2022</code></p>
 <blockquote>
 <p>给一棵树，给 <span class="arithmatex">\(q\)</span> 个三元组 <span class="arithmatex">\((x_i,y_i,s_i)\)</span>，<span class="arithmatex">\(x_i,y_i\)</span> 是节点编号， <span class="arithmatex">\(s_i\)</span> 是字符串，长度和树上 <span class="arithmatex">\((x_i,y_i)\)</span> 的简单路径长度一致。</p>
 <p>构造一棵树，每个节点上有一个字符，使得它满足这 <span class="arithmatex">\(q\)</span> 个三元组的约束。</p>
@@ -1904,7 +1932,7 @@
 <p>（对每个节点，对经过它的三元组留下的候选集合求交就可以得到）</p>
 <p>然后就可以 2-SAT 了。</p>
 <p>但是这样直接实现会非常复杂。</p>
-<p>考虑另外一种写法。</p>
+<p>考虑是否存在另外一种更好的写法。</p>
 <p>扫描每一个串，然后内层扫描路径上的每一个节点，如果当前节点没有候选集合，给他加上。</p>
 <p>然后考虑这样的一个过程：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1919,10 +1947,12 @@
 </code></pre></div>
 </td></tr></table>
 <p>如果 <span class="arithmatex">\(s_j\)</span> 不等于 <span class="arithmatex">\(cand[i][0]\)</span> ，那么证明选 <span class="arithmatex">\(s[j]\)</span> 就不能选 <span class="arithmatex">\(cand[i][0]\)</span> 。</p>
-<p>所以链接 <span class="arithmatex">\(s[j] \to cand[i][1]\)</span> ，然后把逆否命题 <span class="arithmatex">\(cand[i][0] \to s[len-j-1]\)</span> 链接上。</p>
+<p>所以连接 <span class="arithmatex">\(s[j] \to cand[i][1]\)</span> ，然后把对应的逆否命题 <span class="arithmatex">\(cand[i][0] \to s[len-j-1]\)</span> 链接上。</p>
 <p>其它三种情况同理。</p>
 <p>这个时候再跑 2-SAT 就可以了。</p>
 <p>因为时限 <span class="arithmatex">\(9s\)</span> 所以随便搞。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
 <span class="normal">  3</span>
@@ -2228,10 +2258,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">LCA</span><span class="o">/</span><span class="n">思维</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">SAT</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="cf1656d-k-good">CF1656D K-good<a class="headerlink" href="#cf1656d-k-good" title="Permanent link">&para;</a></h3>
+<p><code>Mar/25/2022</code></p>
 <blockquote>
 <p>一个正整数 <span class="arithmatex">\(n\)</span> 是 <span class="arithmatex">\(k\)</span> Good 的，当且仅当 <span class="arithmatex">\(n\)</span> 可以被分成 <span class="arithmatex">\(k\)</span> 个不同正整数的和，且这 <span class="arithmatex">\(k\)</span> 个正整数模 <span class="arithmatex">\(k\)</span> 意义下相互不同余。</p>
 <p>给定 <span class="arithmatex">\(n\)</span> （1e18），求出任意一个合法的，<span class="arithmatex">\(\ge 2\)</span> 的 <span class="arithmatex">\(k\)</span> ，使得 <span class="arithmatex">\(n\)</span> 是 <span class="arithmatex">\(k\)</span> Good 的。</p>
@@ -2246,6 +2278,8 @@
 <p>排除完无解情况之后。</p>
 <p>把一个数的所有 <span class="arithmatex">\(2\)</span> 因子提出来组成 <span class="arithmatex">\(2^k\)</span>。</p>
 <p>然后答案必然是 <span class="arithmatex">\(2^{k+1}\)</span> 和 <span class="arithmatex">\(\dfrac{n}{2^k}\)</span> 的最小值。</p>
+<details class="node">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2313,6 +2347,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">数学</span><span class="o">/</span><span class="n">数论</span><span class="o">/</span><span class="n">同余</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
@@ -2322,10 +2357,13 @@
 <p>任意两个连通块之内的和是相等的。</p>
 <p>1e5。</p>
 </blockquote>
+<p><code>Mar/25/2022</code></p>
 <p>结论：黑白染色，一种颜色的节点赋值为 <span class="arithmatex">\(-deg(u)\)</span>，另外一种 <span class="arithmatex">\(+deg(u)\)</span>。</p>
 <p>考虑一个点对于和它相连的所有顶点，在删除之后做的贡献即可。</p>
 <p>更好一点的证明：</p>
 <p><a href="https://imgtu.com/i/qN62wV"><img alt="qN62wV.png" src="https://s1.ax1x.com/2022/03/25/qN62wV.png" /></a></p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2431,10 +2469,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">图论</span><span class="o">/</span><span class="n">思维</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="abc243f-lottery">ABC243F <strong>Lottery</strong><a class="headerlink" href="#abc243f-lottery" title="Permanent link">&para;</a></h3>
+<p><code>Mar/25/2022</code></p>
 <blockquote>
 <p>Takahashi is participating in a lottery.</p>
 <p>Each time he takes a draw, he gets one of the <span class="arithmatex">\(N\)</span> prizes available. Prize <span class="arithmatex">\(i\)</span> is awarded with probability <span class="arithmatex">\(\dfrac{w_i}{\sum^{N}_{j=1} w_j}\)</span> , The results of the draws are independent of each other.</p>
@@ -2458,6 +2498,8 @@
 <p>然后设 <span class="arithmatex">\(dp[i][j][k]\)</span> 表示 <span class="arithmatex">\(N = i, M = j, K = k\)</span> 的时候的这个东西。</p>
 <p>考虑枚举每一种物品选多少个即可转移。</p>
 <p>复杂度 <span class="arithmatex">\(\text{O}(NMK^2)\)</span>。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2579,6 +2621,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">组合数学</span><span class="o">/</span><span class="n">DP</span><span class="o">/</span><span class="n">递推</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>

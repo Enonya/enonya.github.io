@@ -1245,6 +1245,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1467,6 +1481,8 @@
 <p>这个生成树一定包含 <span class="arithmatex">\(|E|-k\)</span> 条边里面连接生成森林的<strong>两个不连通节点</strong>的权值最小的边。</p>
 </blockquote>
 <p>把这一条边加入到最小生成树里，顺便合并一下 <span class="arithmatex">\((u,v)\)</span> </p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1514,6 +1530,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>复杂度 <span class="arithmatex">\(\text{O}(m \log m)\)</span>。</p>
 <h3 id="prim">Prim<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h3>
 <p>一般用于稠密图。</p>
@@ -1526,6 +1543,8 @@
 <p>维护一个 <span class="arithmatex">\(vis\)</span> 即可。从没有被选中的节点当中选出一个 <span class="arithmatex">\(dis\)</span> 最小的，标记它。</p>
 <p>扫描和这个被选点的所有出边，更新另外一个端点的 <span class="arithmatex">\(dis\)</span> 。</p>
 <p>最后生成树的权值和就是 <span class="arithmatex">\(\sum\limits^{n}_{i=2} dis_i\)</span>。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1573,6 +1592,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>复杂度 <span class="arithmatex">\(\text{O}(n^2)\)</span>，可以用二叉堆优化到 <span class="arithmatex">\(\text{O}(m \log n)\)</span>，但不如直接 Kruskal。</p>
 
               

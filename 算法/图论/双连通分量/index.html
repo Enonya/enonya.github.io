@@ -1244,6 +1244,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1450,6 +1464,8 @@
 <p>而且，<strong>任意一个简单环中的边都不是桥边</strong>。</p>
 <p>去掉桥边之后，剩下的连通块就是一个个 e-DCC。</p>
 <p>缩点也比较容易，直接把所有去掉桥边之后的连通块分别合并成一个节点即可。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1625,6 +1641,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p><span class="arithmatex">\(in\_edge\)</span> 表示递归到当前节点所经过的那一条边的编号。</p>
 <p><span class="arithmatex">\(in\_edge\)</span> 存在的原因是，如果按照正常搜索树的更新方式，<span class="arithmatex">\(fa_u\)</span> 的 <span class="arithmatex">\(dfn\)</span> 必然不会用来更新 <span class="arithmatex">\(u\)</span> 的 <span class="arithmatex">\(low\)</span>。</p>
 <p>但是如果出现重边的话，那 <span class="arithmatex">\((fa_u,u)\)</span> 必然不是桥边，那么就需要用 <span class="arithmatex">\(fa_u\)</span> 的 <span class="arithmatex">\(dfn\)</span> 更新 <span class="arithmatex">\(low_u\)</span>。</p>
@@ -1648,6 +1665,8 @@
 <p>因为判定条件里面有 <span class="arithmatex">\(=\)</span>，所以就不需要再判 <span class="arithmatex">\(in\_edge\)</span> 了，不过在没有特殊说明的情况下，一定要记住把重边直接在读入的时候判掉。</p>
 <p>缩点的话唯一要注意的就是要把割点单独分裂出来，但是割点又要存在于它连接的所有v-DCC 当中。</p>
 <p>所以要给割点一个新编号。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
 <span class="normal">  3</span>
@@ -1873,6 +1892,7 @@
 <span class="p">}</span><span class="w"> </span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>其实，如果原图是<strong>无向连通图的话</strong>，<strong>vdcc 缩完点之后得到的也必然是一棵树</strong>。</p>
 <p>并且，如果把割点看作白点， vdcc 看作黑点，那么这颗树必然是<strong>黑白相间</strong>的。</p>
 <p>也可以理解为一个二分图。</p>

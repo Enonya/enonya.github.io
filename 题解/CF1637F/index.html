@@ -1185,6 +1185,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1473,6 +1487,8 @@
 <p>如果说这个 <span class="arithmatex">\(h\)</span> 最大的点不是 <span class="arithmatex">\(root\)</span> ，那么它就会在某个子树里面，就会导致子树里需要多放几个 <span class="arithmatex">\(e=h_{max}\)</span> 的 tower，明显不是最优的。</p>
 <p>所以我们就直接令这个 <span class="arithmatex">\(h\)</span> 最大的点为 <span class="arithmatex">\(root\)</span> ，然后递归下去处理就行了。</p>
 <h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>实现</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1516,11 +1532,11 @@
 <span class="kt">signed</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span><span class="w"></span>
 <span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld%lld&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">u</span><span class="p">,</span><span class="o">&amp;</span><span class="n">v</span><span class="p">),</span><span class="n">add</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">),</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">root</span><span class="o">=</span><span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">root</span><span class="p">]</span><span class="o">?</span><span class="n">i</span><span class="o">:</span><span class="n">root</span><span class="p">;</span><span class="w"> </span><span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">res</span><span class="p">),</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// </span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">root</span><span class="o">=</span><span class="n">height</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">root</span><span class="p">]</span><span class="o">?</span><span class="n">i</span><span class="o">:</span><span class="n">root</span><span class="p">;</span><span class="w"> </span><span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">res</span><span class="p">),</span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// </span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<hr />
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">树</span><span class="o">/</span><span class="n">树形DP</span><span class="o">/</span><span class="n">换根DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>

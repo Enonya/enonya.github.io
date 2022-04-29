@@ -1244,6 +1244,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1481,6 +1495,8 @@
 <p>并且 SCC 编号的顺序就是 <strong>逆拓扑序</strong>。</p>
 <p>缩点之后，我们就能非常方便地进行 DP，因为正常 DP 的顺序本来就是拓扑序。</p>
 <p>一般都是直接递推求解。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1574,6 +1590,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>Tarjan 缩完点之后给 SCC 标记的顺序是逆拓扑序的原因非常简单；</p>
 <p>（图有点问题，同一个 SCC 当中的节点的边应该画成双向，但是这里画成了单向）</p>
 <p><a href="https://imgtu.com/i/bfB2vD"><img alt="bfB2vD.png" src="https://s1.ax1x.com/2022/03/10/bfB2vD.png" /></a> </p>

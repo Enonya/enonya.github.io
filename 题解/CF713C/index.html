@@ -1185,6 +1185,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1527,6 +1541,8 @@
 <p>发现当外层循环的 <span class="arithmatex">\(i\)</span> 固定，<span class="arithmatex">\(j\)</span> 每次增大 <span class="arithmatex">\(1\)</span> 的时候，<span class="arithmatex">\(dp_{i-1,k}\)</span> 的候选集合只会新加入一个值： <span class="arithmatex">\(dp_{i-1,j}\)</span>。</p>
 <p>所以可以考虑使用一个变量记录当前候选集合当中的最小值，每次直接使用这个变量进行转移。</p>
 <p>那么每次转移的复杂度就从 <span class="arithmatex">\(\text{O}(n)\)</span> 优化到了 <span class="arithmatex">\(\text{O}(1)\)</span>，总时间复杂度变为 <span class="arithmatex">\(\text{O}(n^2)\)</span>，可以通过本题。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1582,6 +1598,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>当然，实际上可以对 <span class="arithmatex">\(re\)</span> 进行一次去重，这样复杂度可以降到 <span class="arithmatex">\(\text{O}(n \times |S_a|)\)</span>。</p>
 
               

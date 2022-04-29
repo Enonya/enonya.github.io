@@ -1251,6 +1251,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1505,7 +1519,8 @@
 <p>考虑枚举上一行的所有可行状态 <span class="arithmatex">\(k\)</span> ，然后方程就是 <span class="arithmatex">\(f_{i,j}=f_{i,j}+f_{i-1,k} , \text{if} \ sta(j)\&amp; sta (k) =0\)</span>。</p>
 <p><span class="arithmatex">\(\ sta(j)\&amp; sta (k) =0\)</span> 是因为你需要判断上下有没有相邻的。</p>
 <p>处理可行状态 <span class="arithmatex">\(sta\)</span> 的话只需要枚举所有的 <span class="arithmatex">\(2^n\)</span> 个状态，看他有没有两位是相邻的即可。 </p>
-<p>Code:</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1605,6 +1620,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <h3 id="poj2411-mondriaans-dream"><a href="http://poj.org/problem?id=2411">POJ2411 <strong>Mondriaan's Dream</strong></a><a class="headerlink" href="#poj2411-mondriaans-dream" title="Permanent link">&para;</a></h3>
 <p>棋盘类。</p>
 <p>给你一个 <span class="arithmatex">\(n\times m\)</span> 的矩阵。</p>
@@ -1624,6 +1640,8 @@
 <p>因为是 <span class="arithmatex">\(1\times 2\)</span> 的，所以上下两个状态进行按位或之后，需要满足：任意 <span class="arithmatex">\(0\)</span> 的连通块里，<span class="arithmatex">\(0\)</span> 的个数是偶数个。</p>
 <p>那么先预处理所有行内合法的状态。</p>
 <p>然后枚举行，再枚举上一行的状态和当前行的状态进行转移即可。  </p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1683,6 +1701,7 @@
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table>
+</details>
 
               
             </article>

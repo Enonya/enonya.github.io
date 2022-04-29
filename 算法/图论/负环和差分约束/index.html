@@ -1244,6 +1244,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1456,6 +1470,8 @@
 <p>这种图，1 的做法就要迭代 <span class="arithmatex">\(\text{O}(n^2)\)</span>  级别次，2 只需要 <span class="arithmatex">\(n\)</span> 次。</p>
 <p>还有一种优化是把 <code>std::queue</code> 换成 <code>std::stack</code>。</p>
 <p>另外一种<strong>不一定正确</strong>的卡时 trick 是，当所有节点的总入队次数超过某个设定值的时候，就直接<strong>认为</strong>图中存在负环。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1519,6 +1535,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>还有，如果只是判定负环的话，<span class="arithmatex">\(dis\)</span> 初始化成多少都是没有问题的。</p>
 <p>换成判断正环的话，求最长路即可。</p>
 <h3 id="_3">差分约束<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>

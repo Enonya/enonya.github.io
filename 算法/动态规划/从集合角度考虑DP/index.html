@@ -1251,6 +1251,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1599,7 +1613,7 @@
 <p>也就是考虑把当前集合的方案数加到所有划分后<strong>直接</strong>含有它的集合的方案数当中。</p>
 <p>开大数组后就不用判边界了。</p>
 <p>所以可以得到新的方程：</p>
-<p><span class="arithmatex">\(<span class="arithmatex">\(dp_{i+1,j} = dp_{i+1,j}+dp_{i,j},dp_{i,j+1} = dp_{i,j+1} + dp_{i,j}\)</span>\)</span>。</p>
+<div class="arithmatex">\[dp_{i+1,j} = dp_{i+1,j}+dp_{i,j},dp_{i,j+1} = dp_{i,j+1} + dp_{i,j}\]</div>
 <p>初始化不变。</p>
 <p>可以写出代码：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

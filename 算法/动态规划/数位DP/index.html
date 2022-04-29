@@ -1251,6 +1251,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1481,6 +1495,9 @@
 </ul>
 <p>​       第一种情况就是有上界限制的。</p>
 <p>当然，还有一些其他的细节，就直接看一份伪代码吧</p>
+<details class="node">
+<summary>Code</summary>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1514,40 +1531,40 @@
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
-<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="mi">1</span> <span class="k">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="err">当前位数</span> <span class="n">x</span><span class="o">,</span><span class="err">当前状态</span> <span class="n">y</span><span class="o">,</span><span class="err">前导零限制</span> <span class="n">st</span><span class="o">,</span><span class="err">上界限制</span> <span class="n">limit</span><span class="p">)</span><span class="o">:</span>
-<span class="mi">2</span>   <span class="k">if</span> <span class="err">到达边界</span> <span class="k">then</span> 
-<span class="mi">3</span>       <span class="err">返回边界的答案</span>
-<span class="mi">4</span>   
-<span class="mi">5</span>   <span class="k">if</span> <span class="err">没有上界限制</span> <span class="k">and</span> <span class="err">当前的状态已经记忆化过</span> <span class="k">then</span>
-<span class="mi">6</span>       <span class="err">返回记录的答案</span>
-<span class="mi">7</span>   
-<span class="mi">8</span>   <span class="n">variable</span> <span class="bp">result</span><span class="o">=</span><span class="mi">0</span>   <span class="err">#</span> <span class="err">记录答案</span>
-<span class="mi">9</span>   
-<span class="mi">10</span>  <span class="n">variable</span> <span class="n">up</span><span class="o">=</span><span class="mi">9</span>       <span class="err">#</span> <span class="err">当前位填数的上限</span>
-<span class="mi">11</span>  <span class="k">if</span> <span class="err">有上界限制</span> <span class="k">then</span>
-<span class="mi">12</span>      <span class="n">up</span><span class="o">=</span><span class="err">当前位在</span> <span class="n">n</span> <span class="err">当中的数字</span> <span class="err">#</span> <span class="n">n</span> <span class="err">是要求的</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="err">的自变量</span>
-<span class="mi">13</span>  
-<span class="mi">14</span>  <span class="k">for</span> <span class="err">枚举当前位的填数值</span> <span class="n">from</span> <span class="mi">0</span> <span class="k">to</span> <span class="n">up</span> <span class="o">:</span>
-<span class="mi">15</span>      <span class="k">if</span> <span class="err">当前位填的数不符合限制</span> <span class="k">then</span>
-<span class="mi">16</span>          <span class="k">continue</span>
-<span class="mi">17</span>      <span class="k">if</span> <span class="err">有前导零限制</span> <span class="k">and</span> <span class="err">当前填写的是</span> <span class="mi">0</span> <span class="k">then</span>
-<span class="mi">18</span>          <span class="bp">result</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="err">下一个状态</span><span class="o">,</span><span class="k">true</span><span class="o">,</span><span class="err">是否触碰上界限制</span><span class="p">)</span>
-<span class="mi">19</span>      <span class="k">else</span> <span class="k">then</span>
-<span class="mi">20</span>          <span class="bp">result</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="err">下一个状态</span><span class="o">,</span><span class="k">false</span><span class="o">,</span><span class="err">是否触碰上界限制</span><span class="p">)</span>
-<span class="mi">21</span>      
-<span class="mi">22</span>  <span class="k">if</span> <span class="err">没有前导零限制</span> <span class="k">and</span> <span class="err">没有上界限制</span> <span class="k">then</span>
-<span class="mi">23</span>      <span class="err">记录当前状态的答案</span> <span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
-<span class="mi">24</span>      
-<span class="mi">25</span>  <span class="err">返回答案</span> <span class="bp">result</span>
-<span class="mi">26</span>
-<span class="mi">27</span>
-<span class="mi">28</span>
-<span class="mi">29</span>  <span class="k">function</span> <span class="nf">solve</span><span class="p">(</span><span class="err">要求的</span><span class="n">F</span><span class="err">的自变量</span> <span class="n">n</span><span class="p">)</span>
-<span class="mi">30</span>      <span class="err">存储每一位数字的</span> <span class="n">vector</span> <span class="err">清空</span>
-<span class="mi">31</span>      <span class="k">while</span> <span class="n">n</span><span class="err">!</span><span class="o">=</span><span class="mi">0</span> <span class="k">then</span>
-<span class="mi">32</span>          <span class="n">vector</span> <span class="o">&lt;==</span> <span class="n">n</span><span class="err">%</span><span class="n">base</span>           <span class="err">#</span> <span class="n">base</span><span class="err">表示是哪一个进制</span>
-<span class="mi">33</span>          <span class="n">n</span><span class="o">/=</span><span class="n">base</span>
-<span class="mi">34</span>      <span class="err">返回对应状态的答案（调用</span> <span class="n">dfs</span><span class="err">）</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="nf">dfs</span><span class="p">(</span><span class="err">当前位数</span> <span class="n">x</span><span class="o">,</span><span class="err">当前状态</span> <span class="n">y</span><span class="o">,</span><span class="err">前导零限制</span> <span class="n">st</span><span class="o">,</span><span class="err">上界限制</span> <span class="n">limit</span><span class="p">)</span><span class="o">:</span>
+  <span class="k">if</span> <span class="err">到达边界</span> <span class="k">then</span> 
+  <span class="err">返回边界的答案</span>
+
+<span class="k">if</span> <span class="err">没有上界限制</span> <span class="k">and</span> <span class="err">当前的状态已经记忆化过</span> <span class="k">then</span>
+  <span class="err">返回记录的答案</span>
+
+<span class="n">variable</span> <span class="bp">result</span><span class="o">=</span><span class="mi">0</span>     <span class="err">#</span> <span class="err">记录答案</span>
+
+  <span class="n">variable</span> <span class="n">up</span><span class="o">=</span><span class="mi">9</span>       <span class="err">#</span> <span class="err">当前位填数的上限</span>
+  <span class="k">if</span> <span class="err">有上界限制</span> <span class="k">then</span>
+      <span class="n">up</span><span class="o">=</span><span class="err">当前位在</span> <span class="n">n</span> <span class="err">当中的数字</span> <span class="err">#</span> <span class="n">n</span> <span class="err">是要求的</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="err">的自变量</span>
+
+  <span class="k">for</span> <span class="err">枚举当前位的填数值</span> <span class="n">from</span> <span class="mi">0</span> <span class="k">to</span> <span class="n">up</span> <span class="o">:</span>
+      <span class="k">if</span> <span class="err">当前位填的数不符合限制</span> <span class="k">then</span>
+          <span class="k">continue</span>
+      <span class="k">if</span> <span class="err">有前导零限制</span> <span class="k">and</span> <span class="err">当前填写的是</span> <span class="mi">0</span> <span class="k">then</span>
+          <span class="bp">result</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="err">下一个状态</span><span class="o">,</span><span class="k">true</span><span class="o">,</span><span class="err">是否触碰上界限制</span><span class="p">)</span>
+      <span class="k">else</span> <span class="k">then</span>
+          <span class="bp">result</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="err">下一个状态</span><span class="o">,</span><span class="k">false</span><span class="o">,</span><span class="err">是否触碰上界限制</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="err">没有前导零限制</span> <span class="k">and</span> <span class="err">没有上界限制</span> <span class="k">then</span>
+      <span class="err">记录当前状态的答案</span> <span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+
+  <span class="err">返回答案</span> <span class="bp">result</span>
+
+
+
+<span class="k">function</span> <span class="nf">solve</span><span class="p">(</span><span class="err">要求的</span><span class="n">F</span><span class="err">的自变量</span> <span class="n">n</span><span class="p">)</span>
+  <span class="err">存储每一位数字的</span> <span class="n">vector</span> <span class="err">清空</span>
+    <span class="k">while</span> <span class="n">n</span><span class="err">!</span><span class="o">=</span><span class="mi">0</span> <span class="k">then</span>
+      <span class="n">vector</span> <span class="o">&lt;==</span> <span class="n">n</span><span class="err">%</span><span class="n">base</span>           <span class="err">#</span> <span class="n">base</span><span class="err">表示是哪一个进制</span>
+      <span class="n">n</span><span class="o">/=</span><span class="n">base</span>
+  <span class="err">返回对应状态的答案（调用</span> <span class="n">dfs</span><span class="err">）</span>
 </code></pre></div>
 </td></tr></table>
 <p>从上到下解释一下：</p>
@@ -1597,6 +1614,9 @@
 </blockquote>
 <p>套板子就行了，根本不需要过多的思考。</p>
 <p>直接上代码：</p>
+<details class="note">
+<summary>Code</summary>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1674,35 +1694,38 @@
 <span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">si</span><span class="p">][</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
 
 <span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">limit</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">limit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">!=</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">up</span><span class="o">=</span><span class="mi">9</span><span class="p">;</span><span class="w"> </span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span><span class="w"> </span><span class="n">up</span><span class="o">=</span><span class="n">dight</span><span class="p">[</span><span class="n">x</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">up</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">res</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">limit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="n">up</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">res</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">limit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="n">up</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">limit</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">limit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">!=</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">up</span><span class="o">=</span><span class="mi">9</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span><span class="w"> </span><span class="n">up</span><span class="o">=</span><span class="n">dight</span><span class="p">[</span><span class="n">x</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">up</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">res</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">,</span><span class="mi">-2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">limit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="n">up</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">else</span><span class="w"> </span><span class="n">res</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="mi">-1</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">limit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">==</span><span class="n">up</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">limit</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">dight</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">dight</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">),</span><span class="n">n</span><span class="o">/=</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dfs</span><span class="p">(</span><span class="n">dight</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="mi">-2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 填 -2 是为了让开始的时候不管选什么数都可以满足差大于2的条件。</span>
+<span class="w">  </span><span class="n">dight</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">dight</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">),</span><span class="n">n</span><span class="o">/=</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">dfs</span><span class="p">(</span><span class="n">dight</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="mi">-2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 填 -2 是为了让开始的时候不管选什么数都可以满足差大于2的条件。</span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="k">sizeof</span><span class="w"> </span><span class="n">f</span><span class="p">),</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">L</span><span class="p">,</span><span class="o">&amp;</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">solve</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="o">-</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="mi">-1</span><span class="p">)),</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="k">sizeof</span><span class="w"> </span><span class="n">f</span><span class="p">),</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">L</span><span class="p">,</span><span class="o">&amp;</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">solve</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="o">-</span><span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="mi">-1</span><span class="p">)),</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <p>还有几个需要特殊注意的点：</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>根据状态来开记忆化的数组的大小，不要开小了。</p>
 <p>清空记忆化数组的时机也需要把握。</p>
 <p>如果不管怎么询问需要的状态是一样的，那么可以在 <code>main()</code> 的最开头写 <code>memset</code></p>
 <p>如果每一个询问底下会不一样，那么要在 <code>solve</code> 或者当前询问底下写 <code>memset</code>。</p>
+</div>
 
               
             </article>

@@ -1285,6 +1285,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1526,6 +1540,8 @@
 <p>然后做一个类似 BFS 的过程，过程当中要记得删边和点，如果出现了新的 <span class="arithmatex">\(0\)</span> 入度点，就入队。</p>
 <p>在判定严格偏序这种对应 DAG 的关系成不成立的时候也可以使用拓扑排序判定和构造解。</p>
 <p>（如果有环就是无解，对应到拓扑排序就是最后始终存在非 <span class="arithmatex">\(0\)</span> 入度点。）</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1603,6 +1619,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>拓扑序还可以用来转移 DP。</p>
 <p>一般转移的时候不是找上一个（前驱），而是从当前的推到后一个（后继）。</p>
 <p>按拓扑序枚举每一个点，再枚举它的每一个出边，进行递推即可。</p>

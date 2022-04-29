@@ -1258,6 +1258,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1475,6 +1489,8 @@
 <p>如果此时两个节点重合了，LCA 就是原来深度小的节点。</p>
 <p>否则<strong>保持两个节点的深度一致</strong>，然后各自往上跳 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 次幂步，并且保持上跳之后仍然不相遇。</p>
 <p>这个过程结束之后， <span class="arithmatex">\(u,v\)</span> 当前的父亲必然相同，这就是要求的 LCA。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1520,6 +1536,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <p>单次询问 <span class="arithmatex">\(\text{O}(\log n)\)</span>。</p>
 <p>但是这种方式是暴力跳，也就是直接“试”。</p>
 <p>用类似快速幂的思想，直接把数字二进制拆分，只有当前位 <span class="arithmatex">\(i\)</span> 为 <span class="arithmatex">\(1\)</span> 的时候 ，才跳 <span class="arithmatex">\(2^i\)</span> 级祖先。</p>
@@ -1542,6 +1559,8 @@
 <p>所以可以考虑把这些 2 类型的节点和当前分支的节点合并，然后每次询问就能直接处理了。</p>
 <p>这个合并和询问操作可以利用 dsu。</p>
 <p>复杂度 <span class="arithmatex">\(\text{O}(n+m)\)</span>。</p>
+<details class="note">
+<summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1677,6 +1696,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <h3 id="_3">点差分<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>给你一棵树 <span class="arithmatex">\(T\)</span>，且 <span class="arithmatex">\(\forall u \in T\)</span> 都有一个权值 <span class="arithmatex">\(val[u]\)</span></p>

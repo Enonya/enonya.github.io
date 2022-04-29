@@ -1350,6 +1350,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E8%A7%A3/20220429C/" class="md-nav__link">
+        20220429C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E8%A7%A3/Acwing277/" class="md-nav__link">
         Acwing277
       </a>
@@ -1674,6 +1688,8 @@
 <p>如果已经扫描完了 <span class="arithmatex">\(s\)</span>，且 <span class="arithmatex">\(end[p] = \text{true}\)</span>，返回 <span class="arithmatex">\(\text{true}\)</span>。</p>
 <p>反之返回 <span class="arithmatex">\(\text{false}\)</span>。</p>
 <h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>普通 Trie 树</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1735,6 +1751,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <h3 id="_1">一些性质<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>两个字符串的最长公共前缀是他们的尾标记所在的两个节点的 lca 到根的路径组成的字符串。</li>
@@ -1764,6 +1781,8 @@
 <p>在插入每个数之后，在对应结束的节点打一个标记，记录从这个节点到根的路径组成的数是多少即可。</p>
 <p>异或起来最小同理。</p>
 <h4 id="code_1">Code<a class="headerlink" href="#code_1" title="Permanent link">&para;</a></h4>
+<details class="note">
+<summary>01Trie</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1839,6 +1858,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <h3 id="_2">维护异或和<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>01 Trie 可以用来维护一些数的异或和，支持插入，删除，还有全局加一操作。</p>
 <p>我出的一道题里面有用到一个 Trick：异或和的二进制下某一位的值，取决于所有数的这一位的 <span class="arithmatex">\(1\)</span> 的个数的<strong>奇偶性</strong>。</p>
@@ -1871,6 +1891,8 @@
 <p>对应到 01Trie 上，就是从 <span class="arithmatex">\(root\)</span> 开始递归下去，找到第一个非空的 <span class="arithmatex">\(tr[p][0]\)</span> 指针，然后交换 <span class="arithmatex">\(tr[p][0],tr[p][1]\)</span>（取反）。</p>
 <p>沿着<strong>交换之后</strong>的 <span class="arithmatex">\(tr[p][0]\)</span> 递归下去操作即可。</p>
 <h4 id="code_2">Code<a class="headerlink" href="#code_2" title="Permanent link">&para;</a></h4>
+<details class="note">
+<summary>维护异或和</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2054,12 +2076,15 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <h3 id="01trie_1">01Trie 合并<a class="headerlink" href="#01trie_1" title="Permanent link">&para;</a></h3>
 <p>合并两颗 01Trie。</p>
 <p>和线段树合并是比较类似的，用同样的思想思考即可。</p>
 <p>就是把两个节点中的一个的信息合并到另外一个上，并返回合并之后的编号。</p>
 <p>（当然，这里也可以根据情况把他们合并到一个新的节点上）。</p>
 <p>如果有一个节点为空，那么就返回另外一个节点的编号即可。</p>
+<details class="note">
+<summary>Merge</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2081,6 +2106,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
+</details>
 <hr />
 <p>参考资料：<a href="https://oi-wiki.org/string/trie/">字典树 (Trie) - OI Wiki (oi-wiki.org)</a></p>
 

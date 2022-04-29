@@ -15,7 +15,7 @@
     
     
       
-        <title>20220413B - OI-Collection</title>
+        <title>20220429C - OI-Collection</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#b" class="md-skip">
+        <a href="#c" class="md-skip">
           跳转至
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              20220413B
+              20220429C
             
           </span>
         </div>
@@ -1169,6 +1169,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../20220413B/" class="md-nav__link">
+        20220413B
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1179,12 +1193,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          20220413B
+          20220429C
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        20220413B
+        20220429C
       </a>
       
         
@@ -1201,44 +1215,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#b" class="md-nav__link">
-    B 组模拟赛部分题解
+  <a href="#c" class="md-nav__link">
+    C组模拟赛部分题解
   </a>
   
-    <nav class="md-nav" aria-label="B 组模拟赛部分题解">
+    <nav class="md-nav" aria-label="C组模拟赛部分题解">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#t3" class="md-nav__link">
-    T3 团不过
+  <a href="#t4" class="md-nav__link">
+    T4 线索
   </a>
-  
-    <nav class="md-nav" aria-label="T3 团不过">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis" class="md-nav__link">
-    Analysis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    Code
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1251,20 +1238,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../20220429C/" class="md-nav__link">
-        20220429C
-      </a>
     </li>
   
 
@@ -1427,44 +1400,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#b" class="md-nav__link">
-    B 组模拟赛部分题解
+  <a href="#c" class="md-nav__link">
+    C组模拟赛部分题解
   </a>
   
-    <nav class="md-nav" aria-label="B 组模拟赛部分题解">
+    <nav class="md-nav" aria-label="C组模拟赛部分题解">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#t3" class="md-nav__link">
-    T3 团不过
+  <a href="#t4" class="md-nav__link">
+    T4 线索
   </a>
-  
-    <nav class="md-nav" aria-label="T3 团不过">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis" class="md-nav__link">
-    Analysis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    Code
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1487,153 +1433,67 @@
                 
 
 
-  <h1>20220413B</h1>
+  <h1>20220429C</h1>
 
-<h2 id="b">B 组模拟赛部分题解<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<h2 id="c">C组模拟赛部分题解<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Apr 13<sup>rd</sup> 2022</p>
+<p>Apr 29<sup>th</sup> 2022</p>
 </blockquote>
-<h3 id="t3">T3 团不过<a class="headerlink" href="#t3" title="Permanent link">&para;</a></h3>
-<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
-<p><a href="https://imgtu.com/i/LKh7Bn"><img alt="LKh7Bn.png" src="https://s1.ax1x.com/2022/04/13/LKh7Bn.png" /></a></p>
-<p><span class="arithmatex">\(n \le 10^7\)</span></p>
-<h4 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h4>
-<p>一定要注意到一个条件：“石子数互不相同”，我被这个坑了/kk。</p>
-<p>首先可以考虑简单一点的情况。</p>
-<p>设 <span class="arithmatex">\(dp_{i,j}\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子，当前异或和为 <span class="arithmatex">\(j\)</span> 时先手必胜的方案数。</p>
-<p>可以很容易的得到转移方程，答案为 <span class="arithmatex">\(\sum dp_{n,i},i\not=0\)</span>，复杂度 <span class="arithmatex">\(\text{O}(n\times 2^n \times 2^n)\)</span>。</p>
-<p>期望得分高于 <span class="arithmatex">\(20\)</span> 低于 <span class="arithmatex">\(40\)</span>。</p>
-<p>可以对这个 DP 进行状态转移上的优化，但是就算优化之后也还是会发现，复杂度无法接受。</p>
-<p>发现问题出在 <span class="arithmatex">\(j\)</span> 上，因为先手必胜等价于异或和不为 <span class="arithmatex">\(0\)</span>，状态数明显多了很多。</p>
-<p>而总方案数减去先手必败的方案数仍然等于先手必胜，所以求出先手必败的方案之后等价于求出了先手必胜的方案。</p>
-<p>先手必败的状态数相较于先手必胜，少了最后 <span class="arithmatex">\(j\)</span> 的这一维，对应到本题就是少了 <span class="arithmatex">\(2^n\)</span> 级别个状态。</p>
-<p>所以状态数就变成了 <span class="arithmatex">\(\text{O}(n)\)</span> 个，可以考虑进行 <span class="arithmatex">\(\text{O}(n)\)</span> 的递推。</p>
-<p>设 <span class="arithmatex">\(f_i\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子，先手必败的方案数。</p>
-<p><span class="arithmatex">\(p_i\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子的总方案数。</p>
-<p>因为石子的数量不能相同，所以得到 <span class="arithmatex">\(p\)</span> 的计算式：</p>
-<div class="arithmatex">\[p_i = \prod\limits_{j = 1}^i((2^n-1)-(j - 1)) = \prod\limits_{j = 1}^i(2^n-j)\]</div>
-<p>快速幂 <span class="arithmatex">\(\text{O}(\log n)\)</span> 求出 <span class="arithmatex">\(2^n\)</span> 之后可以线性递推。</p>
-<p>然后考虑求 <span class="arithmatex">\(f_{i}\)</span>。</p>
-<p><span class="arithmatex">\(f_i\)</span> 等价于这样一个状态：考虑前 <span class="arithmatex">\(i\)</span> 堆石子，异或和为 <span class="arithmatex">\(0\)</span> 的所有方案。</p>
-<p>可以利用 DP 种 “前一段状态 + 后一段贡献 = 大段状态” 的思想来思考转移方程。</p>
-<p>首先钦定前 <span class="arithmatex">\(i - 1\)</span> 堆的异或和为 <span class="arithmatex">\(0\)</span>，方案数加上 <span class="arithmatex">\(p_{i-1}\)</span>，接下来要做的就是排除和 <span class="arithmatex">\(i\)</span> 相关的不合法的方案。</p>
-<ol>
-<li>
-<p>因为第 <span class="arithmatex">\(i\)</span> 堆不能取到 <span class="arithmatex">\(0\)</span>，所以方案数减去 <span class="arithmatex">\(f_{i-1}\)</span>。</p>
-</li>
-<li>
-<p>如果前 <span class="arithmatex">\(i - 2\)</span> 堆的异或和为 <span class="arithmatex">\(0\)</span>，</p>
-</li>
-</ol>
-<p>那么<strong>会</strong>导致第 <span class="arithmatex">\(i - 1\)</span> 堆就要和第 <span class="arithmatex">\(i\)</span> 堆取到同一个数量，也是不合法的。</p>
-<p>还要从方案数里减去这种可能的方案数 <span class="arithmatex">\(tmp\)</span>，</p>
-<p>求 <span class="arithmatex">\(tmp\)</span> 时，枚举异或和为 <span class="arithmatex">\(0\)</span> 的 <span class="arithmatex">\(i-2\)</span> 堆分别是哪几个（<span class="arithmatex">\(\text{C}_{i-1}^{i-2}\)</span>），乘上对应的方案数 <span class="arithmatex">\(f_{i-2}\)</span>，</p>
-<p>然后再乘上第 <span class="arithmatex">\(i - 1\)</span> 和第 <span class="arithmatex">\(i\)</span> 堆石子能取到的石子个数的所有 <span class="arithmatex">\(2^n-(i-2)\)</span> 种可能即可。</p>
-<div class="arithmatex">\[tmp = f_{i - 2} \times \text{C}^{i-2}_{i-1}\times(2^n - 1 - (i - 2))\]</div>
-<div class="arithmatex">\[\Rightarrow f_{i-2} \times (i - 1) \times(2^n-i+1)\]</div>
-<p>所以得到方程：</p>
-<div class="arithmatex">\[f_{i} = p_{i-1} - f_{i-1} - f_{i-2} \times (i - 1) \times(2^n-i+1)\]</div>
-<h4 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h4>
-<details class="note">
-<summary>团不过</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
-<span class="k">using</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span><span class="w"></span>
-
-<span class="k">const</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e7</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
-<span class="k">constexpr</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e9</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
-
-<span class="n">i64</span><span class="w"> </span><span class="nf">qpow</span><span class="p">(</span><span class="n">i64</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">i64</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">for</span><span class="p">(;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span><span class="w"> </span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="n">i64</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">cnt</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="p">;</span><span class="w"></span>
-<span class="n">i64</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="cp">#ifdef ONLINE_JUDGE</span>
-<span class="w">    </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;yui.in&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stdin</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;yui.out&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stdout</span><span class="p">);</span><span class="w"></span>
-<span class="cp">#endif</span>
-
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">qpow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">cnt</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">power</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(((</span><span class="n">p</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">])</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span>
+<h3 id="t4">T4 线索<a class="headerlink" href="#t4" title="Permanent link">&para;</a></h3>
+<p>原题 [TJOI2015]概率论。</p>
+<blockquote>
+<p>对于 <span class="arithmatex">\(n\)</span> 个节点的有根二叉树的所有形态，</p>
+<p>假设每一种形态的出现概率相同，求叶子节点个数的期望。</p>
+<p>原题有理数不取模，误差 <span class="arithmatex">\(10^{-9}\)</span> 即可，本题要取模。</p>
+<p><span class="arithmatex">\(1\le n \le 10^9\)</span>。</p>
+</blockquote>
+<p>首先一个显然的结论就是，<span class="arithmatex">\(n\)</span> 个节点的有根二叉树的形态个数是 <span class="arithmatex">\(f_n = \dfrac{2\times\text{C}^{n}_{2n}}{n + 1}\)</span>。</p>
+<p>也就是卡特兰数。</p>
+<p>所以我们只需要求出 <span class="arithmatex">\(n\)</span> 个节点的有根二叉树的形态数 <span class="arithmatex">\(g_n\)</span> 即可，那么期望值 <span class="arithmatex">\(E(n) = \dfrac{g_n}{f_n}\)</span>。</p>
+<p>打表可以发现：</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(n\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f_n\)</span></td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>14</td>
+<td>42</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(g_n\)</span></td>
+<td>1</td>
+<td>2</td>
+<td>6</td>
+<td>20</td>
+<td>70</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(g_n = n \times f_{n-1}\)</span>。</p>
+<p>怎么具体证明呢？</p>
+<p>搬了 @_rqy 姐姐的证明：</p>
+<ul>
+<li>对于每棵 <span class="arithmatex">\(n\)</span> 个点的二叉树，如果里面有 <span class="arithmatex">\(k\)</span> 个叶节点，那么我们分别把这 <span class="arithmatex">\(k\)</span> 个叶子删去会得到 <span class="arithmatex">\(k\)</span> 棵 <span class="arithmatex">\(n-1\)</span> 个点的二叉树；</li>
+<li>而每棵 <span class="arithmatex">\(n-1\)</span> 个点的二叉树恰好有 <span class="arithmatex">\(n\)</span> 个位置可以悬挂一个新的叶子，所以每棵 <span class="arithmatex">\(n-1\)</span> 个点的二叉树被得到了 <span class="arithmatex">\(n\)</span> 次；</li>
+<li>综上，我们即可得出结论：所有 <span class="arithmatex">\(n\)</span> 个点的二叉树的叶子个数和等于 <span class="arithmatex">\(n-1\)</span> 个点的二叉树个数 <span class="arithmatex">\(\times n\)</span>。</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">数学</span><span class="o">/</span><span class="n">数论</span><span class="o">/</span><span class="n">卡特兰</span><span class="o">/</span><span class="n">二叉树</span><span class="o">/</span><span class="n">递推式</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-</details>
-<p>这题和 HNOI 的”卡农“十分类似，方程都是差不多的。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">组合数学</span><span class="o">/</span><span class="n">递推</span><span class="o">/</span><span class="n">计数</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<p>化简式子可以得到：</p>
+<div class="arithmatex">\[ans = \dfrac{n(n+1)}{2(2n-1)}\]</div>
 
               
             </article>
@@ -1647,7 +1507,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../../%E7%AE%97%E6%B3%95/%E6%9D%82%E9%A1%B9/%E9%93%BE%E8%A1%A8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 链表" rel="prev">
+        <a href="../20220413B/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 20220413B" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1656,20 +1516,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              链表
+              20220413B
             </div>
           </div>
         </a>
       
       
         
-        <a href="../20220429C/" class="md-footer__link md-footer__link--next" aria-label="下一页: 20220429C" rel="next">
+        <a href="../Acwing277/" class="md-footer__link md-footer__link--next" aria-label="下一页: Acwing277" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              20220429C
+              Acwing277
             </div>
           </div>
           <div class="md-footer__button md-icon">
