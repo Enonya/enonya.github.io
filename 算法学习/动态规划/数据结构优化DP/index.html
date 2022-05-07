@@ -1472,6 +1472,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/%E4%BA%94%E6%9C%88Tricks/" class="md-nav__link">
+        五月Tricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/%E4%BA%94%E6%9C%88%E5%A5%BD%E9%A2%98/" class="md-nav__link">
+        五月好题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/%E5%9B%9B%E6%9C%88Tricks/" class="md-nav__link">
         四月Tricks
       </a>
@@ -1587,9 +1615,15 @@
 <p><span class="arithmatex">\(dp_i\)</span> 表示 <span class="arithmatex">\([M,i]\)</span> 这一段全部清理完的所有方案，属性为花费最小值。</p>
 <p>可以考虑先按照右端点排序，从牛的工作时间的右端点进行转移，可以设计出方程：</p>
 <div class="arithmatex">\[dp_{b_i} = \min\limits_{a_i -1 \le j &lt; b_i}\{dp_j\} + c_i\]</div>
-<p>枚举 <span class="arithmatex">\(j\)</span> 找到最小值即可，考虑对这个枚举的过程进行优化。</p>
-<p>这里是询问 <span class="arithmatex">\(dp\)</span> 在<strong>某一段上的最小值</strong>，且 <span class="arithmatex">\(dp\)</span> <strong>随时会发生更新</strong>。</p>
-<p>所以可以利用线段树直接维护，的时候单点修改，转移的时候区间询问即可。</p>
+<p>枚举 <span class="arithmatex">\(j\)</span> 找到最小值即可。</p>
+<p>其实瓶颈就在于这个枚举的过程，所以考虑对这个枚举的过程进行优化。</p>
+<p>发现决策集合就是 <span class="arithmatex">\(\{dp_j\} \ | \ j \in [a_1 - 1, b_i]\)</span>，</p>
+<p>观察它的变化，当 <span class="arithmatex">\(i\)</span> 增加时，<span class="arithmatex">\(b_i\)</span> 是严格不下降的，因为我们排了序。</p>
+<p>但 <span class="arithmatex">\(a_i\)</span> 的变化很可能非常不均匀，所以我们似乎没法做类似单调队列这种直接维护决策集合的优化。</p>
+<p>但是，这里是询问 <span class="arithmatex">\(dp\)</span> 在<strong>某一段上的最小值</strong>，且 <span class="arithmatex">\(dp\)</span> <strong>随时会发生更新</strong>。</p>
+<p>所以可以利用直接线段树维护 <span class="arithmatex">\(dp\)</span> 数组（本质上是维护它的第一维）。</p>
+<p>支持决策后单点修改，转移的时候区间询问 <span class="arithmatex">\(\min\)</span> 就行了。</p>
+<p>并且，本题实际上可以不开 <span class="arithmatex">\(dp\)</span> 数组，直接在线段树上执行修改即可。</p>
 <details class="note">
 <summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1782,9 +1816,12 @@
 <p>每次对于 <span class="arithmatex">\(dp_{i,j}\)</span> 的决策<strong>进行完之后</strong>，<strong>再插入</strong> <span class="arithmatex">\(dp_{i-1,j}\)</span> <strong>这个决策</strong>，以保证方程中 <span class="arithmatex">\(k &lt; j\)</span> 这个条件被满足。</p>
 <p>实际上就是类似可持久化 Trie 的“<strong>依次插入</strong>”的思想，以强制去掉（直接不加入它们）<span class="arithmatex">\(j\)</span> 后面的部分的方式使得 <span class="arithmatex">\(k &lt; j\)</span> 始终被满足。 </p>
 <p>这个过程可以使用平衡树。</p>
-<p>不过，因为 <span class="arithmatex">\(n\)</span> 很小，所以可以对 <span class="arithmatex">\(A\)</span> 离散化，然后直接<strong>在值域上建立一个树状数组</strong>。</p>
+<p>不过，因为 <span class="arithmatex">\(n\)</span> 很小，所以可以对 <span class="arithmatex">\(A\)</span> 离散化，然后直接<strong>建立一个树状数维护所有离散化后的位置</strong>。</p>
 <p>插入决策 <span class="arithmatex">\(dp_{i-1,j}\)</span> 的操作，就令 <span class="arithmatex">\(j\)</span> 这个位置加上 <span class="arithmatex">\(dp_{i-1,j}\)</span> 即可。</p>
-<p>那么查询直接在树状数组上求出 <span class="arithmatex">\(val(a_j)\)</span> 这个位置的前缀和就行了，不过需要注意要让 <span class="arithmatex">\(a_0\)</span> 离散化之后的值 <span class="arithmatex">\(1\)</span> 也被算树状数组进去。</p>
+<p>那么查询直接在树状数组上求出 <span class="arithmatex">\(val(a_j)\)</span> 这个位置的前缀和就行了，</p>
+<p>不过需要注意要让 <span class="arithmatex">\(a_0\)</span> 离散化之后的值 <span class="arithmatex">\(1\)</span> 也被算到树状数组里去。</p>
+<p>因为我们优化的前提是 “假定外层循环固定”，所以树状数组每次循环只会维护上一个阶段的所有状态。</p>
+<p>也就是 <span class="arithmatex">\(dp_{i - 1}\)</span> 系的所有状态。</p>
 <details class="note">
 <summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1856,7 +1893,9 @@
 <span class="normal">67</span>
 <span class="normal">68</span>
 <span class="normal">69</span>
-<span class="normal">70</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 
@@ -1904,8 +1943,10 @@
 
 <span class="w">    </span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">t</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">t</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// 树状数组在每一轮只维护上一个阶段 i - 1 系列的状态。</span>
 <span class="w">        </span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 初始决策。</span>
 <span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">que</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span><span class="w"></span>
@@ -1941,8 +1982,28 @@
 <p>将利用枚举来在决策集合中转移的操作，优化为<strong>直接在决策集合中找到最优/总和对应的状态或者信息</strong>。</p>
 <p>并根据决策集合的上下界变化，单调性质去选择对应的优化策略。</p>
 <p>DS 优化主要用于<strong>上下界不均匀的变化</strong>（<strong>插入</strong>等变化方式），或者决策集合可能被<strong>修改</strong>而不是去除的情况。</p>
-<p>上方的两道例题，第一道是上下界不均匀变化（对右端点排序过后，左端点不一定是单调的）+ 决策集合中的元素可能随着转移被修改。</p>
+<p>上方的两道例题，恰好分别对应了这两种情况。</p>
+<ul>
+<li>condition 1</li>
+</ul>
+<p>第一道是上下界不均匀变化（对右端点排序过后，左端点不一定是单调的）+ 决策集合中的元素可能随着转移被修改。</p>
+<p>所以无法使用直接维护集合的方式，那么此时考虑的就是直接利用数据结构维护 <span class="arithmatex">\(dp\)</span> 数组的下标（某个维度）。</p>
+<p>使用的数据结构需要根据方程本身的需求来定，比如方程需要区间修改，区间查询，就可以使用线段树。</p>
+<p>如果方程需要查询第 <span class="arithmatex">\(k\)</span> 大，翻转区间，动态插入，就可以使用平衡树。</p>
+<p>或者说 <span class="arithmatex">\(dp\)</span> 数组的下标太大难以维护，也可以考虑使用动态开点线段树等数据结构，或者先离散化。</p>
+<p>以上这种情况很多时候都可以直接在数据结构上直接维护，<span class="arithmatex">\(dp\)</span> 数组都不用开，高级一点的就是两个数据结构之间相互滚动信息。</p>
+<p>本情况还有一道经典题，是五月 Tricks 的 <em>Non Equal Neighbors</em>。</p>
+<ul>
+<li>condition 2</li>
+</ul>
 <p>第二道是看起来上下界均匀变化，但是决策集合是需要动态在任意位置插入（因为关键字是 <span class="arithmatex">\(a_i\)</span>），所以也需要使用数据结构优化。</p>
+<p>这种情况大多都是决策集合变化较为均匀，比如滑动窗口式，单调变化式。</p>
+<p>但是决策集合里一般含有随时会变化的元素（比如 <span class="arithmatex">\(dp\)</span> 数组本身）。</p>
+<p>所以导致单调队列等数据结构难以维护，此时就可以利用平衡树或者离散化后维护位置的树状数组/线段树来优化。</p>
+<p>（其实维护位置本质上也是一种维护下标）</p>
+<p>常见的技巧是决策后再插入新决策，以保证下标限制的成立。</p>
+<p>并且这种情况的方程通常只依赖上一层的 <span class="arithmatex">\(dp\)</span> 值，数据结构维护的一般都是上一个阶段的值。</p>
+<p>本情况还有两道经典题，是五月 Tricks 的 <em>The Bakery</em>，和四月好题的 <em>Optimal Partition</em>。</p>
 
               
             </article>
