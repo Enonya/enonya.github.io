@@ -2081,7 +2081,7 @@
 <p>写一个矩阵快速幂即可。</p>
 <p>广义斐波那契数列也是一样的。</p>
 <p>然后举一个 OI-Wiki 上的例子</p>
-<div class="arithmatex">\[ f_{1} = f_{2} = 0\\ f_{n} = 7f_{n-1}+6f_{n-2}+5n+4\times 3^n \]</div>
+<div class="arithmatex">\[ f_{1} = f_{2} = 0 \\ f_{n} = 7f_{n-1}+6f_{n-2}+5n+4\times 3^n \]</div>
 <p>发现 <span class="arithmatex">\(f_n\)</span> 和 <span class="arithmatex">\(f_{n-1}, f_{n-2}, n\)</span> 有关，于是考虑构造一个矩阵描述状态。</p>
 <p>但是如果矩阵仅有这三个元素 <span class="arithmatex">\(\begin{bmatrix}f_n&amp; f_{n-1}&amp; n\end{bmatrix}\)</span> 是难以构造出转移方程的，因为乘方运算和 <span class="arithmatex">\(+1\)</span> 无法用矩阵描述。</p>
 <p>于是考虑构造一个更大的矩阵。</p>
@@ -2090,6 +2090,18 @@
 <div class="arithmatex">\[  \begin{bmatrix} f_{n+1}&amp; f_{n}&amp; n+1&amp; 3^{n+1} &amp; 1 \end{bmatrix} \]</div>
 <p>转移矩阵即为</p>
 <div class="arithmatex">\[ \begin{bmatrix} 7 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\ 6 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\ 5 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\ 12 &amp; 0 &amp; 0 &amp; 3 &amp; 0\\ 5 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \end{bmatrix} \]</div>
+<p>再举一个例子：<span class="arithmatex">\(f(i) = (f(i - 1) + \dfrac{p}{100}) / 2\)</span>。</p>
+<p>（要取模的）</p>
+<p>先展开式子：<span class="arithmatex">\(f(i) = \dfrac{1}{2} f(i - 1) + \dfrac{p}{200}\)</span></p>
+<p>如果初始矩阵是 <span class="arithmatex">\(1\times 2\)</span> 的感觉上完全不够，因为没法很好的处理这个“加上一个常数”的东西。</p>
+<p>发现<strong>转移矩阵里的数的本质是初始矩阵的数的某个系数</strong>。</p>
+<p>所以本着“<strong>递推式里需要啥，就在初始矩阵里放啥</strong>”的思想，我们放一个 <span class="arithmatex">\(1\)</span> 在初始矩阵里，然后每次转移都让 <span class="arithmatex">\(1\)</span> 的系数为 <span class="arithmatex">\(\dfrac{p}{200}\)</span> 即可。</p>
+<p>初始矩阵：</p>
+<div class="arithmatex">\[\begin{bmatrix}f(i), f(i - 1), 1\end{bmatrix}\]</div>
+<p>得到的矩阵：</p>
+<div class="arithmatex">\[\begin{bmatrix}f(i + 1), f(i), 1\end{bmatrix}\]</div>
+<p>转移矩阵：</p>
+<div class="arithmatex">\[\begin{bmatrix} \frac{1}{2} &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ \frac{p}{200} &amp; 0 &amp; 1 \end{bmatrix}\]</div>
 <h3 id="_7">矩阵的一些常见应用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <h4 id="k">恰好 K 条边 最短路<a class="headerlink" href="#k" title="Permanent link">&para;</a></h4>
 <p>首先用邻接矩阵 <span class="arithmatex">\(A\)</span> 存图。</p>

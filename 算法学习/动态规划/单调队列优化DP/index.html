@@ -1912,7 +1912,7 @@
 <h4 id="_1">算法的泛化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>这一类问题的常见特征是 1D1D， 也就是一维状态一维转移。</p>
 <p>内层循环的<strong>取值范围由外层循环决定</strong>。</p>
-<p>并且在外层循环变量<strong>固定/单调变化</strong>的情况下，<strong>内层循环所枚举的决策集合是单调变化的</strong>。</p>
+<p>并且在外层循环变量<strong>固定 或者 单调变化</strong>的情况下，<strong>内层循环所枚举的决策集合是单调变化的</strong>。</p>
 <p>不一定非的要头和尾增加（减少）的一模一样，只要保证经过的位置不会再被经过一次就好（甚至可以是头一直不动，尾一直增加）。</p>
 <p>这时候，因为内层循环变量的取值区间单调变化，就可以利用单调队列的思想进行优化。</p>
 <p>使用一个单调队列维护决策点的可能取值，并且<strong>保持队头是最优解</strong>，如果队头超过了限制，弹出，如果队尾新加入的元素比已经在队列里面的更加优秀，排除冗杂决策。</p>
@@ -1920,8 +1920,11 @@
 <h4 id="_2">一般形式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>这一类问题的一般方程形式：</p>
 <div class="arithmatex">\[f_i=\min\limits_{L(i)\le j \le R(i)}\{f_j+val(i,j)\}\]</div>
-<p>其中 <span class="arithmatex">\(L(i),R(i)\)</span> 是关于 <span class="arithmatex">\(i\)</span> 的一次函数，用来限制决策点 <span class="arithmatex">\(j\)</span> 的范围。</p>
-<p><span class="arithmatex">\(val\)</span> 是关于 <span class="arithmatex">\(i,j\)</span> 的一个多项式，并且可以把它<strong>分成两个部分</strong>，一个只与 <span class="arithmatex">\(i\)</span> 相关，一个只与 <span class="arithmatex">\(j\)</span> 相关。</p>
+<p>其中 <span class="arithmatex">\(L(i),R(i)\)</span> 是关于 <span class="arithmatex">\(i\)</span> 的一次函数，用来限制决策点 <span class="arithmatex">\(j\)</span> 的范围（决策集合上下界）。</p>
+<p>所以一般我们都直接让 <span class="arithmatex">\(i\)</span> 单调变化，然后考虑决策集合上下界的变化。</p>
+<p>但如果有两维状态的时候，通常这里就不只是关于 <span class="arithmatex">\(i\)</span> 的了，可能还会有 <span class="arithmatex">\(j\)</span> 在里面。</p>
+<p>所以这种情况下需要固定 <span class="arithmatex">\(i\)</span> 去考虑决策集合的变化（两个变量搞在一起肯定难受）</p>
+<p><span class="arithmatex">\(val\)</span> 则是关于 <span class="arithmatex">\(i,j\)</span> 的一个多项式，并且可以把它<strong>分成两个部分</strong>，一个只与 <span class="arithmatex">\(i\)</span> 相关，一个只与 <span class="arithmatex">\(j\)</span> 相关。</p>
 <p>前一部分在 <span class="arithmatex">\(i\)</span> 固定的时候是常量，后一部分利用单调队列维护即可。</p>
 <h3 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
 <h4 id="problem-1">Problem 1<a class="headerlink" href="#problem-1" title="Permanent link">&para;</a></h4>
