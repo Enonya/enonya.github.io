@@ -1156,6 +1156,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%BD%BB%E9%87%8D%E9%93%BE%E5%89%96%E5%88%86/" class="md-nav__link">
+        轻重链剖分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
         链表
       </a>
@@ -3217,7 +3231,7 @@ o o o . . . .
 <div class="arithmatex">\[|A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n|\]</div>
 <p>发现这个式子很容易使用容斥原理计算。</p>
 <div class="arithmatex">\[|A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n| = \]</div>
-<div class="arithmatex">\[\sum\limits_{i = 1}^{n} |S_i| - \sum\limits_{1\le i &lt; j \le n} |S_i \cap S_j| + \sum\limits_{1\le i &lt; j &lt; k \le n} |S_i \cap S_j \cap S_k| \dots + (-1)^{n + 1} |S_1 \cap S_2 \cap \dots \cap S_n|\]</div>
+<div class="arithmatex">\[\sum\limits_{i = 1}^{n} |A_i| - \sum\limits_{1\le i &lt; j \le n} |A_i \cap A_j| + \sum\limits_{1\le i &lt; j &lt; k \le n} |A_i \cap A_j \cap A_k| \dots + (-1)^{n + 1} |A_1 \cap A_2 \cap \dots \cap A_n|\]</div>
 <p>所以我们要做的就是计算任意两个集合 <span class="arithmatex">\(A_i,A_j\)</span> 的交集。</p>
 <p>发现直接计算很不好搞，我们发现 <span class="arithmatex">\(S_i, S_j\)</span> 大小很小，分析一波性质可以发现：</p>
 <p><span class="arithmatex">\(A_i \cap A_j = A_{|S_i \cap S_j|}\)</span>。</p>

@@ -1161,6 +1161,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%BD%BB%E9%87%8D%E9%93%BE%E5%89%96%E5%88%86/" class="md-nav__link">
+        轻重链剖分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
         链表
       </a>
@@ -1709,9 +1723,46 @@
 <p>被卡常了，空间太大 CF 甚至不让我过编译。。。</p>
 <p><code>May/08/2022</code></p>
 <ul>
-<li><code>class</code> 和 <code>struct</code> 嵌套封装的时候会有额外空间消耗。</li>
+<li><code>class</code> 和 <code>struct</code> 里的成员/函数如果预赋值，（准确说是所有预赋值的变量，常量之类的）</li>
 </ul>
-<p>动态开点线段树和主席树这种要巨大空间的就不要封装了。</p>
+<p>编译器会在内存上把这个 <code>class/struct</code> 所需要的那段空间全部初始化。</p>
+<p>然后就会让编译出来的可执行文件非常巨大，在大部分 OJ 上都是编译不了的。</p>
+<p>这个东西就好比你打了一个巨大的表。</p>
+<p>比如这样： </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Segment_Tree</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="o">:</span><span class="w"> </span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">lson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">rson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">i64</span><span class="w"> </span><span class="n">dat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0l</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0l</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1l</span><span class="n">l</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="n">t</span><span class="p">[</span><span class="n">si</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="n">tr</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>一个 <code>int</code> 4Byte，一个 <code>long long</code> 8Byte。</p>
+<p>那么你的二进制文件里就会提前多出 <span class="arithmatex">\((8 \times 3 + 4 \times 2) \times (2\times 10^5 + 10) \times 60 = 383778816 \texttt{Byte} = 366 \text{Mib}\)</span> 的空间。</p>
+<p>这么大的 binary，OJ 肯定以为你是炸 OJ 的，咋可能编译啊（</p>
+<ul>
+<li><code>new</code> 的效率是很低的，不要经常 <code>new</code>。</li>
+</ul>
+<p>但是合适的 <code>new</code> 有助于内存消耗的管理。</p>
+<ul>
+<li>OI 里面把代码封装到 <code>class</code> 或者 <code>struct</code> 里面，或者不封装，基本上是没有什么效率和空间差异的。</li>
+</ul>
+<p>但如果真要卡常还是提出来比较好，但是封装式的代码调试起来相对容易。</p>
 <ul>
 <li><code>long long</code> 比 <code>int</code> 会多花一倍空间，不必要的时候可以不用</li>
 </ul>
@@ -1724,7 +1775,7 @@
 <p><code>memset</code> 多测的时候不要用，尽量用 <code>for</code> 来清空！！！</p>
 </li>
 <li>
-<p><code>constexpr</code> 在取模是跑的明显比 <code>const</code> 块</p>
+<p><code>constexpr</code> 在取模时跑的明显比 <code>const</code> 块</p>
 </li>
 <li>
 <p>能加上 <code>const</code> 的就加上，这样常数小</p>
@@ -1733,13 +1784,18 @@
 <p>只有短且常用的函数再加 <code>inline</code>，不然会负优化。</p>
 </li>
 <li>
-<p><code>endl</code> 要刷新缓存区，会很慢，最好用 <code>"\n"</code>。</p>
+<p><code>endl</code> 要刷新缓存区，会很慢，最好用 <code>'\n'</code>。</p>
 </li>
 </ul>
 <p>除非是交互题。</p>
 <ul>
 <li>别乱在栈空间上占用内存。</li>
 </ul>
+<p>你函数里申请的临时变量都会在栈里面呆着。</p>
+<p>释放了之后才不会占用占空间。</p>
+<p>函数递归的时候，会按照递归的顺序把它所传的参数，局部变量入栈，</p>
+<p>等这一层的函数 <code>return</code> 之后才会释放。</p>
+<p>所以卡常的话可以考虑把变量全部扔到全局，但是要注意不要</p>
 
               
             </article>
