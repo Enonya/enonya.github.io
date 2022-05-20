@@ -239,7 +239,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" class="md-nav__link">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Concentration/" class="md-nav__link">
+        Concentration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Perfectionism/" class="md-nav__link">
+        Perfectionism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Solving/" class="md-nav__link">
+        Solving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E7%9B%AE%E6%A0%87%E7%9A%84%E6%80%9D%E8%80%83/" class="md-nav__link">
         对自己近期目标的一个思考
       </a>
     </li>
@@ -737,6 +779,20 @@
     <li class="md-nav__item">
       <a href="../../%E5%9B%BE%E8%AE%BA/2-SAT/" class="md-nav__link">
         2 SAT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E8%AE%BA/dfs%E5%BA%8F%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        Dfs序相关
       </a>
     </li>
   
@@ -1568,6 +1624,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E6%A8%A1%E6%8B%9F%E8%B5%9B/20220518C%E7%BB%84%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        20220518C组模拟赛题解
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1959,16 +2029,25 @@
 <p>这次不是选或者不选了，而是第 <span class="arithmatex">\(i\)</span> 种物品选 <span class="arithmatex">\(n\)</span> 个，（肯定不会拿无穷多个，每种最多也就 <span class="arithmatex">\(\lfloor \frac{m}{v_i} \rfloor = s\)</span> 个）。</p>
 <p>暴力做法就是枚举 <span class="arithmatex">\(s\)</span> 次进行决策，<span class="arithmatex">\(\text{O}(n^3)\)</span>。</p>
 <p>方程：</p>
-<div class="arithmatex">\[f_{i,j} = \max\limits_{0\le k\le s}\{f_{i-1,j-kv_i}+kw_i\}\]</div>
+<div class="arithmatex">\[
+f_{i,j} = \max\limits_{0\le k\le s}\{f_{i-1,j-kv_i}+kw_i\}
+\]</div>
 <p>可以考虑把每个子集的式子展开： </p>
 <p>整个集合 <span class="arithmatex">\(f_{i,j}\)</span>：</p>
-<div class="arithmatex">\[f_{i,j} = \max(f_{i-1,j},f_{i-1,j-v_i}+w_i,f_{i-1,j-2v_i}+2w_i,\dots f_{i-1,j-sv_i}+sw_i)\cdots \text{Formula A}\]</div>
+<div class="arithmatex">\[
+f_{i,j} = \max(f_{i-1,j},f_{i-1,j-v_i}+w_i,f_{i-1,j-
+2v_i}+2w_i,\dots f_{i-1,j-sv_i}+sw_i)\cdots \text{Formula A}
+\]</div>
 <p>选一个 <span class="arithmatex">\(i\)</span> 之后的子集 <span class="arithmatex">\(f_{i,j-v_i}\)</span>：</p>
-<div class="arithmatex">\[f_{i,j-v_i} = \max(f_{i-1,j-v_i},f_{i-1,j-2v_i}+w_i,\dots,f_{i-1,j-sv_i}+(s-1)w_i)\cdots \text{Formula B}\]</div>
+<div class="arithmatex">\[
+f_{i,j-v_i} = \max(f_{i-1,j-v_i},f_{i-1,j-2v_i}+w_i,\dots,f_{i-1,j-sv_i}+(s-1)w_i)\cdots \text{Formula B}
+\]</div>
 <p>后面的式子也是一样递推定义，我们现在只考虑这两个式子 <span class="arithmatex">\(\text{A,B}\)</span>。</p>
 <p>发现括号里的式子非常的类似，给式子 <span class="arithmatex">\(\text{B}\)</span> 的 <span class="arithmatex">\(\max\)</span> 中的每一项加上 <span class="arithmatex">\(w_i\)</span> 就变成了式子 <span class="arithmatex">\(\text{A}\)</span>，</p>
 <p>所以可以有：</p>
-<div class="arithmatex">\[f_{i,j}=\max \begin{cases}f_{i,j-v_i}+w_i &amp; j \ge v_i \\ f_{i-1,j} &amp; \text{otherwise.}\end{cases}\]</div>
+<div class="arithmatex">\[
+f_{i,j}=\max \begin{cases}f_{i,j-v_i}+w_i &amp; j \ge v_i \\ f_{i-1,j} &amp; \text{otherwise.}\end{cases}
+\]</div>
 <p>注意第一种情况是 <span class="arithmatex">\(f_{i,j-v_i}\)</span> 而不是 <span class="arithmatex">\(f_{i-1,j-v_i}\)</span>。</p>
 <p>类似于01背包，它可以化成一维，不过因为每个物品可以无限使用，并且状态可能在同阶段进行转移。所以要使用<strong>正序循环</strong>。（和01背包略有不同，画图即可）</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2007,15 +2086,25 @@
 <p><span class="arithmatex">\(f_{i,j}\)</span> 表示在前 <span class="arithmatex">\(i\)</span> 种物品里选，空间不超过 <span class="arithmatex">\(j\)</span> 的所有方案，属性为价值和 Max。</p>
 <p>那么考虑枚举的就是每种物品选多少个 （<span class="arithmatex">\(cnt\)</span>）。</p>
 <p>所以有方程：</p>
-<div class="arithmatex">\[f_{i,j}=\max\limits_{0 \le cnt \le c_i}\{f_{i-1,j-cnt\times v_i}+cnt\times w_i\}\]</div>
+<div class="arithmatex">\[
+f_{i,j}=\max\limits_{0 \le cnt \le c_i}\{f_{i-1,j-cnt\times v_i}+cnt\times w_i\}
+\]</div>
 <p>滚动数组之后可以得到方程（<span class="arithmatex">\(f_{i-1,j}\)</span> 直接被继承了，所以不用让 <span class="arithmatex">\(cnt=0\)</span> 了）：</p>
-<div class="arithmatex">\[f_j = \max\limits_{1\le cnt \le c_i}\{f_{j-cnt\times v_i} + cnt \times w_i\}\]</div>
+<div class="arithmatex">\[
+f_j = \max\limits_{1\le cnt \le c_i}\{f_{j-cnt\times v_i} + cnt \times w_i\}
+\]</div>
 <p>把式子展开：</p>
-<div class="arithmatex">\[f_{j}=\max(f_{j},f_{j-v_i}+w_i,\dots,f_{j-c_i\times v_i}+c_i \times w_i) \cdots \text{Formula A}\]</div>
+<div class="arithmatex">\[
+f_{j}=\max(f_{j},f_{j-v_i}+w_i,\dots,f_{j-c_i\times v_i}+c_i \times w_i) \cdots \text{Formula A}
+\]</div>
 <p>依旧观察 <span class="arithmatex">\(f_{j-v_i}\)</span> 项，看是否可以优化：</p>
 <p>（把 <span class="arithmatex">\(f_{j-v_i}\)</span> 当作 <span class="arithmatex">\(f_{j}\)</span> 代入最上面的方程，此处先不考虑背包够不够用 ）</p>
-<div class="arithmatex">\[f_{j-v_i}=\max\limits_{1 \le cnt \le c_i} \{f_{j-v_i-cnt\times v_i}+cnt\times w_i\}\]</div>
-<div class="arithmatex">\[\Rightarrow f_{j-v_i}=\max(f_{j-v_i},f_{j-2v_i}+w_i,\dots,f_{j-c_i\times v_i}+(c_i-1)\times w_i,f_{j-(c_i+1)v_i}+c_i\times w_i) \cdots \text{Formula B}\]</div>
+<div class="arithmatex">\[
+f_{j-v_i}=\max\limits_{1 \le cnt \le c_i} \{f_{j-v_i-cnt\times v_i}+cnt\times w_i\}
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow f_{j-v_i}=\max(f_{j-v_i},f_{j-2v_i}+w_i,\dots,f_{j-c_i\times v_i}+(c_i-1)\times w_i,f_{j-(c_i+1)v_i}+c_i\times w_i) \cdots \text{Formula B}
+\]</div>
 <p>然后你会发现，这里没法像完全背包那样优化了，为什么呢？因为式子 <span class="arithmatex">\(\text{B}\)</span> 不只是比式子 <span class="arithmatex">\(\text{A}\)</span> 每项少了 <span class="arithmatex">\(w_i\)</span>。</p>
 <p>因为式子 <span class="arithmatex">\(\text{B}\)</span> 的决策集合里没有 <span class="arithmatex">\(f_{j}\)</span> 这一项，却多了 <span class="arithmatex">\(f_{j-(c_i+1)v_i}\)</span> 这一项，</p>
 <p>所以我们是没办法直接从式子 <span class="arithmatex">\(\text{B}\)</span> 推到式子 <span class="arithmatex">\(\text{A}\)</span> 去的。</p>

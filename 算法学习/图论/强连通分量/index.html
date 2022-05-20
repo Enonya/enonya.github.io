@@ -239,7 +239,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" class="md-nav__link">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Concentration/" class="md-nav__link">
+        Concentration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Perfectionism/" class="md-nav__link">
+        Perfectionism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Solving/" class="md-nav__link">
+        Solving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E7%9B%AE%E6%A0%87%E7%9A%84%E6%80%9D%E8%80%83/" class="md-nav__link">
         对自己近期目标的一个思考
       </a>
     </li>
@@ -652,6 +694,20 @@
     <li class="md-nav__item">
       <a href="../2-SAT/" class="md-nav__link">
         2 SAT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dfs%E5%BA%8F%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        Dfs序相关
       </a>
     </li>
   
@@ -1540,6 +1596,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E6%A8%A1%E6%8B%9F%E8%B5%9B/20220518C%E7%BB%84%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        20220518C组模拟赛题解
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1829,7 +1899,7 @@
 
 <h2 id="_1">强连通分量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>联通分量：对于一个有向图的分量当中的任意两点 <span class="arithmatex">\((u,v)\)</span> ，<span class="arithmatex">\(\exist \delta (u,v) \and \delta (v,u)\)</span>，则称这个分量为联通分量</p>
+<p>联通分量：对于一个<strong>有向图</strong>的分量当中的任意两点 <span class="arithmatex">\((u,v)\)</span> ，<span class="arithmatex">\(\exist \delta (u,v) \and \delta (v,u)\)</span>，则称这个分量为联通分量</p>
 <p>强联通分量 SCC：有向图的一个极大连通分量被称作强连通分量，极大的理解就是，不管再加上哪一个边和哪一个节点，他都不再是一个连通分量，也就是“大的不能再大”。</p>
 <p>流图：对于一个有向图 <span class="arithmatex">\(G=(V,E)\)</span>，<span class="arithmatex">\(\exist r \in V\)</span>，满足 <span class="arithmatex">\(r\)</span> 可以到达 <span class="arithmatex">\(V\)</span> 中的任意节点，则称 <span class="arithmatex">\(G\)</span> 为一个流图。</p>
 <p><span class="arithmatex">\(r\)</span> 称作流图的源点。</p>
@@ -1853,19 +1923,21 @@
 <p>所以引入一个新的值 <span class="arithmatex">\(low_u\)</span> ，表示 <span class="arithmatex">\(u\)</span> 和它子树当中的节点能往上（在 <span class="arithmatex">\(T\)</span> 当中的上）走到的最高（在 <span class="arithmatex">\(T\)</span> 当中深度更低）的节点的时间戳 <span class="arithmatex">\(dfn\)</span> 。</p>
 <p>如果出现 <span class="arithmatex">\(low_u=dfn_u\)</span>，也就是 <span class="arithmatex">\(u\)</span> 不可能再往上走，它的 <span class="arithmatex">\(low\)</span> 就是自己的 <span class="arithmatex">\(dfn\)</span> 的时候，那么 <span class="arithmatex">\(u\)</span> 必然是它所在的强连通分量在 <span class="arithmatex">\(T\)</span> 上最高的点。</p>
 <p>然后在深度优先遍历的时候同时维护一个栈，保存当前能与从这个节点出发的后向边和横叉边构成环的所有节点。</p>
-<p>记 <span class="arithmatex">\(anc_u\)</span> 表示 <span class="arithmatex">\(u\)</span> 在 <span class="arithmatex">\(T\)</span> 上的所有祖先节点，那么栈中保存的实际上就是这两类节点：</p>
+<p>记 <span class="arithmatex">\(anc(u)\)</span> 表示 <span class="arithmatex">\(u\)</span> 在 <span class="arithmatex">\(T\)</span> 上的所有祖先节点，那么栈中保存的实际上就是这两类节点：</p>
 <ol>
-<li><span class="arithmatex">\(v \in anc_u\)</span>，且有可能存在后向边 <span class="arithmatex">\(u \to v\)</span>。</li>
+<li><span class="arithmatex">\(v \in anc(u)\)</span>，且有可能存在后向边 <span class="arithmatex">\(u \to v\)</span>。</li>
 <li><span class="arithmatex">\(v \in V\)</span> ，且存在路径 <span class="arithmatex">\(\delta(v\to w),w\in anc_u\)</span>。</li>
 </ol>
 <p>在满足 <span class="arithmatex">\(low_u=dfn_u\)</span> 的时候，把栈的节点不断弹出，直到 <span class="arithmatex">\(u\)</span> 出栈，此时当前被弹出的所有节点就构成一个 SCC。</p>
-<p>这时候弹出的一定是第二类节点，原因显然。</p>
+<p>很明显 <span class="arithmatex">\(anc(u)\)</span> 中的所有节点都先于 <span class="arithmatex">\(u\)</span> 入栈。</p>
+<p>所以在 <span class="arithmatex">\(u\)</span> 弹出前弹出的一定是第二类节点。</p>
 <p>具体实现：</p>
-<p>每次新访问一个节点的时候初始化 <span class="arithmatex">\(dfn=++time,low=dfn\)</span>。</p>
+<p>每次新访问一个节点的时候初始化 <span class="arithmatex">\(dfn=time + 1,low=dfn\)</span>。</p>
 <p>然后访问它的所有出边 <span class="arithmatex">\((u,v)\)</span>，如果出边对应的节点 <span class="arithmatex">\(v\)</span> 没有访问过（当前访问的是树边），那么就递归然后用 <span class="arithmatex">\(low_v\)</span> 更新 <span class="arithmatex">\(low_u\)</span>。</p>
 <p>反之，如果 <span class="arithmatex">\(v\)</span> 已经在栈中了，那么也就是说，存在一条后向边或者横叉边从 <span class="arithmatex">\(u\)</span> 出发能到更上面。</p>
 <p>根据栈中节点的性质，用 <span class="arithmatex">\(dfn_v\)</span> 更新 <span class="arithmatex">\(low_u\)</span> 即可。</p>
-<p>（注意这里要是 <span class="arithmatex">\(dfn_v\)</span> 而不是 <span class="arithmatex">\(low_v\)</span>，Tarjan 老爷子亲自说过）。 </p>
+<p>注意这里要是 <span class="arithmatex">\(dfn_v\)</span> 而不是 <span class="arithmatex">\(low_v\)</span>，Tarjan 老爷子亲自说过。 </p>
+<p>（TODO：自己尝试证明一下这儿是为啥）</p>
 <p>如果把每一个强连通分量看作一个点。</p>
 <p>那么缩完点之后的图就是一个 DAG。</p>
 <p>并且 SCC 编号的顺序就是 <strong>逆拓扑序</strong>。</p>
@@ -1972,7 +2044,7 @@
 <p><a href="https://imgtu.com/i/bfB2vD"><img alt="bfB2vD.png" src="https://s1.ax1x.com/2022/03/10/bfB2vD.png" /></a> </p>
 <p>因为 Tarjan 的访问顺序是深度优先遍历的顺序（因为使用了栈）。</p>
 <p>那么从层的角度来说，更靠上的 SCC 被标记到的时间必然更晚，而 Tarjan 缩完点之后 SCC 构成的图必然是一个 DAG。</p>
-<p>而拓扑排序的实现一般都是按层排序的，所以 SCC 序列必然是逆拓扑序列（此处是感性理解）。</p>
+<p>而拓扑排序的实现都是按层排序的，所以 SCC 序列必然是逆拓扑序列（此处是感性理解）。</p>
 
               
             </article>

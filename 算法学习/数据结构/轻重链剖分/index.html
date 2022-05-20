@@ -239,7 +239,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" class="md-nav__link">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Concentration/" class="md-nav__link">
+        Concentration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Perfectionism/" class="md-nav__link">
+        Perfectionism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Solving/" class="md-nav__link">
+        Solving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E7%9B%AE%E6%A0%87%E7%9A%84%E6%80%9D%E8%80%83/" class="md-nav__link">
         对自己近期目标的一个思考
       </a>
     </li>
@@ -650,6 +692,20 @@
     <li class="md-nav__item">
       <a href="../../%E5%9B%BE%E8%AE%BA/2-SAT/" class="md-nav__link">
         2 SAT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E8%AE%BA/dfs%E5%BA%8F%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        Dfs序相关
       </a>
     </li>
   
@@ -1588,6 +1644,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E6%A8%A1%E6%8B%9F%E8%B5%9B/20220518C%E7%BB%84%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        20220518C组模拟赛题解
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1959,13 +2029,13 @@
 <p>落单的节点也当作重链，然后可以整棵树就被剖分成了若干条不相交的重链。</p>
 </blockquote>
 <p>就可以很容易的得到。</p>
-<p>2.子树内的 dfn 是连续的</p>
+<p>2.子树内的 <span class="arithmatex">\(dfn\)</span> 是连续的</p>
 <p>这个是 dfs 序的性质，比较容易得到。</p>
-<p>推论： 子树内 dfn 值的区间应当是 <span class="arithmatex">\([dfn_u, dfn_u + siz_u - 1]\)</span>。</p>
+<p>推论： 子树内 <span class="arithmatex">\(dfn\)</span> 值的区间应当是 <span class="arithmatex">\([dfn_u, dfn_u + siz_u - 1]\)</span>。</p>
 <p>这两个结论会用于子树操作的处理。</p>
-<p>3.同一条重链上的 dfn 是连续的</p>
-<p>这个是重链剖分本身的性质，需要我们 dfs 处理时 <strong>“优先”</strong> dfs 重儿子，然后再 dfn 轻儿子。</p>
-<p>可以发现，按 dfn 序排序之后的序列，实际上就是把一条条重链拼接在了一起。</p>
+<p>3.同一条重链上的 <span class="arithmatex">\(dfn\)</span> 是连续的</p>
+<p>这个是重链剖分本身的性质，需要我们 dfs 处理时 <strong>“优先”</strong> dfs 重儿子，然后再 <span class="arithmatex">\(dfn\)</span> 轻儿子。</p>
+<p>可以发现，按 <span class="arithmatex">\(dfn\)</span> 序排序之后的序列，实际上就是把一条条重链拼接在了一起。</p>
 <p>所以重链剖分实际上就是 “树上问题” 序列化的一个工具。</p>
 <p>4.经过一条轻边 <span class="arithmatex">\((u\to v)\)</span>的时候，<span class="arithmatex">\(siz_v\)</span> 的大小必然是 <span class="arithmatex">\(siz_u\)</span> 的二分之一，可能还少。</p>
 <p>根据这个结论，把一条路径从 <span class="arithmatex">\(\texttt{LCA}\)</span> 拆开从两边分别往下跳重链，跳的次数会在 <span class="arithmatex">\(\text{O}(\log n)\)</span> 级别。</p>

@@ -239,7 +239,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E8%87%AA%E5%B7%B1%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87%E7%9A%84%E4%B8%80%E4%B8%AA%E6%80%9D%E8%80%83/" class="md-nav__link">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Concentration/" class="md-nav__link">
+        Concentration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Perfectionism/" class="md-nav__link">
+        Perfectionism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/Solving/" class="md-nav__link">
+        Solving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E5%AF%B9%E7%9B%AE%E6%A0%87%E7%9A%84%E6%80%9D%E8%80%83/" class="md-nav__link">
         对自己近期目标的一个思考
       </a>
     </li>
@@ -716,6 +758,20 @@
     <li class="md-nav__item">
       <a href="../../%E5%9B%BE%E8%AE%BA/2-SAT/" class="md-nav__link">
         2 SAT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E8%AE%BA/dfs%E5%BA%8F%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        Dfs序相关
       </a>
     </li>
   
@@ -1547,6 +1603,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E6%A8%A1%E6%8B%9F%E8%B5%9B/20220518C%E7%BB%84%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="md-nav__link">
+        20220518C组模拟赛题解
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1860,7 +1930,9 @@
 <p>划分的依据则是 “<strong>最后一个不同的点</strong>”。</p>
 <p>首先写出 <span class="arithmatex">\(dp_i\)</span> 代表的集合是什么：“所有以 <span class="arithmatex">\(a_i\)</span> 结尾的上升子序列”。</p>
 <p>把 <span class="arithmatex">\(dp_i\)</span> 这个集合包含的所有子序列展开，可以发现他们全部长成这样：</p>
-<div class="arithmatex">\[\begin{matrix}\dots &amp; las_1 &amp; a_i \\ \dots &amp; las_2 &amp; a_i \\ \dots &amp; las_3 &amp; a_i \end{matrix}\]</div>
+<div class="arithmatex">\[
+\begin{matrix}\dots &amp; las_1 &amp; a_i \\ \dots &amp; las_2 &amp; a_i \\ \dots &amp; las_3 &amp; a_i \end{matrix}
+\]</div>
 <p>其中 <span class="arithmatex">\(las\)</span> 表示这个子序列的倒数第二个元素。</p>
 <p>发现 “最后一个不同的点” 就是这些倒数第二个元素 <span class="arithmatex">\(las\)</span>，因为所有子序列的倒数第一个元素都是相同的。</p>
 <p>所以就以这些 <span class="arithmatex">\(las\)</span> 作为划分依据，可以将集合 <span class="arithmatex">\(dp_i\)</span> 划分如下：</p>
@@ -1868,15 +1940,21 @@
 <p>图中橙色字体是代表了这个子集的状态，绿色字体说明了这个子集代表了什么。</p>
 <p>划分完之后，观察 <span class="arithmatex">\(dp_i\)</span> 这个集合对应的属性，是 <span class="arithmatex">\(\max\)</span>，所以我们要在所有划分出来的集合对应的状态当中取最大值。</p>
 <p>可以得到方程：</p>
-<div class="arithmatex">\[dp_{i} = \max\{dp_j\} + 1\]</div>
+<div class="arithmatex">\[
+dp_{i} = \max\{dp_j\} + 1
+\]</div>
 <p>但是注意到这些划分出来的集合不一定都能够转移到集合，比如存在一个 <span class="arithmatex">\(a_j &gt; a_i,j &lt; i\)</span> 的逆序对，</p>
 <p>那么 <span class="arithmatex">\(dp_j\)</span> 这个集合就不可能转移到 <span class="arithmatex">\(dp_i\)</span>，因为 <span class="arithmatex">\(dp_j\)</span> 代表了 ”所有以 <span class="arithmatex">\(a_j\)</span> 结尾的上升子序列构成的集合“。</p>
 <p>而这个集合中的任意一个子序列提出来，在后面接上 <span class="arithmatex">\(a_i\)</span> 后，它都不会再是一个上升子序列了。</p>
 <p>所以我们还需要判断划分出来的集合是否合法，方程变为：</p>
-<div class="arithmatex">\[dp_i = \max\{dp_j\} + 1,a_i &gt; a_j\]</div>
+<div class="arithmatex">\[
+dp_i = \max\{dp_j\} + 1,a_i &gt; a_j
+\]</div>
 <p>而划分集合的时候发现， <span class="arithmatex">\(a_i\)</span> 本身也能作为一个单独的上升子序列出现，所以初始化的时候要令 <span class="arithmatex">\(dp_i = 1\)</span>。</p>
 <p>方程变为：</p>
-<div class="arithmatex">\[dp_i = \max\{dp_j + 1\},a_i &gt; a_j,dp_i =1(\text{initially})\]</div>
+<div class="arithmatex">\[
+dp_i = \max\{dp_j + 1\},a_i &gt; a_j,dp_i =1(\text{initially})
+\]</div>
 <p>把 <span class="arithmatex">\(+1\)</span> 放进 <span class="arithmatex">\(\max\)</span> 里是为了方便转移。</p>
 <p>根据定义，答案是 <span class="arithmatex">\(\max\{dp_i\}\)</span>。</p>
 <p>可以写出代码如下：</p>
@@ -1926,7 +2004,9 @@
 <p>发现集合可以划分成两个部分，第一个部分是 <span class="arithmatex">\(a_i \not = b_j\)</span> 时，由 <span class="arithmatex">\(a[1 \sim i],b[1\sim j]\)</span> 构成的公共子序列。</p>
 <p>第二部分是当 <span class="arithmatex">\(a_i = b_j\)</span> 时，由 <span class="arithmatex">\(a[1 \sim i-1],b[1\sim j-1]\)</span> 构成的公共子序列。</p>
 <p>为什么是由 <span class="arithmatex">\(a[1\sim i-1],b[1 \sim j-1]\)</span> 构成的呢？因为此时 <span class="arithmatex">\(a_i = b_j\)</span> ，所以这半部分所代表的集合中的公共子序列都长成这样：</p>
-<div class="arithmatex">\[\begin{matrix}\dots &amp; ... &amp; a_i/b_j \\ \dots &amp; ... &amp; a_i/b_j \\ \dots &amp; ... &amp; a_i/b_j\end{matrix}\]</div>
+<div class="arithmatex">\[
+\begin{matrix}\dots &amp; ... &amp; a_i/b_j \\ \dots &amp; ... &amp; a_i/b_j \\ \dots &amp; ... &amp; a_i/b_j\end{matrix}
+\]</div>
 <p>那么此时的答案就是前面部分的长度的最大值 <span class="arithmatex">\(+1\)</span>，而前面那部分长度的最大值实际上就是由 <span class="arithmatex">\(a[1\sim i-1],b[1\sim j-1]\)</span> 构成的所有公共子序列的长度最大值，集合 <span class="arithmatex">\(dp_{i-1,j-1}\)</span> 即可表示这一部分，所以实际上这部分是由 <span class="arithmatex">\(a[1\sim i-1],b[1\sim j-1]\)</span> 构成的，只是转移时 <span class="arithmatex">\(a_i,b_j\)</span> 会有贡献而已。</p>
 <p>然后考虑第一部分，我们并没有办法对它用一个状态直接表示，所以再次对他进行划分。</p>
 <p>因为 <span class="arithmatex">\(a_i \not= b_j\)</span>，所以我们分别把 <span class="arithmatex">\(a_i,b_j\)</span> 踢出去，然后进行转移。</p>
@@ -1934,7 +2014,9 @@
 <p>划分如下：</p>
 <p><a href="https://imgtu.com/i/qxISDx"><img alt="qxISDx.png" src="https://s1.ax1x.com/2022/04/07/qxISDx.png" /></a></p>
 <p>可以得到方程：</p>
-<div class="arithmatex">\[dp_{i,j} = \begin{cases}\max(dp_{i-1,j},dp_{i,j-1}) &amp; a_i \not= b_j\\ dp_{i-1,j-1} + 1 &amp; a_i = b_j\end{cases}\]</div>
+<div class="arithmatex">\[
+dp_{i,j} = \begin{cases}\max(dp_{i-1,j},dp_{i,j-1}) &amp; a_i \not= b_j\\ dp_{i-1,j-1} + 1 &amp; a_i = b_j\end{cases}
+\]</div>
 <p>根据状态定义，<span class="arithmatex">\(dp\)</span> 应当全部初始化为 <span class="arithmatex">\(0\)</span>，答案为 <span class="arithmatex">\(dp_{n,n}\)</span></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1978,18 +2060,24 @@
 <p>设 <span class="arithmatex">\(dp_{i,j}\)</span> 表示从 <span class="arithmatex">\((1,1)\)</span> 走到 <span class="arithmatex">\((i,j)\)</span> 的所有方案，属性为数量（注意这里变为了数量）。</p>
 <p>考虑划分集合 <span class="arithmatex">\(dp_{i,j}\)</span>。</p>
 <p>展开 <span class="arithmatex">\(dp_{i,j}\)</span> 中的所有方案，发现他们都长这样：</p>
-<div class="arithmatex">\[\begin{matrix}(1,1) \to \dots \to (x_1,y_1) \to (i,j) \\ (1,1) \to \dots \to (x_2,y_2) \to (i,j)\end{matrix}\]</div>
+<div class="arithmatex">\[
+\begin{matrix}(1,1) \to \dots \to (x_1,y_1) \to (i,j) \\ (1,1) \to \dots \to (x_2,y_2) \to (i,j)\end{matrix}
+\]</div>
 <p>发现 ”最后一个不同点“ 就是 ”上一步“ 所处的位置 <span class="arithmatex">\((x,y)\)</span>。</p>
 <p>而本题要求只能向下或者向右，所以只有从上面和左面走过来两种情况。</p>
 <p>所以集合可以划分成 <span class="arithmatex">\(dp_{i,j-1},dp_{i-1,j}\)</span> 这两部分。</p>
 <p>可以列出方程：</p>
-<div class="arithmatex">\[dp_{i,j} = dp_{i,j} + (dp_{i-1,j} + dp_{i, j-1})\]</div>
+<div class="arithmatex">\[
+dp_{i,j} = dp_{i,j} + (dp_{i-1,j} + dp_{i, j-1})
+\]</div>
 <p>其中根据状态定义，<span class="arithmatex">\(dp_{1,1}\)</span> 应当初始化为 <span class="arithmatex">\(1\)</span>，其它的应当为 <span class="arithmatex">\(0\)</span>。</p>
 <p>但是要注意判断是否越界，所以此时可以利用另一种 DP 方式，顺推。</p>
 <p>也就是考虑把当前集合的方案数加到所有划分后<strong>直接</strong>含有它的集合的方案数当中。</p>
 <p>开大数组后就不用判边界了。</p>
 <p>所以可以得到新的方程：</p>
-<div class="arithmatex">\[dp_{i+1,j} = dp_{i+1,j}+dp_{i,j},dp_{i,j+1} = dp_{i,j+1} + dp_{i,j}\]</div>
+<div class="arithmatex">\[
+dp_{i+1,j} = dp_{i+1,j}+dp_{i,j},dp_{i,j+1} = dp_{i,j+1} + dp_{i,j}
+\]</div>
 <p>初始化不变。</p>
 <p>可以写出代码：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
