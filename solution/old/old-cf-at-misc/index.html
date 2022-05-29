@@ -1,0 +1,2486 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="black_trees">
+      
+      
+        <link rel="canonical" href="https://hylwxqwq.github.io/solution/old/old-cf-at-misc/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>CF & AT 杂题 - OI-Collection</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cf-at" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="OI-Collection" class="md-header__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OI-Collection
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CF & AT 杂题
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hylwxqwq/hylwxqwq.github.io/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hylwxqwq/hylwxqwq.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OI-Collection" class="md-nav__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    OI-Collection
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hylwxqwq/hylwxqwq.github.io/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hylwxqwq/hylwxqwq.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          简介
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="简介" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          简介
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        奉劝
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          算法学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法学习" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          算法学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          基础算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基础算法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          基础算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/binarysearch/" class="md-nav__link">
+        二分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/greedy/" class="md-nav__link">
+        贪心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/sorting/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/multiper/" class="md-nav__link">
+        倍增
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/rmq/" class="md-nav__link">
+        RMQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/binaryoperation/" class="md-nav__link">
+        位运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/basic/dff-prefixsum/" class="md-nav__link">
+        前缀和 & 差分
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          动态规划
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="动态规划" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          动态规划
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/set-dp/" class="md-nav__link">
+        集合式分析法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/how-to-think/" class="md-nav__link">
+        如何设计状态 & 方程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/pack-dp/" class="md-nav__link">
+        背包 DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/interval-dp/" class="md-nav__link">
+        区间 DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/tree-dp/" class="md-nav__link">
+        树形 DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/comp-dp/" class="md-nav__link">
+        状压 DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/digit-dp/" class="md-nav__link">
+        数位 DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/sos-dp/" class="md-nav__link">
+        SOS DP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_9" type="checkbox" id="__nav_2_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_9">
+          DP 的优化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DP 的优化" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          DP 的优化
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/opt/mq-dp/" class="md-nav__link">
+        单调队列优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/opt/ds-dp/" class="md-nav__link">
+        数据结构优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/dp/opt/convex-dp/" class="md-nav__link">
+        斜率优化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          图论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          图论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/list-star/" class="md-nav__link">
+        链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/dfs-order/" class="md-nav__link">
+        DFS 序相关
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/simple/" class="md-nav__link">
+        简单图论问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/sssp/" class="md-nav__link">
+        最短路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/ring-diff/" class="md-nav__link">
+        负环 & 差分约束
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/mst/" class="md-nav__link">
+        最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/lca/" class="md-nav__link">
+        最近公共祖先
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/dcc/" class="md-nav__link">
+        双连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/scc/" class="md-nav__link">
+        强连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/2sat/" class="md-nav__link">
+        2-SAT 问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/bip-graph/" class="md-nav__link">
+        二分图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/graph/dsu-on-tree/" class="md-nav__link">
+        Dsu On Tree
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/list/" class="md-nav__link">
+        链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/mono-queue/" class="md-nav__link">
+        单调队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/segtree/" class="md-nav__link">
+        线段树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/blocks/" class="md-nav__link">
+        简单分块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/odt/" class="md-nav__link">
+        珂朵莉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/president-trie/" class="md-nav__link">
+        可持久化 Trie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/trie-bst/" class="md-nav__link">
+        用 Trie 实现平衡树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/hld/" class="md-nav__link">
+        轻重链剖分
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/math/matrix/" class="md-nav__link">
+        矩阵
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/math/perm/" class="md-nav__link">
+        置换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/math/poset/" class="md-nav__link">
+        偏序
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          字符串
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="字符串" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          字符串
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/string/trie/" class="md-nav__link">
+        Trie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          杂项
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="杂项" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          杂项
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/misc/mo/" class="md-nav__link">
+        普通莫队
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/misc/mt19937/" class="md-nav__link">
+        mt19937
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          题目总结
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="题目总结" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          题目总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2202-trick/" class="md-nav__link">
+        Tricks-二月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2203-trick/" class="md-nav__link">
+        Tricks-三月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2204-trick/" class="md-nav__link">
+        Tricks-四月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2205-trick/" class="md-nav__link">
+        Tricks-五月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2202-great/" class="md-nav__link">
+        好题-二月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2203-great/" class="md-nav__link">
+        好题-三月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2204-great/" class="md-nav__link">
+        好题-四月
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problem/2205-great/" class="md-nav__link">
+        好题-五月
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          解题报告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="解题报告" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          解题报告
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          模拟赛
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="模拟赛" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          模拟赛
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/220413B/" class="md-nav__link">
+        20220413B组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/220429C/" class="md-nav__link">
+        20220429C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/220511C/" class="md-nav__link">
+        20220511C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mock/220518C/" class="md-nav__link">
+        20220518C组
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          常规题
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="常规题" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          常规题
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/acwing277/" class="md-nav__link">
+        Acwing277
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/acwing355/" class="md-nav__link">
+        Acwing355
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/bzoj3307/" class="md-nav__link">
+        Bzoj3307
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/cf713c/" class="md-nav__link">
+        CF713C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/cf1637f/" class="md-nav__link">
+        CF1637F
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/cf1651e/" class="md-nav__link">
+        CF1651E
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pro/uoj105/" class="md-nav__link">
+        Uoj105
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          旧题解
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="旧题解" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          旧题解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CF & AT 杂题
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CF & AT 杂题
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cf-at" class="md-nav__link">
+    CF &amp; AT 杂题
+  </a>
+  
+    <nav class="md-nav" aria-label="CF &amp; AT 杂题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cf-1473e" class="md-nav__link">
+    CF 1473E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-516e-by-textdcolorredtextreamoon" class="md-nav__link">
+    CF 516E （By \(\text{d}\color{red}{\text{reamoon}}\)）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abc-209e" class="md-nav__link">
+    ABC 209E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abc-191d" class="md-nav__link">
+    ABC 191D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-261d" class="md-nav__link">
+    CF 261D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1526c2" class="md-nav__link">
+    CF 1526C2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1006f" class="md-nav__link">
+    CF 1006F
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arc-084-db" class="md-nav__link">
+    ARC 084 D/B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abc-203d" class="md-nav__link">
+    ABC 203D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1059d" class="md-nav__link">
+    CF 1059D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agc-006d" class="md-nav__link">
+    AGC 006D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-865c" class="md-nav__link">
+    CF 865C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1203f1" class="md-nav__link">
+    CF 1203F1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-814d" class="md-nav__link">
+    CF 814D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-954g" class="md-nav__link">
+    CF 954G
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-845e" class="md-nav__link">
+    CF 845E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-547d" class="md-nav__link">
+    CF 547D
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../old-cf-at-sol/" class="md-nav__link">
+        CF & AT 题解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          日常随笔
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日常随笔" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          日常随笔
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/snippets/" class="md-nav__link">
+        常用 Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/includes/" class="md-nav__link">
+        常用头文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/kachang/" class="md-nav__link">
+        常用卡常小技巧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/commonbugs/" class="md-nav__link">
+        常见 Bugs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/train/" class="md-nav__link">
+        C++火车头
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/pointer-ref/" class="md-nav__link">
+        C++指针 & 引用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../essay/complexity/" class="md-nav__link">
+        时间复杂度分析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          未知文档
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="未知文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          未知文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study/dairy/" class="md-nav__link">
+        Dairy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study/contest/" class="md-nav__link">
+        Contest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study/solving/" class="md-nav__link">
+        Solving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study/notification/" class="md-nav__link">
+        Notification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study/concentration/" class="md-nav__link">
+        Concentration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../study/perfectionism/" class="md-nav__link">
+        Perfectionism
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cf-at" class="md-nav__link">
+    CF &amp; AT 杂题
+  </a>
+  
+    <nav class="md-nav" aria-label="CF &amp; AT 杂题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cf-1473e" class="md-nav__link">
+    CF 1473E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-516e-by-textdcolorredtextreamoon" class="md-nav__link">
+    CF 516E （By \(\text{d}\color{red}{\text{reamoon}}\)）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abc-209e" class="md-nav__link">
+    ABC 209E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abc-191d" class="md-nav__link">
+    ABC 191D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-261d" class="md-nav__link">
+    CF 261D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1526c2" class="md-nav__link">
+    CF 1526C2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1006f" class="md-nav__link">
+    CF 1006F
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arc-084-db" class="md-nav__link">
+    ARC 084 D/B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abc-203d" class="md-nav__link">
+    ABC 203D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1059d" class="md-nav__link">
+    CF 1059D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agc-006d" class="md-nav__link">
+    AGC 006D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-865c" class="md-nav__link">
+    CF 865C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-1203f1" class="md-nav__link">
+    CF 1203F1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-814d" class="md-nav__link">
+    CF 814D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-954g" class="md-nav__link">
+    CF 954G
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-845e" class="md-nav__link">
+    CF 845E
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf-547d" class="md-nav__link">
+    CF 547D
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/solution/old/old-cf-at-misc.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+  <h1>CF & AT 杂题</h1>
+
+<h2 id="cf-at">CF &amp; AT 杂题<a class="headerlink" href="#cf-at" title="Permanent link">&para;</a></h2>
+<p>因为没啥时间，也不太想写题解，所以一些杂题之类的简单题解就放在这里了。</p>
+<p>（是时候改改强迫症了）</p>
+<p>一般只会有CF和AT的，整场比赛的题解会放在 Codeforces Solution 里面。</p>
+<p>其实大部分都是口胡的，没时间写代码，以后再补（</p>
+<h3 id="cf-1473e">CF 1473E<a class="headerlink" href="#cf-1473e" title="Permanent link">&para;</a></h3>
+<p>定义一个路径的贡献为下面的那个式子，问 <span class="arithmatex">\(1 \to \forall i\)</span> 的路径的贡献的最小值</p>
+<p>发现柿子：<span class="arithmatex">\(\sum\limits_{i=1}^kw_{e_i} -\max\limits_{i=1}^kw_{e_i} + \min\limits_{i=1}^kw_{e_i}\)</span></p>
+<p>实际上就是在维护所有边权去掉最大加上一个最小。</p>
+<p>也就是少一个边，另外一个边算两次。</p>
+<p>那么就是说，对于每一个决策都会有去掉不加上，不去掉不加上，加上不去掉，加上然后去掉四种情况，</p>
+<p>所以把每个点拆成 <span class="arithmatex">\(4\)</span> 个状态，问题就可以转化为在分层图上求最短路，因为你多加的是 <span class="arithmatex">\(\min\)</span> 而且求的也是 <span class="arithmatex">\(\min\)</span> ，所以这个做法是对的。</p>
+<h3 id="cf-516e-by-textdcolorredtextreamoon">CF 516E （By <span class="arithmatex">\(\text{d}\color{red}{\text{reamoon}}\)</span>）<a class="headerlink" href="#cf-516e-by-textdcolorredtextreamoon" title="Permanent link">&para;</a></h3>
+<p>*3100 的大毒瘤数论。</p>
+<p>不太会，之后再重新问问出题人咋做的（</p>
+<h3 id="abc-209e">ABC 209E<a class="headerlink" href="#abc-209e" title="Permanent link">&para;</a></h3>
+<p>博弈论+图论</p>
+<p>必须要和上一个单词重合三个以上的字母的单词接龙，给定词典，且大小写敏感。</p>
+<p>问输赢或平。</p>
+<p>你发现我们不会关心除了前三个或者后三个字符以外的东西。</p>
+<p>而且要接龙就必须完全重合，所以我们考虑先字符串hash一下前三位和后三位，然后把前三位向后三位连边。</p>
+<p>然后我们会得到一张有向图。</p>
+<p>考虑怎么维护先手必胜态和先手必败态。</p>
+<p>如果当前状态能去往的状态都是必胜态或者无法去往任意状态，则它是先手必败态。</p>
+<p>如果它能到达至少一个必败态，那么他是必胜态。</p>
+<p>其他的都是平局。</p>
+<p>那么建反图拓扑更新即可，更新不到的都是平局。</p>
+<p>另外，只要一个点确定了必胜或者必败态，那么它也可以入队，因为不会再被更改了。</p>
+<h3 id="abc-191d">ABC 191D<a class="headerlink" href="#abc-191d" title="Permanent link">&para;</a></h3>
+<p>给定一个圆，问圆上和圆内整点个数。</p>
+<p>是某个HAOI的超级加强版（</p>
+<p>这题卡精度特别吓人，YL当时卡 <span class="arithmatex">\(1e-14\)</span> 过了。</p>
+<p>我卡 <span class="arithmatex">\(1e-10\)</span> 爆了，本来是忘了这个题的，结果DM的毒瘤卡精度课讲了这个。</p>
+<p>就回来写一下。</p>
+<p>发现圆心坐标和半径都是浮点数，不过不超过 <span class="arithmatex">\(10^5\)</span> 而且最多有四位小数点。</p>
+<p>所以我们考虑先给每个点的 <span class="arithmatex">\(x,y\)</span> 都乘上 <span class="arithmatex">\(10^4\)</span> 变成整数。</p>
+<p>然后考虑勾股定理+枚举判断合法上下界就可以了。</p>
+<h3 id="cf-261d">CF 261D<a class="headerlink" href="#cf-261d" title="Permanent link">&para;</a></h3>
+<p>没做，空着。</p>
+<h3 id="cf-1526c2">CF 1526C2<a class="headerlink" href="#cf-1526c2" title="Permanent link">&para;</a></h3>
+<p>问一个序列的最长子序列，使子序列的任意位置的前缀和不小于 <span class="arithmatex">\(0\)</span>。</p>
+<p>大傻逼题，秒了。</p>
+<p>考虑用一个优先队列维护，一个一个吃，如果吃死了就把最小的吐出来然后继续吃。</p>
+<p>最后输出 size 走人。</p>
+<h3 id="cf-1006f">CF 1006F<a class="headerlink" href="#cf-1006f" title="Permanent link">&para;</a></h3>
+<p>dm 讲的一道双向BFS。</p>
+<p>懒得写所以转了别人的sol</p>
+<p>题意是有一个 <span class="arithmatex">\(n\times m\)</span> 的地图，然后从左上角走到右下角，问最后异或的值等于 <span class="arithmatex">\(k\)</span> 的路径有多少条。</p>
+<p>思路就是折半搜索，可以降低很多时间复杂度，因为当地图小的时候，<span class="arithmatex">\(n+m\)</span> 就不满足折半的条件了，</p>
+<p>所以这里用 <span class="arithmatex">\(n+m+2\)</span> 作为条件，首先我们先搜索步数为 <span class="arithmatex">\(n+m+2\)</span> 的一半的值为搜索终点，记录当前的异或值，然后再从终点开始搜索，</p>
+<p>当搜索到 <span class="arithmatex">\(n+m+2\)</span> 的一半的时候，我们判断当前点的与 <span class="arithmatex">\(k\)</span> 的异或值是否有标记过，有的话就说明这整个一条路的异或值等于 <span class="arithmatex">\(k\)</span> ，直接加给 <span class="arithmatex">\(ans\)</span> 就好了。</p>
+<p>原文链接：<a href="https://blog.csdn.net/Charles_Zaqdt/article/details/81077919">https://blog.csdn.net/Charles_Zaqdt/article/details/81077919</a></p>
+<h3 id="arc-084-db">ARC 084 D/B<a class="headerlink" href="#arc-084-db" title="Permanent link">&para;</a></h3>
+<p>dm 讲的一道数论BFS。</p>
+<p>找出数位和最小的 <span class="arithmatex">\(k\)</span> 的倍数是多少。</p>
+<p>2e5</p>
+<p>发现可能会炸 <code>__int128</code> .</p>
+<p>所以我们考虑对数位进行操作。</p>
+<p>发现如果从 <span class="arithmatex">\(1\)</span> 开始，只用两种操作就可以得到任意一个数（其实真实情况一种就可以了）</p>
+<ol>
+<li><span class="arithmatex">\(+1\)</span> 且 cost 为 <span class="arithmatex">\(1\)</span></li>
+<li><span class="arithmatex">\(\times 10\)</span> 且 cost 为 <span class="arithmatex">\(0\)</span>。</li>
+</ol>
+<p>所以其实这是个 01BFS。</p>
+<p>令每一个状态都对 <span class="arithmatex">\(k\)</span> 取模，然后从 <span class="arithmatex">\(1\)</span> 开始。</p>
+<p>如果当前这个操作是 cost 为 <span class="arithmatex">\(1\)</span> 的操作，扔到队尾，反之扔到队头。</p>
+<p>然后01BFS即可。</p>
+<h3 id="abc-203d">ABC 203D<a class="headerlink" href="#abc-203d" title="Permanent link">&para;</a></h3>
+<p>一道 01 二分的板子？</p>
+<p>这个 trick 不是很常见，但是只要一出就能卡到人。</p>
+<p>这道题要求你求出一个 <span class="arithmatex">\(n\times n\)</span> 的矩阵当中的所有 <span class="arithmatex">\(k\times k\)</span> 大小的子矩阵的贡献的最小值。</p>
+<p>一个矩阵的贡献定义为把矩阵所有元素从小到大排序之后的第 <span class="arithmatex">\(\lfloor \dfrac{k^2}{2} \rfloor +1\)</span> 大的数（可以理解为<strong>中位数</strong>）</p>
+<p>大小是 <span class="arithmatex">\(800^2\)</span>。</p>
+<p>问题可以通过二分转化为判定：存不存在一个子矩阵，使得这个矩阵的贡献比 <span class="arithmatex">\(x\)</span> 小？</p>
+<p>然后我们让 <span class="arithmatex">\(x\)</span> 尽量小，当这个矩阵的贡献就是 <span class="arithmatex">\(x\)</span> 的时候，答案就是 <span class="arithmatex">\(x\)</span>。</p>
+<p>你考虑去二分这个数字 <span class="arithmatex">\(x\)</span>，然后对于你二分到的矩阵，令：</p>
+<div class="arithmatex">\[\text{submatrix}[i][j]=\begin{cases}0 &amp; ,\text{submatrix}[i][j]\le x\\1 &amp; ,\text{submatrix}[i][j] &gt; x\end{cases}\]</div>
+<p>如果说这个子矩阵的和是 <span class="arithmatex">\(&lt;\lfloor \dfrac{k^2}{2} \rfloor +1\)</span>  的，那么很明显比 <span class="arithmatex">\(x\)</span> 大的数就一定少于  <span class="arithmatex">\(\lfloor \dfrac{k^2}{2} \rfloor +1\)</span>  个。</p>
+<p>那么它的贡献肯定比 <span class="arithmatex">\(x\)</span> 小，满足要求，反之则不满足。</p>
+<p>然后写个二维前缀和搞搞就行了。</p>
+<h3 id="cf-1059d">CF 1059D<a class="headerlink" href="#cf-1059d" title="Permanent link">&para;</a></h3>
+<p>给一堆点，是否有一个和 <span class="arithmatex">\(x\)</span> 轴相切的圆使得每一个点都被它包含。</p>
+<p>问这个圆的半径最小是多少。</p>
+<p>首先你发现如果存在一个点对 <span class="arithmatex">\(((x_1,y_1),(x_2,y_2))\)</span> 满足 <span class="arithmatex">\(y_1\times y_2 &lt;0\)</span> ，那么就很明显无解。</p>
+<p>然后我们把所有点转到 <span class="arithmatex">\(x\)</span> 轴上方。</p>
+<p>对于每一个你二分到的 <span class="arithmatex">\(r\)</span> ，我们可以扫描一遍点集合，对于每一个点  <span class="arithmatex">\((x,y)\)</span> 利用勾股定理求出一个区间，使得区间里的每一个点到 <span class="arithmatex">\((x,y)\)</span> 的距离在区间 <span class="arithmatex">\([y,r]\)</span> 当中。</p>
+<p>然后对于所有的区间求一个交集，如果交集为空集那么这个 <span class="arithmatex">\(r\)</span> 不合法，反之合法。</p>
+<p>然后我们使用实数二分，但是因为这题卡精度，所以我们不使用 <span class="arithmatex">\(eps\)</span> 来判断，而是直接按次数循环。</p>
+<p>这题精度要求 <span class="arithmatex">\(10^{-6}\)</span> ，所以你大概循环个 <span class="arithmatex">\(10^3\)</span> 次就差不多了。</p>
+<h3 id="agc-006d">AGC 006D<a class="headerlink" href="#agc-006d" title="Permanent link">&para;</a></h3>
+<p>也是一道非常妙的 01 二分。</p>
+<p>定义一个数字金字塔，每一个位置是它下一层的三个节点的<strong>中位数</strong>。</p>
+<p>给定最后一层，求第一层最有，<span class="arithmatex">\(2e5\)</span> 层。</p>
+<p>发现要 <span class="arithmatex">\(\text{O}(n \log n)\)</span> 才行。</p>
+<p>然后你考虑二分顶层节点 <span class="arithmatex">\(x\)</span> 的数值。</p>
+<p>对于最后一层的节点，我们令所有的 <span class="arithmatex">\(\le x\)</span> 的节点变成 <span class="arithmatex">\(0\)</span> ，反之为 <span class="arithmatex">\(1\)</span> （和 ABC203D 一个思路）。</p>
+<p>然后你考虑向上递推的过程。</p>
+<p>你发现，因为 <span class="arithmatex">\(x\)</span> 是最顶层节点，所以如果底层有连续的两个 <span class="arithmatex">\(1\)</span> 或者连续的两个 <span class="arithmatex">\(0\)</span> ，他们就会一直向上走，而且不断往中间靠。</p>
+<p>所以最靠近中间的那一组就是塔顶的 <span class="arithmatex">\(0\)</span> 或者 <span class="arithmatex">\(1\)</span> 。</p>
+<p>如果你推出来塔顶是 <span class="arithmatex">\(0\)</span> ,那么就满足情况，反之不满足。</p>
+<p>然后你再特判一下根本没有连续的数字的情况即可。</p>
+<h3 id="cf-865c">CF 865C<a class="headerlink" href="#cf-865c" title="Permanent link">&para;</a></h3>
+<p>一道期望+二分。</p>
+<p>也比较妙。</p>
+<p>帮 PWK 修了他的 <a href="https://weizheng.blog.luogu.org/solution-cf865c">题解</a>，所以题意就用他的了：</p>
+<p>你是一个 up 主，你要录一段速通 RA2YR 的视频，</p>
+<p>战役有 <span class="arithmatex">\(n\)</span> 关，每关你有 <span class="arithmatex">\(p_i\%\)</span> 的可能性花 <span class="arithmatex">\(F_i\)</span> 的时间通过，<span class="arithmatex">\((1-p_i)\%\)</span> 的可能性花掉 <span class="arithmatex">\(S_i\)</span> 的时间通过（失误了），其中保证 <span class="arithmatex">\(F_i&gt;S_i\)</span>。</p>
+<p>但因为你想“速通”，你不希望你的视频长度超过 <span class="arithmatex">\(m\)</span>。</p>
+<p>当你认为自己接下来可能录不完（接着录录完不如重新录）时，你会重新开始录，求录完整个游戏的时间期望。</p>
+<p>考虑设 <span class="arithmatex">\(f_{i,j}\)</span> 表示打过第 <span class="arithmatex">\(i\)</span> 关，使用 <span class="arithmatex">\(j\)</span> 的时间的期望。</p>
+<p>然后因为是有时间限制的，所以你会推出一个这样的柿子（也是PWK的）：</p>
+<div class="arithmatex">\[ f(i,j)=\begin{cases}
+0 ,&amp; i=n,j\le m\\
+f(0,0),&amp; j &gt;m \\ 
+\min(f(0,0),e1+e2) ,&amp; \text{otherwise.}
+\end{cases} \]</div>
+<p>其中 $e_1=p_{i+1} \times f(i+1,j+f_{i+1})+f_{i+1}))   $。</p>
+<p><span class="arithmatex">\(e_2=p_{i+1}\times(1-p_{i+1})\times(f(i+1,j+S_{i+1})+S_{i+1})\)</span> 。</p>
+<p>然后你发现 <span class="arithmatex">\(f_{0,0}\)</span> 会导致转移有环，所以把 <span class="arithmatex">\(f_{0,0}\)</span> 当作一个常数，从 <span class="arithmatex">\(n\)</span> 开始倒序枚举。</p>
+<p>然后最优重开时间一定是等于期望时间的，所以我们可以二分他重开的时间。</p>
+<p>然后利用 <span class="arithmatex">\(f_{0,0}\)</span> 的值判断可行性即可 （<span class="arithmatex">\(f_{0,0}&lt;mid\)</span> ）。</p>
+<h3 id="cf-1203f1">CF 1203F1<a class="headerlink" href="#cf-1203f1" title="Permanent link">&para;</a></h3>
+<p>有 <span class="arithmatex">\(i\)</span> 个项目，每一个项目有一个限制和一个权值（权值可以为负数）。</p>
+<p>你做一个项目的话，你的信誉需要达到限制 <span class="arithmatex">\(a_i\)</span>，做完之后你的信誉会加上权值 <span class="arithmatex">\(b_i\)</span>。</p>
+<p>做完项目的时候信誉不能为 <span class="arithmatex">\(0\)</span> ，你的初始信誉为 <span class="arithmatex">\(r\)</span> ，问你能不能在满足条件的情况下做完所有项目。</p>
+<p>我们考虑贪心。</p>
+<p>你发现做完一个项目之后，你的信誉至少是 <span class="arithmatex">\(a_i+b_i\)</span>。</p>
+<p>所以我们可以按照 <span class="arithmatex">\(a_i+b_i\)</span> 升序排序，并且在此基础上让限制 <span class="arithmatex">\(a_i\)</span> 更大的排在前面。</p>
+<p>然后从头开始模拟做项目的过程就可以了。</p>
+<p>你发现 <span class="arithmatex">\(b_i\)</span> 的正负会导致贪心出现奇怪的错误，会 WA on test 5。</p>
+<p>所以我们正负分开排序，循环两次然后判断可行性就可以了。</p>
+<h3 id="cf-814d">CF 814D<a class="headerlink" href="#cf-814d" title="Permanent link">&para;</a></h3>
+<p>有 <span class="arithmatex">\(n\)</span> 个圆，他们只能是相互包含，相离或者相切的。</p>
+<p>将其分为两组，每组中，只有奇数次覆盖的才会算入面积，求可能的最大面积。 （翻译是我扔在luogu讨论区的）</p>
+<p>我们考虑一个贪心，把所有覆盖次数是 <span class="arithmatex">\(2\)</span> 的圆全部扔到一组，剩下的一组。</p>
+<p>证明略（</p>
+<p>然后又因为包含关系是呈树形的，所以我们让被包含的成为父亲，外层的成为儿子，然后在树上跑一遍 <span class="arithmatex">\(dfs\)</span> 统计即可（不过关系是有可能变成森林的，所以要建一个超级源点）。</p>
+<h3 id="cf-954g">CF 954G<a class="headerlink" href="#cf-954g" title="Permanent link">&para;</a></h3>
+<p>一共有 <span class="arithmatex">\(n\)</span> 面墙，初始有 <span class="arithmatex">\(a_i\)</span> 个弓箭手在第 <span class="arithmatex">\(i\)</span> 面墙的位置上。一个在 <span class="arithmatex">\(i\)</span> 位置的弓箭手可以保护 <span class="arithmatex">\(|i - j| \leq r\)</span> 的所有墙 <span class="arithmatex">\(j\)</span> 。</p>
+<p>你现在可以增派 <span class="arithmatex">\(k\)</span> 个弓箭手并且任意分配它们的位置。你需要最大化被数量最少的弓箭手保护的墙被弓箭手保护的数量。</p>
+<p><span class="arithmatex">\(n \leq 5 \times 10^5, 0 \leq r \leq n, 0 \leq k \leq 10^{18} ,0 \leq a_i \leq 10^9\)</span></p>
+<p>（题意来自luogu讨论区）</p>
+<p>设每一个位置的 defence lv 为 <span class="arithmatex">\(d_i\)</span></p>
+<p>发现这个题的条件是 “最小值最大”。</p>
+<p>所以很明显是二分答案。</p>
+<p>考虑二分这个值 <span class="arithmatex">\(mid\)</span> ，每次 check 的时候考虑贪心。</p>
+<p>如果有一个位置 <span class="arithmatex">\(i\)</span> 的  <span class="arithmatex">\(d_i &lt; mid\)</span></p>
+<p>我们在位置 <span class="arithmatex">\(\min(i+r,n)\)</span> 放 <span class="arithmatex">\(mid-d_i\)</span> 个 archer 就行了。</p>
+<h3 id="cf-845e">CF 845E<a class="headerlink" href="#cf-845e" title="Permanent link">&para;</a></h3>
+<p>有一个 <span class="arithmatex">\(n\)</span> 行 <span class="arithmatex">\(m\)</span> 列的网格。其中有 <span class="arithmatex">\(k+1\)</span> 个格子着火了。每个时刻，火会蔓延至相邻的格子（八联通）。</p>
+<p>现在给出其中 <span class="arithmatex">\(k\)</span> 个着火的格子，请确定第 <span class="arithmatex">\(k+1\)</span> 格子，使得网格被烧完的用时最短。</p>
+<p>你只需要输出最短用时。</p>
+<p><span class="arithmatex">\(n,m \le 10^9,k\le 500\)</span>。</p>
+<p>发现 <span class="arithmatex">\(n,m\)</span> 非常大，但是 <span class="arithmatex">\(k\)</span> 非常小。</p>
+<p>所以我们从 <span class="arithmatex">\(k\)</span> 入手，考虑去计算每一个时刻，每一个点能蔓延到的位置。</p>
+<p>发现这个东西每秒只扩展一层并且是八联通，所以可以 <span class="arithmatex">\(\text{O}(1)\)</span> 算这个矩形的顶点的坐标。</p>
+<p>又发现这个“时间”没法很好的求出来，但是刚好具有单调性。</p>
+<p>所以考虑二分。</p>
+<p>每次二分的时候，我们计算出所有矩形覆盖的面积。</p>
+<p>然后你去看最边上的那四个角（因为很明显扩展到他们的时间一定是每个方向上最晚的）的空余（如果有）有没有办法用一个点就能覆盖完就行。</p>
+<p>因为值域比较大所以我们需要离散化。</p>
+<p>计算面积可以使用二维差分或者扫描线。</p>
+<h3 id="cf-547d">CF 547D<a class="headerlink" href="#cf-547d" title="Permanent link">&para;</a></h3>
+<p>给坐标系当中的 <span class="arithmatex">\(n\)</span> 个整点红蓝染色，要求同一个直线（<span class="arithmatex">\(y\)</span> or <span class="arithmatex">\(x\)</span> 方向）上的红蓝节点个数相差不超过一。</p>
+<p>问如何染色，多解任意即可。</p>
+<p>保证有答案。</p>
+<p>首先我们发现一定会有答案，又是要我们把点分成两个部分。</p>
+<p>所以我们想到了二分图，手元一下样例可以发现确实是二分图。</p>
+<p>所以直接对于同一直线上的点建边然后二分图染色即可。</p>
+<p>可以先 <span class="arithmatex">\(\text{O}(n \log n)\)</span>排序再建边，或者用一个 <span class="arithmatex">\(\text{O}(n)\)</span> 的方法建边，具体方法见提交记录：<a href="https://codeforces.com/contest/547/submission/131984717">https://codeforces.com/contest/547/submission/131984717</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../../pro/uoj105/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Uoj105" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Uoj105
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../old-cf-at-sol/" class="md-footer__link md-footer__link--next" aria-label="下一页: CF &amp; AT 题解" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              CF & AT 题解
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 @black_trees
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/3.2.0/es5/tex-chtml.min.js"></script>
+      
+    
+  </body>
+</html>

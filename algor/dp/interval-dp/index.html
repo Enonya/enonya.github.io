@@ -10,21 +10,21 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://hylwxqwq.github.io/">
+        <link rel="canonical" href="https://hylwxqwq.github.io/algor/dp/interval-dp/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>奉劝 - OI-Collection</title>
+        <title>区间 DP - OI-Collection</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -39,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#dp" class="md-skip">
           跳转至
         </a>
       
@@ -81,7 +81,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="OI-Collection" class="md-header__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+    <a href="../../.." title="OI-Collection" class="md-header__button md-logo" aria-label="OI-Collection" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              奉劝
+              区间 DP
             
           </span>
         </div>
@@ -193,7 +193,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="OI-Collection" class="md-nav__button md-logo" aria-label="OI-Collection" data-md-component="logo">
+    <a href="../../.." title="OI-Collection" class="md-nav__button md-logo" aria-label="OI-Collection" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -222,14 +222,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       
       
@@ -250,21 +248,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         奉劝
       </a>
-      
     </li>
   
 
@@ -282,12 +270,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -336,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/binarysearch/" class="md-nav__link">
+      <a href="../../basic/binarysearch/" class="md-nav__link">
         二分
       </a>
     </li>
@@ -350,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/greedy/" class="md-nav__link">
+      <a href="../../basic/greedy/" class="md-nav__link">
         贪心
       </a>
     </li>
@@ -364,7 +354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/sorting/" class="md-nav__link">
+      <a href="../../basic/sorting/" class="md-nav__link">
         排序
       </a>
     </li>
@@ -378,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/multiper/" class="md-nav__link">
+      <a href="../../basic/multiper/" class="md-nav__link">
         倍增
       </a>
     </li>
@@ -392,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/rmq/" class="md-nav__link">
+      <a href="../../basic/rmq/" class="md-nav__link">
         RMQ
       </a>
     </li>
@@ -406,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/binaryoperation/" class="md-nav__link">
+      <a href="../../basic/binaryoperation/" class="md-nav__link">
         位运算
       </a>
     </li>
@@ -420,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/basic/dff-prefixsum/" class="md-nav__link">
+      <a href="../../basic/dff-prefixsum/" class="md-nav__link">
         前缀和 & 差分
       </a>
     </li>
@@ -439,12 +429,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -467,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/set-dp/" class="md-nav__link">
+      <a href="../set-dp/" class="md-nav__link">
         集合式分析法
       </a>
     </li>
@@ -481,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/how-to-think/" class="md-nav__link">
+      <a href="../how-to-think/" class="md-nav__link">
         如何设计状态 & 方程
       </a>
     </li>
@@ -495,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/pack-dp/" class="md-nav__link">
+      <a href="../pack-dp/" class="md-nav__link">
         背包 DP
       </a>
     </li>
@@ -507,11 +499,75 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="algor/dp/interval-dp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          区间 DP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         区间 DP
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dp" class="md-nav__link">
+    区间DP
+  </a>
+  
+    <nav class="md-nav" aria-label="区间DP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区间作为阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    断环成链
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分割型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -523,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/tree-dp/" class="md-nav__link">
+      <a href="../tree-dp/" class="md-nav__link">
         树形 DP
       </a>
     </li>
@@ -537,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/comp-dp/" class="md-nav__link">
+      <a href="../comp-dp/" class="md-nav__link">
         状压 DP
       </a>
     </li>
@@ -551,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/digit-dp/" class="md-nav__link">
+      <a href="../digit-dp/" class="md-nav__link">
         数位 DP
       </a>
     </li>
@@ -565,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/sos-dp/" class="md-nav__link">
+      <a href="../sos-dp/" class="md-nav__link">
         SOS DP
       </a>
     </li>
@@ -605,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/opt/mq-dp/" class="md-nav__link">
+      <a href="../opt/mq-dp/" class="md-nav__link">
         单调队列优化
       </a>
     </li>
@@ -619,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/opt/ds-dp/" class="md-nav__link">
+      <a href="../opt/ds-dp/" class="md-nav__link">
         数据结构优化
       </a>
     </li>
@@ -633,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/dp/opt/convex-dp/" class="md-nav__link">
+      <a href="../opt/convex-dp/" class="md-nav__link">
         斜率优化
       </a>
     </li>
@@ -687,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/list-star/" class="md-nav__link">
+      <a href="../../graph/list-star/" class="md-nav__link">
         链式前向星
       </a>
     </li>
@@ -701,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/dfs-order/" class="md-nav__link">
+      <a href="../../graph/dfs-order/" class="md-nav__link">
         DFS 序相关
       </a>
     </li>
@@ -715,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/simple/" class="md-nav__link">
+      <a href="../../graph/simple/" class="md-nav__link">
         简单图论问题
       </a>
     </li>
@@ -729,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/sssp/" class="md-nav__link">
+      <a href="../../graph/sssp/" class="md-nav__link">
         最短路
       </a>
     </li>
@@ -743,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/ring-diff/" class="md-nav__link">
+      <a href="../../graph/ring-diff/" class="md-nav__link">
         负环 & 差分约束
       </a>
     </li>
@@ -757,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/mst/" class="md-nav__link">
+      <a href="../../graph/mst/" class="md-nav__link">
         最小生成树
       </a>
     </li>
@@ -771,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/lca/" class="md-nav__link">
+      <a href="../../graph/lca/" class="md-nav__link">
         最近公共祖先
       </a>
     </li>
@@ -785,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/dcc/" class="md-nav__link">
+      <a href="../../graph/dcc/" class="md-nav__link">
         双连通分量
       </a>
     </li>
@@ -799,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/scc/" class="md-nav__link">
+      <a href="../../graph/scc/" class="md-nav__link">
         强连通分量
       </a>
     </li>
@@ -813,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/2sat/" class="md-nav__link">
+      <a href="../../graph/2sat/" class="md-nav__link">
         2-SAT 问题
       </a>
     </li>
@@ -827,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/bip-graph/" class="md-nav__link">
+      <a href="../../graph/bip-graph/" class="md-nav__link">
         二分图
       </a>
     </li>
@@ -841,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/graph/dsu-on-tree/" class="md-nav__link">
+      <a href="../../graph/dsu-on-tree/" class="md-nav__link">
         Dsu On Tree
       </a>
     </li>
@@ -888,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/list/" class="md-nav__link">
+      <a href="../../ds/list/" class="md-nav__link">
         链表
       </a>
     </li>
@@ -902,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/mono-queue/" class="md-nav__link">
+      <a href="../../ds/mono-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -916,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/segtree/" class="md-nav__link">
+      <a href="../../ds/segtree/" class="md-nav__link">
         线段树
       </a>
     </li>
@@ -930,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/blocks/" class="md-nav__link">
+      <a href="../../ds/blocks/" class="md-nav__link">
         简单分块
       </a>
     </li>
@@ -944,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/odt/" class="md-nav__link">
+      <a href="../../ds/odt/" class="md-nav__link">
         珂朵莉树
       </a>
     </li>
@@ -958,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/president-trie/" class="md-nav__link">
+      <a href="../../ds/president-trie/" class="md-nav__link">
         可持久化 Trie
       </a>
     </li>
@@ -972,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/trie-bst/" class="md-nav__link">
+      <a href="../../ds/trie-bst/" class="md-nav__link">
         用 Trie 实现平衡树
       </a>
     </li>
@@ -986,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/ds/hld/" class="md-nav__link">
+      <a href="../../ds/hld/" class="md-nav__link">
         轻重链剖分
       </a>
     </li>
@@ -1033,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/math/matrix/" class="md-nav__link">
+      <a href="../../math/matrix/" class="md-nav__link">
         矩阵
       </a>
     </li>
@@ -1047,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/math/perm/" class="md-nav__link">
+      <a href="../../math/perm/" class="md-nav__link">
         置换
       </a>
     </li>
@@ -1061,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/math/poset/" class="md-nav__link">
+      <a href="../../math/poset/" class="md-nav__link">
         偏序
       </a>
     </li>
@@ -1108,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/string/trie/" class="md-nav__link">
+      <a href="../../string/trie/" class="md-nav__link">
         Trie
       </a>
     </li>
@@ -1155,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/misc/mo/" class="md-nav__link">
+      <a href="../../misc/mo/" class="md-nav__link">
         普通莫队
       </a>
     </li>
@@ -1169,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="algor/misc/mt19937/" class="md-nav__link">
+      <a href="../../misc/mt19937/" class="md-nav__link">
         mt19937
       </a>
     </li>
@@ -1224,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2202-trick/" class="md-nav__link">
+      <a href="../../../problem/2202-trick/" class="md-nav__link">
         Tricks-二月
       </a>
     </li>
@@ -1238,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2203-trick/" class="md-nav__link">
+      <a href="../../../problem/2203-trick/" class="md-nav__link">
         Tricks-三月
       </a>
     </li>
@@ -1252,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2204-trick/" class="md-nav__link">
+      <a href="../../../problem/2204-trick/" class="md-nav__link">
         Tricks-四月
       </a>
     </li>
@@ -1266,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2205-trick/" class="md-nav__link">
+      <a href="../../../problem/2205-trick/" class="md-nav__link">
         Tricks-五月
       </a>
     </li>
@@ -1280,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2202-great/" class="md-nav__link">
+      <a href="../../../problem/2202-great/" class="md-nav__link">
         好题-二月
       </a>
     </li>
@@ -1294,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2203-great/" class="md-nav__link">
+      <a href="../../../problem/2203-great/" class="md-nav__link">
         好题-三月
       </a>
     </li>
@@ -1308,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2204-great/" class="md-nav__link">
+      <a href="../../../problem/2204-great/" class="md-nav__link">
         好题-四月
       </a>
     </li>
@@ -1322,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="problem/2205-great/" class="md-nav__link">
+      <a href="../../../problem/2205-great/" class="md-nav__link">
         好题-五月
       </a>
     </li>
@@ -1396,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/mock/220413B/" class="md-nav__link">
+      <a href="../../../solution/mock/220413B/" class="md-nav__link">
         20220413B组
       </a>
     </li>
@@ -1410,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/mock/220429C/" class="md-nav__link">
+      <a href="../../../solution/mock/220429C/" class="md-nav__link">
         20220429C组
       </a>
     </li>
@@ -1424,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/mock/220511C/" class="md-nav__link">
+      <a href="../../../solution/mock/220511C/" class="md-nav__link">
         20220511C组
       </a>
     </li>
@@ -1438,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/mock/220518C/" class="md-nav__link">
+      <a href="../../../solution/mock/220518C/" class="md-nav__link">
         20220518C组
       </a>
     </li>
@@ -1485,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/acwing277/" class="md-nav__link">
+      <a href="../../../solution/pro/acwing277/" class="md-nav__link">
         Acwing277
       </a>
     </li>
@@ -1499,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/acwing355/" class="md-nav__link">
+      <a href="../../../solution/pro/acwing355/" class="md-nav__link">
         Acwing355
       </a>
     </li>
@@ -1513,7 +1569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/bzoj3307/" class="md-nav__link">
+      <a href="../../../solution/pro/bzoj3307/" class="md-nav__link">
         Bzoj3307
       </a>
     </li>
@@ -1527,7 +1583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/cf713c/" class="md-nav__link">
+      <a href="../../../solution/pro/cf713c/" class="md-nav__link">
         CF713C
       </a>
     </li>
@@ -1541,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/cf1637f/" class="md-nav__link">
+      <a href="../../../solution/pro/cf1637f/" class="md-nav__link">
         CF1637F
       </a>
     </li>
@@ -1555,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/cf1651e/" class="md-nav__link">
+      <a href="../../../solution/pro/cf1651e/" class="md-nav__link">
         CF1651E
       </a>
     </li>
@@ -1569,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/pro/uoj105/" class="md-nav__link">
+      <a href="../../../solution/pro/uoj105/" class="md-nav__link">
         Uoj105
       </a>
     </li>
@@ -1616,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/old/old-cf-at-misc/" class="md-nav__link">
+      <a href="../../../solution/old/old-cf-at-misc/" class="md-nav__link">
         CF & AT 杂题
       </a>
     </li>
@@ -1630,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="solution/old/old-cf-at-sol/" class="md-nav__link">
+      <a href="../../../solution/old/old-cf-at-sol/" class="md-nav__link">
         CF & AT 题解
       </a>
     </li>
@@ -1685,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/snippets/" class="md-nav__link">
+      <a href="../../../essay/snippets/" class="md-nav__link">
         常用 Snippets
       </a>
     </li>
@@ -1699,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/includes/" class="md-nav__link">
+      <a href="../../../essay/includes/" class="md-nav__link">
         常用头文件
       </a>
     </li>
@@ -1713,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/kachang/" class="md-nav__link">
+      <a href="../../../essay/kachang/" class="md-nav__link">
         常用卡常小技巧
       </a>
     </li>
@@ -1727,7 +1783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/commonbugs/" class="md-nav__link">
+      <a href="../../../essay/commonbugs/" class="md-nav__link">
         常见 Bugs
       </a>
     </li>
@@ -1741,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/train/" class="md-nav__link">
+      <a href="../../../essay/train/" class="md-nav__link">
         C++火车头
       </a>
     </li>
@@ -1755,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/pointer-ref/" class="md-nav__link">
+      <a href="../../../essay/pointer-ref/" class="md-nav__link">
         C++指针 & 引用
       </a>
     </li>
@@ -1769,7 +1825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="essay/complexity/" class="md-nav__link">
+      <a href="../../../essay/complexity/" class="md-nav__link">
         时间复杂度分析
       </a>
     </li>
@@ -1817,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/dairy/" class="md-nav__link">
+      <a href="../../../study/dairy/" class="md-nav__link">
         Dairy
       </a>
     </li>
@@ -1831,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/contest/" class="md-nav__link">
+      <a href="../../../study/contest/" class="md-nav__link">
         Contest
       </a>
     </li>
@@ -1845,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/solving/" class="md-nav__link">
+      <a href="../../../study/solving/" class="md-nav__link">
         Solving
       </a>
     </li>
@@ -1859,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/notification/" class="md-nav__link">
+      <a href="../../../study/notification/" class="md-nav__link">
         Notification
       </a>
     </li>
@@ -1873,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/concentration/" class="md-nav__link">
+      <a href="../../../study/concentration/" class="md-nav__link">
         Concentration
       </a>
     </li>
@@ -1887,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/perfectionism/" class="md-nav__link">
+      <a href="../../../study/perfectionism/" class="md-nav__link">
         Perfectionism
       </a>
     </li>
@@ -1918,8 +1974,48 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dp" class="md-nav__link">
+    区间DP
+  </a>
+  
+    <nav class="md-nav" aria-label="区间DP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区间作为阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    断环成链
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    分割型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1931,19 +2027,113 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/index.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/dp/interval-dp.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>无可奉告。</p>
-<p>如有特殊需求需要转载请联系：</p>
-<p><code>mailto:black_trees@foxmail.com</code>，<code>QQ:1020061231</code></p>
-<hr />
-<p>别指望这里的东西很容易看懂，这就我写给自己看的。</p>
-<p>我又不是专门为你而写，抱着这种心态的可以直接 Control+w 关掉这个 Tab 了。</p>
+  <h1>区间 DP</h1>
+
+<h2 id="dp">区间DP<a class="headerlink" href="#dp" title="Permanent link">&para;</a></h2>
+<h3 id="_1">区间作为阶段<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>典型的题目就是合并石子，能量项链这种。</p>
+<p>题面一般会说 “<strong>合并</strong>” 之类的词，状态一般会是 <span class="arithmatex">\(f_{l,r}\)</span> 表示将区间 <span class="arithmatex">\(l,r\)</span> 全部合并的最优价值。</p>
+<p>当然也有可能是 “处理完这个区间的最优”，那么做法相应的会有一点变化（比如 CQOI的涂色，和老王去关路灯那个题）</p>
+<p>做法是以区间作为阶段，然后枚举区间左端点。</p>
+<p>再在每一个区间里找到一个“分割点”，把前后两个部分合并起来并加上操作的权值即可。</p>
+<p>代码一般长这样：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">init</span><span class="p">();</span><span class="w"> </span><span class="c1">//预处理长度为 1,...,a 的区间</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="o">/</span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">calc</span><span class="p">(</span><span class="n">k</span><span class="p">));</span><span class="w"> </span>
+<span class="w">            </span><span class="c1">//calc(k) 是从 k, k+ 1 这里断开的操作价值。</span>
+<span class="w">        </span><span class="p">}</span><span class="w">   </span><span class="c1">// k 表示 从 k, k + 1 这两个点中间断开，所以 k &lt; j。</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_2">断环成链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>当区间DP问题被放到环上的时候可以采取。</p>
+<p>只需要把原序列复制一边扔到后面即可。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="p">,</span><span class="w"> </span><span class="n">a4</span><span class="p">,</span><span class="w"> </span><span class="n">a5</span><span class="p">,...</span><span class="n">an</span><span class="p">,</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="p">,......</span><span class="n">an</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>相应的，初始化和读入操作需要的数的时候也需要复制并扩展一倍。</p>
+<p>假设问题要求的是整个环合并起来的最优解，那么循环求最优解需要这么写：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// [i,j] 是断环成链之后所有长度为 n 的区间</span>
+<span class="w">    </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_3">分割型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>问题一般是给你一个序列，要求你把他分成 <span class="arithmatex">\(m\)</span> 个部分，使得权值和最大。</p>
+<p>这里的<strong>权值和会随着分割部分的不同而变化</strong>。</p>
+<p>那么设 <span class="arithmatex">\(f_{i,j}\)</span> 从 <span class="arithmatex">\(1\to i\)</span> 构成的序列，分割成 <span class="arithmatex">\(j\)</span> 部分的所有方案，属性为权值和的最值。</p>
+<p>考虑从 “最后一个” 下手，也就是 “最后一个部分”。</p>
+<p>那么我们可以在 <span class="arithmatex">\(1 \to i\)</span> 这一段上枚举一个分割点 <span class="arithmatex">\(k\)</span>。</p>
+<p>使得 <span class="arithmatex">\([k+1,i]\)</span> 构成第 <span class="arithmatex">\(j\)</span> 部分。</p>
+<p>因为前面必须要分割成 <span class="arithmatex">\(j-1\)</span> 个部分，所以 <span class="arithmatex">\(1 \to k\)</span> 起码要有 <span class="arithmatex">\(j - 1\)</span> 个元素，那么实际枚举的时候 <span class="arithmatex">\(k \in [j-1,i)\)</span> 才行。 </p>
+<p>所以可以得到状态转移方程：<span class="arithmatex">\(f_{i,j}=\max\limits_{j - 1\le k &lt; i}\{f_{k,j-1}+w_{k+1,i}\}\)</span></p>
+<p><span class="arithmatex">\(\max()\)</span> 是直接在函数里的所有变量当中取 <span class="arithmatex">\(\max\)</span> ，而 <span class="arithmatex">\(\max\{\}\)</span> 表示在所有的可能里取最大值。</p>
+<p>此处的决策变量是 <span class="arithmatex">\(k\)</span> ，所以是在所有的 <span class="arithmatex">\(k\)</span> 代表的 <span class="arithmatex">\(f_{k,j-1}+w_{k+1,i}\)</span> 当中取最大值（在决策集合中取最大值）。</p>
+<p><span class="arithmatex">\(w\)</span> 一般可以通过预处理得到。</p>
+<p>方程直接根据题魔改即可。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">memset</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+<span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">];</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>典型题有 IOI2000 的邮局和 IOI1999 的花店橱窗布置。</p>
+<div class="admonition note">
+<p class="admonition-title">一些想法</p>
+<p>最近（<code>May/05/2022</code>）发现这个方程挺常见的（</p>
+<p>而且还有很多变式，比如这东西实际上可以滚动数组，</p>
+<p><span class="arithmatex">\(i, j\)</span> 分别作为阶段都是可以保证后效性的。 </p>
+<p>如果题目没有要求你具体要分多少段，可以省去第二维和 <span class="arithmatex">\(j\)</span> 的枚举，并且 <span class="arithmatex">\(k\)</span> 的取值范围将会变成 <span class="arithmatex">\(0 \le k &lt; i\)</span>。</p>
+<p>很多数据结构优化 DP 题都会遇到这个方程(的变式)。</p>
+<p>比如 The battle of chibi，The Bakery，Optimal Partition 都是。</p>
+<p>任务安排1 也用了同样的思想。</p>
+<p>第一题和第三、四题是没有要求分多少段，然后可以利用维护值域的树状数组代替平衡树插入决策，并以动态插入的方式保证方程的一个条件 <span class="arithmatex">\(j &lt; i\)</span> 成立。</p>
+<p>第二题是要求了分多少段，我思考时为了统一优化方式，把 <span class="arithmatex">\(i,j\)</span> 交换了，但事后发现其实两个都一样（</p>
+<p>对这个方程的优化都是一个套路：固定外层循环，然后看内层循环决策集合的变化，根据不同情况选择数据结构进行维护。</p>
+<p>而且数据结构起的作用都是快速地直接得到决策集合的转移信息（最值（线段树/树状数组），总和（树状数组））。</p>
+</div>
 
               
             </article>
@@ -1956,15 +2146,30 @@
   
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
+        
+        <a href="../pack-dp/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 背包 DP" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              背包 DP
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="algor/basic/binarysearch/" class="md-footer__link md-footer__link--next" aria-label="下一页: 二分" rel="next">
+        <a href="../tree-dp/" class="md-footer__link md-footer__link--next" aria-label="下一页: 树形 DP" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              二分
+              树形 DP
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1998,12 +2203,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
