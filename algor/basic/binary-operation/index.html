@@ -10,14 +10,14 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/binarysearch/">
+        <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/binary-operation/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>二分 - OI-Collection</title>
+        <title>位运算 - OI-Collection</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              二分
+              位运算
             
           </span>
         </div>
@@ -223,43 +223,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1">
-          简介
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="简介" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          简介
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        奉劝
+        简介
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -326,82 +293,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          二分
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../binary-search/" class="md-nav__link">
         二分
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    二分
-  </a>
-  
-    <nav class="md-nav" aria-label="二分">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    整数域
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    实数域
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    二分答案
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stl" class="md-nav__link">
-    STL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -467,11 +363,116 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../binaryoperation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          位运算
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         位运算
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    位运算
+  </a>
+  
+    <nav class="md-nav" aria-label="位运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基础运算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    技巧
+  </a>
+  
+    <nav class="md-nav" aria-label="技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lowbit" class="md-nav__link">
+    lowbit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popcnt" class="md-nav__link">
+    popcnt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    状压
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    快速幂
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    龟速乘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    快速乘
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -750,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/list-star/" class="md-nav__link">
+      <a href="../../graph/list-forward-star/" class="md-nav__link">
         链式前向星
       </a>
     </li>
@@ -806,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/ring-diff/" class="md-nav__link">
+      <a href="../../graph/minusring-diffconstraint/" class="md-nav__link">
         负环 & 差分约束
       </a>
     </li>
@@ -1990,37 +1991,71 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    二分
+    位运算
   </a>
   
-    <nav class="md-nav" aria-label="二分">
+    <nav class="md-nav" aria-label="位运算">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    整数域
+    基础运算符
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    实数域
+    技巧
+  </a>
+  
+    <nav class="md-nav" aria-label="技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lowbit" class="md-nav__link">
+    lowbit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popcnt" class="md-nav__link">
+    popcnt
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    二分答案
+    状压
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stl" class="md-nav__link">
-    STL
+  <a href="#_5" class="md-nav__link">
+    快速幂
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    龟速乘
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    快速乘
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2041,87 +2076,212 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/basic/binarysearch.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/basic/binary-operation.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>二分</h1>
+  <h1>位运算</h1>
 
-<h2 id="_1">二分<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>作用是在单调的序列或者单调的函数当中进行查找。</p>
-<p>也可以将最优化问题转化为可行性问题之后进行判定求解。</p>
-<h3 id="_2">整数域<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>问题：在单调递增的序列当中查找大于等于 <span class="arithmatex">\(x\)</span> 的最小的一个数</p>
-</blockquote>
-<p>开始令两个指针 <span class="arithmatex">\(l=1,r=n\)</span> 。</p>
-<p>每次取 <span class="arithmatex">\(mid=\lfloor(l+r)/2\rfloor\)</span></p>
-<p>如果 <span class="arithmatex">\(a_{mid} \ge x\)</span> ，证明<strong>可行区间</strong>在 <span class="arithmatex">\(mid\)</span> 左侧，缩小二分区间到可行区间，将 <span class="arithmatex">\(r=mid\)</span>。</p>
-<p>反之将 <span class="arithmatex">\(l=mid+1\)</span>，直到 <span class="arithmatex">\(l=r\)</span> 时，<span class="arithmatex">\(a_l\)</span> 就是答案。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="n">n</span><span class="p">;</span><span class="w"></span>
-<span class="k">while</span><span class="p">(</span><span class="n">l</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="w"> </span><span class="c1">// mid 也可能是答案，也要取。</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="n">l</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
-<p>如果需要判断无解，令 <span class="arithmatex">\(r=n+1\)</span> ，如果最后 <span class="arithmatex">\(l=r=n+1\)</span> ，那么无解。</p>
-<p>因为这种写法下 <span class="arithmatex">\(mid\)</span> 永远不会取到 <span class="arithmatex">\(r\)</span>。</p>
-<p>如果问小于等于，也就是可行区间在 <span class="arithmatex">\(mid\)</span> 右侧，反过来即可：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="c1">// 判无解则令 l=0，这种写法 mid 永远不会取到 l</span>
-<span class="k">while</span><span class="p">(</span><span class="n">l</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="n">mid</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="n">l</span><span class="p">;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
-<p>一张图理解，下图红色为可行区间：</p>
-<p><a href="https://imgtu.com/i/HYeeHI"><img alt="binary.png" src="https://s4.ax1x.com/2022/02/10/HYeeHI.png" /></a></p>
-<h3 id="_3">实数域<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>和整数域比较类似，不过设置 <span class="arithmatex">\(eps\)</span> 即可。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="p">(</span><span class="kt">double</span><span class="p">)(</span><span class="mf">1e9</span><span class="o">+</span><span class="mi">7</span><span class="p">),</span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
-<span class="k">while</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">eps</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">valid</span><span class="p">(</span><span class="n">mid</span><span class="p">))</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span><span class="n">ans</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// 也需要根据可行区间的位置判断写法。</span>
-</code></pre></div>
-</td></tr></table>
-<p>也可以计算之后设置次数二分。</p>
-<h3 id="_4">二分答案<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>如果一个最优解问题的最优解是 <span class="arithmatex">\(x\)</span> ，并且 <span class="arithmatex">\(x\)</span> 的一边不合法，一边合法，则这个问题具有单调性。</p>
-<p>可以在每次二分的时候将问题转化为是否存在一个方案，使得解为 <span class="arithmatex">\(mid\)</span> 。</p>
-<p>二分答案 <span class="arithmatex">\(x\)</span> 并进行判定。</p>
-<p>然后根据可行区间的方式选择二分方式即可。</p>
-<p>此类问题的显著特点就是“最小值最大”，“最大值最小”。</p>
-<p>不过也有例外，比如AGC004D。</p>
-<h3 id="stl">STL<a class="headerlink" href="#stl" title="Permanent link">&para;</a></h3>
+<h2 id="_1">位运算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">基础运算符<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>and,or,xor</code> 的显著特点就是<strong>二进制下不进位</strong>。</p>
 <ul>
-<li><code>lower_bound</code> ：在有序序列查找大于等于 <span class="arithmatex">\(x\)</span> 的第一个。</li>
-<li><code>upper_bound</code> ：大于 <span class="arithmatex">\(x\)</span>。</li>
+<li>按位与 <code>&amp;</code> ，<code>and</code></li>
 </ul>
-<p>如果类似 <code>set</code> ，自己带有 <code>lower_bound</code>。</p>
-<p>就一定选择容器<strong>自身</strong>的：<code>s.lower_bound(x)</code> 而不是 <code>lower_bound(s.begin(),s.end(),x)</code>。</p>
-<p>这样效率更高。</p>
+<p>特点：二元运算符，二进制下按位进行运算，全 <span class="arithmatex">\(1\)</span> 则 <span class="arithmatex">\(1\)</span> ，反之为 <span class="arithmatex">\(0\)</span>。</p>
+<p>性质：<span class="arithmatex">\(a \&amp; b \le \min(a,b)\)</span>（手推即可）。</p>
+<ul>
+<li>按位或 <code>|</code> ，<code>or</code></li>
+</ul>
+<p>特点：二元运算符，二进制下按位进行运算，有 <span class="arithmatex">\(1\)</span> 则 <span class="arithmatex">\(1\)</span> ，全 <span class="arithmatex">\(0\)</span> 则 <span class="arithmatex">\(0\)</span>。</p>
+<p>性质：<span class="arithmatex">\(a | b \ge \max(a,b)\)</span></p>
+<p>有个怪想法：既然不管是啥 | 1 都是 1，那是不是可以很快的把某个数变成 <span class="arithmatex">\(2^n-1\)</span> 的形式？</p>
+<ul>
+<li>按位异或 <code>^</code> ，<code>xor</code></li>
+</ul>
+<p>特点：二元运算符，二进制下按位进行运算，相反则 <span class="arithmatex">\(1\)</span> ，反之则 <span class="arithmatex">\(0\)</span>。</p>
+<p>相当于二进制下的不进位加法。</p>
+<p><span class="arithmatex">\(x \operatorname{xor} y = k \ \Rightarrow x \operatorname{xor} k =y \ \Rightarrow y \operatorname{xor} k=x\)</span> </p>
+<p>可以用于成对变换（图论当中常用）。</p>
+<p>令 <span class="arithmatex">\(n\)</span> 为偶数，那么 <span class="arithmatex">\(n \operatorname{xor} 1 = n+1\)</span>。</p>
+<p>令 <span class="arithmatex">\(n\)</span> 为奇数，那么 <span class="arithmatex">\(n \operatorname{xor} 1 =n-1\)</span>。</p>
+<ul>
+<li>按位取反 <code>~</code> ，<code>not</code></li>
+</ul>
+<p>特点：一元运算符，二进制下的每一位都取反（包括符号位）。</p>
+<ul>
+<li>左移 <code>&lt;&lt;</code></li>
+</ul>
+<p>特点：一元运算符，二进制下把每一位向左平移，高位越界则舍弃，低位用 <span class="arithmatex">\(0\)</span> 补足。</p>
+<p>公式<span class="arithmatex">\(1 &lt;&lt; n =2^n,x&lt;&lt;n=x\times 2^n\)</span>公式</p>
+<ul>
+<li>算术右移 <code>&gt;&gt;</code></li>
+</ul>
+<p>特点：一元运算符，二进制下把每一位向右平移，低位越界则舍弃，高位用<strong>符号位</strong>补足。</p>
+<p><span class="arithmatex">\(n&gt;&gt;1=\lfloor \frac{n}{2}\rfloor\)</span> 。 GNU 的 GCC和G++都使用算术右移，逻辑右移高位用 <span class="arithmatex">\(0\)</span> 补足。</p>
+<h3 id="_3">技巧<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="lowbit">lowbit<a class="headerlink" href="#lowbit" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\operatorname{lowbit}(n)\)</span> 表示二进制下 <span class="arithmatex">\(n\)</span> 的最低的一个 <span class="arithmatex">\(1\)</span> 和它后面的 <span class="arithmatex">\(0\)</span> 组成的数。</p>
+<p>公式：<span class="arithmatex">\(\operatorname{lowbit}(n)=n \&amp; -n\)</span>。</p>
+<h4 id="popcnt">popcnt<a class="headerlink" href="#popcnt" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\operatorname{popcnt}(n)\)</span> 表示二进制下 <span class="arithmatex">\(n\)</span> 有多少位是 <span class="arithmatex">\(1\)</span> 。</p>
+<p>可以直接用 </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">__builtin_popcount</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">__builtin_popcountll</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>毕竟现在的 NOI Linux 2.0 支持 C++14 和 G++ 9.8.3。</p>
+<p>不过也可以手写</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="o">++</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">n</span><span class="o">-=</span><span class="n">lowbit</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_4">状压<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>把状态表示为一个二进制数之后进行操作（当然可以用 bitset，但是肯定没有直接拿一个数来做好）。</p>
+<p>假设最低位为第一位。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">   </span><span class="p">(</span><span class="n">highest</span><span class="p">)</span><span class="w">      </span><span class="p">(</span><span class="n">lowest</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="o">|</span><span class="w">               </span><span class="o">|</span><span class="w">             </span>
+<span class="w">      </span><span class="n">V</span><span class="w">               </span><span class="n">V</span><span class="w"> </span>
+<span class="nl">bit</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w">                </span>
+<span class="nl">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>那么可以有以下操作：</p>
+<ul>
+<li>检测第 <span class="arithmatex">\(k\)</span> 位是 <span class="arithmatex">\(0/1\)</span> ：<code>(n&amp;(1&lt;&lt;(k-1)))!=0</code> -&gt; 1</li>
+<li>给第 <span class="arithmatex">\(k\)</span> 位取反：<code>n^=(1&lt;&lt;(k-1))</code></li>
+<li>将第 <span class="arithmatex">\(k\)</span> 位赋值为 <span class="arithmatex">\(1\)</span>：<code>n|=(1&lt;&lt;(k-1))</code></li>
+<li>将第 <span class="arithmatex">\(k\)</span> 位赋值为 <span class="arithmatex">\(0\)</span>：<code>n&amp;=(~(1&lt;&lt;(k-1)))</code></li>
+</ul>
+<p>因为 C++ 默认是 <span class="arithmatex">\(0\)</span> 开头的，所以要 <span class="arithmatex">\(-1\)</span>。</p>
+<p>不过终态仍旧是 <span class="arithmatex">\(1&lt;&lt;n\)</span> （和最低位为 <span class="arithmatex">\(0\)</span> 的不减一写法是一样的）</p>
+<p>说白了，如果以 <span class="arithmatex">\(0\)</span> 做最低位，不 <span class="arithmatex">\(-1\)</span> 。以 <span class="arithmatex">\(1\)</span> 做最低位，要 <span class="arithmatex">\(-1\)</span> ，但是；这两种写法写的时候，对应的位置实际上是一样的。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// C++ Version</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">isPowerOfTwo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="c1">// C++ Version</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">modPowerOfTwo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">mod</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="c1">// C++ Version</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">Abs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="cm">/* n&gt;&gt;31 取得 n 的符号，若 n 为正数，n&gt;&gt;31 等于 0，若 n 为负数，n&gt;&gt;31 等于 -1</span>
+<span class="cm">     若 n 为正数 n^0=n, 数不变，若 n 为负数有 n^(-1)</span>
+<span class="cm">     需要计算 n 和 -1 的补码，然后进行异或运算，</span>
+<span class="cm">     结果 n 变号并且为 n 的绝对值减 1，再减去 -1 就是绝对值 */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">// C++ Version</span>
+<span class="c1">// 如果 a&gt;=b,(a-b)&gt;&gt;31 为 0，否则为 -1</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">((</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_5">快速幂<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给定 <span class="arithmatex">\(a,b \le 10^{9}\)</span> ，<span class="arithmatex">\(p\)</span> 为一个大质数，求 <span class="arithmatex">\(a^b \operatorname{mod} p\)</span>。</p>
+</blockquote>
+<p>考虑二进制拆分思想，把 <span class="arithmatex">\(b\)</span> 在二进制下（一共 <span class="arithmatex">\(k\)</span> 位）的每一个 <span class="arithmatex">\(1\)</span> 单独拆开：</p>
+<p><span class="arithmatex">\(b= \sum\limits_{i=1}^k c_i \times 2^{i-1}\)</span></p>
+<p>把式子展开之后放到指数位置：</p>
+<p><span class="arithmatex">\(a^b=\prod\limits_{i=1}^{k} a^{c_k\times2^{k-1}}\)</span></p>
+<p>然后发现 <span class="arithmatex">\(a^{2^i}=(a^{2^{i-1}})^2\)</span> ，所以这个式子可以递推。</p>
+<p>因为 <span class="arithmatex">\(k \le \log(b)\)</span> ，所以复杂度是 <span class="arithmatex">\(\text{O}(\log(b))\)</span>。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">qpow</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="mi">1</span><span class="o">%</span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// attention</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(;</span><span class="n">b</span><span class="p">;</span><span class="n">b</span><span class="o">&gt;&gt;=</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">ans</span><span class="o">*</span><span class="n">a</span><span class="o">%</span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// b 的当前位是 1 ，累乘答案。</span>
+<span class="w">        </span><span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="o">%</span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// 递推。</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_6">龟速乘<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>如果 <span class="arithmatex">\(10^{18}\)</span>？</p>
+</blockquote>
+<p>发现快速幂的时候乘法容易爆，所以考虑写一个类似“64位整数乘法”的东西。</p>
+<p>仍然考虑二进制拆分，也可以直接递推，不过上面是乘，这里是累加。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#define int long long</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">turtle_mul</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(;</span><span class="n">b</span><span class="p">;</span><span class="n">b</span><span class="o">&gt;&gt;=</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="p">(</span><span class="n">ans</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="mi">2</span><span class="o">%</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="cp">#undef int </span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_7">快速乘<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>发现龟速乘的时候时间复杂度是 <span class="arithmatex">\(\log\)</span> 的。</p>
+<p>所以我们想一想又没有更优秀的做法。</p>
+<p>骆可强神仙在2009年的集训队论文里提到了一个有意思的做法。</p>
+<p>因为 <span class="arithmatex">\(a\times b \operatorname{mod} p=a\times b -\lfloor \frac{a\times b}{p} \rfloor \times p\)</span> 。</p>
+<p>考虑用 <code>long double</code> 存 <span class="arithmatex">\(\frac{a\times b}{p}\)</span> ，那么直接看整数部分即可。</p>
+<p>然后发现上面的减法当中，前者和后者的差不会大于 <span class="arithmatex">\(p\)</span> ，所以分别用 <code>long long</code> 存，只需要关心较低位就行。</p>
+<p>整数运算溢出就相当于取模，所以完全可以这么干（不过在 <span class="arithmatex">\(p\)</span> 大了之后会有精度问题）。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#define int long long</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">qmul</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="o">%=</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="o">%=</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ans</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="o">+=</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">ans</span><span class="o">&gt;=</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="o">-=</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="cp">#undef int </span>
+</code></pre></div>
+</td></tr></table>
 
               
             </article>
@@ -2135,7 +2295,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: 奉劝" rel="prev">
+        <a href="../rmq/" class="md-footer__link md-footer__link--prev" aria-label="上一页: RMQ" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2144,20 +2304,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              奉劝
+              RMQ
             </div>
           </div>
         </a>
       
       
         
-        <a href="../greedy/" class="md-footer__link md-footer__link--next" aria-label="下一页: 贪心" rel="next">
+        <a href="../dff-prefixsum/" class="md-footer__link md-footer__link--next" aria-label="下一页: 前缀和 &amp; 差分" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              贪心
+              前缀和 & 差分
             </div>
           </div>
           <div class="md-footer__button md-icon">
