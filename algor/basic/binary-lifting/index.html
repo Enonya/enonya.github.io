@@ -10,7 +10,7 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/multiper/">
+        <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/binary-lifting/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
@@ -385,26 +385,39 @@
     倍增
   </a>
   
+    <nav class="md-nav" aria-label="倍增">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#st" class="md-nav__link">
+    ST 表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lca" class="md-nav__link">
+    倍增求 LCA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suffix-array" class="md-nav__link">
+    倍增求 Suffix Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rmq/" class="md-nav__link">
-        RMQ
-      </a>
     </li>
   
 
@@ -2166,6 +2179,33 @@
     倍增
   </a>
   
+    <nav class="md-nav" aria-label="倍增">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#st" class="md-nav__link">
+    ST 表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lca" class="md-nav__link">
+    倍增求 LCA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suffix-array" class="md-nav__link">
+    倍增求 Suffix Array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2180,7 +2220,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/basic/multiper.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/basic/binary-lifting.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
@@ -2189,21 +2229,74 @@
   <h1>倍增</h1>
 
 <h2 id="_1">倍增<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>用成倍增长和二进制拆分的思想优化类似递推的方法。</p>
-<p>常见的应用是 LCA 和  ST table。</p>
-<p>推导的柿子是 <span class="arithmatex">\(to[i][j] = to[to[i][j-1]][j-1]\)</span>。</p>
-<p>其中 <span class="arithmatex">\(to[i][j]\)</span> 表示 <span class="arithmatex">\(i\)</span> 这个元素经过 <span class="arithmatex">\(2^j\)</span> 次操作得到的什么东西。</p>
-<p>使用的时候可以把状态空间关于 <span class="arithmatex">\(2\)</span> 的正整数次幂有可划分性的类递推问题从 <span class="arithmatex">\(\text{O}(n)\)</span> 优化到 <span class="arithmatex">\(\text{O}(\log n)\)</span>。</p>
-<p>有可划分性的一种表现是：<span class="arithmatex">\(to[i][j] = to[ to[ to[ to[i][j-3] ][j-3] ][j-2] ][j-1]\)</span>，并且这样可以一直嵌套下去。</p>
-<p>然后一般对于一个数 <span class="arithmatex">\(k\)</span> ，要想知道 <span class="arithmatex">\(i\)</span> 经过 <span class="arithmatex">\(k\)</span> 次操作的结果是什么。</p>
-<p>利用所有正整数都可以表示为若干个 <span class="arithmatex">\(2\)</span> 的次幂项的和这个性质。</p>
-<p>先求出 <span class="arithmatex">\(to\)</span>。</p>
-<p>然后把 <span class="arithmatex">\(k\)</span> 转成二进制，对它进行二进制拆分。</p>
-<p>具体来说，<strong>从大往小</strong> 枚举 <span class="arithmatex">\(k\)</span> 在二进制下的每一位，如果当前位 <span class="arithmatex">\(j\)</span> 是 <span class="arithmatex">\(1\)</span> ，那么使 <span class="arithmatex">\(ans = to[ans][j]\)</span>。</p>
-<p>然后这样不断跳，就可以得到答案。</p>
-<p>推荐求 <span class="arithmatex">\(to\)</span> 的时候把 <span class="arithmatex">\(j\)</span> 放在外面，因为如果所有的 <span class="arithmatex">\(i\)</span> 依次组成的不是一个单调的序列，转移的时候可能出现从 <span class="arithmatex">\(to[3] \to to[1]\)</span> 这种。</p>
+<p>序列倍增本质上是对于递推的一种优化，通常和二进制拆分（任意一个正整数都可以被拆成 <span class="arithmatex">\(2\)</span> 的整数次幂的和）搭配使用。</p>
+<p>顾名思义，倍增，就是成倍增长，每次将范围扩大或者减小一倍。</p>
+<p>形式化的说，对于一个操作 <span class="arithmatex">\(f^n(x)\)</span> 的求值，可以转化为对 <span class="arithmatex">\(f^1(x),f^2(x),f^4(x),f^{2^k}(x)\)</span> 的求值。</p>
+<p>如果说求 <span class="arithmatex">\(f(x)\)</span> 的时间复杂度为 <span class="arithmatex">\(O(1)\)</span>，那么求 <span class="arithmatex">\(f^n(x)\)</span> 的复杂度可以从原本的 <span class="arithmatex">\(O(n)\)</span> 变为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<p>倍增的思想和可以用一个经典的例子，<a href="https://blog.csdn.net/JarjingX/article/details/8180560">兔子跳</a>来说明。</p>
+<blockquote>
+<p>你现在要从 <span class="arithmatex">\(1\)</span> 开始跳到某一个格子 <span class="arithmatex">\(t\)</span>，每次只能向前跳 <span class="arithmatex">\(2^k\)</span> 步，你不知道这个格子是多少。</p>
+<p>然后你每次可以询问交互库一个非负整数 <span class="arithmatex">\(k\)</span>，交互库会告诉你你从当前位置跳 <span class="arithmatex">\(2^k\)</span> 步是多了还是少了或者到了。</p>
+<p>你需要在尽量少的询问次数内到达 <span class="arithmatex">\(t\)</span>，保证 <span class="arithmatex">\(k \le limit\)</span>。</p>
+</blockquote>
+<p>比如令 <span class="arithmatex">\(limit = 8, t = 23\)</span>。</p>
+<p>先从大的开始问，<span class="arithmatex">\(k = 8\)</span>，<span class="arithmatex">\(2^8 = 256 &gt; 23\)</span> 过了，一直到 <span class="arithmatex">\(2^5 = 32 &gt; 23\)</span> 都是过了。</p>
+<p>然后到了 <span class="arithmatex">\(k = 4, 2^4 = 16 &lt; 23\)</span>，发现少了，所以我们能断定 <span class="arithmatex">\(t\)</span> 在 <span class="arithmatex">\((16,32)\)</span> 之间。</p>
+<p>此时跳到 <span class="arithmatex">\(16\)</span>，我们继续问，显然 <span class="arithmatex">\(k \ge 4\)</span> 的都不会再问了，因为当前就是 <span class="arithmatex">\(2^4\)</span>，再多哪怕一个 <span class="arithmatex">\(2^4\)</span>，就跳过了。</p>
+<p>所以从 <span class="arithmatex">\(k = 3\)</span> 开始问，<span class="arithmatex">\(16 + 2^3 = 24 &gt; 23\)</span>，过了，再问 <span class="arithmatex">\(k = 2\)</span>，<span class="arithmatex">\(16 + 2^2 = 20\)</span>，少了，所以跳到 <span class="arithmatex">\(20\)</span>。</p>
+<p>显然此时 <span class="arithmatex">\(k \ge 2\)</span> 的我们都不会问了，因为如果再问一个 <span class="arithmatex">\(k = 2\)</span>，那么就会多 <span class="arithmatex">\(2^2\)</span>，然后跳到 <span class="arithmatex">\(24\)</span>，就跳过了。</p>
+<p>所以我们选择问 <span class="arithmatex">\(k = 1\)</span>，<span class="arithmatex">\(20 + 2^1 = 22 &lt; 23\)</span>，少了，所以跳到 <span class="arithmatex">\(22\)</span>，此时最后问 <span class="arithmatex">\(k = 0\)</span>，然后就跳到了 <span class="arithmatex">\(23\)</span>。</p>
+<p>看起来有点麻烦？不过这个过程实际上是 <span class="arithmatex">\(O(\log n)\)</span> 的，在数据大起来之后是非常好用的！！</p>
+<p><strong>我们总结一下这个过程</strong>：</p>
+<ul>
+<li>可以发现 <span class="arithmatex">\(23 = 2^4 + 2^2 + 2^1 + 2^0\)</span>，这是二进制拆分，而出现的指数，恰好都是问交互库了之后我们跳了的 <span class="arithmatex">\(k\)</span>，所以倍增有时也可以看作一种二进制拆分。</li>
+<li>我们每次跳了过后，假设之前问了 <span class="arithmatex">\(k\)</span>，那么下一次绝对不会问 <span class="arithmatex">\(\ge k\)</span> 的了，这个道理很简单，就是此时再多加一个 <span class="arithmatex">\(2^k\)</span>，就跳到了 <span class="arithmatex">\(2^{k + 1}\)</span>，已经跳到了上界（开区间）了，肯定不行。（这个点在我们写循环的时候会用到）</li>
+<li>倍增就是每次看“多了没有？少了没有？”，然后做出对于范围的扩大或者缩小，利用二进制拆分，通过 <span class="arithmatex">\(2\)</span> 的整数次幂来构造任意一个非负整数的答案。</li>
+</ul>
+<p>写一份简单的代码：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ask_over_or_not</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;? &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">xx</span><span class="p">;</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">xx</span><span class="p">;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">xx</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nowpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 根据总结的第二点，我们只需要倒序循环一下就行了。</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ask_over_or_not</span><span class="p">(</span><span class="n">j</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">nowpos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;! &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nowpos</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>当然，你同样可以从小开始跳，本质上没有任何区别，只是我们代码实现的时候枚举指数的顺序从降序变成了升序。</p>
+<p>一个例题： <a href="http://codeforces.com/problemset/problem/1647/E">CF1647E</a>，<a href="../../../rec/atcf-for-2022-03/#cf1647e-madoka-and-the-sixth-graders">题解</a>。</p>
+<div class="admonition note">
+<p class="admonition-title">Warning</p>
+<p>推荐求 <span class="arithmatex">\(to\)</span> 的时候把 <span class="arithmatex">\(j\)</span> 放在外面，因为如果所有的 <span class="arithmatex">\(i\)</span> 依次组成的不是一个单调的序列，转移的时候可能出现从 <span class="arithmatex">\(to(3) \to to(1)\)</span> 这种。</p>
 <p>那么把 <span class="arithmatex">\(i\)</span> 放在外面就会有问题，如果 <span class="arithmatex">\(i\)</span> 是单调的，那么怎样都行。</p>
-<p>以 CF1647E 为例子：</p>
+</div>
+<p>这就是倍增，很有意思吧，倍增还有很多比较有意思的应用，</p>
+<h3 id="st">ST 表<a class="headerlink" href="#st" title="Permanent link">&para;</a></h3>
+<p>区间最值问题可以考虑线段树解决。</p>
+<p>不过有一个更好写一点的方法，<span class="arithmatex">\(\text{O}(n \log n)\)</span> 预处理，<span class="arithmatex">\(\text{O}(1)\)</span> 询问，但是不能带修。</p>
+<p>这就是 ST 表，利用倍增的思想考虑：</p>
+<p>设 <span class="arithmatex">\(f_{i,j}\)</span> 表示从 <span class="arithmatex">\(i\)</span> 开始的 <span class="arithmatex">\(2^j\)</span> 个数当中的最值。</p>
+<p>类似线段树，把两个半区间的信息上传到大区间。</p>
+<p><a href="https://imgtu.com/i/HYel8S"><img alt="rmq-1.png" src="https://s4.ax1x.com/2022/02/10/HYel8S.png" /></a></p>
+<p>那么 <span class="arithmatex">\(f_{i,j}=\max(f_{i,j-1},f_{i+2^{j-1},j-1})\)</span></p>
+<p>询问区间 <span class="arithmatex">\([l,r]\)</span> 的最值的时候，找到一个 <span class="arithmatex">\(k\)</span> 使得 <span class="arithmatex">\(2^k \le r-l+1 \le 2^{k+1}\)</span> （类似我们上面兔子跳说的上界和下界）。</p>
+<p>那么 <span class="arithmatex">\(ans=\max(f_{l,k},f_{r-2^k+1,k})\)</span>。这两个区间会覆盖，但是没有影响。 </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2222,34 +2315,42 @@
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">lg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">log</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">lg</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">si</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">Log</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">ST_prework</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Log</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Log</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Log</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 注意循序，此处为了无后效性必须这么写.</span>
+<span class="w">            </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))][</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 这里如果 i 在外面会导致出现 t[i][j] = 0。</span>
-<span class="w">    </span><span class="c1">// 因为这一题的 i 不是按照升序排列来 DP 的，如果 i 在外面就有后效性。</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">dest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// dest[i] 最终是经过 k 轮, 原来在 i 的人所在的位置。</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lg</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">dest</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">dest</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="n">j</span><span class="p">];</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">dest</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Error on #&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="c1">// 二进制拆分</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Log</span><span class="p">[</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">k</span><span class="p">],</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>倍增推式子的时候都要遵循这样的一个规则：</p>
-<p><a href="https://imgtu.com/i/LIsUWF"><img alt="LIsUWF.png" src="https://s1.ax1x.com/2022/04/25/LIsUWF.png" /></a></p>
-<p><span class="arithmatex">\(u \sim f_{u,i}\)</span> 这一段的信息要由 <span class="arithmatex">\(u \sim f_{u, i -1}\)</span> 和 <span class="arithmatex">\(f_{u,i - 1} \sim f_{f_{u,i-1},i-1}\)</span> 合并来得到。</p>
-<p>（<span class="arithmatex">\(f_{f_{u,i-1},i-1}\)</span> 就是 <span class="arithmatex">\(f_{u,i}\)</span>）</p>
-<p>然后初始化的时候只需要初始化 <span class="arithmatex">\(f_{u,0}\)</span>，然后在递推式子的时候<strong>先正序循环</strong>，保证从小到大更新。</p>
-<p>二进制拆分（或者说：“<strong>拼凑</strong>”） 的时候再使用<strong>倒序循环</strong>。</p>
-<p>可以类比线段树的 <code>pushup</code> 函数。</p>
+<p>ST 表本质上是对<strong>区间可重复贡献问题</strong>的求解。</p>
+<details class="note" open="open">
+<summary>可重复贡献问题是啥？（来源 <a href="https://oi-wiki.org/ds/sparse-table/">OI-wiki</a>）</summary>
+<p><strong>可重复贡献问题</strong> 是指对于运算 <span class="arithmatex">\(\operatorname{opt}\)</span>，满足 <span class="arithmatex">\(x\operatorname{opt} x=x\)</span>，则对应的区间询问就是一个可重复贡献问题。例如，最大值有 <span class="arithmatex">\(\max(x,x)=x\)</span>，gcd 有 <span class="arithmatex">\(\operatorname{gcd}(x,x)=x\)</span>，所以 RMQ 和区间 GCD 就是一个可重复贡献问题。像区间和就不具有这个性质，如果求区间和的时候采用的预处理区间重叠了，则会导致重叠部分被计算两次，这是我们所不愿意看到的。另外，<span class="arithmatex">\(\operatorname{opt}\)</span> 还必须满足结合律才能使用 ST 表求解。</p>
+</details>
+<h3 id="lca">倍增求 LCA<a class="headerlink" href="#lca" title="Permanent link">&para;</a></h3>
+<p>见 <a href="../../graph/lca/#lca">最近公共祖先</a>。</p>
+<h3 id="suffix-array">倍增求 Suffix Array<a class="headerlink" href="#suffix-array" title="Permanent link">&para;</a></h3>
+<p>SA 还没学。</p>
 
               
             </article>
@@ -2279,13 +2380,13 @@
       
       
         
-        <a href="../rmq/" class="md-footer__link md-footer__link--next" aria-label="下一页: RMQ" rel="next">
+        <a href="../difference-and-prefix-sum/" class="md-footer__link md-footer__link--next" aria-label="下一页: 前缀和 &amp; 差分" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              RMQ
+              前缀和 & 差分
             </div>
           </div>
           <div class="md-footer__button md-icon">
