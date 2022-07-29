@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sosdp" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -573,29 +573,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sosdp" class="md-nav__link">
-    SOSDP
-  </a>
-  
-    <nav class="md-nav" aria-label="SOSDP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    算法泛化
+    泛化
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    问题解决
+    做法
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -633,6 +620,20 @@
           DP 优化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1015,6 +1016,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ds/easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ds/easy/list/" class="md-nav__link">
         链表
       </a>
@@ -1029,7 +1058,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/mono-queue/" class="md-nav__link">
+      <a href="../../ds/easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1584,6 +1627,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2168,29 +2225,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sosdp" class="md-nav__link">
-    SOSDP
-  </a>
-  
-    <nav class="md-nav" aria-label="SOSDP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    算法泛化
+    泛化
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    问题解决
+    做法
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2216,9 +2260,8 @@
 
 <p>这个东西也叫 高维前缀和 或者 子集求和。</p>
 <p>到省选以上常常会结合 FWT （快速沃尔什变换）算法。</p>
-<h2 id="sosdp">SOSDP<a class="headerlink" href="#sosdp" title="Permanent link">&para;</a></h2>
-<p>Sum Over Subset Dynamic Programming.</p>
-<h3 id="_1">算法泛化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>全称 Sum Over Subset Dynamic Programming.</p>
+<h2 id="_1">泛化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>SOSDP 主要用于解决这样的一类问题：</p>
 <blockquote>
 <p>给你一个序列 <span class="arithmatex">\(a_0,a_1,a_2,\dots,a_{2^n - 1}\)</span>。</p>
@@ -2233,7 +2276,7 @@
 <p><span class="arithmatex">\(b_i\)</span> 就表示的是 <span class="arithmatex">\(S(i)\)</span> 的所有子集的权值和，所以这个问题也叫 <strong>子集求和</strong>。</p>
 <p>而换一个角度，我们可以把下标看成 <span class="arithmatex">\(n\)</span> 维空间里的一个坐标 <span class="arithmatex">\((x_0, x_1, x_2, \dots, x_{n - 1}), x_i \in \{0, 1\}\)</span>。 </p>
 <p>那么这个 <span class="arithmatex">\(b_i\)</span> 其实就是一个 <strong>高维前缀和</strong>。</p>
-<h3 id="_2">问题解决<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">做法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>首先考虑一个暴力，我们直接枚举所有子集然后计算权值和。</p>
 <p>然后这玩意儿是 <span class="arithmatex">\(\text{O}(3^{n})\)</span> 的。</p>
 <p>我们把这个式子再拿出来看看：</p>
@@ -2305,13 +2348,13 @@
       
       
         
-        <a href="../opt/monotonous-queue-optimize/" class="md-footer__link md-footer__link--next" aria-label="下一页: 单调队列优化" rel="next">
+        <a href="../opt/monotonous-stack-optimize/" class="md-footer__link md-footer__link--next" aria-label="下一页: 单调栈优化" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              单调队列优化
+              单调栈优化
             </div>
           </div>
           <div class="md-footer__button md-icon">

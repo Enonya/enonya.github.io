@@ -581,6 +581,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
@@ -869,28 +883,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    强连通分量
-  </a>
-  
-    <nav class="md-nav" aria-label="强连通分量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
+    一些定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#tarjan-algorithm" class="md-nav__link">
-    Tarjan Algorithm
+      
+        <li class="md-nav__item">
+  <a href="#tarjan" class="md-nav__link">
+    Tarjan 算法
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1017,6 +1018,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../ds/easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ds/easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../ds/easy/list/" class="md-nav__link">
         链表
       </a>
@@ -1031,7 +1060,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ds/easy/mono-queue/" class="md-nav__link">
+      <a href="../../../ds/easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1586,6 +1629,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2171,28 +2228,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    强连通分量
-  </a>
-  
-    <nav class="md-nav" aria-label="强连通分量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
+    一些定义
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#tarjan-algorithm" class="md-nav__link">
-    Tarjan Algorithm
+      
+        <li class="md-nav__item">
+  <a href="#tarjan" class="md-nav__link">
+    Tarjan 算法
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2216,11 +2260,10 @@
 
   <h1>强连通分量</h1>
 
-<h2 id="_1">强连通分量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
-<p>联通分量：对于一个<strong>有向图</strong>的分量当中的任意两点 <span class="arithmatex">\((u,v)\)</span> ，<span class="arithmatex">\(\exist \delta (u,v) \and \delta (v,u)\)</span>，则称这个分量为联通分量</p>
+<h2 id="_1">一些定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>联通分量：对于一个<strong>有向图</strong>的分量当中的任意两点 <span class="arithmatex">\((u,v)\)</span> ，<span class="arithmatex">\(\exists \delta (u,v) \and \delta (v,u)\)</span>，则称这个分量为联通分量</p>
 <p>强联通分量 SCC：有向图的一个极大连通分量被称作强连通分量，极大的理解就是，不管再加上哪一个边和哪一个节点，他都不再是一个连通分量，也就是“大的不能再大”。</p>
-<p>流图：对于一个有向图 <span class="arithmatex">\(G=(V,E)\)</span>，<span class="arithmatex">\(\exist r \in V\)</span>，满足 <span class="arithmatex">\(r\)</span> 可以到达 <span class="arithmatex">\(V\)</span> 中的任意节点，则称 <span class="arithmatex">\(G\)</span> 为一个流图。</p>
+<p>流图：对于一个有向图 <span class="arithmatex">\(G=(V,E)\)</span>，<span class="arithmatex">\(\exists r \in V\)</span>，满足 <span class="arithmatex">\(r\)</span> 可以到达 <span class="arithmatex">\(V\)</span> 中的任意节点，则称 <span class="arithmatex">\(G\)</span> 为一个流图。</p>
 <p><span class="arithmatex">\(r\)</span> 称作流图的源点。</p>
 <p>搜索树：对于一个流图 <span class="arithmatex">\(G\)</span> 进行深度优先遍历得到的一棵生成树 <span class="arithmatex">\(T\)</span> 。</p>
 <p>时间戳 <span class="arithmatex">\(dfn\)</span> ：对于 <span class="arithmatex">\(G\)</span> 中的每一个节点，它在 <span class="arithmatex">\(T\)</span> 中被搜索到的顺序（时间）。</p>
@@ -2231,7 +2274,7 @@
 <li>后向边：从 <span class="arithmatex">\(u \to v\)</span> ，且 <span class="arithmatex">\(v\)</span> 是 <span class="arithmatex">\(u\)</span> 在 <span class="arithmatex">\(T\)</span> 上的祖先</li>
 <li>横叉边：除了 123 的所有边，必然满足 <span class="arithmatex">\(u \to v,dfn_v&lt;dfn_u\)</span>。</li>
 </ol>
-<h3 id="tarjan-algorithm">Tarjan Algorithm<a class="headerlink" href="#tarjan-algorithm" title="Permanent link">&para;</a></h3>
+<h2 id="tarjan">Tarjan 算法<a class="headerlink" href="#tarjan" title="Permanent link">&para;</a></h2>
 <p>考虑搜索树上的节点如何才能成为 SCC 当中的节点。</p>
 <p>首先，一个孤立的点（这里指走出去了就没法回来）必然是一个 SCC。</p>
 <p>如果想要更多点加入这个 SCC，实际上就是要找到一个环。</p>

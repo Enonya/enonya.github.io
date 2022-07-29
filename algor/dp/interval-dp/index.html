@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dp" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -517,36 +517,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dp" class="md-nav__link">
-    区间DP
-  </a>
-  
-    <nav class="md-nav" aria-label="区间DP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     区间作为阶段
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     断环成链
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     分割型
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -640,6 +627,20 @@
           DP 优化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1022,6 +1023,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ds/easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ds/easy/list/" class="md-nav__link">
         链表
       </a>
@@ -1036,7 +1065,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/mono-queue/" class="md-nav__link">
+      <a href="../../ds/easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1591,6 +1634,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2175,36 +2232,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dp" class="md-nav__link">
-    区间DP
-  </a>
-  
-    <nav class="md-nav" aria-label="区间DP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     区间作为阶段
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     断环成链
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     分割型
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2228,8 +2272,7 @@
 
   <h1>区间 DP</h1>
 
-<h2 id="dp">区间DP<a class="headerlink" href="#dp" title="Permanent link">&para;</a></h2>
-<h3 id="_1">区间作为阶段<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="_1">区间作为阶段<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>典型的题目就是合并石子，能量项链这种。</p>
 <p>题面一般会说 “<strong>合并</strong>” 之类的词，状态一般会是 <span class="arithmatex">\(f_{l,r}\)</span> 表示将区间 <span class="arithmatex">\(l,r\)</span> 全部合并的最优价值。</p>
 <p>当然也有可能是 “处理完这个区间的最优”，那么做法相应的会有一点变化（比如 CQOI的涂色，和老王去关路灯那个题）</p>
@@ -2259,7 +2302,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_2">断环成链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">断环成链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>当区间DP问题被放到环上的时候可以采取。</p>
 <p>只需要把原序列复制一边扔到后面即可。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="p">,</span><span class="w"> </span><span class="n">a4</span><span class="p">,</span><span class="w"> </span><span class="n">a5</span><span class="p">,...</span><span class="n">an</span><span class="p">,</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="p">,......</span><span class="n">an</span><span class="w"></span>
@@ -2278,7 +2321,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_3">分割型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">分割型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>问题一般是给你一个序列，要求你把他分成 <span class="arithmatex">\(m\)</span> 个部分，使得权值和最大。</p>
 <p>这里的<strong>权值和会随着分割部分的不同而变化</strong>。</p>
 <p>那么设 <span class="arithmatex">\(f_{i,j}\)</span> 从 <span class="arithmatex">\(1\to i\)</span> 构成的序列，分割成 <span class="arithmatex">\(j\)</span> 部分的所有方案，属性为权值和的最值。</p>

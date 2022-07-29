@@ -581,6 +581,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
@@ -771,21 +785,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    最短路
+    概述
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#dijkstra" class="md-nav__link">
-    dijkstra
+    Dijkstra 算法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bellmanford" class="md-nav__link">
-    BellmanFord
+  <a href="#bellman-ford" class="md-nav__link">
+    Bellman Ford 算法
   </a>
   
 </li>
@@ -795,18 +809,24 @@
     Spfa
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spfaslfswap" class="md-nav__link">
-    Spfa+SLF+Swap
+    <nav class="md-nav" aria-label="Spfa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spfa-slf-swap" class="md-nav__link">
+    Spfa + SLF + Swap
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#floyd" class="md-nav__link">
-    Floyd
+    Floyd 算法
   </a>
   
 </li>
@@ -1071,6 +1091,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ds/easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ds/easy/list/" class="md-nav__link">
         链表
       </a>
@@ -1085,7 +1133,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/mono-queue/" class="md-nav__link">
+      <a href="../../ds/easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1640,6 +1702,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2225,21 +2301,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    最短路
+    概述
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#dijkstra" class="md-nav__link">
-    dijkstra
+    Dijkstra 算法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bellmanford" class="md-nav__link">
-    BellmanFord
+  <a href="#bellman-ford" class="md-nav__link">
+    Bellman Ford 算法
   </a>
   
 </li>
@@ -2249,18 +2325,24 @@
     Spfa
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spfaslfswap" class="md-nav__link">
-    Spfa+SLF+Swap
+    <nav class="md-nav" aria-label="Spfa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spfa-slf-swap" class="md-nav__link">
+    Spfa + SLF + Swap
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#floyd" class="md-nav__link">
-    Floyd
+    Floyd 算法
   </a>
   
 </li>
@@ -2326,7 +2408,7 @@
 
   <h1>最短路</h1>
 
-<h3 id="_1">最短路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>给一张带权图，问从某个点到其它所有点的最短距离。</p>
 </blockquote>
@@ -2339,7 +2421,7 @@
 <p>全源的时候一般用 <span class="arithmatex">\(dis_{i,j}\)</span> 表示从 <span class="arithmatex">\(i\to j\)</span> 的最短路。</p>
 <p>三角形不等式是 <span class="arithmatex">\(dis_v&gt;dis_u+w(u,v)\)</span>。</p>
 <p>一般会在满足不等式的时候令 <span class="arithmatex">\(dis_v=dis_u+w(u,v)\)</span>。</p>
-<h3 id="dijkstra">dijkstra<a class="headerlink" href="#dijkstra" title="Permanent link">&para;</a></h3>
+<h2 id="dijkstra">Dijkstra 算法<a class="headerlink" href="#dijkstra" title="Permanent link">&para;</a></h2>
 <p>思路很简单，首先用一个数组 <span class="arithmatex">\(vis\)</span> 标记某个节点是否被更新过。</p>
 <p>初始化令 <span class="arithmatex">\(dis_s=0\)</span>，其它的设成 <span class="arithmatex">\(+ \infty\)</span>。</p>
 <p>每次找找到一个没有被标记的， <span class="arithmatex">\(dis\)</span> 最小的节点 <span class="arithmatex">\(x\)</span> ，标记这个节点。</p>
@@ -2380,11 +2462,11 @@
 </td></tr></table>
 </details>
 <p>在非 DAG 上出现负边权就不能用。</p>
-<h3 id="bellmanford">BellmanFord<a class="headerlink" href="#bellmanford" title="Permanent link">&para;</a></h3>
+<h2 id="bellman-ford">Bellman Ford 算法<a class="headerlink" href="#bellman-ford" title="Permanent link">&para;</a></h2>
 <p>思想也很简单。</p>
 <p>扫描所有边，如果扫描到的这条边满足三角形不等式，更新对应节点的 <span class="arithmatex">\(dis\)</span>。</p>
 <p>重复迭代，直到没有更新操作发生，复杂度 <span class="arithmatex">\(\text{O}(nm)\)</span>。</p>
-<h3 id="spfa">Spfa<a class="headerlink" href="#spfa" title="Permanent link">&para;</a></h3>
+<h2 id="spfa">Spfa<a class="headerlink" href="#spfa" title="Permanent link">&para;</a></h2>
 <p>队列优化的 BellmanFord，有负边权也没有影响。</p>
 <p>考虑使用一个队列，最开始的时候队列只包含起点。</p>
 <p>每次取出队头，扫描队头的所有出边，如果满足三角形不等式则更新。</p>
@@ -2428,7 +2510,7 @@
 </details>
 <p>这个算法容易被卡，比如菊花图和蒲公英就随便卡SPFA。</p>
 <p>所以给一个优化。</p>
-<h3 id="spfaslfswap">Spfa+SLF+Swap<a class="headerlink" href="#spfaslfswap" title="Permanent link">&para;</a></h3>
+<h3 id="spfa-slf-swap">Spfa + SLF + Swap<a class="headerlink" href="#spfa-slf-swap" title="Permanent link">&para;</a></h3>
 <p>至少是我觉得最有效的优化。</p>
 <p>虽然还是被 @fstqwq 学长在 zhihu 上和一堆神仙叉爆了。</p>
 <p>考虑用一个双端队列优化，每次将入队结点的 <span class="arithmatex">\(dis\)</span> 和队首比较，如果更大则插入至队尾，否则插入队首。</p>
@@ -2476,7 +2558,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="floyd">Floyd<a class="headerlink" href="#floyd" title="Permanent link">&para;</a></h3>
+<h2 id="floyd">Floyd 算法<a class="headerlink" href="#floyd" title="Permanent link">&para;</a></h2>
 <p>不能有负环，因为 Floyd 要求最短路必须存在。</p>
 <p>但是 Floyd 可以判断负环，</p>
 <p>先初始化所有 <span class="arithmatex">\(dis = +\infty,dis[i][i] = 0\)</span>。</p>
@@ -2507,10 +2589,10 @@
 <p>一般需要用到非板子的Floyd 的时候，都需要考虑使用 <span class="arithmatex">\(k\)</span> 这个东西的性质。</p>
 <p>比如要求最小环，恰好 <span class="arithmatex">\(X\)</span> 条边的最短路的时候就需要用这个考虑。</p>
 <p>更多的时候是把 <span class="arithmatex">\(k\)</span> 当作<strong>中间</strong>点。</p>
-<h3 id="_2">最短路的一些扩展应用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">最短路的一些扩展应用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>或者说是一些比较有意思的技巧。</p>
 <p>另外一部分会在题目总结里面提到。</p>
-<h4 id="floyd_1">Floyd 处理传递闭包<a class="headerlink" href="#floyd_1" title="Permanent link">&para;</a></h4>
+<h3 id="floyd_1">Floyd 处理传递闭包<a class="headerlink" href="#floyd_1" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>给你一些元素和一些具有传递性的二元关系，通过传递性推导出更多的关系。</p>
 </blockquote>
@@ -2534,7 +2616,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="floyd_2">Floyd 处理无向图最小环<a class="headerlink" href="#floyd_2" title="Permanent link">&para;</a></h4>
+<h3 id="floyd_2">Floyd 处理无向图最小环<a class="headerlink" href="#floyd_2" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>给你一个无向图，求图上的最小环，要求环至少是三元环。</p>
 </blockquote>
@@ -2613,7 +2695,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h4 id="k">经过恰好 K 条边最短路<a class="headerlink" href="#k" title="Permanent link">&para;</a></h4>
+<h3 id="k">经过恰好 K 条边最短路<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
 <p>首先用邻接矩阵 <span class="arithmatex">\(A\)</span> 存图。</p>
 <p>然后 <span class="arithmatex">\(A[i,j]\)</span> 就可以看做 <span class="arithmatex">\(i \to j\)</span> 经过恰好一条边的最短路。</p>
 <p>考虑求出经过恰好两条边的最短路 <span class="arithmatex">\(B\)</span>。</p>
@@ -2625,7 +2707,7 @@
 <p>发现这玩意儿就是个类似于矩阵乘法的东西。</p>
 <p>把 <span class="arithmatex">\(\sum\)</span> 换成 <span class="arithmatex">\(\min\)</span> ，把 <span class="arithmatex">\(\times\)</span> 换成 <span class="arithmatex">\(+\)</span>。</p>
 <p>刚好这个东西仍然满足结合律，所以可以用矩阵快速幂 <span class="arithmatex">\(n^3\log K\)</span> 求 <span class="arithmatex">\(A^K\)</span>。</p>
-<h3 id="_3">最短路计数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">最短路计数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>这个玩意儿 Floyd，SPFA，Dijkstra 都是可以做的。</p>
 <p>在跑最短路的时候记录一个数组 <span class="arithmatex">\(cnt[v]\)</span> 表示从 <span class="arithmatex">\(s \to v\)</span> 的最短路径条数。</p>
 <p>然后每次最短路被更新的时候就更新 <span class="arithmatex">\(cnt\)</span>。</p>

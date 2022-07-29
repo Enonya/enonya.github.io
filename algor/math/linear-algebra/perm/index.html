@@ -581,6 +581,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
@@ -956,6 +970,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../ds/easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ds/easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../ds/easy/list/" class="md-nav__link">
         链表
       </a>
@@ -970,7 +1012,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ds/easy/mono-queue/" class="md-nav__link">
+      <a href="../../../ds/easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1362,35 +1418,22 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    置换
+    定义
   </a>
   
-    <nav class="md-nav" aria-label="置换">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    置换的定义
+    置换乘法
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    置换的乘法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     循环置换
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1593,6 +1636,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2178,35 +2235,22 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    置换
+    定义
   </a>
   
-    <nav class="md-nav" aria-label="置换">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    置换的定义
+    置换乘法
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    置换的乘法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     循环置换
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2233,8 +2277,7 @@
 <blockquote>
 <p>大部分摘抄自 : <a href="https://oi-wiki.org/math/permutation-group/">OI-Wiki</a></p>
 </blockquote>
-<h2 id="_1">置换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">置换的定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>有限集合到自身的双射（即一一对应）称为置换。集合 <span class="arithmatex">\(S=\{a_1,a_2,\dots,a_n\}\)</span> 上的置换可以表示为</p>
 <div class="arithmatex">\[
 f=\begin{pmatrix}a_1,a_2,\dots,a_n\\
@@ -2242,14 +2285,14 @@ a_{p_1},a_{p_2},\dots,a_{p_n}
 \end{pmatrix}
 \]</div>
 <p>意为将 <span class="arithmatex">\(a_i\)</span> 映射为 <span class="arithmatex">\(a_{p_i}\)</span>，其中 <span class="arithmatex">\(p_1,p_2,\dots,p_n\)</span> 是 <span class="arithmatex">\(1,2,\dots,n\)</span> 的一个排列。显然 <span class="arithmatex">\(S\)</span> 上所有置换的数量为 <span class="arithmatex">\(n!\)</span>。</p>
-<h3 id="_3">置换的乘法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">置换乘法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>对于两个置换 <span class="arithmatex">\(f=\begin{pmatrix}a_1,a_2,\dots,a_n\\a_{p_1},a_{p_2},\dots,a_{p_n}\end{pmatrix}\)</span> 和 <span class="arithmatex">\(g=\begin{pmatrix}a_{p_1},a_{p_2},\dots,a_{p_n}\\a_{q_1},a_{q_2},\dots,a_{q_n}\end{pmatrix}\)</span>，<span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 的乘积记为 <span class="arithmatex">\(f\circ g\)</span>，其值为</p>
 <div class="arithmatex">\[
 f\circ g=\begin{pmatrix}a_1,a_2,\dots,a_n\\
 a_{q_1},a_{q_2},\dots,a_{q_n}\end{pmatrix}
 \]</div>
 <p>简单来说就是先后经过 <span class="arithmatex">\(f\)</span> 的映射，再经过 <span class="arithmatex">\(g\)</span> 的映射。</p>
-<h3 id="_4">循环置换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_3">循环置换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>循环置换是一类特殊的置换，可表示为</p>
 <div class="arithmatex">\[
 (a_1,a_2,\dots,a_m)=\begin{pmatrix}a_1,a_2,\dots,a_{m-1},a_m\\

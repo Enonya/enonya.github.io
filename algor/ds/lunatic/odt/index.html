@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#odt" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -581,6 +581,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
@@ -958,6 +972,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../easy/list/" class="md-nav__link">
         链表
       </a>
@@ -972,7 +1014,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../easy/mono-queue/" class="md-nav__link">
+      <a href="../../easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1206,37 +1262,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#odt" class="md-nav__link">
-    珂朵莉树（ODT）
+  <a href="#_1" class="md-nav__link">
+    概述
   </a>
   
-    <nav class="md-nav" aria-label="珂朵莉树（ODT）">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    具体实现
+  </a>
+  
+    <nav class="md-nav" aria-label="具体实现">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#initialization" class="md-nav__link">
-    Initialization
+  <a href="#_3" class="md-nav__link">
+    初始化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#split" class="md-nav__link">
-    Split
+  <a href="#_4" class="md-nav__link">
+    区间分裂
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#assign" class="md-nav__link">
-    Assign
+  <a href="#_5" class="md-nav__link">
+    区间推平
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
-    Others
+  <a href="#_6" class="md-nav__link">
+    其它操作
   </a>
   
 </li>
@@ -1600,6 +1663,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2184,37 +2261,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#odt" class="md-nav__link">
-    珂朵莉树（ODT）
+  <a href="#_1" class="md-nav__link">
+    概述
   </a>
   
-    <nav class="md-nav" aria-label="珂朵莉树（ODT）">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    具体实现
+  </a>
+  
+    <nav class="md-nav" aria-label="具体实现">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#initialization" class="md-nav__link">
-    Initialization
+  <a href="#_3" class="md-nav__link">
+    初始化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#split" class="md-nav__link">
-    Split
+  <a href="#_4" class="md-nav__link">
+    区间分裂
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#assign" class="md-nav__link">
-    Assign
+  <a href="#_5" class="md-nav__link">
+    区间推平
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
-    Others
+  <a href="#_6" class="md-nav__link">
+    其它操作
   </a>
   
 </li>
@@ -2244,13 +2328,14 @@
 
   <h1>珂朵莉树</h1>
 
-<h2 id="odt">珂朵莉树（ODT）<a class="headerlink" href="#odt" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>一种暴力数据结构，基于 <code>std::set</code> 或者链表</p>
 <p>基本的思想是<strong>把所有相邻且相同的元素合并</strong>成一个元素维护。</p>
 <p>如果遇到区间类的操作就分裂，暴力处理。</p>
 <p>在随机数据下可以做到优秀的 <span class="arithmatex">\(\text{O}(n \log \log n)\)</span>，链表实现可以 <span class="arithmatex">\(\text{O}(n \log n)\)</span>。</p>
 <p>复杂度证明可以看 @hqztrue 的：<a href="https://zhuanlan.zhihu.com/p/102786071">https://zhuanlan.zhihu.com/p/102786071</a></p>
-<h3 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h3>
+<h2 id="_2">具体实现<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">初始化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>珂朵莉树的节点由三个元素构成，<span class="arithmatex">\((l,r,v)\)</span>。</p>
 <p>分别表示这个节点维护的区间的左右端点和权值。</p>
 <p>因为需要用 <code>std::set</code> 实现，所以还要重载运算符。</p>
@@ -2268,7 +2353,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>初始化直接插入一个节点维护 <span class="arithmatex">\([1,n]\)</span> 即可，权值根据题目判断。</p>
-<h3 id="split">Split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
+<h3 id="_4">区间分裂<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>基本操作之一，把 <span class="arithmatex">\([l,r]\)</span> 分割成 <span class="arithmatex">\([l,pos),[pos,r]\)</span></p>
 <p>并返回代表后面那个区间的节点的迭代器。</p>
 <p>先二分一下 <span class="arithmatex">\(pos\)</span> 的位置，然后删除原来的节点，新加入两个节点即可。</p>
@@ -2294,7 +2379,7 @@
 <p>是一个 <code>std::pair&lt;std::set&lt;Template&gt;::iterator,bool&gt;</code></p>
 <p>前者是被插入的值的迭代器，后者表示是否插入成功。</p>
 <p><code>--upper_bound</code> 那里也可以使用 <code>std::prev</code></p>
-<h3 id="assign">Assign<a class="headerlink" href="#assign" title="Permanent link">&para;</a></h3>
+<h3 id="_5">区间推平<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>推平一段区间，也就是给某个区间全部赋值成某个值 <span class="arithmatex">\(v\)</span>。</p>
 <p>如果没有额外限制的话，先把 <span class="arithmatex">\(l,r\)</span> 从他们各自所属的节点当中 <code>split</code> 出来，然后把他们中间的这一段全部删除，再插入一个新的节点 <span class="arithmatex">\((l,r,v)\)</span> 维护这个区间即可。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2307,7 +2392,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>注意一定要先 <code>split(r+1)</code> ，不然 <span class="arithmatex">\(l\)</span> 原来所属的节点有可能被删除导致 Runtime Error。</p>
-<h3 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
+<h3 id="_6">其它操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>其它的操作利用 <code>split</code> 和 <code>assign</code> 暴力搞就好。</p>
 <p>基本都是这样：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

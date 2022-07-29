@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#definition" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -581,6 +581,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
+        单调栈优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
@@ -784,29 +798,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
+  <a href="#_1" class="md-nav__link">
+    定义
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-theory" class="md-nav__link">
-    Two theory
+  <a href="#_2" class="md-nav__link">
+    两个定理
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#kruskal" class="md-nav__link">
-    Kruskal
+    Kruskal 算法
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#prim" class="md-nav__link">
-    Prim
+    Prim 算法
   </a>
   
 </li>
@@ -1016,6 +1030,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../ds/easy/stack/" class="md-nav__link">
+        栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/queue/" class="md-nav__link">
+        队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ds/easy/list/" class="md-nav__link">
         链表
       </a>
@@ -1030,7 +1072,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/mono-queue/" class="md-nav__link">
+      <a href="../../ds/easy/monotonous-stack/" class="md-nav__link">
+        单调栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1585,6 +1641,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/expression.md" class="md-nav__link">
+        表达式求值
+      </a>
     </li>
   
 
@@ -2169,29 +2239,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
+  <a href="#_1" class="md-nav__link">
+    定义
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-theory" class="md-nav__link">
-    Two theory
+  <a href="#_2" class="md-nav__link">
+    两个定理
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#kruskal" class="md-nav__link">
-    Kruskal
+    Kruskal 算法
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#prim" class="md-nav__link">
-    Prim
+    Prim 算法
   </a>
   
 </li>
@@ -2216,13 +2286,12 @@
 
   <h1>最小生成树</h1>
 
-<p>## 最小生成树</p>
-<h3 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>给你一个带权无向图，求它的所有生成树当中权值和最小的一个。</p>
 <p>带权无向图 <span class="arithmatex">\(G\)</span> 的生成树 <span class="arithmatex">\(T\)</span> 定义为包含 <span class="arithmatex">\(G\)</span> 的所有节点，由 <span class="arithmatex">\(G\)</span> 当中连接它们的 <span class="arithmatex">\(n-1\)</span> 条边构成的无向联通子图。</p>
 </blockquote>
-<h3 id="two-theory">Two theory<a class="headerlink" href="#two-theory" title="Permanent link">&para;</a></h3>
+<h2 id="_2">两个定理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>任意一颗最小生成树一定包含 <span class="arithmatex">\(G\)</span> 中最小的边（反证法即可）。 </p>
@@ -2233,7 +2302,7 @@
 </ol>
 <p>那么，这个生成树一定包含 <span class="arithmatex">\(|E|-k\)</span> 条边里面连接生成森林的两个不连通节点的权值最小的边。</p>
 <p>证明可以在 zhihu 看看 <a href="https://www.zhihu.com/people/ciwei-78-83">@ciwei</a> 神仙的专栏，其中包括算法正确性的证明。</p>
-<h3 id="kruskal">Kruskal<a class="headerlink" href="#kruskal" title="Permanent link">&para;</a></h3>
+<h2 id="kruskal">Kruskal 算法<a class="headerlink" href="#kruskal" title="Permanent link">&para;</a></h2>
 <p>基本思想是维护图的最小生成森林。</p>
 <p>开始的时候生成森林是空的，每一个节点就是一颗独立的树。</p>
 <p>然后用结论 <span class="arithmatex">\(2\)</span> 维护森林，利用 dsu 维护联通性。</p>
@@ -2295,7 +2364,7 @@
 </td></tr></table>
 </details>
 <p>复杂度 <span class="arithmatex">\(\text{O}(m \log m)\)</span>。</p>
-<h3 id="prim">Prim<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h3>
+<h2 id="prim">Prim 算法<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h2>
 <p>一般用于稠密图。</p>
 <p>最开始确定 <span class="arithmatex">\(1\)</span> 号节点属于最小生成树。</p>
 <p>每一次找到一条权值最小的，且满足它连接的其中一个点 <span class="arithmatex">\(u\)</span> 已经被选入最小生成树里，另一个点 <span class="arithmatex">\(v\)</span> 则未被选中的边。</p>
