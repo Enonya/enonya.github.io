@@ -563,6 +563,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exchange-argument" class="md-nav__link">
+    Exchange Argument
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1861,6 +1868,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_8">
@@ -1983,8 +1992,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/expression.md" class="md-nav__link">
+      <a href="../../misc/expression/" class="md-nav__link">
         表达式求值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/exchange-argument/" class="md-nav__link">
+        Exchange Argument
       </a>
     </li>
   
@@ -3048,12 +3071,188 @@ Many answers are correct for each test dataset; a program will grade your answer
 <h2 id="_4">决策包容性<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
 <p>一般是证明在任意的局面下，做出局部最优决策之后，这个决策在问题状态空间里的可达集合包含了所有这一步做出其它任意决策的可达集合。</p>
 <p>也就是这个局部最优决策提供的可能性包含了其它所有策略的可能性。</p>
+<details class="note" open="open">
+<summary>例题：<a href="http://poj.org/problem?id=1328">POJ1328 Radar Installation</a></summary>
+<p>Assume the coasting is an infinite straight line. Land is in one side of coasting, sea in the other. Each small island is a point locating in the sea side. And any radar installation, locating on the coasting, can only cover d distance, so an island in the sea can be covered by a radius installation, if the distance between them is at most d.</p>
+<p>We use Cartesian coordinate system, defining the coasting is the x-axis. The sea side is above x-axis, and the land side below. Given the position of each island in the sea, and given the distance of the coverage of the radar installation, your task is to write a program to find the minimal number of radar installations to cover all the islands. Note that the position of an island is represented by its x-y coordinates.</p>
+<details class="note">
+<summary>题解</summary>
+<p>先用勾股定理把每个 Building 处理一下，也就是处理一下 <span class="arithmatex">\(x\)</span> 轴上的哪一个区间可以覆盖它。</p>
+<p>问题可以转化为，给定 <span class="arithmatex">\(n\)</span> 个区间，用最少的点，使得每个区间都有一个点。</p>
+<p>考虑一个贪心：按照区间左端点 <span class="arithmatex">\(l\)</span> 升序排序，维护当前最后一个放的点的坐标 <span class="arithmatex">\(p\)</span>。</p>
+<p>如果当前扫到的区间不能被这个点控制到，也就是 <span class="arithmatex">\(l &gt; p\)</span>，那么新放一个点在 <span class="arithmatex">\(r\)</span>。</p>
+<p>否则让 <span class="arithmatex">\(p = \min(p, r)\)</span>，也就是直接让当前区间被上一个管辖。</p>
+<p>最后输出新放的数量即可（初始 <span class="arithmatex">\(p = -\infty\)</span>）。</p>
+<p>证明：</p>
+<p>对于每一个区间 <span class="arithmatex">\([l_i,r_i]\)</span>，有两种选择：1. 被之前放的点控制。2. 新建一个点控制它。</p>
+<p>上面的贪心策略是，如果能 <span class="arithmatex">\(1\)</span> 就使用 <span class="arithmatex">\(1\)</span>，这样之后随便在哪里放都行，因为 <span class="arithmatex">\(i\)</span> 和它以前的都有点控制了。</p>
+<p>否则使用 <span class="arithmatex">\(2\)</span>，这样需要在 <span class="arithmatex">\([l_i, r_i]\)</span> 上放点，可以发现 <span class="arithmatex">\(1\)</span> 能到达的决策集合包括了 <span class="arithmatex">\(2\)</span> 的。</p>
+<p>因为 1 的时候，下一个可以任意放。</p>
+<p>然后如果选择 1，把上一个点放到 <span class="arithmatex">\(min(r_i,p)\)</span> 的位置，就是尽量往后放。</p>
+<p>这个“尽量往后放”的策略显然包含了“放在更前面的位置” 未来会到达的状态。。</p>
+<p>之前已经排过序了，所以调整是不会影响前面的决策的，这个贪心就是正确的。</p>
+<p>因为这个贪心的决策在问题状态空间里的可达集合包含了所有这一步做出其它任意决策的可达集合。</p>
+<details class="info">
+<summary>我的思路</summary>
+<p>处理出一些区间，</p>
+<p>用勾股定理算一下。</p>
+<p>然后问题转化为：求最少用多少个点，使得每个区间至少包含一个点。</p>
+<p>感觉有点类似之前 CF 上一堆圆，包含，相切，相离的某个树形DP题。</p>
+<p>不过道理不一致，这一题区间可以相交，CF那题不行，（我还交过翻译）</p>
+<hr />
+<p>画了一个图，刚好是按照左端点排过序的。</p>
+<p>考虑能不能贪心。</p>
+<p>先看看数据范围，是不是 <span class="arithmatex">\(n \log n\)</span> 堆，或者 on 单调栈/队列 之类的。</p>
+<p><span class="arithmatex">\(1e3\)</span>, <span class="arithmatex">\(n^2\)</span> 可以过。</p>
+<p>考虑 <span class="arithmatex">\(n^2\)</span> 吧。</p>
+<p>怎么贪心啊。</p>
+<p>是不是要考虑一下局部最优策略是啥，然后直接尝试证明正确性？</p>
+<p>局部最优应该就是考虑选能覆盖到区间尽量多的位置？</p>
+<p>比如我考虑维护当前对于谁进行操作（就是记录一下哪一些已经被放过了）</p>
+<p>然后在这个区间的所有对应策略里选择能覆盖区间最多的一个？</p>
+<p>再把对应的选择覆盖到的区间全部标记？</p>
+<p>然后对于每个区间都扫一次就是 <span class="arithmatex">\(O(n)\)</span> 了，然后每个区间贪心做决定的时候就是 <span class="arithmatex">\(O(n)\)</span>。复杂 <span class="arithmatex">\(n^2\)</span> 可以过。</p>
+<hr />
+<p>尝试证明正确性？之前的贪心都没自己证明过来着。</p>
+<p>这个问题应该属于决策会影响后面的？考虑用扩展法证明？</p>
+<p>等下，这个最多，是不是要考虑排除一种情况？图例里面 “红色填充表覆盖过了” 那一块。</p>
+<p><a href="https://imgtu.com/i/v8PQKJ"><img alt="v8PQKJ.png" src="https://s1.ax1x.com/2022/08/10/v8PQKJ.png" /></a></p>
+<p>====
+如果我选择前面的决策，看起来能覆盖三个，但是后面又有四个的，按照这种想法应该是选后面，</p>
+<p>但是后面的肯定现在不会更新啊（因为我排了序），而且如果我局部就是这样，你前后最终都是要选的。</p>
+<p>所以没有影响，最多这个操作就没问题。</p>
+<p>====</p>
+<p>回到证明，欸</p>
+<p>感觉上面这个想法已经很对了，就是突然想到这个最多应该是怎样最多。</p>
+<p>因为你迟早都要选的啊，你还不如尽量多高一点。</p>
+<p>呃，所以思路就这样了，看看对不对吧。</p>
+<hr />
+<p>和 lyd 想法不太一致？？</p>
+<p>但我觉得我的思路本质上和他的相同，只不过他的更好实现一点。</p>
+</details>
+</details>
+<details class="note">
+<summary>实现</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+
+<span class="cp">#define ld long double</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1006</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">INF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">-0x3f3f3f3f</span><span class="p">,</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.000001</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">l</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">Solve</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Case &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">++</span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: -1&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ld</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">((</span><span class="n">ld</span><span class="p">)</span><span class="n">d</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="n">ld</span><span class="p">)</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">INF</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">ans</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Case &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">++</span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Solve</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+</details>
+</details>
 <h2 id="_5">反证法<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
 <h2 id="_6">数学归纳法<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
 <h2 id="_7">反悔贪心<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
+<h2 id="exchange-argument">Exchange Argument<a class="headerlink" href="#exchange-argument" title="Permanent link">😅</a></h2>
+<p>一个和临项交换类似的东西？</p>
+<p><a href="../../misc/exchange-argument/">link</a></p>
 
               
 <h2 id="__comments">评论</h2>
