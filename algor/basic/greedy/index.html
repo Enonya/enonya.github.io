@@ -254,6 +254,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../sce/" class="md-tabs__link">
+        Resource
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -543,6 +559,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exchange-argument" class="md-nav__link">
+    Exchange Argument
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     反证法
   </a>
@@ -559,13 +582,6 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     反悔贪心
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exchange-argument" class="md-nav__link">
-    Exchange Argument
   </a>
   
 </li>
@@ -1868,8 +1884,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_3_8">
@@ -1994,20 +2008,6 @@
     <li class="md-nav__item">
       <a href="../../misc/expression/" class="md-nav__link">
         表达式求值
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../misc/exchange-argument/" class="md-nav__link">
-        Exchange Argument
       </a>
     </li>
   
@@ -2668,6 +2668,50 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../sce/">Resource</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Resource" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2679,7 +2723,6 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  
                 
 <a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/basic/greedy.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
@@ -3246,36 +3289,97 @@ Many answers are correct for each test dataset; a program will grade your answer
 </td></tr></table>
 </details>
 </details>
+<h2 id="exchange-argument">Exchange Argument<a class="headerlink" href="#exchange-argument" title="Permanent link">😅</a></h2>
+<p>先看一个序列上的 Exc Arg：</p>
+<details class="note" open="open">
+<summary>例题：<a href="https://www.luogu.com.cn/problem/P1080">NOIP2012TG 国王游戏</a></summary>
+<p>恰逢 H 国国庆，国王邀请 <span class="arithmatex">\(n\)</span> 位大臣来玩一个有奖游戏。首先，他让每个大臣在左、右手上面分别写下一个整数，国王自己也在左、右手上各写一个整数。然后，让这 <span class="arithmatex">\(n\)</span> 位大臣排成一排，国王站在队伍的最前面。排好队后，所有的大臣都会获得国王奖赏的若干金币，每位大臣获得的金币数分别是：排在该大臣前面的所有人的左手上的数的乘积除以他自己右手上的数，然后向下取整得到的结果。</p>
+<p>国王不希望某一个大臣获得特别多的奖赏，所以他想请你帮他重新安排一下队伍的顺序，使得获得奖赏最多的大臣，所获奖赏尽可能的少。注意，国王的位置始终在队伍的最前面。</p>
+<details class="note">
+<summary>题解</summary>
+<p>使用 Exchange Argument。</p>
+<p>我们假设已经有一些大臣和国王一起站在前面，且已经是最优决策，假设现在有两个人候选，我们要通过算法 <span class="arithmatex">\(\mathcal{A}\)</span> 安排他们在队尾的位置。</p>
+<p><span class="arithmatex">\(\mathcal{O}\)</span> 则是一个最优算法，并且 <span class="arithmatex">\(\mathcal{O}\)</span> 和 <span class="arithmatex">\(\mathcal{A}\)</span> 唯一的区别就是对于这两个人的排序，之前的（处理现在已经排好了的人的方式）都一模一样。</p>
+<p>第一个人用 <span class="arithmatex">\((a_1, b_1)\)</span> 表示（左右手上的数），第二个人用 <span class="arithmatex">\((a_2, b_2)\)</span> 表示。</p>
+<p>不难发现可选的算法只有 <span class="arithmatex">\(\mathcal{A}: \{1, 2\}\)</span> 和 <span class="arithmatex">\(\mathcal{A}\prime: \{2, 1\}\)</span> 两种。</p>
+<p>（<span class="arithmatex">\(\mathcal{A}\prime\)</span> 就是 <span class="arithmatex">\(\mathcal{A}\)</span> 通过一个 Exchange 之后得到的新算法）。</p>
+<p>也就是说 <span class="arithmatex">\(\mathcal{O}\)</span> 只能是 <span class="arithmatex">\(\mathcal{A,A}\prime\)</span> 二者之一，所以我们比较 <span class="arithmatex">\(\mathcal{A,A}\prime\)</span> 就行了。</p>
+<p>设之前所有人左手上的数的乘积为 <span class="arithmatex">\(\pi\)</span>。</p>
+<p>假设 <span class="arithmatex">\(\mathcal{A}\)</span> 严格优秀于 <span class="arithmatex">\(\mathcal{A}\prime\)</span>，即是 <span class="arithmatex">\(\max(\dfrac{\pi}{b_1}, \dfrac{\pi \times a_1}{b_2}) &lt; \max(\dfrac{\pi}{b_2}, \dfrac{\pi \times a_2}{b_1})\cdots (*)\)</span></p>
+<p>因为所有变量都是正整数，所以 <span class="arithmatex">\(\dfrac{\pi}{b_2} \le \dfrac{\pi \times a_1}{b_2} \cdots (**)\)</span>。</p>
+<p>然后我们假设 <span class="arithmatex">\(\dfrac{\pi \times a_1}{b_2} \ge \dfrac{\pi \times a_2}{b_1}\)</span>，由 <span class="arithmatex">\((**)\)</span> 会推出 <span class="arithmatex">\(\max(\dfrac{\pi}{b_1}, \dfrac{\pi \times a_1}{b_2}) \ge \max(\dfrac{\pi}{b_2}, \dfrac{\pi \times a_2}{b_1}) \cdots (***)\)</span>（因为 <span class="arithmatex">\(\dfrac{\pi \times a_1}{b_2}\)</span> 不小于右边的任何一项）。</p>
+<p>显然 <span class="arithmatex">\((*)\)</span> 是 <span class="arithmatex">\((***)\)</span> 的否定，矛盾。</p>
+<p>所以 <span class="arithmatex">\(\dfrac{\pi \times a_1}{b_2} &lt; \dfrac{\pi \times a_2}{b_1}\)</span>，这个条件和 <span class="arithmatex">\(\dfrac{\pi \times a_1}{b_2} \ge \dfrac{\pi \times a_2}{b_1}\)</span> 构成了全集，所以如果后者错了，根据前面的假设和约束，前者必然对。</p>
+<p>那么根据 <span class="arithmatex">\(\dfrac{\pi \times a_1}{b_2} &lt; \dfrac{\pi \times a_2}{b_1}\)</span>，可以得到 <span class="arithmatex">\(a_1b_1 &lt; a_2b_2\)</span>。</p>
+<p>也就是最优算法 <span class="arithmatex">\(\mathcal{O}\)</span> 应当满足 <span class="arithmatex">\(a_1b_1 &lt; a_2b_2\)</span>。</p>
+<p>所以最优的贪心策略是按照 <span class="arithmatex">\(a_i\times b_i\)</span> 升序排序，让这个值小的尽量放在前面。</p>
+<p>需要写高精度。</p>
+</details>
+<details class="note">
+<summary>实现</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">N</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">s</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">S</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">T</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">a</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">k</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">ans</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">S</span><span class="o">//</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">ans</span><span class="p">):</span>
+        <span class="n">ans</span><span class="o">=</span><span class="n">S</span><span class="o">//</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">S</span><span class="o">*=</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+</details>
+<p>Exc Arg 也可以放到树上：</p>
+<details class="note" open="open">
+<summary>例题：<a href="http://poj.org/problem?id=2054">POJ2054 Color a Tree</a></summary>
+<details class="note">
+<summary>题解</summary>
+</details>
+<details class="note">
+<summary>实现</summary>
+</details>
+</details>
+<p>进阶可以看看 ZJK 爷爷的 <a href="../../../sce/submit.pdf">Paper</a>。</p>
+<p>ref: <a href="https://www.cnblogs.com/Gavin_Liu/archive/2011/04/10/2011108.html">https://www.cnblogs.com/Gavin_Liu/archive/2011/04/10/2011108.html</a></p>
 <h2 id="_5">反证法<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
 <h2 id="_6">数学归纳法<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
 <h2 id="_7">反悔贪心<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
-<h2 id="exchange-argument">Exchange Argument<a class="headerlink" href="#exchange-argument" title="Permanent link">😅</a></h2>
-<p>一个和临项交换类似的东西？</p>
-<p><a href="../../misc/exchange-argument/">link</a></p>
 
               
-<h2 id="__comments">评论</h2>
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <div id="gitalk-container"></div>
-
-  <script>
-const gitalk = new Gitalk({
-  owner: 'hylwxqwq',
-  repo: 'Blog-comment',      // The repository of store comments,
-  clientID: '8d8864654330a2a8ea74',
-  clientSecret: 'cc7ca6d7c2bb83e6582d33ca444318898abce707',
-  admin: [hylwxqwq],
-  id: window.location.pathname,      // Ensure uniqueness and length less than 50
-  distractionFreeMode: true  // Facebook-like distraction free mode
-})
-
-gitalk.render('gitalk-container')
-  </script>
-
             </article>
           </div>
         </div>
