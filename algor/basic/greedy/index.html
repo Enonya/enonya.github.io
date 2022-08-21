@@ -539,20 +539,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    微扰法（临项交换）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     范围缩放法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     决策包容性
   </a>
   
@@ -566,21 +559,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     反证法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     数学归纳法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     反悔贪心
   </a>
   
@@ -2737,34 +2730,7 @@
 <p>个人认为贪心算法的重点就在于猜。</p>
 <p>就是要先去大胆猜测“局部最优能推广到全局最优”，然后去找出“局部最优”。</p>
 <p>然后利用下面提到的方式去证明/证伪。</p>
-<h2 id="_2">微扰法（临项交换）<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<p>只需要证明，在任意局面下，对于局部最优策略的任何扰动都会使整体结果变差/优。</p>
-<p>一个相关的小应用：</p>
-<details class="note">
-<summary>排序不等式</summary>
-<p>若有序列 <span class="arithmatex">\(f\)</span>，满足 <span class="arithmatex">\(0 \le f_1 \le f_2 \le f_3 \le \dots \le f_n\)</span>。</p>
-<p>并有学列 <span class="arithmatex">\(g\)</span>，满足 <span class="arithmatex">\(0\le g_1\le g_2 \le g_3 \le \dots \le g_n\)</span>。</p>
-<p>设代价函数 <span class="arithmatex">\(c(f,g) = \sum (f_i\times g_j)\)</span>，其中 <span class="arithmatex">\((i,j)\)</span> 表示一组选择。</p>
-<p>即是，从 <span class="arithmatex">\(g\)</span> 中分别给每一个 <span class="arithmatex">\(f_i\)</span> 分配某一个 <span class="arithmatex">\(g_j\)</span>。</p>
-<p>则得到的最大价值必然是：</p>
-<div class="arithmatex">\[\max= f_1g_1 +f_2g_2 + \dots +f_ng_n\]</div>
-<p>得到的最小价值是：</p>
-<div class="arithmatex">\[\min = f_1g_n+f_2g_{n-1} + \dots + f_ng_1\]</div>
-<p>证明可以使用”微扰“法。</p>
-<details class="note">
-<summary>Proof</summary>
-<p>设 <span class="arithmatex">\(f_i &lt; f_j,g_i &lt; g_j,i &lt; j\)</span>。</p>
-<p>则：</p>
-<div class="arithmatex">\[(f_ig_i +f_jg_j)-(f_ig_j+f_jg_i)\]</div>
-<div class="arithmatex">\[= f_i(g_i-g_j)+f_j(g_j-g_i)\]</div>
-<div class="arithmatex">\[=f_i(g_i-g_j)-f_j(g_i-g_j)\]</div>
-<div class="arithmatex">\[=(f_i-f_j)(g_i-g_j) &gt; 0\]</div>
-<p><span class="arithmatex">\(\therefore (f_ig_i +f_jg_j) &gt; (f_ig_j+f_jg_i)\)</span></p>
-<p>归纳后可证明排序不等式。</p>
-</details>
-</details>
-<p>一般用于和”排序“相关的贪心问题。</p>
-<h2 id="_3">范围缩放法<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_2">范围缩放法<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
 <p>一般需要证明任何对于局部“最优”决策的作用范围的扩展不会影响全局最优解（不造成整体结果变差）。</p>
 <p>常用于一些决策具有前后关联的问题当中（这种要特别小心，容易和 DP 搞混淆。）</p>
 <details class="note" open="open">
@@ -3111,7 +3077,7 @@ Many answers are correct for each test dataset; a program will grade your answer
 </td></tr></table>
 </details>
 </details>
-<h2 id="_4">决策包容性<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
+<h2 id="_3">决策包容性<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
 <p>一般是证明在任意的局面下，做出局部最优决策之后，这个决策在问题状态空间里的可达集合包含了所有这一步做出其它任意决策的可达集合。</p>
 <p>也就是这个局部最优决策提供的可能性包含了其它所有策略的可能性。</p>
 <details class="note" open="open">
@@ -3290,7 +3256,44 @@ Many answers are correct for each test dataset; a program will grade your answer
 </details>
 </details>
 <h2 id="exchange-argument">Exchange Argument<a class="headerlink" href="#exchange-argument" title="Permanent link">😅</a></h2>
-<p>概述明天写，今天刚整完例题。</p>
+<p>可以用来证明某个贪心算法是否是最优的，或者说推导出一个最优的贪心算法应当以何种策略贪心。</p>
+<p>一般是要求你在一个操作序列上找到一个最优的操作顺序（不同的位置，选择顺序不同时的代价不相同）。</p>
+<p>思路通常都是拿某两个相邻的项出来，然后考虑如何判定他们的选取顺序是不是最优的。</p>
+<p>比如我有一个算法 <span class="arithmatex">\(\mathcal{O}\)</span>，它对于 <span class="arithmatex">\(i, i + 1\)</span> 这两项的选择顺序就是 <span class="arithmatex">\(i \to i + 1\)</span>。</p>
+<p>然后现在需要证明或者证伪这个 <span class="arithmatex">\(\mathcal{O}\)</span> 是最优的。</p>
+<p>显然还有一种可能 <span class="arithmatex">\(\mathcal{A}\)</span>，选取的顺序是 <span class="arithmatex">\(i + 1 \to i\)</span>，我们就需要比较 <span class="arithmatex">\(\mathcal{O, A}\)</span> 的操作代价。</p>
+<p>假设 <span class="arithmatex">\(\mathcal{O}\)</span> 是最优的，那么这个不等式就需要成立：</p>
+<div class="arithmatex">\[
+(\texttt{cost}_{i} \times \texttt{order}_{1}) + (\texttt{cost}_{i + 1} \times \texttt{order}_{2}) &lt; (\texttt{cost}_{i} \times \texttt{order}_{2}) + (\texttt{cost}_{i + 1} \times \texttt{order}_{1})
+\]</div>
+<p>其中 <span class="arithmatex">\(\texttt{cost}_{x}\)</span> 表示 <span class="arithmatex">\(x\)</span> 这个元素的权值，<span class="arithmatex">\(\texttt{order}_{1,2}\)</span> 表示先（后）选取所乘上的代价因子。</p>
+<p>如果把分别关于 <span class="arithmatex">\(\texttt{cost}\)</span> 和关于 <span class="arithmatex">\(\texttt{order}\)</span> 的两个不等关系代入上面的不等式，得到了矛盾的结果，说明 <span class="arithmatex">\(\mathcal{O}\)</span> 并不是最优的算法，<span class="arithmatex">\(\mathcal{A}\)</span> 才是，反之则证明 <span class="arithmatex">\(\mathcal{O}\)</span> 才是最优的算法。</p>
+<p>清楚了谁是最优的之后，我们把这个不等式稍微改写一下，尽可能消去 <span class="arithmatex">\(\texttt{order}\)</span>，得到一个关于 <span class="arithmatex">\(\texttt{cost}\)</span> 的不等式，这个就是最优算法的贪心（排序）策略（因为我们要求的就是最优的顺序（未知量），所以需要尽量消去贪心策略里关于顺序的变量）。</p>
+<p>当然实际应用的时候 <span class="arithmatex">\(\texttt{cost}\)</span> 可能需要用更复杂一点的方式计算，不过都是一样的。 </p>
+<p>但有一定可能是搞不出来的（所以得具体问题具体分析/oh</p>
+<p>一个比较基本的应用就是排序不等式：</p>
+<details class="note">
+<summary>排序不等式</summary>
+<p>若有序列 <span class="arithmatex">\(f\)</span>，满足 <span class="arithmatex">\(0 \le f_1 \le f_2 \le f_3 \le \dots \le f_n\)</span>。</p>
+<p>并有学列 <span class="arithmatex">\(g\)</span>，满足 <span class="arithmatex">\(0\le g_1\le g_2 \le g_3 \le \dots \le g_n\)</span>。</p>
+<p>设代价函数 <span class="arithmatex">\(c(f,g) = \sum (f_i\times g_j)\)</span>，其中 <span class="arithmatex">\((i,j)\)</span> 表示一组选择。</p>
+<p>即是，从 <span class="arithmatex">\(g\)</span> 中分别给每一个 <span class="arithmatex">\(f_i\)</span> 分配某一个 <span class="arithmatex">\(g_j\)</span>。</p>
+<p>则得到的最大价值必然是：</p>
+<div class="arithmatex">\[\max= f_1g_1 +f_2g_2 + \dots +f_ng_n\]</div>
+<p>得到的最小价值是：</p>
+<div class="arithmatex">\[\min = f_1g_n+f_2g_{n-1} + \dots + f_ng_1\]</div>
+<details class="note">
+<summary>Proof</summary>
+<p>设 <span class="arithmatex">\(f_i &lt; f_j,g_i &lt; g_j,i &lt; j\)</span>。</p>
+<p>则：</p>
+<div class="arithmatex">\[(f_ig_i +f_jg_j)-(f_ig_j+f_jg_i)\]</div>
+<div class="arithmatex">\[= f_i(g_i-g_j)+f_j(g_j-g_i)\]</div>
+<div class="arithmatex">\[=f_i(g_i-g_j)-f_j(g_i-g_j)\]</div>
+<div class="arithmatex">\[=(f_i-f_j)(g_i-g_j) &gt; 0\]</div>
+<p><span class="arithmatex">\(\therefore (f_ig_i +f_jg_j) &gt; (f_ig_j+f_jg_i)\)</span></p>
+<p>归纳后可证明排序不等式。</p>
+</details>
+</details>
 <p>先看一个序列上的 Exc Arg：</p>
 <details class="note" open="open">
 <summary>例题：<a href="https://www.luogu.com.cn/problem/P1080">NOIP2012TG 国王游戏</a></summary>
@@ -3537,13 +3540,15 @@ Many answers are correct for each test dataset; a program will grade your answer
 </td></tr></table>
 </details>
 </details>
+<p>还有一种应用是，对于某个 dp 问题，你直接在原序列上 dp 会有后效性，但是按照某种顺序排序之后，dp就没有后效性了。</p>
+<p>这个明天搞/oh</p>
 <p>进阶可以看看 ZJK 爷爷的 <a href="../../../sce/submit.pdf">Paper</a>。</p>
 <p>ref: <a href="https://www.cnblogs.com/Gavin_Liu/archive/2011/04/10/2011108.html">https://www.cnblogs.com/Gavin_Liu/archive/2011/04/10/2011108.html</a></p>
-<h2 id="_5">反证法<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h2 id="_4">反证法<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
-<h2 id="_6">数学归纳法<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
+<h2 id="_5">数学归纳法<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
-<h2 id="_7">反悔贪心<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
+<h2 id="_6">反悔贪心<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
 <p>咕咕咕</p>
 
               
