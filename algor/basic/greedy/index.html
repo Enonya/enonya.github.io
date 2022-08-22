@@ -3268,7 +3268,7 @@ Many answers are correct for each test dataset; a program will grade your answer
 \]</div>
 <p>其中 <span class="arithmatex">\(\texttt{cost}_{x}\)</span> 表示 <span class="arithmatex">\(x\)</span> 这个元素的权值，<span class="arithmatex">\(\texttt{order}_{1,2}\)</span> 表示先（后）选取所乘上的代价因子。</p>
 <p>如果把分别关于 <span class="arithmatex">\(\texttt{cost}\)</span> 和关于 <span class="arithmatex">\(\texttt{order}\)</span> 的两个不等关系代入上面的不等式，得到了矛盾的结果，说明 <span class="arithmatex">\(\mathcal{O}\)</span> 并不是最优的算法，<span class="arithmatex">\(\mathcal{A}\)</span> 才是，反之则证明 <span class="arithmatex">\(\mathcal{O}\)</span> 才是最优的算法。</p>
-<p>清楚了谁是最优的之后，我们把这个不等式稍微改写一下，尽可能消去 <span class="arithmatex">\(\texttt{order}\)</span>，得到一个关于 <span class="arithmatex">\(\texttt{cost}\)</span> 的不等式，这个就是最优算法的贪心（排序）策略（因为我们要求的就是最优的顺序（未知量），所以需要尽量消去贪心策略里关于顺序的变量）。</p>
+<p>清楚了谁是最优的之后，我们把这个不等式稍微改写一下，尽可能消去 <span class="arithmatex">\(\texttt{order}\)</span>，得到一个关于 <span class="arithmatex">\(\texttt{cost}\)</span> 的不等式，且将关于 <span class="arithmatex">\(i\)</span> 的变量放在不等号一端，关于 <span class="arithmatex">\(i + 1\)</span> 的放在另一端，这个就是最优算法的贪心（排序）策略（因为我们要求的就是最优的顺序（未知量），所以需要尽量消去贪心策略里关于顺序的变量）。</p>
 <p>当然实际应用的时候 <span class="arithmatex">\(\texttt{cost}\)</span> 可能需要用更复杂一点的方式计算，不过都是一样的。 </p>
 <p>但有一定可能是搞不出来的（所以得具体问题具体分析/oh</p>
 <p>一个比较基本的应用就是排序不等式：</p>
@@ -3541,7 +3541,136 @@ Many answers are correct for each test dataset; a program will grade your answer
 </details>
 </details>
 <p>还有一种应用是，对于某个 dp 问题，你直接在原序列上 dp 会有后效性，但是按照某种顺序排序之后，dp就没有后效性了。</p>
-<p>这个明天搞/oh</p>
+<details class="note" open="open">
+<summary>例题：<a href="https://atcoder.jp/contests/cf17-final/tasks/cf17_final_d">CODE FESTIVAL 2017 Problem D</a></summary>
+<p>有 <span class="arithmatex">\(n\)</span> 个人，每个人手上有 <span class="arithmatex">\(a_i\)</span> 个石头，身高为 <span class="arithmatex">\(b_i\)</span>，</p>
+<p>如果轮到第 <span class="arithmatex">\(i\)</span> 个人放石头的时候，石头堆里的石头个数小于等于 <span class="arithmatex">\(b_i\)</span>，这个人就会放 <span class="arithmatex">\(a_i\)</span> 个石头进去，否则摆烂</p>
+<p>问怎么样（以某种顺序）才能让<strong>放了石头的人最多</strong>，最多是多少。</p>
+<p><span class="arithmatex">\(n \le 5000, 0 \le b_i \le 1e9, 1 \le a_i \le 1e9\)</span>。 </p>
+<p>Bonus : <span class="arithmatex">\(n \le 1e5\)</span>，（目前不会，<a href="https://codeforces.com/blog/entry/63533?#comment-474391">cf blog</a> 上有提到）</p>
+<details class="note">
+<summary>题解</summary>
+<p>直接 DP 显然有问题，就是如果直接按照输入的顺序搞的话。</p>
+<p>这样子只能考虑在 <span class="arithmatex">\(1, 2, 3, 4\)</span> 的子序列当中选取，所以是有局限性的，因为你没法覆盖选择 <span class="arithmatex">\(4, 2, 1, 3\)</span> 这样“乱序”的情况。</p>
+<p>这道题本身就是在“安排顺序”，就是 Exc arg 的一个 Key。</p>
+<p>很明显 <span class="arithmatex">\(1,2,4,3 \ | \ 2, 4, 1, 3\ |\ 4, 1, 2, 3 \dots\)</span> 这些各种顺序里面大部分都不可能成为最优决策，所以我们可以考虑用 Exc arg 分析一下，然后再 DP。</p>
+<p>假设我们有两个人 <span class="arithmatex">\(i,j\)</span> 需要确定一个基本顺序。</p>
+<p>设他们之中先放的人放入之前的石头个数为 <span class="arithmatex">\(k\)</span>，那么可以得到两个式子：</p>
+<p>先放 <span class="arithmatex">\(i\)</span>：<span class="arithmatex">\(k \le b_i, k + a_i \le b_j\)</span>。</p>
+<p>先放 <span class="arithmatex">\(j\)</span>：<span class="arithmatex">\(k \le b_j, k + a_j \le b_i\)</span>。</p>
+<p>假设 <span class="arithmatex">\(i\)</span> 应当放在更前面，也就是说让 <span class="arithmatex">\(i\)</span> 先上去<strong>能让后面可以放的人更多</strong>，所以需要 <span class="arithmatex">\(i\)</span> 放上去之后让新高度尽量低，也就是让 <span class="arithmatex">\(k + a_i\)</span> 尽量小，因为 <span class="arithmatex">\(k\)</span> 是定值所以需要 <span class="arithmatex">\(a_i\)</span> 尽量小，移项之后就是 <span class="arithmatex">\(b_j - a_i\)</span> 尽量大。</p>
+<p>因为这里要求 <span class="arithmatex">\(i\)</span> 先放石头，所以对于 <span class="arithmatex">\(j\)</span> 类比可以知道要让 <span class="arithmatex">\(b_i - a_j\)</span> 尽量小，所以就需要满足 ：<span class="arithmatex">\(b_i - a_j &lt; b_j - a_i \Rightarrow a_i + b_i &lt; a_j + b_j\)</span>。</p>
+<p>那么，按照 <span class="arithmatex">\(a+b\)</span> 升序排序就是最优的贪心策略。</p>
+<p>肯定会有人疑惑，既然是让后面放的更多，为啥不按照 <span class="arithmatex">\(a\)</span> 直接排序？</p>
+<p>因为 <span class="arithmatex">\(a,b\)</span> 对原问题都有影响，都需要分析，所以需要列出关于 <span class="arithmatex">\(a,b\)</span> 的二元不等式。</p>
+<p>（具体反例懒得找了，可以自己找找看）</p>
+<p>排完序之后直接一个简单的 <span class="arithmatex">\(O(n^2)\)</span> dp 就可以了。</p>
+<p>设 <span class="arithmatex">\(dp(i)\)</span> 表示前 <span class="arithmatex">\(i\)</span> 个人（排序后），能取到的高度最小值，然后在所有可行的 <span class="arithmatex">\(dp\)</span> 里面取人数最大值即可。</p>
+<details class="info">
+<summary>Tips</summary>
+<p>这里的 Exchange Argument 里的 ”代价“ 就比较 “广义” 了，是 “让操作过后的高度尽量小”。</p>
+<p>不过还是照样可以归化到上面说的 Observation。</p>
+</details>
+</details>
+<details class="note">
+<summary>实现</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// author : black_trees</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+
+<span class="cp">#define endl &#39;\n&#39;</span>
+<span class="cp">#define meow(x) cerr &lt;&lt; #x &lt;&lt; &quot; = &quot; &lt;&lt; x</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5e3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">zabuton</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">i64</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">zabuton</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="n">arr</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
+<span class="n">i64</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">    </span>
+
+<span class="w">    </span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="p">.</span><span class="n">exceptions</span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">failbit</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">badbit</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="mh">0x3f</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">dp</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">j</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">b</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1l</span><span class="n">l</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">i64</span><span class="w"> </span><span class="n">mx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1e18</span><span class="p">)</span><span class="w"> </span><span class="n">mx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span><span class="w"> </span><span class="mf">1l</span><span class="n">l</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mx</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">// ref : https://blog.csdn.net/Leo_Nasir/article/details/81228924</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+</details>
 <p>进阶可以看看 ZJK 爷爷的 <a href="../../../sce/submit.pdf">Paper</a>。</p>
 <p>ref: <a href="https://www.cnblogs.com/Gavin_Liu/archive/2011/04/10/2011108.html">https://www.cnblogs.com/Gavin_Liu/archive/2011/04/10/2011108.html</a></p>
 <h2 id="_4">反证法<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
