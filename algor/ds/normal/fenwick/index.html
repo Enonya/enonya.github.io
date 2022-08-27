@@ -10,21 +10,21 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/rmq/">
+        <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/normal/fenwick/">
       
-      <link rel="icon" href="../../../img/wife.png">
+      <link rel="icon" href="../../../../img/wife.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Rmq - black_trees' blog</title>
+        <title>树状数组 - black_trees' blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -39,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#rmq" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -83,9 +78,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
+    <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/wife.png" alt="logo">
+  <img src="../../../../img/wife.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rmq
+              树状数组
             
           </span>
         </div>
@@ -186,7 +181,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       HomePage
     </a>
   </li>
@@ -198,7 +193,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../links/" class="md-tabs__link">
+    <a href="../../../../links/" class="md-tabs__link">
       FriendLinks
     </a>
   </li>
@@ -207,13 +202,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Algorithm
       </a>
     </li>
@@ -229,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../rec/" class="md-tabs__link">
+      <a href="../../../../rec/" class="md-tabs__link">
         Records
       </a>
     </li>
@@ -245,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../sol/" class="md-tabs__link">
+      <a href="../../../../sol/" class="md-tabs__link">
         Solutions
       </a>
     </li>
@@ -261,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../sce/" class="md-tabs__link">
+      <a href="../../../../sce/" class="md-tabs__link">
         Resource
       </a>
     </li>
@@ -297,9 +294,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
+    <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/wife.png" alt="logo">
+  <img src="../../../../img/wife.png" alt="logo">
 
     </a>
     black_trees' blog
@@ -327,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         HomePage
       </a>
     </li>
@@ -342,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../links/" class="md-nav__link">
+      <a href="../../../../links/" class="md-nav__link">
         FriendLinks
       </a>
     </li>
@@ -355,12 +352,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -388,7 +387,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Algorithm</a>
+          <a href="../../../">Algorithm</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -453,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../binary-operation/" class="md-nav__link">
+      <a href="../../../basic/binary-operation/" class="md-nav__link">
         位运算
       </a>
     </li>
@@ -467,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../binary-search/" class="md-nav__link">
+      <a href="../../../basic/binary-search/" class="md-nav__link">
         二分
       </a>
     </li>
@@ -481,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sorting/" class="md-nav__link">
+      <a href="../../../basic/sorting/" class="md-nav__link">
         排序
       </a>
     </li>
@@ -495,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../greedy/" class="md-nav__link">
+      <a href="../../../basic/greedy/" class="md-nav__link">
         贪心
       </a>
     </li>
@@ -509,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../binary-lifting/" class="md-nav__link">
+      <a href="../../../basic/binary-lifting/" class="md-nav__link">
         倍增
       </a>
     </li>
@@ -523,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../difference-and-prefix-sum/" class="md-nav__link">
+      <a href="../../../basic/difference-and-prefix-sum/" class="md-nav__link">
         前缀和 & 差分
       </a>
     </li>
@@ -622,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/basic/set-analytical-method/" class="md-nav__link">
+      <a href="../../../dp/basic/set-analytical-method/" class="md-nav__link">
         集合式分析法
       </a>
     </li>
@@ -636,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/basic/how-to-think/" class="md-nav__link">
+      <a href="../../../dp/basic/how-to-think/" class="md-nav__link">
         如何设计状态 & 方程
       </a>
     </li>
@@ -657,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/knapsack-dp/" class="md-nav__link">
+      <a href="../../../dp/knapsack-dp/" class="md-nav__link">
         背包 DP
       </a>
     </li>
@@ -671,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/interval-dp/" class="md-nav__link">
+      <a href="../../../dp/interval-dp/" class="md-nav__link">
         区间 DP
       </a>
     </li>
@@ -685,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/tree-dp/" class="md-nav__link">
+      <a href="../../../dp/tree-dp/" class="md-nav__link">
         树形 DP
       </a>
     </li>
@@ -699,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/states-compressing-dp/" class="md-nav__link">
+      <a href="../../../dp/states-compressing-dp/" class="md-nav__link">
         状压 DP
       </a>
     </li>
@@ -713,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/digit-dp/" class="md-nav__link">
+      <a href="../../../dp/digit-dp/" class="md-nav__link">
         数位 DP
       </a>
     </li>
@@ -727,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/sos-dp/" class="md-nav__link">
+      <a href="../../../dp/sos-dp/" class="md-nav__link">
         SOS DP
       </a>
     </li>
@@ -777,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
+      <a href="../../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
         单调栈优化
       </a>
     </li>
@@ -791,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
+      <a href="../../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
     </li>
@@ -805,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/opt/data-structure-optimize/" class="md-nav__link">
+      <a href="../../../dp/opt/data-structure-optimize/" class="md-nav__link">
         数据结构优化
       </a>
     </li>
@@ -819,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/opt/convex-optimize/" class="md-nav__link">
+      <a href="../../../dp/opt/convex-optimize/" class="md-nav__link">
         斜率优化
       </a>
     </li>
@@ -927,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/basic/list-forward-star/" class="md-nav__link">
+      <a href="../../../graph/basic/list-forward-star/" class="md-nav__link">
         链式前向星
       </a>
     </li>
@@ -941,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/basic/dfs-order/" class="md-nav__link">
+      <a href="../../../graph/basic/dfs-order/" class="md-nav__link">
         DFS 序相关
       </a>
     </li>
@@ -955,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/basic/simple-graph-theory-problem/" class="md-nav__link">
+      <a href="../../../graph/basic/simple-graph-theory-problem/" class="md-nav__link">
         简单图论问题
       </a>
     </li>
@@ -976,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/sssp/" class="md-nav__link">
+      <a href="../../../graph/sssp/" class="md-nav__link">
         最短路
       </a>
     </li>
@@ -990,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/mst/" class="md-nav__link">
+      <a href="../../../graph/mst/" class="md-nav__link">
         最小生成树
       </a>
     </li>
@@ -1004,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/lca/" class="md-nav__link">
+      <a href="../../../graph/lca/" class="md-nav__link">
         最近公共祖先
       </a>
     </li>
@@ -1018,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/negative-ring-and-difference-constraint/" class="md-nav__link">
+      <a href="../../../graph/negative-ring-and-difference-constraint/" class="md-nav__link">
         负环 & 差分约束
       </a>
     </li>
@@ -1066,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/connectivity/dcc/" class="md-nav__link">
+      <a href="../../../graph/connectivity/dcc/" class="md-nav__link">
         双连通分量
       </a>
     </li>
@@ -1080,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/connectivity/scc/" class="md-nav__link">
+      <a href="../../../graph/connectivity/scc/" class="md-nav__link">
         强连通分量
       </a>
     </li>
@@ -1094,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/connectivity/2sat/" class="md-nav__link">
+      <a href="../../../graph/connectivity/2sat/" class="md-nav__link">
         2-SAT 问题
       </a>
     </li>
@@ -1115,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/bipartite-graph/" class="md-nav__link">
+      <a href="../../../graph/bipartite-graph/" class="md-nav__link">
         二分图
       </a>
     </li>
@@ -1129,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graph/dsu-on-tree/" class="md-nav__link">
+      <a href="../../../graph/dsu-on-tree/" class="md-nav__link">
         树上启发式合并
       </a>
     </li>
@@ -1148,14 +1147,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
       
       
       
@@ -1226,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/stack/" class="md-nav__link">
+      <a href="../../easy/stack/" class="md-nav__link">
         栈
       </a>
     </li>
@@ -1240,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/queue/" class="md-nav__link">
+      <a href="../../easy/queue/" class="md-nav__link">
         队列
       </a>
     </li>
@@ -1254,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/list/" class="md-nav__link">
+      <a href="../../easy/list/" class="md-nav__link">
         链表
       </a>
     </li>
@@ -1268,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/monotonous-stack/" class="md-nav__link">
+      <a href="../../easy/monotonous-stack/" class="md-nav__link">
         单调栈
       </a>
     </li>
@@ -1282,7 +1283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/easy/monotonous-queue/" class="md-nav__link">
+      <a href="../../easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1301,12 +1302,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_2" type="checkbox" id="__nav_3_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_2" type="checkbox" id="__nav_3_5_2" checked>
       
       
       
@@ -1337,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/normal/segtree/" class="md-nav__link">
+      <a href="../segtree/" class="md-nav__link">
         线段树
       </a>
     </li>
@@ -1351,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/normal/blocks/" class="md-nav__link">
+      <a href="../blocks/" class="md-nav__link">
         普通分块
       </a>
     </li>
@@ -1363,11 +1366,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ds/normal/fenwick/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         树状数组
       </a>
+      
     </li>
   
 
@@ -1418,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/hard/hld/" class="md-nav__link">
+      <a href="../../hard/hld/" class="md-nav__link">
         轻重链剖分
       </a>
     </li>
@@ -1462,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/hard/persistent-trie/" class="md-nav__link">
+      <a href="../../hard/persistent-trie/" class="md-nav__link">
         可持久化 Trie
       </a>
     </li>
@@ -1520,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ds/lunatic/odt/" class="md-nav__link">
+      <a href="../../lunatic/odt/" class="md-nav__link">
         珂朵莉树
       </a>
     </li>
@@ -1614,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/number-theory/prime/" class="md-nav__link">
+      <a href="../../../math/number-theory/prime/" class="md-nav__link">
         质数
       </a>
     </li>
@@ -1628,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/number-theory/factor/" class="md-nav__link">
+      <a href="../../../math/number-theory/factor/" class="md-nav__link">
         约数
       </a>
     </li>
@@ -1683,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/matrix/" class="md-nav__link">
+      <a href="../../../math/linear-algebra/matrix/" class="md-nav__link">
         矩阵
       </a>
     </li>
@@ -1697,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/perm/" class="md-nav__link">
+      <a href="../../../math/linear-algebra/perm/" class="md-nav__link">
         置换
       </a>
     </li>
@@ -1711,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/poset/" class="md-nav__link">
+      <a href="../../../math/linear-algebra/poset/" class="md-nav__link">
         偏序
       </a>
     </li>
@@ -1771,7 +1782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../string/trie/" class="md-nav__link">
+      <a href="../../../string/trie/" class="md-nav__link">
         Trie
       </a>
     </li>
@@ -1858,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/mo/" class="md-nav__link">
+      <a href="../../../misc/mo/" class="md-nav__link">
         普通莫队
       </a>
     </li>
@@ -1909,7 +1920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/mt19937/" class="md-nav__link">
+      <a href="../../../misc/mt19937/" class="md-nav__link">
         mt19937
       </a>
     </li>
@@ -1930,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/expression/" class="md-nav__link">
+      <a href="../../../misc/expression/" class="md-nav__link">
         表达式求值
       </a>
     </li>
@@ -1980,7 +1991,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../rec/">Records</a>
+          <a href="../../../../rec/">Records</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -2077,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/old/old-cf-at-misc/" class="md-nav__link">
+      <a href="../../../../rec/old/old-cf-at-misc/" class="md-nav__link">
         CF & AT 杂题
       </a>
     </li>
@@ -2091,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/old/old-cf-at-sol/" class="md-nav__link">
+      <a href="../../../../rec/old/old-cf-at-sol/" class="md-nav__link">
         CF & AT 题解
       </a>
     </li>
@@ -2112,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-02/" class="md-nav__link">
+      <a href="../../../../rec/atcf-for-2022-02/" class="md-nav__link">
         2022年2月AT&CF
       </a>
     </li>
@@ -2126,7 +2137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-03/" class="md-nav__link">
+      <a href="../../../../rec/atcf-for-2022-03/" class="md-nav__link">
         2022年3月AT&CF
       </a>
     </li>
@@ -2140,7 +2151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-04/" class="md-nav__link">
+      <a href="../../../../rec/atcf-for-2022-04/" class="md-nav__link">
         2022年4月AT&CF
       </a>
     </li>
@@ -2154,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-05/" class="md-nav__link">
+      <a href="../../../../rec/atcf-for-2022-05/" class="md-nav__link">
         2022年5月AT&CF
       </a>
     </li>
@@ -2168,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-07/" class="md-nav__link">
+      <a href="../../../../rec/atcf-for-2022-07/" class="md-nav__link">
         2022年7,8月AT&CF
       </a>
     </li>
@@ -2227,7 +2238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/tricks-for-2022-02/" class="md-nav__link">
+      <a href="../../../../rec/tricks-for-2022-02/" class="md-nav__link">
         2022年2月练习记录
       </a>
     </li>
@@ -2241,7 +2252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/tricks-for-2022-03/" class="md-nav__link">
+      <a href="../../../../rec/tricks-for-2022-03/" class="md-nav__link">
         2022年3月练习记录
       </a>
     </li>
@@ -2255,7 +2266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/tricks-for-2022-04/" class="md-nav__link">
+      <a href="../../../../rec/tricks-for-2022-04/" class="md-nav__link">
         2022年4月练习记录
       </a>
     </li>
@@ -2269,7 +2280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/tricks-for-2022-05/" class="md-nav__link">
+      <a href="../../../../rec/tricks-for-2022-05/" class="md-nav__link">
         2022年5月练习记录
       </a>
     </li>
@@ -2319,7 +2330,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../sol/">Solutions</a>
+          <a href="../../../../sol/">Solutions</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2380,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/mock/220413B/" class="md-nav__link">
+      <a href="../../../../sol/mock/220413B/" class="md-nav__link">
         20220413B组
       </a>
     </li>
@@ -2394,7 +2405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/mock/220429C/" class="md-nav__link">
+      <a href="../../../../sol/mock/220429C/" class="md-nav__link">
         20220429C组
       </a>
     </li>
@@ -2408,7 +2419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/mock/220511C/" class="md-nav__link">
+      <a href="../../../../sol/mock/220511C/" class="md-nav__link">
         20220511C组
       </a>
     </li>
@@ -2422,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/mock/220518C/" class="md-nav__link">
+      <a href="../../../../sol/mock/220518C/" class="md-nav__link">
         20220518C组
       </a>
     </li>
@@ -2487,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/acwing277/" class="md-nav__link">
+      <a href="../../../../sol/pro/acwing277/" class="md-nav__link">
         ACWing277
       </a>
     </li>
@@ -2501,7 +2512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/acwing355/" class="md-nav__link">
+      <a href="../../../../sol/pro/acwing355/" class="md-nav__link">
         ACWing355
       </a>
     </li>
@@ -2515,7 +2526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/bzoj3307/" class="md-nav__link">
+      <a href="../../../../sol/pro/bzoj3307/" class="md-nav__link">
         BZOJ3307
       </a>
     </li>
@@ -2529,7 +2540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/cf713c/" class="md-nav__link">
+      <a href="../../../../sol/pro/cf713c/" class="md-nav__link">
         CF713C
       </a>
     </li>
@@ -2543,7 +2554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/cf1637f/" class="md-nav__link">
+      <a href="../../../../sol/pro/cf1637f/" class="md-nav__link">
         CF1637F
       </a>
     </li>
@@ -2557,7 +2568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/cf1651e/" class="md-nav__link">
+      <a href="../../../../sol/pro/cf1651e/" class="md-nav__link">
         CF1651E
       </a>
     </li>
@@ -2571,7 +2582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sol/pro/uoj105/" class="md-nav__link">
+      <a href="../../../../sol/pro/uoj105/" class="md-nav__link">
         UOJ105
       </a>
     </li>
@@ -2617,7 +2628,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../sce/">Resource</a>
+          <a href="../../../../sce/">Resource</a>
           
         </div>
       
@@ -2648,67 +2659,15 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/basic/rmq.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/ds/normal/fenwick.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>Rmq</h1>
+  <h1>树状数组</h1>
 
-<h3 id="rmq">RMQ<a class="headerlink" href="#rmq" title="Permanent link">😅</a></h3>
-<p>区间最值问题。</p>
-<p>可以考虑线段树解决。</p>
-<p>不过有一个更好写一点的方法，<span class="arithmatex">\(\text{O}(n \log n)\)</span> 预处理，<span class="arithmatex">\(\text{O}(1)\)</span> 询问，但是不能带修。</p>
-<p>这就是 ST 表。</p>
-<p>利用倍增的思想考虑：</p>
-<p>设 <span class="arithmatex">\(f_{i,j}\)</span> 表示从 <span class="arithmatex">\(i\)</span> 开始的 <span class="arithmatex">\(2^j\)</span> 个数当中的最值。</p>
-<p>类似线段树，把两个半区间的信息上传到大区间。</p>
-<p><a href="https://imgtu.com/i/HYel8S"><img alt="rmq-1.png" src="https://s4.ax1x.com/2022/02/10/HYel8S.png" /></a></p>
-<p>那么 <span class="arithmatex">\(f_{i,j}=\max(f_{i,j-1},f_{i+2^{j-1},j-1})\)</span></p>
-<p>询问区间 <span class="arithmatex">\([l,r]\)</span> 的最值的时候，找到一个 <span class="arithmatex">\(k\)</span> 使得 <span class="arithmatex">\(2^k \le r-l+1 \le 2^{k+1}\)</span>。</p>
-<p>那么 <span class="arithmatex">\(ans=\max(f_{l,k},f_{r-2^k+1,k})\)</span>。这两个区间会覆盖，但是没有影响。 </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="o">=</span><span class="mf">1e5</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">si</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="n">Log</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ST_prework</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">Log</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Log</span><span class="p">[</span><span class="n">i</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">Log</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="o">++</span><span class="n">j</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">j</span><span class="p">);</span><span class="o">++</span><span class="n">i</span><span class="p">){</span><span class="w"> </span><span class="c1">// 注意循序</span>
-<span class="w">            </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="mi">-1</span><span class="p">],</span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">j</span><span class="mi">-1</span><span class="p">))][</span><span class="n">j</span><span class="mi">-1</span><span class="p">]);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">Log</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">k</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="p">]);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+
 
               
             </article>
@@ -2723,6 +2682,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../blocks/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 普通分块" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              普通分块
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../hard/hld/" class="md-footer__link md-footer__link--next" aria-label="下一页: 轻重链剖分" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              轻重链剖分
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2782,10 +2776,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
