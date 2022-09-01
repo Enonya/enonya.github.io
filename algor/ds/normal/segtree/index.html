@@ -775,8 +775,6 @@
         
           
         
-          
-        
       
       
         <label class="md-nav__link" for="__nav_3_3_8">
@@ -790,20 +788,6 @@
           DP 优化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../dp/opt/monotonous-stack-optimize/" class="md-nav__link">
-        单调栈优化
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -1341,6 +1325,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_5_2">
@@ -1573,8 +1561,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../blocks/" class="md-nav__link">
-        普通分块
+      <a href="../binary-search-on-segtree/" class="md-nav__link">
+        线段树二分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segtree-tricks/" class="md-nav__link">
+        线段树的扩展运用
       </a>
     </li>
   
@@ -1589,6 +1591,20 @@
     <li class="md-nav__item">
       <a href="../fenwick/" class="md-nav__link">
         树状数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blocks/" class="md-nav__link">
+        普通分块
       </a>
     </li>
   
@@ -2582,6 +2598,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2">
@@ -2647,6 +2665,73 @@
       <a href="../../../../sol/mock/220518C/" class="md-nav__link">
         20220518C组
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_5" type="checkbox" id="__nav_5_2_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2_5">
+          模拟赛赛后总结
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="模拟赛赛后总结" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          模拟赛赛后总结
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sol/mock/sum/220525C/" class="md-nav__link">
+        20220525C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sol/mock/sum/220603C/" class="md-nav__link">
+        20220603C组(22/08/30 VP)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2834,12 +2919,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../../sce/">Resource</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -2850,6 +2941,75 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          初赛知识复习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="初赛知识复习" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          初赛知识复习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sce/menu/" class="md-nav__link">
+        Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sce/bsc-klg/time-complexity/" class="md-nav__link">
+        时间复杂度分析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
             
           
         </ul>
@@ -2960,6 +3120,7 @@
 <h4 id="_5">上传信息<a class="headerlink" href="#_5" title="Permanent link">😅</a></h4>
 <p>这个操作用于把儿子节点的信息上传到父亲节点。</p>
 <p>因为一般的线段树都是自底向上更新，所以需要这样的一个步骤。</p>
+<p>就是直接把左右儿子的信息拉上来到父亲节点。</p>
 <p>根据维护信息的不同做一点修改就行。</p>
 <p>这个一般取决于询问问的是什么，如果问和就是加起来，如果问最值就是取最值。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -3037,7 +3198,34 @@
 <p>还是从根节点递归下去，设 <span class="arithmatex">\(nl = \text{t[p].l}, nr = \text{t[p].r}\)</span>。</p>
 <p>然后如果当前节点 <span class="arithmatex">\(p\)</span> 满足 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>。</p>
 <p>那么就不用递归下去了，直接返回当前节点的信息即可。</p>
-<p>否则递归下去，递归回来之后把左右子树的答案分别合并，然后返回这个值即可。</p>
+<p>否则分割递归下去，递归回来之后把左右子树的答案分别合并，然后返回这个值即可。</p>
+<p>一张图理解:</p>
+<details class="info">
+<summary>Click to review</summary>
+<p><a href="https://imgse.com/i/vfT5Bn"><img alt="vfT5Bn.png" src="https://s1.ax1x.com/2022/08/29/vfT5Bn.png" /></a></p>
+<p>节点标错了，凑合着看。</p>
+<p>解释：</p>
+<ul>
+<li>
+<p>先查询 <span class="arithmatex">\([2,6]\)</span>，访问到节点 <span class="arithmatex">\(1\)</span>，发现不满足 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>，于是向下递归，因为 <span class="arithmatex">\(2(ql) \le 4(mid)\)</span>，所以左儿子    <span class="arithmatex">\(2\)</span> 递归下去，因为 <span class="arithmatex">\(6(qr) &gt; 4(mid)\)</span>，所以右儿子 <span class="arithmatex">\(4\)</span> 号节点也要递归下去。</p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(2\)</span> 号节点，发现仍旧不满足 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>，所以继续向下递归 <span class="arithmatex">\(5,6\)</span> 号节点。</p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(5\)</span> 号节点，发现 <span class="arithmatex">\(2(ql) \le 1(mid)\)</span> 不成立，不递归，发现 <span class="arithmatex">\(6(qr) &gt; 1(mid)\)</span> 成立，所以递归 <span class="arithmatex">\(10\)</span>，发现 <span class="arithmatex">\(10\)</span> 号节点满足了 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>，直接返回。</p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(6\)</span> 号节点，发现 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>，直接返回。</p>
+</li>
+<li>
+<p>对于 <span class="arithmatex">\(4\)</span> 号节点，发现只满足 <span class="arithmatex">\(2(ql) \le 6(mid)\)</span>，所以只递归 <span class="arithmatex">\(7\)</span> 号节点，然后发现 <span class="arithmatex">\(7\)</span> 满足 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>，直接返回。</p>
+</li>
+<li>
+<p>然后查询就做完了。</p>
+</li>
+</ul>
+</details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3097,10 +3285,12 @@
 <p>假设当前操作的区间是 <span class="arithmatex">\([ql, qr]\)</span></p>
 <p>我们每次递归到一个节点 <span class="arithmatex">\(p\)</span> 的时候，如果 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>，那么先更新 <span class="arithmatex">\(p\)</span> 的信息，然后直接打上标记，返回。</p>
 <p>相当于直接不递归下去了，先用一个 <span class="arithmatex">\(tag\)</span> 记录着更新，需要的时候再下放标记。</p>
-<p>比如，要区间加/修或者区间查询的时候，如果你不下放标记是要出事的，所以要先下放标记然后再递归。</p>
+<p>比如，要区间加/修或者区间查询且没有直接返回的时候，你可能会递归左右儿子，欠他们的信息就需要更新，</p>
+<p>如果你不下放标记是要出事的，所以要先下放标记然后再递归。</p>
+<p>说白了，就是马上要递归子树（需要用到下面的信息）的时候，就需要提前下传标记。</p>
 <h4 id="_10">下传标记<a class="headerlink" href="#_10" title="Permanent link">😅</a></h4>
 <p>这个操作比较简单，只要 <span class="arithmatex">\(tag\)</span> 是被更新过的，我们把左右儿子的信息更新，</p>
-<p>然后让 <span class="arithmatex">\(\text{t[p&lt;&lt;1].tag}\)</span> 和 <span class="arithmatex">\(\text{t[p &lt;&lt; 1 | 1].tag}\)</span> 继承 <span class="arithmatex">\(tag\)</span> 即可（区间加是加上，区间修是直接继承）。</p>
+<p>然后让 <span class="arithmatex">\(\text{t[p&lt;&lt;1].tag}\)</span> 和 <span class="arithmatex">\(\text{t[p &lt;&lt; 1 | 1].tag}\)</span> 继承 <span class="arithmatex">\(tag\)</span> 即可（区间加是加上，区间修是直接继承，这个就具体看题目要求了）。</p>
 <p>最后需要让 <span class="arithmatex">\(\text{t[p].tag}\)</span> 清空。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3281,7 +3471,7 @@
 <span class="w">                </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">dat</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 <span class="w">                </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">tag</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="n">pushdown</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// 没到可以直接返回的时候，也要 pushdown。</span>
+<span class="w">            </span><span class="n">pushdown</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// 没到可以直接返回的时候，马上要递归子树了，也要 pushdown。</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span>
 <span class="w">                </span><span class="n">update</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"></span>
@@ -3293,7 +3483,7 @@
 <span class="w">            </span><span class="n">i64</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"></span>
 <span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">dat</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="n">pushdown</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// 查询要查值，必然要 pushdown。</span>
+<span class="w">            </span><span class="n">pushdown</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// 查询要查值，需要子树信息，必然要 pushdown。</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span>
 <span class="w">                </span><span class="n">res</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">query</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
@@ -4115,13 +4305,13 @@
       
       
         
-        <a href="../blocks/" class="md-footer__link md-footer__link--next" aria-label="下一页: 普通分块" rel="next">
+        <a href="../binary-search-on-segtree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 线段树二分" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              普通分块
+              线段树二分
             </div>
           </div>
           <div class="md-footer__button md-icon">
