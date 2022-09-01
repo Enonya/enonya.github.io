@@ -3111,8 +3111,8 @@
 <p>对于二分，</p>
 <p>那么 <span class="arithmatex">\(T(n) = T(n/2) + \Theta(1)\)</span>，</p>
 <p>解释：二分每次把子问题规模缩小一半，每次只递归一遍，所以（处理的）子问题个数是 <span class="arithmatex">\(a = 1\)</span>。</p>
-<p>对于 condition 1，显然 <span class="arithmatex">\(n^{\log_b(a-\epsilon)}\)</span> 在 <span class="arithmatex">\(\epsilon &gt; 0\)</span> 时无意义，肯定不是</p>
-<p>对于 condition 2，因为 <span class="arithmatex">\(n^{\log_b(a)} = 1\)</span>，且 <span class="arithmatex">\(f(n) = \Theta(1)\)</span>，我们可以令 <span class="arithmatex">\(k = 0\)</span>，然后发现 <span class="arithmatex">\(n^{\log_b(a)}\log^k n\)</span> 这坨就等于 <span class="arithmatex">\(\Theta(1)\)</span>，所以复杂度是 <span class="arithmatex">\(\Theta(\log^{0 + 1} n) = \Theta(\log n)\)</span>。</p>
+<p>对于 condition 1，显然 <span class="arithmatex">\(\displaystyle n^{\log_b(a-\epsilon)}\)</span> 在 <span class="arithmatex">\(\epsilon &gt; 0\)</span> 时无意义，肯定不是</p>
+<p>对于 condition 2，因为 <span class="arithmatex">\(\displaystyle n^{\log_b(a)} = 1\)</span>，且 <span class="arithmatex">\(f(n) = \Theta(1)\)</span>，我们可以令 <span class="arithmatex">\(k = 0\)</span>，然后发现 <span class="arithmatex">\(\displaystyle n^{\log_b(a)}\log^k n\)</span> 这坨就等于 <span class="arithmatex">\(\Theta(1)\)</span>，所以复杂度是 <span class="arithmatex">\(\Theta(\log^{0 + 1} n) = \Theta(\log n)\)</span>。</p>
 <p>然后如果带一个 <span class="arithmatex">\(Check\)</span> 的话，你可能会写出 <span class="arithmatex">\(T(n) = T(n/2) + \Theta(n)\)</span>，但这个不完全对的。</p>
 <p>因为你每次 <span class="arithmatex">\(n\)</span> 会缩小，Check 的规模就变了，计算方式应该是直接计数。</p>
 <p>二分最多调用 <span class="arithmatex">\(O(\log n)\)</span> 次 check，check 的总复杂度是 <span class="arithmatex">\(n + n/2 + n/4 + .... = 2n\)</span>。</p>
@@ -3124,13 +3124,13 @@
 <p><span class="arithmatex">\(T(n) = 2T(n / 2) + \Theta(n)\)</span>。</p>
 <p>解释：二分每次把子问题规模缩小一半，每次递归两边，所以（处理的）子问题个数是 <span class="arithmatex">\(a = 2\)</span>。</p>
 <p>然后还是一个 condition 一个 condition 的看。</p>
-<p>发现 <span class="arithmatex">\(n^{\log_b(a)} = \Theta(n)\)</span>，你发现和二分的有点像，都是 <span class="arithmatex">\(n^{\log_b(a)} = f(n)\)</span>，然后令 <span class="arithmatex">\(k = 0\)</span>.</p>
+<p>发现 <span class="arithmatex">\(\displaystyle n^{\log_b(a)} = \Theta(n)\)</span>，你发现和二分的有点像，都是 <span class="arithmatex">\(\displaystyle n^{\log_b(a)} = f(n)\)</span>，然后令 <span class="arithmatex">\(k = 0\)</span>.</p>
 <p>所以复杂度 <span class="arithmatex">\(\Theta(n\log n)\)</span>。</p>
 </details>
 <details class="example">
 <summary>应用3</summary>
 <p><span class="arithmatex">\(T(n) = 9T(n/3) + n\)</span>.</p>
-<p>发现 <span class="arithmatex">\(n^{log_b(a)} = 2\)</span>，<span class="arithmatex">\(n^2 &gt; n\)</span>，所以复杂度 <span class="arithmatex">\(\Theta(n^2)\)</span>。</p>
+<p>发现 <span class="arithmatex">\(\displaystyle n^{\log_b(a)} = 2\)</span>，<span class="arithmatex">\(n^2 &gt; n\)</span>，所以复杂度 <span class="arithmatex">\(\Theta(n^2)\)</span>。</p>
 </details>
 <details class="warning">
 <summary>Warning</summary>

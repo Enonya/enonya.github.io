@@ -1900,15 +1900,55 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    补集
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     应用
   </a>
+  
+    <nav class="md-nav" aria-label="应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    不定方程非负整数解计数
+  </a>
+  
+    <nav class="md-nav" aria-label="不定方程非负整数解计数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    没有限制时
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    容斥模型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3028,6 +3068,7 @@
   <h1>容斥原理</h1>
 
 <p>摘录自 <a href="https://oi-wiki.org/math/combinatorics/inclusion-exclusion-principle/">OI-Wiki</a></p>
+<p>我这里 Mathjax 不会显示 <code>\overline</code>，所以用了 <code>\overrightarrow</code> 代替。</p>
 <h2 id="_1">容斥原理<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
 <p>设 U 中元素有 n 种不同的属性，而第 i 种属性称为 <span class="arithmatex">\(P_i\)</span>，拥有属性 <span class="arithmatex">\(P_i\)</span> 的元素构成集合 <span class="arithmatex">\(S_i\)</span>，那么</p>
 <div class="arithmatex">\[
@@ -3052,8 +3093,42 @@ Cnt=&amp;|\{T_i\}|-|\{T_i\cap T_j|i&lt;j\}|+\cdots+(-1)^{k-1}\left|\left\{\bigca
 \end{split}
 \]</div>
 <p>于是每个元素出现的次数为 1，那么合并起来就是并集。证毕。</p>
-<h2 id="_3">应用<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
-<p>暂时咕咕咕了。</p>
+<h3 id="_3">补集<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<p>对于全集 U 下的 <strong>集合的并</strong> 可以使用容斥原理计算，而集合的交则用全集减去 <strong>补集的并集</strong> 求得：</p>
+<div class="arithmatex">\[
+\left|\bigcap_{i=1}^{n}S_i\right|=|U|-\left|\bigcup_{i=1}^n\overrightarrow{S_i}\right|
+\]</div>
+<p>右边使用容斥即可。</p>
+<h2 id="_4">应用<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
+<h3 id="_5">不定方程非负整数解计数<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<details class="note" open="open">
+<summary>不定方程非负整数解计数</summary>
+<p>给出不定方程 <span class="arithmatex">\(\sum_{i=1}^nx_i=m\)</span> 和 <span class="arithmatex">\(n\)</span> 个限制条件 <span class="arithmatex">\(x_i\leq b_i\)</span>，其中 <span class="arithmatex">\(m,b_i \in \mathbb{N}\)</span>. 求方程的非负整数解的个数。</p>
+</details>
+<h4 id="_6">没有限制时<a class="headerlink" href="#_6" title="Permanent link">😅</a></h4>
+<p>如果没有 <span class="arithmatex">\(x_i&lt;b_i\)</span> 的限制，那么不定方程 <span class="arithmatex">\(\sum_{i=1}^nx_i=m\)</span> 的非负整数解的数目为 <span class="arithmatex">\(C_{m+n-1}^{n-1}\)</span>.</p>
+<p>略证：插板法。</p>
+<p>相当于你有 <span class="arithmatex">\(m\)</span> 个球要分给 <span class="arithmatex">\(n\)</span> 个盒子，允许某个盒子是空的。这个问题不能直接用组合数解决。</p>
+<p>于是我们再加入 <span class="arithmatex">\(n-1\)</span> 个球，于是问题就变成了在一个长度为 <span class="arithmatex">\(m+n-1\)</span> 的球序列中选择 <span class="arithmatex">\(n-1\)</span> 个球，然后这个 <span class="arithmatex">\(n-1\)</span> 个球把这个序列隔成了 <span class="arithmatex">\(n\)</span> 份，恰好可以一一对应放到 <span class="arithmatex">\(n\)</span> 个盒子中。那么在 <span class="arithmatex">\(m+n-1\)</span> 个球中选择 <span class="arithmatex">\(n-1\)</span> 个球的方案数就是 <span class="arithmatex">\(C_{m+n-1}^{n-1}\)</span>。</p>
+<h4 id="_7">容斥模型<a class="headerlink" href="#_7" title="Permanent link">😅</a></h4>
+<p>接着我们尝试抽象出容斥原理的模型：</p>
+<ol>
+<li>全集 U：不定方程 <span class="arithmatex">\(\sum_{i=1}^nx_i=m\)</span> 的非负整数解</li>
+<li>元素：变量 <span class="arithmatex">\(x_i\)</span>.</li>
+<li>属性：<span class="arithmatex">\(x_i\)</span> 的属性即 <span class="arithmatex">\(x_i\)</span> 满足的条件，即 <span class="arithmatex">\(x_i\leq b_i\)</span> 的条件</li>
+</ol>
+<p>目标：所有变量满足对应属性时集合的大小，即 <span class="arithmatex">\(|\bigcap_{i=1}^nS_i|\)</span>.</p>
+<p>这个东西可以用 <span class="arithmatex">\(\left|\bigcap_{i=1}^{n}S_i\right|=|U|-\left|\bigcup_{i=1}^n\overrightarrow{S_i}\right|\)</span> 求解。<span class="arithmatex">\(|U|\)</span> 可以用组合数计算，后半部分自然使用容斥原理展开。</p>
+<p>那么问题变成，对于一些 <span class="arithmatex">\(\overrightarrow{S_{a_i}}\)</span> 的交集求大小。考虑 <span class="arithmatex">\(\overrightarrow{S_{a_i} }\)</span> 的含义，表示 <span class="arithmatex">\(x_{a_i}\geq b_{a_i}+1\)</span> 的解的数目。而交集表示同时满足这些条件。因此这个交集对应的不定方程中，有些变量有 <strong>下界限制</strong>，而有些则没有限制。</p>
+<p>能否消除这些下界限制呢？既然要求的是非负整数解，而有些变量的下界又大于 <span class="arithmatex">\(0\)</span>，那么我们直接 <strong>把这个下界减掉</strong>，就可以使得这些变量的下界变成 <span class="arithmatex">\(0\)</span>，即没有下界啦。因此对于</p>
+<div class="arithmatex">\[
+\left|\bigcap_{a_i&lt;a_{i+1} }^{1\leq i\leq k}S_{a_i}\right|
+\]</div>
+<p>的不定方程形式为</p>
+<div class="arithmatex">\[
+\sum_{i=1}^nx_i=m-\sum_{i=1}^k(b_{a_i}+1)
+\]</div>
+<p>于是这个也可以组合数计算啦。这个长度为 <span class="arithmatex">\(k\)</span> 的 <span class="arithmatex">\(a\)</span> 数组相当于在枚举子集。</p>
 
               
             </article>
