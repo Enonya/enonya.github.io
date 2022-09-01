@@ -455,17 +455,19 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2">
-          基础算法
+          算法基础
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="基础算法" data-md-level="2">
+      <nav class="md-nav" aria-label="算法基础" data-md-level="2">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
-          基础算法
+          算法基础
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -626,6 +628,20 @@
     <li class="md-nav__item">
       <a href="../difference-and-prefix-sum/" class="md-nav__link">
         前缀和 & 差分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-complexity/" class="md-nav__link">
+        时间复杂度分析
       </a>
     </li>
   
@@ -1679,6 +1695,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_6">
@@ -1830,6 +1848,121 @@
     <li class="md-nav__item">
       <a href="../../math/linear-algebra/poset/" class="md-nav__link">
         偏序
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_3" type="checkbox" id="__nav_3_6_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_6_3">
+          组合数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="组合数学" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          组合数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/combinatorics/combination/" class="md-nav__link">
+        排列组合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/combinatorics/pigeonhole-principle/" class="md-nav__link">
+        鸽巢原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/combinatorics/inclusion-exclusion-principle/" class="md-nav__link">
+        容斥原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/combinatorics/stirling/" class="md-nav__link">
+        斯特林数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/combinatorics/catalan/" class="md-nav__link">
+        卡特兰数
       </a>
     </li>
   
@@ -2827,65 +2960,10 @@
   
   
   
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
-      
-      
-      
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_6_2">
-          初赛知识复习
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="初赛知识复习" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_2">
-          <span class="md-nav__icon md-icon"></span>
-          初赛知识复习
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../../sce/menu/" class="md-nav__link">
-        Menu
+        初赛知识复习
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../sce/bsc-klg/time-complexity/" class="md-nav__link">
-        时间复杂度分析
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -2977,7 +3055,7 @@
 <h2 id="_2">范围缩放法<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
 <p>一般需要证明任何对于局部“最优”决策的作用范围的扩展不会影响全局最优解（不造成整体结果变差）。</p>
 <p>常用于一些决策具有前后关联的问题当中（这种要特别小心，容易和 DP 搞混淆。）</p>
-<details class="note" open="open">
+<details class="example" open="open">
 <summary>例题：<a href="http://poj.org/problem?id=3614">POJ3614 Sunscreen</a></summary>
 <p>To avoid unsightly burns while tanning, each of the C (1 ≤ C ≤ 2500) cows must cover her hide with sunscreen when they're at the beach. Cow i has a minimum and maximum SPF rating (1 ≤ minSPFi ≤ 1,000; minSPFi ≤ maxSPFi ≤ 1,000) that will work. If the SPF rating is too low, the cow suffers sunburn; if the SPF rating is too high, the cow doesn't tan at all........</p>
 <p>The cows have a picnic basket with L (1 ≤ L ≤ 2500) bottles of sunscreen lotion, each bottle i with an SPF rating SPFi (1 ≤ SPFi ≤ 1,000). Lotion bottle i can cover coveri cows with lotion. A cow may lotion from only one bottle.</p>
@@ -3159,7 +3237,7 @@
 </td></tr></table>
 </details>
 </details>
-<details class="note" open="open">
+<details class="example" open="open">
 <summary>例题：<a href="http://poj.org/problem?id=3190">POJ3190 Stall Reservations</a> </summary>
 <p>Oh those picky N (1 &lt;= N &lt;= 50,000) cows! They are so picky that each one will only be milked over some precise time interval A..B (1 &lt;= A &lt;= B &lt;= 1,000,000), which includes both times A and B. Obviously, FJ must create a reservation system to determine which stall each cow can be assigned for her milking time. Of course, no cow will share such a private moment with other cows.</p>
 <p>Help FJ by determining:
@@ -3324,7 +3402,7 @@ Many answers are correct for each test dataset; a program will grade your answer
 <h2 id="_3">决策包容性<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
 <p>一般是证明在任意的局面下，做出局部最优决策之后，这个决策在问题状态空间里的可达集合包含了所有这一步做出其它任意决策的可达集合。</p>
 <p>也就是这个局部最优决策提供的可能性包含了其它所有策略的可能性。</p>
-<details class="note" open="open">
+<details class="example" open="open">
 <summary>例题：<a href="http://poj.org/problem?id=1328">POJ1328 Radar Installation</a></summary>
 <p>Assume the coasting is an infinite straight line. Land is in one side of coasting, sea in the other. Each small island is a point locating in the sea side. And any radar installation, locating on the coasting, can only cover d distance, so an island in the sea can be covered by a radius installation, if the distance between them is at most d.</p>
 <p>We use Cartesian coordinate system, defining the coasting is the x-axis. The sea side is above x-axis, and the land side below. Given the position of each island in the sea, and given the distance of the coverage of the radar installation, your task is to write a program to find the minimal number of radar installations to cover all the islands. Note that the position of an island is represented by its x-y coordinates.</p>
@@ -3539,7 +3617,7 @@ Many answers are correct for each test dataset; a program will grade your answer
 </details>
 </details>
 <p>先看一个序列上的 Exc Arg：</p>
-<details class="note" open="open">
+<details class="example" open="open">
 <summary>例题：<a href="https://www.luogu.com.cn/problem/P1080">NOIP2012TG 国王游戏</a></summary>
 <p>恰逢 H 国国庆，国王邀请 <span class="arithmatex">\(n\)</span> 位大臣来玩一个有奖游戏。首先，他让每个大臣在左、右手上面分别写下一个整数，国王自己也在左、右手上各写一个整数。然后，让这 <span class="arithmatex">\(n\)</span> 位大臣排成一排，国王站在队伍的最前面。排好队后，所有的大臣都会获得国王奖赏的若干金币，每位大臣获得的金币数分别是：排在该大臣前面的所有人的左手上的数的乘积除以他自己右手上的数，然后向下取整得到的结果。</p>
 <p>国王不希望某一个大臣获得特别多的奖赏，所以他想请你帮他重新安排一下队伍的顺序，使得获得奖赏最多的大臣，所获奖赏尽可能的少。注意，国王的位置始终在队伍的最前面。</p>
@@ -3609,7 +3687,7 @@ Many answers are correct for each test dataset; a program will grade your answer
 </details>
 </details>
 <p>Exc Arg 也可以放到树上：</p>
-<details class="note" open="open">
+<details class="example" open="open">
 <summary>例题：<a href="http://poj.org/problem?id=2054">POJ2054 Color a Tree</a></summary>
 <p>给你一棵树，每个节点有个权值 <span class="arithmatex">\(C_i\)</span>，要染色一个节点必须先染色它的父亲。</p>
 <p>染色花费是 <span class="arithmatex">\(T_i \times C_i\)</span>，<span class="arithmatex">\(T_i\)</span> 是染色 <span class="arithmatex">\(i\)</span> 的时间戳。</p>
@@ -3785,7 +3863,7 @@ Many answers are correct for each test dataset; a program will grade your answer
 </details>
 </details>
 <p>还有一种应用是，对于某个 dp 问题，你直接在原序列上 dp 会有后效性，但是按照某种顺序排序之后，dp就没有后效性了。</p>
-<details class="note" open="open">
+<details class="example" open="open">
 <summary>例题：<a href="https://atcoder.jp/contests/cf17-final/tasks/cf17_final_d">CODE FESTIVAL 2017 Problem D</a></summary>
 <p>有 <span class="arithmatex">\(n\)</span> 个人，每个人手上有 <span class="arithmatex">\(a_i\)</span> 个石头，身高为 <span class="arithmatex">\(b_i\)</span>，</p>
 <p>如果轮到第 <span class="arithmatex">\(i\)</span> 个人放石头的时候，石头堆里的石头个数小于等于 <span class="arithmatex">\(b_i\)</span>，这个人就会放 <span class="arithmatex">\(a_i\)</span> 个石头进去，否则摆烂</p>
