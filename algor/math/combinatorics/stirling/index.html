@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -922,6 +927,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_4_1">
@@ -944,6 +951,20 @@
     <li class="md-nav__item">
       <a href="../../../graph/basic/list-forward-star/" class="md-nav__link">
         链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graph/basic/tree-traversal/" class="md-nav__link">
+        树的遍历
       </a>
     </li>
   
@@ -1872,9 +1893,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          斯特林数
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         斯特林数
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    第二类斯特林数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2973,7 +3023,11 @@
 
   <h1>斯特林数</h1>
 
-
+<h2 id="_1">第二类斯特林数<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<p>定义：将 <span class="arithmatex">\(n\)</span> 个不同元素分到 <span class="arithmatex">\(k\)</span> 个完全相同的非空盒子里面的方案数为 <span class="arithmatex">\(\begin{Bmatrix}n \\ k\end{Bmatrix}\)</span>。</p>
+<p>递推式： <span class="arithmatex">\(\begin{Bmatrix}n \\ k\end{Bmatrix} = \begin{Bmatrix}n - 1 \\ k - 1\end{Bmatrix} + k \begin{Bmatrix}n - 1 \\ k\end{Bmatrix}\)</span>。</p>
+<p>证明：就是考虑新加入的这个球是放到原有的还是新建一个。</p>
+<p>边界：<span class="arithmatex">\(\begin{Bmatrix}n \\ 0\end{Bmatrix} = [n = 0]\)</span>。</p>
 
               
             </article>

@@ -543,34 +543,48 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    冒泡排序
+    选择排序
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    快速排序
+    插入排序
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    归并排序
+    冒泡排序
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    基数排序
+    计数排序
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    快速排序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    归并排序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     一些简单应用
   </a>
   
@@ -578,21 +592,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     离散化
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     对顶堆
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     逆序对
   </a>
   
@@ -1028,6 +1042,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_4_1">
@@ -1050,6 +1066,20 @@
     <li class="md-nav__item">
       <a href="../../graph/basic/list-forward-star/" class="md-nav__link">
         链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/basic/tree-traversal/" class="md-nav__link">
+        树的遍历
       </a>
     </li>
   
@@ -3067,95 +3097,111 @@
 
   <h1>排序</h1>
 
-<p>因为比较懒，所以大部分摘抄自 <a href="https://oi-wiki.org/basic/">OI-Wiki</a></p>
 <h2 id="_1">稳定性<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
 <p>就是说，假设原序列当中有两个相同的元素 <span class="arithmatex">\(a_i, a_j\)</span>。</p>
 <p>如果这个排序算法没有改变 <span class="arithmatex">\(a_i, a_j\)</span> 的相对位置。</p>
 <p>那么这个排序算法就是稳定的。</p>
-<h2 id="_2">冒泡排序<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<p>由于在算法的执行过程中，较小的元素像是气泡般慢慢「浮」到数列的顶端，故叫做冒泡排序。</p>
-<p>它的工作原理是每次检查相邻两个元素，如果前面的元素与后面的元素满足给定的排序条件，就将<strong>相邻两个元素交换</strong>。当没有相邻的元素需要交换时，排序就完成了。</p>
-<p>经过 <span class="arithmatex">\(i\)</span> 次扫描后，数列的末尾 <span class="arithmatex">\(i\)</span> 项必然是最大的 <span class="arithmatex">\(i\)</span> 项，因此冒泡排序最多需要扫描 <span class="arithmatex">\(n-1\)</span> 遍数组就能完成排序。</p>
-<p>在序列完全有序时，冒泡排序只需遍历一遍数组，不用执行任何交换操作，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
-<p>在最坏情况下，冒泡排序要执行 <span class="arithmatex">\(\frac{(n-1)n}{2}\)</span> 次交换操作，时间复杂度为 <span class="arithmatex">\(O(n^2)\)</span>。</p>
-<p>冒泡排序的平均时间复杂度为 <span class="arithmatex">\(O(n^2)\)</span>，并且是稳定的排序算法。</p>
-<div class="arithmatex">\[
-\begin{array}{ll}
-1 &amp; \textbf{Input. } \text{An array } A \text{ consisting of }n\text{ elements.} \\
-2 &amp; \textbf{Output. } A\text{ will be sorted in nondecreasing order stably.} \\
-3 &amp; \textbf{Method. }  \\
-4 &amp; flag\gets True\\
-5 &amp; \textbf{while }flag\\
-6 &amp; \qquad flag\gets False\\
-7 &amp; \qquad\textbf{for }i\gets1\textbf{ to }n-1\\
-8 &amp; \qquad\qquad\textbf{if }A[i]&gt;A[i + 1]\\
-9 &amp; \qquad\qquad\qquad flag\gets True\\
-10 &amp; \qquad\qquad\qquad \text{Swap } A[i]\text{ and }A[i + 1]
-\end{array}
-\]</div>
+<p>基数排序、计数排序、插入排序、冒泡排序、归并排序是稳定排序。</p>
+<p>选择排序、堆排序、快速排序不是稳定排序。</p>
+<h2 id="_2">选择排序<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<p>就是遍历 <span class="arithmatex">\(n\)</span> 轮 <span class="arithmatex">\(1 \to n\)</span>，第 <span class="arithmatex">\(i\)</span> 轮找到第 <span class="arithmatex">\(i\)</span> 小的数，然后放到位置 <span class="arithmatex">\(i\)</span> 上（实现时把这个数和 <span class="arithmatex">\(a_i\)</span> 交换）。</p>
+<p>平均，最坏，最优，复杂度 <span class="arithmatex">\(O(n^2)\)</span>，因为每次循环次数是固定的。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">ith</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">ith</span><span class="p">])</span><span class="w"> </span><span class="n">ith</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">ith</span><span class="p">]);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="_3">插入排序<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<p>类似打牌的时候的排序方法。</p>
+<p>把原序列分成【没有排序】和【排序过】两部分。</p>
+<p>每次从【没有排序】的里面抓一张，扔到【排序过】的一个合适位置（第一个大于它的元素）前面。</p>
+<p>具体实现是，从 <span class="arithmatex">\(2\)</span> 开始，假设 <span class="arithmatex">\([1, i)\)</span> 是已经排序过的，然后对于 <span class="arithmatex">\(a_i\)</span>，不断让前面的元素后移，直到找到合适的位置，就把 <span class="arithmatex">\(a_i\)</span> 放进去。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="c1">// 注意要提前储存 a[i]，不然第一次后移 a[i] = a[i - 1] 就把 a[i] 覆盖掉了。</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="o">--</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>最优复杂度 <span class="arithmatex">\(O(n)\)</span>，就是如果序列已经排好了就完全不会后移，是稳定的排序。</p>
+<p>最坏复杂度 <span class="arithmatex">\(O(n^2)\)</span>，如果序列翻转过来，总共要跑的距离就是 <span class="arithmatex">\(\sum\limits_{i = 1}^{n} (i - 1) = O(n^2)\)</span>。</p>
+<p>平均复杂度是 <span class="arithmatex">\(O(n^2)\)</span>。</p>
+<h2 id="_4">冒泡排序<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
+<p>扫特别多遍，每次扫描都交换看到的逆序对。</p>
+<p>然后可以证明，扫完第 <span class="arithmatex">\(i\)</span> 轮之后，后 <span class="arithmatex">\(i\)</span> 项是最大的 <span class="arithmatex">\(i\)</span> 项。</p>
+<p>这个用数学归纳法就能证明。</p>
+<p>就是你考虑第一轮，假设在位置 <span class="arithmatex">\(x\)</span> 找到了最大的元素，它必然会被一直交换交换交换，然后一直交换到最后。</p>
+<p>第二轮必然会把第二大的元素交换交换到 <span class="arithmatex">\(n-1\)</span>。</p>
+<p>以此类推可以证明冒泡排序的正确性，这个过程就好比泡泡冒上去一样，所以叫冒泡排序。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">ff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">ff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span>
+<span class="w">      </span><span class="n">ff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>最优复杂度就是已经排序过的情况，扫一遍就完了，复杂度 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p>最坏情况，就是翻转过来，要交换 <span class="arithmatex">\(\dfrac{n(n - 1)}{2} = O(n^2)\)</span> 次。</p>
+<p>平均复杂度是 <span class="arithmatex">\(O(n^2)\)</span>。</p>
+<p>显然是稳定的，因为考虑两个相同的元素 <span class="arithmatex">\(a_x, a_y, x &lt; y\)</span>，那么 <span class="arithmatex">\(a_x\)</span> 被交换到 <span class="arithmatex">\(y - 1\)</span> 的位置的时候就不会被交换到后面了（因为写的 <span class="arithmatex">\(a_i &gt; a_{i + 1}\)</span> 才交换），那 <span class="arithmatex">\(a_y\)</span> 必然先被换到后面，相对顺序没有改变。</p>
 <p>关于冒泡排序有一个结论（来自 POJ2299 - Ultra-QuickSort）</p>
 <p>就是，如果只允许进行比较和交换相邻两项的操作（就是冒泡排序）。</p>
 <p>对于一个给定序列 <span class="arithmatex">\(a\)</span>，让他有序，最少需要的操作次数就是 <span class="arithmatex">\(a\)</span> 的逆序对个数。</p>
 <p><strong>所以冒泡排序使一个序列有序的交换次数应当是</strong> <span class="arithmatex">\(a\)</span> <strong>的逆序对个数</strong>。</p>
 <p>（因为冒泡每执行一次交换操作，就相当于消除了一个逆序对，并且之后不会再让这个逆序对出现）</p>
-<h2 id="_3">快速排序<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
-<p>不稳定的算法，因为没啥结论或者特别的应用就不写了。</p>
-<p>STL 中的 <code>std::sort</code> 是 QuickSort 和 HeapSort 的结合。 </p>
-<h2 id="_4">归并排序<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
-<p>归并排序分为三个步骤：</p>
-<ol>
-<li>将数列划分为两部分；</li>
-<li>递归地分别对两个子序列进行归并排序；</li>
-<li>合并两个子序列。</li>
-</ol>
-<p>不难发现，归并排序的前两步都很好实现，关键是如何合并两个子序列。注意到两个子序列在第二步中已经保证了都是有序的了，第三步中实际上是想要把两个 <strong>有序</strong> 的序列合并起来。</p>
-<p>归并排序是一种稳定的排序算法。</p>
-<p>归并排序的最优时间复杂度、平均时间复杂度和最坏时间复杂度均为 <span class="arithmatex">\(O(n\log n)\)</span>。</p>
-<p>归并排序的空间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
-<div class="arithmatex">\[
-\begin{array}{ll}
-1 &amp; \textbf{Input. }\text{待排序的数组}A\text{和用作临时存储的数组}T\\
-2 &amp; \textbf{Output. }\text{数组}A\text{中的元素将会按照不减的顺序进行稳定排序}\\
-3 &amp; \textbf{Method.}\\
-4 &amp; \text{merge}(A,\ T)\\
-5 &amp; \qquad\text{merge0}(A,\ T,\ 0,\ A.length)\\
-6 &amp; \text{merge0}(A,\ T,\ ll,\ rr)\\
-7 &amp; \qquad \textbf{if}\ \ rr - ll \leqslant 1\\
-8 &amp; \qquad\qquad \textbf{return}\\
-9 &amp; \qquad mid \gets \large\lfloor\frac{ll+rr}{2}\rfloor\\
-10&amp; \qquad\text{merge0}(A,\ T,\ ll,\ mid)\\
-11&amp;\qquad\text{merge0}(A,\ T,\ mid,\ rr)\\
-12&amp;\\
-13&amp;\qquad p \gets ll\\
-14&amp;\qquad q \gets mid\\
-15&amp;\qquad\textbf{for}\text{ each } i \text{ in the } ll\dots rr-1\\
-16&amp;\qquad\qquad\textbf{if}\ p\geqslant mid\ or\ q &lt; rr\ and\ A[q] &lt; A[p]\\
-17&amp;\qquad\qquad\qquad T[i] \gets A[q]\\
-18&amp;\qquad\qquad\qquad q \gets q+1\\
-19&amp;\qquad\qquad\textbf{else}\\
-20&amp;\qquad\qquad\qquad T[i] \gets A[p]\\
-21&amp;\qquad\qquad\qquad p \gets p+1\\
-22&amp;\qquad \text{copy }T[ll\dots rr-1] \text{ to } A[ll\dots rr-1]\\
-\end{array}
-\]</div>
-<p>C++ STL 中有 <code>stable_sort</code>，就是归并排序。</p>
-<h2 id="_5">基数排序<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
-<p>它的工作原理是将待排序的元素拆分为 <span class="arithmatex">\(k\)</span> 个关键字（比较两个元素时，先比较第一关键字，如果相同再比较第二关键字……），然后先对第 <span class="arithmatex">\(k\)</span> 关键字进行稳定排序，再对第 <span class="arithmatex">\(k-1\)</span> 关键字进行稳定排序，再对第 <span class="arithmatex">\(k-2\)</span> 关键字进行稳定排序……最后对第一关键字进行稳定排序，这样就完成了对整个待排序序列的稳定排序。</p>
-<p>基数排序需要借助一种 <strong>稳定算法</strong> 完成内层对关键字的排序。</p>
-<p>通常而言，基数排序比基于比较的排序算法（比如快速排序）要快。但由于需要额外的内存空间，因此当内存空间稀缺时，原地置换算法（比如快速排序）或许是个更好的选择。[^ref1]</p>
-<p>基数排序的正确性可以参考 <a href="https://walkccc.github.io/CLRS/Chap08/8.3/#83-3">《算法导论（第三版）》第 8.3-3 题的解法</a> 或自行理解。</p>
-<p>基数排序是一种稳定的排序算法。</p>
-<p>一般来说，如果每个关键字的值域都不大，就可以使用计数排序作为内层排序，此时的复杂度为 <span class="arithmatex">\(O(kn+\sum\limits_{i=1}^k w_i)\)</span>，其中 <span class="arithmatex">\(w_i\)</span> 为第 <span class="arithmatex">\(i\)</span> 关键字的值域大小。如果关键字值域很大，就可以直接使用基于比较的 <span class="arithmatex">\(O(nk\log n)\)</span> 排序而无需使用基数排序了。</p>
-<p>基数排序的空间复杂度为 <span class="arithmatex">\(O(k+n)\)</span>。</p>
-<div class="arithmatex">\[
-\begin{array}{ll}
-1 &amp; \textbf{Input. } \text{An array } A \text{ consisting of }n\text{ elements, where each element has }k\text{ keys.}\\
-2 &amp; \textbf{Output. } \text{Array }A\text{ will be sorted in nondecreasing order stably.} \\
-3 &amp; \textbf{Method. }  \\
-4 &amp; \textbf{for }i\gets k\textbf{ down to }1\\
-5 &amp; \qquad\text{sort }A\text{ into nondecreasing order by the }i\text{-th key stably}
-\end{array}
-\]</div>
+<h2 id="_5">计数排序<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<p>开一个桶，维护值域 <span class="arithmatex">\(|w|\)</span>，（注意这个不是桶排是计数）。</p>
+<p>然后 <span class="arithmatex">\(O(n)\)</span> 扫一遍把所有元素扔进桶里面。  </p>
+<p>然后从小到大拿出来就行了，显然是稳定的，因为先出现的会被先放进桶，你可以把桶理解为一个队列。</p>
+<p>但这样还不够快，因为值域里面不一定都会出现。</p>
+<p>所以给桶做一个前缀和，倒过来计算一下排名就行了。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="n">cnt</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">w</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="n">b</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">--</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>复杂度稳定 <span class="arithmatex">\(O(n + w)\)</span>。</p>
+<h2 id="_6">快速排序<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
+<p>每次把序列分成两个部分，其中第一个子序列的数都小于后一个子序列的数。</p>
+<p>然后递归到每个子序列里面在搞。</p>
+<p>最后递归完了就直接有序了，一般实现的时候会随机选一个分界 <span class="arithmatex">\(key\)</span>，大于 <span class="arithmatex">\(key\)</span> 的扔到后面，小于等于 <span class="arithmatex">\(key\)</span> 的扔到前面。</p>
+<p>然后有一种叫三路快排的优化，就是把等于的单独扔到基准分界值附近，这样多个相等的元素就会聚集在一起，减小之后多次处理的常数。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3171,66 +3217,65 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100010</span><span class="p">;</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100010</span><span class="p">;</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">K</span><span class="p">],</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">W</span><span class="p">];</span><span class="w"></span>
-
-<span class="k">struct</span><span class="w"> </span><span class="nc">Element</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">[</span><span class="n">K</span><span class="p">];</span><span class="w"></span>
-
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Element</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 两个元素的比较流程</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Qsort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">len</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">len</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// i：当前操作的元素</span>
+<span class="w">  </span><span class="c1">// j：第一个等于 key 的元素</span>
+<span class="w">  </span><span class="c1">// k：第一个大于 key 的元素</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 完成一趟三路快排，将序列分为：</span>
+<span class="w">  </span><span class="c1">// 小于 pivot 的元素｜ 等于 pivot 的元素 ｜ 大于 pivot 的元素</span>
+<span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">],</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="o">--</span><span class="n">k</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">counting_sort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">memset</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">cnt</span><span class="p">));</span><span class="w"></span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">++</span><span class="n">cnt</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span><span class="p">[</span><span class="n">p</span><span class="p">]];</span><span class="w"></span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">p</span><span class="p">];</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 为保证排序的稳定性，此处循环i应从n到1</span>
-<span class="w">  </span><span class="c1">// 即当两元素关键字的值相同时，原先排在后面的元素在排序后仍应排在后面</span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span><span class="p">[</span><span class="n">p</span><span class="p">]]</span><span class="o">--</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">  </span><span class="n">memcpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">));</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">radix_sort</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 借助计数排序完成对关键字的排序</span>
-<span class="w">    </span><span class="n">counting_sort</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">Qsort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">Qsort</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>实际上并非必须从后往前枚举才是稳定排序，只需对 <code>cnt</code> 数组进行等价于 <code>std::exclusive_scan</code> 的操作即可。</p>
-<p>其它的排序暂且不提。</p>
-<h2 id="_6">一些简单应用<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
-<h3 id="_7">离散化<a class="headerlink" href="#_7" title="Permanent link">😅</a></h3>
+<p>明显不稳定，原始快排最坏 <span class="arithmatex">\(O(n^2)\)</span>，平均最优都是 <span class="arithmatex">\(O(n \log n)\)</span>。</p>
+<p>因为每次取 key 的时候，如果每次都能取到中位数作为分界，递归式是 <span class="arithmatex">\(T(n) = 2T(n/2) + \Theta(n)\)</span>，主定理可以得到。</p>
+<p>如果每次都取到最大值，递归式就是 <span class="arithmatex">\(T(n) = T(n - 1) + Theta(n)\)</span>（长度等于一不用递归），累加可以得到。</p>
+<h2 id="_7">归并排序<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
+<p>很有意思的一个算法。</p>
+<p>就是把序列先从中间分开，然后递归下去对两块块内排序，</p>
+<p>递归回来，假设此时序列左右两半都已经从小到大排序好（先不管它怎么排的，因为这是一个递归，最后只有一个元素的时候就是排序好的，然后一层一层返回上来合并的时候就排好序了）。</p>
+<p>然后直接不断取两块的“头”的最小值，扔进一个辅助数组。</p>
+<p>最后赋值一下就行了。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">MergeSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// length == 1 or &lt; 1</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">MergeSort</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">),</span><span class="w"> </span><span class="n">MergeSort</span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span><span class="w"> </span><span class="c1">// 注意用 &lt;= 保证稳定性</span>
+<span class="w">      </span><span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>稳定的 <span class="arithmatex">\(O(n \log n)\)</span> 的排序。</p>
+<p>然后这个是可以拿来做逆序对的。</p>
+<p>因为选后一段的时候就相当于消除了逆序对，个数是前一段当前没有加进去的数的个数。</p>
+<p>就是 <code>mid - i + 1</code> 个。</p>
+<p>代码见下面逆序对板块。</p>
+<p>还有一种利用它线性找第 <span class="arithmatex">\(k\)</span> 大的算法，因为不是稳定的，所以找不到最前的一个第 <span class="arithmatex">\(k\)</span> 大。</p>
+<p>但是 Median of Median 可以最坏 <span class="arithmatex">\(O(n)\)</span> 做稳定的第 <span class="arithmatex">\(k\)</span> 大。</p>
+<h2 id="_8">一些简单应用<a class="headerlink" href="#_8" title="Permanent link">😅</a></h2>
+<h3 id="_9">离散化<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3289,13 +3334,13 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_8">对顶堆<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<h3 id="_10">对顶堆<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
 <p>维护动态中位数问题。</p>
 <p>假设每个时刻序列 <span class="arithmatex">\(a\)</span> 的长度 <span class="arithmatex">\(n\)</span> 都是奇数。</p>
 <p>那么让排名在 <span class="arithmatex">\(1 \to \lfloor m/2 \rfloor\)</span> 的扔到大根堆，其他的扔到小根堆。</p>
 <p>如果某个堆不满足条件，那么把它的堆顶扔到另外一个堆去。</p>
 <p>答案就是小根堆的堆顶。</p>
-<h3 id="_9">逆序对<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h3 id="_11">逆序对<a class="headerlink" href="#_11" title="Permanent link">😅</a></h3>
 <blockquote>
 <p>定义逆序对为形如 (i, j)，保证 <span class="arithmatex">\(i &lt; j, a_i &gt; a_j\)</span> 的点对。</p>
 <p>求一个序列的逆序对个数。</p>
@@ -3316,36 +3361,16 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// C++ Version</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">MergeSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ll</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 用来把 a 数组 [ll, rr - 1] 这一区间的数排序。 t</span>
-<span class="w">  </span><span class="c1">// 数组是临时存放有序的版本用的。</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rr</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">rr</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ll</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">MergeSort</span><span class="p">(</span><span class="n">ll</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">MergeSort</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">rr</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ll</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">q</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rr</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">q</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">q</span><span class="o">++</span><span class="p">];</span><span class="w"></span>
-<span class="w">      </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"></span>
-<span class="w">      </span><span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">p</span><span class="o">++</span><span class="p">];</span><span class="w"></span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">MergeSort</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">MergeSort</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">),</span><span class="w"> </span><span class="n">MergeSort</span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span><span class="w"></span>
+<span class="w">      </span><span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">],</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rr</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-
-<span class="c1">// 关键点在于一次性创建数组，避免在每次递归调用时创建，以避免内存分配的耗时。</span>
 </code></pre></div>
 </td></tr></table>
 

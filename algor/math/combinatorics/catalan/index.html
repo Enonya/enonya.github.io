@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#catalan" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -922,6 +927,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_4_1">
@@ -944,6 +951,20 @@
     <li class="md-nav__item">
       <a href="../../../graph/basic/list-forward-star/" class="md-nav__link">
         链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graph/basic/tree-traversal/" class="md-nav__link">
+        树的遍历
       </a>
     </li>
   
@@ -1886,9 +1907,52 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          卡特兰数
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         卡特兰数
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#catalan" class="md-nav__link">
+    Catalan 数列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    递推式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    路径计数问题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2973,7 +3037,130 @@
 
   <h1>卡特兰数</h1>
 
+<p>转载自<a href="https://oi-wiki.org/math/combinatorics/catalan/">OI-Wiki</a></p>
+<h2 id="catalan">Catalan 数列<a class="headerlink" href="#catalan" title="Permanent link">😅</a></h2>
+<p>以下问题属于 Catalan 数列：</p>
+<ol>
+<li>有 <span class="arithmatex">\(2n\)</span> 个人排成一行进入剧场。入场费 5 元。其中只有 <span class="arithmatex">\(n\)</span> 个人有一张 5 元钞票，另外 <span class="arithmatex">\(n\)</span> 人只有 10 元钞票，剧院无其它钞票，问有多少种方法使得只要有 10 元的人买票，售票处就有 5 元的钞票找零？</li>
+<li>一位大城市的律师在她住所以北 <span class="arithmatex">\(n\)</span> 个街区和以东 <span class="arithmatex">\(n\)</span> 个街区处工作。每天她走 <span class="arithmatex">\(2n\)</span> 个街区去上班。如果他从不穿越（但可以碰到）从家到办公室的对角线，那么有多少条可能的道路？</li>
+<li>在圆上选择 <span class="arithmatex">\(2n\)</span> 个点，将这些点成对连接起来使得所得到的 <span class="arithmatex">\(n\)</span> 条线段不相交的方法数？</li>
+<li>对角线不相交的情况下，将一个凸多边形区域分成三角形区域的方法数？</li>
+<li>一个栈（无穷大）的进栈序列为 <span class="arithmatex">\(1,2,3, \cdots ,n\)</span> 有多少个不同的出栈序列？</li>
+<li><span class="arithmatex">\(n\)</span> 个结点可构造多少个不同的二叉树？</li>
+<li><span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(+1\)</span> 和 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(-1\)</span> 构成 <span class="arithmatex">\(2n\)</span> 项 <span class="arithmatex">\(a_1,a_2, \cdots ,a_{2n}\)</span>，其部分和满足 <span class="arithmatex">\(a_1+a_2+ \cdots +a_k \geq 0(k=1,2,3, \cdots ,2n)\)</span> 对与 <span class="arithmatex">\(n\)</span> 该数列为？</li>
+</ol>
+<p>其对应的序列为：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><span class="arithmatex">\(H_0\)</span></th>
+<th align="center"><span class="arithmatex">\(H_1\)</span></th>
+<th align="center"><span class="arithmatex">\(H_2\)</span></th>
+<th align="center"><span class="arithmatex">\(H_3\)</span></th>
+<th align="center"><span class="arithmatex">\(H_4\)</span></th>
+<th align="center"><span class="arithmatex">\(H_5\)</span></th>
+<th align="center"><span class="arithmatex">\(H_6\)</span></th>
+<th align="center">...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">14</td>
+<td align="center">42</td>
+<td align="center">132</td>
+<td align="center">...</td>
+</tr>
+</tbody>
+</table>
+<p>(Catalan 数列）</p>
+<h2 id="_1">递推式<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<p>该递推关系的解为：</p>
+<div class="arithmatex">\[
+H_n = \frac{\binom{2n}{n}}{n+1}(n \geq 2, n \in \mathbf{N_{+}})
+\]</div>
+<p>关于 Catalan 数的常见公式：</p>
+<div class="arithmatex">\[
+H_n = \begin{cases}
+    \sum_{i=1}^{n} H_{i-1} H_{n-i} &amp; n \geq 2, n \in \mathbf{N_{+}}\\
+    1 &amp; n = 0, 1
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+H_n = \frac{H_{n-1} (4n-2)}{n+1}
+\]</div>
+<div class="arithmatex">\[
+H_n = \binom{2n}{n} - \binom{2n}{n-1}
+\]</div>
+<details class="note">
+<summary> 例题<a href="https://www.luogu.com.cn/problem/P1044">洛谷 P1044 栈</a></summary>
+<p>题目大意：入栈顺序为 <span class="arithmatex">\(1,2,\ldots ,n\)</span>，求所有可能的出栈顺序的总数。</p>
+</details>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// C++ Version</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span><span class="w"></span>
 
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 这里用的是常见公式2</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Python Version</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">25</span>
+<span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="c1"># 这里用的是常见公式2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="_2">路径计数问题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<p>非降路径是指只能向上或向右走的路径。</p>
+<ol>
+<li>
+<p>从 <span class="arithmatex">\((0,0)\)</span> 到 <span class="arithmatex">\((m,n)\)</span> 的非降路径数等于 <span class="arithmatex">\(m\)</span> 个 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(y\)</span> 的排列数，即 <span class="arithmatex">\(\dbinom{n + m}{m}\)</span>。</p>
+</li>
+<li>
+<p>从 <span class="arithmatex">\((0,0)\)</span> 到 <span class="arithmatex">\((n,n)\)</span> 的除端点外不接触直线 <span class="arithmatex">\(y=x\)</span> 的非降路径数：</p>
+<p>先考虑 <span class="arithmatex">\(y=x\)</span> 下方的路径，都是从 <span class="arithmatex">\((0, 0)\)</span> 出发，经过 <span class="arithmatex">\((1, 0)\)</span> 及 <span class="arithmatex">\((n, n-1)\)</span> 到 <span class="arithmatex">\((n,n)\)</span>，可以看做是 <span class="arithmatex">\((1,0)\)</span> 到 <span class="arithmatex">\((n,n-1)\)</span> 不接触 <span class="arithmatex">\(y=x\)</span> 的非降路径数。</p>
+<p>所有的的非降路径有 <span class="arithmatex">\(\dbinom{2n-2}{n-1}\)</span> 条。对于这里面任意一条接触了 <span class="arithmatex">\(y=x\)</span> 的路径，可以把它最后离开这条线的点到 <span class="arithmatex">\((1,0)\)</span> 之间的部分关于 <span class="arithmatex">\(y=x\)</span> 对称变换，就得到从 <span class="arithmatex">\((0,1)\)</span> 到 <span class="arithmatex">\((n,n-1)\)</span> 的一条非降路径。反之也成立。从而 <span class="arithmatex">\(y=x\)</span> 下方的非降路径数是 <span class="arithmatex">\(\dbinom{2n-2}{n-1} - \dbinom{2n-2}{n}\)</span>。根据对称性可知所求答案为 <span class="arithmatex">\(2\dbinom{2n-2}{n-1} - 2\dbinom{2n-2}{n}\)</span>。</p>
+</li>
+<li>
+<p>从 <span class="arithmatex">\((0,0)\)</span> 到 <span class="arithmatex">\((n,n)\)</span> 的除端点外不穿过直线 <span class="arithmatex">\(y=x\)</span> 的非降路径数：</p>
+<p>用类似的方法可以得到：<span class="arithmatex">\(\dfrac{2}{n+1}\dbinom{2n}{n}\)</span></p>
+</li>
+</ol>
 
               
             </article>

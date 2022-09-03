@@ -931,6 +931,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_4_1">
@@ -953,6 +955,20 @@
     <li class="md-nav__item">
       <a href="../list-forward-star/" class="md-nav__link">
         链式前向星
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree-traversal/" class="md-nav__link">
+        树的遍历
       </a>
     </li>
   
@@ -1017,22 +1033,22 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    欧拉路
+    欧拉图
   </a>
   
-    <nav class="md-nav" aria-label="欧拉路">
+    <nav class="md-nav" aria-label="欧拉图">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    有向联通图存在欧拉路的充要条件
+    欧拉路
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    无向联通图存在欧拉路的充要条件
+    欧拉回路
   </a>
   
 </li>
@@ -1044,29 +1060,29 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    欧拉回路
+    哈密顿图
   </a>
   
-    <nav class="md-nav" aria-label="欧拉回路">
+    <nav class="md-nav" aria-label="哈密顿图">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    有向联通图存在欧拉回路的充要条件
+    定义
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    无向联通图存在欧拉回路的充要条件
+    性质
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    具体方案
+    充分条件
   </a>
   
 </li>
@@ -3102,21 +3118,38 @@
 <p>拓扑序还可以用来转移 DP。</p>
 <p>一般转移的时候不是找上一个（前驱），而是从当前的推到后一个（后继）。</p>
 <p>按拓扑序枚举每一个点，再枚举它的每一个出边，进行递推即可。</p>
-<h2 id="_2">欧拉路<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<p>就是一笔画问题。</p>
-<h3 id="_3">有向联通图存在欧拉路的充要条件<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="_2">欧拉图<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<p>具有欧拉回路的无向图或有向图称为欧拉图。</p>
+<p>具有欧拉路但不具有欧拉回路的无向图或有向图称为半欧拉图。</p>
+<p>欧拉图中所有顶点的度数都是偶数。</p>
+<p>若 <span class="arithmatex">\(G\)</span> 是欧拉图，则它为若干个环的并，且每条边被包含在奇数个环内。</p>
+<h3 id="_3">欧拉路<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<p>通过图中所有边恰好一次的通路称为欧拉路。</p>
+<p>就是从某点开始的一笔画问题（可以经过一个点多次）。</p>
+<ul>
+<li>
+<p>有向联通图存在欧拉路的充要条件</p>
 <p>要么所有点的出度均等于入度</p>
 <p>要么除了两个点之外，其余所有点的出度均等于入度 。</p>
 <p>剩余的两个点:一个满足出度减去入度等于 <span class="arithmatex">\(1\)</span> (起点) ，一个满足入度减去出度等于 <span class="arithmatex">\(1\)</span> (终点)。</p>
-<h3 id="_4">无向联通图存在欧拉路的充要条件<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
-<p>度数为奇数的点只能有0或2个。</p>
-<h2 id="_5">欧拉回路<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+</li>
+<li>
+<p>无向联通图存在欧拉路的充要条件：度数为奇数的点只能有0或2个。</p>
+</li>
+</ul>
+<h3 id="_4">欧拉回路<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<p>通过图中所有边恰好一次的回路称为欧拉回路。</p>
 <p>就是一笔画且要求回到起点。</p>
-<h3 id="_6">有向联通图存在欧拉回路的充要条件<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
-<p>所有点的出度均等于入度。</p>
-<h3 id="_7">无向联通图存在欧拉回路的充要条件<a class="headerlink" href="#_7" title="Permanent link">😅</a></h3>
-<p>度数为奇数的点只能有0个。</p>
-<h3 id="_8">具体方案<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<ul>
+<li>
+<p>有向联通图存在欧拉回路的充要条件：所有点的出度均等于入度。</p>
+</li>
+<li>
+<p>无向联通图存在欧拉回路的充要条件：度数为奇数的点只能有0个。</p>
+</li>
+</ul>
+<details class="note">
+<summary>求具体方案</summary>
 <p>用 dfs 就行。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3148,6 +3181,27 @@
 </code></pre></div>
 </td></tr></table>
 <p>欧拉路可能要每个点 dfs 一边然后看是不是访问完了？</p>
+</details>
+<h2 id="_5">哈密顿图<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<p>摘自 <a href="https://oi-wiki.org/graph/hamilton/">OI-Wiki</a></p>
+<h3 id="_6">定义<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<p>通过图中所有顶点一次且仅一次的通路称为哈密顿通路。</p>
+<p>通过图中所有顶点一次且仅一次的回路称为哈密顿回路。</p>
+<p>具有哈密顿回路的图称为哈密顿图。</p>
+<p>具有哈密顿通路而不具有哈密顿回路的图称为半哈密顿图。</p>
+<h3 id="_7">性质<a class="headerlink" href="#_7" title="Permanent link">😅</a></h3>
+<p>设 <span class="arithmatex">\(G=&lt;V, E&gt;\)</span> 是哈密顿图，则对于 <span class="arithmatex">\(V\)</span> 的任意非空真子集 <span class="arithmatex">\(V_1\)</span>，均有 <span class="arithmatex">\(p(G-V_1) \leq |V_1|\)</span>。其中 <span class="arithmatex">\(p(x)\)</span> 为 <span class="arithmatex">\(x\)</span> 的连通分支数。</p>
+<p>推论：设 <span class="arithmatex">\(G=&lt;V, E&gt;\)</span> 是半哈密顿图，则对于 <span class="arithmatex">\(V\)</span> 的任意非空真子集 <span class="arithmatex">\(V_1\)</span>，均有 <span class="arithmatex">\(p(G-V_1) \leq |V_1|+1\)</span>。其中 <span class="arithmatex">\(p(x)\)</span> 为 <span class="arithmatex">\(x\)</span> 的连通分支数。</p>
+<p>完全图 <span class="arithmatex">\(K_{2k+1} (k \geq 1)\)</span> 中含 <span class="arithmatex">\(k\)</span> 条边不重的哈密顿回路，且这 <span class="arithmatex">\(k\)</span> 条边不重的哈密顿回路含 <span class="arithmatex">\(K_{2k+1}\)</span> 中的所有边。</p>
+<p>完全图 <span class="arithmatex">\(K_{2k} (k \geq 2)\)</span> 中含 <span class="arithmatex">\(k-1\)</span> 条边不重的哈密顿回路，从 <span class="arithmatex">\(K_{2k}\)</span> 中删除这 <span class="arithmatex">\(k-1\)</span> 条边不重的哈密顿回路后所得图含 <span class="arithmatex">\(k\)</span> 条互不相邻的边。</p>
+<h3 id="_8">充分条件<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<p>设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n \geq 2)\)</span> 的无向简单图，若对于 <span class="arithmatex">\(G\)</span> 中任意不相邻的顶点 <span class="arithmatex">\(v_i, v_j\)</span>，均有 <span class="arithmatex">\(d(v_i)+ d(v_j) \geq n - 1\)</span>，则 <span class="arithmatex">\(G\)</span> 中存在哈密顿通路。</p>
+<p>推论 1：设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n \geq 3)\)</span> 的无向简单图，若对于 <span class="arithmatex">\(G\)</span> 中任意不相邻的顶点 <span class="arithmatex">\(v_i, v_j\)</span>，均有 <span class="arithmatex">\(d(v_i)+ d(v_j) \geq n\)</span>，则 <span class="arithmatex">\(G\)</span> 中存在哈密顿回路，从而 <span class="arithmatex">\(G\)</span> 为哈密顿图。</p>
+<p>推论 2：设 <span class="arithmatex">\(G\)</span> 是 <span class="arithmatex">\(n(n \geq 3)\)</span> 的无向简单图，若对于 <span class="arithmatex">\(G\)</span> 中任意顶点 <span class="arithmatex">\(v_i\)</span>，均有 <span class="arithmatex">\(d(v_i) \geq \frac{n}{2}\)</span>，则 <span class="arithmatex">\(G\)</span> 中存在哈密顿回路，从而 <span class="arithmatex">\(G\)</span> 为哈密顿图。</p>
+<p>设 <span class="arithmatex">\(D\)</span> 为 <span class="arithmatex">\(n(n \geq 2)\)</span> 阶竞赛图，则 <span class="arithmatex">\(D\)</span> 具有哈密顿通路。</p>
+<p>若 <span class="arithmatex">\(D\)</span> 含 <span class="arithmatex">\(n(n \geq 2)\)</span> 阶竞赛图作为子图，则 <span class="arithmatex">\(D\)</span> 具有哈密顿通路。</p>
+<p>强连通的竞赛图为哈密顿图。</p>
+<p>若 <span class="arithmatex">\(D\)</span> 含 <span class="arithmatex">\(n(n \geq 2)\)</span> 阶强连通的竞赛图作为子图，则 <span class="arithmatex">\(D\)</span> 具有哈密顿回路。</p>
 
               
             </article>
