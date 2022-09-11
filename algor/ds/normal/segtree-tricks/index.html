@@ -34,8 +34,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Play:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Play";--md-code-font:"Fira Code"}</style>
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=PT+Serif:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Fira Code"}</style>
       
     
     
@@ -1492,6 +1492,26 @@
     区间 GCD
   </a>
   
+    <nav class="md-nav" aria-label="区间 GCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    单点修改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    区间修改
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1500,7 +1520,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     扩展类
   </a>
   
@@ -1508,7 +1528,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     维护矩阵乘法
   </a>
   
@@ -1516,6 +1536,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gss" class="md-nav__link">
+    GSS 系列
+  </a>
   
 </li>
       
@@ -3110,8 +3137,18 @@
 <h2 id="_5">区间查某些东西<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
 <h3 id="mex">区间 MEX<a class="headerlink" href="#mex" title="Permanent link">😅</a></h3>
 <h3 id="gcd">区间 GCD<a class="headerlink" href="#gcd" title="Permanent link">😅</a></h3>
-<h2 id="_6">扩展类<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
-<h3 id="_7">维护矩阵乘法<a class="headerlink" href="#_7" title="Permanent link">😅</a></h3>
+<h4 id="_6">单点修改<a class="headerlink" href="#_6" title="Permanent link">😅</a></h4>
+<p>这个很简单，因为 <span class="arithmatex">\(\gcd\)</span> 满足结合律 : <span class="arithmatex">\(\gcd(a, b, c) = \gcd(a, \gcd(b, c))\)</span>。</p>
+<p>而且有幺元 <span class="arithmatex">\(0\)</span>。</p>
+<p>所以直接做就行了。</p>
+<h4 id="_7">区间修改<a class="headerlink" href="#_7" title="Permanent link">😅</a></h4>
+<p>考虑转化成单点修改，直接维护差分数组，可以做到单点改。</p>
+<p>然后发现 <span class="arithmatex">\(\gcd(a, b - a, c - b) = \gcd(a, b, c)\)</span>，所以直接询问差分数组的 <span class="arithmatex">\(\gcd\)</span> 就行了。</p>
+<p>然后显然对于一个询问 <span class="arithmatex">\([l, r]\)</span> 还要用到 <span class="arithmatex">\(a[l]\)</span>，所以再开一个树状数组维护 <span class="arithmatex">\(a\)</span> 就行了。</p>
+<p>注意如果 gcd 的参数有负数就直接把 abs 带上去算就行。</p>
+<h2 id="_8">扩展类<a class="headerlink" href="#_8" title="Permanent link">😅</a></h2>
+<h3 id="_9">维护矩阵乘法<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h2 id="gss">GSS 系列<a class="headerlink" href="#gss" title="Permanent link">😅</a></h2>
 
               
             </article>
