@@ -10,21 +10,21 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/hard/persistent-trie/">
+        <link rel="canonical" href="https://hylwxqwq.github.io/rec/interesting/segtree-tricks/">
       
-      <link rel="icon" href="../../../../img/wife-best.png">
+      <link rel="icon" href="../../../img/wife-best.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>可持久化 Trie - black_trees' blog</title>
+        <title>线段树的扩展运用 - black_trees' blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -39,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -83,9 +83,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
+    <a href="../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/wife-best.png" alt="logo">
+  <img src="../../../img/wife-best.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              可持久化 Trie
+              线段树的扩展运用
             
           </span>
         </div>
@@ -186,7 +186,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       HomePage
     </a>
   </li>
@@ -198,10 +198,26 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../links/" class="md-tabs__link">
+    <a href="../../../links/" class="md-tabs__link">
       FriendLinks
     </a>
   </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../algor/" class="md-tabs__link">
+        Algorithm
+      </a>
+    </li>
+  
 
       
         
@@ -215,23 +231,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link md-tabs__link--active">
-        Algorithm
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../rec/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Records
       </a>
     </li>
@@ -247,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../sol/" class="md-tabs__link">
+      <a href="../../../sol/" class="md-tabs__link">
         Solutions
       </a>
     </li>
@@ -263,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../sce/" class="md-tabs__link">
+      <a href="../../../sce/" class="md-tabs__link">
         Resource
       </a>
     </li>
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../waifu/" class="md-tabs__link">
+      <a href="../../../waifu/" class="md-tabs__link">
         Waifu
       </a>
     </li>
@@ -315,9 +315,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
+    <a href="../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/wife-best.png" alt="logo">
+  <img src="../../../img/wife-best.png" alt="logo">
 
     </a>
     black_trees' blog
@@ -345,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         HomePage
       </a>
     </li>
@@ -360,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../links/" class="md-nav__link">
+      <a href="../../../links/" class="md-nav__link">
         FriendLinks
       </a>
     </li>
@@ -373,14 +373,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -408,7 +406,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../">Algorithm</a>
+          <a href="../../../algor/">Algorithm</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -475,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/binary-operation/" class="md-nav__link">
+      <a href="../../../algor/basic/binary-operation/" class="md-nav__link">
         位运算
       </a>
     </li>
@@ -489,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/binary-search/" class="md-nav__link">
+      <a href="../../../algor/basic/binary-search/" class="md-nav__link">
         二分
       </a>
     </li>
@@ -503,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/sorting/" class="md-nav__link">
+      <a href="../../../algor/basic/sorting/" class="md-nav__link">
         排序
       </a>
     </li>
@@ -517,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/greedy/" class="md-nav__link">
+      <a href="../../../algor/basic/greedy/" class="md-nav__link">
         贪心
       </a>
     </li>
@@ -531,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/binary-lifting/" class="md-nav__link">
+      <a href="../../../algor/basic/binary-lifting/" class="md-nav__link">
         倍增
       </a>
     </li>
@@ -545,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/difference-and-prefix-sum/" class="md-nav__link">
+      <a href="../../../algor/basic/difference-and-prefix-sum/" class="md-nav__link">
         前缀和 & 差分
       </a>
     </li>
@@ -559,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../basic/time-complexity/" class="md-nav__link">
+      <a href="../../../algor/basic/time-complexity/" class="md-nav__link">
         时间复杂度分析
       </a>
     </li>
@@ -658,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/basic/set-analytical-method/" class="md-nav__link">
+      <a href="../../../algor/dp/basic/set-analytical-method/" class="md-nav__link">
         集合式分析法
       </a>
     </li>
@@ -672,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/basic/how-to-think/" class="md-nav__link">
+      <a href="../../../algor/dp/basic/how-to-think/" class="md-nav__link">
         如何设计状态 & 方程
       </a>
     </li>
@@ -693,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/knapsack-dp/" class="md-nav__link">
+      <a href="../../../algor/dp/knapsack-dp/" class="md-nav__link">
         背包 DP
       </a>
     </li>
@@ -707,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/interval-dp/" class="md-nav__link">
+      <a href="../../../algor/dp/interval-dp/" class="md-nav__link">
         区间 DP
       </a>
     </li>
@@ -721,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/tree-dp/" class="md-nav__link">
+      <a href="../../../algor/dp/tree-dp/" class="md-nav__link">
         树形 DP
       </a>
     </li>
@@ -735,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/states-compressing-dp/" class="md-nav__link">
+      <a href="../../../algor/dp/states-compressing-dp/" class="md-nav__link">
         状压 DP
       </a>
     </li>
@@ -749,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/digit-dp/" class="md-nav__link">
+      <a href="../../../algor/dp/digit-dp/" class="md-nav__link">
         数位 DP
       </a>
     </li>
@@ -763,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/sos-dp/" class="md-nav__link">
+      <a href="../../../algor/dp/sos-dp/" class="md-nav__link">
         SOS DP
       </a>
     </li>
@@ -811,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/opt/monotonous-queue-optimize/" class="md-nav__link">
+      <a href="../../../algor/dp/opt/monotonous-queue-optimize/" class="md-nav__link">
         单调队列优化
       </a>
     </li>
@@ -825,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/opt/data-structure-optimize/" class="md-nav__link">
+      <a href="../../../algor/dp/opt/data-structure-optimize/" class="md-nav__link">
         数据结构优化
       </a>
     </li>
@@ -839,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../dp/opt/convex-optimize/" class="md-nav__link">
+      <a href="../../../algor/dp/opt/convex-optimize/" class="md-nav__link">
         斜率优化
       </a>
     </li>
@@ -949,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/basic/list-forward-star/" class="md-nav__link">
+      <a href="../../../algor/graph/basic/list-forward-star/" class="md-nav__link">
         链式前向星
       </a>
     </li>
@@ -963,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/basic/tree-traversal/" class="md-nav__link">
+      <a href="../../../algor/graph/basic/tree-traversal/" class="md-nav__link">
         树的遍历
       </a>
     </li>
@@ -977,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/basic/dfs-order/" class="md-nav__link">
+      <a href="../../../algor/graph/basic/dfs-order/" class="md-nav__link">
         DFS 序相关
       </a>
     </li>
@@ -991,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/basic/simple-graph-theory-problem/" class="md-nav__link">
+      <a href="../../../algor/graph/basic/simple-graph-theory-problem/" class="md-nav__link">
         简单图论问题
       </a>
     </li>
@@ -1012,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/sssp/" class="md-nav__link">
+      <a href="../../../algor/graph/sssp/" class="md-nav__link">
         最短路
       </a>
     </li>
@@ -1026,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/mst/" class="md-nav__link">
+      <a href="../../../algor/graph/mst/" class="md-nav__link">
         最小生成树
       </a>
     </li>
@@ -1040,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/lca/" class="md-nav__link">
+      <a href="../../../algor/graph/lca/" class="md-nav__link">
         最近公共祖先
       </a>
     </li>
@@ -1054,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/negative-ring-and-difference-constraint/" class="md-nav__link">
+      <a href="../../../algor/graph/negative-ring-and-difference-constraint/" class="md-nav__link">
         负环 & 差分约束
       </a>
     </li>
@@ -1102,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/connectivity/dcc/" class="md-nav__link">
+      <a href="../../../algor/graph/connectivity/dcc/" class="md-nav__link">
         双连通分量
       </a>
     </li>
@@ -1116,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/connectivity/scc/" class="md-nav__link">
+      <a href="../../../algor/graph/connectivity/scc/" class="md-nav__link">
         强连通分量
       </a>
     </li>
@@ -1130,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/connectivity/2sat/" class="md-nav__link">
+      <a href="../../../algor/graph/connectivity/2sat/" class="md-nav__link">
         2-SAT 问题
       </a>
     </li>
@@ -1151,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/bipartite-graph/" class="md-nav__link">
+      <a href="../../../algor/graph/bipartite-graph/" class="md-nav__link">
         二分图
       </a>
     </li>
@@ -1165,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph/dsu-on-tree/" class="md-nav__link">
+      <a href="../../../algor/graph/dsu-on-tree/" class="md-nav__link">
         树上启发式合并
       </a>
     </li>
@@ -1184,16 +1182,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
       
       
       
@@ -1264,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../easy/stack/" class="md-nav__link">
+      <a href="../../../algor/ds/easy/stack/" class="md-nav__link">
         栈
       </a>
     </li>
@@ -1278,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../easy/queue/" class="md-nav__link">
+      <a href="../../../algor/ds/easy/queue/" class="md-nav__link">
         队列
       </a>
     </li>
@@ -1292,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../easy/list/" class="md-nav__link">
+      <a href="../../../algor/ds/easy/list/" class="md-nav__link">
         链表
       </a>
     </li>
@@ -1306,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../easy/monotonous-stack/" class="md-nav__link">
+      <a href="../../../algor/ds/easy/monotonous-stack/" class="md-nav__link">
         单调栈
       </a>
     </li>
@@ -1320,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../easy/monotonous-queue/" class="md-nav__link">
+      <a href="../../../algor/ds/easy/monotonous-queue/" class="md-nav__link">
         单调队列
       </a>
     </li>
@@ -1377,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../normal/segtree/" class="md-nav__link">
+      <a href="../../../algor/ds/normal/segtree/" class="md-nav__link">
         线段树
       </a>
     </li>
@@ -1391,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../normal/binary-search-on-segtree/" class="md-nav__link">
+      <a href="../../../algor/ds/normal/binary-search-on-segtree/" class="md-nav__link">
         线段树二分
       </a>
     </li>
@@ -1405,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../normal/fenwick/" class="md-nav__link">
+      <a href="../../../algor/ds/normal/fenwick/" class="md-nav__link">
         树状数组
       </a>
     </li>
@@ -1419,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../normal/blocks/" class="md-nav__link">
+      <a href="../../../algor/ds/normal/blocks/" class="md-nav__link">
         普通分块
       </a>
     </li>
@@ -1438,14 +1434,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_3" type="checkbox" id="__nav_3_5_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_3" type="checkbox" id="__nav_3_5_3" >
       
       
       
@@ -1474,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hld/" class="md-nav__link">
+      <a href="../../../algor/ds/hard/hld/" class="md-nav__link">
         轻重链剖分
       </a>
     </li>
@@ -1486,14 +1480,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_3_2" type="checkbox" id="__nav_3_5_3_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_3_2" type="checkbox" id="__nav_3_5_3_2" >
       
       
       
@@ -1518,89 +1510,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          可持久化 Trie
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/hard/persistent-trie/" class="md-nav__link">
         可持久化 Trie
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    概述
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    应用
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    实现
-  </a>
-  
-    <nav class="md-nav" aria-label="实现">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    插入
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    询问
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    代码
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1656,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lunatic/odt/" class="md-nav__link">
+      <a href="../../../algor/ds/lunatic/odt/" class="md-nav__link">
         珂朵莉树
       </a>
     </li>
@@ -1752,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/number-theory/prime/" class="md-nav__link">
+      <a href="../../../algor/math/number-theory/prime/" class="md-nav__link">
         质数
       </a>
     </li>
@@ -1766,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/number-theory/factor/" class="md-nav__link">
+      <a href="../../../algor/math/number-theory/factor/" class="md-nav__link">
         约数
       </a>
     </li>
@@ -1821,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/linear-algebra/matrix/" class="md-nav__link">
+      <a href="../../../algor/math/linear-algebra/matrix/" class="md-nav__link">
         矩阵
       </a>
     </li>
@@ -1835,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/linear-algebra/perm/" class="md-nav__link">
+      <a href="../../../algor/math/linear-algebra/perm/" class="md-nav__link">
         置换
       </a>
     </li>
@@ -1849,7 +1763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/linear-algebra/poset/" class="md-nav__link">
+      <a href="../../../algor/math/linear-algebra/poset/" class="md-nav__link">
         偏序
       </a>
     </li>
@@ -1908,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/combinatorics/combination/" class="md-nav__link">
+      <a href="../../../algor/math/combinatorics/combination/" class="md-nav__link">
         排列组合
       </a>
     </li>
@@ -1922,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/combinatorics/pigeonhole-principle/" class="md-nav__link">
+      <a href="../../../algor/math/combinatorics/pigeonhole-principle/" class="md-nav__link">
         鸽巢原理
       </a>
     </li>
@@ -1936,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/combinatorics/inclusion-exclusion-principle/" class="md-nav__link">
+      <a href="../../../algor/math/combinatorics/inclusion-exclusion-principle/" class="md-nav__link">
         容斥原理
       </a>
     </li>
@@ -1950,7 +1864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/combinatorics/stirling/" class="md-nav__link">
+      <a href="../../../algor/math/combinatorics/stirling/" class="md-nav__link">
         斯特林数
       </a>
     </li>
@@ -1964,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../math/combinatorics/catalan/" class="md-nav__link">
+      <a href="../../../algor/math/combinatorics/catalan/" class="md-nav__link">
         卡特兰数
       </a>
     </li>
@@ -2024,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../string/trie/" class="md-nav__link">
+      <a href="../../../algor/string/trie/" class="md-nav__link">
         Trie
       </a>
     </li>
@@ -2111,7 +2025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/mo/" class="md-nav__link">
+      <a href="../../../algor/misc/mo/" class="md-nav__link">
         普通莫队
       </a>
     </li>
@@ -2162,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/mt19937/" class="md-nav__link">
+      <a href="../../../algor/misc/mt19937/" class="md-nav__link">
         mt19937
       </a>
     </li>
@@ -2183,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/expression/" class="md-nav__link">
+      <a href="../../../algor/misc/expression/" class="md-nav__link">
         表达式求值
       </a>
     </li>
@@ -2210,12 +2124,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -2235,7 +2151,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../rec/">Records</a>
+          <a href="../../">Records</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -2332,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/old/old-cf-at-misc/" class="md-nav__link">
+      <a href="../../old/old-cf-at-misc/" class="md-nav__link">
         CF & AT 杂题
       </a>
     </li>
@@ -2346,7 +2262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/old/old-cf-at-sol/" class="md-nav__link">
+      <a href="../../old/old-cf-at-sol/" class="md-nav__link">
         CF & AT 题解
       </a>
     </li>
@@ -2367,7 +2283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/atcf-for-2022-02/" class="md-nav__link">
+      <a href="../../atcf-for-2022-02/" class="md-nav__link">
         2022年2月AT&CF
       </a>
     </li>
@@ -2381,7 +2297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/atcf-for-2022-03/" class="md-nav__link">
+      <a href="../../atcf-for-2022-03/" class="md-nav__link">
         2022年3月AT&CF
       </a>
     </li>
@@ -2395,7 +2311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/atcf-for-2022-04/" class="md-nav__link">
+      <a href="../../atcf-for-2022-04/" class="md-nav__link">
         2022年4月AT&CF
       </a>
     </li>
@@ -2409,7 +2325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/atcf-for-2022-05/" class="md-nav__link">
+      <a href="../../atcf-for-2022-05/" class="md-nav__link">
         2022年5月AT&CF
       </a>
     </li>
@@ -2423,7 +2339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/atcf-for-2022-07/" class="md-nav__link">
+      <a href="../../atcf-for-2022-07/" class="md-nav__link">
         2022年7,8月AT&CF
       </a>
     </li>
@@ -2482,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/tricks-for-2022-02/" class="md-nav__link">
+      <a href="../../tricks-for-2022-02/" class="md-nav__link">
         2022年2月练习记录
       </a>
     </li>
@@ -2496,7 +2412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/tricks-for-2022-03/" class="md-nav__link">
+      <a href="../../tricks-for-2022-03/" class="md-nav__link">
         2022年3月练习记录
       </a>
     </li>
@@ -2510,7 +2426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/tricks-for-2022-04/" class="md-nav__link">
+      <a href="../../tricks-for-2022-04/" class="md-nav__link">
         2022年4月练习记录
       </a>
     </li>
@@ -2524,7 +2440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/tricks-for-2022-05/" class="md-nav__link">
+      <a href="../../tricks-for-2022-05/" class="md-nav__link">
         2022年5月练习记录
       </a>
     </li>
@@ -2543,14 +2459,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
       
       
       
@@ -2579,11 +2497,163 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../rec/interesting/segtree-tricks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          线段树的扩展运用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         线段树的扩展运用
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区间加多项式
+  </a>
+  
+    <nav class="md-nav" aria-label="区间加多项式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    区间加等差数列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    区间加斐波那契
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    区间加等比数列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    区间查某些东西
+  </a>
+  
+    <nav class="md-nav" aria-label="区间查某些东西">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mex" class="md-nav__link">
+    区间 MEX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    区间方差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sin" class="md-nav__link">
+    区间 sin 和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcd" class="md-nav__link">
+    区间 GCD
+  </a>
+  
+    <nav class="md-nav" aria-label="区间 GCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    单点修改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    区间修改
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    扩展类
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    维护矩阵乘法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gss" class="md-nav__link">
+    GSS 系列
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2595,7 +2665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/interesting/small-upper-bound/" class="md-nav__link">
+      <a href="../small-upper-bound/" class="md-nav__link">
         答案上界特别小的一类问题
       </a>
     </li>
@@ -2609,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../rec/interesting/comb-problem/" class="md-nav__link">
+      <a href="../comb-problem/" class="md-nav__link">
         关于组合数学和计数的一些小问题
       </a>
     </li>
@@ -2659,7 +2729,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../sol/">Solutions</a>
+          <a href="../../../sol/">Solutions</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2722,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/mock/220413B/" class="md-nav__link">
+      <a href="../../../sol/mock/220413B/" class="md-nav__link">
         20220413B组
       </a>
     </li>
@@ -2736,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/mock/220429C/" class="md-nav__link">
+      <a href="../../../sol/mock/220429C/" class="md-nav__link">
         20220429C组
       </a>
     </li>
@@ -2750,7 +2820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/mock/220511C/" class="md-nav__link">
+      <a href="../../../sol/mock/220511C/" class="md-nav__link">
         20220511C组
       </a>
     </li>
@@ -2764,7 +2834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/mock/220518C/" class="md-nav__link">
+      <a href="../../../sol/mock/220518C/" class="md-nav__link">
         20220518C组
       </a>
     </li>
@@ -2810,7 +2880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/mock/sum/220525C/" class="md-nav__link">
+      <a href="../../../sol/mock/sum/220525C/" class="md-nav__link">
         20220525C组
       </a>
     </li>
@@ -2824,7 +2894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/mock/sum/220603C/" class="md-nav__link">
+      <a href="../../../sol/mock/sum/220603C/" class="md-nav__link">
         20220603C组(22/08/30 VP)
       </a>
     </li>
@@ -2896,7 +2966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/acwing277/" class="md-nav__link">
+      <a href="../../../sol/pro/acwing277/" class="md-nav__link">
         ACWing277
       </a>
     </li>
@@ -2910,7 +2980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/acwing355/" class="md-nav__link">
+      <a href="../../../sol/pro/acwing355/" class="md-nav__link">
         ACWing355
       </a>
     </li>
@@ -2924,7 +2994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/bzoj3307/" class="md-nav__link">
+      <a href="../../../sol/pro/bzoj3307/" class="md-nav__link">
         BZOJ3307
       </a>
     </li>
@@ -2938,7 +3008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/cf713c/" class="md-nav__link">
+      <a href="../../../sol/pro/cf713c/" class="md-nav__link">
         CF713C
       </a>
     </li>
@@ -2952,7 +3022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/cf1637f/" class="md-nav__link">
+      <a href="../../../sol/pro/cf1637f/" class="md-nav__link">
         CF1637F
       </a>
     </li>
@@ -2966,7 +3036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/cf1651e/" class="md-nav__link">
+      <a href="../../../sol/pro/cf1651e/" class="md-nav__link">
         CF1651E
       </a>
     </li>
@@ -2980,7 +3050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sol/pro/uoj105/" class="md-nav__link">
+      <a href="../../../sol/pro/uoj105/" class="md-nav__link">
         UOJ105
       </a>
     </li>
@@ -3028,7 +3098,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../../sce/">Resource</a>
+          <a href="../../../sce/">Resource</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -3051,7 +3121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../sce/menu/" class="md-nav__link">
+      <a href="../../../sce/menu/" class="md-nav__link">
         初赛知识复习
       </a>
     </li>
@@ -3103,7 +3173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../waifu/" class="md-nav__link">
+      <a href="../../../waifu/" class="md-nav__link">
         Waifu
       </a>
     </li>
@@ -3130,184 +3200,56 @@
               
   
                 
-<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/algor/ds/hard/persistent-trie.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/rec/interesting/segtree-tricks.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>可持久化 Trie</h1>
+  <h1>线段树的扩展运用</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
-<p>可持久化的的中心思想就是“函数式编程”。</p>
-<p>也就是，在对数据结构的操作过程中，不会改变数据结构本身所具有的结构。</p>
-<p>在需要修改某些信息时，不是直接修改，而是保留前一个版本的信息，并将数据创建一个副本，在副本上执行修改。</p>
-<p>暴力的做法是每次修改信息的时候，都直接把整个数据结构复制一遍，在这个副本上修改。</p>
-<p>但是空间的花费很明显是不能接受的。</p>
-<p>发现每次修改<strong>只会修改一部分信息</strong>，那么单独将这部分信息创建一个副本，在这个副本上进行修改，就大大提高了空间利用率。</p>
-<p>这样，数据结构就能很方便的<strong>保存所有历史版本的信</strong>息。</p>
-<p>这种思想在可持久化线段树上体现更为明显，可持久化 Trie 其实也差不多。</p>
-<h2 id="_2">应用<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<p>可持久化 Trie 一般都是以 01 Trie 的方式出现。</p>
-<p>01 Trie 可以支持一些全局查询，修改的操作。</p>
-<p>但是无法很好的支持<strong>区间的操作</strong>。</p>
-<p>比如，要多次询问某个序列 <span class="arithmatex">\(a\)</span> 的 <span class="arithmatex">\([l,r]\)</span> 中和 <span class="arithmatex">\(x\)</span> 异或起来最大的一个数。</p>
-<p>一般的 01 Trie 没法很方便的维护，只能对于每个询问单独建树。</p>
-<p>或者是利用删除操作+类似莫队的离线思想优化，但这样的复杂度仍然很高。</p>
-<p>可持久化 Trie 的思想就是，<strong>依次</strong>插入 <span class="arithmatex">\(a_1,a_2,a_3,\dots\)</span>，然后保留每一次插入之后的版本 <span class="arithmatex">\(i\)</span>。</p>
-<p>并且第 <span class="arithmatex">\(i\)</span> 个版本对应的根节点为 <span class="arithmatex">\(rt[i]\)</span>。</p>
-<p>它有一个很重要的性质：</p>
-<blockquote>
-<p><strong>从</strong> <span class="arithmatex">\(rt[i]\)</span> <strong>出发所能访问到的所有节点构成的一棵 Trie 树，就是</strong> <span class="arithmatex">\(a[1 \sim i]\)</span> <strong>全部插入之后形成的一棵 Trie 树。</strong></p>
-</blockquote>
-<p>利用这个性质，我们可以用前缀和的思想，把第 <span class="arithmatex">\(r\)</span> 个版本构成的 Trie 和第 <span class="arithmatex">\(l - 1\)</span> 个版本构成的 Trie “相减”，就得到了 <span class="arithmatex">\(a[l \sim r]\)</span> 这部分插入之后得到的 Trie 树。</p>
-<p>（<strong>注意，这里的“相减”并不是真正意义上的相减，具体实现方式看下方的 <code>Query</code> 操作</strong>）</p>
-<h2 id="_3">实现<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
-<h3 id="_4">插入<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
-<p>可持久化 Trie 的数据保存方式和普通的 Trie 是一样的，都是利用字符指针指向含有信息的节点来保存数据。</p>
-<p>介绍原理时仍然使用普通 Trie，代码实现使用 01 Trie。</p>
-<p>仍然设 <span class="arithmatex">\(tr[p,ch]\)</span> 表示 <span class="arithmatex">\(p\)</span> 节点的 <span class="arithmatex">\(ch\)</span> 字符指针，假设当前需要插入字符串 <span class="arithmatex">\(s\)</span>，那么按照以下步骤即可：</p>
-<ol>
-<li>
-<p>设上一个版本的可持久化 Trie 对应的根节点为 <span class="arithmatex">\(rt\)</span>，令一个指针 <span class="arithmatex">\(p = root\)</span>，用一个指针 <span class="arithmatex">\(i\)</span> 扫描 <span class="arithmatex">\(s\)</span>。</p>
-</li>
-<li>
-<p>新建一个节点 <span class="arithmatex">\(q\)</span>，令新版本对应的根节点 <span class="arithmatex">\(rt\prime = q\)</span>。</p>
-</li>
-<li>
-<p>如果 <span class="arithmatex">\(p\not= \text{NULL}\)</span>，将 <span class="arithmatex">\(p\)</span> 的字符指针信息复制给 <span class="arithmatex">\(q\)</span>。</p>
-</li>
-</ol>
-<p>具体来说，对于 <span class="arithmatex">\(\forall tr[p,ch] \not = \text{NULL}\)</span>，令 <span class="arithmatex">\(tr[q,ch] = tr[p,ch]\)</span>。</p>
-<ol>
-<li>新建一个节点 <span class="arithmatex">\(q\prime\)</span>，令 <span class="arithmatex">\(tr[q,s_i]\)</span> 指向 <span class="arithmatex">\(q\prime\)</span>，也就是说，<span class="arithmatex">\(p,q\)</span> 两个节点除了编号以外的<strong>唯一区别</strong>，就是 <span class="arithmatex">\(s_i\)</span> 这个字符指针指向的节点。</li>
-</ol>
-<p>即是：<span class="arithmatex">\(tr[p,s_i]\not=tr[q,s_i]\)</span>。</p>
-<ol>
-<li>
-<p>然后让 <span class="arithmatex">\(p,q\)</span> 往下跳，<span class="arithmatex">\(p = tr[p,s_i],q = tr[q,s_i]\)</span>，令 <span class="arithmatex">\(i + 1\)</span>。</p>
-</li>
-<li>
-<p>重复 <span class="arithmatex">\(3 \sim 5\)</span>， 直到扫描完 <span class="arithmatex">\(s\)</span>。</p>
-</li>
-</ol>
-<p>下图展示了在已经有历史版本 "bte" 的可持久化 Trie 中插入新的字符串 “kth” 的过程。</p>
-<p>其中绿色节点为各个版本对应的根节点，红色节点为尾标记所处节点。</p>
-<p><a href="https://imgtu.com/i/LfWbjJ"><img alt="LfWbjJ.gif" src="https://s1.ax1x.com/2022/04/23/LfWbjJ.gif" /></a></p>
-<h3 id="_5">询问<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
-<p>当我们需要查询某一段区间 <span class="arithmatex">\([l,r]\)</span> 内和 <span class="arithmatex">\(x\)</span> 异或起来最大的数时，应当怎么处理？</p>
-<p>上面已经说了，利用前缀相减的思想，用两个维护前缀 <span class="arithmatex">\(1\sim r,1\sim l-1\)</span> 的两个版本的 Trie 相减得到 <span class="arithmatex">\([l,r]\)</span> 对应的 Trie。</p>
-<p>但是我们并不能直接相减，因为并不存在一种让 Trie 和 Trie 之间做减法的操作。</p>
-<p>首先根据可持久化 Trie 的性质，从 <span class="arithmatex">\(rt[i]\)</span> 出发能访问到的节点构成了第 <span class="arithmatex">\(i\)</span> 个版本的 Trie。</p>
-<p>所以可以先从 <span class="arithmatex">\(r\)</span> 出发，这样就满足了 <span class="arithmatex">\(r\)</span> 的上界限制。</p>
-<p>怎么满足 <span class="arithmatex">\(l - 1\)</span> 的下界限制呢？</p>
-<p>我们可以利用在节点上保存的附加信息。</p>
-<p>设 <span class="arithmatex">\(end[p]\)</span> 表示以 <span class="arithmatex">\(p\)</span> 为尾节点的数是序列里的第几个数（可以当作“版本”看待）。</p>
-<p>设 <span class="arithmatex">\(las[p]\)</span> 表示以 <span class="arithmatex">\(p\)</span> 为根的子树中 <span class="arithmatex">\(end\)</span> 的最大值。</p>
-<p>那么我们递归访问节点的时候，只需要考虑 <span class="arithmatex">\(las \ge l - 1\)</span> 的节点即可。</p>
-<p>因为 <span class="arithmatex">\(las\)</span> 也可以看作：这颗子树<strong>最后被哪一个版本所更新过</strong>。</p>
-<p>递归下去就可以了。</p>
-<h3 id="_6">代码<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
-<details class="note">
-<summary>President-01Trie</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxDepth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// 可以不用强制位数都一样</span>
-<span class="c1">// 写了也可以。</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">si</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">MaxDepth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)][</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">las</span><span class="p">[</span><span class="n">si</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">MaxDepth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)];</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="n">si</span><span class="p">];</span><span class="w"></span>
-
-<span class="c1">// 当前版本，当前位数，p, q </span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">las</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span>
-<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">ch</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">ch</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// p 非空，复制节点信息。</span>
-<span class="w">    </span><span class="n">tr</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">ch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">tot</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// p 和 q 的 ch 指针应当不一样。</span>
-<span class="w">    </span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">ch</span><span class="p">],</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">ch</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="n">las</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">las</span><span class="p">[</span><span class="n">tr</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">0</span><span class="p">]],</span><span class="w"> </span><span class="n">las</span><span class="p">[</span><span class="n">tr</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">1</span><span class="p">]]);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="c1">// 查询 [l, r] 中和 val 异或起来最大的数。</span>
-<span class="c1">// 调用时需要 ask(root[r], MaxDepth, val, l - 1)</span>
-<span class="c1">// 因为可持久化 Trie 的root[i] 能访问到的元素只有 s[1 ~ i]。</span>
-<span class="c1">// 而只考虑 las &gt;= l - 1 的节点则能满足下界。</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">ask</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">limit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">las</span><span class="p">[</span><span class="n">p</span><span class="p">]];</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">las</span><span class="p">[</span><span class="n">tr</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">ch</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">1</span><span class="p">]]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">limit</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ask</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">ch</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">limit</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ask</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">ch</span><span class="p">],</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">limit</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 走不了 1 指针，所以只能往 0 指针走。</span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">las</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">tot</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">MaxDepth</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 这几句话是必须的，因为你要保证对于任意 l \in [1, n], 都有一个 l - 1 存在。</span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
-</details>
-<p>当然，可持久化 Trie 的应用不止这些，可以考虑配合维护异或和的 01Trie，实现动态插入，删除指定元素，查询区间异或和的操作。</p>
-<hr />
-<p>TODO：之后写一个这样的 可持久化 Trie，然后用暴力对拍验证正确性。</p>
-<p>参考资料：《算法竞赛进阶指南》，OI - Wiki</p>
+<h2 id="_1">区间加多项式<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<p>区间加多项式都是转化成差分数组之后前缀和，所以一般都是单点查询。</p>
+<p>区间查询看看可不可做先。</p>
+<h3 id="_2">区间加等差数列<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<p>区间 <span class="arithmatex">\([l,r]\)</span> 加等差数列，等同于在<strong>差分数组</strong>上的 <span class="arithmatex">\([l + 1,r]\)</span> 做一次<strong>区间加</strong> <span class="arithmatex">\(d\)</span>，然后令 <span class="arithmatex">\(c[l] + \text{BEGIN}\)</span>，<span class="arithmatex">\(c[r+1] - \text{END}\)</span>。</p>
+<p><span class="arithmatex">\(\text{BEGIN,END}\)</span> 分别是首项和末项。</p>
+<p>单点询问只需要询问线段树上的 <span class="arithmatex">\(sum(1,pos)\)</span> 即可。</p>
+<p>例题: <a href="../../../../rec/atcf-for-2022-04/#cf1661d-progressions-covering">CF1661D Progressions Covering</a></p>
+<h3 id="_3">区间加斐波那契<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h3 id="_4">区间加等比数列<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h2 id="_5">区间查某些东西<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h3 id="mex">区间 MEX<a class="headerlink" href="#mex" title="Permanent link">😅</a></h3>
+<h3 id="_6">区间方差<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="sin">区间 sin 和<a class="headerlink" href="#sin" title="Permanent link">😅</a></h3>
+<p><a href="https://www.luogu.com.cn/problem/P6327">区间加区间 sin 和</a></p>
+<p>思考好线段树的本质就行。</p>
+<p>首先肯定要打 Tag，就是一个维护加法 Tag。</p>
+<p>因为我要求的答案是 <span class="arithmatex">\(\sin\)</span> 和，为了出现结合律，需要用和角公式。</p>
+<p>所以信息只需要同时维护区间 <span class="arithmatex">\(\sin\)</span> 和还有 <span class="arithmatex">\(\cos\)</span> 和。</p>
+<p>考虑一下区间加 <span class="arithmatex">\(v\)</span> 之后一个区间的 <span class="arithmatex">\(\sin\)</span> 怎么变了，方便下传标记还有更新信息。</p>
+<p>先写出对于每一个元素的：</p>
+<p><span class="arithmatex">\(\sin (a + b) = \sin a \cos b  + \sin b \cos a\)</span></p>
+<p><span class="arithmatex">\(\cos (a + b)  =\cos a \cos b - \sin a \sin b\)</span></p>
+<p>那么 <span class="arithmatex">\(\sum \sin(a_i)\)</span> 就变成了 <span class="arithmatex">\(\sum \sin (a_i + v) = \sum (\sin a_i \cos v + \sin v \cos a_i)\)</span></p>
+<p>展开：<span class="arithmatex">\(\cos v\sum \sin a_i + \sin v \sum \cos a_i\)</span>，此时 <strong>独立了变量（维护的信息）和常量</strong> <span class="arithmatex">\(v\)</span>，很方便处理。</p>
+<p>同理：<span class="arithmatex">\(\sum \cos (a_i) =\sum \cos(a_i + v) = \cos v\sum \cos a_i - \sin v \sum \sin a_i\)</span>。</p>
+<p>注意到一个坑点就是 <span class="arithmatex">\(\cos\)</span> 还要用到原来更新前的 <span class="arithmatex">\(\sum \sin a_i\)</span>，所以要提前记录一下。</p>
+<p>然后 pushup 需要结合两个区间的 <span class="arithmatex">\(\sum \sin a_i, \sum \cos a_i\)</span>，直接加起来就可以了。</p>
+<p>然后就没了。</p>
+<h3 id="gcd">区间 GCD<a class="headerlink" href="#gcd" title="Permanent link">😅</a></h3>
+<h4 id="_7">单点修改<a class="headerlink" href="#_7" title="Permanent link">😅</a></h4>
+<p>这个很简单，因为 <span class="arithmatex">\(\gcd\)</span> 满足结合律 : <span class="arithmatex">\(\gcd(a, b, c) = \gcd(a, \gcd(b, c))\)</span>。</p>
+<p>而且有幺元 <span class="arithmatex">\(0\)</span>。</p>
+<p>所以直接做就行了。</p>
+<h4 id="_8">区间修改<a class="headerlink" href="#_8" title="Permanent link">😅</a></h4>
+<p>考虑转化成单点修改，直接维护差分数组，可以做到单点改。</p>
+<p>然后发现 <span class="arithmatex">\(\gcd(a, b - a, c - b) = \gcd(a, b, c)\)</span>，所以直接询问差分数组的 <span class="arithmatex">\(\gcd\)</span> 就行了。</p>
+<p>然后显然对于一个询问 <span class="arithmatex">\([l, r]\)</span> 还要用到 <span class="arithmatex">\(a[l]\)</span>，所以再开一个树状数组维护 <span class="arithmatex">\(a\)</span> 就行了。</p>
+<p>注意如果 gcd 的参数有负数就直接把 abs 带上去算就行。</p>
+<h2 id="_9">扩展类<a class="headerlink" href="#_9" title="Permanent link">😅</a></h2>
+<h3 id="_10">维护矩阵乘法<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
+<h2 id="gss">GSS 系列<a class="headerlink" href="#gss" title="Permanent link">😅</a></h2>
 
               
 <h2 id="__comments">评论</h2>
@@ -3345,7 +3287,7 @@ gitalk.render('gitalk-container')
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../hld/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 轻重链剖分" rel="prev">
+        <a href="../../tricks-for-2022-05/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2022年5月练习记录" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3354,20 +3296,20 @@ gitalk.render('gitalk-container')
               <span class="md-footer__direction">
                 上一页
               </span>
-              轻重链剖分
+              2022年5月练习记录
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../lunatic/odt/" class="md-footer__link md-footer__link--next" aria-label="下一页: 珂朵莉树" rel="next">
+        <a href="../small-upper-bound/" class="md-footer__link md-footer__link--next" aria-label="下一页: 答案上界特别小的一类问题" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              珂朵莉树
+              答案上界特别小的一类问题
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3435,10 +3377,10 @@ gitalk.render('gitalk-container')
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
