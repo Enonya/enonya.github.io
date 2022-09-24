@@ -2643,6 +2643,33 @@
     一些有意思的题
   </a>
   
+    <nav class="md-nav" aria-label="一些有意思的题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    一个四色定理的方案数计数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    一个插板法的应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    另外一个插板法的应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3181,6 +3208,10 @@
 <p>Reference: <a href="https://www.cnblogs.com/zhangleo/p/15551772.html">lleozhang 的博客</a></p>
 <p>有区别好比做排列，没区别好比做组合。</p>
 <p>默认 <span class="arithmatex">\(n\)</span> 个小球，<span class="arithmatex">\(m\)</span> 个盒子。</p>
+<p>或者说，小球有区别可以理解成有 <span class="arithmatex">\(n\)</span> 个不同元素，一般需要考虑 <strong>对于每个小球都决策</strong>（一般是递推）。</p>
+<p>盒子有区别则可以理解为，对于某个方程求有多少组解 <span class="arithmatex">\(\{x_i\}\)</span>，如果小球没有区别，<span class="arithmatex">\(x_i\)</span> 就是一个数字，如果小球有区别，那么<span class="arithmatex">\(x_i\)</span> 就是一个集合。</p>
+<p>允不允许有空盒子就等价于 <span class="arithmatex">\(x_i\)</span> 的限制。</p>
+<p>所以小球模型都可以抽象成 <strong>广义的线性不定方程的解的组数</strong>。</p>
 <h4 id="_3">小球有区别，盒子有区别，允许有空盒子<a class="headerlink" href="#_3" title="Permanent link">😅</a></h4>
 <p>直接考虑盒子不太好考虑，直接考虑球，</p>
 <p>每个小球有 <span class="arithmatex">\(m\)</span> 种放法，乘法原理有 <span class="arithmatex">\(m^n\)</span> 种可能。</p>
@@ -3211,6 +3242,38 @@
 <h4 id="_10">小球没区别，盒子没区别，不允许有空盒子<a class="headerlink" href="#_10" title="Permanent link">😅</a></h4>
 <p>分拆数的变种。</p>
 <h2 id="_11">一些有意思的题<a class="headerlink" href="#_11" title="Permanent link">😅</a></h2>
+<h3 id="_12">一个四色定理的方案数计数<a class="headerlink" href="#_12" title="Permanent link">😅</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">_________________</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="n">__E_</span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">  </span><span class="n">A</span><span class="w">  </span><span class="o">|</span><span class="n">__D_</span><span class="o">|</span><span class="w">  </span><span class="n">B</span><span class="w">  </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w">  </span><span class="n">C</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"></span>
+<span class="o">-----------------</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>给这个地图上色，问方案数。</p>
+<p>先考虑确定 A 区域和 B 区域的颜色是否相同。</p>
+<p>因为 A，B 区域的颜色决策会导致 E,C 的颜色决策数改变。</p>
+<ol>
+<li>如果 A, B 同色，那么 D 就有 3 种方案，然后 E, C 就各有 2 种方案，答案 <span class="arithmatex">\(4\times 1 \times 3 \times 2 \times 2 = 48\)</span>。</li>
+<li>如果 A, B 不同色，那么 D 只有 2 种方案，E, C 各自只有一种，答案 <span class="arithmatex">\(4 \times 3 \times 2 \times 1 \times 1 = 24\)</span>。</li>
+</ol>
+<p>最终答案 <span class="arithmatex">\(48 + 24 = 72\)</span>。</p>
+<p>这里能抽象出来的一个小 Trick：</p>
+<p>所以对于这种 <strong>方案数问题，在某一个决策会影响之后的决策数量的时候就要分类讨论</strong>。</p>
+<h3 id="_13">一个插板法的应用<a class="headerlink" href="#_13" title="Permanent link">😅</a></h3>
+<p>扔 <span class="arithmatex">\(7\)</span> 个质地均匀的骰子，出现和为 <span class="arithmatex">\(10\)</span> 的概率 为 <span class="arithmatex">\(\dfrac{n}{6^7}\)</span>，<span class="arithmatex">\(n\)</span> 应该等于多少？</p>
+<p>可以转化为插板法，答案是 <span class="arithmatex">\(\dbinom{10 - 1}{7 - 1}\)</span>，因为变量都是 <span class="arithmatex">\(\le 6\)</span> 的，多了不够了，所以直接这么做没有问题。</p>
+<h3 id="_14">另外一个插板法的应用<a class="headerlink" href="#_14" title="Permanent link">😅</a></h3>
+<p>定义 <span class="arithmatex">\(D(n)\)</span> 表示将正整数 <span class="arithmatex">\(n\)</span> 分解为如下形式的方案数：<span class="arithmatex">\(n = f_1 \times f_2 \times f_i \dots\)</span>，其中 <span class="arithmatex">\(i \ge 1, f_i \ge 1\)</span>，<span class="arithmatex">\((f_i, f_{j}); (f_j, f_i)\)</span> 是不同的方案。</p>
+<p>求 <span class="arithmatex">\(D(96)\)</span>。</p>
+<p>首先发现 <span class="arithmatex">\(96 = 2^5 \times 3\)</span>，把 <span class="arithmatex">\(3\)</span> 拿出来先不管，</p>
+<p>然后 <span class="arithmatex">\(2^5\)</span> 显然可以分成 <span class="arithmatex">\(2^{c_1}, 2^{c_2},\dots 2^{c_m}, m \le 5, c_i \ge 0\)</span></p>
+<p>然后对于 <span class="arithmatex">\(m = i\)</span> 的情况，可以把 <span class="arithmatex">\(3\)</span> 放到这些数里面插板（可以是头尾），或者直接乘到这些数上面，所以此时的方案数是 <span class="arithmatex">\((i + 1 + i) \times i!\)</span>，因为还可以全排列。</p>
+<p>然后就只能对于每个情况硬算了。。。。。</p>
 
               
 <h2 id="__comments">评论</h2>

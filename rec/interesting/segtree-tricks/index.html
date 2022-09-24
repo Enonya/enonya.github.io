@@ -2648,6 +2648,26 @@
     GSS 系列
   </a>
   
+    <nav class="md-nav" aria-label="GSS 系列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gss1-3" class="md-nav__link">
+    GSS1 &amp; 3 区间最大子段和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gss4" class="md-nav__link">
+    GSS4 区间开方（下取整），区间求和
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3208,6 +3228,13 @@
 
   <h1>线段树的扩展运用</h1>
 
+<p>在线段树本身信息动手脚的题一般就三步：</p>
+<ol>
+<li>考虑怎么搞出具有幺半群性质的信息。（拆出多个信息（比如区间方差），或者想办法扩展一下信息来搞出结合律（比如 GSS&#8531;））</li>
+<li>考虑怎么写 Pushup （假设左右儿子信息都已得到，然后看父亲节点怎么搞，边界为叶子节点）</li>
+<li>考虑怎么写 Pushdown 和 Change。</li>
+</ol>
+<p>如果是利用转化，把复杂的信息转化成简单的信息在线段树上维护的话，就只能靠灵感或者积累了。（比如区间加多项式一类的）</p>
 <h2 id="_1">区间加多项式<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
 <p>区间加多项式都是转化成差分数组之后前缀和，所以一般都是单点查询。</p>
 <p>区间查询看看可不可做先。</p>
@@ -3217,10 +3244,41 @@
 <p>单点询问只需要询问线段树上的 <span class="arithmatex">\(sum(1,pos)\)</span> 即可。</p>
 <p>例题: <a href="../../../../rec/atcf-for-2022-04/#cf1661d-progressions-covering">CF1661D Progressions Covering</a></p>
 <h3 id="_3">区间加斐波那契<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<blockquote>
+<p>这里鸽子了。</p>
+</blockquote>
 <h3 id="_4">区间加等比数列<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<blockquote>
+<p>这里鸽子了。</p>
+</blockquote>
 <h2 id="_5">区间查某些东西<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
 <h3 id="mex">区间 MEX<a class="headerlink" href="#mex" title="Permanent link">😅</a></h3>
+<p>最简单的方法是考虑莫队。</p>
+<p>或者是直接上主席树（权值线段树二分显然可以做全局，然后可持久化之后能转成区间的）</p>
+<p>还有一种离线+线段树的暂时咕咕咕着。</p>
 <h3 id="_6">区间方差<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<p>区间加法，区间询问方差。</p>
+<p>考虑拆柿子：</p>
+<p>定义平均数为 <span class="arithmatex">\(ava\)</span>。</p>
+<p>方差的定义是 <span class="arithmatex">\(\dfrac{1}{n} \sum\limits_{i = 1}^{n} (a_i - ava)^2\)</span></p>
+<p>然后显然这个非常不好维护（不具有幺半群的性质，线段树没法维护），所以考虑拆开，变成几个具有幺半群性质的信息的组合。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{1}{n} \sum\limits_{i = 1}^{n} (a_i - ava)^2 \\
+\dfrac{1}{n} \sum\limits_{i = 1}^{n} (a_i^2 - a_i \cdot ava + ava^2)\\
+\dfrac{1}{n} \cdot [\sum\limits_{i = 1}^{n} a_i^2 - ava\sum\limits_{i = 1}^n a_i + n \cdot ava^2]
+\end{aligned}
+\]</div>
+<p>于是如果不带修就只需要考虑维护区间和，区间平方和就行了。</p>
+<p>然后这里有一个区间加法。</p>
+<p>所以我们考虑维护一个 <span class="arithmatex">\(add\)</span>。</p>
+<p>显然区间加的时候和下放标记时，<span class="arithmatex">\(dat\)</span> 的变化是一致的，就是考虑当区间每一个元素都被加上 <span class="arithmatex">\(v\)</span> 之后，<span class="arithmatex">\(psum, sum\)</span> 怎么变了。</p>
+<p>然后区间和随便搞，考虑区间平方和 <span class="arithmatex">\(psum\)</span>：</p>
+<div class="arithmatex">\[
+\sum\limits_{i = 1}^n(a_i +  v)^2 - \sum\limits_{i = 1}^{n} a_i^2
+\]</div>
+<p>这个柿子很容易展开然后转化成能够 <span class="arithmatex">\(O(1)\)</span> 下传，且具有时间轴上的结合律的信息，于是标记部分就做完了。</p>
+<p>Pushup 很显然就是两个信息直接做加法，没了。</p>
 <h3 id="sin">区间 sin 和<a class="headerlink" href="#sin" title="Permanent link">😅</a></h3>
 <p><a href="https://www.luogu.com.cn/problem/P6327">区间加区间 sin 和</a></p>
 <p>思考好线段树的本质就行。</p>
@@ -3249,7 +3307,36 @@
 <p>注意如果 gcd 的参数有负数就直接把 abs 带上去算就行。</p>
 <h2 id="_9">扩展类<a class="headerlink" href="#_9" title="Permanent link">😅</a></h2>
 <h3 id="_10">维护矩阵乘法<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
+<blockquote>
+<p>这里鸽子了。</p>
+</blockquote>
 <h2 id="gss">GSS 系列<a class="headerlink" href="#gss" title="Permanent link">😅</a></h2>
+<h3 id="gss1-3">GSS1 &amp; 3 区间最大子段和<a class="headerlink" href="#gss1-3" title="Permanent link">😅</a></h3>
+<p>可以发现最大子段和没有明显的结合律。</p>
+<p>不过我们试着假设左右儿子的最大子段和都已经求出，考虑怎么 Pushup。</p>
+<p>那么其实也就三种情况，分别继承两边的，或者是左边取一段后缀，右边取一段前缀。</p>
+<p>显然不可能有别的情况更优秀了。</p>
+<p>所以需要维护一下每个子节点的最大前缀和，最大后缀和。</p>
+<p>然后最大前缀和也需要考虑 Pushup，</p>
+<p>显然就是左儿子的最大前缀和，或者是左儿子整体+右儿子的最大前缀和（因为子段是连续的，所以要选右儿子的最大前缀和就需要把左儿子整体选上）。</p>
+<p>然后有没有一种可能，就是我右儿子选完最大前缀和之后，有没有可能后面还能找一些接到前缀后面比这个更大？</p>
+<p>明显是蠢了，这里都是最大前缀和了，怎么可能嘛。</p>
+<p>然后还有一种情况就是全部都选上。</p>
+<p>最大后缀和同理即可。</p>
+<p>注意如果一个区间都是负数，最大子段和应该是最大值，而不是上面三种情况的任意一种。</p>
+<p>所以还需要维护一个区间最大值。</p>
+<p>此时最大子段和就有结合律了。</p>
+<p>GSS1 不带修，GSS3 带一个单点修，本质一样。</p>
+<h3 id="gss4">GSS4 区间开方（下取整），区间求和<a class="headerlink" href="#gss4" title="Permanent link">😅</a></h3>
+<p>这题线段树也可以，虽然算是一个单独的 Trick，但毕竟是 GSS 系列的，就也写上了。</p>
+<p>首先从数列分块入门 5 可以得到一个结论，就是区间开方的次数是很少的，如果 1e18 级别开 6 ~ 7 次就够了。</p>
+<p>所以我们可以维护一个并查集，其中 <span class="arithmatex">\(pa(i)\)</span> 表示，<span class="arithmatex">\([i, n]\)</span> 之中，第一个不是 <span class="arithmatex">\(1\)</span> 的数的下标。</p>
+<p>初始指向自己。</p>
+<p>然后对于每个询问我们直接暴力在 <span class="arithmatex">\(a(i)\)</span> 上面单点开根号，如果遇到 <span class="arithmatex">\(1\)</span> 就直接跳 <span class="arithmatex">\(pa(i)\)</span>，因为开根号次数很少，然后多次操作之后要操作的数也很少。</p>
+<p>并查集基本可以看作均摊 <span class="arithmatex">\(O(1)\)</span> 的，所以这个东西复杂度非常优秀。</p>
+<p>然后区间和再用一个树状数组维护就可以了，因为我们已经把区间开方转化为了单点开方。</p>
+<p>这个就是一个很有意思的 Trick：对于这种操作多了之后“无效操作”变多的操作，可以考虑使用并查集记录一下每一个位置的下一个有效操作位置，把区间操作转化为单点操作。</p>
+<p>几个同类型的题： Luogu2391 白雪皑皑，CF920F Sum and Replace，51Nod1743 雪之国度。</p>
 
               
 <h2 id="__comments">评论</h2>
