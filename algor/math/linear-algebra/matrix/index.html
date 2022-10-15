@@ -2616,6 +2616,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -2629,6 +2631,20 @@
           一些有意思的小专题
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../rec/dp-edu/" class="md-nav__link">
+        Atcoder dp edu contest
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3341,13 +3357,18 @@
 <p>然后 <span class="arithmatex">\(A[i,j]\)</span> 就可以看做 <span class="arithmatex">\(i \to j\)</span> 经过恰好一条边的最短路。</p>
 <p>考虑求出经过恰好两条边的最短路 <span class="arithmatex">\(B\)</span>。</p>
 <p>可以发现 <span class="arithmatex">\(B[i,j]=\min\limits_{1\le k \le n}\{A[i,k]+A[k,j]\}\)</span></p>
-<p>这里就是用了类似 Floyd 的枚举中间点思想。</p>
+<p>这里就是用了类似 Floyd 的枚举中间点思想（其本质是 dp）。</p>
 <p>类似的可以得到经过恰好 <span class="arithmatex">\(K\)</span> 条边的最短路。</p>
-<p>设 <span class="arithmatex">\(A^{qwq}\)</span> 表示经过恰好 <span class="arithmatex">\(qwq\)</span> 条边的最短路。</p>
-<p>可以得到 <span class="arithmatex">\(A^{qwq}[i,j]=\min\limits_{1\le k \le n}\{A^p[i,k]+A^q[k,j]\},qwq=p+q\)</span></p>
-<p>发现这玩意儿就是个类似于矩阵乘法的东西。</p>
-<p>把 <span class="arithmatex">\(\sum\)</span> 换成 <span class="arithmatex">\(\min\)</span> ，把 <span class="arithmatex">\(\times\)</span> 换成 <span class="arithmatex">\(+\)</span>。</p>
-<p>刚好这个东西仍然满足结合律，所以可以用矩阵快速幂 <span class="arithmatex">\(n^3\log K\)</span> 求 <span class="arithmatex">\(A^K\)</span>。</p>
+<p>设 <span class="arithmatex">\(A^{r}\)</span> 表示经过恰好 <span class="arithmatex">\(r\)</span> 条边的最短路矩阵。</p>
+<p>可以得到 <span class="arithmatex">\(A^{r}[i,j]=\min\limits_{1\le k \le n}\{A^p[i,k]+A^q[k,j]\},r=p+q\)</span>。</p>
+<p>发现这个运算就是个类似于矩阵乘法的东西，我们将其定义为 <span class="arithmatex">\(\oplus\)</span>。</p>
+<p>把 <span class="arithmatex">\(\sum\)</span> 换成 <span class="arithmatex">\(\min\)</span> ，把 <span class="arithmatex">\(\times\)</span> 换成 <span class="arithmatex">\(+\)</span> 就能看出来。</p>
+<p>刚好这个东西仍然满足结合律，我们把式子写一下：</p>
+<div class="arithmatex">\[
+A^{r} = A^{r-1} \oplus A^1
+\]</div>
+<p>发现 <span class="arithmatex">\(A^r\)</span> 就等于 <span class="arithmatex">\(A^1\)</span> 在 <span class="arithmatex">\(\oplus\)</span> 意义下的 <span class="arithmatex">\(r\)</span> 次幂。</p>
+<p>那么就可以用矩阵快速幂 <span class="arithmatex">\(n^3\log K\)</span> 求 <span class="arithmatex">\(A^K\)</span> 了。</p>
 <h3 id="_8">矩阵表达修改<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
 <p>这里还是直接贴的 OI-Wiki 的例子，因为我懒得写了。</p>
 <h4 id="thusch-2017">「THUSCH 2017」大魔法师<a class="headerlink" href="#thusch-2017" title="Permanent link">😅</a></h4>

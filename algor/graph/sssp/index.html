@@ -1113,13 +1113,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#k" class="md-nav__link">
-    经过恰好 K 条边最短路
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2614,6 +2607,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -2627,6 +2622,20 @@
           一些有意思的小专题
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rec/dp-edu/" class="md-nav__link">
+        Atcoder dp edu contest
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3478,18 +3487,6 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="k">经过恰好 K 条边最短路<a class="headerlink" href="#k" title="Permanent link">😅</a></h3>
-<p>首先用邻接矩阵 <span class="arithmatex">\(A\)</span> 存图。</p>
-<p>然后 <span class="arithmatex">\(A[i,j]\)</span> 就可以看做 <span class="arithmatex">\(i \to j\)</span> 经过恰好一条边的最短路。</p>
-<p>考虑求出经过恰好两条边的最短路 <span class="arithmatex">\(B\)</span>。</p>
-<p>可以发现 <span class="arithmatex">\(B[i,j]=\min\limits_{1\le k \le n}\{A[i,k]+A[k,j]\}\)</span></p>
-<p>这里就是用了类似 Floyd 的枚举中间点思想。</p>
-<p>类似的可以得到经过恰好 <span class="arithmatex">\(K\)</span> 条边的最短路。</p>
-<p>设 <span class="arithmatex">\(A^{qwq}\)</span> 表示经过恰好 <span class="arithmatex">\(qwq\)</span> 条边的最短路。</p>
-<p>可以得到 <span class="arithmatex">\(A^{qwq}[i,j]=\min\limits_{1\le k \le n}\{A^p[i,k]+A^q[k,j]\},qwq=p+q\)</span></p>
-<p>发现这玩意儿就是个类似于矩阵乘法的东西。</p>
-<p>把 <span class="arithmatex">\(\sum\)</span> 换成 <span class="arithmatex">\(\min\)</span> ，把 <span class="arithmatex">\(\times\)</span> 换成 <span class="arithmatex">\(+\)</span>。</p>
-<p>刚好这个东西仍然满足结合律，所以可以用矩阵快速幂 <span class="arithmatex">\(n^3\log K\)</span> 求 <span class="arithmatex">\(A^K\)</span>。</p>
 <h2 id="_3">最短路计数<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
 <p>这个玩意儿 Floyd，SPFA，Dijkstra 都是可以做的。</p>
 <p>在跑最短路的时候记录一个数组 <span class="arithmatex">\(cnt[v]\)</span> 表示从 <span class="arithmatex">\(s \to v\)</span> 的最短路径条数。</p>

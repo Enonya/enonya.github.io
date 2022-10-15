@@ -2575,6 +2575,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -2588,6 +2590,20 @@
           一些有意思的小专题
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../rec/dp-edu/" class="md-nav__link">
+        Atcoder dp edu contest
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3164,7 +3180,7 @@
 <p>这一类问题的一般方程形式：</p>
 <div class="arithmatex">\[f_i=\min\limits_{L(i)\le j \le R(i)}\{f_j+val(i,j)\}\]</div>
 <p>其中 <span class="arithmatex">\(L(i),R(i)\)</span> 是关于 <span class="arithmatex">\(i\)</span> 的一次函数，用来限制决策点 <span class="arithmatex">\(j\)</span> 的范围（决策集合上下界）。</p>
-<p>所以一般我们都直接让 <span class="arithmatex">\(i\)</span> 单调变化，然后考虑决策集合上下界的变化。</p>
+<p>所以一般我们都直接让 <span class="arithmatex">\(i\)</span> 单调变化，然后考虑决策集合（<span class="arithmatex">\(f_{i, j}\)</span> 的决策集合是所有可以转移到它的合法状态组成的集合）上下界的变化。</p>
 <p>但如果有两维状态的时候，通常这里就不只是关于 <span class="arithmatex">\(i\)</span> 的了，可能还会有 <span class="arithmatex">\(j\)</span> 在里面。</p>
 <p>所以这种情况下需要固定 <span class="arithmatex">\(i\)</span> 去考虑决策集合的变化（两个变量搞在一起肯定难受）</p>
 <p><span class="arithmatex">\(val\)</span> 则是关于 <span class="arithmatex">\(i,j\)</span> 的一个多项式，并且可以把它<strong>分成两个部分</strong>，一个只与 <span class="arithmatex">\(i\)</span> 相关，一个只与 <span class="arithmatex">\(j\)</span> 相关。</p>
@@ -3177,7 +3193,7 @@
 <p>见《背包DP》。</p>
 <h3 id="2">问题 2<a class="headerlink" href="#2" title="Permanent link">😅</a></h3>
 <blockquote>
-<p>POJ1821 Fence]：你有 <span class="arithmatex">\(P\)</span> 个工匠，第 <span class="arithmatex">\(i\)</span> 个工匠只能粉刷包括 <span class="arithmatex">\(S_i\)</span> 这一段木板，长度为 <span class="arithmatex">\(L_i\)</span> 的区间，并获得 <span class="arithmatex">\(L_i \times p_i\)</span> 的报酬，现在有 <span class="arithmatex">\(n\)</span> 块木板，问可以获得的最大报酬。</p>
+<p>[POJ1821 Fence]：你有 <span class="arithmatex">\(P\)</span> 个工匠，第 <span class="arithmatex">\(i\)</span> 个工匠只能粉刷包括 <span class="arithmatex">\(S_i\)</span> 这一段木板，长度为 <span class="arithmatex">\(L_i\)</span> 的区间，并获得 <span class="arithmatex">\(L_i \times p_i\)</span> 的报酬，现在有 <span class="arithmatex">\(n\)</span> 块木板，问可以获得的最大报酬。</p>
 <p><span class="arithmatex">\(1\le n \le 16000,1\le m\le 100\)</span></p>
 </blockquote>
 <p>首先把工匠按 <span class="arithmatex">\(S_i\)</span> 排序，使得每个工匠粉刷的木板在上一个的<strong>后面</strong>。</p>
@@ -3195,13 +3211,13 @@
 <p>因为题目有限制，所以 <span class="arithmatex">\(k\)</span> 是有取值范围的。</p>
 <p>可以得到方程：</p>
 <div class="arithmatex">\[f_{i,j}=\max\limits_{j-L_i\le k \le S_i-1}\{f_{i-1,k}+P_i\times(j-k)\},j \ge S_i\]</div>
-<p>首先发现 <span class="arithmatex">\(k\)</span> 的取值随着 <span class="arithmatex">\(j\)</span> 单调变化（此时默认 <span class="arithmatex">\(i\)</span> 不变）</p>
-<p>并且 <span class="arithmatex">\(P_i\times(j-k)\)</span> 这个多项式是关于 <span class="arithmatex">\(j,k\)</span> 的，还可以拆分成两部分。</p>
-<p>于是把这一部分拆开</p>
+<p>复杂度 <span class="arithmatex">\(O(n^3)\)</span> 不能接受，发现方程是 1D1D 的形式，且 <span class="arithmatex">\(k\)</span> 的变化下界在 <span class="arithmatex">\(i\)</span> 固定的时候是一个关于 <span class="arithmatex">\(j\)</span> 的一次函数，上界是一个常数。</p>
+<p>那么就证明，当 <span class="arithmatex">\(i\)</span> 固定，<span class="arithmatex">\(j\)</span> 单调变化的时候，<span class="arithmatex">\(k\)</span> 也是单调变化的。</p>
+<p>并且 <span class="arithmatex">\(P_i\times(j-k)\)</span> 是一个关于 <span class="arithmatex">\(j,k\)</span> 的多项式，还可以拆分成两部分（没有 <span class="arithmatex">\(j,k\)</span> 的乘积项）。</p>
+<p>于是把这一部分拆开：</p>
 <div class="arithmatex">\[f_{i,j}=P_i\times j + \max\limits_{j-L_i\le k \le S_i-1}\{f_{i-1,k}-P_i\times k\},j \ge L_i\]</div>
-<p>随便找两个 <span class="arithmatex">\(k\)</span> 进行讨论，发现这里确实可以单调队列优化。</p>
-<p>所以维护一个 <span class="arithmatex">\(f_{i-1,k}-P_i\times k\)</span> 的最大值的队列，并且 <span class="arithmatex">\(k\)</span> 单调递增。</p>
-<p>开始的时候把初始的决策先插入进去，然后再进行转移。</p>
+<p>所以对于每一个 <span class="arithmatex">\(i\)</span>，维护一个 <span class="arithmatex">\(f_{i-1,k}-P_i\times k\)</span> 的最大值的队列，并且保证 <span class="arithmatex">\(k\)</span> 单调递增。</p>
+<p>开始的时候把初始的决策先插入进去，然后枚举 <span class="arithmatex">\(j\)</span>，对于每一个 <span class="arithmatex">\(f_{i,j}\)</span> 取队头更新，并同步维护单调性以及合法性即可。</p>
 <p>因为每个元素只会入队出队一次，复杂度 <span class="arithmatex">\(\text{O}(nP)\)</span>。</p>
 <details class="note">
 <summary>Code</summary>
@@ -3302,12 +3318,16 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">()</span><span class="w"> </span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">循环</span><span class="w"> </span>
 <span class="w">    </span><span class="n">插入初始决策</span><span class="w"></span>
-<span class="k">for</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="n">先把过时的删除</span><span class="w"></span>
+<span class="n">循环</span><span class="w"></span>
+<span class="w">    </span><span class="n">先把过时的删除</span><span class="err">（</span><span class="n">维护合法性</span><span class="err">）</span><span class="w"></span>
 <span class="w">    </span><span class="n">如果队列非空</span><span class="w"></span>
-<span class="w">        </span><span class="n">转移</span><span class="err">，</span><span class="n">排除冗杂</span><span class="err">，</span><span class="n">加入新状态</span><span class="err">（</span><span class="n">后两步有的时候不需要</span><span class="err">，</span><span class="n">比如这个题</span><span class="err">）</span><span class="w"></span>
+<span class="w">        </span><span class="n">转移</span><span class="err">，（</span><span class="n">决策</span><span class="err">）</span><span class="w"></span>
+<span class="w">        </span><span class="n">排除冗杂</span><span class="err">，</span><span class="n">加入新状态</span><span class="err">。（</span><span class="n">维护单调性</span><span class="err">）</span><span class="w"></span>
+<span class="w">        </span><span class="err">（</span><span class="n">后两步有的时候不需要</span><span class="err">，</span><span class="n">比如这个题</span><span class="err">）</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 
