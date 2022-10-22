@@ -3310,7 +3310,7 @@
   <h1>Atcoder dp edu contest</h1>
 
 <p>记得写一下多重，树上，分组背包。</p>
-<h2 id="dp">关于 dp 的一些注意事项<a class="headerlink" href="#dp" title="Permanent link">😅</a></h2>
+<h2 id="dp">关于 dp 的一些注意事项<a class="headerlink" href="#dp" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <ul>
 <li>状态设计</li>
 </ul>
@@ -3337,29 +3337,29 @@
 <p>一定要先推出最暴力的方程然后再考虑优化，不然容易思维固化想不到优化过的思路，当然如果有巧妙的转化能直接想到优秀的状态也行。</p>
 <p>常见的优化空间的方式就是滚动数组，还有对状态本身进行优化（比如如果可以用阶段+一个决策推出另外一个决策，另外一个决策就不用记录了，比如 Mobile Service）。</p>
 <p>常见的优化时间的方式就是前缀和优化，单调队列，数据结构，斜率优化这些对于特殊的转移方程中的决策集合选取的优化（比如多重背包，Optimal Partition 这种），有的时候还有利用可行性的约束来优化的（比如那个状态只会在长度为 <span class="arithmatex">\(256\)</span> 的区间内转移的 CF 题 Xor-Subsequence）。</p>
-<h2 id="_1">题目<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
-<h3 id="c-vacation">C - Vacation<a class="headerlink" href="#c-vacation" title="Permanent link">😅</a></h3>
+<h2 id="_1">题目<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="c-vacation">C - Vacation<a class="headerlink" href="#c-vacation" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>设 <span class="arithmatex">\(dp(i, 0/1/2)\)</span> 表示这个人第 <span class="arithmatex">\(i\)</span> 天选择了 <span class="arithmatex">\(0/1/2\)</span> 活动，获得的最大值。</p>
 <p>然后限制条件是相邻的不能选一样的活动。</p>
 <p>所以就是个状态机 DP。</p>
 <p><span class="arithmatex">\(dp(i, 0) = \max\{dp(i-1,1) + w0_i, dp(i - 1,2) + w0_i\}\)</span>。</p>
 <p>然后另外两种完全一样。</p>
 <p>思考一下发现，如果这一天选了 <span class="arithmatex">\(0\)</span>，只需要关心 <span class="arithmatex">\(i - 1\)</span> 这一天的，一共也只有选 <span class="arithmatex">\(1/2\)</span> 的可能，所以状态空间肯定覆盖满了，合理。</p>
-<h3 id="e-knapsack2">E - Knapsack2<a class="headerlink" href="#e-knapsack2" title="Permanent link">😅</a></h3>
+<h3 id="e-knapsack2">E - Knapsack2<a class="headerlink" href="#e-knapsack2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><span class="arithmatex">\(m \le 10^9\)</span> 的 01 背包问题，体积都变成 <span class="arithmatex">\(10^9\)</span>，但是价值变成 <span class="arithmatex">\(10^3\)</span> 了。</p>
 <p>可以考虑离散化，但是这是负作用，因为实际会有 <span class="arithmatex">\(2^n\)</span> 级别的数需要离散化。</p>
 <p>注意到 <span class="arithmatex">\(n\)</span> 只有 <span class="arithmatex">\(100\)</span>，所以能取得的总价值一定不超过 <span class="arithmatex">\(10^5\)</span>。</p>
 <p>那么可以考虑交换一下维度，设 <span class="arithmatex">\(dp(i)\)</span> 表示取到 <span class="arithmatex">\(i\)</span> 的价值最少要多少空间。</p>
 <p>然后类似背包更新，最后在可行状态里面找最大的 <span class="arithmatex">\(i\)</span> 即可。</p>
 <p>很 Educational 的一个题。</p>
-<h3 id="i-coins">I - Coins<a class="headerlink" href="#i-coins" title="Permanent link">😅</a></h3>
+<h3 id="i-coins">I - Coins<a class="headerlink" href="#i-coins" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>设 <span class="arithmatex">\(dp(i, j)\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span>，有 <span class="arithmatex">\(j\)</span> 个正（其他 <span class="arithmatex">\(i - j\)</span> 个就是反）的概率。</p>
 <p>考虑转移，显然决策是对于 <span class="arithmatex">\(i\)</span> 考虑正反，每次 <span class="arithmatex">\(j\)</span> 的变化最多 <span class="arithmatex">\(1\)</span>，我们只需要考虑从上一个转移过来即可。</p>
 <p>由乘法原理和加法原理，显然有：</p>
 <p><span class="arithmatex">\(dp(i,j) = dp(i-1,j) \times(1-p_i) + dp(i -1,j - 1)\times p_i\)</span>。</p>
 <p>（不管前面的方案是由多少种方案凑的，因为在这一步都直接乘了同一个数所以可以结合律，那么这个状态表示就显然是对的，也可利用集合思想考虑）</p>
 <p>然后做完了。</p>
-<h3 id="m-candies">M - Candies<a class="headerlink" href="#m-candies" title="Permanent link">😅</a></h3>
+<h3 id="m-candies">M - Candies<a class="headerlink" href="#m-candies" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑设 <span class="arithmatex">\(dp(i, j)\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 个人，第 <span class="arithmatex">\(i\)</span> 个人拿了 <span class="arithmatex">\(j\)</span> 个的方案数，显然无法得知之前用过多少个，题目要求有恰好用完，所以寄掉了。</p>
 <p>以此为出发点，改进状态，设 <span class="arithmatex">\(dp(i,j)\)</span> 为第 <span class="arithmatex">\(i\)</span> 个人，当前一共使用了 <span class="arithmatex">\(j\in[0,K]\)</span> 个的方案数。</p>
 <p>然后每个人拿的个数限制是 <span class="arithmatex">\([0,a_i]\)</span>，所以考虑 <span class="arithmatex">\(O(nK^2)\)</span> 枚举，转移是：
@@ -3369,7 +3369,7 @@ dp(i,j) = \sum\limits_{k = 0}^{\min(a_i, j)} dp(i - 1, j - k)
  思考一下合法性和不重复性，感觉显然不会有重复！</p>
 <p>但是发现这个转移有点铸币，<span class="arithmatex">\(K\)</span> 是 <span class="arithmatex">\(10^5\)</span> 的，没法做，但是类似 Problem T，这是一个上一阶段前缀和的形式，可以考虑前缀和优化，复杂度 <span class="arithmatex">\(O(nK)\)</span> 应该可以过了。</p>
 <p>答案是直接选 <span class="arithmatex">\(dp(n, K)\)</span>，初始化 <span class="arithmatex">\(dp(i,0) = 1, i \in[0, n]\)</span>，其余为 <span class="arithmatex">\(0\)</span>。</p>
-<h3 id="o-matching">O - Matching<a class="headerlink" href="#o-matching" title="Permanent link">😅</a></h3>
+<h3 id="o-matching">O - Matching<a class="headerlink" href="#o-matching" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>二分图完美匹配计数，<span class="arithmatex">\(n \le 21\)</span>。</p>
 <p>明显可以状压 dp，设 <span class="arithmatex">\(dp(msk)\)</span> 表示左部点的匹配状态为 <span class="arithmatex">\(msk\)</span> 的方案数，发现没法记录右部点的状态，无法得知当前算的这一个之前是不是已经被用掉了。</p>
 <p>然后如果两边都用 <span class="arithmatex">\(msk\)</span> 状压，空间复杂度 <span class="arithmatex">\(O(2^{42})\)</span>，寄掉了，所以考虑把左部点作为阶段，对于每个左部点考虑计数。</p>
@@ -3379,7 +3379,7 @@ dp(i,j) = \sum\limits_{k = 0}^{\min(a_i, j)} dp(i - 1, j - k)
 <p>然后发现 <span class="arithmatex">\(\text{popcnt}(msk) \not= i\)</span> 的状态肯定不合法，所以还可以直接 continue 或者预处理搞掉。</p>
 <p>复杂度 <span class="arithmatex">\(O(n^22^n)\)</span>。</p>
 <p>然后这破玩意儿实际上可以直接优化掉，但是我懒，所以不。</p>
-<h3 id="p-independent-set">P - Independent Set<a class="headerlink" href="#p-independent-set" title="Permanent link">😅</a></h3>
+<h3 id="p-independent-set">P - Independent Set<a class="headerlink" href="#p-independent-set" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑设 <span class="arithmatex">\(dp(u, 0/1)\)</span> 表示考虑 <span class="arithmatex">\(u\)</span> 这个节点，涂成黑色/白色的方案数。</p>
 <p>然后题目要求不能够有两个相邻的黑色，所以分类讨论写出转移：</p>
 <div class="arithmatex">\[
@@ -3391,7 +3391,7 @@ dp(v, 1) = \prod\limits_{v\in \text{son(u)}} [dp(v,0) + dp(v,1)]
 \]</div>
 <p>注意到 <span class="arithmatex">\(dp(v,1)\)</span> 的那个柿子不能是直接 <span class="arithmatex">\(dp(v,0) \times dp(v,1)\)</span>，显然方案数不对，稍微用一下加法原理或者画出来合并一下就能推出这个柿子。</p>
 <p>然后有一个注意的点就是乘法可能在过程中就爆掉了，不然直接 i64 定义 dp，不然就多取模，记得初始化为 <span class="arithmatex">\(1\)</span>。</p>
-<h3 id="q-flowers">Q - Flowers<a class="headerlink" href="#q-flowers" title="Permanent link">😅</a></h3>
+<h3 id="q-flowers">Q - Flowers<a class="headerlink" href="#q-flowers" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑设 <span class="arithmatex">\(dp(i)\)</span> 表示以 <span class="arithmatex">\(i\)</span> 结尾的子序列中， <span class="arithmatex">\(a_i\)</span> 上升，<span class="arithmatex">\(\sum b_i\)</span> 的最大值。</p>
 <p>然后考虑转移，枚举上一个位置即可：</p>
 <div class="arithmatex">\[
@@ -3407,15 +3407,15 @@ dp(i) = \max\limits_{j = 1}^{i - 1} \{dp(j) + b_i (\text{if}\ a_i &gt; a_j).\}
 <p>所以类似 Optimal Partition 那题，我们考虑值域树状数组优化 dp，先对 <span class="arithmatex">\(a_i\)</span> 离散化，然后按照顺序<strong>一个一个插入</strong>更新完了的 <span class="arithmatex">\(dp(i)\)</span>，每次转移直接在树状数组上询问前缀 <span class="arithmatex">\(\max\)</span> 即可（本题 <span class="arithmatex">\(a_i\)</span> 已经自动离散化过了，不需要额外离散化）。</p>
 <p>（实际上就是在询问，满足 <span class="arithmatex">\(j &lt; i, a_j &lt; a_i\)</span> 的最大的 <span class="arithmatex">\(dp(j)\)</span> 是多少，用它转移过来即可）</p>
 <p>最后给所有 <span class="arithmatex">\(dp\)</span> 取一个 max 即可，其实 <span class="arithmatex">\(dp\)</span> 数组都可以不要了，直接在树状数组上修改转移就行。</p>
-<h3 id="r-walk">R - Walk<a class="headerlink" href="#r-walk" title="Permanent link">😅</a></h3>
+<h3 id="r-walk">R - Walk<a class="headerlink" href="#r-walk" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>求恰好 <span class="arithmatex">\(K\)</span> 条边的路径数量，考虑类似恰好 <span class="arithmatex">\(K\)</span> 条边最短路，利用邻接矩阵的另外一种定义 + 计数时运算存在的结合律转化成矩阵快速幂。</p>
 <p>如果 <span class="arithmatex">\(A_r\)</span> 表示恰好 <span class="arithmatex">\(r\)</span> 条边的路径数量矩阵，那么 <span class="arithmatex">\(A_r[i,j] = \sum\limits_{k = 1}^n (A_{r - 1}[i, k] \times A_1[k,j])\)</span>。</p>
 <p>注意取模，然后矩阵快速幂即可 <span class="arithmatex">\(O(n^3\log K)\)</span> 求出答案。</p>
-<h3 id="s-dight-sum">S - Dight Sum<a class="headerlink" href="#s-dight-sum" title="Permanent link">😅</a></h3>
+<h3 id="s-dight-sum">S - Dight Sum<a class="headerlink" href="#s-dight-sum" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>简单的数位 DP，我们考虑抽象出所有要求直接上记忆化搜索的板子。</p>
 <p>然后发现也没啥可以抽象的，就只有数字十进制下的数位和是 <span class="arithmatex">\(D\)</span> 的倍数的这一个要求。</p>
 <p>但是注意到这里不会在填数的时候排除任何决策，因为决策的合法性要到最后才能判定，所以记得把边界答案分情况。</p>
-<h3 id="t-permutation">T - Permutation<a class="headerlink" href="#t-permutation" title="Permanent link">😅</a></h3>
+<h3 id="t-permutation">T - Permutation<a class="headerlink" href="#t-permutation" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>设 <span class="arithmatex">\(dp(i,j)\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span>，第 <span class="arithmatex">\(i\)</span> 个选了 <span class="arithmatex">\(j\)</span> 的方案数。</p>
 <p>然后发现很烦啊！没法知道前面是否选过 <span class="arithmatex">\(j\)</span>，显然状态本身合法性得不到保证！</p>
 <p>然后有一个思路就是我给 <span class="arithmatex">\(dp\)</span> 附加一些信息，比如设 <span class="arithmatex">\(dp(i,j)\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 个位置选 <span class="arithmatex">\(1\sim i\)</span> 的排列，第 <span class="arithmatex">\(i\)</span> 个选了 <span class="arithmatex">\(j\)</span> 的方案数。</p>
@@ -3426,7 +3426,7 @@ dp(i) = \max\limits_{j = 1}^{i - 1} \{dp(j) + b_i (\text{if}\ a_i &gt; a_j).\}
 <p>反之，<span class="arithmatex">\(dp(i,j) = \sum\limits_{k = j}^i dp(i - 1, k)\)</span>，注意此时加入 <span class="arithmatex">\(i\)</span> 之后 <span class="arithmatex">\(i - 1\)</span> 的 <strong>rank 会上升</strong>，所以 <span class="arithmatex">\(k\)</span> 要从 <span class="arithmatex">\(j\)</span> 开始枚举。</p>
 <p>发现要枚举 <span class="arithmatex">\(i,j,k\)</span>，复杂度 <span class="arithmatex">\(O(n^3)\)</span>，过不了，但是这个 <span class="arithmatex">\(\sum\)</span> 是上一层状态的连续的一段，可以直接前缀和优化决策以及转移。</p>
 <p>然后复杂度就是 <span class="arithmatex">\(O(n^2)\)</span> 了，也很 Educational。</p>
-<h3 id="v-subtree">V - Subtree<a class="headerlink" href="#v-subtree" title="Permanent link">😅</a></h3>
+<h3 id="v-subtree">V - Subtree<a class="headerlink" href="#v-subtree" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>绝对很 Educational 的换根 dp，类似 P 题，我们设 <span class="arithmatex">\(dp(u, 0/1)\)</span> 表示，在以 <span class="arithmatex">\(1\)</span> 为根的前提下，<span class="arithmatex">\(u\)</span> 取黑/白，在以 <span class="arithmatex">\(u\)</span> 为根的子树中的方案数。</p>
 <p>发现本题要求所有黑点必须处于同一个连通块，所以 <span class="arithmatex">\(dp(u, 1)\)</span> 实际上全部都是 <span class="arithmatex">\(1\)</span>。</p>
 <p>那么可以写出转移方程：</p>
@@ -3459,7 +3459,7 @@ nndp(v) &amp;= [nndp(u) \times \prod\limits_{x \in \text{son}(u)\land x \not= v}
 \end{aligned}
 \]</div>
 <p>所以我们只需要在转移之前对于每个节点维护一下它的儿子节点的贡献的前后缀积即可，为了方便处理使用 vector 存边。</p>
-<h3 id="w-interval">W - Interval<a class="headerlink" href="#w-interval" title="Permanent link">😅</a></h3>
+<h3 id="w-interval">W - Interval<a class="headerlink" href="#w-interval" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>先给区间排个序。</p>
 <p>设 <span class="arithmatex">\(dp(i，0/1)\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 个，第 <span class="arithmatex">\(i\)</span> 个选还是不选的最大值。</p>
 <p>如果选就枚举上一个位置然后取 max，如果不选就在前面所有状态取 max。</p>
@@ -3494,7 +3494,7 @@ dp(i,x) &amp;= \max\limits_{j = 1}^{i - 1}\{dp(j, k) + w_i, dp(j, 0) + w_i (\tex
 \end{aligned}
 \]</div>
 <p>这个最多也就能优化到 <span class="arithmatex">\(n^2\log\)</span> ，寄掉了。</p>
-<h3 id="x-towers">X - Towers<a class="headerlink" href="#x-towers" title="Permanent link">😅</a></h3>
+<h3 id="x-towers">X - Towers<a class="headerlink" href="#x-towers" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>咕咕掉了。</p>
 </blockquote>

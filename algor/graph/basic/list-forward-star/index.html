@@ -3214,14 +3214,14 @@
 
   <h1>链式前向星</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>链式前向星本质上是一个邻接表的结构，大概长成这样子：</p>
 <p><a href="https://imgse.com/i/xBNuOP"><img alt="xBNuOP.png" src="https://s1.ax1x.com/2022/10/16/xBNuOP.png" /></a></p>
 <p>head 就是表头，Next 表示当前节点指向的下一个节点，ver 则储存这个节点对应原图的哪一个顶点。</p>
 <p>其本质和 Vector 是类似的，你可以<strong>简单的</strong>理解成把几个 Vector “堆叠” 在一起。</p>
 <p>每次插入的时候是在链表开头插入，注意表头也是要储存元素的。</p>
 <p>然后因为无向图要加反向边，一般在加的时候都是连续加的，所以可以利用成对变换访问反向边。</p>
-<h2 id="_2">关于写法问题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">关于写法问题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>我的写法很奇怪，巨 TM 奇怪：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

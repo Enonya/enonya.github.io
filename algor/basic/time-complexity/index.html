@@ -3253,11 +3253,11 @@
 
   <h1>时间复杂度分析</h1>
 
-<h2 id="_1">时间复杂度分析<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
-<h3 id="_2">基本操作数<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h2 id="_1">时间复杂度分析<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_2">基本操作数<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>计算机执行的一次赋值，一次运算，一次对内存的访问都叫做一次基本操作。</p>
 <p>一般都会用一个算法在某个数据规模下的基本操作数进行计数以描述算法的复杂度。</p>
-<h3 id="_3">时间复杂度<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h3 id="_3">时间复杂度<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>一般来说，衡量一个算法的时间复杂度，都需要在数据规模下看他的运行时间增长趋势。</p>
 <p>说白了，就是用一个函数 <span class="arithmatex">\(f\)</span>，对于一个算法建立起从数据规模到运行时间的映射。</p>
 <p>而运行时间一般都使用基本操作的数量来描述，再根据计算机实际的硬件配置（单位时间能进行多少次基本操作）来看在计算机上实际的运行时间。</p>
@@ -3268,7 +3268,7 @@
 <li>平均复杂度（期望复杂度），当输入数据规模随机的时候的复杂度，就是各个数据规模下复杂度的平均。</li>
 <li>均摊复杂度，多次操作的总复杂度除以操作次数，就是单次操作的复杂度，（注意和平均复杂度做区分）</li>
 </ul>
-<h3 id="_4">渐进记号<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">渐进记号<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>渐进符号是函数的阶的规范描述。简单来说，渐进符号忽略了一个函数中增长较慢的部分以及各项的系数（在时间复杂度相关分析中，系数一般被称作“常数”），而保留了可以用来表明该函数增长趋势的重要部分。</p>
 <p>所以说在计算时间复杂度的时候（在渐进意义上）一般都是直接忽略掉描述基本操作数的多项式的常数项还有一些低次项对于算法时间复杂度的影响的。</p>
 <p>如果你想要卡常，不忽略也是可以的，不过这就不是严谨的时间复杂度的记法了。</p>
@@ -3290,17 +3290,17 @@
 <p>由换底公式 <span class="arithmatex">\(\log_ab = \dfrac{\log_cb}{\log_ca}\)</span> 可以知道：<span class="arithmatex">\(\log_a n=\log_2 n\times\log_a2\)</span>。</p>
 <p>而 <span class="arithmatex">\(\log_a2\)</span> 是一个常数，在渐进意义下就被忽略了。</p>
 </details>
-<h3 id="_5">常数因子<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">常数因子<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>一般说一个算法有几倍常数的时候，一般是说实际跑起来的基本操作数的数量级是算出来的时间复杂度的几倍。</p>
 <p>比如我有一个算法是 <span class="arithmatex">\(O(n)\)</span> 的，但是实际上跑出来的基本操作数是 <span class="arithmatex">\(4n\)</span> 级别的，那我就会说我的算法有 4 倍常数。</p>
 <p>不过感觉这个是一个比较民间的叫法。</p>
-<h3 id="_6">分析时间复杂度<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">分析时间复杂度<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>就是看一看进行了多少次基础操作就行了。</p>
 <p>递归算法画递归树算每层每个节点复杂度比较好，也可以视情况用主定理，但是主定理就是递归树证明的（。</p>
 <p>然后递推，DP 啊之类的就看循环层数和循环区间乘一下就可以了。</p>
 <p>大部分都是，算每一轮操作的复杂度，然后乘上轮数。</p>
 <p>或者是算每一层的复杂度。</p>
-<h3 id="_7">主定理<a class="headerlink" href="#_7" title="Permanent link">😅</a></h3>
+<h3 id="_7">主定理<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>对于一个递归式算法 <span class="arithmatex">\(T(n) = aT(\dfrac{n}{b}) + f(n)\)</span>，</p>
 <p>其中 <span class="arithmatex">\(n\)</span> 是问题规模大小，<span class="arithmatex">\(a\)</span> 是子问题的个数，<span class="arithmatex">\(\dfrac{n}{b}\)</span> 是每个子问题的大小（规模），<span class="arithmatex">\(f(n)\)</span> 是将原问题分成子问题和将子问题的解合并的时间。</p>
 <p>可以得到一个式子：</p>

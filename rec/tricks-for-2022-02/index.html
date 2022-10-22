@@ -3260,8 +3260,8 @@
 
   <h1>2022年2月练习记录</h1>
 
-<h2 id="tricks">二月 Tricks 整理<a class="headerlink" href="#tricks" title="Permanent link">😅</a></h2>
-<h3 id="acwing97">Acwing97 约数之和<a class="headerlink" href="#acwing97" title="Permanent link">😅</a></h3>
+<h2 id="tricks">二月 Tricks 整理<a class="headerlink" href="#tricks" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="acwing97">Acwing97 约数之和<a class="headerlink" href="#acwing97" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>求 <span class="arithmatex">\(A^B\)</span> 的约数之和，要取模。</p>
 </blockquote>
@@ -3380,7 +3380,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">分治</span><span class="o">/</span><span class="n">等比数列</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing11">Acwing11 背包问题求方案数<a class="headerlink" href="#acwing11" title="Permanent link">😅</a></h3>
+<h3 id="acwing11">Acwing11 背包问题求方案数<a class="headerlink" href="#acwing11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>求方案数，先背包，然后 dp 的时候记录一个 <span class="arithmatex">\(g\)</span> 数组，表示使用不超过当前的空间的方案有多少种。</p>
 <p>根据 <span class="arithmatex">\(f\)</span> 转移的两种情况分开讨论就行。</p>
 <p>不知道为啥，我写个 <span class="arithmatex">\(tmp\)</span> 存 <span class="arithmatex">\(f\)</span> 没转移的 <span class="arithmatex">\(val\)</span> 是错的。</p>
@@ -3471,7 +3471,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">背包</span><span class="o">/</span><span class="n">方案数</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing529-noip2017">Acwing529 [NOIP2017] 宝藏<a class="headerlink" href="#acwing529-noip2017" title="Permanent link">😅</a></h3>
+<h3 id="acwing529-noip2017">Acwing529 [NOIP2017] 宝藏<a class="headerlink" href="#acwing529-noip2017" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>发现本题的要求就是求出一颗生成树，使得按照要求得到的权值和最小。</p>
 <p>并且，题目中要求的“从最初的宝藏屋到当前道路的起点经过的宝藏屋个数”，就是以最初的宝藏屋为root，到当前道路起点的深度。</p>
 <p>设 <span class="arithmatex">\(f[i,msk]\)</span> 表示集合：当前打通的最大深度为 <span class="arithmatex">\(i\)</span> ，打通了状态为 <span class="arithmatex">\(msk\)</span> 的宝藏屋的所有方案。属性为权值和的 Min。</p>
@@ -3619,7 +3619,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">生成树</span><span class="o">/</span><span class="n">状压DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing1073">Acwing1073 树的中心<a class="headerlink" href="#acwing1073" title="Permanent link">😅</a></h3>
+<h3 id="acwing1073">Acwing1073 树的中心<a class="headerlink" href="#acwing1073" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>暴力做就是每个点 dfs 然后取 max。</p>
 <p>但是明显 TLE，所以考虑换根DP。</p>
 <p>第一次 dfs 处理出以 <span class="arithmatex">\(1\)</span> 为根的时候，每一个节点能往下走的距离的最大值和次大值。然后考虑处理出从每个节点往上走的最大值。</p>
@@ -3732,7 +3732,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">换根DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="cf708c-centroids">CF708C Centroids<a class="headerlink" href="#cf708c-centroids" title="Permanent link">😅</a></h3>
+<h3 id="cf708c-centroids">CF708C Centroids<a class="headerlink" href="#cf708c-centroids" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给定一颗树，你有一次将树改造的机会，改造的意思是删去一条边，再加入一条边，保证改造后还是一棵树。</p>
 <p>请问有多少点可以通过改造，成为这颗树的重心？（如果以某个点为根，每个子树的大小都不大于 <span class="arithmatex">\(\dfrac{n}{2}\)</span> ，则称某个点为重心）</p>
@@ -3872,7 +3872,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">换根DP</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing340">Acwing340 通信线路<a class="headerlink" href="#acwing340" title="Permanent link">😅</a></h3>
+<h3 id="acwing340">Acwing340 通信线路<a class="headerlink" href="#acwing340" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>可以将图中某条 <span class="arithmatex">\(1\to n\)</span> 的路径上的 <span class="arithmatex">\(K\)</span> 个边权设置为 <span class="arithmatex">\(0\)</span>。</p>
 <p>定义这条路径的花费为设置后路径上所有边权的最大值。</p>
@@ -3982,7 +3982,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nl">Tag</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SPFA</span><span class="o">/</span><span class="mo">01</span><span class="n">二分</span><span class="o">/</span><span class="n">分层图</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="acwing1148">Acwing1148 秘密的牛奶运输<a class="headerlink" href="#acwing1148" title="Permanent link">😅</a></h3>
+<h3 id="acwing1148">Acwing1148 秘密的牛奶运输<a class="headerlink" href="#acwing1148" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>求无向联通带权图 <span class="arithmatex">\(G\)</span> 的严格次小生成树。</p>
 </blockquote>

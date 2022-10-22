@@ -3232,10 +3232,10 @@
 
   <h1>CF1637F</h1>
 
-<h2 id="cf1637f-towers">CF1637F Towers<a class="headerlink" href="#cf1637f-towers" title="Permanent link">😅</a></h2>
+<h2 id="cf1637f-towers">CF1637F Towers<a class="headerlink" href="#cf1637f-towers" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>比较有意思的一个点是，我昨天给初一的神仙讲了两道换根（CF708C，uoj105），顺便总结了个套路。</p>
 <p>然后今天早上打 VP 就遇到了 =_=</p>
-<h3 id="textdescrption"><span class="arithmatex">\(\text{Descrption}\)</span><a class="headerlink" href="#textdescrption" title="Permanent link">😅</a></h3>
+<h3 id="textdescrption"><span class="arithmatex">\(\text{Descrption}\)</span><a class="headerlink" href="#textdescrption" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>You are given a tree which has <span class="arithmatex">\(n\)</span> vertices with a height <span class="arithmatex">\(h\)</span> on it.</p>
 <p>You could put any numbers of tower on vertices, and you could choose the value of the tower <span class="arithmatex">\(e\)</span>.</p>
@@ -3243,7 +3243,7 @@
 <p>Your goal is to let all vertex become good vertex,and minumim your cost.</p>
 <p>If you put a tower and its <span class="arithmatex">\(e=value\)</span>, then your total cost will be added <span class="arithmatex">\(value\)</span>.  </p>
 </blockquote>
-<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">😅</a></h3>
+<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>首先我们可以发现一个结论，如果假定了树的根节点，那么每一个叶子节点都必须放一个 tower。</p>
 <p>然后又可以发现一个结论，在假定了根节点的情况下，如果节点 <span class="arithmatex">\(u\)</span> 是有信号的的，那么 <span class="arithmatex">\(u\)</span> 的子树当中必然有至少一个 tower，满足这个 tower 的 <span class="arithmatex">\(e\ge h_u\)</span> 。</p>
 <p>上面的结论全部基于 “根节点假定” 的情况。</p>
@@ -3255,7 +3255,7 @@
 <p>然后对于根节点，只需要让它的两个互不相同的子树当中有两个 tower 的 <span class="arithmatex">\(e=h_{root}\)</span> 即可。 </p>
 <p>如果说这个 <span class="arithmatex">\(h\)</span> 最大的点不是 <span class="arithmatex">\(root\)</span> ，那么它就会在某个子树里面，就会导致子树里需要多放几个 <span class="arithmatex">\(e=h_{max}\)</span> 的 tower，明显不是最优的。</p>
 <p>所以我们就直接令这个 <span class="arithmatex">\(h\)</span> 最大的点为 <span class="arithmatex">\(root\)</span> ，然后递归下去处理就行了。</p>
-<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">😅</a></h3>
+<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note">
 <summary>实现</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

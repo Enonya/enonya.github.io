@@ -3245,15 +3245,15 @@
 
   <h1>20220413B组</h1>
 
-<h2 id="b">B 组模拟赛部分题解<a class="headerlink" href="#b" title="Permanent link">😅</a></h2>
+<h2 id="b">B 组模拟赛部分题解<a class="headerlink" href="#b" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>Apr 13<sup>rd</sup> 2022</p>
 </blockquote>
-<h3 id="t3">T3 团不过<a class="headerlink" href="#t3" title="Permanent link">😅</a></h3>
-<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">😅</a></h4>
+<h3 id="t3">T3 团不过<a class="headerlink" href="#t3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p><a href="https://imgtu.com/i/LKh7Bn"><img alt="LKh7Bn.png" src="https://s1.ax1x.com/2022/04/13/LKh7Bn.png" /></a></p>
 <p><span class="arithmatex">\(n \le 10^7\)</span></p>
-<h4 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">😅</a></h4>
+<h4 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>一定要注意到一个条件：“石子数互不相同”，我被这个坑了/kk。</p>
 <p>首先可以考虑简单一点的情况。</p>
 <p>设 <span class="arithmatex">\(dp_{i,j}\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 堆石子，当前异或和为 <span class="arithmatex">\(j\)</span> 时先手必胜的方案数。</p>
@@ -3289,7 +3289,7 @@
 <div class="arithmatex">\[\Rightarrow f_{i-2} \times (i - 1) \times(2^n-i+1)\]</div>
 <p>所以得到方程：</p>
 <div class="arithmatex">\[f_{i} = p_{i-1} - f_{i-1} - f_{i-2} \times (i - 1) \times(2^n-i+1)\]</div>
-<h4 id="code">Code<a class="headerlink" href="#code" title="Permanent link">😅</a></h4>
+<h4 id="code">Code<a class="headerlink" href="#code" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <details class="note">
 <summary>团不过</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

@@ -3240,7 +3240,7 @@
 
   <h1>背包 DP</h1>
 
-<h2 id="01">01 背包<a class="headerlink" href="#01" title="Permanent link">😅</a></h2>
+<h2 id="01">01 背包<a class="headerlink" href="#01" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给你 <span class="arithmatex">\(n\)</span> 个物品，<span class="arithmatex">\(m\)</span> 的容量，每个物品有体积 <span class="arithmatex">\(v_i\)</span> 和价值 <span class="arithmatex">\(w_i\)</span>，问你能获得的价值 <span class="arithmatex">\(\max\)</span>。</p>
 </blockquote>
@@ -3318,7 +3318,7 @@ dp(i, j) = \max(dp(i - 1, j), dp(i - 1, j - v_i) + w_i (\text{if } j \ge v_i.))
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_1">完全背包<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">完全背包<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给你 <span class="arithmatex">\(n\)</span> 种物品，<span class="arithmatex">\(m\)</span> 的容量，每种物品有体积 <span class="arithmatex">\(v_i\)</span> 和价值 <span class="arithmatex">\(w_i\)</span>，每种物品可以有无穷多个，问你能获得的价值 <span class="arithmatex">\(\max\)</span>。</p>
 </blockquote>
@@ -3349,19 +3349,19 @@ dp(i, j) = \max(dp(i - 1, j), dp(i, j - v_i) + w_i(\text{if } j \ge v_i.))
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_2">多重背包<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">多重背包<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>咕咕咕掉了</p>
 </blockquote>
-<h2 id="_3">分组背包<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">分组背包<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>咕咕咕掉了</p>
 </blockquote>
-<h2 id="_4">树上背包<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
+<h2 id="_4">树上背包<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>咕咕咕掉了</p>
 </blockquote>
-<h2 id="_5">状态的至多，恰好，至少<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h2 id="_5">状态的至多，恰好，至少<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>最主要的区别就是他们的字面意思，使用对应状态的时候要想清楚这种对应的状态要怎么写。</p>
 <p>初始值和终态要根据状态本身的<strong>定义</strong>来写。</p>
 <p>这里假定需要求解的问题是普通的01背包，状态设计为二维，无滚动数组，只需要价值最大即可，没有恰好装满的条件。</p>

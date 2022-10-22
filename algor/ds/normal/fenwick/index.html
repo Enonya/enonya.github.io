@@ -3330,7 +3330,7 @@
 
   <h1>树状数组</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>数论里面有一个很经典的结论，任意正整数都能被唯一拆分成若干个不同的 <span class="arithmatex">\(2\)</span> 的次幂的和</p>
 <p>转化一下，对于前缀 <span class="arithmatex">\([1,x]\)</span>，假设 <span class="arithmatex">\(x\)</span> 可以被拆分成 <span class="arithmatex">\(2^{c_1} + 2^{c_2} + 2^{c_3} + \dots 2^{c_m}\)</span>，那么 <span class="arithmatex">\([1,x]\)</span> 就可以被拆分成 <span class="arithmatex">\(m\)</span> 个小区间：<span class="arithmatex">\([1, 2^{c_1}], [2^{c_1} + 1, 2^{c_1} + 2^{c_2}], \dots [2^{c_m - 1} + 1, 2^{c_m}]\)</span>。</p>
 <p>其中 <span class="arithmatex">\(m = O(\log x), c_i \in [0, m], c_1 &gt; c_2 &gt; c_3 \dots &gt; c_m\)</span>。</p>
@@ -3365,8 +3365,8 @@
 <li>第 <span class="arithmatex">\(i\)</span> 层的节点个数为 <span class="arithmatex">\(\lfloor\dfrac{n + 1}{2^i}\rfloor\)</span></li>
 <li>第 <span class="arithmatex">\(i\)</span> 层的节点本质上是在确定 <span class="arithmatex">\(\text{lowbit}\)</span> 之后，不断在 <span class="arithmatex">\(\text{lowbit}\)</span> 后面的位放 <span class="arithmatex">\(1\)</span>（前面不能放，不然 <span class="arithmatex">\(\text{lowbit}\)</span> 就变了）。</li>
 </ul>
-<h2 id="_2">操作<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="_3">单点修改<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="_2">操作<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_3">单点修改<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>比较简单，修改位置 <span class="arithmatex">\(a(i)\)</span>，本质上就是先修改 <span class="arithmatex">\(t(i)\)</span>，然后向上不断更新父节点权值就行了。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -3382,7 +3382,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>复杂度是 <span class="arithmatex">\(O(\log n)\)</span>。</p>
-<h3 id="_4">建树<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">建树<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>直接对于每个 <span class="arithmatex">\(a(i)\)</span>，<span class="arithmatex">\(\text{add}(i, a(i))\)</span> 即可。</p>
 <p>不过这样复杂度是 <span class="arithmatex">\(O(n\log n)\)</span> 的，还有两种 <span class="arithmatex">\(O(n)\)</span> 建树的方法：</p>
 <p>法一：直接处理前缀和，然后赋值给 <span class="arithmatex">\(t\)</span> （要消耗空间换时间）。</p>
@@ -3398,7 +3398,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_5">查询前缀和<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">查询前缀和<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>直接利用 <span class="arithmatex">\(\text{lowbit}\)</span> 扫一遍 <span class="arithmatex">\([1,x]\)</span> 分成的 <span class="arithmatex">\(O(\log x)\)</span> 个小区间就行，</p>
 <p>因为定义了 <span class="arithmatex">\(t(x) = \sum\limits_{i = x - \text{lowbit}(x) + 1}^x a(i)\)</span>，所以直接累加就行了。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -3420,7 +3420,7 @@
 </td></tr></table>
 <p>复杂度 <span class="arithmatex">\(O(\log n)\)</span>。</p>
 <p>区间查询减一下就行。</p>
-<h3 id="_6">时间戳优化<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">时间戳优化<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>对付多组数据很常见的技巧。</p>
 <p>如果每次输入新数据时，都暴力清空树状数组，就可能会造成超时。</p>
 <p>因此使用 <span class="arithmatex">\(tag\)</span> 标记，存储当前节点上次使用时间（即最近一次是被第几组数据使用）。每次操作时判断这个位置 <span class="arithmatex">\(tag\)</span> 中的时间和当前时间是否相同，就可以判断这个位置应该是 <span class="arithmatex">\(0\)</span> 还是当前数据的 <span class="arithmatex">\(a\)</span> 数组内的值。</p>
@@ -3459,8 +3459,8 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_7">扩展<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
-<h3 id="_8">区间修改单点查询<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<h2 id="_7">扩展<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_8">区间修改单点查询<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>用树状数组维护差分数组 <span class="arithmatex">\(c\)</span> 即可。</p>
 <p>单点查直接用树状数组求前缀和。</p>
 <details class="note">
@@ -3591,7 +3591,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_9">区间修改区间查询<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h3 id="_9">区间修改区间查询<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>还是维护差分数组，写出已知条件可以得到：<span class="arithmatex">\(a(i) = \sum\limits_{j = 1}^{i} c(j)\)</span>。</p>
 <p>然后区间查询可以转化成前缀求和，本质上是求这个东西： <span class="arithmatex">\(\sum\limits_{j = 1}^i a(j) = \sum\limits_{j = 1}^{i}\sum\limits_{k = 1}^j c(k)\)</span>。</p>
 <p>但是直接求复杂度过高没法接受，考虑怎么把 Sigma 拆掉（减少），转化成几个可以维护前缀和的式子用树状数组维护。</p>
@@ -3738,7 +3738,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_10">单点修改矩阵求和<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
+<h3 id="_10">单点修改矩阵求和<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这个也比较简单，类比一维的树状数组，可以得到 <span class="arithmatex">\(t(x,y)\)</span> 表示 <span class="arithmatex">\((x - \text{lowbit}(x) + 1, y - \text{lowbit}(y) + 1) \to (x, y)\)</span> 的子矩阵和，然后 <span class="arithmatex">\(\log^2\)</span> 求一下，询问直接二维前缀和减一减就行了。</p>
 <details class="note">
 <summary>Code</summary>
@@ -3887,7 +3887,7 @@
 </td></tr></table>
 </details>
 <p>注意不要忘了记录一下 <span class="arithmatex">\(y\)</span> 的值，每次循环结束重新赋值一次。</p>
-<h3 id="_11">矩阵修改单点查询<a class="headerlink" href="#_11" title="Permanent link">😅</a></h3>
+<h3 id="_11">矩阵修改单点查询<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这个直接维护二维的差分数组就行，套路和一维一样。</p>
 <details class="note">
 <summary>Code</summary>
@@ -4037,7 +4037,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_12">矩阵修改矩阵查询<a class="headerlink" href="#_12" title="Permanent link">😅</a></h3>
+<h3 id="_12">矩阵修改矩阵查询<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>类比区间修改区间查询的套路，算每个 <span class="arithmatex">\(c(u,v)\)</span> 在求二维前缀 <span class="arithmatex">\((1, 1) \to (i, j)\)</span> 的答案的时候被算了多少次，然后推个式子拆掉 Sigma，常数项和变量分开求和（参变分离）就行。</p>
 <div class="arithmatex">\[
 a(i, j ) = \sum\limits_{x =1}^{i}\sum\limits_{y = 1}^{j} c(i,j)
@@ -4262,14 +4262,14 @@ a(i, j ) = \sum\limits_{x =1}^{i}\sum\limits_{y = 1}^{j} c(i,j)
 </details>
 <p>感觉区间修区间查，矩阵修矩阵查都运用了某种比较经典的套路，似乎可以记下来以后用？</p>
 <p><strong>大概就是在求和/求乘积或者干什么的时候，分离包含多变量的项，把每个变量都提出来单独维护，让变量和变量之间相互独立，不同时维护多个变量导致思路过于复杂。</strong></p>
-<h3 id="_13">区间最值<a class="headerlink" href="#_13" title="Permanent link">😅</a></h3>
+<h3 id="_13">区间最值<a class="headerlink" href="#_13" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>显然最大最小值没有区间可减性，所以不能用前缀和减。</p>
 <p>然后虽然可以求最值，但是实际上挺麻烦而且不是很通用。</p>
 <p>静态最值不如直接写 st 表，动态最值就算只支持单点修也挺麻烦。</p>
 <p>个人觉得没有必要，直接 segment tree 就行了。</p>
 <p>不过如果只是问前缀最值+单点修改那肯定就写树状数组，实现过于简单懒得写，可以看看这道题里写的：<a href="../../../../rec/atcf-for-2022-04/#cf1668dcf1667b-optimal-partition">Optimal Partition</a> </p>
-<h2 id="_14">应用<a class="headerlink" href="#_14" title="Permanent link">😅</a></h2>
-<h3 id="_15">求逆序对<a class="headerlink" href="#_15" title="Permanent link">😅</a></h3>
+<h2 id="_14">应用<a class="headerlink" href="#_14" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_15">求逆序对<a class="headerlink" href="#_15" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>先离散化，在值域上建立树状数组（就是用树状数组维护桶）。</p>
 <p>扫描 <span class="arithmatex">\(n \to 1\)</span>，对于 <span class="arithmatex">\(a(i)\)</span>，它能和 <span class="arithmatex">\(a(i + 1) \sim a(n)\)</span> 构成的逆序对个数就是当前树状数组上 <span class="arithmatex">\([1,a(i) - 1]\)</span> 的前缀和。</p>
 <p>累加答案之后，执行 <span class="arithmatex">\(\text{add}(a(i), 1)\)</span> 即可。</p>
@@ -4285,7 +4285,7 @@ a(i, j ) = \sum\limits_{x =1}^{i}\sum\limits_{y = 1}^{j} c(i,j)
 <span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_16">三元逆序对<a class="headerlink" href="#_16" title="Permanent link">😅</a></h3>
+<h3 id="_16">三元逆序对<a class="headerlink" href="#_16" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>求满足 <span class="arithmatex">\(i &lt; j &lt; k, a(i) &gt; a(j) &gt; a(k)\)</span> 的 <span class="arithmatex">\((i,j,k)\)</span> 的个数。</p>
 <p>和二元逆序对本质一样，离散化之后维护两个树状数组，一个维护逆序对，一个维护顺序对，最后对于每个位置乘法原理一下即可。</p>
 

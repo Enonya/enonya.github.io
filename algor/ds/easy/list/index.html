@@ -3248,12 +3248,12 @@
 
   <h1>链表</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这里说的链表是双向链表，它支持在任意位置插入或者删除元素，但是只能按照顺序访问。</p>
 <p>一个双向链表的结点通常由元素值 <span class="arithmatex">\(val\)</span> ，指向下一个节点的指针 <span class="arithmatex">\(next\)</span> 和指向上一个节点的指针 <span class="arithmatex">\(prev\)</span></p>
 <p>一般来说我们会额外建立表头 <span class="arithmatex">\(head\)</span> 和表尾 <span class="arithmatex">\(tail\)</span> 指针，并将它们首尾相连，来避免不必要的问题。</p>
-<h2 id="_2">实现<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="_3">初始化<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="_2">实现<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_3">初始化<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>初始化链表只需要把 <span class="arithmatex">\(head\)</span> 的 <span class="arithmatex">\(next\)</span> 指向 <span class="arithmatex">\(tail\)</span> ， <span class="arithmatex">\(tail\)</span> 的 <span class="arithmatex">\(prev\)</span> 指向 <span class="arithmatex">\(head\)</span> 即可</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -3264,7 +3264,7 @@
 <span class="p">}</span><span class="w"> </span><span class="c1">// init new List</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_4">插入元素<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">插入元素<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>在节点 <span class="arithmatex">\(p\)</span> 之后插入一个节点 <span class="arithmatex">\(q\)</span> ，并且节点值为 <span class="arithmatex">\(val\)</span> 。</p>
 <p>我们只需要让 <span class="arithmatex">\(p\)</span> 的 <span class="arithmatex">\(next\)</span> 节点的 <span class="arithmatex">\(prev\)</span> 指向 <span class="arithmatex">\(q\)</span> ，让 <span class="arithmatex">\(q\)</span> 和 <span class="arithmatex">\(p\)</span>  以及原来的 <span class="arithmatex">\(p.next\)</span> 相连即可。</p>
 <p>最后把 <span class="arithmatex">\(p\)</span> 的 <span class="arithmatex">\(next\)</span> 指向 <span class="arithmatex">\(q\)</span> ，注意是最后，不然你在前面操作的时候就会让 <span class="arithmatex">\(q\)</span> 的 <span class="arithmatex">\(prev\)</span> 指向自己的。</p>
@@ -3279,7 +3279,7 @@
 <span class="p">}</span><span class="w"> </span><span class="c1">// insert a element ,value is val, after p</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_5">删除元素<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">删除元素<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>删除一个节点 <span class="arithmatex">\(p\)</span> 也比较简单，只需要把 <span class="arithmatex">\(p\)</span> 的 <span class="arithmatex">\(prev\)</span> 以及 <span class="arithmatex">\(next\)</span> 链接起来即可。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -3290,7 +3290,7 @@
 <span class="p">}</span><span class="w"> </span><span class="c1">// remove p</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_6">清空链表<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">清空链表<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>回收链表内存的话只需要让 <span class="arithmatex">\(head\)</span> 一步步逼近 <span class="arithmatex">\(tail\)</span> ，在逼近的过程中把访问过的 <span class="arithmatex">\(head.prev\)</span> 删除即可。</p>
 <p>注意这里要先跳 <span class="arithmatex">\(next\)</span> 之后再删除 <span class="arithmatex">\(prev\)</span> ，不然很容易会访问无效内存的，但是我们开头的连接链表的首尾就完美的解决了这个问题。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

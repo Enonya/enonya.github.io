@@ -3262,7 +3262,7 @@
 
   <h1>普通分块</h1>
 
-<h2 id="_1">原理<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">原理<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>非常简单且暴力，以区间加，区间和为例。</p>
 <p>考虑把序列分成 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块，其中第 <span class="arithmatex">\(i,(1 \le i \le \lfloor\sqrt{n}\rfloor)\)</span> 段的边界是 <span class="arithmatex">\(l=(i-1)\times \lfloor\sqrt{n}\rfloor +1,r=i \times \lfloor\sqrt{n}\rfloor\)</span> 。</p>
 <p>对于第 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块，如果说第 <span class="arithmatex">\(\lfloor\sqrt{n}\rfloor\)</span> 块的右边界没有达到 <span class="arithmatex">\(n\)</span> ，那么就让第 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块维护区间 <span class="arithmatex">\([i\times \lfloor \sqrt{n} \rfloor +1,n]\)</span> 即可。</p>
@@ -3282,8 +3282,8 @@
 <li>非整块部分暴力扫，整块部分用块内和加上 <span class="arithmatex">\(\text{add}\)</span> 标记。</li>
 </ol>
 <p>因为最多只有 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块，所以复杂度是 <span class="arithmatex">\(\text{O}((n+q)\times \sqrt{n})\)</span>。</p>
-<h2 id="_2">习题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="loj6277-1">LOJ6277. 数列分块入门 1<a class="headerlink" href="#loj6277-1" title="Permanent link">😅</a></h3>
+<h2 id="_2">习题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="loj6277-1">LOJ6277. 数列分块入门 1<a class="headerlink" href="#loj6277-1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间加单点查，只需要分块的时候记录 <span class="arithmatex">\(\text{add}\)</span> 配以暴力修改。</p>
 <p>查询时带上标记即可。</p>
 <details class="note">
@@ -3420,7 +3420,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="luogu3372-1">Luogu3372 【模板】线段树 1<a class="headerlink" href="#luogu3372-1" title="Permanent link">😅</a></h3>
+<h3 id="luogu3372-1">Luogu3372 【模板】线段树 1<a class="headerlink" href="#luogu3372-1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间加区间和，分块之后按照上面“原理”部分的做法来就行。</p>
 <p>只需要注意一下什么时候要更新块内和，什么时候要打标记就行。</p>
 <details class="note">
@@ -3629,7 +3629,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="loj6278-2">LOJ6278. 数列分块入门 2<a class="headerlink" href="#loj6278-2" title="Permanent link">😅</a></h3>
+<h3 id="loj6278-2">LOJ6278. 数列分块入门 2<a class="headerlink" href="#loj6278-2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间加，区间查询比 <span class="arithmatex">\(c^2\)</span> 小的数的个数。</p>
 <p>首先继续分块，仍旧维护每一个块的 <span class="arithmatex">\(\text{add}\)</span> 标记。</p>
 <p>考虑如何查询区间有多少个数比 <span class="arithmatex">\(c^2\)</span> 小。</p>
@@ -3860,7 +3860,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="loj6279-3">LOJ6279. 数列分块入门 3<a class="headerlink" href="#loj6279-3" title="Permanent link">😅</a></h3>
+<h3 id="loj6279-3">LOJ6279. 数列分块入门 3<a class="headerlink" href="#loj6279-3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间加，区间询问前驱。</p>
 <p>沿用上一个题的思想，我们小段暴力，大段二分。</p>
 <p>但是如果直接对块内二分的话可能会因为没去重而爆炸。</p>
@@ -4095,7 +4095,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="loj6280-4">LOJ6280. 数列分块入门 4<a class="headerlink" href="#loj6280-4" title="Permanent link">😅</a></h3>
+<h3 id="loj6280-4">LOJ6280. 数列分块入门 4<a class="headerlink" href="#loj6280-4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间加，区间求和并取模。</p>
 <p>和 Luogu3372 基本没有区别，只是在查询的时候多了个取模而已。</p>
 <details class="note">
@@ -4300,7 +4300,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="loj6281-5">LOJ6281. 数列分块入门 5<a class="headerlink" href="#loj6281-5" title="Permanent link">😅</a></h3>
+<h3 id="loj6281-5">LOJ6281. 数列分块入门 5<a class="headerlink" href="#loj6281-5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间开根号并向下取整，区间求和。</p>
 <p>我们先考虑一个好写一点的做法：</p>
 <p>还是分块，对于任意的被包含在修改区间的完整块直接全部暴力开根号，小块也是全部暴力开根号。</p>

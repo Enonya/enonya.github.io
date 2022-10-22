@@ -3285,8 +3285,8 @@
 
 
 
-<h1 id="_1">模拟退火从精通到入土<a class="headerlink" href="#_1" title="Permanent link">😅</a></h1>
-<h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h1 id="_1">模拟退火从精通到入土<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h1>
+<h2 id="_2">简介<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>首先我们需要知道一种叫爬山算法的东西。</p>
 <p>基本思路就是在<strong>当前</strong>的最优解附近找到一个新的解，如果新的解更优则转移，反之不变。</p>
 <p>你发现这样子很容易陷入局部的最优解当中，并且只能解决单峰函数的情况。</p>
@@ -3296,7 +3296,7 @@
 <p>并且基于金属退火的原理，它如果跳出了全局最优解，在温度不断下降的时候，扰动的幅度越来越小，也是大概率会跳回来的。</p>
 <p>一般我们会用于一些方案数极大的，或者是正常算法难以想到的题当中。</p>
 <p>当然考场上不推荐使用，因为它毕竟是个随机化算法（除非你就没想过打正解）。</p>
-<h2 id="_3">基本原理<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">基本原理<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>它基于一个工业上的热处理工艺——金属退火，也可以说基于热力学原理。</p>
 <blockquote>
 <p>金属退火：将金属加热到一定温度，保持足够时间，然后以适宜速度冷却(通常是缓慢冷却，有时是控制冷却)的一种金属热处理工艺。</p>
@@ -3309,7 +3309,7 @@
 <p>这个新的解和 <span class="arithmatex">\(X\)</span> 以及当前解的系统能量 <span class="arithmatex">\(F(X)\)</span> 有关。</p>
 <p>如果 <span class="arithmatex">\(X^\prime\)</span> 更优秀那么接受这个新最优解，记录全局答案。</p>
 <p>反之以一个关于 <span class="arithmatex">\(F(X^\prime)\)</span> 和温度 <span class="arithmatex">\(T\)</span> 的概率接受这个非最优解 <span class="arithmatex">\(X^\prime\)</span>，<span class="arithmatex">\(T\)</span> 具体是什么下文会提到。</p>
-<h2 id="_4">实现<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
+<h2 id="_4">实现<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>我们需要先定义几个变量以方便描述：</p>
 <ul>
 <li>当前温度 <span class="arithmatex">\(T\)</span>。</li>
@@ -3317,14 +3317,14 @@
 <li>最终温度 <span class="arithmatex">\(T_k\)</span> ，一般取一个极小的正数，大概在 <span class="arithmatex">\([10^{-15},10^{-8}]\)</span> 上。</li>
 <li>降温系数 <span class="arithmatex">\(\delta\)</span> ，一般取一个在 <span class="arithmatex">\((0.985,0.997)\)</span> 上的一个数，推荐 <span class="arithmatex">\(0.995\)</span>。</li>
 </ul>
-<h3 id="_5">计算系统能量<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">计算系统能量<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>写计算系统能量的函数就相当于写出 <span class="arithmatex">\(F(X)\)</span> 的表达式。</p>
 <p>我们需要根据题目所给的条件 <span class="arithmatex">\(X\)</span> 计算出在解为 <span class="arithmatex">\(X\)</span> 的时候的系统能量 <span class="arithmatex">\(F(X)\)</span>。</p>
 <p>举一个比较简单的例子，假设 <span class="arithmatex">\(X\)</span> 就代表平面直角坐标系当中的 <span class="arithmatex">\(x\)</span> 坐标。</p>
 <p><span class="arithmatex">\(F(X)\)</span> 则是一个二次函数 <span class="arithmatex">\(y=Ax^2+Bx+C\)</span> 。</p>
 <p>那么你计算系统能量的函数 <span class="arithmatex">\(F(X)\)</span> 就只需要返回 <span class="arithmatex">\(AX^2+BX+C\)</span> 即可。</p>
 <p>更多的实例会在下面的例题中提到。</p>
-<h3 id="_6">降温<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">降温<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>最开始的时候令 <span class="arithmatex">\(T=T_0\)</span>。</p>
 <p>每次降温只需要给 <span class="arithmatex">\(T\)</span> 乘上 <span class="arithmatex">\(\delta\)</span> 即可（降温要在接受新解之后）。</p>
 <p>直到 <span class="arithmatex">\(T \le T_k\)</span> 的时候再停止降温并退出模拟退火的过程。</p>
@@ -3333,7 +3333,7 @@
 <p>你发现，随着温度的下降，解的扰动幅度也越来越小，最终接近于最优解。</p>
 <p>这就好比分子永不停息的做无规则运动一样，而且温度越高运动的越快，幅度越大。</p>
 <p>模拟退火实际上就是在模拟类似这个的过程。</p>
-<h3 id="_7">生成一个新解<a class="headerlink" href="#_7" title="Permanent link">😅</a></h3>
+<h3 id="_7">生成一个新解<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>每次，我们会在<strong>上一个被接受的解</strong>的基础上随机生成一个新的解。</p>
 <p>一定要注意，此处使用的是上一个被接受的解而不是当前的全局最优解。</p>
 <p>不然你就和爬山算法没有太大的差异了ovo。</p>
@@ -3351,7 +3351,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>一般要看题目的情况而定。</p>
-<h3 id="_8">转移<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<h3 id="_8">转移<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这个转移是模拟退火的精髓之一，它利用了 Metropolis 准则。</p>
 <p>我们定义 <span class="arithmatex">\(\Delta E\)</span> 表示当前新生成的解 <span class="arithmatex">\(X\)</span> 的能量 <span class="arithmatex">\(F(X)\)</span> 和目前的全局最优解的能量 <span class="arithmatex">\(F(X_0)\)</span>的差。</p>
 <p>也就是 <span class="arithmatex">\(\Delta E = F(X)-F(X_0)\)</span> 。</p>
@@ -3384,11 +3384,11 @@
 </td></tr></table>
 <p>因为这个时候在 <code>else if</code> 当中， <span class="arithmatex">\(e^{\dfrac{\Delta E}{T}}\)</span> 是 <span class="arithmatex">\(&gt;1\)</span> 的。</p>
 <p>所以把大于号改成小于号即可。</p>
-<h3 id="_9">其他<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h3 id="_9">其他<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>在退火的时候，为了使答案更加接近我们要的解，一般会记录全局最优解而不是直接使用当前解。</p>
 <p>而且在开始的时候可以直接从定义域当中的平均值开始退火。</p>
 <p>并且，如果时间允许的话，可以在退火过程完成之后再跑一遍类似于模拟退火的过程，以求出更精确的解。</p>
-<h3 id="_10">优化 &amp; 调参<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
+<h3 id="_10">优化 &amp; 调参<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>一般一次退火是远远不够的，所以我们需要多跑几次退火。</p>
 <p>你可以直接跑三到五次。</p>
 <p>也可以直接卡时。</p>
@@ -3419,11 +3419,11 @@
 <p>这个东西是没有啥通法的，只能靠经验和感觉。</p>
 <p>或者你也可以试一试更改随机数种子，比如改成 <code>srand(114514),srand(20061231),srand(time(NULL)),srand(rand())</code>。</p>
 <p>个人推荐后两种。</p>
-<h2 id="_11">例题<a class="headerlink" href="#_11" title="Permanent link">😅</a></h2>
+<h2 id="_11">例题<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>咕咕咕</p>
 </blockquote>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">😅</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <ul>
 <li><a href="https://www.luogu.com.cn/blog/Darth-Che/mu-ni-tui-huo-xue-xi-bi-ji">https://www.luogu.com.cn/blog/Darth-Che/mu-ni-tui-huo-xue-xi-bi-ji</a></li>
 <li><a href="https://m-sea.blog.luogu.org/qian-tan-SA">https://m-sea.blog.luogu.org/qian-tan-SA</a></li>

@@ -3269,11 +3269,11 @@
 
   <h1>轻重链剖分</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>树链剖分分三种，一种是轻重链剖分，一种是长链剖分，还有一种是实链剖分。</p>
 <p>前者较为常用，中间的似乎可以拿来优化 DP（复杂度是 <span class="arithmatex">\(\sqrt{n}\)</span>），后面的那一种用于 LCT。</p>
 <p>下文用重链剖分代替树链剖分。</p>
-<h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>简单来说，重链剖分可以把树上的一类对于点权的操作和询问变为序列/区间上的操作和询问。</p>
 <p>一般这些操作分两类：</p>
 <ol>
@@ -3282,8 +3282,8 @@
 </ol>
 <p>重链剖分可以单次 <span class="arithmatex">\(\text{O}(\log n)\)</span> 的复杂度，快速将子树或者路径上的节点转化为一段或者多段区间。</p>
 <p>再配合以线段树，树状数组等 <span class="arithmatex">\(\log\)</span> 数据结构可以以单次 <span class="arithmatex">\(\text{O}(\log^2 n)\)</span> 的复杂度完成信息的修改和查询。</p>
-<h2 id="_3">预处理(剖分过程)<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
-<h3 id="_4">几个概念<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h2 id="_3">预处理(剖分过程)<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_4">几个概念<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>定义 <span class="arithmatex">\(hson_u\)</span> 表示 <span class="arithmatex">\(u\)</span> 的所有儿子中，子树大小最大的那一个儿子，称为<strong>重儿子</strong>。</p>
 <p>（多个相同任取一个即可）</p>
 <p>其它的儿子称作 <span class="arithmatex">\(u\)</span> 的<strong>轻儿子</strong>。</p>
@@ -3298,7 +3298,7 @@
 <p><span class="arithmatex">\(fat, dep, siz, hson, top, dfn, rnk\)</span></p>
 <p>一张图（图源 <a href="https://oi-wiki.org/graph/hld/">OI-Wiki</a>）：</p>
 <p><a href="https://imgtu.com/i/O54ruj"><img alt="O54ruj.png" src="https://s1.ax1x.com/2022/05/17/O54ruj.png" /></a></p>
-<h3 id="_5">几个性质<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">几个性质<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>1.树上每个节点都属于且仅属于一条重链。</p>
 <p>这个根据上面概念里说的：</p>
 <blockquote>
@@ -3316,7 +3316,7 @@
 <p>4.经过一条轻边 <span class="arithmatex">\((u\to v)\)</span>的时候，<span class="arithmatex">\(siz_v\)</span> 的大小必然是 <span class="arithmatex">\(siz_u\)</span> 的二分之一，可能还少。</p>
 <p>根据这个结论，把一条路径从 <span class="arithmatex">\(\texttt{LCA}\)</span> 拆开从两边分别往下跳重链，跳的次数会在 <span class="arithmatex">\(\text{O}(\log n)\)</span> 级别。</p>
 <p>所以树上任意一条路径都可以拆成 <span class="arithmatex">\(\text{O}(\log n)\)</span> 条重链。</p>
-<h3 id="_6">代码实现<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">代码实现<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3380,7 +3380,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_7">子树操作<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
+<h2 id="_7">子树操作<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个相对比较简单，直接利用 <span class="arithmatex">\(dfn\)</span> 的性质操作即可。</p>
 <p>（基于上面的那个推论）</p>
 <p><code>tr</code> 是一颗线段树，你也可以在信息比较简单的时候用树状数组。</p>
@@ -3399,7 +3399,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_8">路径操作<a class="headerlink" href="#_8" title="Permanent link">😅</a></h2>
+<h2 id="_8">路径操作<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个也比较简单，考虑上面性质的第 4 条。</p>
 <p>我们可以把树上任意一条路径拆成 <span class="arithmatex">\(\text{O}(\log n)\)</span> 条重链。</p>
 <p>然后这个过程可以看成是从 <span class="arithmatex">\(\texttt{LCA}\)</span> 往两边走。</p>
@@ -3470,7 +3470,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="lca">求 LCA<a class="headerlink" href="#lca" title="Permanent link">😅</a></h2>
+<h2 id="lca">求 LCA<a class="headerlink" href="#lca" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>类似路径操作的过程即可。</p>
 <p>也是不断跳重链，然后跳到同一条重链上之后深度小的节点就是 <span class="arithmatex">\(\texttt{LCA}\)</span>。</p>
 <p>常数非常小。</p>

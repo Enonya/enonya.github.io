@@ -3246,18 +3246,18 @@
 
   <h1>ACWing355</h1>
 
-<h2 id="acwing355">Acwing355 异象石<a class="headerlink" href="#acwing355" title="Permanent link">😅</a></h2>
+<h2 id="acwing355">Acwing355 异象石<a class="headerlink" href="#acwing355" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>补充结论的两种证明。</p>
-<h3 id="textquestion"><span class="arithmatex">\(\text{Question}\)</span><a class="headerlink" href="#textquestion" title="Permanent link">😅</a></h3>
+<h3 id="textquestion"><span class="arithmatex">\(\text{Question}\)</span><a class="headerlink" href="#textquestion" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>动态维护树上使得被选中点联通的边集长度之和的最小值，支持选中，取消选中某个节点。</p>
 <p>1e5.</p>
 </blockquote>
-<h3 id="textlemma"><span class="arithmatex">\(\text{Lemma}\)</span><a class="headerlink" href="#textlemma" title="Permanent link">😅</a></h3>
+<h3 id="textlemma"><span class="arithmatex">\(\text{Lemma}\)</span><a class="headerlink" href="#textlemma" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>将所有被选中的节点按照时间戳排序成一圈，答案就是相邻两个节点之间的路径长度值和的二分之一。</p>
 </blockquote>
-<h3 id="textproof1"><span class="arithmatex">\(\text{Proof1}\)</span><a class="headerlink" href="#textproof1" title="Permanent link">😅</a></h3>
+<h3 id="textproof1"><span class="arithmatex">\(\text{Proof1}\)</span><a class="headerlink" href="#textproof1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>分类讨论证法。</p>
 <p>首先有一个结论，一个子树当中的所有节点的时间戳（ dfs 序）必然是连续的一段，反过来也一样。</p>
 <p>考虑最简单的一种情况：被选中的只有三个节点 <span class="arithmatex">\(a,b,c\)</span> （已经排好序）</p>
@@ -3277,14 +3277,14 @@
 <p><a href="https://imgtu.com/i/qkOran"><img alt="qkOran.png" src="https://s1.ax1x.com/2022/03/19/qkOran.png" /></a></p>
 <p>综上所述，在只有三个被选中点的时候，<span class="arithmatex">\(\text{Lemma}\)</span> 一定成立。</p>
 <p>根据数学归纳法可以得到任意多个被选中点的情况，<span class="arithmatex">\(\text{Lemma}\)</span> 得证。</p>
-<h3 id="textproof2"><span class="arithmatex">\(\text{Proof2}\)</span><a class="headerlink" href="#textproof2" title="Permanent link">😅</a></h3>
+<h3 id="textproof2"><span class="arithmatex">\(\text{Proof2}\)</span><a class="headerlink" href="#textproof2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>因为 dfn 连续的一段必然在同一个子树当中。</p>
 <p>考虑 <span class="arithmatex">\(\text{Lemma}\)</span> 的过程，实际上就是在不断的访问某个子树，处理完这个子树当中会被统计的边，然后退出这个子树。</p>
 <p>那就直接看这个深度优先遍历的过程本身，假设你进入到了一个以 <span class="arithmatex">\(fa\)</span> 为根的子树，当前走到了一个有异象石的节点 <span class="arithmatex">\(u\)</span>。</p>
 <p>那么你进入这个子树的时候（也就是处理前面的答案的时候），<span class="arithmatex">\(fa \to u\)</span> 实际上已经被算过一次了，当你给 <span class="arithmatex">\(u\)</span> 进行统计（也就是要退出子树的时候），<span class="arithmatex">\(fa \to u\)</span> 就会被再算一次，并且之后不会回来再次计算。</p>
 <p>推广过后得到：一条连接两个有异象石的节点的路径必然会被计算两次。</p>
 <p>可以知道 <span class="arithmatex">\(\text{Lemma}\)</span> 是正确的。</p>
-<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">😅</a></h3>
+<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note">
 <summary>实现</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

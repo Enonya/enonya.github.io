@@ -3226,12 +3226,12 @@
 
   <h1>最小生成树</h1>
 
-<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给你一个带权无向图，求它的所有生成树当中权值和最小的一个。</p>
 <p>带权无向图 <span class="arithmatex">\(G\)</span> 的生成树 <span class="arithmatex">\(T\)</span> 定义为包含 <span class="arithmatex">\(G\)</span> 的所有节点，由 <span class="arithmatex">\(G\)</span> 当中连接它们的 <span class="arithmatex">\(n-1\)</span> 条边构成的无向联通子图。</p>
 </blockquote>
-<h2 id="_2">两个定理<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">两个定理<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <ol>
 <li>
 <p>任意一颗最小生成树一定包含 <span class="arithmatex">\(G\)</span> 中最小的边（反证法即可）。 </p>
@@ -3242,7 +3242,7 @@
 </ol>
 <p>那么，这个生成树一定包含 <span class="arithmatex">\(|E|-k\)</span> 条边里面连接生成森林的两个不连通节点的权值最小的边。</p>
 <p>证明可以在 zhihu 看看 <a href="https://www.zhihu.com/people/ciwei-78-83">@ciwei</a> 神仙的专栏，其中包括算法正确性的证明。</p>
-<h2 id="kruskal">Kruskal 算法<a class="headerlink" href="#kruskal" title="Permanent link">😅</a></h2>
+<h2 id="kruskal">Kruskal 算法<a class="headerlink" href="#kruskal" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>基本思想是维护图的最小生成森林。</p>
 <p>开始的时候生成森林是空的，每一个节点就是一颗独立的树。</p>
 <p>然后用结论 <span class="arithmatex">\(2\)</span> 维护森林，利用 dsu 维护联通性。</p>
@@ -3304,7 +3304,7 @@
 </td></tr></table>
 </details>
 <p>复杂度 <span class="arithmatex">\(\text{O}(m \log m)\)</span>。</p>
-<h2 id="prim">Prim 算法<a class="headerlink" href="#prim" title="Permanent link">😅</a></h2>
+<h2 id="prim">Prim 算法<a class="headerlink" href="#prim" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>一般用于稠密图。</p>
 <p>最开始确定 <span class="arithmatex">\(1\)</span> 号节点属于最小生成树。</p>
 <p>每一次找到一条权值最小的，且满足它连接的其中一个点 <span class="arithmatex">\(u\)</span> 已经被选入最小生成树里，另一个点 <span class="arithmatex">\(v\)</span> 则未被选中的边。</p>

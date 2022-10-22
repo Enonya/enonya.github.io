@@ -3253,7 +3253,7 @@
 
   <h1>字符串哈希</h1>
 
-<h2 id="hash">字符串 Hash<a class="headerlink" href="#hash" title="Permanent link">😅</a></h2>
+<h2 id="hash">字符串 Hash<a class="headerlink" href="#hash" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>思想和 Hash 没有本质区别。</p>
 <p>要关注的点依旧是怎么设计 Hash function，怎么处理 Hash 冲突。</p>
 <p>考虑把一个字符串映射成一个数，这个利用 Hash function 即可。</p>
@@ -3284,25 +3284,25 @@ H(s) = \sum\limits_{i = 1}^{n} (index(s[i]) \times base^{n - i}) \% mod
 <p>为了降低冲突概率，我们一般使用一对孪生素数，一般是 <span class="arithmatex">\(10^9 + 7, 10^9 + 9\)</span>，当然这个比较容易被卡（因为过于著名）。</p>
 <p>所以可以使用其他的素数对，比如 <span class="arithmatex">\(998244853,10^9+9\)</span> 这种，<span class="arithmatex">\(base\)</span> 一般取 <span class="arithmatex">\(131, 13331\)</span> 这种。</p>
 <p>如果想避免过多的取模，可以使用 ull 存 Hash 值，直接不做任何取模，这样相当于对 <span class="arithmatex">\(2^{64}\)</span> 取模（自然溢出法）</p>
-<h2 id="_1">应用 &amp; 例题<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
-<h3 id="_2">字符串匹配<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h2 id="_1">应用 &amp; 例题<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_2">字符串匹配<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>单模式匹配，直接考虑对于模式串求出它的 Hash 值，然后扫描文本串的所有和模式串长度相等的子串看是否能匹配就行。</p>
 <p>复杂度 <span class="arithmatex">\(O(n)\)</span>。</p>
-<h3 id="_3">最长回文子串<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h3 id="_3">最长回文子串<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑一个经典 Trick，因为回文串的长度显然具有单调性，如果 <span class="arithmatex">\(len\)</span> 长度的可行，那么 <span class="arithmatex">\(len - 2\)</span> 的必然可行。</p>
 <p>所以考虑二分答案 <span class="arithmatex">\(len\)</span>，每次 Check 的时候直接枚举回文中心，比较两边这两个子串的 Hash 值是否相等即可。</p>
 <p>需要预处理前后缀 Hash 值，整体复杂度 <span class="arithmatex">\(O(n \log n)\)</span>。</p>
 <p>这个也可以 Manacher <span class="arithmatex">\(O(n)\)</span> 做。</p>
-<h3 id="_4">最长公共子串<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">最长公共子串<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这里是 <span class="arithmatex">\(m\)</span> 个长度不超过 <span class="arithmatex">\(n\)</span> 的字符串求。</p>
 <p>这个类似回文子串也可以二分。</p>
 <p>check 直接对于所有长度为 <span class="arithmatex">\(mid\)</span> 的子串，Hash 一下分别扔到 <span class="arithmatex">\(n\)</span> 个 Hash table 里面求交集就行，复杂度 <span class="arithmatex">\(O(n\log n/m)\)</span>，目前不太懂为啥是这个复杂度。</p>
 <p>但是它确实比直接 <span class="arithmatex">\(O(n^2)\)</span> dp 效率高。</p>
-<h3 id="_5">本质不同子串个数<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">本质不同子串个数<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这个好像只能 <span class="arithmatex">\(n^2\)</span> 左右复杂度 /ng</p>
 <p>做法就是直接扫一次每个子串，然后把它的 Hash 值扔到一个数组/set里计数就行。</p>
 <p>其本质就是对暴力做了一个优化，有没有更优秀的做法我暂时不知道。</p>
-<h3 id="cf1200e-compress-words">CF1200E Compress Words<a class="headerlink" href="#cf1200e-compress-words" title="Permanent link">😅</a></h3>
+<h3 id="cf1200e-compress-words">CF1200E Compress Words<a class="headerlink" href="#cf1200e-compress-words" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给你 <span class="arithmatex">\(n\)</span> 个字符串，答案串初始为空。第 <span class="arithmatex">\(i\)</span> 步将第 <span class="arithmatex">\(i\)</span> 个字符串加到答案串的后面，
 但是尽量地去掉重复部分（即去掉一个最长的、是原答案串的后缀、也是第 <span class="arithmatex">\(i\)</span> 个串的前缀的字符串），求最后得到的字符串。

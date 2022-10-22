@@ -3214,13 +3214,13 @@
 
   <h1>哈希表</h1>
 
-<h2 id="hash">Hash<a class="headerlink" href="#hash" title="Permanent link">😅</a></h2>
+<h2 id="hash">Hash<a class="headerlink" href="#hash" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>说 Hash table 之前先简单的提一嘴 Hash。</p>
 <p>Hash 的思想就是 mapping，或者说 “映射”。</p>
 <p>它的作用就是 “缩小信息域”，把原来很分散或者范围很大的东西压缩一下，方便处理。</p>
 <p>最常见的应用就是离散化，把 <span class="arithmatex">\(a_i\)</span> 映射成 <span class="arithmatex">\(val(a_i)\)</span>，那从 <span class="arithmatex">\(\{a\} \to val\)</span> 的这个映射就利用了 Hash 的思想。</p>
 <p>一般 Hash 都会有一个 Hash function，用来把对应值映射到一个新的位置上去，比如离散化当中的 Hash function 就是 <span class="arithmatex">\(val\)</span>。</p>
-<h2 id="hash-table">Hash table<a class="headerlink" href="#hash-table" title="Permanent link">😅</a></h2>
+<h2 id="hash-table">Hash table<a class="headerlink" href="#hash-table" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>考虑这样一个问题，给你一个序列 <span class="arithmatex">\(a\)</span>，统计每个数出现了多少次，<span class="arithmatex">\(0\le a_i \le 1e5\)</span>。</p>
 <p>显然会想到直接用桶计数，那么扩展一下问题，令 <span class="arithmatex">\(a_i \in [-10^{18},10^{18}]\)</span>？</p>
 <p>直接统计没法做了，当然你可以离散化之后扫一遍，或者直接利用 STL Map 来实现。</p>

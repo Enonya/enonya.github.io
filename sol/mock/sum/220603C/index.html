@@ -3178,7 +3178,7 @@
 
 
 
-<h1 id="a">A<a class="headerlink" href="#a" title="Permanent link">😅</a></h1>
+<h1 id="a">A<a class="headerlink" href="#a" title="Permanent link">ψ(｀∇´)ψ</a></h1>
 <p>【0:02】 构造 <span class="arithmatex">\(b\)</span> 的一个长度为 <span class="arithmatex">\(n\)</span> 的子序列 <span class="arithmatex">\(c\)</span>，使得 <span class="arithmatex">\(\sum a_ic_i\)</span> 最大。</p>
 <p>感觉就是个排序不等式。</p>
 <p>直接把 <span class="arithmatex">\(a\)</span> 排序，然后把 <span class="arithmatex">\(b\)</span> 排序，取最后的 <span class="arithmatex">\(n\)</span> 位即可。</p>
@@ -3196,7 +3196,7 @@
 <p>【0:18】：写</p>
 <p>【0:25】 ：草了，中间改 assert 的时候忘记把 it1, it2 设置到 b 的两端了，所以错了两次。</p>
 <p>过大样例了，等下捏几组数据玩，懒得捏了，交了过了。</p>
-<h1 id="b">B<a class="headerlink" href="#b" title="Permanent link">😅</a></h1>
+<h1 id="b">B<a class="headerlink" href="#b" title="Permanent link">ψ(｀∇´)ψ</a></h1>
 <p>【0:31】： 感觉一个比较显然的是，对于每个区间我直接 1,2,3,4,5... 拉通。</p>
 <p>然后我先直接这么干（假设没有重叠）。</p>
 <p>然后再处理重叠，差不多就是先按照类似 Stall Reservation 那题把区间排序一下，然后重了的提出来单独一组。</p>
@@ -3244,12 +3244,12 @@
 <p>【2:30】：好像，我T喵是傻喵啊。</p>
 <p>觉得必然是写臭了。</p>
 <p>【2:40】：确实写臭了，改了一下过了。</p>
-<h1 id="c">C<a class="headerlink" href="#c" title="Permanent link">😅</a></h1>
+<h1 id="c">C<a class="headerlink" href="#c" title="Permanent link">ψ(｀∇´)ψ</a></h1>
 <p>【0:53】，要对于 <span class="arithmatex">\(n\)</span> 种情况 <span class="arithmatex">\(n \log n\)</span> 或者 <span class="arithmatex">\(\log^2\)</span> 算答案，均摊到一个情况就是 <span class="arithmatex">\(\log\)</span> 或者 <span class="arithmatex">\(\log^2\)</span>。</p>
 <p>感觉就是直接 jb 一个个扫，累加答案，然后维护一个堆一样的东西。</p>
 <p>比如我维护一个大根堆，每次加入一个 <span class="arithmatex">\(i\)</span> 的时候，如果空间还够就直接把 <span class="arithmatex">\(i\)</span> 扔进去，否则不断弹掉堆顶，但是之后要把弹掉的加进去然后把超了的弹掉。</p>
 <p>这个估计是最坏 <span class="arithmatex">\(n^2\log\)</span> 的，估计只有 50pts，算了看 B 去，等会来打个暴力。</p>
-<h1 id="d">D<a class="headerlink" href="#d" title="Permanent link">😅</a></h1>
+<h1 id="d">D<a class="headerlink" href="#d" title="Permanent link">ψ(｀∇´)ψ</a></h1>
 <p>【1:50】 感觉是简单套路题。</p>
 <p>就是直接二分，然后 <span class="arithmatex">\(dp\)</span> check。<span class="arithmatex">\(dp(i)\)</span> 表示前 <span class="arithmatex">\(i\)</span> 个最多分多少段使得每段的 <span class="arithmatex">\(sum \le mid\)</span>。</p>
 <p>然后可以发现 <span class="arithmatex">\(dp(i) = \max\limits_{j = 0}^{i - 1}\{dp(j) + 1\}, \land (sum(i) - sum(j) \le mid)\)</span></p>
@@ -3265,7 +3265,7 @@
 <p>就是一个后缀最大值，树状数组即可，复杂度小常数 <span class="arithmatex">\(\log^2\)</span>。</p>
 <p>【2:05】 开写。</p>
 <p>【2:20】写完，过了。</p>
-<h1 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">😅</a></h1>
+<h1 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h1>
 <p>总分: 100 + 100 + 0 + 100，如果在当时赛时就是 rk1了。</p>
 <p>代码能力问题，比如 B 那个实现，我一开始直接想的对区间排序之后然后搞，然后发现完全就是麻烦了，直接处理重叠部分就行了。</p>
 <p>B 改过之后的做法：赛时想到直接写了，没记录，于是直接赛后找原题找了个做法一样的老哥的思路复制过来，没时间写了。</p>

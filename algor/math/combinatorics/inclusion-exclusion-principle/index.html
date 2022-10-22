@@ -3269,7 +3269,7 @@
 
 <p>摘录自 <a href="https://oi-wiki.org/math/combinatorics/inclusion-exclusion-principle/">OI-Wiki</a></p>
 <p>我这里 Mathjax 不会显示 <code>\overline</code>，所以用了 <code>\overrightarrow</code> 代替。</p>
-<h2 id="_1">容斥原理<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">容斥原理<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>设 U 中元素有 n 种不同的属性，而第 i 种属性称为 <span class="arithmatex">\(P_i\)</span>，拥有属性 <span class="arithmatex">\(P_i\)</span> 的元素构成集合 <span class="arithmatex">\(S_i\)</span>，那么</p>
 <div class="arithmatex">\[
 \begin{split}
@@ -3281,7 +3281,7 @@
 <div class="arithmatex">\[
 \left|\bigcup_{i=1}^{n}S_i\right|=\sum_{m=1}^n(-1)^{m-1}\sum_{a_i&lt;a_{i+1} }\left|\bigcap_{i=1}^mS_{a_i}\right|
 \]</div>
-<h3 id="_2">证明<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h3 id="_2">证明<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>对于每个元素使用二项式定理计算其出现的次数。对于元素 x，假设它出现在 <span class="arithmatex">\(T_1,T_2,\cdots,T_m\)</span> 的集合中，那么它的出现次数为</p>
 <div class="arithmatex">\[
 \begin{split}
@@ -3293,24 +3293,24 @@ Cnt=&amp;|\{T_i\}|-|\{T_i\cap T_j|i&lt;j\}|+\cdots+(-1)^{k-1}\left|\left\{\bigca
 \end{split}
 \]</div>
 <p>于是每个元素出现的次数为 1，那么合并起来就是并集。证毕。</p>
-<h3 id="_3">补集<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h3 id="_3">补集<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>对于全集 U 下的 <strong>集合的并</strong> 可以使用容斥原理计算，而集合的交则用全集减去 <strong>补集的并集</strong> 求得：</p>
 <div class="arithmatex">\[
 \left|\bigcap_{i=1}^{n}S_i\right|=|U|-\left|\bigcup_{i=1}^n\overrightarrow{S_i}\right|
 \]</div>
 <p>右边使用容斥即可。</p>
-<h2 id="_4">应用<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
-<h3 id="_5">不定方程非负整数解计数<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h2 id="_4">应用<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_5">不定方程非负整数解计数<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note" open="open">
 <summary>不定方程非负整数解计数</summary>
 <p>给出不定方程 <span class="arithmatex">\(\sum_{i=1}^nx_i=m\)</span> 和 <span class="arithmatex">\(n\)</span> 个限制条件 <span class="arithmatex">\(x_i\leq b_i\)</span>，其中 <span class="arithmatex">\(m,b_i \in \mathbb{N}\)</span>. 求方程的非负整数解的个数。</p>
 </details>
-<h4 id="_6">没有限制时<a class="headerlink" href="#_6" title="Permanent link">😅</a></h4>
+<h4 id="_6">没有限制时<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>如果没有 <span class="arithmatex">\(x_i&lt;b_i\)</span> 的限制，那么不定方程 <span class="arithmatex">\(\sum_{i=1}^nx_i=m\)</span> 的非负整数解的数目为 <span class="arithmatex">\(C_{m+n-1}^{n-1}\)</span>.</p>
 <p>略证：插板法。</p>
 <p>相当于你有 <span class="arithmatex">\(m\)</span> 个球要分给 <span class="arithmatex">\(n\)</span> 个盒子，允许某个盒子是空的。这个问题不能直接用组合数解决。</p>
 <p>于是我们再加入 <span class="arithmatex">\(n-1\)</span> 个球，于是问题就变成了在一个长度为 <span class="arithmatex">\(m+n-1\)</span> 的球序列中选择 <span class="arithmatex">\(n-1\)</span> 个球，然后这个 <span class="arithmatex">\(n-1\)</span> 个球把这个序列隔成了 <span class="arithmatex">\(n\)</span> 份，恰好可以一一对应放到 <span class="arithmatex">\(n\)</span> 个盒子中。那么在 <span class="arithmatex">\(m+n-1\)</span> 个球中选择 <span class="arithmatex">\(n-1\)</span> 个球的方案数就是 <span class="arithmatex">\(C_{m+n-1}^{n-1}\)</span>。</p>
-<h4 id="_7">容斥模型<a class="headerlink" href="#_7" title="Permanent link">😅</a></h4>
+<h4 id="_7">容斥模型<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>接着我们尝试抽象出容斥原理的模型：</p>
 <ol>
 <li>全集 U：不定方程 <span class="arithmatex">\(\sum_{i=1}^nx_i=m\)</span> 的非负整数解</li>

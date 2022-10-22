@@ -3253,9 +3253,9 @@
 
   <h1>最近公共祖先</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>大概就是给你树上的两个节点，然后问他们共同的祖先里深度最大的那一个。</p>
-<h2 id="lca">倍增 LCA<a class="headerlink" href="#lca" title="Permanent link">😅</a></h2>
+<h2 id="lca">倍增 LCA<a class="headerlink" href="#lca" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>考虑设 <span class="arithmatex">\(f_{i,j}\)</span> 表示 <span class="arithmatex">\(i\)</span> 的 <span class="arithmatex">\(2^j\)</span> 级祖先。</p>
 <p>这个可以倍增递推 。 <span class="arithmatex">\(f_{i,j}=f_{f_{i,j-1},j-1}\)</span>。</p>
 <p>然后现在给定一个询问 <span class="arithmatex">\(lca(u,v)\)</span>，考虑把深度较大的那一个往上跳到它的 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 级祖先（此处是<strong>从大到小</strong>枚举）</p>
@@ -3317,7 +3317,7 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// 咕咕咕</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="tarjan-lca">Tarjan LCA<a class="headerlink" href="#tarjan-lca" title="Permanent link">😅</a></h2>
+<h2 id="tarjan-lca">Tarjan LCA<a class="headerlink" href="#tarjan-lca" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>首先离线所有的 Query，</p>
 <p>在深度优先遍历的时候，给每个节点打上一个标记</p>
 <ol>
@@ -3471,12 +3471,12 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="lca_1">树剖 LCA<a class="headerlink" href="#lca_1" title="Permanent link">😅</a></h2>
+<h2 id="lca_1">树剖 LCA<a class="headerlink" href="#lca_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>常数非常小的 LCA 求法，只不过要写两个 dfs....</p>
 <p>简单来说还是利用了类似倍增的思想，不过利用了轻重链剖分的性质去优化了一下而已。</p>
 <p><a href="../../ds/hard/hld/#lca">Link</a></p>
-<h2 id="_2">树上差分<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="_3">点差分<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="_2">树上差分<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_3">点差分<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给你一棵树 <span class="arithmatex">\(T\)</span>，且 <span class="arithmatex">\(\forall u \in T\)</span> 都有一个权值 <span class="arithmatex">\(val[u]\)</span></p>
 <p>现在有 <span class="arithmatex">\(q\)</span> 次操作，每一次操作 <span class="arithmatex">\(\operatorname{change}(u,v,d)\)</span> 需要你修改 <span class="arithmatex">\(u \to v\)</span> 的路径上的所有点的权值，即令 <span class="arithmatex">\(\forall val[u]+d,(u\in \delta(u,v))\)</span> 。</p>
@@ -3488,7 +3488,7 @@
 <p>所以它自己也要加 <span class="arithmatex">\(d\)</span>，那么 <span class="arithmatex">\(c[u]=d,c[v]=d,c[lca]=-d\)</span>。</p>
 <p>因为父节点的值是会被子树影响的，所以还需要给 <span class="arithmatex">\(father(lca(u,v))-d\)</span>。</p>
 <p><a href="https://imgtu.com/i/WsrSjH"><img alt="WsrSjH.png" src="https://z3.ax1x.com/2021/07/23/WsrSjH.png" /></a></p>
-<h3 id="_4">边差分<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">边差分<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><a href="https://www.luogu.com.cn/problem/P3627">P3627 [APIO2009]抢掠计划</a> 用了一个思想叫“点权化边权”，在这里反过来，“边权化点权”。</p>
 <p>考虑任意的一条树边 <span class="arithmatex">\((u,v)\)</span> ，一定满足它连接的是父亲和儿子。</p>
 <p>那么这个边的“指向”就有唯一性，所以把每一条树边的权值压到它指向的“儿子节点”。</p>

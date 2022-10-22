@@ -3350,14 +3350,14 @@
 
   <h1>排列组合</h1>
 
-<h2 id="_1">排列组合基础<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
-<h3 id="_2">计数原理<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h2 id="_1">排列组合基础<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_2">计数原理<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
 <li>加法原理: 如果完成一个事情有 <span class="arithmatex">\(n\)</span> 类方法，其中第 <span class="arithmatex">\(i\)</span> 类方法有 <span class="arithmatex">\(a_i\)</span> 种策略，因为这些方法是独立的，所以总共的方案数为 <span class="arithmatex">\(\sum a_i\)</span> 种。</li>
 <li>加法原理：如果完成一个事情有 <span class="arithmatex">\(n\)</span> 个步骤，其中第 <span class="arithmatex">\(i\)</span> 个步骤有 <span class="arithmatex">\(a_i\)</span> 种策略，因为这些方法是前后关联的，所以总共的方案数为 <span class="arithmatex">\(\prod a_i\)</span> 种。</li>
 </ul>
-<h3 id="_3">排列数和组合数<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
-<h4 id="_4">排列数<a class="headerlink" href="#_4" title="Permanent link">😅</a></h4>
+<h3 id="_3">排列数和组合数<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_4">排列数<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>定义从 <span class="arithmatex">\(n\)</span> 个不同元素中选 <span class="arithmatex">\(m\)</span> 个元素出来（<span class="arithmatex">\(m \le n\)</span>），进行排列（有序），所能得到的总排列数为 <span class="arithmatex">\(\text A_n^m\)</span>。</p>
 <p>比如 <span class="arithmatex">\(1, 2, 3\)</span>，任意拿两个出来排列就有 <span class="arithmatex">\([1, 2]; [1,3]; [2, 1]; [2, 3]; [3,1]; [3,2]\)</span> 这六种，即 <span class="arithmatex">\(\text A_3^2 = 6\)</span></p>
 <p>计算可以考虑把问题转化成有 <span class="arithmatex">\(n\)</span> 个人，排长度为 <span class="arithmatex">\(m\)</span> 的一个队，第 <span class="arithmatex">\(1\)</span> 个位置有 <span class="arithmatex">\(n\)</span> 种选法，第 <span class="arithmatex">\(2\)</span> 个位置有 <span class="arithmatex">\(n - 1\)</span> 种选法，第 <span class="arithmatex">\(m\)</span> 个位置有 <span class="arithmatex">\(n - m + 1\)</span> 种选法，根据乘法原理可以得到排列数的计算公式：</p>
@@ -3365,7 +3365,7 @@
 \text{A}_n^m = \prod\limits_{i = 1}^{m}(n - i + 1) = \dfrac{n!}{(n - m)!}
 \]</div>
 <p>其中全排列为 <span class="arithmatex">\(\text A_n^n = n!\)</span>。</p>
-<h4 id="_5">组合数<a class="headerlink" href="#_5" title="Permanent link">😅</a></h4>
+<h4 id="_5">组合数<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>定义从 <span class="arithmatex">\(n\)</span> 个不同元素种拿 <span class="arithmatex">\(m\)</span> 个元素出来 <span class="arithmatex">\((m \le n)\)</span>，进行组合（无序），所能得到的总排列数为 <span class="arithmatex">\(\text C_n^m\)</span>，也记作 <span class="arithmatex">\(\dbinom{n}{m}\)</span>。</p>
 <p>比如 <span class="arithmatex">\(1,2,3\)</span>，任意拿两个出来组合就有 <span class="arithmatex">\(\{1,2\}; \{2, 3\}; \{1, 3\}\)</span> 这三种，即 <span class="arithmatex">\(\dbinom{3}{2} = 3\)</span>。</p>
 <p>计算可以从排列数那里转化，假设我们拿了 <span class="arithmatex">\(m\)</span> 个人出来排列，显然这 <span class="arithmatex">\(m\)</span> 个人的 <span class="arithmatex">\(m!\)</span> 种排列都会被计算，在组合里面会被算作一个，所以在排列数的基础上除掉 <span class="arithmatex">\(m!\)</span>  即可。</p>
@@ -3422,7 +3422,7 @@
 \sum_{i=0}^n\binom{n-i}{i}=F_{n+1}\tag{12}
 \]</div>
 <p>其中 <span class="arithmatex">\(F\)</span> 是斐波那契数列。</p>
-<h3 id="_6">二项式定理<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">二项式定理<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <div class="arithmatex">\[
 (a + b)^n = \sum\limits_{i = 0}^{n}\binom{n}{i}a^{n - i}b^{i}
 \]</div>
@@ -3430,8 +3430,8 @@
 <p><span class="arithmatex">\((a - b)^n\)</span> 的展开式通项多了一个容斥系数一样的东西 ：<span class="arithmatex">\(\displaystyle T_{i + 1} = (-1)^i \binom{n}{i} a^{n - i}b^i\)</span>。</p>
 <p>二项式定理也可以扩展为多项式的形式，在此不展开。</p>
 <p>由此，<span class="arithmatex">\(\dbinom{n}{m}\)</span> 也被称作「二项式系数」。</p>
-<h2 id="_7">几个基本方法<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
-<h3 id="_8">捆绑法<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<h2 id="_7">几个基本方法<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_8">捆绑法<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>要求某几个元素排列组合的时候必须相邻。</p>
 <p>做法大概就是把他们捆绑起来，然后算成一个元素做排列，再在内部做排列。</p>
 <details class="example" open="open">
@@ -3440,7 +3440,7 @@
 <p>简单的问题，把甲和乙捆绑，然后排列，答案是 <span class="arithmatex">\(\text A^{6}_{6} = 6!\)</span> 种。</p>
 <p>然后甲乙内部有 <span class="arithmatex">\(\text A^2_2 = 2!\)</span> 种答案，乘法原理，答案等于 <span class="arithmatex">\(6!2! = 1140\)</span>。</p>
 </details>
-<h3 id="_9">插空法<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h3 id="_9">插空法<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>要求某几个元素排列组合的时候必须不相邻。</p>
 <p>做法大概就是把这几个元素提出来，剩下的排列一次。</p>
 <p>然后把这几个提出来的元素插到空里面去。</p>
@@ -3457,18 +3457,18 @@
 <p>简单的问题，先把甲乙捆绑，然后甲乙丙拉出来剩下的做排列，插空之后甲乙内部再排列。</p>
 <p>答案是 <span class="arithmatex">\(\text A_4^4 \text A_5^3 \text A_2^2\)</span>。</p>
 </details>
-<h3 id="_10">插板法<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
+<h3 id="_10">插板法<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="tip">
 <summary>为什么这里和 OI-wiki 一样</summary>
 <p>（OI-Wiki 上这部分是<a href="https://github.com/hylwxqwq">我</a>写的，可以看我当时的 <a href="https://github.com/OI-wiki/OI-wiki/pull/4278">Pull Request OI-wiki#4278</a>）</p>
 </details>
 <p>插板法（Stars and bars）是用于求一类给相同元素分组的方案数的一种技巧，也可以用于求一类线性不定方程的解的组数。</p>
-<h4 id="_11">正整数和的数目<a class="headerlink" href="#_11" title="Permanent link">😅</a></h4>
+<h4 id="_11">正整数和的数目<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>问题一：现有 <span class="arithmatex">\(n\)</span> 个 <strong>完全相同</strong> 的元素，要求将其分为 <span class="arithmatex">\(k\)</span> 组，保证每组至少有一个元素，一共有多少种分法？</p>
 <p>考虑拿 <span class="arithmatex">\(k - 1\)</span> 块板子插入到 <span class="arithmatex">\(n\)</span> 个元素两两形成的 <span class="arithmatex">\(n - 1\)</span> 个空里面。</p>
 <p>因为元素是完全相同的，所以答案就是 <span class="arithmatex">\(\dbinom{n - 1}{k - 1}\)</span>。</p>
 <p>本质是求 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=n\)</span> 的正整数解的组数。</p>
-<h4 id="_12">非负整数和的数目<a class="headerlink" href="#_12" title="Permanent link">😅</a></h4>
+<h4 id="_12">非负整数和的数目<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>问题二：如果问题变化一下，每组允许为空呢？</p>
 <p>显然此时没法直接插板了，因为有可能出现很多块板子插到一个空里面的情况，非常不好计算。</p>
 <p>我们考虑创造条件转化成有限制的问题一，先借 <span class="arithmatex">\(k\)</span> 个元素过来，在这 <span class="arithmatex">\(n + k\)</span> 个元素形成的 <span class="arithmatex">\(n + k - 1\)</span> 个空里面插板，答案为</p>
@@ -3479,7 +3479,7 @@
 <p>开头我们借来了 <span class="arithmatex">\(k\)</span> 个元素，用于保证每组至少有一个元素，插完板之后再把这 <span class="arithmatex">\(k\)</span> 个借来的元素从 <span class="arithmatex">\(k\)</span> 组里面拿走。因为元素是相同的，所以转化过的情况和转化前的情况可以一一对应，答案也就是相等的。</p>
 <p>由此可以推导出插板法的公式：<span class="arithmatex">\(\dbinom{n + k - 1}{n}\)</span>。</p>
 <p>本质是求 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=n\)</span> 的非负整数解的组数（即要求 <span class="arithmatex">\(x_i \ge 0\)</span>）。</p>
-<h4 id="_13">不同下界整数和的数目<a class="headerlink" href="#_13" title="Permanent link">😅</a></h4>
+<h4 id="_13">不同下界整数和的数目<a class="headerlink" href="#_13" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>问题三：如果再扩展一步，要求对于第 <span class="arithmatex">\(i\)</span> 组，至少要分到 <span class="arithmatex">\(a_i,\sum a_i \le n\)</span> 个元素呢？</p>
 <p>本质是求 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=n\)</span> 的解的数目，其中 <span class="arithmatex">\(x_i \ge a_i\)</span>。</p>
 <p>类比无限制的情况，我们借 <span class="arithmatex">\(\sum a_i\)</span> 个元素过来，保证第 <span class="arithmatex">\(i\)</span> 组至少能分到 <span class="arithmatex">\(a_i\)</span> 个。也就是令</p>
@@ -3504,7 +3504,7 @@ x_i^{\prime}\ge 0
 \]</div>
 <hr />
 <p>以下摘录自 <a href="https://oi-wiki.org/math/combinatorics/combination/">OI-wiki</a>。</p>
-<h3 id="_14">圆排列<a class="headerlink" href="#_14" title="Permanent link">😅</a></h3>
+<h3 id="_14">圆排列<a class="headerlink" href="#_14" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><span class="arithmatex">\(n\)</span> 个人全部来围成一圈，所有的排列数记为 <span class="arithmatex">\(\mathrm Q_n^n\)</span>。考虑其中已经排好的一圈，从不同位置断开，又变成不同的队列。
 所以有</p>
 <div class="arithmatex">\[
@@ -3514,9 +3514,9 @@ x_i^{\prime}\ge 0
 <div class="arithmatex">\[
 \mathrm Q_n^r = \frac{\mathrm A_n^r}{r} = \frac{n!}{r \times (n-r)!}
 \]</div>
-<h3 id="_15">不相邻排列<a class="headerlink" href="#_15" title="Permanent link">😅</a></h3>
+<h3 id="_15">不相邻排列<a class="headerlink" href="#_15" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><span class="arithmatex">\(1 \sim n\)</span> 这 <span class="arithmatex">\(n\)</span> 个自然数中选 <span class="arithmatex">\(k\)</span> 个，这 <span class="arithmatex">\(k\)</span> 个数中任何两个数都不相邻的组合有 <span class="arithmatex">\(\dbinom {n-k+1}{k}\)</span> 种。</p>
-<h3 id="_16">多重集的排列数 | 多重组合数<a class="headerlink" href="#_16" title="Permanent link">😅</a></h3>
+<h3 id="_16">多重集的排列数 | 多重组合数<a class="headerlink" href="#_16" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>请大家一定要区分 <strong>多重组合数</strong> 与 <strong>多重集的组合数</strong>！两者是完全不同的概念！</p>
 <p>多重集是指包含重复元素的广义集合。设 <span class="arithmatex">\(S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k\}\)</span> 表示由 <span class="arithmatex">\(n_1\)</span> 个 <span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(n_2\)</span> 个 <span class="arithmatex">\(a_2\)</span>，…，<span class="arithmatex">\(n_k\)</span> 个 <span class="arithmatex">\(a_k\)</span> 组成的多重集，<span class="arithmatex">\(S\)</span> 的全排列个数为</p>
 <div class="arithmatex">\[
@@ -3527,12 +3527,12 @@ x_i^{\prime}\ge 0
 \binom{n}{n_1,n_2,\cdots,n_k}=\frac{n!}{\prod_{i=1}^kn_i!}
 \]</div>
 <p>可以看出，<span class="arithmatex">\(\dbinom{n}{m}\)</span> 等价于 <span class="arithmatex">\(\dbinom{n}{m,n-m}\)</span>，只不过后者较为繁琐，因而不采用。</p>
-<h3 id="1">多重集的组合数 1<a class="headerlink" href="#1" title="Permanent link">😅</a></h3>
+<h3 id="1">多重集的组合数 1<a class="headerlink" href="#1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>设 <span class="arithmatex">\(S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k\}\)</span> 表示由 <span class="arithmatex">\(n_1\)</span> 个 <span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(n_2\)</span> 个 <span class="arithmatex">\(a_2\)</span>，…，<span class="arithmatex">\(n_k\)</span> 个 <span class="arithmatex">\(a_k\)</span> 组成的多重集。那么对于整数 <span class="arithmatex">\(r(r&lt;n_i,\forall i\in[1,k])\)</span>，从 <span class="arithmatex">\(S\)</span> 中选择 <span class="arithmatex">\(r\)</span> 个元素组成一个多重集的方案数就是 <strong>多重集的组合数</strong>。这个问题等价于 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=r\)</span> 的非负整数解的数目，可以用插板法解决，答案为</p>
 <div class="arithmatex">\[
 \binom{r+k-1}{k-1}
 \]</div>
-<h3 id="2">多重集的组合数 2<a class="headerlink" href="#2" title="Permanent link">😅</a></h3>
+<h3 id="2">多重集的组合数 2<a class="headerlink" href="#2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑这个问题：设 <span class="arithmatex">\(S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k,\}\)</span> 表示由 <span class="arithmatex">\(n_1\)</span> 个 <span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(n_2\)</span> 个 <span class="arithmatex">\(a_2\)</span>，…，<span class="arithmatex">\(n_k\)</span> 个 <span class="arithmatex">\(a_k\)</span> 组成的多重集。那么对于正整数 <span class="arithmatex">\(r\)</span>，从 <span class="arithmatex">\(S\)</span> 中选择 <span class="arithmatex">\(r\)</span> 个元素组成一个多重集的方案数。</p>
 <p>这样就限制了每种元素的取的个数。同样的，我们可以把这个问题转化为带限制的线性方程求解：</p>
 <div class="arithmatex">\[

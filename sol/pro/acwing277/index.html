@@ -3225,8 +3225,8 @@
 
   <h1>ACWing277</h1>
 
-<h2 id="acwing277">Acwing277 饼干<a class="headerlink" href="#acwing277" title="Permanent link">😅</a></h2>
-<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">😅</a></h3>
+<h2 id="acwing277">Acwing277 饼干<a class="headerlink" href="#acwing277" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>圣诞老人共有 <span class="arithmatex">\(M\)</span> 个饼干，准备全部分给 <span class="arithmatex">\(N\)</span> 个孩子。</p>
 <p>每个孩子有一个贪婪度，第 <span class="arithmatex">\(i\)</span> 个孩子的贪婪度为 <span class="arithmatex">\(g[i]\)</span>。</p>
@@ -3235,7 +3235,7 @@
 <p><span class="arithmatex">\(1 \le N \le 30\)</span>，<span class="arithmatex">\(N \le M \le 5000\)</span>，<span class="arithmatex">\(1 \le g_i \le 10^7\)</span></p>
 <p>要求输出方案。</p>
 </blockquote>
-<h3 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">😅</a></h3>
+<h3 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>发现直接求解的话很不好搞，因为每发出一块饼干的时候，你都要扫一遍进行统计，而且随着饼干的发出，怨气值是有可能减少的。</p>
 <p>因为，如果给第 <span class="arithmatex">\(i\)</span> 个孩子多分配了一个糖果，在他前后的孩子的怨气值都是会受到影响而改变的，找不到一个可以只影响 <span class="arithmatex">\(i\)</span> 前面或者后面的 ”阶段“。</p>
 <p>所以考虑一个比较明显的贪心，对 <span class="arithmatex">\(g\)</span> 降序排序，则从前往后分配的饼干数量必然单调不上升。</p>

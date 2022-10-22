@@ -3221,12 +3221,12 @@
 
   <h1>单调栈</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>单调栈，顾名思义，就是栈内元素以某种方式单调的栈。</p>
 <p>单调队列可以用来维护滑动窗口最值，而单调栈可以维护一个序列中每个元素的 NGE，NLE。</p>
 <p>NGE = Next Greater Element, L 同理。</p>
 <p>就是维护对于 <span class="arithmatex">\(\forall a_{i}\)</span>，它左边的第一个使得 <span class="arithmatex">\(a_{j} &gt; a_{i}\)</span> 的 <span class="arithmatex">\(j\)</span>。</p>
-<h2 id="_2">应用<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">应用<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>NGE 的暴力做法是对于每个询问 <span class="arithmatex">\(O(n)\)</span> 跑一遍，复杂度 <span class="arithmatex">\(O(nm)\)</span> 不能接受。</p>
 <p>考虑维护一个栈表示“当前还未确定 NGE” 的元素集合。</p>
 <p>然后让栈从栈底到栈顶单调递减。</p>
@@ -3319,7 +3319,7 @@
 </details>
 <p>复杂度 <span class="arithmatex">\(O(n)\)</span>。</p>
 <p>单调栈还可以用来<a href="../../../dp/opt/monotonous-stack-optimize/">优化 DP</a>。</p>
-<h2 id="_3">习题<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">习题<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <details class="note">
 <summary><a href="http://poj.org/problem?id=3250">POJ3250 Bad Hair Day</a></summary>
 <p>有 <span class="arithmatex">\(N\)</span> 头牛从左到右排成一排，每头牛有一个高度 <span class="arithmatex">\(h_i\)</span>，设左数第 <span class="arithmatex">\(i\)</span> 头牛与「它右边第一头高度 <span class="arithmatex">\(≥h_i\)</span>」的牛之间有 <span class="arithmatex">\(c_i\)</span> 头牛，试求 <span class="arithmatex">\(\sum_{i=1}^{N} c_i\)</span>。</p>

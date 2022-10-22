@@ -3239,14 +3239,14 @@
 
   <h1>BZOJ3307</h1>
 
-<h2 id="bzoj3307">Bzoj3307 雨天的尾巴<a class="headerlink" href="#bzoj3307" title="Permanent link">😅</a></h2>
-<h3 id="textquestion"><span class="arithmatex">\(\text{Question}\)</span><a class="headerlink" href="#textquestion" title="Permanent link">😅</a></h3>
+<h2 id="bzoj3307">Bzoj3307 雨天的尾巴<a class="headerlink" href="#bzoj3307" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="textquestion"><span class="arithmatex">\(\text{Question}\)</span><a class="headerlink" href="#textquestion" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给定一棵树，每次给 <span class="arithmatex">\((x,y)\)</span> 的简单路径上的节点发放一个第 <span class="arithmatex">\(z\)</span> 种物品。</p>
 <p><span class="arithmatex">\(M\)</span> 次操作，最后询问每个点最多的是哪一种物品。</p>
 <p><span class="arithmatex">\(1\le N,M \le 10^5,1\le z\le 10^9\)</span></p>
 </blockquote>
-<h3 id="textbrute-force"><span class="arithmatex">\(\text{Brute force}\)</span><a class="headerlink" href="#textbrute-force" title="Permanent link">😅</a></h3>
+<h3 id="textbrute-force"><span class="arithmatex">\(\text{Brute force}\)</span><a class="headerlink" href="#textbrute-force" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>先离散化 <span class="arithmatex">\(z\)</span>。</p>
 <p>考虑设一个计数数组 <span class="arithmatex">\(d\)</span>，对于每个节点 <span class="arithmatex">\(x\)</span>，分别维护第 <span class="arithmatex">\(z\)</span> 种物品在 <span class="arithmatex">\(x\)</span> 上有多少个。</p>
 <p>先求出 <span class="arithmatex">\(\text{LCA}\)</span> ，每次操作从 <span class="arithmatex">\(x \to \text{LCA} \to y\)</span> ，然后把路径上相应的节点的 <span class="arithmatex">\(d[x][z]\)</span> 加一。</p>
@@ -3258,7 +3258,7 @@
 <p>对于每个节点求物品出现次数的最值即可。 </p>
 <p>复杂度 <span class="arithmatex">\(\text{O}(N\times cnt_z)\)</span>，<span class="arithmatex">\(cnt_z\)</span> 是不同的物品的数量。</p>
 <p>这个做法是对每种物品都维护了一个差分序列，不过这个差分序列是在树上的。</p>
-<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">😅</a></h3>
+<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>实际上 <span class="arithmatex">\(\text{O}(N\times cnt_z)\)</span> 做法是对每个节点 <span class="arithmatex">\(u\)</span> 维护了一个序列 <span class="arithmatex">\(c[u]\)</span>，<span class="arithmatex">\(c[u][z]\)</span> 就表示 <span class="arithmatex">\(z\)</span> 这种物品的差分序列在 <span class="arithmatex">\(u\)</span> 这里的这一项。</p>
 <p>那么一个节点 <span class="arithmatex">\(u\)</span> 的答案就是它子树当中所有节点的 <span class="arithmatex">\(c[v]\)</span> 的合并起来之后得到的新序列的 <span class="arithmatex">\(\text{max\_element}\)</span>。</p>
 <p>所以对于每一个节点 <span class="arithmatex">\(u\)</span> 开一颗动态开点线段树代替 <span class="arithmatex">\(c[u]\)</span>，同时支持维护 <span class="arithmatex">\(c[u]\)</span> 当中的最大值和最大值的位置。</p>
@@ -3266,7 +3266,7 @@
 <p>进行一次 dfs，那么计算 <span class="arithmatex">\(u\)</span> 的答案的时候，就只需要把 <span class="arithmatex">\(u\)</span> 的所有儿子节点的线段树和 <span class="arithmatex">\(u\)</span> 的线段树进行线段树合并即可快速得到 <span class="arithmatex">\(u\)</span> 的答案。</p>
 <p>复杂度 <span class="arithmatex">\(\text{O}((N+M)\log(N+M))\)</span></p>
 <p><strong><span class="arithmatex">\(\text{Trick:}\)</span></strong> 对于树上每个节点维护一个信息序列，并且每个节点的答案可以通过类似子树和的方式得到，可以考虑使用一颗动态开点线段树代替每个节点的信息序列，然后使用线段树合并计算答案。</p>
-<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">😅</a></h3>
+<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note">
 <summary>雨天的尾巴</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>

@@ -3232,10 +3232,10 @@
 
   <h1>UOJ105</h1>
 
-<h2 id="uoj105-beads-and-wires">UOJ105 Beads and wires<a class="headerlink" href="#uoj105-beads-and-wires" title="Permanent link">😅</a></h2>
+<h2 id="uoj105-beads-and-wires">UOJ105 Beads and wires<a class="headerlink" href="#uoj105-beads-and-wires" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>一道个人认为非常棒的题，卡了我接近一天的时间。</p>
 <p><del>虽然YL怒斥这题套路</del> ，不过他也说这题想起来容易，推起来一般，实现很恶心（</p>
-<h3 id="textdecription"><span class="arithmatex">\(\text{Decription}\)</span><a class="headerlink" href="#textdecription" title="Permanent link">😅</a></h3>
+<h3 id="textdecription"><span class="arithmatex">\(\text{Decription}\)</span><a class="headerlink" href="#textdecription" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>问题：你有 <span class="arithmatex">\(n\)</span> 个珠子，初始你可以选任意的一个珠子，之后可以执行以下的操作：
 1. 把一颗新的珠子 <span class="arithmatex">\(v\)</span> 和已经选了的某一个珠子 <span class="arithmatex">\(u\)</span> 用红色边 (u,v) 相连。
@@ -3244,7 +3244,7 @@
 要你找到一种可能的方案使得你的得分最大，定义你的得分为所有操作完了之后的蓝色边权值之和。
 输出这个最大的得分。<span class="arithmatex">\(n \le 5\times 10^5\)</span>。</p>
 </blockquote>
-<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">😅</a></h3>
+<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>首先我们可以发现，最后给出的情况一定是一颗无根的带权树。</p>
 <p>然后发现蓝色的边一定是一条由三个连续节点和链接他们的两条边构成的一条链。</p>
 <p>注意到题目中说蓝色边只能在红色边的基础上“插入”来生成。</p>
@@ -3279,7 +3279,7 @@
 <p>然后换根的时候枚举每一个点的儿子，先把 <span class="arithmatex">\(f_{u,0} = dp_{u,0,v},f_{u,1} = dp_{u,1,v}\)</span>。</p>
 <p>然后重新计算 <span class="arithmatex">\(u\)</span> 对 <span class="arithmatex">\(v\)</span> 的贡献（换根），不过因为 <span class="arithmatex">\(fa\)</span> 在当前情况变成了 <span class="arithmatex">\(u\)</span> 的儿子，所以我们需要先把 <span class="arithmatex">\(fa\)</span> 对 <span class="arithmatex">\(u\)</span> 的贡献计算出来。</p>
 <p>计算完了之后在答案里取个最大值即可。</p>
-<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">😅</a></h3>
+<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note">
 <summary>实现</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

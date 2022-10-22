@@ -3232,15 +3232,15 @@
 
   <h1>CF1651E</h1>
 
-<h2 id="cf1651e-sum-of-matchings">CF1651E Sum of Matchings<a class="headerlink" href="#cf1651e-sum-of-matchings" title="Permanent link">😅</a></h2>
-<h3 id="textdescription"><span class="arithmatex">\(\text{Description}\)</span><a class="headerlink" href="#textdescription" title="Permanent link">😅</a></h3>
+<h2 id="cf1651e-sum-of-matchings">CF1651E Sum of Matchings<a class="headerlink" href="#cf1651e-sum-of-matchings" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="textdescription"><span class="arithmatex">\(\text{Description}\)</span><a class="headerlink" href="#textdescription" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>定义一张图 <span class="arithmatex">\(G\)</span> 的最大匹配当中的边数是 <span class="arithmatex">\(MM(G)\)</span>。</p>
 <p>给你一张二分图，左部节点编号 <span class="arithmatex">\(1 \sim n\)</span>，右部节点编号 <span class="arithmatex">\(n+1 \sim 2n\)</span>，保证每个节点的<strong>度数必然为</strong> <span class="arithmatex">\(2\)</span>。</p>
 <p>设 <span class="arithmatex">\(G(l,r,L,R)\)</span> 表示左部节点编号在 <span class="arithmatex">\([l,r]\)</span>，右部节点编号在 <span class="arithmatex">\([L,R]\)</span> 之间的节点和他们相关的边组成的导出子图。</p>
 <p>求 <span class="arithmatex">\(\sum MM(G(l,r,L,R))\)</span>，保证 <span class="arithmatex">\(2\le n\le 1500\)</span>。</p>
 </blockquote>
-<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">😅</a></h3>
+<h3 id="textsolution"><span class="arithmatex">\(\text{Solution}\)</span><a class="headerlink" href="#textsolution" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑整张图的形态，因为是二分图（不含奇环），且每个节点的度数必然是 <span class="arithmatex">\(2\)</span>。</p>
 <p>那么这张图必然全部由一些简单环组成，且这些简单环都是偶环。</p>
 <p>考虑一个偶环 <span class="arithmatex">\(R\)</span> 如果被包含在一个导出子图 <span class="arithmatex">\(G\prime\)</span> 当中，他能对 <span class="arithmatex">\(MM(G\prime)\)</span>做的贡献是什么。</p>
@@ -3255,7 +3255,7 @@
 <p>还是需要计算他被多少个子图包含，并记录链上左部和右部分别的节点编号最大最小值 <span class="arithmatex">\(Lmax,Lmin,Rmax,Rmin\)</span> （右部的算完之后还是要减去 <span class="arithmatex">\(n\)</span>）。</p>
 <p>但是这个时候链上的节点编号就不一定是连续的了，需要去掉偶环当中不在这个链上的节点。</p>
 <p>那么对于偶环 <span class="arithmatex">\(R\)</span> 去掉这个链 <span class="arithmatex">\((u,v)\)</span> 之后的到的链 <span class="arithmatex">\(R-(u,v)\)</span> 再记录它的 <span class="arithmatex">\(Lmax,Lmin,Rmax,Rmin\)</span> 就可以了。</p>
-<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">😅</a></h3>
+<h3 id="textcode"><span class="arithmatex">\(\text{Code}\)</span><a class="headerlink" href="#textcode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note">
 <summary>实现</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

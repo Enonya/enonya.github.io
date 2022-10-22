@@ -3219,7 +3219,7 @@
 
   <h1>数位 DP</h1>
 
-<h2 id="_1">泛化<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">泛化<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这一类问题都是询问某个区间 <span class="arithmatex">\([L,R]\)</span> 当中<strong>满足某个条件的数</strong>的个数。</p>
 <p>并且 <span class="arithmatex">\(L,R\)</span> 的<strong>范围一般很大</strong></p>
 <p>常见的限制有：</p>
@@ -3229,7 +3229,7 @@
 <li>数字必须按照升序排列</li>
 <li>不能出现某两个连续的数字</li>
 </ol>
-<h2 id="_2">实现<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">实现<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>套路无非两步：</p>
 <ul>
 <li>先把 <span class="arithmatex">\(F(L),F(R)\)</span> 算出来，答案就是 <span class="arithmatex">\(F(R)-F(L-1)\)</span>。</li>
@@ -3323,7 +3323,7 @@
 <li>第 15 行的“限制”，这个需要看题目要求，比如有没有哪一个数不能出现，哪两个数不能连续出现（这个需要在开始的时候记录上一位）的要求。</li>
 <li>前导零限制不是所有题都会有，如果有前导零限制，在递归下一个状态的时候记得让下一个状态强制合法（因为在前导零限制下，实际上这一位是没有填数字的，而不是填了 0）。</li>
 </ul>
-<h2 id="_3">例题<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">例题<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>来一道经典题（包含所有要素）：</p>
 <blockquote>
 <p>[SCOI2009] Windy数：不含前导零且相邻两个数字之差至少为 <span class="arithmatex">\(2\)</span> 的正整数被称为 Windy 数。</p>

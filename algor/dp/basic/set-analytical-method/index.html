@@ -3228,12 +3228,12 @@
 
   <h1>集合式分析法</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这种方式和一般 DP 分析方式不一样的地方在于，</p>
 <p>这种 DP 分析方式把 DP 的<strong>状态空间看作全集</strong>，一个个 DP 状态看作一个个小集合。</p>
 <p>把决策转移变成了<strong>集合的划分</strong>，以达到<strong>不重不漏</strong>，并把 DP 状态拆分为了两种属性。</p>
 <p>用三个线性 DP 的经典模型作例子说明。</p>
-<h2 id="lis">LIS 问题<a class="headerlink" href="#lis" title="Permanent link">😅</a></h2>
+<h2 id="lis">LIS 问题<a class="headerlink" href="#lis" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给定一个序列 <span class="arithmatex">\(a\)</span> ，求它的最长上升子序列的长度。</p>
 <p><span class="arithmatex">\(|a| \le 3000\)</span>。</p>
@@ -3310,7 +3310,7 @@ dp_i = \max\{dp_j + 1\},a_i &gt; a_j,dp_i =1(\text{initially})
 <li>DP 划分的重要依据是 ”最后一个不同点“，思考时需要考虑把当前集合<strong>展开</strong>。</li>
 <li>划分出的子集不一定都能用来转移，要进行可行性的判断。</li>
 </ol>
-<h2 id="lcs">LCS 问题<a class="headerlink" href="#lcs" title="Permanent link">😅</a></h2>
+<h2 id="lcs">LCS 问题<a class="headerlink" href="#lcs" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给定两个序列 <span class="arithmatex">\(a，b\)</span> ，求他们的最长公共子序列。</p>
 <p><span class="arithmatex">\(|a|,|b| \le 3000\)</span>。</p>
@@ -3368,7 +3368,7 @@ dp_{i,j} = \begin{cases}\max(dp_{i-1,j},dp_{i,j-1}) &amp; a_i \not= b_j\\ dp_{i-
 <li>划分后的转移实际上是利用 ”子集“ 和 ”当前信息“ 的结合。</li>
 <li>如果当前信息占用了集合的一部分，划分时应当把它刨掉。</li>
 </ol>
-<h2 id="_2">数字三角形问题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">数字三角形问题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>为了方便叙述，此处换成了棋盘类 DP 的模板。</p>
 <blockquote>
 <p>给定一个 <span class="arithmatex">\(n \times m\)</span> 的矩阵，初始你在 <span class="arithmatex">\((1,1)\)</span>，每次可以往下或者往右走一步。</p>

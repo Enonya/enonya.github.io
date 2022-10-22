@@ -3221,18 +3221,18 @@
 
   <h1>2-SAT 问题</h1>
 
-<h2 id="_1">第一种定义<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">第一种定义<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>给你 <span class="arithmatex">\(n\)</span> 个二元组 <span class="arithmatex">\((x_0,x_1)\)</span>，有 <span class="arithmatex">\(m\)</span> 个限制条件，形如 <span class="arithmatex">\(&lt;a,b&gt;\)</span> ，表示 <span class="arithmatex">\(a,b\)</span> 相互矛盾，不能同时选中 <span class="arithmatex">\(a,b\)</span> 这两者。</p>
 <p>且 <span class="arithmatex">\(a,b\)</span> 属于不同的二元组。</p>
 <p>问是否存在一种方案，使得每个二元组里都恰好有一个元素被选择，且所有条件不会被违背。</p>
 <p>如果有，需要构造方案。</p>
-<h2 id="_2">第二种定义<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">第二种定义<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>给你 <span class="arithmatex">\(n\)</span> 个元素，有 <span class="arithmatex">\(m\)</span> 个限制条件，形如 <span class="arithmatex">\(&lt;a,b&gt;,&lt;f_a,f_b&gt;\)</span> ，即，如果 <span class="arithmatex">\(a\)</span> 的状态是 <span class="arithmatex">\(f_a\)</span> ，那么 <span class="arithmatex">\(b\)</span> 的状态必须是 <span class="arithmatex">\(f_b\)</span>。</p>
 <p><span class="arithmatex">\(f_i\)</span> 的值只可能是 <span class="arithmatex">\(0,1\)</span> ，表示选或者不选 <span class="arithmatex">\(i\)</span> 这个元素。</p>
 <p>问是否存在一种使得所有限制被满足。</p>
 <p>如果有，需要构造方案。</p>
 <p>以上两种定义本质上是完全一样的，只不过说法不太相同。</p>
-<h2 id="_3">做法<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">做法<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>发现所有的约束条件都可以归化成这样的一个命题：</p>
 <p>若 <span class="arithmatex">\(p\)</span>，则 <span class="arithmatex">\(q\)</span>。</p>
 <p>也就是 <span class="arithmatex">\(p \Rightarrow q\)</span>。</p>

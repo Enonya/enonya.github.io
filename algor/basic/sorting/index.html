@@ -3281,13 +3281,13 @@
 
   <h1>排序</h1>
 
-<h2 id="_1">稳定性<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">稳定性<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>就是说，假设原序列当中有两个相同的元素 <span class="arithmatex">\(a_i, a_j\)</span>。</p>
 <p>如果这个排序算法没有改变 <span class="arithmatex">\(a_i, a_j\)</span> 的相对位置。</p>
 <p>那么这个排序算法就是稳定的。</p>
 <p>基数排序、计数排序、插入排序、冒泡排序、归并排序是稳定排序。</p>
 <p>选择排序、堆排序、快速排序不是稳定排序。</p>
-<h2 id="_2">选择排序<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">选择排序<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>就是遍历 <span class="arithmatex">\(n\)</span> 轮 <span class="arithmatex">\(1 \to n\)</span>，第 <span class="arithmatex">\(i\)</span> 轮找到第 <span class="arithmatex">\(i\)</span> 小的数，然后放到位置 <span class="arithmatex">\(i\)</span> 上（实现时把这个数和 <span class="arithmatex">\(a_i\)</span> 交换）。</p>
 <p>平均，最坏，最优，复杂度 <span class="arithmatex">\(O(n^2)\)</span>，因为每次循环次数是固定的。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -3305,7 +3305,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_3">插入排序<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">插入排序<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>类似打牌的时候的排序方法。</p>
 <p>把原序列分成【没有排序】和【排序过】两部分。</p>
 <p>每次从【没有排序】的里面抓一张，扔到【排序过】的一个合适位置（第一个大于它的元素）前面。</p>
@@ -3328,7 +3328,7 @@
 <p>最优复杂度 <span class="arithmatex">\(O(n)\)</span>，就是如果序列已经排好了就完全不会后移，是稳定的排序。</p>
 <p>最坏复杂度 <span class="arithmatex">\(O(n^2)\)</span>，如果序列翻转过来，总共要跑的距离就是 <span class="arithmatex">\(\sum\limits_{i = 1}^{n} (i - 1) = O(n^2)\)</span>。</p>
 <p>平均复杂度是 <span class="arithmatex">\(O(n^2)\)</span>。</p>
-<h2 id="_4">冒泡排序<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
+<h2 id="_4">冒泡排序<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>扫特别多遍，每次扫描都交换看到的逆序对。</p>
 <p>然后可以证明，扫完第 <span class="arithmatex">\(i\)</span> 轮之后，后 <span class="arithmatex">\(i\)</span> 项是最大的 <span class="arithmatex">\(i\)</span> 项。</p>
 <p>这个用数学归纳法就能证明。</p>
@@ -3361,7 +3361,7 @@
 <p>对于一个给定序列 <span class="arithmatex">\(a\)</span>，让他有序，最少需要的操作次数就是 <span class="arithmatex">\(a\)</span> 的逆序对个数。</p>
 <p><strong>所以冒泡排序使一个序列有序的交换次数应当是</strong> <span class="arithmatex">\(a\)</span> <strong>的逆序对个数</strong>。</p>
 <p>（因为冒泡每执行一次交换操作，就相当于消除了一个逆序对，并且之后不会再让这个逆序对出现）</p>
-<h2 id="_5">计数排序<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h2 id="_5">计数排序<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>开一个桶，维护值域 <span class="arithmatex">\(|w|\)</span>，（注意这个不是桶排是计数）。</p>
 <p>然后 <span class="arithmatex">\(O(n)\)</span> 扫一遍把所有元素扔进桶里面。  </p>
 <p>然后从小到大拿出来就行了，显然是稳定的，因为先出现的会被先放进桶，你可以把桶理解为一个队列。</p>
@@ -3381,7 +3381,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>复杂度稳定 <span class="arithmatex">\(O(n + w)\)</span>。</p>
-<h2 id="_6">快速排序<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
+<h2 id="_6">快速排序<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>每次把序列分成两个部分，其中第一个子序列的数都小于后一个子序列的数。</p>
 <p>然后递归到每个子序列里面在搞。</p>
 <p>最后递归完了就直接有序了，一般实现的时候会随机选一个分界 <span class="arithmatex">\(key\)</span>，大于 <span class="arithmatex">\(key\)</span> 的扔到后面，小于等于 <span class="arithmatex">\(key\)</span> 的扔到前面。</p>
@@ -3422,7 +3422,7 @@
 <p>明显不稳定，原始快排最坏 <span class="arithmatex">\(O(n^2)\)</span>，平均最优都是 <span class="arithmatex">\(O(n \log n)\)</span>。</p>
 <p>因为每次取 key 的时候，如果每次都能取到中位数作为分界，递归式是 <span class="arithmatex">\(T(n) = 2T(n/2) + \Theta(n)\)</span>，主定理可以得到。</p>
 <p>如果每次都取到最大值，递归式就是 <span class="arithmatex">\(T(n) = T(n - 1) + Theta(n)\)</span>（长度等于一不用递归），累加可以得到。</p>
-<h2 id="_7">归并排序<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
+<h2 id="_7">归并排序<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>很有意思的一个算法。</p>
 <p>就是把序列先从中间分开，然后递归下去对两块块内排序，</p>
 <p>递归回来，假设此时序列左右两半都已经从小到大排序好（先不管它怎么排的，因为这是一个递归，最后只有一个元素的时候就是排序好的，然后一层一层返回上来合并的时候就排好序了）。</p>
@@ -3458,8 +3458,8 @@
 <p>代码见下面逆序对板块。</p>
 <p>还有一种利用它线性找第 <span class="arithmatex">\(k\)</span> 大的算法，因为不是稳定的，所以找不到最前的一个第 <span class="arithmatex">\(k\)</span> 大。</p>
 <p>但是 Median of Median 可以最坏 <span class="arithmatex">\(O(n)\)</span> 做稳定的第 <span class="arithmatex">\(k\)</span> 大。</p>
-<h2 id="_8">一些简单应用<a class="headerlink" href="#_8" title="Permanent link">😅</a></h2>
-<h3 id="_9">离散化<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h2 id="_8">一些简单应用<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_9">离散化<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3518,13 +3518,13 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_10">对顶堆<a class="headerlink" href="#_10" title="Permanent link">😅</a></h3>
+<h3 id="_10">对顶堆<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>维护动态中位数问题。</p>
 <p>假设每个时刻序列 <span class="arithmatex">\(a\)</span> 的长度 <span class="arithmatex">\(n\)</span> 都是奇数。</p>
 <p>那么让排名在 <span class="arithmatex">\(1 \to \lfloor m/2 \rfloor\)</span> 的扔到大根堆，其他的扔到小根堆。</p>
 <p>如果某个堆不满足条件，那么把它的堆顶扔到另外一个堆去。</p>
 <p>答案就是小根堆的堆顶。</p>
-<h3 id="_11">逆序对<a class="headerlink" href="#_11" title="Permanent link">😅</a></h3>
+<h3 id="_11">逆序对<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>定义逆序对为形如 (i, j)，保证 <span class="arithmatex">\(i &lt; j, a_i &gt; a_j\)</span> 的点对。</p>
 <p>求一个序列的逆序对个数。</p>

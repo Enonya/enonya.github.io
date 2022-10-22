@@ -3252,8 +3252,8 @@
 
   <h1>前缀和 & 差分</h1>
 
-<h2 id="_1">前缀和<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
-<h3 id="_2">一维前缀和<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h2 id="_1">前缀和<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_2">一维前缀和<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>可以实现 <span class="arithmatex">\(\text{O}(n)\)</span> 预处理，<span class="arithmatex">\(\text{O}(1)\)</span> 询问区间和。</p>
 <p>令 <span class="arithmatex">\(sum_i\)</span> 表示区间 <span class="arithmatex">\([0,i]\)</span> 的前缀和。</p>
 <p>特别的，<span class="arithmatex">\(a_0=0\)</span>。</p>
@@ -3267,7 +3267,7 @@
 <span class="p">}</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">l</span><span class="p">,</span><span class="o">&amp;</span><span class="n">r</span><span class="p">),</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">sum</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">-</span><span class="n">sum</span><span class="p">[</span><span class="n">l</span><span class="mi">-1</span><span class="p">]);</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_3">二维前缀和<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h3 id="_3">二维前缀和<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>可以实现 <span class="arithmatex">\(\text{O}(n^2)\)</span> 预处理，<span class="arithmatex">\(\text{O}(1)\)</span> 询问矩阵和。</p>
 <p>令 <span class="arithmatex">\(sum_{i,j}\)</span> 表示左上角为 <span class="arithmatex">\((1,1)\)</span> ，右下角为 <span class="arithmatex">\((i,j)\)</span> 的矩阵和。</p>
 <p>考虑容斥，预处理的时候令 <span class="arithmatex">\(sum_{i,j}=sum_{i-1,j}+sum_{i,j-1}-sum_{i-1,j-1}+a[i][j]\)</span>。</p>
@@ -3304,8 +3304,8 @@
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">sum</span><span class="p">[</span><span class="n">xx</span><span class="p">][</span><span class="n">yy</span><span class="p">]</span><span class="o">-</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">yy</span><span class="p">]</span><span class="o">-</span><span class="n">sum</span><span class="p">[</span><span class="n">xx</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">+</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]);</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_4">差分<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
-<h3 id="_5">一维差分<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h2 id="_4">差分<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_5">一维差分<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>可以实现 <span class="arithmatex">\(\text{O}(1)\)</span> 修改，<span class="arithmatex">\(\text{O}(n)\)</span> 查询。</p>
 <p>一个便于理解的特点就是，<strong>原数组就是差分序列的前缀和</strong>。</p>
 <p>定义差分序列 <span class="arithmatex">\(c_i=\begin{cases}a_1 &amp; i=1 \\ a_i-a_{i-1} &amp; \text{otherwise.}\end{cases}\)</span></p>
@@ -3329,7 +3329,7 @@
 <span class="p">}</span><span class="w"> </span><span class="c1">// 做前缀和恢复序列。</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_6">二维差分<a class="headerlink" href="#_6" title="Permanent link">😅</a></h3>
+<h3 id="_6">二维差分<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>可以实现 <span class="arithmatex">\(\text{O}(1)\)</span> 修改， <span class="arithmatex">\(\text{O}(n^2)\)</span> 查询。</p>
 <p>定义差分矩阵 <span class="arithmatex">\(c_{i,j}\)</span> ，满足 <span class="arithmatex">\(a_{i,j}\)</span> 为 <span class="arithmatex">\(c_{i,j}\)</span> 的前缀和矩阵。</p>
 <p>用二维前缀和的思想可以得到：</p>

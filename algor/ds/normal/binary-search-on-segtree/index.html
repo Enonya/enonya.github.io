@@ -3255,12 +3255,12 @@
 
   <h1>线段树二分</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>感觉就是一个简单的小 Trick，单独提出来写一下。</p>
 <p>本质上就是说，你把二分直接放到线段树上来搞，然后注意一下啥时候走左子树啥时候走右子树啥时候返回就行了。</p>
 <p>一般需要问题存在一定的单调性。</p>
-<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="k">静态全局第 k 大<a class="headerlink" href="#k" title="Permanent link">😅</a></h3>
+<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="k">静态全局第 k 大<a class="headerlink" href="#k" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>简单题，全局第 <span class="arithmatex">\(k\)</span> 大，直接开一个权值线段树。</p>
 <p>然后你考虑什么时候走左子树，显然就是左子树的和（元素个数）大于等于 <span class="arithmatex">\(k\)</span>，证明第 <span class="arithmatex">\(k\)</span> 大在这边。</p>
 <p>否则你把左子树大小 <span class="arithmatex">\(sz\)</span> 从 <span class="arithmatex">\(k\)</span> 里面减掉，在右子树询问第 <span class="arithmatex">\(k - sz\)</span> 大。</p>
@@ -3284,7 +3284,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="lower_bound">单点修改区间查询 lower_bound<a class="headerlink" href="#lower_bound" title="Permanent link">😅</a></h3>
+<h3 id="lower_bound">单点修改区间查询 lower_bound<a class="headerlink" href="#lower_bound" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>也是比较简单的题，只不过这次是在线段树上面直接二分。</p>
 <p>考虑设一个 <span class="arithmatex">\(ask(ql,qr,d)\)</span> 函数，表示当前我询问 <span class="arithmatex">\([ql, qr]\)</span> 的所有数当中第一个大于等于 <span class="arithmatex">\(d\)</span> 的数的下标。</p>
 <p>而且还有一个非常重要的第二个定义：定义 <span class="arithmatex">\(ask(ql, qr, d)\)</span> 表示，<strong>我能肯定潜在的答案必然在区间</strong> <span class="arithmatex">\([ql, qr]\)</span> 内，不管是否真的存在这个元素，反正如果可能出现就必然在 <span class="arithmatex">\([ql, qr]\)</span> 里面。</p>
@@ -3375,13 +3375,13 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="2020-ab">[省选联考 2020 A/B 卷] 冰火战士<a class="headerlink" href="#2020-ab" title="Permanent link">😅</a></h3>
+<h3 id="2020-ab">[省选联考 2020 A/B 卷] 冰火战士<a class="headerlink" href="#2020-ab" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>很好，我还没做。</p>
-<h3 id="k_1">静态区间第 k 大<a class="headerlink" href="#k_1" title="Permanent link">😅</a></h3>
+<h3 id="k_1">静态区间第 k 大<a class="headerlink" href="#k_1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>就是用主席树，把全局变成区间。</p>
 <p>然后在主席树上面二分就行了。</p>
 <p>具体不会，之后写。</p>
-<h3 id="k_2">动态区间第 k 大<a class="headerlink" href="#k_2" title="Permanent link">😅</a></h3>
+<h3 id="k_2">动态区间第 k 大<a class="headerlink" href="#k_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>就是额外用一个树状数组去维护主席树的信息支持单点修改就行了。</p>
 <p>然后和静态区间第 k 大没啥差别。</p>
 <p>具体不会，之后写。</p>

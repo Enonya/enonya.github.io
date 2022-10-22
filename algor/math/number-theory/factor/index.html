@@ -3275,7 +3275,7 @@
 
   <h1>约数</h1>
 
-<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>若 <span class="arithmatex">\(n\)</span> 除以 <span class="arithmatex">\(d\)</span> 的余数为 <span class="arithmatex">\(0\)</span>，则称 <span class="arithmatex">\(d\)</span> 能整除 <span class="arithmatex">\(n\)</span>，或者 <span class="arithmatex">\(d\)</span> 为 <span class="arithmatex">\(n\)</span> 的约数，记作 <span class="arithmatex">\(d|n,(n,d \in \mathbb{Z})\)</span></p>
 <ul>
 <li>唯一分解定理的三个推论：</li>
@@ -3283,8 +3283,8 @@
 <li><span class="arithmatex">\(n\)</span> 的正约数个数为 <span class="arithmatex">\(\prod\limits_{i = 1}^m(c_i+ 1)\)</span></li>
 <li><span class="arithmatex">\(n\)</span> 的正约数之和为 <span class="arithmatex">\((1+p_1+p_1^2+p_1^3+\dots +p_1^{c_1})\times\dots(1+p_m+p_m^2+p_m^3+\dots +p_m^{c_m}) = \prod\limits_{i = 1}^m(\sum\limits_{j = 1}^{c_i} p_i^{j})\)</span></li>
 </ul>
-<h2 id="_2">求正约数集合<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="_3">试除法<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="_2">求正约数集合<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_3">试除法<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑到 <span class="arithmatex">\(n = a\times b\)</span>，其中 <span class="arithmatex">\(a,b\)</span> 为一对同时出现的因子。结合根号结论，扫描 <span class="arithmatex">\(a\in[1,\sqrt{n}]\)</span>，若 <span class="arithmatex">\(a | n\)</span>，则同时记录 <span class="arithmatex">\(a,n/a\)</span> 即可。</p>
 <p>复杂度显然是根号，由此可以得到一个推论：整数 <span class="arithmatex">\(n\)</span> 的约数上界为 <span class="arithmatex">\(2\sqrt{n}\)</span> （<strong>约数上界结论</strong>）。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -3306,7 +3306,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_4">倍数法<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">倍数法<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>试除法有局限性，只能求一个数的正约数集合，倍数法则可以求 <span class="arithmatex">\([1,n]\)</span> 所有数的正约数集合。</p>
 <p>基于一个比较显然的想法，对于任意一个 <span class="arithmatex">\(d\in[1,n]\)</span>，以 <span class="arithmatex">\(d\)</span> 为约数之一的数的集合必然是 <span class="arithmatex">\(\{kd,k=2,3,4\dots,\lfloor n/d\rfloor\}\)</span></p>
 <p>那么直接把 <span class="arithmatex">\(d\)</span> 扔到里面即可，复杂度 <span class="arithmatex">\(O(n+n/2+n/3+\dots+1) = O(n\log n)\)</span>。</p>
@@ -3324,7 +3324,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_5">最大公约数<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h2 id="_5">最大公约数<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>定义如字面意义。</p>
 <ul>
 <li>
@@ -3365,11 +3365,11 @@
 </code></pre></div>
 </td></tr></table>
 <p>复杂度 <span class="arithmatex">\(O(\log(a+b))\)</span>。</p>
-<h2 id="_6">互质<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
+<h2 id="_6">互质<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>就是 <span class="arithmatex">\(\gcd(a,b)=1,a,b\in\mathbb{N}\)</span>，则称 <span class="arithmatex">\(a,b\)</span> 互质。</p>
 <p>注意两两互质是 <span class="arithmatex">\(\gcd(a,b)=\gcd(b,c)=\gcd(a,c) = 1\)</span>。</p>
 <p><span class="arithmatex">\(\gcd(a,b,c)=1\)</span> 为“<span class="arithmatex">\(a,b,c\)</span> 互质”。</p>
-<h2 id="_7">欧拉函数<a class="headerlink" href="#_7" title="Permanent link">😅</a></h2>
+<h2 id="_7">欧拉函数<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <ul>
 <li>
 <p>定义：<span class="arithmatex">\([1,n]\)</span> 中与 <span class="arithmatex">\(n\)</span> 互质的数的个数为 <span class="arithmatex">\(\varphi(n)\)</span>，称作欧拉函数。</p>
@@ -3381,7 +3381,7 @@
 <p>本质上是容斥原理，即对于 <span class="arithmatex">\(n\)</span> 的任意两个质因子 <span class="arithmatex">\(p,q\)</span>，从 <span class="arithmatex">\([1,n]\)</span> 中去除 <span class="arithmatex">\(p,q\)</span> 分别的倍数之后，还要把 <span class="arithmatex">\(pq\)</span> 的倍数加回来一次，</p>
 <p>对于整体应用这个结论可以得到 <span class="arithmatex">\(\varphi(n)=n-\lfloor\frac{n}{p}\rfloor-\lfloor\frac{n}{q}\rfloor+\lfloor\frac{n}{pq}\rfloor=n(1-\frac{1}{p})(1-\frac{1}{q})\)</span>。</p>
 <p>所以分解质因数就可以 <span class="arithmatex">\(O(\sqrt{n})\)</span> 求 <span class="arithmatex">\(\varphi(n)\)</span>。</p>
-<h3 id="_8">欧拉函数的性质<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<h3 id="_8">欧拉函数的性质<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
 <li>性质1：<span class="arithmatex">\(\forall n &gt; 1, 1\sim n\)</span> 中与 <span class="arithmatex">\(n\)</span> 互质的数的和为 <span class="arithmatex">\(n\cdot\varphi(n)/2\)</span>。</li>
 </ul>
@@ -3409,7 +3409,7 @@
 <p>显然 <span class="arithmatex">\(f(p_i^{c_i}) = \varphi(1)+\varphi(p_i)+\varphi(p_i^{2})+\dots+\varphi(p_i^{c_i}) = p_i^{c_i}\)</span>（由性质 <span class="arithmatex">\(5\)</span> 可以发现是一个等比数列求和）。</p>
 <p>然后发现若 <span class="arithmatex">\(\gcd(n,m)=1\)</span>，<span class="arithmatex">\(f(nm)=(\sum_{d|n}\varphi(d))\cdot(\sum_{d|m}\varphi(d))=f(n)f(m)\)</span>。</p>
 <p>所以 <span class="arithmatex">\(f\)</span> 是积性函数，由积性函数性质可以得到原式成立。</p>
-<h3 id="_9">筛法求欧拉函数<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h3 id="_9">筛法求欧拉函数<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
 <li>埃氏筛</li>
 </ul>

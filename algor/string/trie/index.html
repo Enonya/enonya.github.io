@@ -3334,19 +3334,19 @@
 
   <h1>Trie</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>又叫做字典树，思想是把字符串拆分成一个一个字符，然后将字符放到树的“边”上（<strong>字符指针</strong>），利用节点储存字符串结束等信息。</p>
 <p>普通 Trie 一般用于检索字符串是否存在，或者作为 AC 自动机的一部分，用于多模式匹配。</p>
 <p>变种的 01Trie 可以实现诸如查询和 <span class="arithmatex">\(x\)</span> 异或值最大的数，维护异或和等<strong>位运算相关操作</strong>，尤其是异或。</p>
 <p>结构一般长这样：</p>
 <p><a href="https://imgtu.com/i/LRaR9f"><img alt="LRaR9f.png" src="https://s1.ax1x.com/2022/04/22/LRaR9f.png" /></a></p>
-<h2 id="trie">Trie<a class="headerlink" href="#trie" title="Permanent link">😅</a></h2>
+<h2 id="trie">Trie<a class="headerlink" href="#trie" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>Trie 支持两种操作，插入和查询。</p>
 <p>首先明确 Trie 的结构到底是怎么样的，Trie 将字符储存于树的边上，并在节点上有一个 <span class="arithmatex">\(end\)</span> 标记，表示当前节点是否是一个字符串的结尾。</p>
 <p>实现时利用一个数组 <span class="arithmatex">\(tr[x,ch]\)</span>，表示节点 <span class="arithmatex">\(x\)</span> 的 <span class="arithmatex">\(ch\)</span> 字符指针指向的节点编号。</p>
 <p>类比动态开点线段树的思想，Trie 只会在一个节点被建立时给予一个编号。</p>
 <p>初始的时候 Trie 只有一个节点 <span class="arithmatex">\(root\)</span>，并且所有的 <span class="arithmatex">\(tr\)</span> 都指向 <span class="arithmatex">\(\text{NULL}\)</span> （空）。</p>
-<h3 id="_2">插入字符串<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h3 id="_2">插入字符串<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>将一个新的字符串 <span class="arithmatex">\(s\)</span> 插入到 Trie 当中。</p>
 <p>初始时令一个指针 <span class="arithmatex">\(p = root\)</span>，然后从最低位开始扫描字符串 <span class="arithmatex">\(s\)</span>。 </p>
 <p>如果当前扫描到的字符为 <span class="arithmatex">\(s_i\)</span>，令 <span class="arithmatex">\(p = tr[p,s_i]\)</span>。</p>
@@ -3356,13 +3356,13 @@
 <p>重复这个过程，直到 <span class="arithmatex">\(s\)</span> 被扫描完毕，在当前的节点 <span class="arithmatex">\(p\)</span> 上打上一个标记 <span class="arithmatex">\(end[p] = \text{true}\)</span>。</p>
 <p>放一张早年做的比较糙的 GIF：</p>
 <p><a href="https://imgtu.com/i/cSnwzn"><img alt="cSnwzn.gif" src="https://z3.ax1x.com/2021/03/27/cSnwzn.gif" /></a></p>
-<h3 id="_3">询问<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h3 id="_3">询问<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>查询一个字符串 <span class="arithmatex">\(s\)</span> 是否存在于 Trie 当中。</p>
 <p>类似 <code>Insert</code> 操作，设一个指针 <span class="arithmatex">\(p = root\)</span>，然后扫描 <span class="arithmatex">\(s_i\)</span>。</p>
 <p>不断跳 <span class="arithmatex">\(p = tr[p, s_i]\)</span>，如果还没有扫完 <span class="arithmatex">\(s\)</span>，就已经出现了 <span class="arithmatex">\(tr[p,s_i]\)</span> 指向 <span class="arithmatex">\(\text{NULL}\)</span> 的情况，则返回 <span class="arithmatex">\(\text{false}\)</span>。</p>
 <p>如果已经扫描完了 <span class="arithmatex">\(s\)</span>，且 <span class="arithmatex">\(end[p] = \text{true}\)</span>，返回 <span class="arithmatex">\(\text{true}\)</span>。</p>
 <p>反之返回 <span class="arithmatex">\(\text{false}\)</span>。</p>
-<h3 id="_4">代码实现<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">代码实现<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note">
 <summary>普通 Trie 树</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3427,7 +3427,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_5">一些性质<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">一些性质<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ol>
 <li>两个字符串的最长公共前缀是他们的尾标记所在的两个节点的 lca 到根的路径组成的字符串。</li>
 </ol>
@@ -3443,10 +3443,10 @@
 <p>是 AC 自动机的一部分。</p>
 </li>
 </ol>
-<h2 id="01trie">01Trie<a class="headerlink" href="#01trie" title="Permanent link">😅</a></h2>
+<h2 id="01trie">01Trie<a class="headerlink" href="#01trie" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>类似于普通的 Trie，只不过将字符集变为了 <span class="arithmatex">\(\{0,1\}\)</span> 以维护一些二进制相关的信息。</p>
-<h3 id="x">求与 x 异或的最值<a class="headerlink" href="#x" title="Permanent link">😅</a></h3>
-<h4 id="_6">询问最值<a class="headerlink" href="#_6" title="Permanent link">😅</a></h4>
+<h3 id="x">求与 x 异或的最值<a class="headerlink" href="#x" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_6">询问最值<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>将所有数二进制拆分，包括 <span class="arithmatex">\(x\)</span>。</p>
 <p>然后把这些二进制数<strong>从高位到低位</strong>插入进 Trie。</p>
 <p>然后从高到低扫描 <span class="arithmatex">\(x\)</span> 二进制下的每一位，同时维护一个指针 <span class="arithmatex">\(p\)</span> 往下跳。</p>
@@ -3455,7 +3455,7 @@
 <p>跳到叶子节点之后，从 <span class="arithmatex">\(p\)</span> 到 <span class="arithmatex">\(root\)</span> 的路径组成的数就是所求的，和 <span class="arithmatex">\(x\)</span> 异或起来的值最大的数，</p>
 <p>在插入每个数之后，在对应结束的节点打一个标记，记录从这个节点到根的路径组成的数是多少即可。</p>
 <p>异或起来最小同理。</p>
-<h4 id="_7">代码实现<a class="headerlink" href="#_7" title="Permanent link">😅</a></h4>
+<h4 id="_7">代码实现<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <details class="note">
 <summary>01Trie</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3534,13 +3534,13 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_8">维护异或和<a class="headerlink" href="#_8" title="Permanent link">😅</a></h3>
+<h3 id="_8">维护异或和<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>01 Trie 可以用来维护一些数的异或和，支持插入，删除，还有全局加一操作。</p>
 <p>我出的一道题里面有用到一个 Trick：异或和的二进制下某一位的值，取决于所有数的这一位的 <span class="arithmatex">\(1\)</span> 的个数的<strong>奇偶性</strong>。</p>
 <p>也就是，异或和 <span class="arithmatex">\(xorv\)</span> 的第 <span class="arithmatex">\(k\)</span> 位是 <span class="arithmatex">\(1\)</span>，当且仅当所有数当中有 <strong>奇数个</strong> 数的第 <span class="arithmatex">\(k\)</span> 为是 <span class="arithmatex">\(1\)</span>。</p>
 <p>那么利用它来考虑维护全局异或和。</p>
 <p>不过维护异或和的时候和一般的 01Trie 不一样，此时的 01Trie 应当是<strong>从低位到高位插入</strong>的，以方便全局加一操作的处理。</p>
-<h4 id="_9">信息上传<a class="headerlink" href="#_9" title="Permanent link">😅</a></h4>
+<h4 id="_9">信息上传<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>用类似线段树的思想，我们自底向上收集信息。</p>
 <p>设 <span class="arithmatex">\(xorv_i\)</span> 表示节点 <span class="arithmatex">\(i\)</span> 的子树所维护的异或和。</p>
 <p>设 <span class="arithmatex">\(wei_i\)</span> 指节点 <span class="arithmatex">\(i\)</span> 到其父亲节点这条边上数值的数量（权值），也就是这条边 被所有插入的数 拆成二进制之后 在树上代表的路径 覆盖的次数。</p>
@@ -3551,20 +3551,20 @@
 <p>如果 <span class="arithmatex">\(p\)</span> 的 <span class="arithmatex">\(0\)</span> 指针指向的节点不为 <span class="arithmatex">\(\text{NULL}\)</span>，那么让 <span class="arithmatex">\(xorv_p = xorv_p \operatorname{xor} (xorv_{tr[p][0]}&lt;&lt;1)\)</span>，也就是<strong>先对齐</strong>每一位，然后异或起来。</p>
 <p>如果 <span class="arithmatex">\(p\)</span> 的 <span class="arithmatex">\(1\)</span> 指针指向的节点不为 <span class="arithmatex">\(\text{NULL}\)</span>，那么让 <span class="arithmatex">\(xorv_p = xorv_p \operatorname{xor} ((xorv_{tr[p][1]} &lt;&lt; 1) \operatorname{or} (wei_{tr[p][1]} \operatorname{and} 1))\)</span>。</p>
 <p>也就是先对齐每一位，然后看奇偶性。</p>
-<h4 id="_10">插入 / 删除<a class="headerlink" href="#_10" title="Permanent link">😅</a></h4>
+<h4 id="_10">插入 / 删除<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>插入直接递归，如果遇到空节点，那么新建即可。</p>
 <p>为了之后全局加一<strong>进位</strong>方便，我们强制让每一个数都变成 <code>MaxDepth</code> 位，再插入进 Trie 当中。</p>
 <p><code>MaxDepth</code> 是你选择的 Trie 树的最大深度，一般比要插入的数的最高位数多出两三位。</p>
 <p>当深度到达 <code>MaxDepth</code> 之后，令 <span class="arithmatex">\(wei_p + 1\)</span>，然后不断向上传递信息即可。</p>
 <p>这样子就能保证，每插入一个数 <span class="arithmatex">\(x\)</span>，<span class="arithmatex">\(x\)</span> 的二进制表示 在 Trie 树上代表的路径 上的所有节点的 <span class="arithmatex">\(wei\)</span> 都会 <span class="arithmatex">\(+1\)</span>。  </p>
 <p>删除操作也是类似的，只不过变成了让最后一位（最高位）所对应的节点的 <span class="arithmatex">\(wei -1\)</span>，再向上收集信息。</p>
-<h4 id="_11">全局加一<a class="headerlink" href="#_11" title="Permanent link">😅</a></h4>
+<h4 id="_11">全局加一<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>思考一下，在二进制下的加一操作实质上是什么？</p>
 <div class="arithmatex">\[(10011)_2 + 1 = (10100)_2 \\ (10110)_2 + 1 = (10111)_2\]</div>
 <p>实际上就是：从最低位开始，找到第一个 <span class="arithmatex">\(0\)</span>，将其取反，然后将它后面（到最低位）的所有 <span class="arithmatex">\(1\)</span> 变成 <span class="arithmatex">\(0\)</span>。</p>
 <p>对应到 01Trie 上，就是从 <span class="arithmatex">\(root\)</span> 开始递归下去，找到第一个非空的 <span class="arithmatex">\(tr[p][0]\)</span> 指针，然后交换 <span class="arithmatex">\(tr[p][0],tr[p][1]\)</span>（取反）。</p>
 <p>沿着<strong>交换之后</strong>的 <span class="arithmatex">\(tr[p][0]\)</span> 递归下去操作即可。</p>
-<h4 id="_12">代码实现<a class="headerlink" href="#_12" title="Permanent link">😅</a></h4>
+<h4 id="_12">代码实现<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <details class="note">
 <summary>维护异或和</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3751,7 +3751,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="01trie_1">01Trie 合并<a class="headerlink" href="#01trie_1" title="Permanent link">😅</a></h3>
+<h3 id="01trie_1">01Trie 合并<a class="headerlink" href="#01trie_1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>合并两颗 01Trie。</p>
 <p>和线段树合并是比较类似的，用同样的思想思考即可。</p>
 <p>就是把两个节点中的一个的信息合并到另外一个上，并返回合并之后的编号。</p>

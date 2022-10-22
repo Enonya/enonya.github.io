@@ -3259,7 +3259,7 @@
 
   <h1>树形 DP</h1>
 
-<h2 id="dp">普通树形DP<a class="headerlink" href="#dp" title="Permanent link">😅</a></h2>
+<h2 id="dp">普通树形DP<a class="headerlink" href="#dp" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>树形DP的固有特征就是使用 dfs 递归实现。</p>
 <p>一般来说都是 dfs 到儿子，然后<strong>上传信息</strong>更新父亲，最后得出答案。</p>
 <p>常见的辅助数组是：</p>
@@ -3270,7 +3270,7 @@
 </ul>
 <p>（除了换根DP会在第二次 dfs 的时候用父亲更新儿子）</p>
 <p>一般来说，状态都是设计成这种 ：<span class="arithmatex">\(f_{u}\)</span> 表示节点 <span class="arithmatex">\(u\)</span> blablabla，表示以 <span class="arithmatex">\(u\)</span> 为根的子树 blablabla……</p>
-<h3 id="_1">例子<a class="headerlink" href="#_1" title="Permanent link">😅</a></h3>
+<h3 id="_1">例子<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>没有上司的舞会：给你一棵树，如果选了某一个节点的父亲节点，那么就不能选这个节点，节点有点权，问你可以选择的点权和的最大值。</p>
 </blockquote>
@@ -3389,10 +3389,10 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="_2">树上背包<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">树上背包<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个见 背包问题 。</p>
-<h2 id="dp_1">换根DP<a class="headerlink" href="#dp_1" title="Permanent link">😅</a></h2>
-<h3 id="_3">泛化<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="dp_1">换根DP<a class="headerlink" href="#dp_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_3">泛化<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这类问题的显著特点是两次dfs，一次收集信息，一次进行转移。</p>
 <p>有的时候暴力需要每个点进行一次 <span class="arithmatex">\(\text{O}(n)\)</span> 的 dfs，复杂度 <span class="arithmatex">\(\text{O}(n^2)\)</span>。</p>
 <p>此时一般都可以使用换根DP进行 <span class="arithmatex">\(\text{O}(n)\)</span> 的计算。</p>
@@ -3411,7 +3411,7 @@
 <p>具体来说，此时进行换根DP的时候，会设 <span class="arithmatex">\(f_u\)</span> 表示以 <span class="arithmatex">\(u\)</span> 为根的时候的答案，然后从最开始选定的根节点向下转移。</p>
 <p>因为每次只会向当前节点的儿子节点转移，所以只需要对信息进行一些整合、计算就可以得到儿子节点的答案。</p>
 <p>（此处所说的“父亲”，“儿子”，都是在最开始选定的根节点 <span class="arithmatex">\(rt\)</span> 为整棵树的根的情况下定义的）</p>
-<h3 id="_4">例子<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">例子<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>[POI2008]STA-Station：给你一颗无根无权树，请你找到一个节点，使得以这个节点为根的时候，树的节点的深度之和最大。</p>
 </blockquote>
@@ -3534,7 +3534,7 @@
 <li>统计此时的信息</li>
 <li>换根，利用父亲更新儿子的答案，转移之前要先初始化第一遍 dfs 时候的根 <span class="arithmatex">\(rt\)</span> 的答案。</li>
 </ol>
-<h3 id="_5">另外一个例子<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">另外一个例子<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>[USACO12FEB]Nearby Cows G：给你一棵 <span class="arithmatex">\(n\)</span> 个点的树，点带权，</p>
 <p>对于每个节点 <span class="arithmatex">\(i\)</span>，求出距离它不超过 <span class="arithmatex">\(K\)</span> 的所有节点的权值和 <span class="arithmatex">\(m_i\)</span>，</p>

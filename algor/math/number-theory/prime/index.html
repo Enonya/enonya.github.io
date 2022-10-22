@@ -3248,7 +3248,7 @@
 
   <h1>质数</h1>
 
-<h2 id="_1">质数的定义<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">质数的定义<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>简单来说就是除了 <span class="arithmatex">\(1\)</span> 和它本身以外没有任何因数。</p>
 <p>本文记 <span class="arithmatex">\(\text{PRIME}(n)\)</span> 表示 <span class="arithmatex">\(n\)</span> 为质数。</p>
 <p>有两个重要结论：</p>
@@ -3257,7 +3257,7 @@
 <li>结论 2：若 <span class="arithmatex">\(\lnot \text{PRIME}(n)\)</span>，则 <span class="arithmatex">\(\exists T \in [2,\sqrt{n}]\)</span>，使得 <span class="arithmatex">\(T|n\)</span>。（<strong>根号结论</strong>）</li>
 </ul>
 <p>此处记 <span class="arithmatex">\(\sqrt{n} = \lfloor\sqrt{n}\rfloor\)</span>。</p>
-<h2 id="_2">判断是否为质数<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">判断是否为质数<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>由根号结论可以得到一个比较显然的质数判断算法：</p>
 <p>令 <span class="arithmatex">\(x\in[2,\sqrt{n}]\)</span>，判断是否存在 <span class="arithmatex">\(x | n\)</span>。若存在 <span class="arithmatex">\(\Rightarrow \lnot \text{PRIME}(n)\)</span>。</p>
 <p>复杂度 <span class="arithmatex">\(O(\sqrt{n})\)</span>。</p>
@@ -3274,9 +3274,9 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_3">质数筛法<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">质数筛法<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>泛化：用来求 <span class="arithmatex">\([1,n]\)</span> 中的素数集合。</p>
-<h3 id="_4">埃氏筛<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">埃氏筛<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>基于一个显然的结论：<span class="arithmatex">\(\forall x \in \mathbb{N}^*\)</span>，<span class="arithmatex">\(\lnot \text{PRIME}(kx),(k = 2, 3, 4,\dots)\)</span></p>
 <p>一个 simple 的想法：枚举 <span class="arithmatex">\(2 \to n\)</span>，如果 <span class="arithmatex">\(i\)</span> 没有被标记为合数，则 <span class="arithmatex">\(\text{PRIME}(i)\)</span>，然后标记所有的 <span class="arithmatex">\(ki\)</span>。如果 <span class="arithmatex">\(i\)</span> 已经被标记，那么标记所有的 <span class="arithmatex">\(ki\)</span>，初始的时候 <span class="arithmatex">\(2\)</span> 没有被标记。复杂度 <span class="arithmatex">\(O(n\times\sum\frac{n}{i})=O(n^2)\)</span>。</p>
 <p>发现这个做法会重复标记一个数很多次，比如 <span class="arithmatex">\(12\)</span> 就会被 <span class="arithmatex">\(2, 3, 4, 6\)</span> 都标记一次。</p>
@@ -3305,7 +3305,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_5">线性筛<a class="headerlink" href="#_5" title="Permanent link">😅</a></h3>
+<h3 id="_5">线性筛<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>又叫欧拉筛。</p>
 <p>考虑到埃氏筛还是会重复标记很多数。</p>
 <p>还是举一个例子：<span class="arithmatex">\(12 = 2 \times 6 = 3 \times 4\)</span>，这个例子下，<span class="arithmatex">\(12\)</span> 会被 <span class="arithmatex">\(2,3\)</span> 各筛一次。</p>
@@ -3354,7 +3354,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_6">质因数分解<a class="headerlink" href="#_6" title="Permanent link">😅</a></h2>
+<h2 id="_6">质因数分解<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>泛化：分解一个数的所有质因子</p>
 <ul>
 <li>算术基本定理：任何一个大于 <span class="arithmatex">\(1\)</span> 的正整数都可以唯一分解为有限个质数的乘积。</li>

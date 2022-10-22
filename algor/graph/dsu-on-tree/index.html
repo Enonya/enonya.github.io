@@ -3239,7 +3239,7 @@
 
   <h1>树上启发式合并</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>全称树上启发式合并，也叫优雅的树上暴力。</p>
 <p>这东西听说实际上是一种静态链分治。</p>
 <p>但是无所谓，能拿来做题就行。</p>
@@ -3266,8 +3266,8 @@
 <p>把高度矮的合并到高度高的显然能更快的进行找集合父亲的操作 <code>root()</code>。</p>
 <p>树上启发式合并其实和这个比较类似，也是利用启发式算法的思想，来优化树上子节点信息的合并过程。</p>
 <p>这可能也是这个算法叫 dsu on tree 的原因。</p>
-<h2 id="_2">应用<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
-<h3 id="_3">泛化<a class="headerlink" href="#_3" title="Permanent link">😅</a></h3>
+<h2 id="_2">应用<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_3">泛化<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>dsu on tree 主要运用于一类树上问题，这类问题一般需要通过儿子子树的信息“<strong>合并</strong>”来得到父亲子树的信息。</p>
 <p>这里的合并可以简单的理解为：“把所有儿子对应的答案直接通过某种方式揉到一起”</p>
@@ -3275,7 +3275,7 @@
 <p>如果是<strong>离线</strong>，就可以考虑使用 dsu on tree 来<strong>对暴力合并进行优化</strong></p>
 <p>在多数时候速度能吊打树上莫队，树套树等难写的算法。</p>
 </blockquote>
-<h3 id="_4">例题<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
+<h3 id="_4">例题<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <details class="note" open="open">
 <summary>Last mile of the way</summary>
 <blockquote>
@@ -3487,7 +3487,7 @@
 </td></tr></table>
 </details>
 <p>复杂度证明可以看看 OI-wiki，之后再补。</p>
-<h2 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h2 id="_5">总结<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>总结一下，dsu on tree 其实就是对于需要合并信息的一类离线树上问题，利用启发式合并的思想优化。</p>
 <p>过程大致如下：</p>
 <ol>

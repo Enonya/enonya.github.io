@@ -3339,8 +3339,8 @@
 
 
 
-<h1 id="_1">线段树<a class="headerlink" href="#_1" title="Permanent link">😅</a></h1>
-<h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h1 id="_1">线段树<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h1>
+<h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>线段树是一种常用的维护区间信息的数据结构。</p>
 <p>它要求所维护的信息具有区间可加性（容易按照区间划分，合并）</p>
 <p>比如 <span class="arithmatex">\(\sum, \prod, \min, \max\)</span> 这些信息。</p>
@@ -3356,7 +3356,7 @@
 </ol>
 </details>
 <p>一般支持单点和区间的信息修改，区间的信息查询。</p>
-<h2 id="_3">普通线段树<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">普通线段树<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>线段树基于分治思想，它先将序列从中间一分为二，</p>
 <p>然后对于产生的这两段区间，继续进行从中间一分为二的过程。</p>
 <p>直到最后分出来的这一段区间长度等于 <span class="arithmatex">\(1\)</span>。</p>
@@ -3378,8 +3378,8 @@
 <li>它维护的信息的值 <span class="arithmatex">\(dat\)</span>。</li>
 </ul>
 <p>一般情况下使用结构体维护，方便模块化的编写和调试。</p>
-<h3 id="_4">基本操作<a class="headerlink" href="#_4" title="Permanent link">😅</a></h3>
-<h4 id="_5">上传信息<a class="headerlink" href="#_5" title="Permanent link">😅</a></h4>
+<h3 id="_4">基本操作<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_5">上传信息<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>这个操作用于把儿子节点的信息上传到父亲节点。</p>
 <p>因为一般的线段树都是自底向上更新，所以需要这样的一个步骤。</p>
 <p>就是直接把左右儿子的信息拉上来到父亲节点。</p>
@@ -3398,7 +3398,7 @@
 </td></tr></table>
 </details>
 <p>可以发现这个操作就是把 lson 的信息和 rson 的信息合并起来，印证了线段树维护的信息应当满足结合律。</p>
-<h4 id="_6">建树<a class="headerlink" href="#_6" title="Permanent link">😅</a></h4>
+<h4 id="_6">建树<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>这个操作用于确定线段树的结构，每个节点维护的区间，并将线段树初始化为最初状态。</p>
 <p>从根节点开始，左右儿子分别递归下去，同步记录两个值 <span class="arithmatex">\(l, r\)</span>，表示当前节点应该维护的区间。</p>
 <p>当递归到一个节点 <span class="arithmatex">\(p\)</span> 的时候，令 <span class="arithmatex">\(\text{t[p].l} \gets l, \text{t[p].r} \gets r\)</span> 即可。</p>
@@ -3426,7 +3426,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="_7">单点修改<a class="headerlink" href="#_7" title="Permanent link">😅</a></h4>
+<h4 id="_7">单点修改<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>这个操作用于修改某一个位置 <span class="arithmatex">\(x\)</span> 的值为 <span class="arithmatex">\(v\)</span>。</p>
 <p>可以类比建树的过程。</p>
 <p>我们一直递归下去，找到维护这个位置 <span class="arithmatex">\(x\)</span> 的节点 <span class="arithmatex">\(p\)</span>，令 <span class="arithmatex">\(\text{t[p].dat} \gets v\)</span>，然后不断上传即可。</p>
@@ -3462,7 +3462,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h4 id="_8">区间查询<a class="headerlink" href="#_8" title="Permanent link">😅</a></h4>
+<h4 id="_8">区间查询<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>这个操作用于查询一个区间 <span class="arithmatex">\([ql, qr]\)</span> 的信息，比如区间和或者区间最值。</p>
 <p>还是从根节点递归下去，设 <span class="arithmatex">\(nl = \text{t[p].l}, nr = \text{t[p].r}\)</span>。</p>
 <p>然后如果当前节点 <span class="arithmatex">\(p\)</span> 满足 <span class="arithmatex">\([nl, nr] \subset [ql, qr]\)</span>。</p>
@@ -3549,7 +3549,7 @@
 </td></tr></table>
 </details>
 <p>答案有可能要从两边一起取过来，所以也能证明运算需要满足结合律。</p>
-<h3 id="_9">延迟标记<a class="headerlink" href="#_9" title="Permanent link">😅</a></h3>
+<h3 id="_9">延迟标记<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑如果区间加区间和怎么办。</p>
 <p>显然如果直接暴力递归到区间里的每个数对应的叶子节点然后向上更新，复杂度显然不能接受，单次操作就是 <span class="arithmatex">\(O(n \log n)\)</span> 的。</p>
 <p>可以发现，有的时候我们并不需要递归到叶子节点，类似区间查询的那个小剪枝，我们如果递归到一个被询问区间完整包含的节点，直接在上面打一个“标记”，表示我摆烂了，不往下更新了，先给儿子节点欠着这个更新，等以后需要用到的时候再把标记 <span class="arithmatex">\(O(1)\)</span> 下放给儿子。</p>
@@ -4103,7 +4103,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 <li><a href="https://atcoder.github.io/ac-library/production/document_en/appendix.html">Github - ATcoder Library Documents</a></li>
 <li>粉兔的友情讲解，以及那句 「？你根本不是萌新」</li>
 </ul>
-<h2 id="_10">动态开点<a class="headerlink" href="#_10" title="Permanent link">😅</a></h2>
+<h2 id="_10">动态开点<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>正常的线段树一般都是用二倍标记法去标记儿子的序号。</p>
 <p>这样至少需要四倍空间才不会出现 RE。</p>
 <p>但在某些特殊的情况下（比如后面的权值线段树），你需要维护下标的范围可能非常大，如果真的要全部建树建出来，空间就爆了。</p>
@@ -4307,13 +4307,13 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="_11">权值线段树<a class="headerlink" href="#_11" title="Permanent link">😅</a></h2>
+<h2 id="_11">权值线段树<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>属于一种变种的线段树。</p>
 <p>维护的不是序列而是序列的值域，可以把它看作一个动态的桶（叶子节点就是桶）。</p>
 <p>也就是说，它维护的一段 <span class="arithmatex">\([l,r]\)</span> 区间的信息，是序列中权值在 <span class="arithmatex">\([l,r]\)</span> 中的数的个数。</p>
 <p>用它可以实现一些平衡树的功能。</p>
 <p>因为一般维护的值域很大（<span class="arithmatex">\(10^9\)</span> 这种），所以可以离散化或者动态开点，个人推荐后一种。</p>
-<h3 id="_12">正常操作<a class="headerlink" href="#_12" title="Permanent link">😅</a></h3>
+<h3 id="_12">正常操作<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>和正常的动态开点没区别。</p>
 <details class="note">
 <summary>Code</summary>
@@ -4417,7 +4417,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_13">插入/删除<a class="headerlink" href="#_13" title="Permanent link">😅</a></h3>
+<h3 id="_13">插入/删除<a class="headerlink" href="#_13" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这个直接在对应位置单点加减一就行。</p>
 <details class="note">
 <summary>Code</summary>
@@ -4435,7 +4435,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="k">动态全局第 k 大（线段树二分）<a class="headerlink" href="#k" title="Permanent link">😅</a></h3>
+<h3 id="k">动态全局第 k 大（线段树二分）<a class="headerlink" href="#k" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这里要用到线段树二分的思想。</p>
 <p>假设要查询全局第 <span class="arithmatex">\(k\)</span> 大。</p>
 <p>当前递归到的节点的左右儿子权值和分别为 <span class="arithmatex">\(ls, rs\)</span>。</p>
@@ -4465,7 +4465,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_14">查询排名<a class="headerlink" href="#_14" title="Permanent link">😅</a></h3>
+<h3 id="_14">查询排名<a class="headerlink" href="#_14" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>查询某一个数 <span class="arithmatex">\(x\)</span> 的排名。</p>
 <p>直接查线段树上 <span class="arithmatex">\([1,x)\)</span> 的和然后加一即可。</p>
 <details class="note">
@@ -4478,7 +4478,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="_15">查询前驱后继<a class="headerlink" href="#_15" title="Permanent link">😅</a></h3>
+<h3 id="_15">查询前驱后继<a class="headerlink" href="#_15" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>前驱直接先查询 <span class="arithmatex">\(x\)</span> 的排名 <span class="arithmatex">\(rk\)</span>，然后查第 <span class="arithmatex">\(rk - 1\)</span> 大即可。  </p>
 <p>后继类似。</p>
 <details class="note">
@@ -4497,7 +4497,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="_16">线段树合并<a class="headerlink" href="#_16" title="Permanent link">😅</a></h2>
+<h2 id="_16">线段树合并<a class="headerlink" href="#_16" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>有的时候需要对同一个值域在多颗不同的动态开点线段树上进行修改。</p>
 <p>然后计算答案时需要综合它们的答案。</p>
 <p>也就是我们需要两两合并这些线段树。</p>
@@ -4545,7 +4545,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 <p>还有一种节省空间的写法，叫节点回收。</p>
 <p>具体来说，把合并后无用的节点的编号扔进一个栈里面。</p>
 <p>合并需要新节点的时候再从栈里拿出来用。</p>
-<h2 id="_17">扫描线<a class="headerlink" href="#_17" title="Permanent link">😅</a></h2>
+<h2 id="_17">扫描线<a class="headerlink" href="#_17" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>咕</p>
 </blockquote>

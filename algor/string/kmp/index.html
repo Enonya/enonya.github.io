@@ -3239,7 +3239,7 @@
 
   <h1>KMP</h1>
 
-<h2 id="_1">前缀函数<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">前缀函数<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>对于一个字符串 <span class="arithmatex">\(s\)</span>，定义其前缀函数为它对应前缀的 border 长度：</p>
 <div class="arithmatex">\[
 \pi[i] = \max\{j\}, (s[1\dots j] = s[i - j + 1 \dots i], j &lt; i)
@@ -3250,7 +3250,7 @@
 <p>最暴力的做法就是，考虑对于 <span class="arithmatex">\(i\)</span>，枚举所有以 <span class="arithmatex">\(i\)</span> 结尾的非前缀子串，并将其和对应前缀比较。</p>
 <p>直接做是 <span class="arithmatex">\(O(n^3)\)</span> 的，如果用 Hash 优化一下就是 <span class="arithmatex">\(O(n^2)\)</span> 的。</p>
 <p>但是存在一种更加优秀的方法可以 <span class="arithmatex">\(O(n + m)\)</span> 计算它，就是下面要说的名为 Knuth-Morris-Pratt 的算法。</p>
-<h2 id="kmp">KMP<a class="headerlink" href="#kmp" title="Permanent link">😅</a></h2>
+<h2 id="kmp">KMP<a class="headerlink" href="#kmp" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>首先注意到一个点是，每次 <span class="arithmatex">\(\pi[i]\)</span> 的变化一定是在 <span class="arithmatex">\([0,1]\)</span> 之间的，最多加一不然不变。</p>
 <p>这个性质比较显然，但是很重要。</p>
 <p>然后我们定义 <span class="arithmatex">\(\pi[i]\)</span> 的”候选项“为满足 <span class="arithmatex">\(s[1\dots j] = s[i - j + 1 \dots i], j &lt; i\)</span> 的所有 <span class="arithmatex">\(j\)</span>。</p>
@@ -3286,7 +3286,7 @@
 </td></tr></table>
 <p>显然每次 <span class="arithmatex">\(j\)</span> 最多增加 <span class="arithmatex">\(1\)</span>，而跳 <span class="arithmatex">\(\pi\)</span> 的次数显然不会超过当前层开始的时候 <span class="arithmatex">\(j\)</span> 的值和 <code>while</code> 结束以后的 <span class="arithmatex">\(j\)</span> 的差值。</p>
 <p>所以复杂度 <span class="arithmatex">\(O(n)\)</span>。</p>
-<h3 id="_2">单模式匹配<a class="headerlink" href="#_2" title="Permanent link">😅</a></h3>
+<h3 id="_2">单模式匹配<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>可以考虑再设一个 <span class="arithmatex">\(f[i]\)</span>，表示文本串的以 <span class="arithmatex">\(i\)</span> 结尾的子串（注意不是非前缀了）和模式串的前缀能匹配的最大长度。</p>
 <p>如果 <span class="arithmatex">\(f[i]\)</span> 和模式串的长度相等，那么证明模式串在文本串的 <span class="arithmatex">\([i - n + 1, i]\)</span> 这个位置出现了。</p>
 <p>求法和 Next 类似，不过每次匹配的时候我们是让模式串的前缀和文本串的一个以 <span class="arithmatex">\(i\)</span> 结尾的子串进行匹配，如果无法匹配就在模式串上跳 <span class="arithmatex">\(\pi\)</span>，直到找到一个合法的模式串前缀可以和文本串的子串匹配。</p>
@@ -3320,7 +3320,7 @@
 </td></tr></table>
 <p>复杂度 <span class="arithmatex">\(O(n + m)\)</span>。</p>
 <p>注意求 <span class="arithmatex">\(f\)</span> 的时候是从 <span class="arithmatex">\(i = 1\)</span> 开始，并且如果 <span class="arithmatex">\(j = n\)</span> （<span class="arithmatex">\(j + 1\)</span> 这个位置不存在字符了），那么 <span class="arithmatex">\(j\)</span> 同样需要跳 <span class="arithmatex">\(\pi\)</span>。</p>
-<h3 id="cf1200e-compress-words">CF1200E Compress Words<a class="headerlink" href="#cf1200e-compress-words" title="Permanent link">😅</a></h3>
+<h3 id="cf1200e-compress-words">CF1200E Compress Words<a class="headerlink" href="#cf1200e-compress-words" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给你 <span class="arithmatex">\(n\)</span> 个字符串，答案串初始为空。第 <span class="arithmatex">\(i\)</span> 步将第 <span class="arithmatex">\(i\)</span> 个字符串加到答案串的后面，
 但是尽量地去掉重复部分（即去掉一个最长的、是原答案串的后缀、也是第 <span class="arithmatex">\(i\)</span> 个串的前缀的字符串），求最后得到的字符串。
@@ -3435,7 +3435,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="poj2406-power-strings">POJ2406 Power Strings<a class="headerlink" href="#poj2406-power-strings" title="Permanent link">😅</a></h3>
+<h3 id="poj2406-power-strings">POJ2406 Power Strings<a class="headerlink" href="#poj2406-power-strings" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>求字符串的最小循环节，多测。
 <span class="arithmatex">\(n \le 10^6\)</span>。</p>

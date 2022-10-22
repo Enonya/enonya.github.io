@@ -3246,7 +3246,7 @@
 
   <h1>倍增</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>序列倍增本质上是对于递推的一种优化，通常和二进制拆分（任意一个正整数都可以被拆成 <span class="arithmatex">\(2\)</span> 的整数次幂的和）搭配使用。</p>
 <p>顾名思义，倍增，就是成倍增长，每次将范围扩大或者减小一倍。</p>
 <p>形式化的说，对于一个操作 <span class="arithmatex">\(f^n(x)\)</span> 的求值，可以转化为对 <span class="arithmatex">\(f^1(x),f^2(x),f^4(x),f^{2^k}(x)\)</span> 的求值。</p>
@@ -3298,7 +3298,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>当然，你同样可以从小开始跳，本质上没有任何区别，只是我们代码实现的时候枚举指数的顺序从降序变成了升序。</p>
-<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p><a href="http://codeforces.com/problemset/problem/1647/E">CF1647E</a>，<a href="../../../rec/atcf-for-2022-03/#cf1647e-madoka-and-the-sixth-graders">题解</a>。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3306,8 +3306,8 @@
 <p>那么把 <span class="arithmatex">\(i\)</span> 放在外面就会有问题，如果 <span class="arithmatex">\(i\)</span> 是单调的，那么怎样都行。</p>
 </div>
 <p>这就是倍增，很有意思吧，倍增还有很多比较有意思的应用，</p>
-<h2 id="_3">应用<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
-<h3 id="st">ST 表<a class="headerlink" href="#st" title="Permanent link">😅</a></h3>
+<h2 id="_3">应用<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="st">ST 表<a class="headerlink" href="#st" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>区间最值问题可以考虑线段树解决。</p>
 <p>不过有一个更好写一点的方法，<span class="arithmatex">\(\text{O}(n \log n)\)</span> 预处理，<span class="arithmatex">\(\text{O}(1)\)</span> 询问，但是不能带修。</p>
 <p>这就是 ST 表，利用倍增的思想考虑：</p>
@@ -3367,9 +3367,9 @@
 <summary>可重复贡献问题是啥？（来源 <a href="https://oi-wiki.org/ds/sparse-table/">OI-wiki</a>）</summary>
 <p><strong>可重复贡献问题</strong> 是指对于运算 <span class="arithmatex">\(\operatorname{opt}\)</span>，满足 <span class="arithmatex">\(x\operatorname{opt} x=x\)</span>，则对应的区间询问就是一个可重复贡献问题。例如，最大值有 <span class="arithmatex">\(\max(x,x)=x\)</span>，gcd 有 <span class="arithmatex">\(\operatorname{gcd}(x,x)=x\)</span>，所以 RMQ 和区间 GCD 就是一个可重复贡献问题。像区间和就不具有这个性质，如果求区间和的时候采用的预处理区间重叠了，则会导致重叠部分被计算两次，这是我们所不愿意看到的。另外，<span class="arithmatex">\(\operatorname{opt}\)</span> 还必须满足结合律才能使用 ST 表求解。</p>
 </details>
-<h3 id="lca">倍增求 LCA<a class="headerlink" href="#lca" title="Permanent link">😅</a></h3>
+<h3 id="lca">倍增求 LCA<a class="headerlink" href="#lca" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>见 <a href="../../graph/lca/#lca">最近公共祖先</a>。</p>
-<h3 id="suffix-array">倍增求 Suffix Array<a class="headerlink" href="#suffix-array" title="Permanent link">😅</a></h3>
+<h3 id="suffix-array">倍增求 Suffix Array<a class="headerlink" href="#suffix-array" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>SA 还没学。</p>
 
               

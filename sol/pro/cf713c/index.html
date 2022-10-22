@@ -3239,23 +3239,23 @@
 
   <h1>CF713C</h1>
 
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">😅</a></h2>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给你一个序列 <span class="arithmatex">\(a\)</span>，长度为 <span class="arithmatex">\(n\)</span>。</p>
 <p>每次操作可以把 <span class="arithmatex">\(a\)</span> 中任意一个元素加一或者减一，代价为 <span class="arithmatex">\(1\)</span>。</p>
 <p>求使得原序列严格单调递增的最小代价。</p>
 <p><span class="arithmatex">\(1\le n \le 3\times10^3, 1\le a_i \le 10^9\)</span>。</p>
 </blockquote>
-<h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">😅</a></h2>
+<h2 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>本题和 <a href="http://poj.org/problem?id=3666">POJ3666</a> 十分类似，唯一的区别是，本题要求的是严格单调递增，而 POJ3666 则要求非严格单调递增。</p>
 <p>所以可以考虑一个经典 Trick，对于每一个 <span class="arithmatex">\(a_i\)</span>，让它减去 <span class="arithmatex">\(i\)</span>，本题的严格单调递增就转化为了非严格单调递增。</p>
 <p>经过分析之后可以得到一个引理（转化为非严格之后）：</p>
-<h3 id="lemma">Lemma<a class="headerlink" href="#lemma" title="Permanent link">😅</a></h3>
+<h3 id="lemma">Lemma<a class="headerlink" href="#lemma" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>设最后得到的序列为 <span class="arithmatex">\(b\)</span>，<span class="arithmatex">\(S_a,S_b\)</span> 分别为 <span class="arithmatex">\(a,b\)</span> 当中出现的所有数组成的集合。</p>
 <p>必然存在一组最优解，使得 <span class="arithmatex">\(S_b \subset S_a\)</span>。</p>
 </blockquote>
-<h3 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">😅</a></h3>
+<h3 id="proof">Proof<a class="headerlink" href="#proof" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>首先可以把问题转化为：给定一个序列 <span class="arithmatex">\(a\)</span>，构造一个非严格单调递增的序列 <span class="arithmatex">\(b\)</span>，使得 <span class="arithmatex">\(\sum\limits_{i=1}^{n} |a_i -b_i|\)</span> 最小。</p>
 <p><a href="https://imgtu.com/i/qj6Y0s"><img alt="qj6Y0s.png" src="https://s1.ax1x.com/2022/04/06/qj6Y0s.png" /></a></p>
 <p>考虑这样的一张图，其中 <span class="arithmatex">\(re\)</span> 表示对 <span class="arithmatex">\(a\)</span> 排序之后得到的序列，橙色点表示 <span class="arithmatex">\(b\)</span>。</p>
@@ -3265,7 +3265,7 @@
 <p><span class="arithmatex">\(x &lt; y\)</span> 的时候同理，<span class="arithmatex">\(x=y\)</span> 的时候任意选一个方式平移即可。</p>
 <p>归纳之后可以发现，任何一个 <span class="arithmatex">\(b_i\)</span> ，只要它不属于 <span class="arithmatex">\(S_a\)</span>，总是可以把它变成 <span class="arithmatex">\(S_a\)</span> 当中的某一个数，且最终答案不会更劣。</p>
 <p>引理得证。</p>
-<h3 id="method">Method<a class="headerlink" href="#method" title="Permanent link">😅</a></h3>
+<h3 id="method">Method<a class="headerlink" href="#method" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>根据引理以及其证明过程，不难想到一个 DP 状态：</p>
 <p>设 <span class="arithmatex">\(dp_{i,j}\)</span> 表示，考虑使 <span class="arithmatex">\(a_1 \sim a_i\)</span> 全部满足条件，且使 <span class="arithmatex">\(a_i\)</span> 变为 <span class="arithmatex">\(re_j\)</span> 时的状态集合。</p>
 <p><span class="arithmatex">\(dp_{i,j}\)</span> 的属性是：“总代价的最小值”。</p>

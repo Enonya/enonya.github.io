@@ -3266,15 +3266,15 @@
 
 
 
-<h1 id="_1">主席树<a class="headerlink" href="#_1" title="Permanent link">😅</a></h1>
-<h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h1 id="_1">主席树<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h1>
+<h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>主席树全称可持久化权值线段树，因为权值线段树和线段树没有本质区别，就只说主席树了。</p>
 <p>主席树的思想和可持久化 Trie 的思想是一致的，都是以函数式编程的方式保存历史版本，以把信息从全局转化为区间。</p>
 <p>一个比较经典的问题就是静态区间第 k 大，权值线段树上二分显然可以很轻松搞定全局的版本。</p>
 <p>于是把权值线段树可持久化之后利用前缀和的思想就可以做区间了。</p>
 <p>不过主席树一般难以支持区间修改，最多支持一下单点修改。</p>
 <p>区间修改在信息比较特殊的情况下可以用标记永久化做，不过也非常有局限性。</p>
-<h2 id="_3">基本思想<a class="headerlink" href="#_3" title="Permanent link">😅</a></h2>
+<h2 id="_3">基本思想<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>仍然考虑静态区间第 k 大问题。</p>
 <p>主席树的主要思想就是，对于一个序列，从左往右依次插入序列的每一个元素。</p>
 <p>每次插入一个元素的时候维护历史版本，也就是维护每一个元素刚插入的时候，线段树的样子。</p>
@@ -3504,8 +3504,8 @@
 <p>总结一下，主席树题只需要考虑，怎么维护历史版本以达到区间查询，</p>
 <p>怎么凑出一个新的信息，放到一个新的线段树上，在这个新的线段树上进行操作。</p>
 <p>（新的线段树并不需要实际合并出来，只需要多个指针同步遍历需要的版本即可）</p>
-<h2 id="_4">几个简单的例题<a class="headerlink" href="#_4" title="Permanent link">😅</a></h2>
-<h3 id="luogu3567-poi2014kur-couriers">Luogu3567 [POI2014]KUR-Couriers<a class="headerlink" href="#luogu3567-poi2014kur-couriers" title="Permanent link">😅</a></h3>
+<h2 id="_4">几个简单的例题<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="luogu3567-poi2014kur-couriers">Luogu3567 [POI2014]KUR-Couriers<a class="headerlink" href="#luogu3567-poi2014kur-couriers" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给一个数列，每次询问一个区间内有没有一个数出现次数超过一半
 如果有输出这个数，否则输出 0.
@@ -3666,7 +3666,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="luogu3919-1">Luogu3919 【模板】可持久化线段树 1（可持久化数组）<a class="headerlink" href="#luogu3919-1" title="Permanent link">😅</a></h3>
+<h3 id="luogu3919-1">Luogu3919 【模板】可持久化线段树 1（可持久化数组）<a class="headerlink" href="#luogu3919-1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>首先给定一个长度为 <span class="arithmatex">\(n \le 10^6\)</span> 的数组，然后， 
 实现一个可持久化的数组，支持以下操作：
@@ -3836,7 +3836,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="luogu2633-count-on-a-tree">Luogu2633 Count on a tree<a class="headerlink" href="#luogu2633-count-on-a-tree" title="Permanent link">😅</a></h3>
+<h3 id="luogu2633-count-on-a-tree">Luogu2633 Count on a tree<a class="headerlink" href="#luogu2633-count-on-a-tree" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>给定一棵 <span class="arithmatex">\(n\)</span> 个节点的树，每个点有一个权值。有 <span class="arithmatex">\(m\)</span> 个询问，
 每次给你 <span class="arithmatex">\(u,v,k\)</span>，你需要回答 <span class="arithmatex">\(u \text{ xor last}\)</span> 和 <span class="arithmatex">\(v\)</span> 这两个节点间第 <span class="arithmatex">\(k\)</span> 小的点权。
@@ -4093,7 +4093,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="k">支持单点修改的第 k 大<a class="headerlink" href="#k" title="Permanent link">😅</a></h2>
+<h2 id="k">支持单点修改的第 k 大<a class="headerlink" href="#k" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>Luogu2617 Dynamic Rankings</p>
 <p>单点修改区间询问第 <span class="arithmatex">\(k\)</span> 大，1e5。</p>
@@ -4589,7 +4589,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="_5">标记永久化<a class="headerlink" href="#_5" title="Permanent link">😅</a></h2>
+<h2 id="_5">标记永久化<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>HDU4348 To the moon</p>
 <p>暂时咕咕咕</p>
 

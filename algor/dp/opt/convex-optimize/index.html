@@ -3255,7 +3255,7 @@
 
   <h1>斜率优化</h1>
 
-<h2 id="_1">泛化<a class="headerlink" href="#_1" title="Permanent link">😅</a></h2>
+<h2 id="_1">泛化<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这一类问题和单调队列优化DP有共同的地方。</p>
 <p>可以用类似的思想思考其中的一部分内容。</p>
 <p>考虑单调队列优化DP里面那个 1D1D 的式子。</p>
@@ -3267,13 +3267,13 @@
 <p>而决策集合的上下界 <span class="arithmatex">\([L(i),R(i)]\)</span> 的变化则决定了辅助斜率优化使用的算法。</p>
 <p>如果决策集合是<strong>单调变化</strong>的，可以直接使用<strong>单调队列</strong>。</p>
 <p>否则需要根据情况使用<strong>二分</strong>或者<strong>平衡树</strong>，这里的选择则是取决于决策集合的变化是在<strong>头尾放入</strong>还是在<strong>任意位置插入</strong>。</p>
-<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">😅</a></h2>
+<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p><span class="arithmatex">\(n\)</span> 个任务排成一个序列在一台机器上等待完成（顺序不得改变），这 <span class="arithmatex">\(n\)</span> 个任务被分成若干批，每批包含相邻的若干任务。<br />
 从零时刻开始，这些任务被分批加工，第 <span class="arithmatex">\(i\)</span> 个任务单独完成所需的时间为 <span class="arithmatex">\(t_i\)</span>。在每批任务开始前，机器需要启动时间 <span class="arithmatex">\(s\)</span>，而完成这批任务所需的时间是各个任务需要时间的总和（同一批任务将在同一时刻完成）。<br />
 每个任务的费用是它的完成时刻乘以一个费用系数 <span class="arithmatex">\(c_i\)</span>。请确定一个分组方案，使得总费用最小。</p>
 </blockquote>
-<h3 id="1-">做法1 - 暴力<a class="headerlink" href="#1-" title="Permanent link">😅</a></h3>
+<h3 id="1-">做法1 - 暴力<a class="headerlink" href="#1-" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>保证 <span class="arithmatex">\(n \le 500,1\le s \le 50,1\le t_i,c_i \le 100\)</span></p>
 </blockquote>
@@ -3281,7 +3281,7 @@
 <p>枚举上一批任务的最后一个点即可。</p>
 <p><span class="arithmatex">\(f_{i,j}=\min\limits_{0\le k &lt; i}\{f_{k,j-1}+c[k+1\sim i]\times (t[k+1\sim i]+s\times j)\}\)</span></p>
 <p>处理前缀和可以做到 <span class="arithmatex">\(\text{O}(n^3)\)</span></p>
-<h3 id="2-">做法2 - 费用提前计算<a class="headerlink" href="#2-" title="Permanent link">😅</a></h3>
+<h3 id="2-">做法2 - 费用提前计算<a class="headerlink" href="#2-" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>保证 <span class="arithmatex">\(n\le 5000,1\le s \le 50,1\le t_i,c_i \le 100\)</span></p>
 </blockquote>
@@ -3292,7 +3292,7 @@
 <p>枚举上一组的最后端点可以得到：</p>
 <p><span class="arithmatex">\(f_i=\min\limits_{0\le j &lt; i}\{f_j+s\times c[j+1\sim n]+t[1\sim i] \times c[j+1 \sim i]\}\)</span></p>
 <p>预处理前缀和可以做到 <span class="arithmatex">\(\text{O}(n^2)\)</span></p>
-<h3 id="3-">做法3 - 斜率优化<a class="headerlink" href="#3-" title="Permanent link">😅</a></h3>
+<h3 id="3-">做法3 - 斜率优化<a class="headerlink" href="#3-" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>保证 <span class="arithmatex">\(n \le 3\times 10^5,1\le s \le 512,1\le t_i,c_i \le 512\)</span></p>
 </blockquote>
@@ -3410,7 +3410,7 @@
 <div class="arithmatex">\[dp_{i} = \min\limits_{0\le j &lt; i}\{dp_j + (S + sumt[i] - sumt[j]) \times (sumc[n] - sumc[j])\}\]</div>
 <p>这个也是可以斜率优化的，用上面总结的找直线方程的每一部分的方法即可。</p>
 <p>性质也差不多。</p>
-<h3 id="4-">做法4 - 二分 + 斜率优化<a class="headerlink" href="#4-" title="Permanent link">😅</a></h3>
+<h3 id="4-">做法4 - 二分 + 斜率优化<a class="headerlink" href="#4-" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>条件同3，<span class="arithmatex">\(t_i\)</span> 可能是负数。</p>
 </blockquote>
@@ -3512,7 +3512,7 @@
 </code></pre></div>
 </td></tr></table>
 </details>
-<h3 id="5-">做法5 - 平衡树 + 斜率优化<a class="headerlink" href="#5-" title="Permanent link">😅</a></h3>
+<h3 id="5-">做法5 - 平衡树 + 斜率优化<a class="headerlink" href="#5-" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
 <p>如果 <span class="arithmatex">\(c_i\)</span> 也有可能是负数？</p>
 </blockquote>

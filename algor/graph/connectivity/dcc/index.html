@@ -3214,7 +3214,7 @@
 
   <h1>双连通分量</h1>
 
-<h2 id="e-dcc">边双联通分量 e-DCC<a class="headerlink" href="#e-dcc" title="Permanent link">😅</a></h2>
+<h2 id="e-dcc">边双联通分量 e-DCC<a class="headerlink" href="#e-dcc" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>割边/桥：如果在无向图 <span class="arithmatex">\(G=(V,E)\)</span> 当中去掉一条边 <span class="arithmatex">\((u,v)\)</span> 后，<span class="arithmatex">\(G\)</span> 分裂为两个不联通的子图，则称边 <span class="arithmatex">\((u,v)\)</span> 是无向图 <span class="arithmatex">\(G\)</span> 的一个桥。</p>
 <p>边双联通分量：不含桥边的极大联通子图。</p>
 <p>类似 SCC，引入 <span class="arithmatex">\(G\)</span> 的一颗搜索树 <span class="arithmatex">\(T\)</span> 和 <span class="arithmatex">\(dfn,low\)</span>。</p>
@@ -3410,7 +3410,7 @@
 <p>但是如果出现重边的话，那 <span class="arithmatex">\((fa_u,u)\)</span> 必然不是桥边，那么就需要用 <span class="arithmatex">\(fa_u\)</span> 的 <span class="arithmatex">\(dfn\)</span> 更新 <span class="arithmatex">\(low_u\)</span>。</p>
 <p>可以证明的一个推论：<strong>对于一个无向连通图，Edcc 缩完点之后必然会形成一棵树</strong>。</p>
 <p>因为只要图上带环，就可以继续缩点，而树是无向连通无环图，所以得证。</p>
-<h2 id="v-dcc">点双联通分量 v-DCC<a class="headerlink" href="#v-dcc" title="Permanent link">😅</a></h2>
+<h2 id="v-dcc">点双联通分量 v-DCC<a class="headerlink" href="#v-dcc" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>割点：如果对于无向图 <span class="arithmatex">\(G=(V,E)\)</span>，<span class="arithmatex">\(\exist x \in V\)</span>，使得删除 <span class="arithmatex">\(x\)</span> 之后，<span class="arithmatex">\(G\)</span> 分裂成两个及以上的不联通的子图，则称节点 <span class="arithmatex">\(x\)</span> 是无向图 <span class="arithmatex">\(G\)</span> 的一个割点。</p>
 <p>点双连通分量：不含割点的极大联通子图，但是注意，这里<strong>不能直接求出割点之后去掉割点把连通块合并</strong>。</p>
 <p>因为割点本身就属于它连接的点双联通分量（同时属于）。</p>
