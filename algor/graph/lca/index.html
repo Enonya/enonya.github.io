@@ -2363,6 +2363,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2">
@@ -2382,11 +2386,25 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../rec/arc-vp-record/" class="md-nav__link">
+        ARC VP 集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_1" type="checkbox" id="__nav_4_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
       
       
       
@@ -2397,13 +2415,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_2_1">
+        <label class="md-nav__link" for="__nav_4_2_2">
           早期记录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="早期记录" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_1">
+        <label class="md-nav__title" for="__nav_4_2_2">
           <span class="md-nav__icon md-icon"></span>
           早期记录
         </label>
@@ -2506,8 +2524,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-07/" class="md-nav__link">
+      <a href="../../../rec/atcf-for-2022-07-08/" class="md-nav__link">
         2022年7,8月AT&CF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rec/atcf-for-2022-09-10/" class="md-nav__link">
+        2022年9,10月AT&CF
       </a>
     </li>
   
@@ -2803,6 +2835,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2">
@@ -2892,11 +2932,67 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221023C/" class="md-nav__link">
+        20221023C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221023D/" class="md-nav__link">
+        20221023D组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221025C/" class="md-nav__link">
+        20221025C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221027C/" class="md-nav__link">
+        20221027C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_6" type="checkbox" id="__nav_5_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_10" type="checkbox" id="__nav_5_2_10" >
       
       
       
@@ -2907,13 +3003,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_2_6">
+        <label class="md-nav__link" for="__nav_5_2_10">
           模拟赛赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="模拟赛赛后总结" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_6">
+        <label class="md-nav__title" for="__nav_5_2_10">
           <span class="md-nav__icon md-icon"></span>
           模拟赛赛后总结
         </label>
@@ -3259,6 +3355,7 @@
 <p>考虑设 <span class="arithmatex">\(f_{i,j}\)</span> 表示 <span class="arithmatex">\(i\)</span> 的 <span class="arithmatex">\(2^j\)</span> 级祖先。</p>
 <p>这个可以倍增递推 。 <span class="arithmatex">\(f_{i,j}=f_{f_{i,j-1},j-1}\)</span>。</p>
 <p>然后现在给定一个询问 <span class="arithmatex">\(lca(u,v)\)</span>，考虑把深度较大的那一个往上跳到它的 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 级祖先（此处是<strong>从大到小</strong>枚举）</p>
+<p>其本质就是倍增地往上跳。</p>
 <p>（每个都试一试，如果这个祖先 <span class="arithmatex">\(f_{u,i}\)</span> 的深度 <span class="arithmatex">\(dep_{f_{u,i}}\)</span> 大于等于原来深度更小的点的深度 <span class="arithmatex">\(dep_v\)</span>，就跳到这个祖先 <span class="arithmatex">\(f_{u,i}\)</span>）。</p>
 <p>如果此时两个节点重合了，LCA 就是原来深度小的节点。</p>
 <p>否则<strong>保持两个节点的深度一致</strong>，然后各自往上跳 <span class="arithmatex">\(2\)</span> 的 <span class="arithmatex">\(\log_2n,\log_2n-1,\dots 0\)</span> 次幂步，并且保持上跳之后仍然不相遇。</p>
@@ -3289,7 +3386,7 @@
 <span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">dep</span><span class="p">[</span><span class="n">si_n</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">si_n</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span><span class="w"></span>
 <span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">fa</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">dep</span><span class="p">[</span><span class="n">fa</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">fa</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">19</span><span class="p">;</span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">19</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
 <span class="w">        </span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="mi">-1</span><span class="p">]][</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">head</span><span class="p">;</span><span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Next</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ver</span><span class="p">;</span><span class="w"> </span>

@@ -2357,6 +2357,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2">
@@ -2376,11 +2380,25 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../rec/arc-vp-record/" class="md-nav__link">
+        ARC VP 集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_1" type="checkbox" id="__nav_4_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
       
       
       
@@ -2391,13 +2409,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_2_1">
+        <label class="md-nav__link" for="__nav_4_2_2">
           早期记录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="早期记录" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_1">
+        <label class="md-nav__title" for="__nav_4_2_2">
           <span class="md-nav__icon md-icon"></span>
           早期记录
         </label>
@@ -2500,8 +2518,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-07/" class="md-nav__link">
+      <a href="../../../rec/atcf-for-2022-07-08/" class="md-nav__link">
         2022年7,8月AT&CF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rec/atcf-for-2022-09-10/" class="md-nav__link">
+        2022年9,10月AT&CF
       </a>
     </li>
   
@@ -2797,6 +2829,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2">
@@ -2886,11 +2926,67 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221023C/" class="md-nav__link">
+        20221023C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221023D/" class="md-nav__link">
+        20221023D组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221025C/" class="md-nav__link">
+        20221025C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221027C/" class="md-nav__link">
+        20221027C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_6" type="checkbox" id="__nav_5_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_10" type="checkbox" id="__nav_5_2_10" >
       
       
       
@@ -2901,13 +2997,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_2_6">
+        <label class="md-nav__link" for="__nav_5_2_10">
           模拟赛赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="模拟赛赛后总结" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_6">
+        <label class="md-nav__title" for="__nav_5_2_10">
           <span class="md-nav__icon md-icon"></span>
           模拟赛赛后总结
         </label>
@@ -4078,15 +4174,10 @@ Many answers are correct for each test dataset; a program will grade your answer
 <p>这道题本身就是在“安排顺序”，就是 Exc arg 的一个 Key。</p>
 <p>很明显 <span class="arithmatex">\(1,2,4,3 \ | \ 2, 4, 1, 3\ |\ 4, 1, 2, 3 \dots\)</span> 这些各种顺序里面大部分都不可能成为最优决策，所以我们可以考虑用 Exc arg 分析一下，然后再 DP。</p>
 <p>假设我们有两个人 <span class="arithmatex">\(i,j\)</span> 需要确定一个基本顺序。</p>
-<p>设他们之中先放的人放入之前的石头个数为 <span class="arithmatex">\(k\)</span>，那么可以得到两个式子：</p>
-<p>先放 <span class="arithmatex">\(i\)</span>：<span class="arithmatex">\(k \le b_i, k + a_i \le b_j\)</span>。</p>
-<p>先放 <span class="arithmatex">\(j\)</span>：<span class="arithmatex">\(k \le b_j, k + a_j \le b_i\)</span>。</p>
-<p>假设 <span class="arithmatex">\(i\)</span> 应当放在更前面，也就是说让 <span class="arithmatex">\(i\)</span> 先上去<strong>能让后面可以放的人更多</strong>，所以需要 <span class="arithmatex">\(i\)</span> 放上去之后让新高度尽量低，也就是让 <span class="arithmatex">\(k + a_i\)</span> 尽量小，因为 <span class="arithmatex">\(k\)</span> 是定值所以需要 <span class="arithmatex">\(a_i\)</span> 尽量小，移项之后就是 <span class="arithmatex">\(b_j - a_i\)</span> 尽量大。</p>
-<p>因为这里要求 <span class="arithmatex">\(i\)</span> 先放石头，所以对于 <span class="arithmatex">\(j\)</span> 类比可以知道要让 <span class="arithmatex">\(b_i - a_j\)</span> 尽量小，所以就需要满足 ：<span class="arithmatex">\(b_i - a_j &lt; b_j - a_i \Rightarrow a_i + b_i &lt; a_j + b_j\)</span>。</p>
-<p>那么，按照 <span class="arithmatex">\(a+b\)</span> 升序排序就是最优的贪心策略。</p>
-<p>肯定会有人疑惑，既然是让后面放的更多，为啥不按照 <span class="arithmatex">\(a\)</span> 直接排序？</p>
-<p>因为 <span class="arithmatex">\(a,b\)</span> 对原问题都有影响，都需要分析，所以需要列出关于 <span class="arithmatex">\(a,b\)</span> 的二元不等式。</p>
-<p>（具体反例懒得找了，可以自己找找看）</p>
+<p>考虑到如果 <span class="arithmatex">\(i\)</span> 放了之后，高度至多是 <span class="arithmatex">\(a_i + b_i\)</span>，<span class="arithmatex">\(j\)</span> 放了之后，高度至多是 <span class="arithmatex">\(a_j + b_j\)</span>。</p>
+<p>我们希望让能放石子的人更多，所以我们需要让先放的那一个人放完之后的最大高度尽可能的小。</p>
+<p>假设 <span class="arithmatex">\(i\)</span> 应当比 <span class="arithmatex">\(j\)</span> 先放，那么一定要满足不等式：<span class="arithmatex">\(a_i+b_i &lt; a_j+b_j\)</span>。</p>
+<p>所以我们只需要按照 <span class="arithmatex">\(a+b\)</span> 排序就能得到一个最优的，可以用来 dp 的顺序。</p>
 <p>排完序之后直接一个简单的 <span class="arithmatex">\(O(n^2)\)</span> dp 就可以了。</p>
 <p>设 <span class="arithmatex">\(dp(i)\)</span> 表示前 <span class="arithmatex">\(i\)</span> 个人（排序后），能取到的高度最小值，然后在所有可行的 <span class="arithmatex">\(dp\)</span> 里面取人数最大值即可。</p>
 <details class="info">

@@ -2274,6 +2274,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2">
@@ -2293,11 +2297,25 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../rec/arc-vp-record/" class="md-nav__link">
+        ARC VP 集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_1" type="checkbox" id="__nav_4_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
       
       
       
@@ -2308,13 +2326,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_2_1">
+        <label class="md-nav__link" for="__nav_4_2_2">
           早期记录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="早期记录" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_1">
+        <label class="md-nav__title" for="__nav_4_2_2">
           <span class="md-nav__icon md-icon"></span>
           早期记录
         </label>
@@ -2417,8 +2435,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-07/" class="md-nav__link">
+      <a href="../../../rec/atcf-for-2022-07-08/" class="md-nav__link">
         2022年7,8月AT&CF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rec/atcf-for-2022-09-10/" class="md-nav__link">
+        2022年9,10月AT&CF
       </a>
     </li>
   
@@ -2718,6 +2750,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2">
@@ -2844,11 +2884,67 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../221023C/" class="md-nav__link">
+        20221023C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../221023D/" class="md-nav__link">
+        20221023D组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../221025C/" class="md-nav__link">
+        20221025C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../221027C/" class="md-nav__link">
+        20221027C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_6" type="checkbox" id="__nav_5_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_10" type="checkbox" id="__nav_5_2_10" >
       
       
       
@@ -2859,13 +2955,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_2_6">
+        <label class="md-nav__link" for="__nav_5_2_10">
           模拟赛赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="模拟赛赛后总结" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_6">
+        <label class="md-nav__title" for="__nav_5_2_10">
           <span class="md-nav__icon md-icon"></span>
           模拟赛赛后总结
         </label>
@@ -3206,9 +3302,7 @@
   <h1>20221020C组</h1>
 
 <h3 id="c-">C - 匹配<a class="headerlink" href="#c-" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<blockquote>
-<p>题面暂时咕咕咕掉了</p>
-</blockquote>
+<p><a href="https://imgse.com/i/x2aKsO"><img alt="x2aKsO.png" src="https://s1.ax1x.com/2022/10/24/x2aKsO.png" /></a></p>
 <p>首先发现它要求路径只能包含或者相离，然后定睛一看发现这个东西好像和合法括号序列很类似啊！</p>
 <p>所以这个就转化成了树上的合法括号序列计数问题。</p>
 <p>第一思路是直接 dfs 序拉下来然后做区间 dp，但是感觉这个东西显然很难做。</p>
@@ -3221,6 +3315,9 @@
 <p>于是考虑一个经典 Trick，我们直接记录没有匹配的长度，然后方便计算贡献。</p>
 <p>也就是设 <span class="arithmatex">\(dp(u, len)\)</span> 表示以 <span class="arithmatex">\(u\)</span> 为根的子树当中，有一条从 <span class="arithmatex">\(u\)</span> 出发的长度为 <span class="arithmatex">\(len\)</span> 的链还没有匹配的方案数。</p>
 <p>显然答案是 <span class="arithmatex">\(dp(1,0)\)</span>。</p>
+<blockquote>
+<p>剩下的转移部分咕掉了，直接看代码理解吧。</p>
+</blockquote>
 <details class="note">
 <summary>Code</summary>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3430,13 +3527,13 @@ gitalk.render('gitalk-container')
       
       
         
-        <a href="../sum/220525C/" class="md-footer__link md-footer__link--next" aria-label="下一页: 20220525C组" rel="next">
+        <a href="../221023C/" class="md-footer__link md-footer__link--next" aria-label="下一页: 20221023C组" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              20220525C组
+              20221023C组
             </div>
           </div>
           <div class="md-footer__button md-icon">

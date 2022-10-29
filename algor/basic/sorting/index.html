@@ -2391,6 +2391,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2">
@@ -2410,11 +2414,25 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../rec/arc-vp-record/" class="md-nav__link">
+        ARC VP 集合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_1" type="checkbox" id="__nav_4_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
       
       
       
@@ -2425,13 +2443,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_2_1">
+        <label class="md-nav__link" for="__nav_4_2_2">
           早期记录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="早期记录" data-md-level="3">
-        <label class="md-nav__title" for="__nav_4_2_1">
+        <label class="md-nav__title" for="__nav_4_2_2">
           <span class="md-nav__icon md-icon"></span>
           早期记录
         </label>
@@ -2534,8 +2552,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rec/atcf-for-2022-07/" class="md-nav__link">
+      <a href="../../../rec/atcf-for-2022-07-08/" class="md-nav__link">
         2022年7,8月AT&CF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rec/atcf-for-2022-09-10/" class="md-nav__link">
+        2022年9,10月AT&CF
       </a>
     </li>
   
@@ -2831,6 +2863,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2">
@@ -2920,11 +2960,67 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221023C/" class="md-nav__link">
+        20221023C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221023D/" class="md-nav__link">
+        20221023D组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221025C/" class="md-nav__link">
+        20221025C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/221027C/" class="md-nav__link">
+        20221027C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_6" type="checkbox" id="__nav_5_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_10" type="checkbox" id="__nav_5_2_10" >
       
       
       
@@ -2935,13 +3031,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_2_6">
+        <label class="md-nav__link" for="__nav_5_2_10">
           模拟赛赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="模拟赛赛后总结" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_2_6">
+        <label class="md-nav__title" for="__nav_5_2_10">
           <span class="md-nav__icon md-icon"></span>
           模拟赛赛后总结
         </label>
@@ -3421,7 +3517,7 @@
 </td></tr></table>
 <p>明显不稳定，原始快排最坏 <span class="arithmatex">\(O(n^2)\)</span>，平均最优都是 <span class="arithmatex">\(O(n \log n)\)</span>。</p>
 <p>因为每次取 key 的时候，如果每次都能取到中位数作为分界，递归式是 <span class="arithmatex">\(T(n) = 2T(n/2) + \Theta(n)\)</span>，主定理可以得到。</p>
-<p>如果每次都取到最大值，递归式就是 <span class="arithmatex">\(T(n) = T(n - 1) + Theta(n)\)</span>（长度等于一不用递归），累加可以得到。</p>
+<p>如果每次都取到最大值，递归式就是 <span class="arithmatex">\(T(n) = T(n - 1) + \Theta(n)\)</span>（长度等于一不用递归），累加可以得到。</p>
 <h2 id="_7">归并排序<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>很有意思的一个算法。</p>
 <p>就是把序列先从中间分开，然后递归下去对两块块内排序，</p>
@@ -3534,8 +3630,8 @@
 <p>树状数组做法可能更简单一点。</p>
 <p>只需要离散化，然后动态加入，每次加入的时候查一查前面比他大的数有多少个即可。</p>
 <p>归并排序的话：</p>
-<p>代码实现中的 <code>ans += mid - p</code> 就是在统计逆序对个数。</p>
-<p>具体来说，算法把靠后的数放到前面了（较小的数放在前面），所以在这个数原来位置之前的、比它大的数都会和它形成逆序对，而这个个数就是还没有合并进去的数的个数，即 <code>mid - p</code>。</p>
+<p>代码实现中的 <code>ans += mid - i + 1</code> 就是在统计逆序对个数。</p>
+<p>具体来说，算法把靠后的数放到前面了（较小的数放在前面），所以在这个数原来位置之前的、比它大的数都会和它形成逆序对，而这个个数就是还没有合并进去的数的个数，即 <code>mid - i + 1</code>。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
