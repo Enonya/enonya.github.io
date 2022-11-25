@@ -2658,6 +2658,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -2722,6 +2724,20 @@
     <li class="md-nav__item">
       <a href="../../rec/interesting/comb-problem/" class="md-nav__link">
         关于组合数学和计数的一些小问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rec/interesting/before-noip2022/" class="md-nav__link">
+        NOIP2022 考前思维打开口胡合集
       </a>
     </li>
   
@@ -3639,6 +3655,25 @@
   <h1>OI 常用 Vim 命令</h1>
 
 <p>Practise more.</p>
+<p>考场 Vimrc:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">set</span> clipborad^<span class="p">=</span>unnamed<span class="p">,</span>unnamedplus
+<span class="k">color</span> blue
+<span class="k">set</span> <span class="nb">backup</span> <span class="k">nu</span> <span class="nb">mouse</span><span class="p">=</span><span class="k">a</span> <span class="k">ts</span><span class="p">=</span><span class="m">4</span> <span class="k">sw</span><span class="p">=</span><span class="m">4</span> <span class="k">sts</span><span class="p">=</span><span class="m">4</span> <span class="k">ar</span> <span class="nb">ai</span> <span class="nb">acd</span> <span class="nb">guifont</span><span class="p">=</span>Consolas:h12:cANSI
+
+<span class="nb">inoremap</span> [ []<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> {<span class="p">&lt;</span>CR<span class="p">&gt;</span> {}<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span><span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>ESC<span class="p">&gt;</span>O
+<span class="nb">inoremap</span> <span class="p">(</span> <span class="p">()&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> <span class="s2">&quot; &quot;</span>&quot;<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> <span class="s1">&#39; &#39;</span>&#39;<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="_1">编辑模式<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <h3 id="normal-mode">Normal Mode<a class="headerlink" href="#normal-mode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>一般 Vim 的命令都是在 Normal mode 下面完成的。</p>

@@ -2415,6 +2415,54 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#f-unknown" class="md-nav__link">
+    F - Unknown.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arc076" class="md-nav__link">
+    ARC076
+  </a>
+  
+    <nav class="md-nav" aria-label="ARC076">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-reconciled" class="md-nav__link">
+    C - Reconciled?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-built" class="md-nav__link">
+    D - Built?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-connected" class="md-nav__link">
+    E - Connected?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-unknown_1" class="md-nav__link">
+    F - Unknown
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2726,6 +2774,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_4">
@@ -2790,6 +2840,20 @@
     <li class="md-nav__item">
       <a href="../interesting/comb-problem/" class="md-nav__link">
         关于组合数学和计数的一些小问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interesting/before-noip2022/" class="md-nav__link">
+        NOIP2022 考前思维打开口胡合集
       </a>
     </li>
   
@@ -3794,6 +3858,42 @@ F 不太会，以后可以看看</p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </details>
+<h3 id="f-unknown">F - Unknown.<a class="headerlink" href="#f-unknown" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>我不会。</p>
+<h2 id="arc076">ARC076<a class="headerlink" href="#arc076" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<blockquote>
+<p>这次是 NOIP2022 考前和 hfy 一起进行脑洞打开。</p>
+<p>因为懒所以盒盒代码。</p>
+</blockquote>
+<h3 id="c-reconciled">C - Reconciled?<a class="headerlink" href="#c-reconciled" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<blockquote>
+<p>给你 <span class="arithmatex">\(n\)</span> 只带编号的狗，<span class="arithmatex">\(m\)</span> 只带编号的猴。</p>
+<p>要求出满足没有任意的狗/猴连通块的排列方式。</p>
+<p><span class="arithmatex">\(1\le n, m\le 1e5\)</span>。</p>
+</blockquote>
+<p>简单题，注意到 <span class="arithmatex">\(|n - m| \ge 2\)</span> 必定无解。</p>
+<p>然后 <span class="arithmatex">\(n = m\)</span> 的时候答案是 <span class="arithmatex">\(n!m!\)</span>。</p>
+<p>如果是 <span class="arithmatex">\(|n - m| = 1\)</span>，答案是 <span class="arithmatex">\(2n!m!\)</span>。</p>
+<h3 id="d-built">D - Built?<a class="headerlink" href="#d-built" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<blockquote>
+<p>定义两个点的 <span class="arithmatex">\(dis\)</span> 为 <span class="arithmatex">\(\min(|x_1 - x_2|, |y_1 - y_2|))\)</span>。</p>
+<p>给定 <span class="arithmatex">\(n,(1\le n \le 1e9)\)</span> 个点，求使得这些点联通的代价最小值。</p>
+<p>联通两点的代价是 <span class="arithmatex">\(dis\)</span>。</p>
+</blockquote>
+<p>本质是求最小 dis 生成树，直接加边是 <span class="arithmatex">\(O(n^2)\)</span> 的不能接受。</p>
+<p>注意到其实我们可以对 <span class="arithmatex">\(x, y\)</span> 分别排个序，然后对于一个点，让他和它在排列上的左右两点连边就行了。</p>
+<p>然后一遍 MST 完事。</p>
+<h3 id="e-connected">E - Connected?<a class="headerlink" href="#e-connected" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<blockquote>
+<p>给出一个 <span class="arithmatex">\(R\times C\)</span> 的棋盘，其中 <span class="arithmatex">\(1\)</span> 到 <span class="arithmatex">\(n\)</span> 之间的每个正整数都会在棋盘上出现两次，</p>
+<p>给定第 <span class="arithmatex">\(i\)</span> 个数出现的位置，要求把每一对相同的数用线（粗细忽略不计）连起来，且线不能相交也不能越过棋盘边界，求是否能完成。</p>
+<p><span class="arithmatex">\(R,C 1e8, n 1e5\)</span>。</p>
+</blockquote>
+<p>注意到只有两端在边界的线才会对答案造成影响，其它的在里面转几下就行了。</p>
+<p>所以只需要考虑判所有两端都在边界的点对形成的连线是否相交。</p>
+<p>注意到这个实际上可以钦定一个转圈的方向（顺时针，逆时针），把这个东西当成括号序列。然后判断一下括号序列是否合法就行。</p>
+<h3 id="f-unknown_1">F - Unknown<a class="headerlink" href="#f-unknown_1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>我不会。</p>
 
 
 
