@@ -36,10 +36,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Consolas"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,300i,400,400i,700,700i%7CConsolas:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Serif Pro";--md-code-font:"Consolas"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -3748,7 +3750,7 @@
 <p><span class="arithmatex">\(in\_edge\)</span> 表示递归到当前节点所经过的那一条边的编号。</p>
 <p><span class="arithmatex">\(in\_edge\)</span> 存在的原因是，如果按照正常搜索树的更新方式，<span class="arithmatex">\(fa_u\)</span> 的 <span class="arithmatex">\(dfn\)</span> 必然不会用来更新 <span class="arithmatex">\(u\)</span> 的 <span class="arithmatex">\(low\)</span>。</p>
 <p>但是如果出现重边的话，那 <span class="arithmatex">\((fa_u,u)\)</span> 必然不是桥边，那么就需要用 <span class="arithmatex">\(fa_u\)</span> 的 <span class="arithmatex">\(dfn\)</span> 更新 <span class="arithmatex">\(low_u\)</span>。</p>
-<p>可以证明的一个推论：<strong>对于一个无向连通图，Edcc 缩完点之后必然会形成一棵树</strong>。</p>
+<p>可以证明的一个推论：<strong>对于一个无向连通图，Edcc 缩完点之后必然会形成一棵树</strong>（这东西被叫做边双树来着）。</p>
 <p>因为只要图上带环，就可以继续缩点，而树是无向连通无环图，所以得证。</p>
 <h2 id="v-dcc">点双联通分量 v-DCC<a class="headerlink" href="#v-dcc" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>割点：如果对于无向图 <span class="arithmatex">\(G=(V,E)\)</span>，<span class="arithmatex">\(\exist x \in V\)</span>，使得删除 <span class="arithmatex">\(x\)</span> 之后，<span class="arithmatex">\(G\)</span> 分裂成两个及以上的不联通的子图，则称节点 <span class="arithmatex">\(x\)</span> 是无向图 <span class="arithmatex">\(G\)</span> 的一个割点。</p>
