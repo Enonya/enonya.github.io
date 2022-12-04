@@ -10,21 +10,21 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://hylwxqwq.github.io/sce/vim-usage/">
+        <link rel="canonical" href="https://hylwxqwq.github.io/misc/CSP2022/">
       
       <link rel="icon" href="../../img/wife-best.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>OI 常用 Vim 命令 - black_trees' blog</title>
+        <title>CSP2022 - black_trees' blog</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -60,7 +60,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#csp2022" class="md-skip">
           跳转至
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OI 常用 Vim 命令
+              CSP2022
             
           </span>
         </div>
@@ -118,13 +118,31 @@
           
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
           
         
           
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to system sytle"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to system sytle" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
           
         
       </form>
@@ -171,7 +189,7 @@
         <a href="https://github.com/hylwxqwq/hylwxqwq.github.io" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     hylwxqwq/hylwxqwq.github.io
@@ -277,22 +295,6 @@
   
 
       
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../waifu/" class="md-tabs__link">
-        Waifu
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -334,7 +336,7 @@
       <a href="https://github.com/hylwxqwq/hylwxqwq.github.io" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     hylwxqwq/hylwxqwq.github.io
@@ -2559,6 +2561,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3">
@@ -2623,6 +2627,20 @@
     <li class="md-nav__item">
       <a href="../../rec/tricks-for-2022-05/" class="md-nav__link">
         2022年5月练习记录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rec/segtree-practice/" class="md-nav__link">
+        Vjudge 线段树小专题
       </a>
     </li>
   
@@ -2846,14 +2864,14 @@
       
       
         <label class="md-nav__link" for="__nav_5_2">
-          部分模拟赛改错
+          模拟赛改错
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="部分模拟赛改错" data-md-level="2">
+      <nav class="md-nav" aria-label="模拟赛改错" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
-          部分模拟赛改错
+          模拟赛改错
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3018,14 +3036,14 @@
       
       
         <label class="md-nav__link" for="__nav_5_2_11">
-          模拟赛赛后总结
+          赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="模拟赛赛后总结" data-md-level="3">
+      <nav class="md-nav" aria-label="赛后总结" data-md-level="3">
         <label class="md-nav__title" for="__nav_5_2_11">
           <span class="md-nav__icon md-icon"></span>
-          模拟赛赛后总结
+          赛后总结
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3280,16 +3298,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
       
       
       
@@ -3330,172 +3346,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          OI 常用 Vim 命令
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../vim-usage/" class="md-nav__link">
         OI 常用 Vim 命令
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    编辑模式
-  </a>
-  
-    <nav class="md-nav" aria-label="编辑模式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#normal-mode" class="md-nav__link">
-    Normal Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-mode" class="md-nav__link">
-    Command Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert-mode" class="md-nav__link">
-    Insert Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visual-mode" class="md-nav__link">
-    Visual Mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-mode" class="md-nav__link">
-    Replace Mode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    编辑器快捷键
-  </a>
-  
-    <nav class="md-nav" aria-label="编辑器快捷键">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    移动类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    纯编辑类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    复制粘贴类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    文件操作类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    屏幕操作类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    多文件编辑类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    多标签编辑类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    查找/替换类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    插件扩展快捷键类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    其他类。
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3512,14 +3367,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" checked>
       
       
       
@@ -3546,11 +3403,187 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../CSP2022/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CSP2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         CSP2022
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#csp2022" class="md-nav__link">
+    CSP2022 游记
+  </a>
+  
+    <nav class="md-nav" aria-label="CSP2022 游记">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    久远的过去
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#916" class="md-nav__link">
+    9.16，初赛前两天
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#917" class="md-nav__link">
+    9.17，初赛前一天
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#918" class="md-nav__link">
+    9.18 初赛
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#920" class="md-nav__link">
+    9.20，开学第二天
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1019" class="md-nav__link">
+    10.19，过了很久之后
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1020" class="md-nav__link">
+    10.20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1021" class="md-nav__link">
+    10.21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022" class="md-nav__link">
+    10.22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023" class="md-nav__link">
+    10.23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1024" class="md-nav__link">
+    10.24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1025" class="md-nav__link">
+    10.25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1026" class="md-nav__link">
+    10.26
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1027" class="md-nav__link">
+    10.27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1028" class="md-nav__link">
+    10.28
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1029" class="md-nav__link">
+    10.29
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1030" class="md-nav__link">
+    10.30
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1031" class="md-nav__link">
+    10.31
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#118" class="md-nav__link">
+    11.8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3582,50 +3615,32 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../flower/" class="md-nav__link">
-        鲜花
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
     
       
-      
-      
-
-  
-  
-  
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
       
       
       
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_7">
-          Waifu
+        <label class="md-nav__link" for="__nav_6_4">
+          偶尔写一写的随记
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Waifu" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
+      <nav class="md-nav" aria-label="偶尔写一写的随记" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
-          Waifu
+          偶尔写一写的随记
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3635,9 +3650,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../waifu/" class="md-nav__link">
-        Waifu
+      <a href="../flower/" class="md-nav__link">
+        鲜花
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waifu/" class="md-nav__link">
+        A Dream
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3664,16 +3700,169 @@
   
                   
 
-  <a href="https://github.com/hylwxqwq/hylwxqwq.github.io/edit/master/docs/sce/vim-usage.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/hylwxqwq/Blog-Docs/tree/master/docs/misc/CSP2022.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>OI 常用 Vim 命令</h1>
+  <h1>CSP2022</h1>
 
-<p>Practise more.</p>
-<p>考场 Vimrc:</p>
+<h2 id="csp2022">CSP2022 游记<a class="headerlink" href="#csp2022" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_1">久远的过去<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>退役了。</p>
+<p>文化课了。</p>
+<p>业余休闲选手，研究了一点基础的东西，算是给之前还债了。</p>
+<p>自己的计划完成度还是很低。。。</p>
+<h3 id="916">9.16，初赛前两天<a class="headerlink" href="#916" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>做了套初赛模拟卷子，仿真了线上环境，不过拿到卷子已经开始 20min多了，因为没有提前调试好设备。</p>
+<p>考了个 75.5，比之前都好，不过可能有运气成分。</p>
+<p>十六进制那题蒙对了，几个组合数学题做对了，15 题容斥+数论没来得及算。</p>
+<p>但是非常生气啊，之前自己学了插板法还给 OI-wiki 写了插板法的内容，结果插板法的送分填空题没做对。</p>
+<p>然后第四题那个简单分讨组合，因为 tm 的把组合数和排列数公式弄混了自己没发现，晕头晕脑的。</p>
+<p>然后感觉对于 <strong>重复计数</strong> 这个方面犯错很多，感觉有的时候没法理解，之后要多练习。</p>
+<p>主定理那个题应该秒杀的！还是花了一点点时间。</p>
+<p>四色定理那个题没搞懂，因为重复计数。。。，之后写到数学的错题本上面吧。</p>
+<p>然后 tm 的没耐心分析程序完型那个优先队列题。</p>
+<p>感觉总体还是紧张了，不过心态较于之前自信了很多，而且凭着第一直觉蒙对了不少！。</p>
+<p>明天模拟的时候准备多一点水，然后一包湿纸巾用来冷静，然后草稿纸尽量有条理一点。</p>
+<p>有一些公式什么的，如果自己感觉 <strong>印象有点模糊了</strong> ，一定要写出来！</p>
+<p>然后暴力人工栈记得弄成代码缩进式的。</p>
+<p>今天设备出了一点问题，Ipad 录屏空间不够，而且拍摄位置不够清晰。</p>
+<p>而且进去的匆匆忙忙的。。。。。不过也好，算是一个反例了。</p>
+<p>写完日记就去睡觉了。</p>
+<h3 id="917">9.17，初赛前一天<a class="headerlink" href="#917" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>吃了碗热干面+煎蛋（热干面是之前封城的时候买的）</p>
+<p>又做了一套初赛模拟卷子，进去又是 10 min 多了，因为以为不弄线上。</p>
+<p>这次题要难得多，不过考的更高了，81.5（87.5），因为最后检查不仔细填错了两个 3 分的空，于是少了 6pts。</p>
+<p>不然能 rk4，现在变成 rk8 了 /ng，xzq 又一次登顶 rk1 了。。。。。强</p>
+<p>然后整体心态很不错，就是一路悠闲地哼着歌做完的，可能是因为昨晚考出信心了吧。</p>
+<p>T3 那个欧拉回路的定义看走眼了，可能是因为对“闭路”的理解错了。</p>
+<p>然后 T7 那个关于 TCP 网络协议的，因为没有背过造球了。</p>
+<p>组合数学题依然稳定发挥全做对。</p>
+<p>一个处理矩阵的题，有点没心气读，最后一题是板板树剖，鲨卵。</p>
+<p>T15 那个运算符顺序依稀记得 <code>mod</code> <span class="arithmatex">\(&gt;\)</span> <code>+</code> <span class="arithmatex">\(&gt;\)</span>  <code>xor</code>，结果对了，之后需要记一记了。</p>
+<p>阅读第一题那个构造 <span class="arithmatex">\(a_i = cnt(i)\)</span> 的方案数的题很有意思，说不定可以拿来出 CF。</p>
+<p>然后那个题最后两问全部错完，难过，但是 <span class="arithmatex">\(\sum a_i = n\)</span> 的结论好像是对的？？？神奇</p>
+<p>还有就是做题速度有点慢。。。。。。。可能是太闲了的缘故。。。。。</p>
+<p>1h20m 才做完。</p>
+<p>不过这个暑假的努力肯定是因素之一吧，在有很重的 whk 压力的同时还仍然保持 OI，比我之前浑浑噩噩的停课三个月有效多了。</p>
+<p>CodeForces Rating 也是。</p>
+<p>然后设备调试的差不多了。</p>
+<p>昨天总结的心态，思路，草稿问题今天都解决了。</p>
+<p>反正就像我爸妈说的：不管是 NOIP，高考，还是什么考试，用你的平常心对待（甚至告诉我高考的时候让我自己走路去不送我（（（（（（</p>
+<p>在 luogu 上面回答了几个小朋友的问题，算是复习。</p>
+<p>下午还有一套 hb 的模拟，把 Osu 下回来了，打完如果还行颓一把。</p>
+<p>妈的，打完完全吐掉了。</p>
+<p>只有 36 pts。</p>
+<p>阅读程序完全被击飞，组合数学题全部寄完。</p>
+<p>感觉是心态完全爆炸的缘故，直接没有心气读题了。</p>
+<p>几个组合数学题很有意思，开了一个小专题用来记录，然后稍微改了改博客架构，加了 Comment System。</p>
+<p>最后面那几个阅读真的是噗叽算法干爆一堆人啊。。。。</p>
+<p>真的难读题，，，，最后一题其实本质上是 ODT，有一个我瞎猜的题居然是奇怪的求欧拉路。。。</p>
+<p>然后又臭又长的 dp，比较阳间但是心气不行直接挂掉了，一些总结好的习惯也没有用上。</p>
+<p>明天一定要关窗然后开个空调，保持清醒，避开楼下志愿者那个循环一个小时的广播😅。</p>
+<p>晚上就是听佳爸讲题，然后做一下组合数学的一些记录之类的，然后弄了一个初赛注意事项。</p>
+<h3 id="918">9.18 初赛<a class="headerlink" href="#918" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>上午吃了热干面 + 两个蛋，昨天吃了一个蛋，只考好了一次，今天吃了两个蛋，那就是考好两次（确信</p>
+<p>噗叽组整体难度不是很大吧，可能 1h 左右剩了几个题，然后慢慢磨。</p>
+<p>有一些题不是很确定，比如 Haffman，double 的精度（牛顿迭代开根号那个题）（pj 怎么会有牛迭啊！</p>
+<p>然后整体都很水，连个数数题没有。</p>
+<p>不过中间受到防空警报的干扰了，也没事，这是必须要放的。</p>
+<p>然后发现是要开答题机器的麦的，于是会有点吵，我把答题机器音量调小了一点点，是在我能听到，但是不影响我的音量上。</p>
+<p>后面有一个小朋友直接叫出来：“怎么这么难！？？？Oh No！！！！”</p>
+<p>草，可能是没见识过前两年的 PJ，今年总体上 PJ 比去年简单多了。</p>
+<p>80+ 应该是没有问题的了，过初赛应该可以，赛后跑了一跑牛顿迭代，发现它不是用 eps 而是直接 ==，显然有问题但是我当时没有看出来！</p>
+<p>然后吃了顿好的，去睡了个觉，准备下午的 TG了。</p>
+<p>记住，要锻炼的就是不被外部环境影响心态/思考/思路的能力，只要钻进去思考就行了！</p>
+<p>绝对不要自己觉得，好难啊~~，这样是负面的心理暗示。</p>
+<p>想着，我就算过不了，也权当享受比赛了，我肯定要静下心来去读程序，不要花时间在没有思考的扣手上面。</p>
+<p>只要没思路了，不是跳过就是用笔开始写可能思路！</p>
+<p>反正放平心态。</p>
+<p>下午开考，提早进考场，发现和 gjh 一个考场，郭哥太帅了 /se/se/se</p>
+<p>然后就开始做，开始的时候感觉选择题比较难，然后简单做了几题就先看后面程序部分了。</p>
+<p>然后看到 <code>j = 0; j &lt; n; j *= 2</code> 直接蚌埠？？？？</p>
+<p>然后我猜之后会改成 1，选了 <span class="arithmatex">\(\log\)</span> 直接跑路，后面确实改了。</p>
+<p>看到后面的题比较简单之后溜回去静下心看选择了。</p>
+<p>然后被 10 题蚌埠了，我怎么算都是 105，卡了 20min，只能随便选了一个答案走人。</p>
+<p>结果出题人语文可能是逃课了，根本没说清楚大作业是 tm 几个人做啊！原来答案直接就是 <span class="arithmatex">\(\dbinom{8}{2}\)</span> 啊 ！</p>
+<p>md。</p>
+<p>然后后面阅读 T1 以为是个 KMP，忘记了，后面发现 KMP 好像是要跳 Next 的，这个没有跳。</p>
+<p>然后改了一下最后一问的答案，但是没来得及手完一下，然后复杂度就没改过来。。。</p>
+<p>看着阅读 T2 搞了一会，发现是个进制转换，快乐做完走人。</p>
+<p>但是没看到 28 的 n 没有加绝对值，md，坑人！！！！！！！！</p>
+<p>最后一题算错了/ng</p>
+<p>归并第 k 小没理解太清楚，错了两个。</p>
+<p>最后一题，去年四毛子在这里，结果怎么是个鲨卵 dp ？？？？？</p>
+<p>赛后测答案，对了 U 群的答案，然后发现是 63.5？？？？</p>
+<p>妈的寄了啊，开始生气！！！</p>
+<p>后面出去理发，结果一路倒霉，先是连着遇到两个绿灯突然变红，</p>
+<p>然后又是理发店全满人。</p>
+<p>回来快进小区了老爸才说让我去阳台那边，把我的公交卡接住去冲卡。</p>
+<p>结果发现暑假补课的时候已经冲了 30 多块了，因为当时的疫情，就没用。</p>
+<p>然后就各种倒霉。。。。</p>
+<p>我当时在想，也许是下午 rp 用完了，于是人品这么烂。</p>
+<p>然后回来吃了个饭。</p>
+<p>去小图灵对了一下，发现 79 ？？？</p>
+<p>过了一会发现好像我用 U 群的答案算错了！！！！</p>
+<p>仔细验证发现确实！！！70应该有了！！！！！（如果争议题再给点分就好了！！！1）</p>
+<p>也许能过吧，然后 噗叽可能因为瞎考，大概率又没有 tg 高/ng</p>
+<p>不过这次 pj，tg都比之前高了 10pts左右，也算进步了。</p>
+<p>之前第一次只考了 J1，没过，第二次考了 J1，S1，都没过。</p>
+<p>第三次只过了 S1，J1 靠着奖励名额进去了。</p>
+<p>这次也许就是全进去了吧！</p>
+<p>晚上收拾了一下东西，明天开学了，到时候在车上可以做一点 KMP 题。</p>
+<h3 id="920">9.20，开学第二天<a class="headerlink" href="#920" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>今天在和 JX 还有 FST 商量之后在学校 OI 的时间。</p>
+<p>差不多是化生语这三科的补差不上，其他都上。</p>
+<p>然后对了一下初赛答案（听说是 official answer），TG 76.5，然后听说苏州分数线是 75，</p>
+<p>所以在成都也应该过了。</p>
+<p>upd : 普及 71.5, tg 77.5，又一次创下了提高 》 普及的记录。</p>
+<h3 id="1019">10.19，过了很久之后<a class="headerlink" href="#1019" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>简单提一句最近都在干啥吧，拿 Atcoder 的 DP contest 练了下手，不过现在还有 7 个题没做。</p>
+<p>然后复习了一下 KMP，补了下字符串 Hash。</p>
+<p>whk 那边就是该咋卷咋卷，反正每天事情都排的很满，差不多经常是第一个出寝室最后一个回寝室的。</p>
+<p>毕竟早读之前，晚自习下课之后加起来有 1h，不用白不用。</p>
+<p>数理化生感觉还好，语文最近开始积累作文素材了，然后开始把以前的笔记系统化整理。</p>
+<p>感觉笔记挺重要的，复习也挺重要的。</p>
+<p>不过感觉现在最重要的事情是怎么在做题的时候保持清醒，不会拿到题就瞎写瞎做，会先想想能不能归化到已有 Trick 上，然后每一步都有一个明确的目标和思路。</p>
+<p>还有一点是最近感觉很不足的，whk 那边感觉没有啥做题的心气，浮躁的很。</p>
+<p>可能是因为急了，感觉每天自己的 Extra works 那么多，有些自己感觉不必要的 work 就直接 c 了。</p>
+<p>可能这也是最近状态不佳的原因，而且计划里的很多东西并不是每天都在坚持的，比如最近就没咋背生物和化学的知识点了。</p>
+<p>最近用的那个四象限规划法挺好用的，但是每天都做不完很有挫败感啊。</p>
+<p>还是要把生化还有英语的知识点背诵放到中午，然后晚上回寝的路上，洗漱的时候，走路的时候可以背一下，节省点时间，晚上就看看有啥背漏的。</p>
+<p>不过几个我可能不选的科目就有点难过，基本都没放什么精力在上面。</p>
+<p>英语背书还可以，只是语法那边差了很多，然后很多 phrase 记不到了。。。。</p>
+<p>反正难过，最近的几个周末都有点摆，导致很多事情没做。</p>
+<p>真的吐，最近打的 3 场 cf 也没写题解。</p>
+<p>打算 csp 之前请两天假上来打打模拟赛恢复感觉。</p>
+<p>md，csp 怎么和半期考试重合度这么高啊。。。</p>
+<p>明天再去找心理老师聊聊，记得找班主任签假条。</p>
+<h3 id="1020">10.20<a class="headerlink" href="#1020" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>签假条的时候被班主任戏剧性的逼着停课了？</p>
+<p>然后和心理老师聊天，得出结论是要维持一个平稳的心态。</p>
+<p>而且定目标的时候一般不要给自己定那种“很满”的目标，比如使用“必须，一定”这种词汇之类的。</p>
+<p>容易坚持不下来。</p>
+<p>而且因为心态这东西也没有绝对的平稳，能做的就是最小化心态波动。</p>
+<p>研究了一下 Code::Blocks，感觉非常好用！</p>
+<p>好像要复习一下线性求逆元这种板子之类的东西了。</p>
+<h3 id="1021">10.21<a class="headerlink" href="#1021" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>在家摆烂。</p>
+<h3 id="1022">10.22<a class="headerlink" href="#1022" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>不写了，咕咕咕。</p>
+<h3 id="1023">10.23<a class="headerlink" href="#1023" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>因为取模，减法不加 mod，在取模意义下取 max 没看到，直接击飞了。</p>
+<p>-130pts。</p>
+<p>下午 CF，打得稀撇。</p>
+<p>晚上直接自闭了，做完核酸去操场慢走了一圈静了一下，然后坐在足球场旁边那个雕像沉思了半个小时.</p>
+<p>感觉热爱是很重要，很纯粹但是很难保持高纯度的东西。</p>
+<p>我之前就一直在为了别人的认可学 OI，没理解就乱点科技树。</p>
+<p>可以说是好大喜功，但是实力不足吧。</p>
+<p>晚上找到 zjk 讨论了一下那个神秘题的做法。</p>
+<p>现在觉得状态是，学了的掌握不熟，然后还想要“荣誉”，然后就急了，心气有点下不去。</p>
+<p>重要的是 attitude，我热爱的是 Cs，不是为了 OI 的荣誉。</p>
+<p>不想被落下太多就别 emo了，尽力过了就不用后悔，just for fun，not for the honor, enjoy what you do now.</p>
+<p>也找 zjk 爷爷问了关于心态的事情，回答大概是这样的：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3684,175 +3873,256 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">color</span> blue
-<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
-<span class="k">set</span> clipborad^<span class="p">=</span>unnamed<span class="p">,</span>unnamedplus
-<span class="k">set</span> <span class="nb">backup</span> <span class="k">nu</span> <span class="nb">mouse</span><span class="p">=</span><span class="k">a</span> <span class="k">ts</span><span class="p">=</span><span class="m">4</span> <span class="k">sw</span><span class="p">=</span><span class="m">4</span> <span class="k">sts</span><span class="p">=</span><span class="m">4</span> 
-<span class="k">set</span> <span class="k">ar</span> <span class="nb">ai</span> <span class="nb">acd</span> <span class="nb">guifont</span><span class="p">=</span>Consolas:h12:cANSI
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-23</span><span class="w"> </span><span class="mi">22</span><span class="o">:</span><span class="mi">31</span><span class="o">:</span><span class="mi">38</span><span class="w"></span>
+<span class="nl">关于比赛</span><span class="p">:</span><span class="w"></span>
+<span class="n">首先我不太喜欢打cf</span><span class="w"> </span><span class="n">因为我也非常受rating变化影响</span><span class="p">(</span><span class="n">感觉这东西可能和性格有关</span><span class="w"> </span><span class="n">至少我不大行</span><span class="p">)</span><span class="w"></span>
+<span class="n">然后感觉cf可能也不完全是必要的</span><span class="p">(</span><span class="n">虽然现在hb训练方式对cf是这样的</span><span class="p">)</span><span class="w"></span>
 
-<span class="nb">inoremap</span> [ []<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
-<span class="nb">inoremap</span> {<span class="p">&lt;</span>CR<span class="p">&gt;</span> {}<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span><span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>ESC<span class="p">&gt;</span>O
-<span class="nb">inoremap</span> <span class="p">(</span> <span class="p">()&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
-<span class="nb">inoremap</span> <span class="s2">&quot; &quot;</span>&quot;<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
-<span class="nb">inoremap</span> <span class="s1">&#39; &#39;</span>&#39;<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-23</span><span class="w"> </span><span class="mi">22</span><span class="o">:</span><span class="mi">33</span><span class="o">:</span><span class="mo">03</span><span class="w"></span>
+<span class="n">我感觉我训练一直是多刷题</span><span class="w"> </span><span class="n">可以想很长时间</span><span class="w"> </span><span class="n">然后多补题解</span><span class="p">(</span><span class="n">虽然这东西因人而异我不能评价</span><span class="p">)(</span><span class="n">而且国家队另外几个人都不怎么写题解</span><span class="p">)</span><span class="w"></span>
+<span class="n">然后比赛状态啥的最后再去调整</span><span class="p">(</span><span class="n">当然细节啥的还是要注意</span><span class="w"> </span><span class="n">不过写多了可以做到不怎么怕细节问题</span><span class="p">)</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-23</span><span class="w"> </span><span class="mi">22</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">16</span><span class="w"></span>
+<span class="n">然后说到心态</span><span class="w"></span>
+
+<span class="n">国家队集训刚开始的时候我在us</span><span class="w"> </span><span class="n">open打出了队友ak我200的成绩然后我一度心态爆炸</span><span class="w"></span>
+<span class="n">然后我选择睡觉</span><span class="w"> </span><span class="n">打游戏</span><span class="w"> </span><span class="n">刷atc找回感觉</span><span class="w"> </span>
+
+<span class="n">然后线下第一场我又打出了275</span><span class="o">/</span><span class="mi">4</span><span class="o">*</span><span class="mi">300</span><span class="w"> </span><span class="n">这个时候还是一周4场比赛</span><span class="w"></span>
+<span class="n">然后我心态非常炸</span><span class="w"> </span><span class="n">然后我又去开游戏打了整个后半场结果发挥还行</span><span class="w"></span>
+
+<span class="n">然后两次ctt</span><span class="w"> </span><span class="n">d2炸掉然后开颓</span><span class="w"> </span><span class="n">d3d4正常发挥</span><span class="w"></span>
+
+<span class="n">然后很多比赛</span><span class="p">(</span><span class="n">scoi20</span><span class="w"> </span><span class="n">noi21</span><span class="w"> </span><span class="n">最后一段集训</span><span class="p">)</span><span class="n">也是这样干的</span><span class="p">(</span><span class="w"></span>
+<span class="p">(</span><span class="n">注意这里游戏都指offline类型</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-23</span><span class="w"> </span><span class="mi">22</span><span class="o">:</span><span class="mi">48</span><span class="o">:</span><span class="mi">36</span><span class="w"></span>
+<span class="p">(</span><span class="n">建议跳过上一段因为太奇怪了</span><span class="w"></span>
+<span class="nl">然后我有一些感觉</span><span class="p">:</span><span class="w"></span>
+<span class="n">过度投入可能有反作用</span><span class="p">(</span><span class="n">典型例子22</span><span class="mf">.1</span><span class="n">的时候我在nj集训</span><span class="w"> </span><span class="n">最后几天心态极其暴躁</span><span class="w"> </span><span class="n">还好cts延期了</span><span class="p">)</span><span class="w"></span>
+<span class="n">考前还在想怎么考好极大概率考炸</span><span class="w"></span>
+<span class="n">考前能做到放空应该是好状态</span><span class="p">(</span><span class="w"></span>
+<span class="n">说不定考前摸鱼有用</span><span class="p">(</span><span class="n">但是需要是正确摸鱼</span><span class="w"></span>
+<span class="n">考场上也应该多冷静多想</span><span class="w"> </span><span class="p">(</span><span class="n">我有场模拟赛快2h一题不会</span><span class="w"> </span><span class="mi">3</span><span class="n">h多点ak</span><span class="p">)(</span><span class="n">因为oi也不是速度竞赛但是可能cf是</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-23</span><span class="w"> </span><span class="mi">22</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">59</span><span class="w"></span>
+<span class="nl">bonus</span><span class="p">:</span><span class="n">某次</span><span class="err">《</span><span class="n">国家队选手nfls校内交流</span><span class="err">》</span><span class="w"> </span><span class="n">我们一致通过考前一段时间应该摆这件事</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mo">07</span><span class="o">:</span><span class="mi">59</span><span class="o">:</span><span class="mi">22</span><span class="w"></span>
+<span class="n">但感觉经常把一个题独立想出来就能记住了</span><span class="p">(</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">00</span><span class="o">:</span><span class="mi">48</span><span class="w"></span>
+<span class="n">可以多刷刷题</span><span class="p">(</span><span class="n">arc</span><span class="p">(</span><span class="o">?</span><span class="p">)</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">01</span><span class="o">:</span><span class="mo">06</span><span class="w"></span>
+<span class="n">arc极度小清新但不知道刷不刷的动</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">01</span><span class="o">:</span><span class="mi">17</span><span class="w"></span>
+
+<span class="n">最近的f除外</span><span class="p">(</span><span class="n">bushi</span><span class="p">)</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">02</span><span class="o">:</span><span class="mi">19</span><span class="w"></span>
+<span class="nl">atc比赛特性</span><span class="p">:</span><span class="n">代码极其短</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">02</span><span class="o">:</span><span class="mi">40</span><span class="w"></span>
+<span class="n">我刷agc应没写过</span><span class="o">&gt;</span><span class="mi">2</span><span class="n">k代码</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">02</span><span class="o">:</span><span class="mi">56</span><span class="w"></span>
+<span class="n">arc除去抄板子没写过</span><span class="o">&gt;</span><span class="mf">1.5</span><span class="n">k</span><span class="p">(</span><span class="o">?</span><span class="p">)</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mo">03</span><span class="o">:</span><span class="mo">03</span><span class="w"></span>
+<span class="nl">板子</span><span class="p">:</span><span class="n">网络流</span><span class="w"> </span><span class="n">fft</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">20</span><span class="w"></span>
+
+<span class="n">atc感觉都是纯思考比赛</span><span class="p">(</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">54</span><span class="w"></span>
+<span class="n">然后现在abc</span><span class="w"> </span><span class="n">ex变成了高阶套路比赛</span><span class="p">(</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">10</span><span class="w"></span>
+<span class="p">(</span><span class="n">如果4h能做出题应该没问题</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">21</span><span class="w"></span>
+<span class="n">建议104开始倒着做</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">35</span><span class="w"></span>
+<span class="p">(</span><span class="n">虽然我只刷ef</span><span class="w"></span>
+
+<span class="mi">4182</span><span class="n">_543_731</span><span class="w"> </span><span class="mi">2022-10-24</span><span class="w"> </span><span class="mi">08</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mo">01</span><span class="w"></span>
+<span class="n">还有这种东西突出一个纯思考所以甚至可以一边whk一边想题</span><span class="p">(</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<h2 id="_1">编辑模式<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<h3 id="normal-mode">Normal Mode<a class="headerlink" href="#normal-mode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>一般 Vim 的命令都是在 Normal mode 下面完成的。</p>
-<p>所有模式按 <code>ESC</code> 都可以进入 Normal mode。</p>
-<p>Normal mode 不可以进行输入，键盘上所有的字母基本都是个命令。</p>
-<p>也可以用 <code>:</code> 进入 Command mode。</p>
-<p>下面的命令会标记 <code>[N]</code> 表示该快捷键在 Normal mode 下可用。</p>
-<h3 id="command-mode">Command Mode<a class="headerlink" href="#command-mode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>可以进行一些文件操作，属性的设置。</p>
-<p>还可以利用 <code>:!&lt;Command&gt;</code> 在一个外部终端里面执行 <code>&lt;Command&gt;</code> 命令。</p>
-<p>比如 <code>!g++ % -o %&lt; -Wall -std=c++17 -O2 -g</code> 就可以编译当前的文件（cpp）。</p>
-<h3 id="insert-mode">Insert Mode<a class="headerlink" href="#insert-mode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>正常的输入模式，Vim Easy 只有这个模式。</p>
-<h3 id="visual-mode">Visual Mode<a class="headerlink" href="#visual-mode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>选择模式，有三种。</p>
-<p>第一种是在 Normal mode 下按 <code>v</code> 进入的可视模式，这个就是类似其他 Editor 的选择功能。</p>
-<p>第二种是按 <code>V</code> 也就是 <code>S-v</code> 进入的行可视模式，这个模式会自动选择光标所在行，并且会复制换行符。</p>
-<p>第三种是按 <code>C-v</code> 进入的块可视模式，这个模式会选中一个块（矩形），比如下面这个实例：</p>
+<h3 id="1024">10.24<a class="headerlink" href="#1024" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>今天感觉很开心。</p>
+<p>ZJK 给了建议说，从 ARC104 开始倒着做（目的是锻炼思维）。</p>
+<p>他还说要多想！</p>
+<p>hfy 说可以选完题直接定时当模拟赛做，可以找找感觉，也有助于考试的时候保持平常心。</p>
+<p>今天效率还可以，把几个简单题改了，思考量终于上去了一点。</p>
+<p>那个子集的题还有那个独立集都很有意思，明天补一补。</p>
+<p>改 ABC 的 D 的时候发现了这种神奇的 dp 方式（从一血的代码里看过来的）</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">exceptions</span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">failbit</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">badbit</span><span class="p">);</span><span class="w"></span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">dp</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="mi">10000</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">dp</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">dp</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">target</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10000</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-<p>我们想把它们前面的 <code>std::</code> 全部删掉，就可以用块可视模式选中然后删除（当然你也可以一个个查找然后repalce掉它们）。</p>
-<h3 id="replace-mode">Replace Mode<a class="headerlink" href="#replace-mode" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>按 <code>R</code> 进入，顾名思义是用来批量 replace 的。</p>
-<h2 id="_2">编辑器快捷键<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<h3 id="_3">移动类<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>[N/V] h j k l</code> ： 上下左右（可以在前面加上数字表示重复多少次，比如 <span class="arithmatex">\(3l\)</span> 就是往左移动三个字符（Vim 的所有命令基本都支持这个））</li>
-<li><code>[N/V] gg</code> ：跳到文件的开头。</li>
-<li><code>[N/V] G</code>：跳到文件的结尾</li>
-<li><code>[N/V] &lt;Number&gt;G  / :&lt;Number&gt;</code> ： 跳到第 <code>&lt;Number&gt;</code> 行</li>
-<li><code>[N/V] &lt;Number&gt;|</code>：把光标移动到第 <code>&lt;Number&gt;</code> 列上</li>
-<li><code>[N/V] Backspace Space</code>： 移动到上一个字符/下一个字符</li>
-<li><code>[N/V] + Enter</code>：移动到下一行第一个非空白字符</li>
-<li><code>[N/V] -</code>：移动到上一行第一个非空白字符。</li>
-<li><code>[N] f&lt;Char&gt;</code>：移动到同一行的下一个 <code>&lt;Char&gt;</code> 字符处。</li>
-<li><code>[N] F&lt;Char&gt;</code>：移动到同一行的上一个 <code>&lt;Char&gt;</code> 字符处。</li>
-<li><code>[N/V] ^/$</code> ：移动到行头/尾。</li>
-<li><code>[N/V] H</code>: 把光标移到屏幕最顶端一行。</li>
-<li><code>[N/V] M</code>: 把光标移到屏幕中间一行。</li>
-<li><code>[N/V] L</code>: 把光标移到屏幕最底端一行。</li>
-</ul>
-<h3 id="_4">纯编辑类<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>[N] i</code>：进入 Insert Mode（在当前光标块的左侧插入）</li>
-<li><code>[N] a</code>：进入 Insert Mode（在当前光标块的右侧插入）</li>
-<li><code>[N] O</code>：在当前行上方新建一行，并进入插入模式，光标处于行首（除非有 auto indent）</li>
-<li><code>[N] o</code>：在当前行下方新建一行，并进入插入模式，光标处于行首（除非有 auto indent）</li>
-<li><code>[N] I</code>：将光标移动至本行末尾，同时进入插入模式。</li>
-<li><code>[N] A</code>：将光标移动至本行首，同时进入插入模式。</li>
-<li><code>[N] u/C-r</code>：Undo 和 Redo。</li>
-<li><code>[N] ~</code>：反转光标块字符的大小写。</li>
-</ul>
-<h3 id="_5">复制粘贴类<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>[V] y</code>：复制在可视模式下选中的文本（可以加组合键来复制一个单词/句子之类的，不过我不咋用就不写了）。</li>
-<li><code>[N/V] yy</code> 复制当前行。</li>
-<li><code>[N] ggVG</code> ：这是一个组合键，等价于全文复制（会多复制一个换行符）。</li>
-<li><code>[N/V] d</code>：剪切（需要类似 <code>d&lt;Number&gt;&lt;Move&gt;</code> 的组合键，比如 <code>d8l</code> 就是删除光标块右边8个字符（包括光标块本身（光标实际上是在光标块的左边）），<code>d8h</code> 则是左边（不含光标块），<code>dG</code> 是从当前行一直删到文件结尾）。</li>
-<li><code>[N/V] dd</code>：剪切一整行。</li>
-<li><code>[N/V] x&lt;Number&gt;</code>：删除光标右边 <code>&lt;Number&gt;</code> 个字符（光标是在光标块的左边，所以如果你直接按 <code>x</code> 会删除光标块选中的字符）。</li>
-<li><code>[N/V] X&lt;Number&gt;</code>：左边。</li>
-<li><code>[C] :&lt;i&gt;,&lt;j&gt; dd</code>：剪切第 <span class="arithmatex">\(i\)</span> 行到第 <span class="arithmatex">\(j\)</span> 行的所有文本。</li>
-<li><code>[N] p/P</code> ：在光标的后/前位置粘贴（注意是否复制了换行符，可以使用 <code>reg</code> 查看对应寄存器里的东西）</li>
-<li><code>[N/V] "&lt;char&gt;y</code>：复制到 <code>&lt;char&gt;</code> 寄存器当中（<code>0 ~ 9</code> 的数字，<code>a ~ z/A ~ Z</code> 的字母，<code>+-*</code>）。</li>
-</ul>
-<p><code>+</code> 是系统剪贴板，<code>*</code> 是当前选择缓冲区。</p>
-<h3 id="_6">文件操作类<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>:file filename</code>：命名当前文件为 <code>filename</code>。</li>
-<li><code>:e file</code>：关闭当前的文件，打开文件 <code>file</code>（可以是目录，可以指定文件位置）</li>
-<li><code>:e#</code>：回到上一个文件</li>
-<li><code>:e</code>：重新加载当前文件。</li>
-<li><code>:w</code>：写入当前文件。</li>
-<li><code>:q</code>：退出。</li>
-<li><code>:wq</code>：保存并退出。</li>
-<li><code>:saveas filename</code>：另存为。 </li>
-</ul>
-<h3 id="_7">屏幕操作类<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>[N]C-f</code>: 下翻一屏。</li>
-<li><code>[N]C-b</code>: 上翻一屏。</li>
-<li><code>[N]C-d</code>: 下翻半屏。</li>
-<li><code>[N]C-u</code>: 上翻半屏。</li>
-<li><code>[N]C-e</code>: 向下滚动一行。</li>
-<li><code>[N]C-y</code>: 向上滚动一行。</li>
-<li><code>[N]zz</code>: 将当前行移动到屏幕中央。</li>
-<li><code>[N]zt</code>: 将当前行移动到屏幕顶端。</li>
-<li><code>[N]zb</code>: 将当前行移动到屏幕底端。</li>
-<li><code>[N]C-w H/J/K/L</code> ：将当前窗口移动到屏幕的左/下/上/右处。</li>
-<li><code>[N]C-w h/j/k/l</code> ：切换到左/下/上/右的窗口。</li>
-<li><code>:split</code>：分割当前的窗口为两个窗口（水平分割），可以用 <code>:set scb</code> 打开同步滚动。</li>
-<li><code>:split &lt;filename&gt;</code>：水平分割并打开新的文件。</li>
-<li><code>:new</code>：水平打开一个新窗口并编辑一个新的文件。</li>
-<li><code>:vsplit/:vnew</code>：竖直分割。</li>
-<li><code>:only</code>：只保留当前窗口。</li>
-<li><code>:close</code>：关闭当前窗口。 </li>
-</ul>
-<h3 id="_8">多文件编辑类<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p><code>vim a.txt b.cpp c.json</code> 可以同时打开多个文件。</p>
-<ul>
-<li><code>:n</code> 可以编辑下一个文件，<code>:N</code> 可以编辑上一个文件。</li>
-<li><code>:ls</code> 或者 <code>:args</code> 可以显示文件列表。 </li>
-</ul>
-<h3 id="_9">多标签编辑类<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>注意这个和多文件不一样，一个标签页里可以有多个窗口，多文件不是标签页，只是同时打开了多个文件。</p>
-<p>也就是说标签页类似 Workspace。</p>
-<ul>
-<li><code>vim -p files</code>：打开多个文件，每个文件占用一个标签页。</li>
-<li><code>:tabe/:tabnew</code>：如果加文件名，就在新的标签中打开这个文件， 否则打开一个空缓冲区。</li>
-<li><code>C-w gf</code>：在新的标签页里打开光标下路径指定的文件。</li>
-<li><code>:tabn</code>：切换到下一个标签，<code>C-PageDown</code> 也可以。</li>
-<li><code>:tabp</code>： 切换到上一个标签，<code>C-PageUp</code> 也可以。</li>
-<li><code>&lt;n&gt; gt</code>： 切换到下一个标签。如果前面加了 n，就切换到第 n 个标签。第一个标签的序号是 1。</li>
-<li><code>gT</code>：切换到上一个。</li>
-<li><code>:tab split</code>： 将当前缓冲区的内容在新页签中打开。</li>
-<li><code>:tabc[lose]</code>： 关闭当前的标签页。</li>
-<li><code>:tabo[nly]</code>： 关闭其它的标签页。</li>
-<li><code>:tabs</code>： 列出所有的标签页和它们包含的窗口。</li>
-<li><code>:tabm[ove] &lt;N&gt;</code>： 将当前标签页移动到第 <span class="arithmatex">\(N\)</span> 个标签页之后。</li>
-</ul>
-<h3 id="_10">查找/替换类<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>:s/old/new</code>：用 <code>new</code> 替换当前行第一个 <code>old</code>。</li>
-<li><code>:s/old/new/g</code>：用 <code>new</code> 替换当前行所有的 <code>old</code>。</li>
-<li><code>:n1,n2s/old/new/g</code>：用 <code>new</code> 替换当前文件 <code>n1</code> 行到 <code>n2</code> 行所有的 <code>old</code>。</li>
-<li><code>:%s/old/new/g</code>：用 <code>new</code> 替换文件中所有的 <code>old</code>。</li>
-<li><code>:%s/^/xxx/g</code>：在每一行的行首插入 <code>xxx</code>，<code>^</code> 表示行首。</li>
-<li><code>:%s/$/xxx/g</code>：在每一行的行尾插入 <code>xxx</code>，<code>$</code> 表示行尾。</li>
-</ul>
-<p>Tips: 如果所有替换命令末尾加上了 <code>c</code>，则每个替换都将需要用户确认。 如 <code>:%s/old/new/gc</code>，加上 <code>i</code> 则忽略大小写 <code>(ignore)</code>。</p>
-<h3 id="_11">插件扩展快捷键类<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>[N] \ci \cu</code>： 设置注释或者取消注释（Need Nerd-Commenter）</li>
-<li><code>[N] zR</code>：展开所有 Folding（Markdown）</li>
-<li><code>[N/V] C-N</code>：选中词汇并进入 Visual-Multi，或者选中下一个匹配（Need Visual-Multi）<ul>
-<li><code>[M] n/N</code>：获取下一个/上一个事件。</li>
-<li><code>[M] q</code>：跳过当前事件。</li>
-<li><code>C-Down/Up</code> ：创建垂直光标。</li>
-</ul>
-</li>
-<li><code>:MarkdownPreview</code>：预览 Markdown。</li>
-<li><code>:MarkdownPreviewStop</code>：停止预览。</li>
-</ul>
-<h3 id="_12">其他类。<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li><code>:pwd</code>：显示当前工作目录。</li>
-<li>在任意命令后加上 <code>!</code> 表示强制执行，例如 <code>:q!</code>，<code>:close!</code>。</li>
-<li>在任意命令前加上 <code>!</code> 表示在终端中执行命令。</li>
-<li><code>:terminal</code> 可以在当前目录打开一个新的终端（Windows下默认 cmd）。</li>
-<li><code>:TOhtml</code> 可以把当前文档转化为 HTML。 </li>
-<li>大部分命令前加上数字表示重复多少次。</li>
-<li><code>cd</code> 可以更改工作目录。</li>
-<li>在 Command 模式下使用 Tab 会有补全（区分大小写）</li>
-<li>Vim 的大部分命令都是单词的缩写，比如 yank, paste, quit, write.</li>
-</ul>
+<p>感觉很牛逼！</p>
+<p>然后可能就是过了一下 Meet in the Middle 和简单的容斥思想。</p>
+<p>和 wkm 聊了很久，聊到了以前在训练营的那个三分球，昨天在足球场雕像旁边静坐半小时之类的东西。</p>
+<p>感觉啊，OI 不是我的全部，我热爱的是 Compuer Science，所以其实过分看重 OI 带给我的 honor 是没有用的，不如享受当下！</p>
+<p>STJU 和 中科大，都是很好的选择啊！拿完 NOIP 1= 直接冲 whk 也很香！</p>
+<p>另外切忌大喜大悲，你发现没有，每次大喜大悲的模拟赛都出事了（</p>
+<h3 id="1025">10.25<a class="headerlink" href="#1025" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>小溪了，模拟赛 T1 读错题挂了 50pts（和那个初二学弟 ccr 都看错了，我们下午还对着这个搞了好久）。</p>
+<p>然后 T3 一眼顶真鉴定为 GSS1 改版，然后直接莽了一个线段树上去。</p>
+<p>赛后发现做法常数过大了，明明有更简单的做法的。</p>
+<p>那个神秘题值域 1, 2, 3 不能做了，因为有可能无解/hsh (zjk 给了个定理)</p>
+<h3 id="1026">10.26<a class="headerlink" href="#1026" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>为什么一定要尝试融入每一个圈子呢。</p>
+<p>今天弄了一个有意思的容斥题：CF997C，hfy 教我的，感觉终于理解了！</p>
+<p>然后听说二项式反演是一个式子，方便推式子的。</p>
+<p>看 Command_Block 和 tzc_wk(ET2006) 的博客好像有很全的省选知识？</p>
+<p>以后说不定可以学着玩。</p>
+<h3 id="1027">10.27<a class="headerlink" href="#1027" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>想以后的事情是没有用的。</p>
+<p>不过提前规划一下也未尝不可。</p>
+<p>如果今年拿了 NOIP 1= 就直接退役 whk，但是平常可以打打 ARC 学学省选的东西？</p>
+<p>就当做真正的兴趣爱好了。</p>
+<p>如果今年没拿也没关系，明年还可以，而且还有不少竞赛时间，好好磨一磨，完全够了！</p>
+<p>至于大学能不能打 ACM 这些，太遥远了，不是我要考虑的东西。</p>
+<p>弄懂了一个启发式合并的题，感觉也很有意思，而且第一次看文字题解能补充出思路然后写出来，甚至一遍过！</p>
+<p>明天把 dsu on tree 的板子 CF600E 过一下，然后就复习一遍知识点和 Trick，写个大模拟静一静心。</p>
+<p>再出去吃个饭，差不多了，保持下平常心，正常考就可以。</p>
+<p>享受！</p>
+<p>感觉最近几天学 OI 很快乐。</p>
+<h3 id="1028">10.28<a class="headerlink" href="#1028" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>今天复习算法，和 hfy、wcx 老师激情打板子竞速。</p>
+<p>下午开了一场 ARC (ARC080) 一起打。</p>
+<p>然后感觉挺有意思，以后 whk 就用这个调节了。</p>
+<p>晚上和 PhOer zs 出去吃了个饭，听说 MO 是 30 号考。</p>
+<p>晚上总结了一下 ARC，然后想起来可以和 Meatherm 面基，于是简单说了一下特征。</p>
+<p>hfy 说我缩袖子随机游走和 zxjk 的习惯一致，草，好像确实。</p>
+<p>号家军的考前提醒终于更新了。</p>
+<p>只能说保持平常心吧。</p>
+<p>和 wcx 老师一起聊天摸鱼半小时结束了晚自习，加油。</p>
+<p><a href="https://imgse.com/i/x4rDG8"><img alt="x4rDG8.png" src="https://s1.ax1x.com/2022/10/28/x4rDG8.png" /></a></p>
+<h3 id="1029">10.29<a class="headerlink" href="#1029" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>考试，上午起床和 czh,xyh 一起走。</p>
+<p>然后进 J 考场，发现自己上下午一场？？而且gjh下午坐我旁边？</p>
+<p>感觉七中高新的设施比我们好多了/ll</p>
+<p>拿到了 win11 + i7 的配置。</p>
+<p>普及开题，然后发现 T1 就是简单的 log 求一下，然后发现 C++ 里面 <code>log</code> 是 <code>ln</code>，<code>log10</code> 才是 <code>lg</code>，因为这个寄了一次。</p>
+<p>然后 T2 死活想不到 <span class="arithmatex">\(O(1)\)</span> 做法，看到了 <span class="arithmatex">\(m = n - ed + 2\)</span> 这个数据范围里的提示，但是还是不知道，可能半个小时左右决定先打个 <span class="arithmatex">\(\sqrt{n}\)</span> 暴力拿个 60pts。</p>
+<p>然后看 T3，MD，表达式树，而且要加括号之类的，难搞，先看 T4，然后 T4 开始没思路。</p>
+<p>定睛一看，思考一下，感觉就是个简单 <span class="arithmatex">\(O(n^3)\)</span> dp，设 <span class="arithmatex">\(dp(i, j)\)</span> 表示前 <span class="arithmatex">\(i\)</span> 个点，用了 <span class="arithmatex">\(j\)</span> 次机会的最长。</p>
+<p>然后写完发现循环反了一次，过了 Sample1，Sample2 没过，仔细观察发现如果有没有用的可以往上丢，然后在后面补了一下就过了大样例。</p>
+<p>然后回去看 T2，突然觉得直接换个元然后一元二次方程看看有没有整数解就行了，然后写完。</p>
+<p>看 T3，还剩 1h 50m，估计写不完，直接开始打暴力和特殊性质分，最后发现写挂了，反正无所谓，期望应该 300+，pj1=有了。</p>
+<p>然后出去和 xyh，czh 一起吃火锅，还去 711 买了一盒 <strong>小 汉 堡</strong> ，饭团和一瓶茶Π。</p>
+<p>在 xyh 他们订的酒店睡了一会觉，然后去考场，进考场的时候看到了 JuanZhang ！！崔老师好帅！！！</p>
+<p>然后进考场之后并没有看到 Mea，所以就进去了，gjh一直在旁边假我/ng</p>
+<p>开题，T1一眼认为是个 Dp，想了一会开始写，然后发现有后效性，思考了一下发现换一下阶段就行。</p>
+<p>之后发现状态合法性不能保证，先打了一个 40pts暴力稳住。</p>
+<p>然后想到可以直接记录转移路径然后判，先算了一下空间发现不会炸，于是就写了。</p>
+<p>然后看 T2，认为是shaber题，然后分讨出来。</p>
+<p>结果正负分开维护minmax写挂了，T3的有手部分分都没打。</p>
+<p>吐了，最后发现写挂的时候着急了，本来之前心态一直很平稳的，可能是因为以为自己可以 200+ 然后策略混乱了。</p>
+<p>看来应对突发的能力还不够，不过无所谓，反正应该能进 NOIP。</p>
+<p>回家，写游记，测代码，补 whk，今天就这样过去了，又是平常的一天呢。</p>
+<h3 id="1030">10.30<a class="headerlink" href="#1030" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>回去 whk 了，估计考的稀撇。</p>
+<p>简单做一个赛后总结吧：</p>
+<p>PJ：考的还行，但是整体做题速度慢了，被 T2 诈骗了 30 min 没换题然后导致 T3 没时间写完。</p>
+<p>但是发现 T3 写不完了之后果断先打暴力和特殊性质再检查已经写了的题是否写挂这点挺好的。</p>
+<p>然后 T4 一眼没有思路的时候没有急，先冷静思考然后想出结论，也没有想到结论就狂喜，而是考虑了一下 corner case 还有 dp 的后效性和合法性，避免花费更多的时间，写完测大样例 + 拍确认无误了再去看的 T3。</p>
+<p>T2 被诈骗了，但是先打了 60pts 暴力确保分数，然后放掉 T2 去看后面的，之后换个脑子清醒点了再过来想题。</p>
+<p>最后留了一点时间在 Linux 下面编译了一次，期望得分是 100 + 100 + 20 ~ 60 + 100。</p>
+<p>Pj 考的是很符合期望的策略的。</p>
+<p>TG：考的很烂，T1 开场就想到一个做法，但是不知道为啥这个时候直接急了，直接开莽，根本没细想正确性和合法性，结果发现自己漏了状态，花了额外的时间去检查排错，这个时候发现做法假了，但是还没急，思考了一波怎么搞成合法的，然后想出来了。</p>
+<p>看 T2，一眼看出分类讨论，但是分类讨论的时候有点磨蹭，心里觉得时间还很够用（此时以为自己可以拿到 200），然后就慢悠悠的写，浪费了时间。</p>
+<p>后面线段树维护 RMQ 的时候，因为遇到了考前一天的新 Trick 导致狂喜，这个时候没冷静下来去检查实现细节，恰好这个 Trick 实现不好弄，差不多写了 40 ~ 50 min 才意识到写法假了，此时大概还剩 1h 30min，这个时候心态就急了。</p>
+<p>其实正确策略是直接拿性质分跑路去打 T3 暴力，但是心里一直以为自己可以调出 T2，结果越调越急，T2没跳出来，T3 的大众暴力分 60pts 也没打，直接怒挂 120 pts，T4 根本都没看，应该有 20 pts 左右的暴力的。</p>
+<p>所以总结是：应对突发情况的时候脑子不够清醒，慌了，没思考怎么在当前情况下最优化自己的得分，然后就心态滚雪球，越来越急，代码能力也不够， PJT3 没写出来，TGT2 没调出来，可能下次考前需要多写几个大模拟来平复心态，最好是定时做，模拟考场环境，遇到突发状况也能快速转变策略优先拿分。</p>
+<p>最重要的：尽量保持脑子的相对清醒，不要嗯莽，降低心态上下波动，对策是多打模拟赛，可能现在还没特别适应 OI 赛制，要多练。</p>
+<h3 id="1031">10.31<a class="headerlink" href="#1031" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>文化课自闭了。</p>
+<p>这篇游记就写到这里了。</p>
+<h3 id="118">11.8<a class="headerlink" href="#118" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>upd:</p>
+<p>TG: 100 + 40 + 0 + 0
+PJ: 90 + 100 + 0 + 100</p>
+<p>shaber.</p>
 
 
 
@@ -3897,7 +4167,7 @@ gitalk.render('gitalk-container')
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../menu/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 初赛知识复习" rel="prev">
+        <a href="../vim-usage/" class="md-footer__link md-footer__link--prev" aria-label="上一页: OI 常用 Vim 命令" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -3906,20 +4176,20 @@ gitalk.render('gitalk-container')
               <span class="md-footer__direction">
                 上一页
               </span>
-              初赛知识复习
+              OI 常用 Vim 命令
             </div>
           </div>
         </a>
       
       
         
-        <a href="../CSP2022/" class="md-footer__link md-footer__link--next" aria-label="下一页: CSP2022" rel="next">
+        <a href="../NOIP2022/" class="md-footer__link md-footer__link--next" aria-label="下一页: NOIP2022" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              CSP2022
+              NOIP2022
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -3934,7 +4204,7 @@ gitalk.render('gitalk-container')
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 @black_trees
+      Copyright &copy; 2022 @black_trees || 未经许可，严禁转载
     </div>
   
   
@@ -3950,31 +4220,31 @@ gitalk.render('gitalk-container')
     
     
     <a href="https://github.com/hylwxqwq" target="_blank" rel="noopener" title="Github" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
     
     
     <a href="https://twitter.com/blacktrees9" target="_blank" rel="noopener" title="Twiiter" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
     
     
     <a href="https://t.me/real_black_trees" target="_blank" rel="noopener" title="Telegram" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8Zm114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.452 10.452 0 0 1 3.53 6.716 43.765 43.765 0 0 1 .417 9.769Z"/></svg>
     </a>
   
     
     
     <a href="https://wpa.qq.com/msgrd?V=3&Uin=1020061231" target="_blank" rel="noopener" title="QQ" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg>
     </a>
   
     
     
     <a href="mailto:<black_trees@foxmail.com>" target="_blank" rel="noopener" title="E-Mail" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"/></svg>
     </a>
   
 </div>
@@ -3991,12 +4261,13 @@ gitalk.render('gitalk-container')
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/3.2.0/es5/tex-chtml.min.js"></script>
       
+    
     
   </body>
 </html>
