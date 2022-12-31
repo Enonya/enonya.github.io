@@ -1394,6 +1394,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_5_2">
@@ -1407,6 +1409,20 @@
           普通数据结构
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algor/ds/normal/dsu/" class="md-nav__link">
+        并查集
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3611,7 +3627,7 @@
 <p>因为我们维护的是一个段，维护点是没有意义的。</p>
 <p>这里的 Pushup 方式和主流不太一样，在 Change 到一个节点的时候仍然需要做类似 Pushup 的处理，这样可以省去 Pushdown。</p>
 <p>具体来说，对于 Pushup，如果当前节点的 <span class="arithmatex">\(cnt &gt; 0\)</span>，那么令 <span class="arithmatex">\(len = raw(r + 1) - raw(l)\)</span> 并令 <span class="arithmatex">\(maxy = raw(r + 1)\)</span>，否则考虑从儿子节点更新 <span class="arithmatex">\(len\)</span>，如果更新完之后 <span class="arithmatex">\(len &gt; 0\)</span>，再从子树更新 <span class="arithmatex">\(maxy\)</span>。</p>
-<p>然后在修改的时候也要直接处理更改，方式类似，只不过在处理 <span class="arithmatex">\(cnt = 0\)</span> 的情况的时候，需要先判是否为叶子节点（不然要额外再开空间），然后再从子树上传信息，这里就算修改了 <span class="arithmatex">\(cnt\)</span>，还是需要考虑用儿子节点信息更新 <span class="arithmatex">\(maxy\)</span>，不然没法处理有多个矩形的更改堆在一起的情况。</p>
+<p>然后在修改的时候也要直接处理更改，方式类似，只不过在处理 <span class="arithmatex">\(cnt = 0\)</span> 的情况的时候，需要先判是否为叶子节点（不然要额外再开空间），然后再从子树上传信息，这里就算修改了 <span class="arithmatex">\(cnt\)</span>，还是需要考虑用儿子节点信息更新 <span class="arithmatex">\(maxy\)</span>，不然没法处理有多个矩形的更改堆在一起的情况（有可能当前节点直接被覆盖的次数为零了，但是儿子节点并没有）。</p>
 <p>那么每次更新完我们只需要询线段树树根的 <span class="arithmatex">\(maxy\)</span> 即可，并和修改前的 <span class="arithmatex">\(maxy^{\prime}\)</span> 比较，如果发生改变，就直接把 <span class="arithmatex">\((x, maxy), (x, maxy^{\prime})\)</span> 扔进 Vector 就行。</p>
 <p>还有一个要注意的地方是，因为这个做法是在每次 Query 之后直接比对并更新答案，所以如果在一个 <span class="arithmatex">\(x\)</span> 上有多个更改要处理，需要一口气全部处理完再更新，否则会多出来一些实际上不存在的顶点。</p>
 <p>最后空间记得开够，不然会 RE on #22.</p>
