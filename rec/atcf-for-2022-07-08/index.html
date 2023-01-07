@@ -2613,8 +2613,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cf1720d1" class="md-nav__link">
-    CF1720D1
+  <a href="#cf1720d1-xor-subsequence-easy-version" class="md-nav__link">
+    CF1720D1 Xor-Subsequence (easy version)
   </a>
   
 </li>
@@ -3636,6 +3636,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3756,6 +3758,20 @@
     <li class="md-nav__item">
       <a href="../../misc/flower/festival/" class="md-nav__link">
         12.31.22 - Festival
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/flower/Admission.md" class="md-nav__link">
+        01.07.23 - Admission
       </a>
     </li>
   
@@ -4894,7 +4910,7 @@ thx</p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h2 id="cf1720d1">CF1720D1<a class="headerlink" href="#cf1720d1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h2 id="cf1720d1-xor-subsequence-easy-version">CF1720D1 Xor-Subsequence (easy version)<a class="headerlink" href="#cf1720d1-xor-subsequence-easy-version" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>给你一个长为 <span class="arithmatex">\(n\)</span> 的整数数组 <span class="arithmatex">\(a\)</span>，从 <span class="arithmatex">\(0\)</span> 开始编号。</p>
 <p>一个长为 <span class="arithmatex">\(m\)</span> ，从 <span class="arithmatex">\(0\)</span> 开始编号的整数数组 <span class="arithmatex">\(b\)</span> 是数组 <span class="arithmatex">\(a\)</span> 的 subsequence，当且仅当 <span class="arithmatex">\(0\leq b_0&lt;b_1&lt;\dots&lt;b_{m-1}&lt;n\)</span>。</p>
@@ -4916,6 +4932,21 @@ thx</p>
 <p>如果 <span class="arithmatex">\(\exists j \le i - 256\)</span>，可以发现 <span class="arithmatex">\(j\)</span> 怎么都转移不过来，因为异或是不进位加法，在这里影响不了第 <span class="arithmatex">\(9\)</span> 位。</p>
 <p>如果 <span class="arithmatex">\(i - 256 \ge j\)</span>，说明 <span class="arithmatex">\(j\)</span> 直接在第九位比 <span class="arithmatex">\(i\)</span> 少了一个 <span class="arithmatex">\(1\)</span>，死活补不了，所以可以发现合法的转移只能是 <span class="arithmatex">\(j \in (i - 256, i)\)</span>。</p>
 <p>然后 dp 就变成 <span class="arithmatex">\(O(256n)\)</span> 了。</p>
+<p>还有一种做法是这样的：</p>
+<details class="note">
+<summary>Another method</summary>
+<p>结论：<span class="arithmatex">\(\forall x, y \in \mathbb{N}, x - y, y - x &lt; x \oplus y &lt; x + y\)</span>。</p>
+<p>原因显然，只需要在二进制下考虑即可。</p>
+<p>观察题目不难根据 LIS 模型设计出状态转移方程：</p>
+<p>设 <span class="arithmatex">\(dp(i)\)</span> 表示考虑到第 <span class="arithmatex">\(i\)</span> 个元素，最长的喵-子序列的长度。</p>
+<div class="arithmatex">\[dp(i) = \max\limits_{j = 1}^{i - 1} \{dp(j) + 1\} (\text{if }a_j \oplus i &lt; a_i \oplus j)\]</div>
+<p>复杂度上天，不能接受。</p>
+<p>注意到 <span class="arithmatex">\(a_i\)</span> 的值域小的离谱，考虑从这里优化。</p>
+<p>根据结论不难想到：<span class="arithmatex">\(a_j \oplus i &lt; a_i \oplus j \iff i - a_j &lt; j + a_i\)</span></p>
+<p>可以得到 <span class="arithmatex">\(i - j &lt; a_i + a_j \le 400 \iff i - 400 \le j\)</span>。</p>
+<p>所以 <span class="arithmatex">\(j\)</span> 只需要从 <span class="arithmatex">\(i - 400\)</span> 开始枚举即可，时间复杂度 <span class="arithmatex">\(O(400n)\)</span>。</p>
+<p>本题优化的思路是考虑根据性质优化转移条件，方式是独立 &amp; 合并变量，比较新颖。</p>
+</details>
 <details class="note">
 <summary>实现</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
