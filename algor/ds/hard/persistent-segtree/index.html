@@ -3542,6 +3542,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_2">
@@ -3555,6 +3557,20 @@
           小知识
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/shaber/" class="md-nav__link">
+        爆零技巧
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -4017,7 +4033,8 @@
 
 <h1 id="_1">主席树<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h1>
 <h2 id="_2">泛化<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<p>主席树全称可持久化权值线段树，因为权值线段树和线段树没有本质区别，就只说主席树了。</p>
+<p>主席树全称可持久化权值线段树（的差分前缀和），因为权值线段树和线段树没有太大的区别，就只说主席树了。</p>
+<p>但是要注意的一点是，主席树是利用可持久化的思想来实现静态<strong>区间</strong>第 <span class="arithmatex">\(k\)</span> 大，而可持久化线段树则是真正的直接维护各个历史版本。</p>
 <p>主席树的思想和可持久化 Trie 的思想是一致的，都是以函数式编程的方式保存历史版本，以把信息从全局转化为区间。</p>
 <p>一个比较经典的问题就是静态区间第 k 大，权值线段树上二分显然可以很轻松搞定全局的版本。</p>
 <p>于是把权值线段树可持久化之后利用前缀和的思想就可以做区间了。</p>
@@ -5417,7 +5434,7 @@ gitalk.render('gitalk-container')
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 @black_trees || 未经许可，严禁转载
+      Copyright &copy; 2022-2023 @black_trees || 未经许可，严禁转载
     </div>
   
   
