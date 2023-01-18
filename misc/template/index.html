@@ -3564,6 +3564,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    对拍
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4387,6 +4394,38 @@
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#pragma GCC target(&quot;avx,sse2,sse3,sse4,mmx&quot;)</span>
 <span class="cp">#pragma GCC optimize(&quot;Ofast&quot;, &quot;inline&quot;, &quot;-ffast-math&quot;)</span>
 </code></pre></div></td></tr></table></div>
+<h3 id="_6">对拍<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>Bash（抄的佳爸的）:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
+    ./gen &gt; <span class="k">in</span>
+    ./bf &lt; <span class="k">in</span> &gt; <span class="m">1</span>
+    ./my &lt; <span class="k">in</span> &gt; <span class="m">2</span>
+    diff <span class="m">1</span> <span class="m">2</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> break<span class="p">;</span> <span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<p>cmd</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">:</span><span class="nl">loop</span>
+    gen.exe
+    bf.exe
+    my.exe
+    fc b.ans b.usr
+    <span class="k">if</span> <span class="nv">%errorlevel%</span><span class="o">==</span>0 <span class="k">goto</span> <span class="nl">loop</span>
+<span class="k">pause</span>
+</code></pre></div></td></tr></table></div>
+<p>Need Freopen.</p>
 
 
 
