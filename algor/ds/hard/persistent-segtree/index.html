@@ -3793,6 +3793,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3997,6 +3999,20 @@
     <li class="md-nav__item">
       <a href="../../../../misc/flower/friend/" class="md-nav__link">
         🔒01.19.23 - Friend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/defensive/" class="md-nav__link">
+        🔒01.20.23 - Defensive
       </a>
     </li>
   
@@ -4258,7 +4274,9 @@
 </code></pre></div></td></tr></table></div>
 </details>
 <h3 id="_4">支持区间修改<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<blockquote>
 <p>HDU 4348 To the moon</p>
+</blockquote>
 <h2 id="_5">主席树<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <h3 id="_6">泛化<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>主席树全称可持久化权值线段树（的差分前缀和），和正常的可持久化线段树有一定的区别</p>
@@ -4268,6 +4286,7 @@
 <p>于是把权值线段树可持久化之后利用前缀和的思想就可以做区间了。</p>
 <p>不过主席树一般难以支持区间修改，最多支持一下单点修改。</p>
 <p>区间修改在信息比较特殊的情况下可以用标记永久化做，不过也非常有局限性。</p>
+<p>因为主席树维护的是值域，直接在序列上区间修改很不方便（</p>
 <h3 id="k">静态区间第 k 大<a class="headerlink" href="#k" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>主席树的主要思想就是，对于一个序列，从左往右依次插入序列的每一个元素。</p>
 <p>每次插入一个元素的时候维护历史版本，也就是维护每一个元素刚插入的时候，线段树的样子。</p>
