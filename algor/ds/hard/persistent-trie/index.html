@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/hard/persistent-trie/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3768,6 +3768,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3992,6 +3994,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4118,7 +4134,7 @@
 </ol>
 <p>下图展示了在已经有历史版本 "bte" 的可持久化 Trie 中插入新的字符串 “kth” 的过程。</p>
 <p>其中绿色节点为各个版本对应的根节点，红色节点为尾标记所处节点。</p>
-<p><a href="https://imgtu.com/i/LfWbjJ"><img alt="LfWbjJ.gif" src="https://s1.ax1x.com/2022/04/23/LfWbjJ.gif" /></a></p>
+<p><img alt="ptrie-1.gif" src="../../img/ptrie-1.gif" /></p>
 <h3 id="_5">询问<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>当我们需要查询某一段区间 <span class="arithmatex">\([l,r]\)</span> 内和 <span class="arithmatex">\(x\)</span> 异或起来最大的数时，应当怎么处理？</p>
 <p>上面已经说了，利用前缀相减的思想，用两个维护前缀 <span class="arithmatex">\(1\sim r,1\sim l-1\)</span> 的两个版本的 Trie 相减得到 <span class="arithmatex">\([l,r]\)</span> 对应的 Trie。</p>

@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/difference-and-prefix-sum/">
       
-      <link rel="icon" href="../../../img/logo.png">
+      <link rel="icon" href="../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3770,6 +3770,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3994,6 +3996,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4083,10 +4099,10 @@
 <p>可以实现 <span class="arithmatex">\(\text{O}(n^2)\)</span> 预处理，<span class="arithmatex">\(\text{O}(1)\)</span> 询问矩阵和。</p>
 <p>令 <span class="arithmatex">\(sum_{i,j}\)</span> 表示左上角为 <span class="arithmatex">\((1,1)\)</span> ，右下角为 <span class="arithmatex">\((i,j)\)</span> 的矩阵和。</p>
 <p>考虑容斥，预处理的时候令 <span class="arithmatex">\(sum_{i,j}=sum_{i-1,j}+sum_{i,j-1}-sum_{i-1,j-1}+a[i][j]\)</span>。</p>
-<p><a href="https://imgtu.com/i/HYeGuj"><img alt="sum-1.png" src="https://s4.ax1x.com/2022/02/10/HYeGuj.png" /></a></p>
+<p><img alt="sum-1.png" src="../img/sum-1.png" /></p>
 <p>仍然考虑容斥，询问左上角为 <span class="arithmatex">\((x_1,y_1)\)</span> ，右下角为 <span class="arithmatex">\((x_2,y_2)\)</span> 的子矩阵则只需要：</p>
 <p><span class="arithmatex">\(ans=sum_{x_2,y_2}-sum_{x_1,y_2}-sum_{x_2,y_1}+sum_{x_1,y_1}\)</span> 。</p>
-<p><a href="https://imgtu.com/i/HYeJDs"><img alt="sum-2.png" src="https://s4.ax1x.com/2022/02/10/HYeJDs.png" /></a></p>
+<p><img alt="sum-2.png" src="../img/sum-2.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -4150,7 +4166,7 @@
 <p>比如给 <span class="arithmatex">\((x_1,y_1)\)</span> 为左上角，<span class="arithmatex">\((x_2,y_2)\)</span> 为右下角的子矩阵全部加上 <span class="arithmatex">\(d\)</span> ，可以用二维线段树，但是这里考虑差分。</p>
 <p>首先尝试给 <span class="arithmatex">\(c_{x_1,y_1}\)</span> 加上 <span class="arithmatex">\(d\)</span> ，那么发现从 <span class="arithmatex">\((x_1,y_1)\)</span> 一直到整个矩阵的右下角都被加了 <span class="arithmatex">\(d\)</span> ，然后我们又需要保留 <span class="arithmatex">\((x_1,y_1) \to (x_2,y_2)\)</span>。</p>
 <p>那么用容斥思想，让 <span class="arithmatex">\(c_{x_1,y_2+1}\)</span>，和 <span class="arithmatex">\(c_{x_2+1,y_1}\)</span> 全部减去 <span class="arithmatex">\(d\)</span> ，然后发现有个部分被多减去了，是 <span class="arithmatex">\(c_{x_2+1,y_2+1}\)</span>，所以给它加回来。</p>
-<p><a href="https://imgtu.com/i/HYenEt"><img alt="diff-1.png" src="https://s4.ax1x.com/2022/02/10/HYenEt.png" /></a></p>
+<p><img alt="diff-1.png" src="../img/diff-1.png" /></p>
 <p>那么修改就化为了四步。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

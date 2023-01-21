@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/dp/opt/convex-optimize/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3773,6 +3773,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3997,6 +3999,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4138,29 +4154,29 @@
 <p>把 <span class="arithmatex">\(j=0\to n-1\)</span> 的 <strong>每个</strong>二元组 <span class="arithmatex">\((sumc[j],f_j)\)</span> 当作平面直角坐标系上的一个点 <span class="arithmatex">\((x,y)\)</span>（这就是要去掉 <span class="arithmatex">\(\min\)</span> 的原因）</p>
 <p>（实际上就是把直线中 <span class="arithmatex">\(x\)</span> 位置的式子当作坐标系里的 <span class="arithmatex">\(x\)</span> 坐标，<span class="arithmatex">\(y\)</span> 位置的式子当作坐标系里的 <span class="arithmatex">\(y\)</span> 坐标）</p>
 <p>我们可以得到这样的一个东西：</p>
-<p><a href="https://imgtu.com/i/b99NUH"><img alt="Convenxtrick-1.png" src="https://s4.ax1x.com/2022/02/23/b99NUH.png" /></a></p>
+<p><img alt="copt-1.png" src="../../img/copt-1.png" /></p>
 <p>发现直线 <span class="arithmatex">\(y=kx+b\)</span> 的斜率是 <span class="arithmatex">\((s+sumt[i])\)</span></p>
 <p>是一个关于 <span class="arithmatex">\(i\)</span> 的变量，也就是说，对于不同的 <span class="arithmatex">\(i\)</span> ，我们得到的斜率是不一样的。</p>
 <p>当然如果出现 <span class="arithmatex">\(sumt[i]\)</span> 先增再减少导致有两个不同的 <span class="arithmatex">\(i\)</span> 的 <span class="arithmatex">\(sumt[i]\)</span> 一样，是没有影响的。</p>
 <p>回想一下问题：最小化 <span class="arithmatex">\(f_n\)</span>，对应到每个决策的问题就是最小化 <span class="arithmatex">\(f_i\)</span>。</p>
 <p>而 <span class="arithmatex">\(f_i\)</span> 处于截距 <span class="arithmatex">\(b\)</span> 之中，当 <span class="arithmatex">\(y,x,k\)</span> 固定的时候，只需要让 <span class="arithmatex">\(b\)</span> 最小，<span class="arithmatex">\(f_i\)</span> 就最小。</p>
 <p>所以对于每一个 <span class="arithmatex">\(i\)</span> ，拿一条斜率为 <span class="arithmatex">\(k\)</span> 的直线从下往上平移，遇到的第一个点一定是最优解。</p>
-<p><a href="https://imgtu.com/i/b9PWj0"><img alt="convextrick-2.png" src="https://s4.ax1x.com/2022/02/23/b9PWj0.png" /></a></p>
+<p><img alt="copt-2.png" src="../../img/copt-2.png" /></p>
 <p>但是就算这样，还是需要枚举所有可能的 <span class="arithmatex">\(j\)</span> ，复杂度依旧是 <span class="arithmatex">\(n^2\)</span> 级别。</p>
 <p>那么怎么优化？</p>
 <p>随便找三个 <span class="arithmatex">\(x\)</span> 坐标递增的点 <span class="arithmatex">\(i,j,k\)</span></p>
 <p>连接 <span class="arithmatex">\(i\to j,j \to k\)</span></p>
 <p>发现只可能有如下的两种情况（三点共线的不算）。</p>
-<p><a href="https://imgtu.com/i/b9i4xI"><img alt="3.png" src="https://s4.ax1x.com/2022/02/23/b9i4xI.png" /></a></p>
+<p><img alt="copt-3.png" src="../../img/copt-3.png" /></p>
 <p>发现第二种情况，<span class="arithmatex">\(j\)</span> 无论如何都不可能成为最优决策。</p>
 <p>形式化的描述就是 <span class="arithmatex">\(k_{i,j}&gt;k_{j,k}\)</span> ，那么 <span class="arithmatex">\(j\)</span> 不可能成为最优决策。</p>
 <p>所以可以处理出所有的不可能成为最优决策的决策点，然后转移就在剩下的部分进行即可。</p>
 <p>实际上，在本题就是在维护一个 <span class="arithmatex">\(x\)</span> 单调递增，<span class="arithmatex">\(k\)</span> 单调递增的 <strong>下凸壳</strong>，</p>
-<p><a href="https://imgtu.com/i/b9F3JH"><img alt="4.png" src="https://s4.ax1x.com/2022/02/23/b9F3JH.png" /></a></p>
+<p><img alt="copt-4.png" src="../../img/copt-4.png" /></p>
 <p>具体如何维护这个下凸壳呢？</p>
 <p>考虑从 <span class="arithmatex">\(0 \to n-1\)</span> 暴力扫一次，每次新增一个点都需要把它和上一个被加入的点，上上个被加入的点相互之间连边，如果这个点更优，去掉上一个，把这个点放进来。</p>
 <p>GIF：</p>
-<p><a href="https://imgtu.com/i/b9ECeP"><img alt="b9ECeP.gif" src="https://s4.ax1x.com/2022/02/23/b9ECeP.gif" /></a></p>
+<p><img alt="copt-5.gif" src="../../img/copt-5.gif" /></p>
 <p>因为在本题，斜率在 <span class="arithmatex">\(i\)</span> 增加的时候一定增加（因为 <span class="arithmatex">\(sumt[i]\)</span> 肯定单调上升）</p>
 <p>所以可以利用一个单调队列，把前面已经决策过的删除，在后面进行决策。</p>
 <p>也就是队头和队头加一的斜率小于 <span class="arithmatex">\(s+sumt[i]\)</span>，就把队头弹出。</p>

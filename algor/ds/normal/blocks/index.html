@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/normal/blocks/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3780,6 +3780,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -4004,6 +4006,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4080,7 +4096,7 @@
 <p>考虑把序列分成 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块，其中第 <span class="arithmatex">\(i,(1 \le i \le \lfloor\sqrt{n}\rfloor)\)</span> 段的边界是 <span class="arithmatex">\(l=(i-1)\times \lfloor\sqrt{n}\rfloor +1,r=i \times \lfloor\sqrt{n}\rfloor\)</span> 。</p>
 <p>对于第 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块，如果说第 <span class="arithmatex">\(\lfloor\sqrt{n}\rfloor\)</span> 块的右边界没有达到 <span class="arithmatex">\(n\)</span> ，那么就让第 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块维护区间 <span class="arithmatex">\([i\times \lfloor \sqrt{n} \rfloor +1,n]\)</span> 即可。</p>
 <p>反之是不会有第 <span class="arithmatex">\(\lceil\sqrt{n}\rceil\)</span> 块的，因为此时 <span class="arithmatex">\(\lfloor\sqrt{n}\rfloor=\lceil\sqrt{n}\rceil=\sqrt{n}\)</span>。</p>
-<p><a href="https://imgtu.com/i/TFwTSK"><img alt="TFwTSK.png" src="https://s4.ax1x.com/2021/12/17/TFwTSK.png" /></a></p>
+<p><img alt="block-1.png" src="../../img/block-1.png" /></p>
 <p>然后预处理出每一个位置 <span class="arithmatex">\(i\)</span> 在分块之后属于哪一个块 （<span class="arithmatex">\(\text{belong}_i\)</span>）。</p>
 <p>对于每一个块，记录其左右边界以及块内和，并维护一个类似于懒标记的 <span class="arithmatex">\(\text{add}\)</span>，表示这个块里的所有数都被加过多少。</p>
 <p>每次操作区间 <span class="arithmatex">\([l,r]\)</span> 的时候分情况讨论：</p>
@@ -4088,7 +4104,7 @@
 <li>如果 <span class="arithmatex">\(\text{belong}_l=\text{belong}_r\)</span> ，那么直接暴力修改区间 <span class="arithmatex">\([l,r]\)</span>。</li>
 <li>反之，把这个区间两边非整块的部分暴力修改，然后为所有整块的部分打上标记。</li>
 </ol>
-<p><a href="https://imgtu.com/i/TFDAGq"><img alt="TFDAGq.png" src="https://s4.ax1x.com/2021/12/17/TFDAGq.png" /></a></p>
+<p><img alt="block-2.png" src="../../img/block-2.png" /></p>
 <p>查询的时候也比较类似：</p>
 <ol>
 <li>直接暴力扫一遍 <span class="arithmatex">\([l,r]\)</span> ，求和即可（不要忘记把标记加上）</li>

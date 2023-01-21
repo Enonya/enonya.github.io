@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/basic/binary-lifting/">
       
-      <link rel="icon" href="../../../img/logo.png">
+      <link rel="icon" href="../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3764,6 +3764,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3988,6 +3990,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4125,7 +4141,7 @@
 <p>这就是 ST 表，利用倍增的思想考虑：</p>
 <p>设 <span class="arithmatex">\(f_{i,j}\)</span> 表示从 <span class="arithmatex">\(i\)</span> 开始的 <span class="arithmatex">\(2^j\)</span> 个数当中的最值。</p>
 <p>类似线段树，把两个半区间的信息上传到大区间。</p>
-<p><a href="https://imgtu.com/i/HYel8S"><img alt="rmq-1.png" src="https://s4.ax1x.com/2022/02/10/HYel8S.png" /></a></p>
+<p><img alt="bl-1.png" src="../img/bl-1.png" /></p>
 <p>那么 <span class="arithmatex">\(f_{i,j}=\max(f_{i,j-1},f_{i+2^{j-1},j-1})\)</span></p>
 <p>询问区间 <span class="arithmatex">\([l,r]\)</span> 的最值的时候，找到一个 <span class="arithmatex">\(k\)</span> 使得 <span class="arithmatex">\(2^k \le r-l+1 \le 2^{k+1}\)</span> （类似我们上面兔子跳说的上界和下界）。</p>
 <p>那么 <span class="arithmatex">\(ans=\max(f_{l,k},f_{r-2^k+1,k})\)</span>。这两个区间会覆盖，但是没有影响。 </p>

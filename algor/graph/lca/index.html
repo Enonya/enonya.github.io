@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/graph/lca/">
       
-      <link rel="icon" href="../../../img/logo.png">
+      <link rel="icon" href="../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3771,6 +3771,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3995,6 +3997,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4138,10 +4154,10 @@
 <li>已经访问完并且回溯完的节点</li>
 </ol>
 <p>如图：</p>
-<p><a href="https://imgtu.com/i/bgHUe0"><img alt="bgHUe0.png" src="https://s1.ax1x.com/2022/03/08/bgHUe0.png" /></a></p>
+<p><img alt="lca-1.png" src="../img/lca-1.png" /></p>
 <p>我们考虑处理所有和 <span class="arithmatex">\(now\)</span> 相关的询问。</p>
 <p>发现所有 2 类型的节点和 <span class="arithmatex">\(now\)</span> 的 LCA 都是 1 类型的节点并且和 <span class="arithmatex">\(now\)</span> 在同一分支，比 <span class="arithmatex">\(now\)</span> 先访问：</p>
-<p><a href="https://imgtu.com/i/bgHawV"><img alt="bgHawV.png" src="https://s1.ax1x.com/2022/03/08/bgHawV.png" /></a></p>
+<p><img alt="lca-2.png" src="../img/lca-2.png" /></p>
 <p>所以可以考虑把这些 2 类型的节点和当前分支的节点合并，然后每次询问就能直接处理了。</p>
 <p>这个合并和询问操作可以利用 dsu。</p>
 <p>复杂度 <span class="arithmatex">\(\text{O}(n+m)\)</span>。</p>
@@ -4298,7 +4314,7 @@
 <p>但是这个 <span class="arithmatex">\(\texttt{LCA}\)</span> 本身就在树链 <span class="arithmatex">\(\delta(u,v)\)</span> 上。</p>
 <p>所以它自己也要加 <span class="arithmatex">\(d\)</span>，那么 <span class="arithmatex">\(c[u]=d,c[v]=d,c[lca]=-d\)</span>。</p>
 <p>因为父节点的值是会被子树影响的，所以还需要给 <span class="arithmatex">\(father(lca(u,v))-d\)</span>。</p>
-<p><a href="https://imgtu.com/i/WsrSjH"><img alt="WsrSjH.png" src="https://z3.ax1x.com/2021/07/23/WsrSjH.png" /></a></p>
+<p><img alt="lca-3.png" src="../img/lca-3.png" /></p>
 <h3 id="_4">边差分<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><a href="https://www.luogu.com.cn/problem/P3627">P3627 [APIO2009]抢掠计划</a> 用了一个思想叫“点权化边权”，在这里反过来，“边权化点权”。</p>
 <p>考虑任意的一条树边 <span class="arithmatex">\((u,v)\)</span> ，一定满足它连接的是父亲和儿子。</p>
@@ -4306,7 +4322,7 @@
 <p>特别的，因为树根没有父亲，所以它的权值为 <span class="arithmatex">\(0\)</span></p>
 <p>既然边权化点权了，那能不能直接跑点差分？</p>
 <p>不行。</p>
-<p><a href="https://imgtu.com/i/Ws635t"><img alt="Ws635t.png" src="https://z3.ax1x.com/2021/07/23/Ws635t.png" /></a></p>
+<p><img alt="lca-4.png" src="../img/lca-4.png" /></p>
 <p>(<span class="arithmatex">\(u\)</span> 打错成 <span class="arithmatex">\(x\)</span>了）</p>
 <p>注意到 <span class="arithmatex">\(\texttt{LCA}\)</span> 的权值是 <span class="arithmatex">\(\delta(lca,root)\)</span> 的权值，所以相当于是在跑一个去掉 <span class="arithmatex">\(\texttt{LCA}\)</span> 的点差分。</p>
 <p>于是就不需要考虑 <span class="arithmatex">\(\texttt{LCA}\)</span> 的权值和它对 <span class="arithmatex">\(father({\texttt{LCA}})\)</span> 的影响。</p>

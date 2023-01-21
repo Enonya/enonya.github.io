@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/dp/tree-dp/">
       
-      <link rel="icon" href="../../../img/logo.png">
+      <link rel="icon" href="../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../img/logo.png" alt="logo">
+  <img src="../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3777,6 +3777,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3995,6 +3997,20 @@
     <li class="md-nav__item">
       <a href="../../../misc/flower/defensive/" class="md-nav__link">
         🔒01.20.23 - Defensive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
       </a>
     </li>
   
@@ -4236,7 +4252,7 @@
 <p>所以要给 <span class="arithmatex">\(f_{fa}\)</span> 减去 <span class="arithmatex">\(dis_u\)</span> ，不过 <span class="arithmatex">\(fa\)</span> 和 <span class="arithmatex">\(u\)</span> 在以 <span class="arithmatex">\(1\)</span> 为根的时候是有深度差的，所以要再减去 <span class="arithmatex">\(siz_u(\times 1)\)</span>。</p>
 <p>刚好，这个深度差又会造成上面的那一部分在以 <span class="arithmatex">\(u\)</span> 为根的时候的深度比以 <span class="arithmatex">\(fa\)</span> 为根的时候增加 <span class="arithmatex">\(1\)</span>。</p>
 <p>所以要加上 <span class="arithmatex">\(siz_1-siz_u\)</span>。</p>
-<p><a href="https://imgtu.com/i/HU9DIS"><img alt="treedp-1.png" src="https://s4.ax1x.com/2022/02/11/HU9DIS.png" /></a></p>
+<p><img alt="treedp-1.png" src="../img/treedp-1.png" /></p>
 <p>整理下式子：<span class="arithmatex">\(f_u=f_{fa}-dis_u+dis_u-siz_u+siz_1-siz_u=f_{fa}+siz_1-2siz_u\)</span>。</p>
 <p>所以实际上只需要记录 <span class="arithmatex">\(siz\)</span> 就可以了。</p>
 <p>但是你为了转移，肯定要在换根之前先求出 <span class="arithmatex">\(f_1\)</span> 。这个利用 <span class="arithmatex">\(depth\)</span> 暴力加即可。</p>

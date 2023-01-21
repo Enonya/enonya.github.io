@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/hard/persistent-segtree/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3795,6 +3795,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -4019,6 +4021,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4098,7 +4114,7 @@
 <p>这个时候用原来固定建树的二倍表示法就特别麻烦了，所以我们选择动态开点。</p>
 <p>你发现其实每次修改我们不需要复制上一个版本的整颗线段树，我们只需要额外把被修改的那条路径或者多条路径拉出来就可以了。</p>
 <p>从是实现上来说就是新建一个根节点，同时用一个指针同步遍历上一个版本，先复制一个对应节点，然后朝着被修改的节点方向递归，没被修改的直接连一条边到上一个版本。</p>
-<p>类似这样：<a href="https://imgse.com/i/xEPuB6"><img alt="xEPuB6.png" src="https://s1.ax1x.com/2022/09/25/xEPuB6.png" /></a></p>
+<p>类似这样：<img alt="pseg-1.png" src="../../img/pseg-1.png" /></p>
 <p>区间修改也类似，然后询问历史版本就只需要从对应版本对应的根节点递归下去。</p>
 <h3 id="_3">单点修改<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
@@ -4296,7 +4312,7 @@
 <p>所以我们可以考虑把这个被修改的链单独复制一次拉出来，记录一下插入之后，当前版本树根的编号。</p>
 <p>于是空间开销就大大减小了，从 <span class="arithmatex">\(O(nm)\)</span> 变成了 <span class="arithmatex">\(O(n + m\log n)\)</span>。</p>
 <p>具体来说是这样的：</p>
-<p><a href="https://imgse.com/i/xEPuB6"><img alt="xEPuB6.png" src="https://s1.ax1x.com/2022/09/25/xEPuB6.png" /></a></p>
+<p><img alt="pseg-1.png" src="../../img/pseg-1.png" /></p>
 <p>蓝色节点是原来版本上的链，红色节点是现在版本上的链。</p>
 <p>简单来说就是，对于上一个版本的节点 <span class="arithmatex">\(p\)</span>，复制一个新的节点 <span class="arithmatex">\(q\)</span> 出来。</p>
 <p>如果下一步是递归 <span class="arithmatex">\(p.ls\)</span>，那么 <span class="arithmatex">\(q.ls\)</span> 就需要新建，然后 <span class="arithmatex">\(q.rs\)</span> 就是原来的 <span class="arithmatex">\(p.ls\)</span>，反过来同理。</p>

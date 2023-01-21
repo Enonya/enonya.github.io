@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/normal/segtree/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3893,6 +3893,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -4117,6 +4119,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4209,7 +4225,7 @@
 <p>然后对于产生的这两段区间，继续进行从中间一分为二的过程。</p>
 <p>直到最后分出来的这一段区间长度等于 <span class="arithmatex">\(1\)</span>。</p>
 <p>直观的来看，结构大概长这样：</p>
-<p><a href="https://imgtu.com/i/cSn8qf"><img alt="cSn8qf.png" src="https://z3.ax1x.com/2021/03/27/cSn8qf.png" /></a></p>
+<p><img alt="seg-1.png" src="../../img/seg-1.png" /></p>
 <p>可以发现，每一个节点都维护了序列上的一段区间 <span class="arithmatex">\([l, r]\)</span>。</p>
 <p>并且对于一个维护 <span class="arithmatex">\([L, R]\)</span> 的节点，它的左儿子维护 <span class="arithmatex">\([L,mid]\)</span>，右儿子维护 <span class="arithmatex">\((mid, R]\)</span>。</p>
 <p>其中 <span class="arithmatex">\(mid = \lfloor \dfrac{L + R}{2}\rfloor\)</span>。</p>
@@ -4217,7 +4233,7 @@
 <p>形式上来说，对于非叶子节点 <span class="arithmatex">\(p\)</span>，其左右儿子节点分别是 <span class="arithmatex">\(p \times 2, p\times 2 + 1\)</span>。</p>
 <p>但是像上图那样完美的结构只会在序列长度等于 <span class="arithmatex">\(2^k\)</span> 时出现，很多时候最后一层是填不满的，维护区间长度为 <span class="arithmatex">\(1\)</span> 的节点可能会跑到倒数第二层去。</p>
 <p>比如这样（图中有些标注的区间是闭区间，有些是开区间，但无伤大雅）：</p>
-<p><a href="https://imgtu.com/i/WyI5q0"><img alt="WyI5q0.png" src="https://z3.ax1x.com/2021/07/24/WyI5q0.png" /></a></p>
+<p><img alt="seg-2.png" src="../../img/seg-2.png" /></p>
 <p>可以发现，最后一层的那个节点的编号应当为 <span class="arithmatex">\(31\)</span>，当 <span class="arithmatex">\(n\)</span> 增大时，这个数字会越来越接近 <span class="arithmatex">\(4 \times n\)</span>。</p>
 <p>所以开 <span class="arithmatex">\(4\)</span> 倍空间是必要操作，严谨证明可以自查。</p>
 <p>为了方便处理，让每一个节点维护以下的信息即可：</p>
@@ -4315,7 +4331,7 @@
 <p>否则分割递归下去，递归回来之后把左右子树的答案分别合并，然后返回这个值即可。</p>
 <details class="info">
 <summary>一张图理解下这个过程</summary>
-<p><a href="https://imgse.com/i/vfT5Bn"><img alt="vfT5Bn.png" src="https://s1.ax1x.com/2022/08/29/vfT5Bn.png" /></a></p>
+<p><img alt="seg-3.png" src="../../img/seg-3.png" /></p>
 <p>节点标错了，凑合着看，以后有时间再改。</p>
 <p>解释：</p>
 <ul>
@@ -4965,7 +4981,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 <p>在这里就直接作为函数的参数传递了。</p>
 <p>一般空间要开大一点，比如 <span class="arithmatex">\(\times 60\)</span> 这种。</p>
 <p>最好是先估算一下空间然后再开。</p>
-<p><a href="https://imgtu.com/i/fBPrLR"><img alt="fBPrLR.png" src="https://z3.ax1x.com/2021/08/12/fBPrLR.png" /></a></p>
+<p><img alt="seg-4.png" src="../../img/seg-4.png" /></p>
 <p>一份区间加区间乘区间求和线段树的动态开点写法：</p>
 <details class="note">
 <summary>Code</summary>
@@ -5357,7 +5373,7 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 <p>对于 <span class="arithmatex">\(1,2\)</span> ，直接把非空节点作为合并后的节点。</p>
 <p>对于 <span class="arithmatex">\(3\)</span> ，既然你俩都没有，那合并后也没必要要这个点，也就是合并后仍旧没有这个节点。</p>
 <p>对于 <span class="arithmatex">\(4\)</span> ，既然你们都有，那就合并你们的信息（类似于普通线段树的 Pushup），然后随便找一个节点作为合并之后的节点（一般是 <span class="arithmatex">\(p\)</span>）</p>
-<p><a href="https://imgtu.com/i/fBiU0I"><img alt="fBiU0I.png" src="https://z3.ax1x.com/2021/08/12/fBiU0I.png" /></a></p>
+<p><img alt="seg-5.png" src="../../img/seg-5.png" /></p>
 <details class="note">
 <summary>Code</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

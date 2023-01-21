@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/dp/basic/set-analytical-method/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3746,6 +3746,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -3970,6 +3972,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4066,7 +4082,7 @@
 <p>其中 <span class="arithmatex">\(las\)</span> 表示这个子序列的倒数第二个元素。</p>
 <p>发现 “最后一个不同的点” 就是这些倒数第二个元素 <span class="arithmatex">\(las\)</span>，因为所有子序列的倒数第一个元素都是相同的。</p>
 <p>所以就以这些 <span class="arithmatex">\(las\)</span> 作为划分依据，可以将集合 <span class="arithmatex">\(dp_i\)</span> 划分如下：</p>
-<p><a href="https://imgtu.com/i/qxsHr4"><img alt="qxsHr4.png" src="https://s1.ax1x.com/2022/04/07/qxsHr4.png" /></a></p>
+<p><img alt="sam-1.png" src="../../img/sam-1.png" /></p>
 <p>图中橙色字体是代表了这个子集的状态，绿色字体说明了这个子集代表了什么。</p>
 <p>划分完之后，观察 <span class="arithmatex">\(dp_i\)</span> 这个集合对应的属性，是 <span class="arithmatex">\(\max\)</span>，所以我们要在所有划分出来的集合对应的状态当中取最大值。</p>
 <p>可以得到方程：</p>
@@ -4141,7 +4157,7 @@ dp_i = \max\{dp_j + 1\},a_i &gt; a_j,dp_i =1(\text{initially})
 <p>因为 <span class="arithmatex">\(a_i \not= b_j\)</span>，所以我们分别把 <span class="arithmatex">\(a_i,b_j\)</span> 踢出去，然后进行转移。</p>
 <p>那么第一部分就可以划分成 <span class="arithmatex">\(dp_{i,j-1},dp_{i-1,j}\)</span> 两个子集，因为 <span class="arithmatex">\(dp_{i,j}\)</span> 的属性是 <span class="arithmatex">\(\max\)</span>，而转移时 <span class="arithmatex">\(a_i \not= b_j\)</span>，不能提供贡献，所以直接让 <span class="arithmatex">\(dp_{i, j}\)</span> 继承 <span class="arithmatex">\(\max\{dp_{i,j-1},dp_{i-1,j}\}\)</span> 即可。</p>
 <p>划分如下：</p>
-<p><a href="https://imgtu.com/i/qxISDx"><img alt="qxISDx.png" src="https://s1.ax1x.com/2022/04/07/qxISDx.png" /></a></p>
+<p><img alt="sam-2.png" src="../../img/sam-2.png" /></p>
 <p>可以得到方程：</p>
 <div class="arithmatex">\[
 dp_{i,j} = \begin{cases}\max(dp_{i-1,j},dp_{i,j-1}) &amp; a_i \not= b_j\\ dp_{i-1,j-1} + 1 &amp; a_i = b_j\end{cases}

@@ -12,7 +12,7 @@
       
         <link rel="canonical" href="https://hylwxqwq.github.io/algor/ds/normal/fenwick/">
       
-      <link rel="icon" href="../../../../img/logo.png">
+      <link rel="icon" href="../../../../img/logo.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -90,7 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../.." title="black_trees&#39; blog" class="md-header__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -326,7 +326,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="black_trees&#39; blog" class="md-nav__button md-logo" aria-label="black_trees' blog" data-md-component="logo">
       
-  <img src="../../../../img/logo.png" alt="logo">
+  <img src="../../../../img/logo.jpg" alt="logo">
 
     </a>
     black_trees' blog
@@ -3848,6 +3848,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -4072,6 +4074,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/copy/" class="md-nav__link">
+        🔒01.21.23 - Copy
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4164,7 +4180,7 @@
 </code></pre></div></td></tr></table></div>
 <p>树状数组差不多就是利用这个思想，定义 <span class="arithmatex">\(t(x)\)</span> 为 <span class="arithmatex">\(\sum\limits_{i = x - \text{lowbit}(x) + 1}^x a(i)\)</span>，然后通过一些性质 <span class="arithmatex">\(O(\log n)\)</span> 地快速维护序列前缀和，并且支持单点修改。</p>
 <p>结构如图：</p>
-<p><a href="https://imgse.com/i/vWI5SH"><img alt="vWI5SH.png" src="https://s1.ax1x.com/2022/08/28/vWI5SH.png" /></a></p>
+<p><img alt="fenwick-1.png" src="../../img/fenwick-1.png" /></p>
 <p>实际上树状数组是一个森林，因为当 <span class="arithmatex">\(n\)</span> 不是 <span class="arithmatex">\(2\)</span> 的整数次幂时，树根是不唯一的。</p>
 <p>树状数组具有的性质（知道 <span class="arithmatex">\(1 \sim 4\)</span> 条就行）：</p>
 <ul>
@@ -4866,7 +4882,7 @@ a(i, j ) = \sum\limits_{x =1}^{i}\sum\limits_{y = 1}^{j} c(i,j)
 <p>这份代码目前在 Loj 上是最优解 1244ms（8/27/22）。</p>
 <details class="info">
 <summary>ScreenShots</summary>
-<p><a href="https://imgse.com/i/vW7Vy9"><img alt="vW7Vy9.png" src="https://s1.ax1x.com/2022/08/28/vW7Vy9.png" /></a></p>
+<p><img alt="fenwick-2.png" src="../../img/fenwick-2.png" /></p>
 </details>
 <details class="note">
 <summary>Code</summary>
