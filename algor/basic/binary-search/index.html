@@ -295,6 +295,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../blog/" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -2196,6 +2212,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_8">
@@ -2350,6 +2368,20 @@
     <li class="md-nav__item">
       <a href="../../misc/count-points/" class="md-nav__link">
         数点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/wqs/" class="md-nav__link">
+        Wqs 二分
       </a>
     </li>
   
@@ -3768,6 +3800,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_4_1">
@@ -4020,6 +4054,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/flower/recover/" class="md-nav__link">
+        🔒01.23/24.23 - Recover
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4068,6 +4116,50 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../blog/">Blog</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4100,7 +4192,7 @@
 <p>问题：在单调递增的序列当中查找大于等于 <span class="arithmatex">\(x\)</span> 的最小的一个数</p>
 </blockquote>
 <p>开始令两个指针 <span class="arithmatex">\(l = 1, r = n\)</span>，表示我们当前能确定的答案所在的区间。</p>
-<p>我们称 <span class="arithmatex">\([1, l)\)</span> 为不可行区间，<span class="arithmatex">\([r, n]\)</span> 为可行区间（闭开的原因之后会说）。</p>
+<p>我们称 <span class="arithmatex">\([1, l)\)</span> 为不可行区间，<span class="arithmatex">\([r, n]\)</span> 为可行区间（闭开的原因之后会说），可行区间指的是满足问题约束的区间。</p>
 <p>每次取 <span class="arithmatex">\(mid = \lfloor (l + r) / 2 \rfloor\)</span>。</p>
 <p>如果 <span class="arithmatex">\(a_{mid} \ge x\)</span>，那么证明 <span class="arithmatex">\([mid, n]\)</span> 就一定是可行区间，因为序列单调递增，证明 <span class="arithmatex">\(mid\)</span> 之后的 <span class="arithmatex">\(a\)</span> 都必然 <span class="arithmatex">\(\ge x\)</span>。</p>
 <p>所以，我们可以缩小答案区间，令 <span class="arithmatex">\(r = mid\)</span>。</p>
@@ -4108,7 +4200,7 @@
 <p>当 <span class="arithmatex">\(l = r\)</span>，即答案区间缩小为一个点的时候，此时的 <span class="arithmatex">\(a_l\)</span> 就是答案。</p>
 <p>如果需要判断无解，开始时令 <span class="arithmatex">\(r = n + 1\)</span> ，如果最后 <span class="arithmatex">\(l = r = n + 1\)</span> ，那么无解。</p>
 <p>这种写法下 <span class="arithmatex">\(mid\)</span> 永远不会取到 <span class="arithmatex">\(r\)</span>，因为如果 <span class="arithmatex">\(mid\)</span> 要取到 <span class="arithmatex">\(r\)</span>，就必须让 <span class="arithmatex">\(l\)</span> 不断收缩过来，而当 <span class="arithmatex">\(l = r\)</span> 时，循环已经结束了，所以 <span class="arithmatex">\(mid\)</span> 不可能取到 <span class="arithmatex">\(r\)</span>。</p>
-<p>原本的二分区间是 <span class="arithmatex">\([1, n]\)</span>，现在将其扩大一格变为 <span class="arithmatex">\([1, n + 1]\)</span>，那么这个越界的下标本身的意义就是“无解”。</p>
+<p>原本的二分区间是 <span class="arithmatex">\([1, n]\)</span>，现在将其扩大一格变为 <span class="arithmatex">\([1, n + 1]\)</span>，那么这个越界的下标本身的意义就是“无解”，类似 stl 容器的 <code>end()</code>。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -4138,12 +4230,20 @@
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span><span class="w"> </span><span class="c1">// mid 也可能是答案，也要取。</span>
 <span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"> </span>
-<span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"></span>
+<span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">];</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>一张图理解，下图绿色为可行区间：</p>
 <p><img alt="bs-1.png" src="../img/bs-1.png" /></p>
+<p>upd on 01.23.23：昨天在 uoj 群里回答了一位小朋友的问题。</p>
+<p>也算是有些新的想法吧，就是其实二分的写法有很多种，区别一般在于对答案区间的收缩上。</p>
+<p>有的写法是不管 mid 是否 valid 都要取 mid，有的写法是左闭右开，有的写法是左开右闭。</p>
+<p>然后循环停止的限制也不一样，所以导致记录答案的方式不一样，这个要自己去区分，不能瞎写（</p>
+<p>虽然我用的写法区分了两种方式，但是相对来说不那么容易理解出错？</p>
+<p>怪不得 <em>Programming Pearl</em> 说只有 <span class="arithmatex">\(20\%\)</span> 的程序员能写对二分（（因为很多程序员都是缺乏思考的吧！</p>
 <h3 id="_4">实数域二分<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>和整数域比较类似，不过设置 <span class="arithmatex">\(eps\)</span> 即可。</p>
+<p>和整数域比较类似，不过还需要设置 <span class="arithmatex">\(eps\)</span> 来避免精度误差。</p>
+<p>因为是实数域上的二分了，用之前那种 <code>+-1</code> 的方式精度是完全不够的（</p>
+<p>所以就不管是否合法都收缩到 mid，所以要记录答案而不是可以直接用下标输出。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -4154,7 +4254,7 @@
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">valid</span><span class="p">(</span><span class="n">mid</span><span class="p">))</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// 也需要根据可行区间的位置判断写法。</span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>也可以计算之后设置次数二分。</p>
 <h3 id="_5">二分答案<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
@@ -4171,7 +4271,7 @@
 </ul>
 <p>如果类似 <code>set</code> ，自己带有 <code>lower_bound</code>。</p>
 <p>就一定选择容器<strong>自身</strong>的：<code>s.lower_bound(x)</code> 而不是 <code>lower_bound(s.begin(),s.end(),x)</code>。</p>
-<p>这样效率更高，因为 <span class="arithmatex">\(s\)</span> 本身不是类似数组那样的连续访问（他没有支持连续访问的迭代器），他是一个树形结构，所以要用 STL 在树上给你实现的 <code>lower_bound</code>。</p>
+<p>这样效率更高，因为 <span class="arithmatex">\(s\)</span> 本身不是类似数组那样的随机访问（他没有支持随机访问的迭代器），他是一个树形结构，所以要用 STL 在树上给你实现的 <code>lower_bound</code>。</p>
 
 
 
