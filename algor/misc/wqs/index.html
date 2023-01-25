@@ -2338,6 +2338,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4146,8 +4153,74 @@
 <p>昨天在 uoj 群回答问题的时候得到了清芷姐姐的教导，知道了这玩意儿就是 wqs 二分，因为之前就对这个精妙的套路很感兴趣了，于是决定学习一下。</p>
 <h2 id="_1">泛化<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>假定你有一个限制参数 <span class="arithmatex">\(k\)</span>，你要求 <span class="arithmatex">\(ans(k)\)</span>，但是 <span class="arithmatex">\(ans(k)\)</span> 求起来是 hard 的。</p>
-<p>但是可以快速的对于每一个 <span class="arithmatex">\(x\)</span> 求出 <span class="arithmatex">\(\max\{ans(i)+ix\}\)</span>，且 <span class="arithmatex">\(ans\)</span> 是凸的，那么二分这个 <span class="arithmatex">\(x\)</span> 就可以了，因为如果 <span class="arithmatex">\(ans\)</span> 是凸的，能取到的最优的 <span class="arithmatex">\(i\)</span> 就是关于 <span class="arithmatex">\(x\)</span> 单调不减的，这个就可以二分了。</p>
-<p>还有另外的一种描述，这个我明天和例题一起补上（</p>
+<p>但是可以快速的对于每一个 <span class="arithmatex">\(x\)</span> 求出 <span class="arithmatex">\(\max/\min\{ans(i)-ix\}\)</span>，且 <span class="arithmatex">\(ans\)</span> 是凸的，那么二分这个 <span class="arithmatex">\(x\)</span> 就可以了，因为如果 <span class="arithmatex">\(ans\)</span> 是凸的，能取到的最优的 <span class="arithmatex">\(i\)</span> 就是关于 <span class="arithmatex">\(x\)</span> 单调的，这个就可以二分了。</p>
+<p>这是 _rqy 姐姐说的，好像对我这种笨蛋来说不是很直观。</p>
+<p>所以还是看个例题会比较好。</p>
+<h2 id="_2">例题<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<blockquote>
+<p>source: <a href="https://www.luogu.com.cn/problem/P2619">Tree I</a>,by WJMZBMR</p>
+<p>给定 <span class="arithmatex">\(m\)</span> 条边，<span class="arithmatex">\(n\)</span> 个点，每条边可能是可爱边或者不可爱边。</p>
+<p>求恰好有 <span class="arithmatex">\(e\)</span> 条可爱边的最小生成树。</p>
+</blockquote>
+<p>首先一个比较暴力的做法就是设 <span class="arithmatex">\(dp(i, j)\)</span> 表示考虑前 <span class="arithmatex">\(i\)</span> 选 <span class="arithmatex">\(j\)</span> 个可爱边的 mst。</p>
+<p>但是这样复杂度显然上天了吧！！</p>
+<p>于是类似之前某个 ds 优化 dp 的题，我们设 <span class="arithmatex">\(f(i)\)</span> 表示选了 <span class="arithmatex">\(i\)</span> 条可爱边的 mst，要求的答案就是 <span class="arithmatex">\(f(e)\)</span>。</p>
+<p>注意到我们不能直接给定下标求出 <span class="arithmatex">\(f\)</span>，这个是困难的。</p>
+<p>但是可以发现 <span class="arithmatex">\(f\)</span> 是一个下凸的函数（证明先咕咕咕一下）。</p>
+<p>也就是长成这样：</p>
+<p><img alt="wqs-2.png" src="../img/wqs-2.png" /></p>
+<blockquote>
+<p>图源 <a href="https://www.cnblogs.com/TianMeng-hyl/p/14972355.html">https://www.cnblogs.com/TianMeng-hyl/p/14972355.html</a>。</p>
+<p>请读者把它们都当成整点，这里是感性的，本题 <span class="arithmatex">\(f(i)\)</span> 显然是 &gt; 0 的。</p>
+</blockquote>
+<p>于是有一种想法是，拉一条直线来切这个凸包，然后显然每个斜率会对应一个切点或者多个切点，我们先不考虑多个切点，也就是假设每一个 <span class="arithmatex">\((i, f(i))\)</span> 的两边斜率都不等。</p>
+<p>我们是不知道 <span class="arithmatex">\(f\)</span> 具体长什么样的，我们只知道他是一个凸包的形式，我们要想办法求出来。</p>
+<p>注意到对于下凸函数，当 <span class="arithmatex">\(i\)</span> 增加的时候，切线斜率 <span class="arithmatex">\(k\)</span> 是单调递增的，并且此时一个 <span class="arithmatex">\(k\)</span> 一定对应一个切点。</p>
+<p>所以我们有一个想法是，能不能对于一个 <span class="arithmatex">\(k\)</span> 求出它对应的切点呢？</p>
+<p>这样因为 <span class="arithmatex">\(k\)</span> 随着 <span class="arithmatex">\(x\)</span> 单调，所以我们就可以通过二分求出 <span class="arithmatex">\(e\)</span>  对应的 <span class="arithmatex">\(k\)</span> 进而求出 <span class="arithmatex">\(f(e)\)</span> 了！</p>
+<p>然后其实整个问题的最难点是如何在有限制的情况下求出 mst。</p>
+<p>于是有了一个很牛逼的想法。</p>
+<p>注意到 <span class="arithmatex">\(f(x) = kx + b\)</span>，其中 <span class="arithmatex">\(b\)</span> 为切线的截距。</p>
+<p>因为 <span class="arithmatex">\(b = f(x) - kx\)</span>，由几何/代数意义，我们可以知道这个 <span class="arithmatex">\(b\)</span> 和 <span class="arithmatex">\(k\)</span> 是<strong>对应</strong>的！</p>
+<p>然后最神奇的来了，注意到 <span class="arithmatex">\(b\)</span> 本质上是给每个可爱边减去一个 <span class="arithmatex">\(k\)</span>，然后再求有限制的 mst，因为刚才说了，<span class="arithmatex">\(b\)</span> 和 <span class="arithmatex">\(k\)</span> 是对应的，所以其实就算没有限制，减完之后我们直接求 mst 求出来也一定满足这个选 <span class="arithmatex">\(x\)</span> 条的限制！</p>
+<p>所以说，我们只需要简单求出 <span class="arithmatex">\(b\)</span>，加上 <span class="arithmatex">\(kx\)</span> 之后就能对于一个 <span class="arithmatex">\(k\)</span> 求出 <span class="arithmatex">\(f(x)\)</span> 了！</p>
+<p>所以我们就只需要二分 <span class="arithmatex">\(k\)</span>，然后求 <span class="arithmatex">\(b\)</span> 进而求 <span class="arithmatex">\(f(x)\)</span>，反代回去求出 <span class="arithmatex">\(x\)</span>，然后刚才说了 <span class="arithmatex">\(k\)</span> 随着 <span class="arithmatex">\(x\)</span> 单调，反过来也是一样的。</p>
+<p>所以每次求完之后比较一下 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(e\)</span> 进而调整 <span class="arithmatex">\(k\)</span> 即可。</p>
+<p>But，这只是最简单的情况</p>
+<p>注意到其实斜率和切点并不一定能建立函数关系，因为一个斜率可以对应多个切点，比如刚才的情况，有可能出现一个点两边的斜率相等的情况。</p>
+<p>那么现在要做的就是解决这个一对多的问题。</p>
+<p>一种常见的解决策略是，我们把这多个点融合成一个点考虑。</p>
+<p>具体做法是求 mst 的时候如果有相同 weight，让可爱边更靠前。</p>
+<p>现在我们直接对着这种情况莽，当一个斜率对应多个切点的时候，我们求出来的 <span class="arithmatex">\(x\)</span> 应该是所有满足条件的 <span class="arithmatex">\(x\)</span> 里面最大的一个，因为排序的时候已经贪心地让可爱边选的尽可能多。</p>
+<p>于是同一条线上的所有点的影响都被考虑到这条线上最靠后的一个切点上了！</p>
+<p>也就是说，我们可以只考虑“拐点”即两边斜率不等的点了。</p>
+<p>那么就可以直接做，二分满足 <span class="arithmatex">\(x &gt; e\)</span> 的所有 <span class="arithmatex">\(k\)</span> 里最小的那一个。</p>
+<p>很显然 <span class="arithmatex">\(e\)</span> 对应的切点一定在这条线上，这个可以反证，然后算 <span class="arithmatex">\(f(e)\)</span> 就比较简单了。</p>
+<p>假设我们求出来的点的横坐标为 <span class="arithmatex">\(x\)</span>，显然 <span class="arithmatex">\(b = f(x) - kx = f(e) - ke\)</span></p>
+<p>所以 <span class="arithmatex">\(f(e) = f(x) - kx + ke\)</span>，也就是说只需要求出来 <span class="arithmatex">\(x\)</span> 处的截距然后加上 <span class="arithmatex">\(ke\)</span> 即可。</p>
+<details class="note">
+<summary>Code</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// No code was here!</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>这个只是最基础的应用，其它的以后有时间就补上。</p>
+<hr />
+<p>ref: </p>
+<ul>
+<li>
+<p><a href="https://www.cnblogs.com/CreeperLKF/p/9045491.html">https://www.cnblogs.com/CreeperLKF/p/9045491.html</a></p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/TianMeng-hyl/p/14972355.html">https://www.cnblogs.com/TianMeng-hyl/p/14972355.html</a></p>
+</li>
+</ul>
+<p>另外写这个的时候我删改了很多次。</p>
+<p>其实就是想把这个东西是怎么来的说清楚，说的别人能听懂，也问不倒我。</p>
+<p>然后就花了不少时间，终于搞懂了。</p>
+<p>但是说的时候就有点那啥，写了 4k 全部都注释掉了。</p>
+<p>所以这里要特别感谢 <span class="arithmatex">\(2
+\times \text{mid}(\texttt{'sxp'+'uzr'})\)</span> 小天使。</p>
+<p>是他让我突然思路如泉涌，写出了这篇 post！<img alt="/qq" src="https://啧.tk/qq" />wwwww</p>
 
 
 
