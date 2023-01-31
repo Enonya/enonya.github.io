@@ -4227,7 +4227,7 @@
 
 
 
-<div id="mkdocs-encrypted-content" style="display:none">IwTq5H4l/V67irwKO8Oj7Q==;k017xJqYU/2yQkpEiTlPNl/tS4ZoRFzcm/3wAt8GYqeadQ1qtzD8C545x6aiwrFuPto5ode4ut3sHYV9dGHmSx3/jjK2SXPnVtihDRMaZx9KoUT6lnLlap9zsvHvA1bCDqL2UpNjxrzanPxW5JPAiiMomqIQFZjfuRjUT2i6ToOEghRl7boYOPgaOKmr4hTnfZGEj6UKqUr2RKPTkjoRKD7c5Y+aZcl0HiBoLZEE5TldgUnpVaYJR5Cw81MFM9yWwusrFODQwvEqL7Ev5/QnjU579uSdSQqU1x74wBw/OUdBxGT85p8pFG5yzdwWrPsW8u/7gPDSR488zXPI5CUuKJxn1gyo/sG11GqpzmrtwHWnb3QnQt4NOjbz3lMPmIgk8ZaMSCnx2WHDzoX4ynlEXpGYylKajHFtBdjR9TV4xo1obe9P/QcEHWbeAlPI+9Wb/R40N7CWNoH7+cQAB+I6ug==;^</div>
+<div id="mkdocs-encrypted-content" style="display:none">XF0SlWXFLykYs76cFGhVyQ==;CdC6kePLgMPPXCxfEm3njk69OYWC1BnSZ0atREAAb89pcnqPJMldpO2wWsJJ9oYXEUcaawOM3prd8VV/kBj2zem33VJRhOCN7Rp47UV9ym0MH4ZHbKWcKhyzmLiULwmgT4mu7OZga8kMSUwR+FiMkN0CRGvQpm1MBz6rrNOWosETaFpkLNY53LWHO3u6F0JslNERioFkBu7allmOPZCs7fSNMRqVTlnsHYIe9hL5Lr3Rd72RIIEbAsJRJg5P1pqqVRQWvtmyOWFuyhkWWTw0ZLEDJ9Dw6FbvmbWf/aJNxOkV3Ud5GQEdWnEGeYHnLdbaC9BgVO9fQQneaWLjczfIpJuTuxUHy1grw2i7EypSq8rCgDzAxePuahD9agee/lYnHp7EldPB4uF/OiaSNxYGQL7ZjVg5kAiJxu1qSXkg+qduOGuKsfzwwsvbNdSyp8kULzTIa4t3j6Bb8aGzC5bn8Q==;^</div>
 <div id="mkdocs-decrypted-content">
     <form id="mkdocs-decrypt-form">
         <h1>本篇博文被密码保护</h1>
@@ -4257,7 +4257,53 @@ var decryption_failure_message = "Invalid password! \u5bc6\u7801\u9519\u8bef\uff
 
 
                 
-<h2 id="__comments">评论</h2>
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="hylwxqwq/Blog-Comment"
+        data-repo-id="R_kgDOHy9qGg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOHy9qGs4CT6Ke"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+<!-- <h2 id="__comments">评论</h2>
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
   <div id="gitalk-container"></div>
@@ -4274,7 +4320,7 @@ const gitalk = new Gitalk({
 })
 
 gitalk.render('gitalk-container')
-  </script>
+  </script> -->
 
               </article>
             </div>
