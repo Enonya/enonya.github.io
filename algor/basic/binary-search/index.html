@@ -4727,6 +4727,17 @@
 <p>就一定选择容器<strong>自身</strong>的：<code>s.lower_bound(x)</code> 而不是 <code>lower_bound(s.begin(),s.end(),x)</code>。</p>
 <p>这样效率更高，因为 <span class="arithmatex">\(s\)</span> 本身不是类似数组那样的随机访问（他没有支持随机访问的迭代器），他是一个树形结构，所以要用 STL 在树上给你实现的 <code>lower_bound</code>。</p>
 
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      
+    
+  </small>
+</div>
+
 
 
 
