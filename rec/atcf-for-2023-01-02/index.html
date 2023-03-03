@@ -2822,6 +2822,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#abc291def" class="md-nav__link">
+    ABC291D,E,F
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6871,7 +6878,11 @@
 <blockquote>
 <p>题面暂略。</p>
 </blockquote>
-<p>题解暂略。</p>
+<p>这类问题还是那么的套路。</p>
+<p>我们考虑什么东西会做出贡献，其实就是一个点对 <span class="arithmatex">\((i, j),a_i \not= a_j\)</span>。</p>
+<p>这个东西做出的贡献，应该是钦定 <span class="arithmatex">\(i,j\)</span> 相对的回文串的个数。</p>
+<p>正着算不太好搞，于是我们反着算就行，算有多少不会做贡献。</p>
+<p>然后随便写写就行。</p>
 <details class="note">
 <summary>Code</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -6979,7 +6990,35 @@
 <blockquote>
 <p>题面暂略。</p>
 </blockquote>
-<p>题解暂略，我觉得这是一个很有意思的 F，不过组合意义居然没看出来/tuu.</p>
+<p>我们拿到这题，仍旧是套路的考虑算贡献。</p>
+<p>但是注意到这个 <span class="arithmatex">\(f(X)\)</span> 的定义是，对于所有 <span class="arithmatex">\(X\)</span> 能构造出的树里，最大的直径，相当于有两个 max 套在一起，直接求和换方式算贡献不好处理。</p>
+<p>所以我们考虑观察一下，对于一个给定的 <span class="arithmatex">\(X\)</span>，<span class="arithmatex">\(f(X)\)</span> 应该是什么样子的。</p>
+<p>有一个结论：任意合法的 <span class="arithmatex">\(X\)</span> 必然包含至少两个 <span class="arithmatex">\(X_i = 1\)</span> 的元素</p>
+<p>这个是显然的，极端情况就是一条链。</p>
+<p>这个结论启发我们，我们可以考虑尽量长的构造出一条链。</p>
+<p>做法很简单，选两个 <span class="arithmatex">\(X_i = 1\)</span> 的点作为端点，把所有 <span class="arithmatex">\(X_i \not= 1\)</span> 的节点扔到中间，其他的 <span class="arithmatex">\(X_i = 1\)</span> 的节点挂在中间就行。</p>
+<p>可以证明这个做法是正确的：</p>
+<p>证明：</p>
+<p>钦定恰好有 <span class="arithmatex">\(k\)</span> 个 <span class="arithmatex">\(X_i = 1\)</span> 的节点，那么剩下的度数是 <span class="arithmatex">\(2n - 2 - k\)</span>（由树的性质，度数之和为 <span class="arithmatex">\(2n-2\)</span>）。</p>
+<p>我们考虑把这条链的度数也减去，就是这 <span class="arithmatex">\(n - k\)</span> 个节点之间的 <span class="arithmatex">\(n - k - 1\)</span> 条边乘二，在加上两边的 <span class="arithmatex">\(2\)</span>。</p>
+<p>那么还剩下的度数就是 <span class="arithmatex">\(2n - 2 - k - 2(n - k - 1) - 2 = k\)</span>，那恰好就能构造出来。</p>
+<p>好，现在我们考虑计数，注意到排序过后相等的 <span class="arithmatex">\(X\)</span> 的 <span class="arithmatex">\(f(X)\)</span> 显然相等，我们算一下方案数就行。</p>
+<p>可以发现计数的阶段应该是 <span class="arithmatex">\(k\)</span>，所以我们考虑钦定某些位置都是 <span class="arithmatex">\(1\)</span>，这部分方案数是 <span class="arithmatex">\(\dbinom{n}{k}\)</span>，剩下的部分就全部需要 <span class="arithmatex">\(1\)</span>，且我们要让这 <span class="arithmatex">\(n - k\)</span> 个 <span class="arithmatex">\(X_i\)</span> 的 <span class="arithmatex">\(\sum = 2n - 2 - k\)</span>。</p>
+<p>为了方便直接给每个节点减去 <span class="arithmatex">\(2\)</span>，问题转化为插板法，这部分方案数是 <span class="arithmatex">\(\dbinom{n - 2}{n - k - 1}\)</span>。</p>
+<p>直径长度为 <span class="arithmatex">\(n - k + 1\)</span>，那么答案就为 <span class="arithmatex">\(\sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 2}{n - k - 1}(n - k + 1)\)</span>。</p>
+<p>这个显然不行，我们推一下式子。</p>
+<p>注意到这个东西长的很像一个恒等式：<span class="arithmatex">\(\sum\limits_{i = 0}^n\dbinom{n}{i}\dbinom{m}{k - i} = \dbinom{n + m}{k}\)</span>，这东西可以直接组合意义证明，听说也叫做范德蒙德卷积。</p>
+<p>但是有一坨 <span class="arithmatex">\(n - k + 1\)</span>，不好化，又想到有一个恒等式：<span class="arithmatex">\(k\dbinom{n}{k} = n\dbinom{n - 1}{n - k}\)</span></p>
+<p>发现 <span class="arithmatex">\(n - k + 1\)</span> 那一坨可以拆开变成 <span class="arithmatex">\(n - k - 1\)</span>，我们可以把 <span class="arithmatex">\(k\)</span> 消掉，系数写到前面。</p>
+<p>于是我们写出：</p>
+<div class="arithmatex">\[
+\sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 3}{n - k - 1}(n - k + 1) \iff \\
+\sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 3}{n - k - 1}(n - k - 1) + 2\sum\limits_{k = 1}^n\dbinom{n}{k} \dbinom{n - 3}{n - k - 1} \iff \\
+(n - 3)\sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 4}{n - k - 2} + 2\sum\limits_{k = 1}^n\dbinom{n}{k} \dbinom{n - 3}{n - k - 1}
+\]</div>
+<p>根据范德蒙德卷积，可以得到：</p>
+<p><span class="arithmatex">\(ans = (n - 3)\dbinom{2n - 4}{n - 2} + 2\dbinom{2n - 3}{n - 1}\)</span></p>
+<p>然后就可以线性做了。</p>
 <details class="note">
 <summary>Code</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -7285,13 +7324,15 @@
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<h3 id="abc291def">ABC291D,E,F<a class="headerlink" href="#abc291def" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>这个太水了，就不写了。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
       
     
   </small>

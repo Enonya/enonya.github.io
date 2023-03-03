@@ -3000,6 +3000,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    类区间最大子段和问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gss4" class="md-nav__link">
     GSS4 区间开方（下取整），区间求和
   </a>
@@ -4830,6 +4837,12 @@
 <p>所以还需要维护一个区间最大值。</p>
 <p>此时最大子段和就有结合律了。</p>
 <p>GSS1 不带修，GSS3 带一个单点修，本质一样。</p>
+<h3 id="_11">类区间最大子段和问题<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>你有一个序列 <span class="arithmatex">\(a\)</span>，一个序列 <span class="arithmatex">\(b\)</span>。</p>
+<p>你每次需要求一个区间内的一种贡献的最大值，定义为 <span class="arithmatex">\(\max\{a_x + b_y\}, x \le y\)</span>。</p>
+<p>这个东西其实也和最大子段和差不多，我们发现这个信息其实是可以合并的，我们直接维护答案，显然大区间的答案可能是两个小区间的答案之一，还有一种情况是从两个小区间各取一些组成答案。</p>
+<p>所以对于每个节点，维护当前区间内最大的 <span class="arithmatex">\(a_x\)</span> 和最大的 <span class="arithmatex">\(b_y\)</span>，每次合并的时候，因为左右子树维护的区间是分开的，所以 <span class="arithmatex">\(x\le y\)</span> 的条件也可以被满足。</p>
+<p>然后答案就可以上传了，复杂度一个 log，也可以支持单点修改。</p>
 <h3 id="gss4">GSS4 区间开方（下取整），区间求和<a class="headerlink" href="#gss4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>这题线段树也可以，虽然算是一个单独的 Trick，但毕竟是 GSS 系列的，就也写上了。</p>
 <p>首先从数列分块入门 5 可以得到一个结论，就是区间开方的次数是很少的，如果 1e18 级别开 6 ~ 7 次就够了。</p>
@@ -4846,7 +4859,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
       
     
   </small>
