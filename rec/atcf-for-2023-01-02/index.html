@@ -1956,6 +1956,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
@@ -2034,6 +2036,20 @@
     <li class="md-nav__item">
       <a href="../../algor/math/combinatorics/catalan/" class="md-nav__link">
         卡特兰数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algor/math/combinatorics/vandermonde-convolution/" class="md-nav__link">
+        范德蒙德卷积
       </a>
     </li>
   
@@ -7007,7 +7023,7 @@
 <p>为了方便直接给每个节点减去 <span class="arithmatex">\(2\)</span>，问题转化为插板法，这部分方案数是 <span class="arithmatex">\(\dbinom{n - 2}{n - k - 1}\)</span>。</p>
 <p>直径长度为 <span class="arithmatex">\(n - k + 1\)</span>，那么答案就为 <span class="arithmatex">\(\sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 2}{n - k - 1}(n - k + 1)\)</span>。</p>
 <p>这个显然不行，我们推一下式子。</p>
-<p>注意到这个东西长的很像一个恒等式：<span class="arithmatex">\(\sum\limits_{i = 0}^n\dbinom{n}{i}\dbinom{m}{k - i} = \dbinom{n + m}{k}\)</span>，这东西可以直接组合意义证明，听说也叫做范德蒙德卷积。</p>
+<p>注意到这个东西长的很像一个恒等式：<span class="arithmatex">\(\sum\limits_{i = 0}^k\dbinom{n}{i}\dbinom{m}{k - i} = \dbinom{n + m}{k}\)</span>，这东西可以直接组合意义证明，听说也叫做范德蒙德卷积。</p>
 <p>但是有一坨 <span class="arithmatex">\(n - k + 1\)</span>，不好化，又想到有一个恒等式：<span class="arithmatex">\(k\dbinom{n}{k} = n\dbinom{n - 1}{n - k}\)</span></p>
 <p>发现 <span class="arithmatex">\(n - k + 1\)</span> 那一坨可以拆开变成 <span class="arithmatex">\(n - k - 1\)</span>，我们可以把 <span class="arithmatex">\(k\)</span> 消掉，系数写到前面。</p>
 <p>于是我们写出：</p>
@@ -7016,7 +7032,7 @@
 \sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 3}{n - k - 1}(n - k - 1) + 2\sum\limits_{k = 1}^n\dbinom{n}{k} \dbinom{n - 3}{n - k - 1} \iff \\
 (n - 3)\sum\limits_{k = 1}^n \dbinom{n}{k} \dbinom{n - 4}{n - k - 2} + 2\sum\limits_{k = 1}^n\dbinom{n}{k} \dbinom{n - 3}{n - k - 1}
 \]</div>
-<p>根据范德蒙德卷积，可以得到：</p>
+<p>根据范德蒙德卷积公式，可以得到：</p>
 <p><span class="arithmatex">\(ans = (n - 3)\dbinom{2n - 4}{n - 2} + 2\dbinom{2n - 3}{n - 1}\)</span></p>
 <p>然后就可以线性做了。</p>
 <details class="note">
