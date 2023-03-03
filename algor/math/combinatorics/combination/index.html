@@ -2050,15 +2050,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     二项式定理
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    组合数性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2068,7 +2075,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     几个基本方法
   </a>
   
@@ -2076,21 +2083,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     捆绑法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     插空法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     插板法
   </a>
   
@@ -2098,21 +2105,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     正整数和的数目
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     非负整数和的数目
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     不同下界整数和的数目
   </a>
   
@@ -2124,21 +2131,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     圆排列
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     不相邻排列
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     多重集的排列数 | 多重组合数
   </a>
   
@@ -4780,65 +4787,73 @@
 \dbinom{n}{m} = \dfrac{n!}{m!(n-m)!}
 \]</div>
 <p>其中边界为： <span class="arithmatex">\(\dbinom{n}{0} = 1\)</span>。</p>
-<p>一些性质：</p>
+<h4 id="_6">二项式定理<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <div class="arithmatex">\[
-\binom{n}{m}=\binom{n}{n-m}\tag{1}
+(a + b)^n = \sum\limits_{i = 0}^{n}\dbinom{n}{i}a^{n - i}b^{i}
 \]</div>
-<p>相当于将选出的集合对全集取补集，故数值不变。（对称性）</p>
+<p>其中 <span class="arithmatex">\(\displaystyle \dbinom{n}{i} a^{n - i}b^i\)</span> 叫做 <span class="arithmatex">\((a + b)^n\)</span> 展开式的第 <span class="arithmatex">\(i + 1\)</span> 项 <span class="arithmatex">\(T_{i + 1}\)</span>，注意 <span class="arithmatex">\((a + b)^n, (b + a)^n\)</span> 的展开式的第 <span class="arithmatex">\(i\)</span> 项是不一样的。</p>
+<p><span class="arithmatex">\((a - b)^n\)</span> 的展开式通项多了一个容斥系数一样的东西 ：<span class="arithmatex">\(\displaystyle T_{i + 1} = (-1)^i \dbinom{n}{i} a^{n - i}b^i\)</span>。</p>
+<p>二项式定理也可以扩展为多项式的形式，在此不展开。</p>
+<p>所以，<span class="arithmatex">\(\dbinom{n}{m}\)</span> 也被叫做二项式系数。</p>
+<h4 id="_7">组合数性质<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>I. </p>
 <div class="arithmatex">\[
-\binom{n}{k} = \frac{n}{k} \binom{n-1}{k-1}\tag{2}
+\dbinom{n}{m}=\dbinom{n}{n-m}
 \]</div>
-<p>由定义导出的递推式。</p>
+<p>这个是显然的，因为你选 <span class="arithmatex">\(m\)</span> 个和选 <span class="arithmatex">\(n - m\)</span> 个的情况是捆绑起来的。</p>
+<p>II.</p>
 <div class="arithmatex">\[
-\binom{n}{m}=\binom{n-1}{m}+\binom{n-1}{m-1}\tag{3}
+\dbinom{n}{k} = \dfrac{n}{k} \dbinom{n-1}{k-1}
 \]</div>
-<p>组合数的递推式（杨辉三角的公式表达）。我们可以利用这个式子，在 <span class="arithmatex">\(O(n^2)\)</span> 的复杂度下推导组合数。</p>
+<p>这个也是显然的，根据定义展开就可以得到。</p>
+<p>也可以写作</p>
 <div class="arithmatex">\[
-\binom{n}{0}+\binom{n}{1}+\cdots+\binom{n}{n}=\sum_{i=0}^n\binom{n}{i}=2^n\tag{4}
+k\dbinom{n}{k} = n\dbinom{n - 1}{k - 1}
 \]</div>
-<p>这是二项式定理的特殊情况。取 <span class="arithmatex">\(a=b=1\)</span> 就得到上式。</p>
+<p>III.</p>
 <div class="arithmatex">\[
-\sum_{i=0}^n(-1)^i\binom{n}{i}=[n=0]\tag{5}
+\dbinom{n}{m}=\dbinom{n-1}{m}+\dbinom{n-1}{m-1}
+\]</div>
+<p>这个就是组合数的递推式，也可以看作是杨辉三角。</p>
+<p>IV. </p>
+<div class="arithmatex">\[
+\dbinom{n}{0}+\dbinom{n}{1}+\cdots+\dbinom{n}{n}=\sum_{i=0}^n\dbinom{n}{i}=2^n
+\]</div>
+<p>这是二项式定理的特殊情况。取 <span class="arithmatex">\(a=b=1\)</span> 就可以了。</p>
+<p>V.</p>
+<div class="arithmatex">\[
+\sum_{i=0}^n(-1)^i\dbinom{n}{i}=[n=0]
 \]</div>
 <p>二项式定理的另一种特殊情况，可取 <span class="arithmatex">\(a=1, b=-1\)</span>。式子的特殊情况是取 <span class="arithmatex">\(n=0\)</span> 时答案为 <span class="arithmatex">\(1\)</span>。</p>
+<p>后面那个是 Iverson Bracket.</p>
+<p>VI.</p>
 <div class="arithmatex">\[
-\sum_{i=0}^m \binom{n}{i}\binom{m}{m-i} = \binom{m+n}{m}\ \ \ (n \geq m)\tag{6}
+\sum_{i=0}^m \dbinom{n}{i}\dbinom{m}{m-i} = \dbinom{m+n}{m}\ \ \ (n \geq m)
 \]</div>
-<p>拆组合数的式子，在处理某些数据结构题时会用到。</p>
+<p>这个就是范德蒙德卷积的推论。</p>
+<p>VII.</p>
 <div class="arithmatex">\[
-\sum_{i=0}^n\binom{n}{i}^2=\binom{2n}{n}\tag{7}
+\sum_{i=0}^n\dbinom{n}{i}^2=\dbinom{2n}{n}
 \]</div>
-<p>这是 <span class="arithmatex">\((6)\)</span> 的特殊情况，取 <span class="arithmatex">\(n=m\)</span> 即可。</p>
+<p>仍旧是范德蒙德卷积的推论.</p>
+<p>VIII.</p>
 <div class="arithmatex">\[
-\sum_{i=0}^ni\binom{n}{i}=n2^{n-1}\tag{8}
-\]</div>
-<p>带权和的一个式子，通过对 <span class="arithmatex">\((3)\)</span> 对应的多项式函数求导可以得证。</p>
-<div class="arithmatex">\[
-\sum_{i=0}^ni^2\binom{n}{i}=n(n+1)2^{n-2}\tag{9}
-\]</div>
-<p>与上式类似，可以通过对多项式函数求导证明。</p>
-<div class="arithmatex">\[
-\sum_{l=0}^n\binom{l}{k} = \binom{n+1}{k+1}\tag{10}
+\sum_{l=0}^n\dbinom{l}{k} = \dbinom{n+1}{k+1}
 \]</div>
 <p>通过组合分析一一考虑 <span class="arithmatex">\(S={a_1, a_2, \cdots, a_{n+1}}\)</span> 的 <span class="arithmatex">\(k+1\)</span> 子集数可以得证，在恒等式证明中比较常用。</p>
+<p>IX.</p>
 <div class="arithmatex">\[
-\binom{n}{r}\binom{r}{k} = \binom{n}{k}\binom{n-k}{r-k}\tag{11}
+\dbinom{n}{r}\dbinom{r}{k} = \dbinom{n}{k}\dbinom{n-k}{r-k}
 \]</div>
-<p>通过定义可以证明。</p>
+<p>用定义展开一下就可以证明了，式子形式很好记。</p>
+<p>X.</p>
 <div class="arithmatex">\[
-\sum_{i=0}^n\binom{n-i}{i}=F_{n+1}\tag{12}
+\sum_{i=0}^n\dbinom{n-i}{i}=F_{n+1}
 \]</div>
 <p>其中 <span class="arithmatex">\(F\)</span> 是斐波那契数列。</p>
-<h3 id="_6">二项式定理<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<div class="arithmatex">\[
-(a + b)^n = \sum\limits_{i = 0}^{n}\binom{n}{i}a^{n - i}b^{i}
-\]</div>
-<p>其中 <span class="arithmatex">\(\displaystyle \binom{n}{i} a^{n - i}b^i\)</span> 叫做 <span class="arithmatex">\((a + b)^n\)</span> 展开式的第 <span class="arithmatex">\(i + 1\)</span> 项 <span class="arithmatex">\(T_{i + 1}\)</span>，注意 <span class="arithmatex">\((a + b)^n, (b + a)^n\)</span> 的展开式的第 <span class="arithmatex">\(i\)</span> 项是不一样的。</p>
-<p><span class="arithmatex">\((a - b)^n\)</span> 的展开式通项多了一个容斥系数一样的东西 ：<span class="arithmatex">\(\displaystyle T_{i + 1} = (-1)^i \binom{n}{i} a^{n - i}b^i\)</span>。</p>
-<p>二项式定理也可以扩展为多项式的形式，在此不展开。</p>
-<p>由此，<span class="arithmatex">\(\dbinom{n}{m}\)</span> 也被称作「二项式系数」。</p>
-<h2 id="_7">几个基本方法<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<h3 id="_8">捆绑法<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>这个我不会证明，暂时咕了。</p>
+<h2 id="_8">几个基本方法<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_9">捆绑法<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>要求某几个元素排列组合的时候必须相邻。</p>
 <p>做法大概就是把他们捆绑起来，然后算成一个元素做排列，再在内部做排列。</p>
 <details class="example" open="open">
@@ -4847,7 +4862,7 @@
 <p>简单的问题，把甲和乙捆绑，然后排列，答案是 <span class="arithmatex">\(\text A^{6}_{6} = 6!\)</span> 种。</p>
 <p>然后甲乙内部有 <span class="arithmatex">\(\text A^2_2 = 2!\)</span> 种答案，乘法原理，答案等于 <span class="arithmatex">\(6!2! = 1140\)</span>。</p>
 </details>
-<h3 id="_9">插空法<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h3 id="_10">插空法<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>要求某几个元素排列组合的时候必须不相邻。</p>
 <p>做法大概就是把这几个元素提出来，剩下的排列一次。</p>
 <p>然后把这几个提出来的元素插到空里面去。</p>
@@ -4864,29 +4879,29 @@
 <p>简单的问题，先把甲乙捆绑，然后甲乙丙拉出来剩下的做排列，插空之后甲乙内部再排列。</p>
 <p>答案是 <span class="arithmatex">\(\text A_4^4 \text A_5^3 \text A_2^2\)</span>。</p>
 </details>
-<h3 id="_10">插板法<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<details class="tip">
+<h3 id="_11">插板法<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<details class="tip" open="open">
 <summary>为什么这里和 OI-wiki 一样</summary>
 <p>（OI-Wiki 上这部分是<a href="https://github.com/hylwxqwq">我</a>写的，可以看我当时的 <a href="https://github.com/OI-wiki/OI-wiki/pull/4278">Pull Request OI-wiki#4278</a>）</p>
 </details>
 <p>插板法（Stars and bars）是用于求一类给相同元素分组的方案数的一种技巧，也可以用于求一类线性不定方程的解的组数。</p>
-<h4 id="_11">正整数和的数目<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<h4 id="_12">正整数和的数目<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>问题一：现有 <span class="arithmatex">\(n\)</span> 个 <strong>完全相同</strong> 的元素，要求将其分为 <span class="arithmatex">\(k\)</span> 组，保证每组至少有一个元素，一共有多少种分法？</p>
 <p>考虑拿 <span class="arithmatex">\(k - 1\)</span> 块板子插入到 <span class="arithmatex">\(n\)</span> 个元素两两形成的 <span class="arithmatex">\(n - 1\)</span> 个空里面。</p>
 <p>因为元素是完全相同的，所以答案就是 <span class="arithmatex">\(\dbinom{n - 1}{k - 1}\)</span>。</p>
 <p>本质是求 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=n\)</span> 的正整数解的组数。</p>
-<h4 id="_12">非负整数和的数目<a class="headerlink" href="#_12" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<h4 id="_13">非负整数和的数目<a class="headerlink" href="#_13" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>问题二：如果问题变化一下，每组允许为空呢？</p>
 <p>显然此时没法直接插板了，因为有可能出现很多块板子插到一个空里面的情况，非常不好计算。</p>
 <p>我们考虑创造条件转化成有限制的问题一，先借 <span class="arithmatex">\(k\)</span> 个元素过来，在这 <span class="arithmatex">\(n + k\)</span> 个元素形成的 <span class="arithmatex">\(n + k - 1\)</span> 个空里面插板，答案为</p>
 <div class="arithmatex">\[
-\binom{n + k - 1}{k - 1} = \binom{n + k - 1}{n}
+\dbinom{n + k - 1}{k - 1} = \dbinom{n + k - 1}{n}
 \]</div>
 <p>虽然不是直接求的原问题，但这个式子就是原问题的答案，可以这么理解：</p>
 <p>开头我们借来了 <span class="arithmatex">\(k\)</span> 个元素，用于保证每组至少有一个元素，插完板之后再把这 <span class="arithmatex">\(k\)</span> 个借来的元素从 <span class="arithmatex">\(k\)</span> 组里面拿走。因为元素是相同的，所以转化过的情况和转化前的情况可以一一对应，答案也就是相等的。</p>
 <p>由此可以推导出插板法的公式：<span class="arithmatex">\(\dbinom{n + k - 1}{n}\)</span>。</p>
 <p>本质是求 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=n\)</span> 的非负整数解的组数（即要求 <span class="arithmatex">\(x_i \ge 0\)</span>）。</p>
-<h4 id="_13">不同下界整数和的数目<a class="headerlink" href="#_13" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<h4 id="_14">不同下界整数和的数目<a class="headerlink" href="#_14" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>问题三：如果再扩展一步，要求对于第 <span class="arithmatex">\(i\)</span> 组，至少要分到 <span class="arithmatex">\(a_i,\sum a_i \le n\)</span> 个元素呢？</p>
 <p>本质是求 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=n\)</span> 的解的数目，其中 <span class="arithmatex">\(x_i \ge a_i\)</span>。</p>
 <p>类比无限制的情况，我们借 <span class="arithmatex">\(\sum a_i\)</span> 个元素过来，保证第 <span class="arithmatex">\(i\)</span> 组至少能分到 <span class="arithmatex">\(a_i\)</span> 个。也就是令</p>
@@ -4907,11 +4922,11 @@ x_i^{\prime}\ge 0
 \]</div>
 <p>然后问题三就转化成了问题二，直接用插板法公式得到答案为</p>
 <div class="arithmatex">\[
-\binom{n + \sum a_i - 1}{n}
+\dbinom{n + \sum a_i - 1}{n}
 \]</div>
 <hr />
 <p>以下摘录自 <a href="https://oi-wiki.org/math/combinatorics/combination/">OI-wiki</a>。</p>
-<h3 id="_14">圆排列<a class="headerlink" href="#_14" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h3 id="_15">圆排列<a class="headerlink" href="#_15" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><span class="arithmatex">\(n\)</span> 个人全部来围成一圈，所有的排列数记为 <span class="arithmatex">\(\mathrm Q_n^n\)</span>。考虑其中已经排好的一圈，从不同位置断开，又变成不同的队列。
 所以有</p>
 <div class="arithmatex">\[
@@ -4921,9 +4936,9 @@ x_i^{\prime}\ge 0
 <div class="arithmatex">\[
 \mathrm Q_n^r = \frac{\mathrm A_n^r}{r} = \frac{n!}{r \times (n-r)!}
 \]</div>
-<h3 id="_15">不相邻排列<a class="headerlink" href="#_15" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h3 id="_16">不相邻排列<a class="headerlink" href="#_16" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p><span class="arithmatex">\(1 \sim n\)</span> 这 <span class="arithmatex">\(n\)</span> 个自然数中选 <span class="arithmatex">\(k\)</span> 个，这 <span class="arithmatex">\(k\)</span> 个数中任何两个数都不相邻的组合有 <span class="arithmatex">\(\dbinom {n-k+1}{k}\)</span> 种。</p>
-<h3 id="_16">多重集的排列数 | 多重组合数<a class="headerlink" href="#_16" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h3 id="_17">多重集的排列数 | 多重组合数<a class="headerlink" href="#_17" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>请大家一定要区分 <strong>多重组合数</strong> 与 <strong>多重集的组合数</strong>！两者是完全不同的概念！</p>
 <p>多重集是指包含重复元素的广义集合。设 <span class="arithmatex">\(S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k\}\)</span> 表示由 <span class="arithmatex">\(n_1\)</span> 个 <span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(n_2\)</span> 个 <span class="arithmatex">\(a_2\)</span>，…，<span class="arithmatex">\(n_k\)</span> 个 <span class="arithmatex">\(a_k\)</span> 组成的多重集，<span class="arithmatex">\(S\)</span> 的全排列个数为</p>
 <div class="arithmatex">\[
@@ -4931,13 +4946,13 @@ x_i^{\prime}\ge 0
 \]</div>
 <p>相当于把相同元素的排列数除掉了。具体地，你可以认为你有 <span class="arithmatex">\(k\)</span> 种不一样的球，每种球的个数分别是 <span class="arithmatex">\(n_1,n_2,\cdots,n_k\)</span>，且 <span class="arithmatex">\(n=n_1+n_2+\ldots+n_k\)</span>。这 <span class="arithmatex">\(n\)</span> 个球的全排列数就是 <strong>多重集的排列数</strong>。多重集的排列数常被称作 <strong>多重组合数</strong>。我们可以用多重组合数的符号表示上式：</p>
 <div class="arithmatex">\[
-\binom{n}{n_1,n_2,\cdots,n_k}=\frac{n!}{\prod_{i=1}^kn_i!}
+\dbinom{n}{n_1,n_2,\cdots,n_k}=\frac{n!}{\prod_{i=1}^kn_i!}
 \]</div>
 <p>可以看出，<span class="arithmatex">\(\dbinom{n}{m}\)</span> 等价于 <span class="arithmatex">\(\dbinom{n}{m,n-m}\)</span>，只不过后者较为繁琐，因而不采用。</p>
 <h3 id="1">多重集的组合数 1<a class="headerlink" href="#1" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>设 <span class="arithmatex">\(S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k\}\)</span> 表示由 <span class="arithmatex">\(n_1\)</span> 个 <span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(n_2\)</span> 个 <span class="arithmatex">\(a_2\)</span>，…，<span class="arithmatex">\(n_k\)</span> 个 <span class="arithmatex">\(a_k\)</span> 组成的多重集。那么对于整数 <span class="arithmatex">\(r(r&lt;n_i,\forall i\in[1,k])\)</span>，从 <span class="arithmatex">\(S\)</span> 中选择 <span class="arithmatex">\(r\)</span> 个元素组成一个多重集的方案数就是 <strong>多重集的组合数</strong>。这个问题等价于 <span class="arithmatex">\(x_1+x_2+\cdots+x_k=r\)</span> 的非负整数解的数目，可以用插板法解决，答案为</p>
 <div class="arithmatex">\[
-\binom{r+k-1}{k-1}
+\dbinom{r+k-1}{k-1}
 \]</div>
 <h3 id="2">多重集的组合数 2<a class="headerlink" href="#2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>考虑这个问题：设 <span class="arithmatex">\(S=\{n_1\cdot a_1,n_2\cdot a_2,\cdots,n_k\cdot a_k,\}\)</span> 表示由 <span class="arithmatex">\(n_1\)</span> 个 <span class="arithmatex">\(a_1\)</span>，<span class="arithmatex">\(n_2\)</span> 个 <span class="arithmatex">\(a_2\)</span>，…，<span class="arithmatex">\(n_k\)</span> 个 <span class="arithmatex">\(a_k\)</span> 组成的多重集。那么对于正整数 <span class="arithmatex">\(r\)</span>，从 <span class="arithmatex">\(S\)</span> 中选择 <span class="arithmatex">\(r\)</span> 个元素组成一个多重集的方案数。</p>
@@ -4963,15 +4978,15 @@ x_i^{\prime}\ge 0
 +\sum_{i,j,k}\left|\overline{S_i}\cap\overline{S_j}\cap\overline{S_k}\right|
 -\cdots\\
 &amp;+(-1)^{k-1}\left|\bigcap_{i=1}^k\overline{S_i}\right|\\
-=&amp;\sum_i\binom{k+r-n_i-2}{k-1}
--\sum_{i,j}\binom{k+r-n_i-n_j-3}{k-1}+\sum_{i,j,k}\binom{k+r-n_i-n_j-n_k-4}{k-1}
+=&amp;\sum_i\dbinom{k+r-n_i-2}{k-1}
+-\sum_{i,j}\dbinom{k+r-n_i-n_j-3}{k-1}+\sum_{i,j,k}\dbinom{k+r-n_i-n_j-n_k-4}{k-1}
 -\cdots\\
-&amp;+(-1)^{k-1}\binom{k+r-\sum_{i=1}^kn_i-k-1}{k-1}
+&amp;+(-1)^{k-1}\dbinom{k+r-\sum_{i=1}^kn_i-k-1}{k-1}
 \end{aligned}
 \]</div>
-<p>拿全集 <span class="arithmatex">\(\displaystyle |U|=\binom{k+r-1}{k-1}\)</span> 减去上式，得到多重集的组合数</p>
+<p>拿全集 <span class="arithmatex">\(\displaystyle |U|=\dbinom{k+r-1}{k-1}\)</span> 减去上式，得到多重集的组合数</p>
 <div class="arithmatex">\[
-Ans=\sum_{p=0}^k(-1)^p\sum_{A}\binom{k+r-1-\sum_{A} n_{A_i}-p}{k-1}
+Ans=\sum_{p=0}^k(-1)^p\sum_{A}\dbinom{k+r-1-\sum_{A} n_{A_i}-p}{k-1}
 \]</div>
 <p>其中 A 是充当枚举子集的作用，满足 <span class="arithmatex">\(|A|=p,\ A_i&lt;A_{i+1}\)</span>。</p>
 
@@ -4980,7 +4995,7 @@ Ans=\sum_{p=0}^k(-1)^p\sum_{A}\binom{k+r-1-\sum_{A} n_{A_i}-p}{k-1}
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
       
     
   </small>
