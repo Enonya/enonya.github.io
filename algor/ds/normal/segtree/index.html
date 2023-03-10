@@ -19,7 +19,7 @@
         <link rel="next" href="../binary-search-on-segtree/">
       
       <link rel="icon" href="../../../../img/logo.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.402914a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -2669,6 +2669,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -2877,6 +2879,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../rec/atcf-for-2023-03-04/" class="md-nav__link">
+        2023年3,4月AT&CF
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2900,6 +2916,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
       
       
+        
+          
         
           
         
@@ -2989,6 +3007,20 @@
     <li class="md-nav__item">
       <a href="../../../../rec/segtree-practice/" class="md-nav__link">
         Vjudge 线段树小专题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../rec/ds-advance-practice/" class="md-nav__link">
+        Vjudge 高级数据结构
       </a>
     </li>
   
@@ -6101,13 +6133,13 @@ dat &amp;= (dat \times mul_0 + add_0) \times mul_1 + add_1\\
 <span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">cnt</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
 <span class="w">            </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">nl</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">nr</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">len</span><span class="p">;</span>
 <span class="w">            </span><span class="c1">// 虽然当前区间直接被覆盖的次数等于 0 了，但还是要考虑下面的子树，因为它们有可能没被修改完。</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">nr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">nr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">nl</span><span class="p">];</span>
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">nl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nr</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span><span class="n">change</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span><span class="n">change</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">cnt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">nr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">cnt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">nr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">raw</span><span class="p">[</span><span class="n">nl</span><span class="p">];</span>
 <span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">].</span><span class="n">len</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span>
 </code></pre></div></td></tr></table></div>
@@ -6446,7 +6478,7 @@ d &amp; 0 &amp; 1
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2023</span>
       
     
   </small>
@@ -6669,7 +6701,7 @@ gitalk.render('gitalk-container')
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.b78d2936.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
