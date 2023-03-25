@@ -19,7 +19,7 @@
         <link rel="next" href="../atcf-for-2023-03-04/">
       
       <link rel="icon" href="../../img/logo.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1974,6 +1974,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
@@ -2052,6 +2054,20 @@
     <li class="md-nav__item">
       <a href="../../algor/math/combinatorics/catalan/" class="md-nav__link">
         卡特兰数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algor/math/combinatorics/lucas/" class="md-nav__link">
+        Lucas 定理
       </a>
     </li>
   
@@ -2929,6 +2945,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -3021,6 +3039,20 @@
     <li class="md-nav__item">
       <a href="../ds-advance-practice/" class="md-nav__link">
         Vjudge 高级数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree-divide-practice/" class="md-nav__link">
+        Vjudge 点分治小专题
       </a>
     </li>
   
@@ -3226,6 +3258,10 @@
         
           
             
+          
+        
+          
+        
           
         
           
@@ -3561,13 +3597,41 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../sol/mock/230311C/" class="md-nav__link">
+        🔒20230311C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/230322C/" class="md-nav__link">
+        🔒20230322C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_21" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_23" >
       
       
         
@@ -3577,13 +3641,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_2_21" id="__nav_5_2_21_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_2_23" id="__nav_5_2_23_label" tabindex="0">
           赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_21_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_2_21">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_23_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2_23">
           <span class="md-nav__icon md-icon"></span>
           赛后总结
         </label>
@@ -4911,9 +4975,11 @@
   <h1>2023年1,2月AT&CF</h1>
 
 <p>开了一个<a href="https://www.kdocs.cn/l/cgxewZTrxqAe">表格</a>用来记录近期的做题情况，这段时间的中心就差不多是 ABC DEF 了，练到能赛时做出来就可以进下一阶段了。</p>
+<p>题目翻译大部分来自洛谷。</p>
 <h3 id="abc284d-happy-new-year-2023">ABC284D - Happy New Year 2023<a class="headerlink" href="#abc284d-happy-new-year-2023" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>给定一个正整数 <span class="arithmatex">\(N\le 9\times 10^{18}\)</span>，保证 <span class="arithmatex">\(N=p^2q\)</span> 且 <span class="arithmatex">\(p,q\)</span> 均为质数，请求出 <span class="arithmatex">\(p,q\)</span>。</p>
+<p>翻译 by @Mars_Dingdang</p>
 </blockquote>
 <p><span class="arithmatex">\(O(n^{\frac{1}{3}})\)</span> 做法还不会，之后补。</p>
 <p>我是 <span class="arithmatex">\(O(n^{\frac{1}{4}})\)</span> 的 Pr 做法。</p>
@@ -5179,7 +5245,15 @@
 </details>
 <h3 id="abc284f-abcbac">ABC284F - ABCBAC<a class="headerlink" href="#abc284f-abcbac" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>对于一个长度为 <span class="arithmatex">\(N\)</span> 的字符串 <span class="arithmatex">\(S\)</span> 和一个整数 <span class="arithmatex">\(i\in [0,N]\)</span>，定义 <span class="arithmatex">\(f_i(S)\)</span> 所得的字符串为以下三者顺次连接：</p>
+<ul>
+<li><span class="arithmatex">\(S\)</span> 的前 <span class="arithmatex">\(i\)</span> 个字符；</li>
+<li>将 <span class="arithmatex">\(S\)</span> 翻转得到的字符串；</li>
+<li><span class="arithmatex">\(S\)</span> 的后 <span class="arithmatex">\(N-i\)</span> 个字符。</li>
+</ul>
+<p>例如，对于 <span class="arithmatex">\(S=\texttt{abc}\)</span>，<span class="arithmatex">\(i=2\)</span> 有 <span class="arithmatex">\(f_i(S)=\texttt{abcbac}\)</span>。</p>
+<p>现在有一个长度为 <span class="arithmatex">\(2N\)</span> 的字符串 <span class="arithmatex">\(T\)</span>，你需要求出任意一对 <span class="arithmatex">\((S,i)\)</span> 满足 <span class="arithmatex">\(f_i(S)=T\)</span>。如果不存在，输出 <span class="arithmatex">\(-1\)</span>。</p>
+<p>翻译 by @Mars_Dingdang</p>
 </blockquote>
 <p>注意到 <span class="arithmatex">\(1\le N \le 10^6\)</span>，不难想到 <span class="arithmatex">\(O(N)\)</span> 做。</p>
 <p>然后我们要检查，做一些匹配之类的，所以估计是字符串哈希。</p>
@@ -5187,7 +5261,9 @@
 <p>纯傻逼，卡我自然溢出，写了一个双哈希才过。</p>
 <h3 id="cf1783c-yet-another-tournament">CF1783C - Yet Another Tournament<a class="headerlink" href="#cf1783c-yet-another-tournament" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>有 <span class="arithmatex">\(n\)</span> 个选手，编号为 <span class="arithmatex">\(1\)</span> 至 <span class="arithmatex">\(n\)</span> ，每两个选手对战时，编号大的将会胜利。</p>
+<p>你可以准备 <span class="arithmatex">\(m\)</span> 单位时间，每准备 <span class="arithmatex">\(a_i\)</span> 时间就可以赢 <span class="arithmatex">\(i\)</span> 号选手。</p>
+<p>按胜利的总次数排名，求你最高多少名。</p>
 </blockquote>
 <p>注意到一个比较关键的点是，如果能打赢的人相同的情况下，最优的决策一定是尽量打爆 rk 高的人。</p>
 <p>所以先排序直接暴力取，然后从后面不断贪心的拿一个，退掉一个已经选了的即可。</p>
@@ -5391,7 +5467,17 @@
 </details>
 <h3 id="cf1783e-game-of-the-year">CF1783E - Game of the Year<a class="headerlink" href="#cf1783e-game-of-the-year" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>Monocarp 和 Polycarp 正在玩电脑游戏。游戏特点：$ n $ 个编号从 $ 1 $ 到 $ n $ 的BOSS。</p>
+<p>他俩将用以下方式与BOSS战斗</p>
+<ul>
+<li>Monocarp 进行 <span class="arithmatex">\(k\)</span> 次尝试撒掉boss;</li>
+<li>Polycarp 进行 <span class="arithmatex">\(k\)</span> 次尝试撒掉boss;</li>
+<li>Monocarp 进行 <span class="arithmatex">\(k\)</span> 次尝试撒掉boss;</li>
+<li>Polycarp 进行 <span class="arithmatex">\(k\)</span> 次尝试撒掉boss;</li>
+<li>...</li>
+</ul>
+<p>Monocarp 在第 <span class="arithmatex">\(a_i\)</span> 次尝试中撒掉了第 <span class="arithmatex">\(i\)</span> 只BOSS。Polycarp 在第 <span class="arithmatex">\(b_i\)</span> 次尝试中撒掉了第 <span class="arithmatex">\(i\)</span> 只BOSS。其中一个人撒掉第 <span class="arithmatex">\(i\)</span> 只BOSS后，他们就会尝试撒第 <span class="arithmatex">\((i+1)\)</span> 只BOSS。并且他们的尝试计数器都会清空。撒掉第 <span class="arithmatex">\(n\)</span> 只BOSS后，游戏结束。</p>
+<p>找到从 <span class="arithmatex">\(1\)</span> 到 $ n $所有的 <span class="arithmatex">\(k\)</span> 值， 使得 Monocarp 可以杀死所有的BOSS。</p>
 </blockquote>
 <p>分析一下，要让 Monocarp 把每一个都优先打掉，就要保证 <span class="arithmatex">\(\lceil \dfrac{a_i}{k}\rceil \le \lceil\dfrac{b_i}{k}\rceil\)</span>。</p>
 <p>直接暴力求复杂度 <span class="arithmatex">\(O(n^2)\)</span>，快上天了，肯定要考虑 <span class="arithmatex">\(O(1) \sim O(\log n)\)</span> 的单次操作。</p>
@@ -5541,7 +5627,9 @@
 </details>
 <h3 id="abc284e-count-simple-paths">ABC284E - Count Simple Paths<a class="headerlink" href="#abc284e-count-simple-paths" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>给定一张 <span class="arithmatex">\(N\)</span> 个节点 <span class="arithmatex">\(M\)</span> 条边的无向图，保证每个节点的度数 <span class="arithmatex">\(\le 10\)</span>。</p>
+<p>记从任意节点回到 <span class="arithmatex">\(1\)</span> 号点的不同路径总数为 <span class="arithmatex">\(K\)</span>，请输出 <span class="arithmatex">\(\min(K,10^6)\)</span>。</p>
+<p>翻译 by @Mars_Dingdang</p>
 </blockquote>
 <p>感觉没什么好说的，就是简单的 dfs。</p>
 <p>但是我居然连把 vis 放到 dfs 外面用来回溯都忘记了？</p>
@@ -5656,24 +5744,43 @@
 <h3 id="cf1775c-interesting-sequence">CF1775C - Interesting Sequence<a class="headerlink" href="#cf1775c-interesting-sequence" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>因为比较懒所以这几个题就是口胡题解，代码也懒得放了。</p>
 <blockquote>
-<p>题面暂略。</p>
+<p>给两个数，<span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(x\)</span>，问是否存在 <span class="arithmatex">\(m\)</span>，使得 <span class="arithmatex">\(n \&amp; n+1 \&amp; …… \&amp; m = x\)</span>，如果存在求出最小的 <span class="arithmatex">\(m\)</span>，否则输出 <span class="arithmatex">\(-1\)</span>。</p>
 </blockquote>
 <p>考虑二进制下贪心即可，注意处理进位和无解。</p>
 <h3 id="cf1775d-friendly-spiders">CF1775D - Friendly Spiders<a class="headerlink" href="#cf1775d-friendly-spiders" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>火星上有一种神秘的电子蜘蛛。</p>
+<p>为了研究这种蜘蛛，科学家找来了其中的 <span class="arithmatex">\(n\)</span> 个，每个蜘蛛有不同的腿数，用数组 <span class="arithmatex">\(a\)</span> 表示。科学家们发现，有的蜘蛛互相是朋友，如果第 <span class="arithmatex">\(i\)</span> 个蜘蛛和第 <span class="arithmatex">\(j\)</span> 个蜘蛛是朋友的话，那么要满足 <span class="arithmatex">\(\operatorname{gcd}(a_{i},a_{j})≠1\)</span>，其中 <span class="arithmatex">\(\operatorname{gcd}(x,y)\)</span> 函数表示求 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的最大公约数。</p>
+<p>科学家发现蜘蛛可以互相发送信息。如果两只蜘蛛是朋友，那么它们可以用一秒钟直接发送消息。否则，蜘蛛必须将消息传递给他的朋友，而朋友又必须将消息传递给他的朋友，依此类推，直到消息到达收件人。</p>
+<p>假设有一只八条腿的蜘蛛向一只 <span class="arithmatex">\(15\)</span> 条腿的蜘蛛传递消息，但是由于 <span class="arithmatex">\(\operatorname{gcd}(8,15)=1\)</span> 所以他不能直接发送，但它可以通过六条腿的蜘蛛发送消息，因为 <span class="arithmatex">\(\operatorname{gcd}(8,6)=2\)</span> 并且 <span class="arithmatex">\(\operatorname{gcd}(6,15)=3\)</span> 所以消息将会在两秒钟到达。</p>
+<p>科学家们希望找到第 <span class="arithmatex">\(s\)</span> 个蜘蛛向第 <span class="arithmatex">\(t\)</span> 个蜘蛛发送消息的最短时间，以及最短路线。</p>
 </blockquote>
 <p>考虑优化建图，只需要先筛出所有质数，将其的倍数全部连边。</p>
 <p>相当于找公共质因子时为了方便反着算这样子，然后随便跑一跑最短路就行。</p>
 <h3 id="cf1775e-the-human-equation">CF1775E - The Human Equation<a class="headerlink" href="#cf1775e-the-human-equation" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。 </p>
+<p>给定 <span class="arithmatex">\(n\)</span> 个数 <span class="arithmatex">\(a_1...a_n\)</span>，随后你可以进行若干次操作，每次操作步骤如下：</p>
+<ul>
+<li>
+<p>选出 <span class="arithmatex">\(a\)</span> 中一个子序列（可以不连续）。 </p>
+</li>
+<li>
+<p>把子序列中的奇数项减一，偶数项加一；或者奇数项加一，偶数项减一。</p>
+</li>
+</ul>
+<p>求把 <span class="arithmatex">\(n\)</span> 个数全部变成 <span class="arithmatex">\(0\)</span> 的最少操作次数。</p>
+<p><span class="arithmatex">\(1\le n\le2\times10^5,-10^9\le a_i\le10^9\)</span>，多组数据。</p>
 </blockquote>
 <p>考虑贪心的取，希望每次能让负数加，正数减，且减到 0 就不动。</p>
 <p>考虑后减完的操作次数即可，因为只能一个一个操作，所以答案是前缀和的极差。</p>
 <h3 id="cf1778a-flip-flop-sum">CF1778A - Flip Flop Sum<a class="headerlink" href="#cf1778a-flip-flop-sum" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面等洛谷有翻译了我再去 copy，我是懒人。</p>
+<p>给定一个长度为 <span class="arithmatex">\(n\)</span> 的只含有 <span class="arithmatex">\(1\)</span> 或 <span class="arithmatex">\(-1\)</span> 的数组 <span class="arithmatex">\(a\)</span>，对其进行如下的操作：</p>
+<ul>
+<li>选定一个 <span class="arithmatex">\(i\)</span>，满足 <span class="arithmatex">\(1\le i&lt;n\)</span>，将 <span class="arithmatex">\(a_i\)</span> 修改为 <span class="arithmatex">\(-a_i\)</span>，将 <span class="arithmatex">\(a_{i+1}\)</span> 修改为 <span class="arithmatex">\(-a_{i+1}\)</span>。</li>
+</ul>
+<p>求出一次操作之后 <span class="arithmatex">\(\sum\limits_{i=1}^n a_i\)</span> 的最大值。</p>
+<p>by @zfx1569_HCl_2023</p>
 </blockquote>
 <p>策略是显然的，枚举每一个位置计算答案即可</p>
 <details class="note">
@@ -5771,7 +5878,10 @@
 </details>
 <h3 id="cf1778b-the-forbidden-permutation">CF1778B - The Forbidden Permutation<a class="headerlink" href="#cf1778b-the-forbidden-permutation" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面等洛谷有翻译了我再去 copy，我是懒人。</p>
+<p>给定 <span class="arithmatex">\(3\)</span> 个整数 <span class="arithmatex">\(n,m,d\)</span>、一个 <span class="arithmatex">\(n\)</span> 的排列 <span class="arithmatex">\(p\)</span> 和一个长度为 <span class="arithmatex">\(m\)</span> 的数组 <span class="arithmatex">\(a\)</span>，定义 <span class="arithmatex">\(\mathrm{pos}(x)\)</span> 为 <span class="arithmatex">\(p\)</span> 中 <span class="arithmatex">\(x\)</span> 的下标。</p>
+<p>数组 <span class="arithmatex">\(a\)</span> 是不好的，当且仅当对于所有 <span class="arithmatex">\(1\le i&lt;m\)</span>，有 <span class="arithmatex">\(\mathrm{pos}(a_i)&lt;\mathrm{pos}(a_{i+1})\le\mathrm{pos}(a_i)+d\)</span>。</p>
+<p>每一次操作，你可以选择 <span class="arithmatex">\(p\)</span> 中的两个相邻数字并把它们交换，求最小的操作次数，使得 <span class="arithmatex">\(a\)</span> 变为好的。</p>
+<p>by @zfx1569_HCl_2023</p>
 </blockquote>
 <p>读题要仔细一点，not good 的条件是对于所有 <span class="arithmatex">\(i\)</span> 都有题面中的条件成立。</p>
 <p>所以枚举每一个位置更新答案即可。</p>
@@ -5876,7 +5986,9 @@
 </details>
 <h3 id="cf1778c-flexible-string">CF1778C - Flexible String<a class="headerlink" href="#cf1778c-flexible-string" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面等洛谷有翻译了我再去 copy，我是懒人。</p>
+<p>对于长度为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(a\)</span>,<span class="arithmatex">\(b\)</span> 两个字符串，<span class="arithmatex">\(a\)</span> 初始最多含有 <span class="arithmatex">\(10\)</span> 个不同字母。你可以选择至多 <span class="arithmatex">\(k\)</span> 个不同字母，将 <span class="arithmatex">\(a\)</span> 中的这些字母替换为任意字母。</p>
+<p>你需要求出经过上述操作后，<span class="arithmatex">\(a,b\)</span> 相同位置且相同字母的子串尽可能多。 </p>
+<p>数据范围：<span class="arithmatex">\(1 \le t \le 10^4,1 \le n \le 10^5,0 \le k \le 10\)</span>。</p>
 </blockquote>
 <p>注意到给定的 <span class="arithmatex">\(a\)</span> 的 <span class="arithmatex">\(|\Sigma| \le 10\)</span>，所以可以暴力枚举每一种字符选不选的情况。</p>
 <p>然后暴力 check 就可以了。</p>
@@ -6029,7 +6141,9 @@
 </details>
 <h3 id="cf1778d-flexible-string-revisit">CF1778D - Flexible String Revisit<a class="headerlink" href="#cf1778d-flexible-string-revisit" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面等洛谷有翻译了我再去 copy，我是懒人。</p>
+<p>给出两个长度均为 <span class="arithmatex">\(n(n\leq 10^6)\)</span> 的 01 串 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(T\)</span></p>
+<p>每次随机将 <span class="arithmatex">\(S\)</span> 中的某一位取反</p>
+<p>问：第一次 <span class="arithmatex">\(S = T\)</span> 时操作次数的期望</p>
 </blockquote>
 <p>一个很经典的期望 dp 套路，是一种比较好玩的处理后效性的套路。</p>
 <p>考虑设 <span class="arithmatex">\(dp(i)\)</span> 表示由 <span class="arithmatex">\(i\)</span> 个位置不同变到 <span class="arithmatex">\(i - 1\)</span> 的期望代价，也就是直接只算每一步，最后算答案直接 <span class="arithmatex">\(\sum\limits_{i = 1}^k dp(i)\)</span> 即可。</p>
@@ -6305,7 +6419,11 @@
 </details>
 <h3 id="abc288d-range-add-query">ABC288D Range Add Query<a class="headerlink" href="#abc288d-range-add-query" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>给定一个长为 <span class="arithmatex">\(N\)</span> 的序列，常数 <span class="arithmatex">\(k\)</span>， <span class="arithmatex">\(M\)</span> 次询问，判断 <span class="arithmatex">\([l, r]\)</span> 内的子序列是否为 good 的。  </p>
+<p>一个序列被认为是 good 的，当且仅当用以下操作可以使 该序列的所有元素值都变为 <span class="arithmatex">\(0\)</span></p>
+<p>选定两个整数 <span class="arithmatex">\(c\)</span> , <span class="arithmatex">\(i\)</span> ，使区间 <span class="arithmatex">\([i, i + k - 1]\)</span> 内的元素同时减去 $c $ </p>
+<p>对于每次询问，输出 <span class="arithmatex">\(\texttt{Yes}\)</span> 或者 <span class="arithmatex">\(\texttt{No}\)</span></p>
+<p><span class="arithmatex">\(N, Q \le 2e5\)</span></p>
 </blockquote>
 <p>发现这个题是对区间进行操作。</p>
 <p>我们尝试观察答案的形式，就是几个长度相等的区间覆盖了一下。</p>
@@ -6417,7 +6535,13 @@
 <p>这题关键点之一恰好就有在差分意义上，操作长成什么样。</p>
 <h3 id="abc288e-wish-list">ABC288E Wish List<a class="headerlink" href="#abc288e-wish-list" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>商店里有 <span class="arithmatex">\(N\)</span> 件商品，标号 <span class="arithmatex">\(1\sim N\)</span>，第 <span class="arithmatex">\(i\)</span> 件商品有<strong>底价</strong> <span class="arithmatex">\(A_i\)</span> 且只有一件。</p>
+<p>Takahashi 想要买其中的 <span class="arithmatex">\(M\)</span> 件商品，分别是标号 <span class="arithmatex">\(X_1,X_2,\ldots,X_M\)</span> 的商品。</p>
+<p>他会按照以下的方式买东西：</p>
+<p>若还剩 <span class="arithmatex">\(r\)</span> 件商品没有购买过，选择一个符合 <span class="arithmatex">\(1\le j\le r\)</span> 的 <span class="arithmatex">\(j\)</span>，付这件商品的底价加上 <span class="arithmatex">\(C_j\)</span> 的钱购买其中标号第 <span class="arithmatex">\(j\)</span> 小的商品。</p>
+<p>求出买到他想要的商品所付的最小价钱。</p>
+<p>注意他也可以买不想要的商品。</p>
+<p><span class="arithmatex">\(1\le M\le N\le 5000\)</span>，值域 <span class="arithmatex">\(1e9\)</span>.</p>
 </blockquote>
 <p>看数据范围猜测应该是一个 <span class="arithmatex">\(O(n^2)\)</span> 的 dp 或者贪，可能就是要对每个位置枚举一下。</p>
 <p>先抽象一下问题，本质上就是让你选出一个给定集合的超集，使得选出这个超集的代价最小。</p>
@@ -6558,7 +6682,8 @@
 <p>因为卡死之后并没有回退考虑这个状态哪里出了问题，需求是什么，怎么解决。</p>
 <h3 id="abc288f-integer-division">ABC288F Integer Division<a class="headerlink" href="#abc288f-integer-division" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>给定一个 <span class="arithmatex">\(n\)</span> 位数 <span class="arithmatex">\(X\)</span>，把 <span class="arithmatex">\(X\)</span> 分成若干段，得分为每一段的乘积（可以不分割，得分为 <span class="arithmatex">\(X\)</span>）。求所有分法得分之和，模 <span class="arithmatex">\(998244353\)</span>。</p>
+<p>Translate by <a href="https://www.luogu.com.cn/user/555345">xionglangqi</a></p>
 </blockquote>
 <p>注意到这个题是对于所有可能的分割求代价之和。</p>
 <p>套路地，我们不考虑暴力算 <span class="arithmatex">\(f\)</span>，而是考虑怎么确定贡献。</p>
@@ -6663,7 +6788,7 @@
 <p>简单垃圾题，不说了。</p>
 <h3 id="abc289e-swap-places">ABC289E Swap Places<a class="headerlink" href="#abc289e-swap-places" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>给定一个 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向图，点有点权，值可以为 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>。两个人分别在点 <span class="arithmatex">\(1\)</span> 和 <span class="arithmatex">\(n\)</span>，每次他们同时向自己这个结点的任意一个邻居移动，任意时刻，他们所在的结点的权值不得相同。最后要使得他们互相交换位置。输出最小次数或输出无解。<span class="arithmatex">\(n,m\le2\times10^3\)</span>。</p>
 </blockquote>
 <p>也没啥好说的，其实就是因为，直接找不好做，我们对每个节点设一个状态装一下限制，另外一个限制在转移的时候表达就行。</p>
 <p>转移可以利用 bfs 做。</p>
@@ -6820,7 +6945,9 @@
 <p>这题想的时候纯属智障了，简单 dp 模型不会。</p>
 <h3 id="abc289f-teleporter-takahashi">ABC289F Teleporter Takahashi<a class="headerlink" href="#abc289f-teleporter-takahashi" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>在坐标系中有一个起始点 <span class="arithmatex">\((s_x,s_y)\)</span> 和一个矩形 <span class="arithmatex">\(\{(x,y)|a-0.5\le x\le b+0.5,c-0.5\le x\le d+0.5\}\)</span>，每次操作可以选中一个矩形内的整点并把当前点移到与该点对称的位置，问能否在 <span class="arithmatex">\(10^6\)</span> 次操作以内到达目标点 <span class="arithmatex">\((t_x,t_y)\)</span></p>
+<p>如能请输出<code>Yes</code>并给出任意一个方案，如不能输出<code>No</code> </p>
+<p>给出的所有横纵坐标都是 <span class="arithmatex">\(\le 2\times10^5\)</span> 的非负整数</p>
 </blockquote>
 <p>可以手搓样例观察到一个小小的性质。</p>
 <p>就是我们可以利用一段区间 <span class="arithmatex">\([a,b]\)</span>，直接选 <span class="arithmatex">\((a, y), (a + 1, y)\)</span> 两次，就能让它在一个方向上前进 <span class="arithmatex">\(2\)</span> 个单位。</p>
@@ -6929,7 +7056,15 @@
 <p>这个就是构造题里一个很重要的思想，考察极端边界情况，在限制次数内一点一点凑出答案。</p>
 <h3 id="abc290d-marking">ABC290D Marking<a class="headerlink" href="#abc290d-marking" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>有 <span class="arithmatex">\(n\)</span> 个排成一个环的格子，编号为 <span class="arithmatex">\(0\sim n-1\)</span>。现在进行如下操作：</p>
+<ul>
+<li>选择 <span class="arithmatex">\(0\)</span> 号格子，将其打上标记。</li>
+<li>选择 <strong><span class="arithmatex">\(d\)</span> 个格子后的第一个尚未被标记的格子</strong>，将其打上标记。</li>
+<li>重复执行直到所有格子都被打上标记。</li>
+</ul>
+<p>你需要输出第 <span class="arithmatex">\(k\)</span> 次标记的格子的编号。</p>
+<p>共 <span class="arithmatex">\(T\)</span> 组数据。<span class="arithmatex">\(1\le T\le 10^5\)</span>，<span class="arithmatex">\(1\le k\le n\le10^9\)</span>，<span class="arithmatex">\(1\le d\le 10^9\)</span>。</p>
+<p>—— by Register_int</p>
 </blockquote>
 <p>可以注意到一个事情是，这里就是类似哈希表的一个过程。</p>
 <p>不难想到，我们会把原来的方块按位置分成多个同余类，且他们构成完全剩余系。</p>
@@ -7043,7 +7178,10 @@
 <p>考虑的时候只考虑了分段的拆分做法，没想到怎么直接找到一个式子代替问题。</p>
 <h3 id="abc290e-make-it-palindrome">ABC290E Make it Palindrome<a class="headerlink" href="#abc290e-make-it-palindrome" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>定义一个序列 <span class="arithmatex">\(X\)</span> 的贡献 <span class="arithmatex">\(f(X)\)</span> 为，修改 <span class="arithmatex">\(X\)</span> 中的一些位置，使得 <span class="arithmatex">\(X\)</span> 变为回文的最小修改次数。</p>
+<p>对给定的，长度为 <span class="arithmatex">\(N\)</span> 的序列 <span class="arithmatex">\(A\)</span>，求 <span class="arithmatex">\(A\)</span> 的所有子串的贡献之和。</p>
+<p><span class="arithmatex">\(1\le N \le 2 \times 10^5, 1\le A_i \le N\)</span>。</p>
+<p>Translate by black_trees.</p>
 </blockquote>
 <p>这类问题还是那么的套路。</p>
 <p>我们考虑什么东西会做出贡献，其实就是一个点对 <span class="arithmatex">\((i, j),a_i \not= a_j\)</span>。</p>
@@ -7155,7 +7293,13 @@
 </details>
 <h3 id="abc290f-maximum-diameter">ABC290F Maximum Diameter<a class="headerlink" href="#abc290f-maximum-diameter" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
-<p>题面暂略。</p>
+<p>对于一个长度为 <span class="arithmatex">\(n\)</span> 的正整数序列 <span class="arithmatex">\(X=(X_1,X_2,\cdots,X_n)\)</span>，定义 <span class="arithmatex">\(f(X)\)</span> 为：</p>
+<ul>
+<li>对于所有节点数量为 <span class="arithmatex">\(n\)</span>，且点 <span class="arithmatex">\(i\)</span> 的度数恰好为 <span class="arithmatex">\(X_i\)</span> 的树，其直径的最大值。如不存在，则值为 <span class="arithmatex">\(0\)</span>。</li>
+</ul>
+<p>你需要对于所有长度为 <span class="arithmatex">\(n\)</span> 的正整数序列 <span class="arithmatex">\(X\)</span> 计算 <span class="arithmatex">\(f(X)\)</span> 的和，可以证明其为有限值。答案对 <span class="arithmatex">\(998244353\)</span> 取模。</p>
+<p><span class="arithmatex">\(T\)</span> 组数据。<span class="arithmatex">\(1\le T\le2\times10^5\)</span>，<span class="arithmatex">\(2\le n\le10^6\)</span>。</p>
+<p>—— by Register_int</p>
 </blockquote>
 <p>我们拿到这题，仍旧是套路的考虑算贡献。</p>
 <p>但是注意到这个 <span class="arithmatex">\(f(X)\)</span> 的定义是，对于所有 <span class="arithmatex">\(X\)</span> 能构造出的树里，最大的直径，相当于有两个 max 套在一起，直接求和换方式算贡献不好处理。</p>
@@ -7501,7 +7645,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 21, 2023</span>
       
     
   </small>
@@ -7724,7 +7868,7 @@ gitalk.render('gitalk-container')
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

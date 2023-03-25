@@ -19,7 +19,7 @@
         <link rel="next" href="../../ds/easy/stack/">
       
       <link rel="icon" href="../../../img/logo.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.240905d7.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -2056,6 +2056,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
@@ -2134,6 +2136,20 @@
     <li class="md-nav__item">
       <a href="../../math/combinatorics/catalan/" class="md-nav__link">
         卡特兰数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/combinatorics/lucas/" class="md-nav__link">
+        Lucas 定理
       </a>
     </li>
   
@@ -2816,6 +2832,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -2908,6 +2926,20 @@
     <li class="md-nav__item">
       <a href="../../../rec/ds-advance-practice/" class="md-nav__link">
         Vjudge 高级数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rec/tree-divide-practice/" class="md-nav__link">
+        Vjudge 点分治小专题
       </a>
     </li>
   
@@ -3113,6 +3145,10 @@
         
           
             
+          
+        
+          
+        
           
         
           
@@ -3448,13 +3484,41 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/230311C/" class="md-nav__link">
+        🔒20230311C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/230322C/" class="md-nav__link">
+        🔒20230322C组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_21" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_23" >
       
       
         
@@ -3464,13 +3528,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_2_21" id="__nav_5_2_21_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_5_2_23" id="__nav_5_2_23_label" tabindex="0">
           赛后总结
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_21_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5_2_21">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_23_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2_23">
           <span class="md-nav__icon md-icon"></span>
           赛后总结
         </label>
@@ -4814,7 +4878,7 @@
 </blockquote>
 <p>做法是显然的，我们考虑怎么处理前面提到的“第一种情况”的贡献。</p>
 <p>我们记 <span class="arithmatex">\(tf(len) = \texttt{true/false}\)</span> 表示，在以当前节点 <span class="arithmatex">\(u\)</span> 为子树根的情况下，是否存在一条经过 <span class="arithmatex">\(u\)</span> 且长度为 <span class="arithmatex">\(len\)</span> 的路径。</p>
-<p>更新时枚举子树，以 <span class="arithmatex">\(u\)</span> 为根计算一下 dist，然后暴力枚举所有可能的 dist，对于一个 <span class="arithmatex">\(d\)</span>，我们判断是否存在 <span class="arithmatex">\(tr(k - d) = \texttt{true}\)</span> 即可。</p>
+<p>更新时枚举子树，以 <span class="arithmatex">\(u\)</span> 为根计算一下子树节点到 <span class="arithmatex">\(u\)</span> 的距离 <span class="arithmatex">\(dis\)</span>，然后暴力枚举所有可能的 <span class="arithmatex">\(dis\)</span>，对于一个 <span class="arithmatex">\(d\)</span>，我们判断是否存在 <span class="arithmatex">\(tr(k - d) = \texttt{true}\)</span> 即可。</p>
 <p>之后清空 <span class="arithmatex">\(tf\)</span>，先计算一下当前要递归的子树的重心 <span class="arithmatex">\(G_v\)</span>，然后以 <span class="arithmatex">\(G_v\)</span> 为根继续计算答案即可。</p>
 <p>注意清空 <span class="arithmatex">\(tf\)</span> 的时候为了保证复杂度，要标记一下哪些位置被更改了，实现可以用队列。</p>
 <details class="note">
@@ -4922,7 +4986,9 @@
 <span class="normal">101</span>
 <span class="normal">102</span>
 <span class="normal">103</span>
-<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// author : black_trees</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// author : black_trees</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;queue&gt;</span>
@@ -4947,10 +5013,12 @@
 
 <span class="n">std</span><span class="o">::</span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rec</span><span class="p">;</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">tf</span><span class="p">[</span><span class="mi">10000010</span><span class="p">],</span><span class="w"> </span><span class="n">can</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">vis</span><span class="p">[</span><span class="n">si</span><span class="p">];</span>
+<span class="c1">// tf: 当前子树的可行性。</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">maxv</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">rt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">siz</span><span class="p">[</span><span class="n">si</span><span class="p">];</span>
+<span class="c1">// d: 当前子树的 节点-根 距离。</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">calcsiz</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fa</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">siz</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">maxv</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span><span class="w"> </span><span class="o">~</span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4980,7 +5048,7 @@
 <span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="w"> </span><span class="n">can</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">tf</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]];</span>
 <span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="c1">// 先判断再添加，不然一定为 true。</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="c1">// 先判断再添加，不然算的不是除了自己子树的情况，这样会多算。</span>
 <span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000010</span><span class="p">)</span><span class="w"> </span><span class="n">rec</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]),</span><span class="w"> </span><span class="n">tf</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
@@ -5274,7 +5342,7 @@
 </code></pre></div></td></tr></table></div>
 </details>
 <h3 id="_4">习题<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>见 <a href="404.html">Vjudge 点分治专题</a>。</p>
+<p>见 <a href="../../../rec/tree-divide-practice/">Vjudge 点分治专题</a>。</p>
 <h2 id="_5">点分树<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <blockquote>
 <p>咕。</p>
@@ -5285,7 +5353,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 21, 2023</span>
       
     
   </small>
@@ -5508,7 +5576,7 @@ gitalk.render('gitalk-container')
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
