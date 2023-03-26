@@ -19,7 +19,7 @@
         <link rel="next" href="../../../graph/basic/list-forward-star/">
       
       <link rel="icon" href="../../../../img/logo.jpg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.240905d7.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -962,7 +962,7 @@
         
           <li class="md-nav__item">
   <a href="#v-cdq" class="md-nav__link">
-    V. 平衡树/CDQ 分治
+    V. 平衡树/CDQ 分治/李超树
   </a>
   
 </li>
@@ -2351,6 +2351,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_8_1" id="__nav_3_8_1_label" tabindex="0">
@@ -2373,6 +2375,20 @@
     <li class="md-nav__item">
       <a href="../../../misc/mo/" class="md-nav__link">
         普通莫队
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/cdq/" class="md-nav__link">
+        CDQ 分治
       </a>
     </li>
   
@@ -4320,6 +4336,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_6_1" id="__nav_6_6_1_label" tabindex="0">
@@ -4664,6 +4682,20 @@
     <li class="md-nav__item">
       <a href="../../../../misc/flower/ghost/" class="md-nav__link">
         🔒03.13.23 - Ghost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../misc/flower/tao/" class="md-nav__link">
+        🔒03.26.23 - Tao
       </a>
     </li>
   
@@ -5116,7 +5148,7 @@
 <p><span class="arithmatex">\(dp(i) = dp(j) + sc(n) \times s - sc(j) \times s + sc(i) \times st(i) - sc(j) \times st(i)\)</span></p>
 <p>写成一次函数 <span class="arithmatex">\(b = -kx + y\)</span>的形式：</p>
 <p><span class="arithmatex">\(dp(i) - sc(i) \times st(i) - sc(n) \times s = -(st(i) + s) \times sc(j) + dp(j)\)</span></p>
-<p>所以 <span class="arithmatex">\((x, y)\)</span> 这些点就是 <span class="arithmatex">\((sc(j), dp(j))\)</span> 的形式，我们现在需要让 <span class="arithmatex">\(dp(i)\)</span> 尽可能的小，就是让以 <span class="arithmatex">\(-(st(i) + s)\)</span> 为斜率的直线经过一个最优的 <span class="arithmatex">\((sc(j), dp(j))\)</span>。</p>
+<p>所以 <span class="arithmatex">\((x, y)\)</span> 这些点就是 <span class="arithmatex">\((sc(j), dp(j))\)</span> 的形式，我们现在需要让 <span class="arithmatex">\(dp(i)\)</span> 尽可能的小，就是让以 <span class="arithmatex">\((st(i) + s)\)</span> 为斜率的直线经过一个最优的 <span class="arithmatex">\((sc(j), dp(j))\)</span>。</p>
 <p>因为下标限制是 <span class="arithmatex">\(j \in [0, i)\)</span>，<span class="arithmatex">\(k_i\)</span> 随 <span class="arithmatex">\(i\)</span> <strong>单调递增，且只需要在末尾插入决策</strong>，所以一个一个决策完插入单调队列就好了。</p>
 <details class="note">
 <summary>Code</summary>
@@ -5387,10 +5419,161 @@
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="v-cdq">V. 平衡树/CDQ 分治<a class="headerlink" href="#v-cdq" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h3 id="v-cdq">V. 平衡树/CDQ 分治/李超树<a class="headerlink" href="#v-cdq" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>注意到 <span class="arithmatex">\(\exists i, sc(i) &lt; 0\)</span>，也就是说 <span class="arithmatex">\(sc(i)\)</span> 也不是单调递增的了，我们可能在任意的位置插入决策点。</p>
 <p>下标限制还是可以一个一个插入来满足，那么有一个不动脑子的做法，直接用平衡树维护凸壳，二分转化为在平衡树上二分。</p>
-<p>还有一种聪明一点的做法是使用 CDQ 分治，暂时咕咕咕一下，等我学完 CDQ 再来写。</p>
+<p>还有一种聪明一点的做法是使用 CDQ 分治。</p>
+<p>就是说，CDQ 分治的一个重要应用就是，把一个动态问题转化为静态问题，我们可以利用这个思想，将需要动态插入的凸壳转化为静态的凸壳。</p>
+<p>具体来说，设 <span class="arithmatex">\(\text{Solve}(l, r)\)</span> 表示计算 <span class="arithmatex">\([l, r]\)</span> 的 <span class="arithmatex">\(dp(i)\)</span>，分三步：</p>
+<ol>
+<li>递归计算 <span class="arithmatex">\(\text{Solve}(l, mid)\)</span>。</li>
+<li>此时 <span class="arithmatex">\(dp(l \sim mid)\)</span> 已经计算出来，我们考虑维护 <span class="arithmatex">\([l, mid]\)</span> 这一段的所有决策点构成的凸壳，这个可以使用单调队列，然后我们对于 <span class="arithmatex">\(dp(mid + 1\sim r)\)</span>，考虑从这个凸壳上更新答案，这部分可以二分（因为斜率不是单调的嘛）。</li>
+<li>递归计算 <span class="arithmatex">\(\text{Solve}(mid + 1, r)\)</span>，我们这里使用的是“中序遍历”，所以 dp 转移的正确性是有保证的，而 <span class="arithmatex">\(dp(mid + 1, r)\)</span> 显然不可能只在 <span class="arithmatex">\([l, mid]\)</span> 上取到最优，这个递归计算的过程就可以直接算出 <span class="arithmatex">\(dp(mid + 1, r)\)</span>。</li>
+</ol>
+<p>如果有删除操作，或者说对于一个 <span class="arithmatex">\(i\)</span>，它的 <span class="arithmatex">\(L(i), R(i)\)</span> 变化很不均匀，我们仍旧可以使用 CDQ 分治，每次在凸壳上二分的时候就直接取满足 <span class="arithmatex">\([u, v] \in [L(i), R(i)]\)</span> 的一段来二分就行了。</p>
+<p>如果出题人比较*，给你来一个中间扣掉一个的删除，就比较恶俗，好像可以转化成 CDQ 里面的 修改-询问关系？是不是还可以线段树分治 + 李超树？不过这样子的话，平衡树维护就是最简单的了，这里用 Leafy Tree 可能会比较简单。</p>
+<p>李超树的话，因为不支持删除所以有一定的局限性，所以大部分时候我们还是使用 CDQ 分治，不过这题因为 <span class="arithmatex">\(L(i), R(i)\)</span> 的限制比较 trivial 所以李超树也是可以做的。</p>
+<details class="note">
+<summary>Code(cdq,不带删除操作)</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// tips: 因为比较恶俗，所以这题不知道为啥 WA#15，有好心人可以帮我看看吗。</span>
+<span class="c1">// 我也许过两天来改。</span>
+<span class="c1">// author : black_trees</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+
+<span class="cp">#define endl &#39;\n&#39;</span>
+<span class="cp">#define int long long </span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">inf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3f3f3f3f3f3f3f3fll</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">si</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">si</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="n">si</span><span class="p">],</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">slope</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">tail</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="n">head</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tail</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">L</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">R</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">L</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">R</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">mid</span><span class="p">]]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slope</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">mid</span><span class="p">]]))</span>
+<span class="w">            </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="n">L</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">solve</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">head</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="p">]]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]])</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="p">]])</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="p">]])</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="p">]]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">tail</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]]))</span>
+<span class="w">            </span><span class="o">--</span><span class="n">tail</span><span class="p">;</span>
+<span class="w">        </span><span class="n">q</span><span class="p">[</span><span class="o">++</span><span class="n">tail</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w">    </span>
+<span class="w">        </span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">solve</span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">signed</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cin</span><span class="p">.</span><span class="n">exceptions</span><span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">failbit</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">badbit</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="mh">0x3f</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">dp</span><span class="p">);</span>
+<span class="w">    </span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">q</span><span class="p">),</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="n">solve</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <h2 id="_3">总结<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>斜率优化的思想在泛化里已经说了，在这里提一提对于决策点集合的维护方式：</p>
 <ul>
@@ -5407,7 +5590,7 @@
 </li>
 <li>对于 <span class="arithmatex">\(x_j\)</span> 的限制，只需要看它是否随 <span class="arithmatex">\(j\)</span> 单调递增即可。<ul>
 <li>如果它随 <span class="arithmatex">\(j\)</span> 单调递增，那么我们就只需要一个一个插入决策就行。</li>
-<li>如果它不随 <span class="arithmatex">\(j\)</span> 单调递增，那么我们就需要使用平衡树/ CDQ 分治来支持插入决策点的操作。</li>
+<li>如果它不随 <span class="arithmatex">\(j\)</span> 单调递增，那么我们就需要使用平衡树 / CDQ 分治来支持插入决策点的操作。</li>
 </ul>
 </li>
 </ul>
@@ -5419,7 +5602,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2023</span>
       
     
   </small>
@@ -5642,7 +5825,7 @@ gitalk.render('gitalk-container')
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.19047be9.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
