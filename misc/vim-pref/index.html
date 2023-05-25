@@ -5213,6 +5213,8 @@
 <p>还有些原因是，有些使用非 vim script 的语言编写的 extension，在和 vim 交互的时候容易因为接口之类的问题响应过慢。</p>
 <p>综合考虑之后，我觉得应当尝试一下一个，尽量轻量级，配置上手很快，依赖其他第三方语言和软件极少的 Vim。</p>
 <p>有些之前觉得方便，实际上违背了初衷的习惯也可以改过来。</p>
+<p><a href="https://gitee.com/black-trees/vimrc/blob/master/_vimrc">_vimrc 仓库地址</a></p>
+<p>不定期更新。</p>
 <h2 id="c">C++<a class="headerlink" href="#c" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个是最基本的需求。</p>
 <p>正常来说需要的东西也就这些：</p>
@@ -5249,8 +5251,8 @@
 <p>第四点，如果直接在 vim 里使用 <code>!&lt;command&gt;</code>，在 win 下会弹出窗口，linux 下会直接在 vim 里切屏到一个终端。</p>
 <p>但是这个时候你就不能对 vim 里原有的代码进行操作了，这很麻烦，所以我们需要异步编译的功能。</p>
 <p>这个需要 Vim 8.1 以及之后的版本，因为 8.1 开始，Bram 才引入了 job 这个概念。</p>
-<p>Vim 圈著名大神 skywind3000 曾经写过一个异步编译插件，但是现在已经看不到了，不过原理什么的可以在他的<a href="https://www.skywind.me/blog/tags/vim">博客</a>看到。</p>
-<p>因为我目前没有时间深入学习这个东西，所以我选择比较粗暴的方式，直接开一个 Terminal 编译，vim8.1 之后可以有内置的 <code>terminal</code>，不过 win 下默认 cmd，不太爽，所以我还是打算直接开个 Powershell，手打。</p>
+<p>Vim 圈著名大神 skywind3000 曾经写过一个异步编译插件 <a href="https://github.com/skywind3000/asyncrun.vim">asyncrun.vim</a>，原理什么的可以在他的<a href="https://www.skywind.me/blog/tags/vim">博客</a>看到。</p>
+<p>因为我目前没有时间深入学习这个东西，所以我选择比较粗暴的方式，直接开一个 Terminal 编译，vim8.1 之后可以有内置的 <code>terminal</code>，比较方便</p>
 <p>反正有上下键，也不是很费时间，而且改一些选项也很快。</p>
 <p>第五点，我已经习惯了 GDB 这种命令行调试的模式，所以直接 Terminal 就行，也可以在 Vim8.1 过后使用 </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>packadd termdebug
@@ -5258,6 +5260,19 @@
 <p>来引入 TermDebug 包，然后你就可以在 Vim 里实时查看断点了。</p>
 <p>话说 Bram 在更新 8.1 的时候都在想啥，咋更新了这么多人性化功能。</p>
 <p>很可惜我们学校装的是 8.0，有点难受，所以我一般都是手动 vim90。</p>
+<p>但是 TermDebug 有一个很严重的问题，它不能支持 <code>&lt;CR&gt;</code> 继续上一个命令。</p>
+<p>所以我还是直接 <code>:Terminal</code>，然后 <code>&lt;C-w&gt; &lt;S-n&gt;</code> 就可以在 Terminal 里面进入 NORMAL 模式了。</p>
+<p>但是调用的还是 CMD，所以我在思考怎么调用外部终端。</p>
+<p>upd: EarthMessenger 提供了一种解决方案：<code>:term</code> 是可以调用外部终端的。</p>
+<p>类似这样：<code>:term msys2_shell.cmd -here -no-start -defterm</code>（参数可以自己使用 <code>msys2_shell.cmd -help</code> 查看）</p>
+<p>别忘记加 Path.</p>
+<p>把这个映射成命令就好了！</p>
+<p>不过如果调用 Msys2 的话，系统 PATH 里的程序是没法调用的，所以有的时候还是要用一用 Terminal</p>
+<p>然后 Msys2 如果没有配置过，可能需要更新一下 <code>pacman</code>，不然下载会出事：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pacman<span class="w"> </span>-Sy
+pacman<span class="w"> </span>-Su
+</code></pre></div></td></tr></table></div>
 <h2 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个也是很重要的需求。</p>
 <ul>
@@ -5274,6 +5289,8 @@
 <p>有点难受，所以我选择了 skywind3000 写的一个轻量级补全系统 vim-auto-popmenu，功能还挺强大，大部分语言都有常用词典（要下一下他配的字典文件。</p>
 <p>而且支持从 dict，include，dir 之类的地方索引。</p>
 <p>而且就 100 来行，挺舒服的，速度也很快，我之后打算 fork 一下，给一些常见公式也加一个补全，这样写题解速度能更快。</p>
+<p>不过如果习惯了 VS code 和 Sublime 式的补全可能需要调一下，因为如果用 <code>&lt;CR&gt;</code> 确认，插件会自动换行。</p>
+<p>所以需要开启：<code>let g:apc_cr_confirm = 1</code>。</p>
 <p>然后关于系统剪贴板这个事情，这个我之前喜欢同步 vim 的剪切板和系统剪贴板。</p>
 <p>不过现在还是觉得，独立一下会比较好，因为 vim 里经常 dd 啊，临时移动一下代码之类的，剪切操作很多，而且 vim 本身这个 register 功能又不是摆设，肯定还是要用用的，所以我现在的 vimrc 就没有同步了。</p>
 <p>还有一个是关于相对行号的，发现其实这个比直接弄行号要好的多，可以少打一个 shift？</p>
@@ -5299,7 +5316,7 @@
 <span class="k">let</span> <span class="k">g</span>:NERDTrimTrailingWhitespace <span class="p">=</span> <span class="m">1</span>
 <span class="k">let</span> <span class="k">g</span>:NERDToggleCheckAllLines <span class="p">=</span> <span class="m">1</span>
 </code></pre></div></td></tr></table></div>
-<p>就只需要记住 <code>\ci</code> 以及 <code>\cc</code> 即可。</p>
+<p>就只需要记住 <code>\ci</code> 以及 <code>\cc</code> 即可（<code>\</code> 是 <code>&lt;leader&gt;</code> 键）。</p>
 <p>还有一个事情是，我不喜欢在我的代码文件夹里放 <code>~un, swp</code> 之类的文件。</p>
 <p>不过这些文件还是非常有必要的，所以我选择把它们存在一个指定的位置，这个可以使用以下的设置：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -5312,18 +5329,29 @@
 </code></pre></div></td></tr></table></div>
 <p>当然，如果提示了无法写入，建议检查一下路径格式是不是正确的，这个可以看 <code>:help backupdir</code>，或者是把当前文件原有的 <code>~, ~un, .swp</code> 文件删掉解决冲突就行。</p>
 <hr />
-<p>另外，vim 自带了一个文件管理系统 netrw，我很喜欢，这个放到单独的一篇文章里来写。</p>
+<p>另外，vim 自带了一个文件管理系统 netrw，我很喜欢，这个放到单独的一篇<a href="../netrw-usage/">文章</a>里来写。</p>
 <hr />
 <p>last but not least, 我写了一个主题，感觉挺爽，有兴趣可以用一用： <a href="https://github.com/hylwxqwq/yuyuko.vim">hylwxqwq/yuyuko.vim</a>。</p>
 <p>当然有一些地方的 syntax 因为我还没发现所以可能会显示为青色，看起来不太爽，发现了可以 open an issue.</p>
 <p>upd: 修复了，并且调整了对比度，现在更舒服一点。</p>
+<hr />
+<p>最近尝试了 fzf 和 fzf.vim。</p>
+<p>感觉很好用啊！只是似乎它不太能和我的 yuyuko.vim 适配，可能是因为我没做非 256 色的支持。</p>
+<p>有时间再来弄一下好了。</p>
+<p>然后发现老是 <code>Files:</code> 太麻烦，刚好发现一个 <code>[N]f</code> 空着没啥用，就拿来映射了一下。</p>
+<p>又突然想到我经常直接 <code>e ./</code>，为啥不提升一下效率，直接映射呢？于是在 <code>_vimrc</code> 里面就又多了几行：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>nmap <span class="k">f</span> :FZF<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+nmap F <span class="k">e</span> ./<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>感叹，Vim 果然是越调教效率越高啊。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 24, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 25, 2023</span>
       
     
   </small>

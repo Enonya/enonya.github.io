@@ -5479,6 +5479,7 @@
 <li>有的时候甚至可以考虑增加限制来缩减状态，但是仍然保证合法？类似<a href="../../sol/mock/230115C/#c">230115C-T3-实验</a>至少不好算，但是至少凑出还可以维护，或者是 <a href="../../sol/mock/230407C/#d">230407C-T4-Y老板的别墅</a> 这样为了计数方便加入限制的</li>
 <li>想清楚一类贡献什么时候会被计算，如果它可以被不同种情况的不同位置更新，是否要考虑钦定只计算某些部分：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
 <li>对于一个序列或者是什么东西，做多次变换，我们通常可以考虑，原序列对多次操作之后的序列哪些位置会有贡献，贡献是怎么样的 <a href="../../sol/mock/230407C/#c">230407C-T3-进化</a> </li>
+<li>如果一个最优化问题处理起来十分困难，不妨尝试找到最优化问题的单调性，将其转化为判定问题来求解，记住，大部分时候判定难度远低于最优化：<a href="../../sol/mock/230430C/#square">230430C-T3-Square</a>。</li>
 </ul>
 <h3 id="0x03">0x03. 思路的延续、切换以及思维空白窗口<a class="headerlink" href="#0x03" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>有性质，有想法之后，应该考虑的就是，怎么样把它应用到原问题上。</p>
@@ -5515,9 +5516,10 @@
 <li>类似 CDQ 和点分治的这种“只考虑一种简单情况，其他分治处理”的思想，可以多拿来思考思考。</li>
 <li>很多“插入”类的问题都有“相对次序不变的性质”，我们可以从这个方面找到问题的突破口：<a href="../../sol/mock/230414C/#t4">230414C-T4-ZYB玩字符串</a></li>
 <li>有一类问题，每次操作 <span class="arithmatex">\((i, j)\)</span> 不止会改变 <span class="arithmatex">\(a_i, a_j\)</span>，通常还伴有其他的限制，我们一般考虑，想办法通过这些限制找出一个“元操作”，消去/减少限制：<a href="../../rec/atcf-for-2023-03-04/#abc296f-simultaneous-swap">ABC296F-Simultaneous Swap</a></li>
+<li>有一类问题，它会要求你按照某个步骤利用某个东西生成某个东西，如果你能尝试维护这里面所谓的“不变量”，那么计算会很方便，当然还有一种想法是转化成图论问题，考虑答案的生成过程，并尝试压缩，合并相同的块/路径，以此达到优化的目的：<a href="../../sol/mock/230509C/#find-and-replace">230509C-T2-Find and Replace</a>。</li>
 </ul>
 <h2 id="0x20">0x20. 动态规划<a class="headerlink" href="#0x20" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<p>建议先阅读 <a href="../../rec/dp-edu/#dp">关于 dp 的一些注意事项</a></p>
+<p>建议先阅读 <a href="../../rec/dp-edu/#dp">关于 dp 的一些注意事项</a> 以及 <a href="../../algor/dp/about_dp/">重新解构动态规划</a></p>
 <h3 id="0x21">0x21. 确定阶段<a class="headerlink" href="#0x21" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>阶段其实很好确定，前 <span class="arithmatex">\(i\)</span>，<span class="arithmatex">\(u\)</span> 的子树这种是比较常见的，Floyd 的 <span class="arithmatex">\(k\)</span> 为阶段算是一种比较特殊的阶段，不过大家都知道了就不写了。</p>
 <ul>
@@ -5559,6 +5561,7 @@
 <p>前者一般是<a href="../../algor/dp/opt/data-structure-optimize/#_2">数据结构优化 dp</a>（单调队列也是数据结构啊），也有考虑观察限制条件的特殊性来去除冗杂状态的：<a href="../../rec/atcf-for-2022-07-08/#cf1720d1-xor-subsequence-easy-version">Xor-Subsequence (easy version)</a>，亦或者是<a href="../../algor/dp/opt/convex-optimize/">斜率优化 dp</a></p>
 <p>也有利用费用提前计算的思想的：<a href="../../algor/dp/opt/convex-optimize/#_2">任务安排</a>，这个可以理解成“懒操作”的反方向。</p>
 <p>后者其实一般在状态设计的时候就做了，这里不多提。</p>
+<p>有的时候也会有比较蜜蜂的 DP 优化，比如 <a href="../../sol/mock/230430C/#label">230430C-T4-Label</a> 这个题，要通过直接观察 DP 数组本身，找到一大段本质相同的状态，来尝试压缩决策集合以达到优化复杂度的目的。</p>
 <h3 id="0x26">0x26. 各种模型<a class="headerlink" href="#0x26" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>对于一些特定的问题，它们的 dp 设计是非常套路化的，所以单独提出来：</p>
 <ul>
@@ -5593,6 +5596,7 @@
 <li>Lcm 的本质就是，对于所运算的数质因数分解，考虑每个因子出现的最高次幂，然后乘起来：<a href="../../sol/mock/230331C/#exercise">230331C-T3-Exercise</a>。</li>
 <li>二进制下加一的本质就是，找到低位的第一个 0，变成 1 之后把之后的 1 全部变成 0：<a href="../../algor/string/trie/">01Trie 维护全局加一</a>.</li>
 <li>如果一个问题在某些限制为质数的条件下比较好做，但是当前的限制是合数，我们可以考虑用 exCRT 一类的东西合并答案，转化成更简单的问题。</li>
+<li>卢卡斯定理似乎可以被看作 P 进制数的一些引用，这个是某 MOer 教我的，某场 ABC 用到了，但是我没改，有时间来补一下。</li>
 </ul>
 <h3 id="0x42">0x42. 计数<a class="headerlink" href="#0x42" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
@@ -5619,7 +5623,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 25, 2023</span>
       
     
   </small>
