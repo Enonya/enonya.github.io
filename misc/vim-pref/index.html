@@ -177,11 +177,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      Homepage
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Homepage
+      </a>
+    </li>
+  
 
       
         
@@ -336,10 +340,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">Homepage</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Homepage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Homepage
+      <a href="../../log/" class="md-nav__link">
+        🔒Log
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memoir/" class="md-nav__link">
+        🔒Memoir
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3183,6 +3253,8 @@
         
           
         
+          
+        
       
       
         
@@ -3745,6 +3817,20 @@
     <li class="md-nav__item">
       <a href="../../sol/mock/230626B/" class="md-nav__link">
         20230626B组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/230628B/" class="md-nav__link">
+        20230628B组
       </a>
     </li>
   
@@ -5465,7 +5551,7 @@
 <span class="nb">inoremap</span> <span class="s2">&quot; &quot;</span>&quot;<span class="p">&lt;</span>Esc<span class="p">&gt;</span><span class="k">i</span>
 </code></pre></div></td></tr></table></div>
 <p>第二行需要在有 <code>autoindent</code> 选项的情况下使用，这样会自动换行并缩进到大括号里面，这个原理也很简单，就是基本的 vim command.</p>
-<p>因为我一般是大括号不换行的，所以我一般是 <code>&lt;SPACE&gt;{&lt;CR&gt;</code>，这里只映射了换行的情况，行内花括号我用的不多，用了也习惯不补全，所以这样就够用了。</p>
+<p>因为我一般是大括号不换行的，所以我一般是 <code>&lt;SPACE&gt;{&lt;CR&gt;</code>，行内花括号我用的不多，用了也习惯不补全，所以这样就够用了。</p>
 <p>当然，因为 vim 在处理有公共前缀的映射时会有一个 timeoutlen，为了方便可以按照自己手速调整一下，我一般设置在 <code>600ms</code> 左右。</p>
 <p>第三点，也是 vimrc 能直接解决的：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">set</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">4</span> <span class="nb">softtabstop</span><span class="p">=</span><span class="m">4</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span> <span class="nb">autoindent</span>
@@ -5473,10 +5559,12 @@
 <p>就可以了。</p>
 <p>第四点，如果直接在 vim 里使用 <code>!&lt;command&gt;</code>，在 win 下会弹出窗口，linux 下会直接在 vim 里切屏到一个终端。</p>
 <p>但是这个时候你就不能对 vim 里原有的代码进行操作了，这很麻烦，所以我们需要异步编译的功能。</p>
-<p>这个需要 Vim 8.1 以及之后的版本，因为 8.1 开始，Bram 才引入了 job 这个概念。</p>
-<p>Vim 圈著名大神 skywind3000 曾经写过一个异步编译插件 <a href="https://github.com/skywind3000/asyncrun.vim">asyncrun.vim</a>，原理什么的可以在他的<a href="https://www.skywind.me/blog/tags/vim">博客</a>看到。</p>
+<p>这个需要 Vim 7.4 以及之后的版本，因为 7.4 开始，Bram 才引入了 job 这个概念。</p>
+<p>Vim 圈著名大神 skywind3000 曾经写过一个异步运行插件 <a href="https://github.com/skywind3000/asyncrun.vim">asyncrun.vim</a>，原理什么的可以在他的<a href="https://www.skywind.me/blog/tags/vim">博客</a>看到。</p>
 <p>因为我目前没有时间深入学习这个东西，所以我选择比较粗暴的方式，直接开一个 Terminal 编译，vim8.1 之后可以有内置的 <code>terminal</code>，比较方便</p>
 <p>反正有上下键，也不是很费时间，而且改一些选项也很快。</p>
+<p>但还有一个问题是，我经常在粘样例的时候把代码粘贴进去，这就导致我用↑找不到我的编译命令了。</p>
+<p>于是想到了一个办法！开两个终端！我真是天才！</p>
 <p>第五点，我已经习惯了 GDB 这种命令行调试的模式，所以直接 Terminal 就行，也可以在 Vim8.1 过后使用 </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>packadd termdebug
 </code></pre></div></td></tr></table></div>
@@ -5639,13 +5727,16 @@ endfunc
 map <span class="p">&lt;</span>F9<span class="p">&gt;</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">call</span> EnableTransparency<span class="p">()&lt;</span>CR<span class="p">&gt;</span>
 map <span class="p">&lt;</span>F10<span class="p">&gt;</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">call</span> DisableTransparency<span class="p">()&lt;</span>CR<span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
+<hr />
+<p>最近在适应 vim 的滚动，但是发现这个切屏一样的感觉，每次滚动完都反应不过来自己在那里（got lost）</p>
+<p>所以找到了之前用过的 smooth-scroll，挺好用的。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2023</span>
       
     
   </small>

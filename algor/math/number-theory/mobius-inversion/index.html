@@ -177,11 +177,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
-      Homepage
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        Homepage
+      </a>
+    </li>
+  
 
       
         
@@ -336,10 +340,76 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../..">Homepage</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Homepage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
-        Homepage
+      <a href="../../../../log/" class="md-nav__link">
+        🔒Log
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../memoir/" class="md-nav__link">
+        🔒Memoir
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3287,6 +3357,8 @@
         
           
         
+          
+        
       
       
         
@@ -3849,6 +3921,20 @@
     <li class="md-nav__item">
       <a href="../../../../sol/mock/230626B/" class="md-nav__link">
         20230626B组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../sol/mock/230628B/" class="md-nav__link">
+        20230628B组
       </a>
     </li>
   
@@ -5615,7 +5701,7 @@
 <h3 id="_5">炫酷反演魔术<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>刚才我们提到了，<span class="arithmatex">\(Id_0\)</span> 的 Dirichlet 逆元是 <span class="arithmatex">\(\mu\)</span>。</p>
 <p>于是我们有这样的一个想法：</p>
-<p>如果有一个函数 <span class="arithmatex">\(g = Id_0 * f\)</span>，即 <span class="arithmatex">\(g(n) = \sum\limits_{d | n} Id_0(d)f(d)\)</span>。</p>
+<p>如果有一个函数 <span class="arithmatex">\(g = Id_0 * f\)</span>，即 <span class="arithmatex">\(g(n) = \sum\limits_{d | n} f(d)\)</span>。</p>
 <p>如果知道 <span class="arithmatex">\(f\)</span> 求 <span class="arithmatex">\(g\)</span> 是容易的，但是如果知道 <span class="arithmatex">\(g\)</span> 要求 <span class="arithmatex">\(f\)</span> 呢？</p>
 <p>换句话说我们要让 <span class="arithmatex">\(f\)</span> 独立出来。</p>
 <p>不妨考虑两边同时卷上一个 <span class="arithmatex">\(\mu\)</span>，构造 <span class="arithmatex">\(\epsilon\)</span> 和 <span class="arithmatex">\(f\)</span> 的 Dirichlet 卷积形式：</p>
@@ -5633,7 +5719,7 @@ g * \mu = (Id_0 * \mu) * f \iff f = g * \mu
 <p>注意到这个 Iverson Bracket 神似 <span class="arithmatex">\(\epsilon(n)\)</span> 的形式。</p>
 <p>就是：<span class="arithmatex">\(\sum\limits_{i = 1}^n \sum\limits_{j = 1}^m \epsilon(\gcd(i, j))\)</span>。</p>
 <p>因为 <span class="arithmatex">\(Id_0 * \mu = \epsilon\)</span>，不难想到使用 <span class="arithmatex">\(\mu\)</span> 来替换：</p>
-<p><span class="arithmatex">\(\epsilon(\gcd(i, j)) = \sum\limits_{d | \gcd(i, j)} \mu(d)Id_0(d) = \sum\limits_{d | \gcd(i, j)} \mu(d)\)</span>。</p>
+<p><span class="arithmatex">\(\epsilon(\gcd(i, j)) = \sum\limits_{d | \gcd(i, j)} \mu(d)Id_0(\dfrac{\gcd(i, j)}{d}) = \sum\limits_{d | \gcd(i, j)} \mu(d)\)</span>。</p>
 <p>原式：<span class="arithmatex">\(\sum\limits_{i = 1}^n \sum\limits_{j = 1}^m\sum\limits_{d | \gcd(i, j)} \mu(d)\)</span></p>
 <p>这种一堆求和号的式子有一个很显然的技巧，尝试观察变量之间的关系，观察是否能交换 <span class="arithmatex">\(\sum\)</span>。</p>
 <p>发现 <span class="arithmatex">\(d | i \land d | j\)</span>，并且 <span class="arithmatex">\(d \in [1,m]\)</span>（<span class="arithmatex">\(\gcd(i, j)\)</span> 怎么可能比 <span class="arithmatex">\(\min(i, j)\)</span> 大？）（令 <span class="arithmatex">\(i = j\)</span> 即可构造出所有 <span class="arithmatex">\([1, m]\)</span> 中的 <span class="arithmatex">\(d\)</span>），所以原式：</p>
@@ -5659,13 +5745,13 @@ g * \mu = (Id_0 * \mu) * f \iff f = g * \mu
 &amp;=\sum\limits_{i = 1}^n\sum\limits_{j = 1}^m[\gcd(i, j) = k]
 \end{aligned}
 \]</div>
-<p>不妨从 <span class="arithmatex">\(i, j\)</span> 中扣掉 <span class="arithmatex">\(k\)</span> 这个因子。</p>
+<p>不妨从 <span class="arithmatex">\(i, j\)</span> 中扣掉 <span class="arithmatex">\(k\)</span> 这个因子，就是把 <span class="arithmatex">\(i, j\)</span> 看作 <span class="arithmatex">\(p\cdot d, q \cdot d\)</span>，然后我们枚举 <span class="arithmatex">\(p, q\)</span> 即可，条件变成了 <span class="arithmatex">\(p, q\)</span> 互质，这样才能保证 <span class="arithmatex">\(d\)</span> 是 <span class="arithmatex">\(\gcd\)</span>。</p>
 <div class="arithmatex">\[
 \begin{aligned}
 &amp;=\sum\limits_{i = 1}^{\lfloor\frac n k\rfloor}\sum\limits_{j = 1}^{\lfloor\frac m k\rfloor}[\gcd(i, j) = 1]
 \end{aligned}
 \]</div>
-<p>然后就没了。</p>
+<p>然后就没了，注意应用这个条件的时候不要只是傻傻的除过去，想清楚它的本质是什么。</p>
 <details class="note">
 <summary>Code</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -5827,7 +5913,7 @@ g * \mu = (Id_0 * \mu) * f \iff f = g * \mu
 \end{aligned}
 \]</div>
 <p>直接拆 <span class="arithmatex">\(\gcd\)</span> 太鲁莽了，这里是在分母，拆了也没用，先尝试把 <span class="arithmatex">\(\gcd(i, j)\)</span> 拿出来。</p>
-<p>考虑经典套路，枚举所有可能的 <span class="arithmatex">\(d\)</span>，然后用 Iverson Bracket 限制转化（就是 Ex.1 里 Tips 说的理解方式）。</p>
+<p>考虑经典套路，枚举所有可能的 <span class="arithmatex">\(d\)</span>，替换 <span class="arithmatex">\(\gcd(i, j)\)</span>，然后用 Iverson Bracket 限制转化（就是 Ex.1 里 Tips 说的理解方式）。</p>
 <div class="arithmatex">\[
 \begin{aligned}
 &amp;=\sum\limits_{d = 1}^n\sum\limits_{i = 1}^n\sum\limits_{j = 1}^m \dfrac{ij}{d}\cdot[\gcd(i, j) = d] \\
@@ -5837,7 +5923,7 @@ g * \mu = (Id_0 * \mu) * f \iff f = g * \mu
 \]</div>
 <p>这里要乘上 <span class="arithmatex">\(d^2\)</span> 是因为这里有 <span class="arithmatex">\(ij\)</span> 乘积项的贡献，我们缩短 <span class="arithmatex">\(i, j\)</span> 的枚举范围之后也会少算。</p>
 <p>然后此时 <span class="arithmatex">\(d\)</span> 其实就和 <span class="arithmatex">\(\gcd\)</span> 分离了，它现在只是一个系数了。</p>
-<p>我们考虑 <span class="arithmatex">\(\sum\limits_{i = 1}^{\lfloor\frac n d\rfloor}\sum\limits_{j = 1}^{\lfloor\frac m d\rfloor}ij\cdot[\gcd(i, j) = 1]\)</span> 这一坨怎么算。</p>
+<p>我们考虑 <span class="arithmatex">\(\sum\limits_{i = 1}^{\lfloor\frac n d\rfloor}\sum\limits_{j = 1}^{\lfloor\frac m d\rfloor}ij\cdot[\gcd(i, j) = 1]\)</span> 这一坨怎么算（为了少写一些，并且会清楚很多）。</p>
 <p>反演！狠狠的反演！记这一块为 <span class="arithmatex">\(F(\lfloor\dfrac n d\rfloor,\lfloor\dfrac m d\rfloor)\)</span>。</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -6034,7 +6120,7 @@ F(n, m) &amp;= \sum\limits_{i = 1}^n\sum\limits_{j = 1}^mij\cdot[\gcd(i,j) = 1]\
 &amp;=\sum\limits_{i = 1}^n\sum\limits_{j = 1}^n i \cdot j \cdot \gcd(i, j) \\
 &amp;= \sum\limits_{i = 1}^n\sum\limits_{j = 1}^n i \cdot j \cdot Id_1(\gcd(i, j)) \\
 &amp;= \sum\limits_{i = 1}^n\sum\limits_{j = 1}^n i \cdot j \cdot \sum\limits_{d | \gcd(i, j)} \varphi(d) \\
-&amp;= \sum\limits_{d = 1}^n\varphi(d)\sum\limits_{d | i}^{i \in [1. n]}\sum\limits_{d | j}^{j \in [1, j]}i\cdot j \\
+&amp;= \sum\limits_{d = 1}^n\varphi(d)\sum\limits_{d | i}^{i \in [1, n]}\sum\limits_{d | j}^{j \in [1, n]}i\cdot j \\
 &amp;= \sum\limits_{d = 1}^n\varphi(d)\sum\limits_{i = 1}^{\lfloor\frac n d\rfloor}\sum\limits_{j = 1}^{\lfloor\frac n d\rfloor} i\cdot j \cdot d^2 \\
 &amp;= \sum\limits_{d = 1}^n\varphi(d)\cdot d^2 \sum\limits_{i = 1}^{\lfloor\frac n d\rfloor}\sum\limits_{j = 1}^{\lfloor\frac n d\rfloor}i\cdot j
 \end{aligned}
@@ -6803,10 +6889,9 @@ ans &amp;= \sum\limits_{i = 1}^n\sum\limits_{j = 1}^m\sum\limits_{x = 1}^i\sum\l
 <p>求 <span class="arithmatex">\(\sum\limits_{i = 1}^{n}\sum\limits_{j = 1}^{m}[\gcd(i, j) \in \text{prime}]\)</span>。</p>
 <p><span class="arithmatex">\(T = 10^4, n, m \le 10^7\)</span>。</p>
 </blockquote>
-<p>注意到对 <span class="arithmatex">\(\gcd\)</span> 有限制，为了快速换出反演式子，我们钦定 <span class="arithmatex">\(\gcd\)</span>，并将其提出。</p>
+<p>注意到对 <span class="arithmatex">\(\gcd\)</span> 有限制，为了快速换出反演式子，我们钦定 <span class="arithmatex">\(\gcd\)</span>，并将其提出（枚举 <span class="arithmatex">\(\gcd\)</span>）。</p>
 <div class="arithmatex">\[
 \begin{aligned}
-&amp;=\sum\limits_{i = 1}^{n}\sum\limits_{j = 1}^{m}[\gcd(i, j) = d] \\
 &amp;=\sum\limits_{d \in \text{prime}}\sum\limits_{i = 1}^{n}\sum\limits_{j = 1}^{m}[\gcd(i, j) = d] \\
 &amp;=\sum\limits_{d \in \text{prime}}^{}\sum\limits_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum\limits_{j = 1}^{\lfloor\frac{m}{d}\rfloor}[\gcd(i, j) = 1]\\
 &amp;=\sum\limits_{d \in \text{prime}}^{}\sum\limits_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum\limits_{j = 1}^{\lfloor\frac{m}{d}\rfloor}\sum\limits_{t | \gcd(i, j)}^{}\mu(t)\\
@@ -6959,13 +7044,65 @@ ans &amp;= \sum\limits_{i = 1}^n\sum\limits_{j = 1}^m\sum\limits_{x = 1}^i\sum\l
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<p><a href="https://www.spoj.com/problems/LCMSUM"><strong>SPOJ - LCMSUM</strong></a></p>
+<blockquote>
+<p>求 <span class="arithmatex">\(\sum\limits_{i = 1}^n \operatorname{lcm}(i, n)\)</span>。</p>
+<p><span class="arithmatex">\(T \le 3 \times 10^5, 1 \le n \le 10^6\)</span>。</p>
+</blockquote>
+<p>老办法。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+answer &amp;= \sum\limits_{i = 1}^{n}\dfrac{in}{\gcd(i, n)} \\
+&amp;= n\sum\limits_{i = 1}^{n}\dfrac{i}{\gcd(i, n)} \\
+&amp;= n\sum\limits_{d = 1}^n\sum\limits_{i = 1}^n\dfrac{i}{d}\cdot[\gcd(i, n) = d] \\
+&amp;= n\sum\limits_{d = 1}^{n}\sum\limits_{i = 1}^{\lfloor\frac{n}{d}\rfloor}i\cdot[\gcd(i, n / d) = 1]
+\end{aligned}
+\]</div>
+<p>后面这部分提出来反演化简即可，前面的部分就是整除分块。</p>
+<p>注意除掉 <span class="arithmatex">\(d\)</span> 那个地方不要忘记这个操作本身的含义，所以 <span class="arithmatex">\(n \to n / d\)</span>。</p>
+<p>懒得推了。</p>
 <p><a href="https://www.luogu.com.cn/problem/P3704"><strong>Luogu3704 - 数字表格</strong></a></p>
 <blockquote>
 <p>求 <span class="arithmatex">\(\prod\limits_{i = 1}^{n}\prod\limits_{j = 1}^{m}F(\gcd(i, j))\)</span>。</p>
-<p>其中 <span class="arithmatex">\(F\)</span> 为斐波那契数列。</p>
+<p>其中 <span class="arithmatex">\(F\)</span> 为斐波那契数列，答案对 <span class="arithmatex">\(p\)</span> 取模。</p>
 <p><span class="arithmatex">\(1\le T \le 10^3, 1\le n, m \le 10^6\)</span>。 </p>
 </blockquote>
-<p>咕咕咕。</p>
+<p>Simple Problem.</p>
+<p>首先 <span class="arithmatex">\(\gcd(i, j)\)</span> 在下标里面，所以枚举 <span class="arithmatex">\(\gcd(i, j)\)</span> 将其提出来的做法是显然的。</p>
+<p>但是一个问题在于，现在这里求的是 <span class="arithmatex">\(\prod\)</span> 不是 <span class="arithmatex">\(\sum\)</span>，如果我们用 Iverson Bracket 转化，那最后一定会出现 <span class="arithmatex">\(0\)</span>，整个式子就变成 <span class="arithmatex">\(0\)</span> 没法做了。</p>
+<p>所以我们思考一下怎么很好的表达这个限制。</p>
+<p>其实本质是，我们希望不合法的元素在 <span class="arithmatex">\((\oplus, \mathbb Z_p)\)</span> 意义下为单位元，如果求 <span class="arithmatex">\(\sum\)</span>，那么 <span class="arithmatex">\(\oplus = +\)</span>，<span class="arithmatex">\(e = 0\)</span>。</p>
+<p>所以现在是 <span class="arithmatex">\((\times, \mathbb Z_p) \iff e = 1\)</span>。</p>
+<p>那么我们不难想到 <span class="arithmatex">\(x^0 = 1 = e\)</span>，所以我们把 Iverson Bracket 放在指数。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+answer &amp;= \prod\limits_{d = 1}^{n}\prod\limits_{i = 1}^{n}\prod\limits_{j = 1}^{m} F(d)^{[\gcd(i, j) = d]}
+\end{aligned}
+\]</div>
+<p>注意到其实后面两个 <span class="arithmatex">\(\prod\)</span> 就是在数 <span class="arithmatex">\((1, 1) \sim (n, m)\)</span> 中有多少 <span class="arithmatex">\((i, j)\)</span> 满足 <span class="arithmatex">\(\gcd(i, j) = d\)</span>，我们记这个为 <span class="arithmatex">\(G(n, m, d)\)</span>。</p>
+<p>原式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;=\prod\limits_{d = 1}^{n}F(d)^{G(n, m, d)}
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(G\)</span> 就是我们的老朋友（Ex.2 中的答案），可以反演。</p>
+<p>然后式子变为：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;=\prod\limits_{d = 1}^{n}F(d)^{\sum\limits_{t = 1}^{\lfloor\frac{n}{d}\rfloor}\mu(t)\lfloor\frac{n}{dt}\rfloor\lfloor\frac{m}{dt}\rfloor}
+\end{aligned}
+\]</div>
+<p>看起来已经可以做了对吧？但是 <span class="arithmatex">\(T = 10^3\)</span>，我们需要单次询问更快的做法，这里单次询问是 <span class="arithmatex">\(O(n)\)</span> 的。</p>
+<p>然后定睛一看，这个 <span class="arithmatex">\(dt\)</span> 的形式，哎呀，这不是我们 YY 的 GCD 吗，枚举 <span class="arithmatex">\(T = dt\)</span>！</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;=\prod\limits_{T = 1}^{n}f(T)^{\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}
+\end{aligned}
+\]</div>
+<p>其中 <span class="arithmatex">\(f(T) = \prod\limits_{d | T}^{}F(d)^{\mu(\frac{T}{d})}\)</span>。</p>
+<p><span class="arithmatex">\(f\)</span> 通过倍数法可以算，然后整除分块即可。</p>
+<p>代码暂略，之后写。</p>
 <p><a href="https://www.luogu.com.cn/problem/P5518"><strong>Luogu5518 - 幽灵乐团 / 莫比乌斯反演基础练习题</strong></a></p>
 <blockquote>
 <p>东风谷 早苗(Kochiya Sanae)非常喜欢幽灵乐团的演奏，她想对她们的演奏评分。</p>
@@ -6993,7 +7130,7 @@ ans &amp;= \sum\limits_{i = 1}^n\sum\limits_{j = 1}^m\sum\limits_{x = 1}^i\sum\l
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2023</span>
       
     
   </small>
