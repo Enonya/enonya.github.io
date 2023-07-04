@@ -19,7 +19,7 @@
         <link rel="next" href="../vim-usage/">
       
       <link rel="icon" href="../../img/Left.jpg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
@@ -5523,7 +5523,7 @@
 <p>还有些原因是，有些使用非 vim script 的语言编写的 extension，在和 vim 交互的时候容易因为接口之类的问题响应过慢。</p>
 <p>综合考虑之后，我觉得应当尝试一下一个，尽量轻量级，配置上手很快，依赖其他第三方语言和软件极少的 Vim，并且，最重要的是，效率。</p>
 <p>有些之前觉得方便，实际上违背了初衷的习惯也可以改过来。</p>
-<p><a href="https://github.com/hylwxqwq/vim-tools">配置相关仓库</a>，不定期更新。</p>
+<p><a href="https://github.com/enonya/vim-tools">配置相关仓库</a>，不定期更新。</p>
 <h2 id="c">C++<a class="headerlink" href="#c" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个是最基本的需求。</p>
 <p>正常来说需要的东西也就这些：</p>
@@ -5603,7 +5603,7 @@ pacman<span class="w"> </span>-Sy
 <p>第二个，我之前就一直在用，是一个国内大佬开发的，感觉挺好用，毕竟可以同步预览还可以导出：<code>iamcco/markdown-preview.nvim</code>。</p>
 <p>第三个主要是因为，我经常会引用我自己博客目录下的图片，文章，所以这东西对我来说很有必要。</p>
 <p>我以前以为 vim 没有内置补全，某天闲来无事乱按的时候按出了一个 popmenu，发现可以补全文件，搜索了一下之后发现只需要 <code>&lt;C-x&gt;&lt;C-f&gt;</code> 就可以了。感叹，vim 果然还是技高一筹，早就有了这样的功能。</p>
-<p>第四个的话，我写了几个<a href="https://github.com/hylwxqwq/vim-tools/blob/master/mkd-math-tool.vim">映射</a>，放在 <code>$VIM/ftplugin/markdown.vim</code> 里面就可以了。</p>
+<p>第四个的话，我写了几个<a href="https://github.com/enonya/vim-tools/blob/master/mkd-math-tool.vim">映射</a>，放在 <code>$VIM/ftplugin/markdown.vim</code> 里面就可以了。</p>
 <h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>还有一些其他的功能，比如字典，这个 vim 其实也自带了，不过不会自动弹出，而是要 <C-n> 一下。</p>
 <p>有点难受，之前选用了 skywind3000 大佬的 vim-autopopmenu，但是因为我需要读取 buffer，在大文件编辑时会很卡，于是放弃。</p>
@@ -5612,7 +5612,7 @@ pacman<span class="w"> </span>-Sy
 <p>还有一个是关于相对行号的，发现其实这个比直接弄行号要好的多，可以少打一个 shift？</p>
 <p>但是要快速跳到视野之外的地方就不太方便，但是可以直接滚屏，所以还挺不错。</p>
 <p>中文输入法的话，之前看到过一个内嵌，可以方便在服务器之类的地方操作，不过我没有在奇怪的环境下输入中文的需求，所以暂时不需要，有系统词库就好了。</p>
-<p>不过还有一些需求，比如一个内置 todolist manager，我没有看到比较符合我心意的，于是打算自己写<a href="https://github.com/hylwxqwq/terminal-todolist-manager">一个</a>，vim script 太烦，所以我的想法是使用 c++ 实现，在终端当中工作，有时间了再考虑通过调用的方式内嵌到 vim 里，或者是用 Qt 加个图形化界面直接封装成应用。</p>
+<p>不过还有一些需求，比如一个内置 todolist manager，我没有看到比较符合我心意的，于是打算自己写<a href="https://github.com/enonya/terminal-todolist-manager">一个</a>，vim script 太烦，所以我的想法是使用 c++ 实现，在终端当中工作，有时间了再考虑通过调用的方式内嵌到 vim 里，或者是用 Qt 加个图形化界面直接封装成应用。</p>
 <p>有一个叫 Nerdcommenter 的插件，可以提供一些快速注释的功能，经过以下配置之后可以直接用 leader 键来实现注释（leader 默认是 <code>\</code>）。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -5647,7 +5647,7 @@ pacman<span class="w"> </span>-Sy
 <hr />
 <p>另外，vim 自带了一个文件管理系统 netrw，我很喜欢，这个放到单独的一篇<a href="../netrw-usage/">文章</a>里来写。</p>
 <hr />
-<p>last but not least, 我写了一个主题，感觉挺爽，有兴趣可以用一用： <a href="https://github.com/hylwxqwq/yuyuko.vim">hylwxqwq/yuyuko.vim</a>。</p>
+<p>last but not least, 我写了一个主题，感觉挺爽，有兴趣可以用一用： <a href="https://github.com/enonya/yuyuko.vim">enonya/yuyuko.vim</a>。</p>
 <p>当然有一些地方的 syntax 因为我还没发现所以可能会显示为青色，看起来不太爽，发现了可以 open an issue.</p>
 <p>upd: 修复了，并且调整了对比度，现在更舒服一点。</p>
 <hr />
@@ -5670,14 +5670,14 @@ nmap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k"
 <p>之前一直不知道 <code>g:terminal_ansi_colors</code> 是什么，今天翻阅文档并实验之后发现，似乎是给 vim 中启动的终端默认提供的颜色列表。</p>
 <p>是一个包含十六个 HEX code 的列表，编号 0~15，终端启动的时候如果输出颜色文本，就会发起对这个颜色的请求。</p>
 <p>所以之前没加这个适配的时候，fzf 没有显示出对应的颜色的问题就得到了解决。</p>
-<p>我写了一个简单的词频统计，对 <code>yuyuko.vim</code> 统计了一下常用颜色，然后放进去之后做了一些<a href="https://github.com/hylwxqwq/yuyuko.vim/commit/19520dccf3d4aef62cdbdc0b33354dc1aa1c6048">调整</a>，fzf 就支持 yuyuko.vim 的 theme 了！</p>
+<p>我写了一个简单的词频统计，对 <code>yuyuko.vim</code> 统计了一下常用颜色，然后放进去之后做了一些<a href="https://github.com/enonya/yuyuko.vim/commit/19520dccf3d4aef62cdbdc0b33354dc1aa1c6048">调整</a>，fzf 就支持 yuyuko.vim 的 theme 了！</p>
 <p>一开始其实只是想改 fzf 的适配，后来发现 fzf 本质是调用了一个 cmd，所以启动的 cmd 当中的带颜色文本也是 yuyuko.vim 的主题了，包括上面调用的 msys2 和 gitbash.</p>
 <hr />
 <p>upd: 回家之后发现 fzf 对中文的支持有问题：<a href="https://github.com/junegunn/fzf.vim/issues/1377">#issue 1377</a>。</p>
 <p>而且作者咕咕咕了好久了，我也没那个能力自己 fork 然后修复，所以我找到了另外的一个替代品 <a href="https://github.com/liuchengxu/vim-clap/">vim-clap</a>。</p>
 <p>因为 LeaderF 安装和依赖太麻烦，我的 gvim 的 <code>python3</code> 支持总是弄不好，然后 CtrlP 又太慢。</p>
 <p>这个东西配置主题也挺方便的，速度和 FZF 差不多，功能甚至更强大，而且对中文的支持没问题（毕竟是国人作者）</p>
-<p>然后就 fork 了一下原 repo 的 default 主题，改了一个适合我的配色：<a href="https://github.com/hylwxqwq/yuyuko-clap">yuyuko-clap</a>。</p>
+<p>然后就 fork 了一下原 repo 的 default 主题，改了一个适合我的配色：<a href="https://github.com/enonya/yuyuko-clap">yuyuko-clap</a>。</p>
 <p>不过现在里面还有一些部分依赖于 yuyuko.vim （因为用了 <code>hi! link</code>），反正现在只有我一个人用，以后再说修复的事情（）</p>
 <p>另外发现了 <code>vimtweak.dll</code> 这个东西，可以支持 gvim 的透明，原理好像是 Vim 可以调用外部扩展函数，dll 本质是 msvc 编译出来的一个扩展库，有人用 msvc 写了窗口透明，然后加了进来，vim 就可以调用了。</p>
 <p>现在 vimrc 多了这些：</p>
@@ -5736,7 +5736,7 @@ map <span class="p">&lt;</span>F10<span class="p">&gt;</span> <span class="p">&l
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 4, 2023</span>
       
     
   </small>
@@ -5956,10 +5956,10 @@ gitalk.render('gitalk-container')
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "toc.integrate", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
         
           <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
