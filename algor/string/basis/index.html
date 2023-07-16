@@ -5902,34 +5902,34 @@
 <p>我们扩展定义转移函数 <span class="arithmatex">\(\delta\)</span>，令其第二个参数可以接收一个字符串：<span class="arithmatex">\(\delta(v,s)=\delta(\delta(v,s[1]),s[2..|s|])\)</span>，扩展后的转移函数就可以表示从一个状态起接收一个字符串后转移到的状态。那么，<span class="arithmatex">\(A(s)=[\delta(st,s)\in F]\)</span>。</p>
 <p>自动机常常用来做字符串匹配的问题，所以介绍几个基本概念：</p>
 <ul>
-<li>模式串 <span class="arithmatex">\(s\)</span>：被匹配的字符串。</li>
-<li>文本串 <span class="arithmatex">\(t\)</span>：用来匹配的字符串。</li>
+<li>模式串 <span class="arithmatex">\(s\)</span>：匹配的字符串。</li>
+<li>文本串 <span class="arithmatex">\(t\)</span>：被匹配的字符串。</li>
 </ul>
-<p>这样说有点抽象，举个例子，我们现在给定一个字符串集合 <span class="arithmatex">\(S = \{s_1, s_2, s_3,\dots\}\)</span>。</p>
-<p>现在给定你一个串 <span class="arithmatex">\(t\)</span>，要问 <span class="arithmatex">\(t\)</span> 在 <span class="arithmatex">\(S\)</span> 里的哪些字符串中出现过，此时的 <span class="arithmatex">\(s_i\)</span> 就是模式串，<span class="arithmatex">\(t\)</span> 就是文本串。</p>
+<p>这么说可能有点抽象，我们举个例子。</p>
+<p>现在给定你一个串 <span class="arithmatex">\(s\)</span>，要问 <span class="arithmatex">\(s\)</span> 在 <span class="arithmatex">\(t\)</span> 里的哪些位置出现过，此时的 <span class="arithmatex">\(s\)</span> 就是模式串，<span class="arithmatex">\(t\)</span> 就是文本串。</p>
 <p>一些常用的自动机：</p>
 <ul>
-<li><a href="../trie/">Trie</a>: 只接受给定的模式串的自动机。<ul>
+<li><a href="../trie/">Trie</a>: 只接受给定的模式串集合中的元素的自动机。<ul>
 <li>我们把字符串插入 Trie 的时候打上的 end 标记，实际上就是说明了这个状态所代表的字符串是被自动机所接受的。</li>
 <li>在这里，我们定义一个状态 <span class="arithmatex">\(u\)</span> 所代表的字符串是 <span class="arithmatex">\(st \to u\)</span> 这条路径上所有转移边的字符按顺序构成的字符串。</li>
 </ul>
 </li>
-<li><a href="../kmp/">KMP 自动机</a>：只接受给定的模式串 <span class="arithmatex">\(s\)</span> 的一些后缀的自动机。<ul>
+<li><a href="../kmp/">KMP 自动机</a>：只接受以给定的模式串 <span class="arithmatex">\(s\)</span> 为后缀的自动机。<ul>
 <li>状态转移函数 <span class="arithmatex">\(\delta(u, ch)\)</span> 为：</li>
 <li><span class="arithmatex">\(\delta(u, ch) = \begin{cases}\text{NULL} &amp;s[1] \not= ch\land u = 0\\ u + 1 &amp;s[u + 1]=ch\\ \delta(\pi(u), ch) &amp;s[u + 1] \not= ch \land u &gt; 0\end{cases}\)</span></li>
 <li>我们也可以称 <span class="arithmatex">\(\pi\)</span> 为 KMP 自动机的“失配指针”，意义为当“下一个”状态不是接受状态的时候，状态转移函数去向的状态。</li>
 </ul>
 </li>
-<li><a href="../acam/">AC 自动机</a>：只接受满足，是给定模式串集合中某个元素的后缀的字符串的自动机，正是因为接受的是“模式串”的“后缀”，所以才有人说 AC 自动机是 Trie + KMP 的思想，不过我觉得这个比喻有误导意义。</li>
+<li><a href="../acam/">AC 自动机</a>：只接受一些字符串 <span class="arithmatex">\(s\)</span>，满足对于给定的模式串集合 <span class="arithmatex">\(S\)</span>，<span class="arithmatex">\(\exists p \in S \text{ s.t. } \exists x \text{ s.t. } p = suf(s, x)\)</span>。<ul>
+<li>所以也有很多人认为 AC 自动机是 Trie + KMP，不过我感觉这个定义不够严谨。</li>
+</ul>
+</li>
 <li><a href="../sam/">后缀自动机</a>：只接受给定模式串 <span class="arithmatex">\(s\)</span> 的后缀的自动机。<ul>
-<li>注意 AC 自动机是可以给定多个模式串的，而 SAM 只能给定一个。</li>
-<li>并且 SAM 是接受模式串 <span class="arithmatex">\(s\)</span> 的最小 DFA，这个性质很重要。</li>
+<li>SAM 是接受模式串 <span class="arithmatex">\(s\)</span> 的最小 DFA，这个性质很重要。</li>
 <li>通常被用来解决子串相关的问题。</li>
 </ul>
 </li>
 <li><a href="../general-sam/">广义后缀自动机</a>：把 SAM 放到了 Trie 上，能接受多个模式串的。<ul>
-<li>不过它和 AC 自动机还是有本质不同的，AC 自动机接受的是<strong>字符串</strong>，广义 SAM 接受的是单纯的<strong>后缀</strong>。</li>
-<li>AC 自动机主要解决的是多模匹配问题，而广义 SAM 主要解决的是多个字符串的子串问题。</li>
 <li>AC 自动机可以近似的看作广义 KMP 自动机，这与广义 SAM 和 SAM 的关系是类似的。</li>
 </ul>
 </li>

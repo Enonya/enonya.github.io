@@ -6277,6 +6277,15 @@
 <p>然后我们算贡献的时候用 <code>set</code> 什么的数据结构整体处理可以 <span class="arithmatex">\(O(n \log n)\)</span> 。</p>
 <p>还有一个更好写的 Hash 做法，等会写。</p>
 <h3 id="qoj2065-cyclic-distance">QOJ2065 Cyclic Distance<a class="headerlink" href="#qoj2065-cyclic-distance" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>首先考虑，原问题的限制可以转化成什么。</p>
+<p>注意到问题是在树上选出一些节点构成一个环。</p>
+<p>不妨考虑 dp，设 <span class="arithmatex">\(dp(u, x)\)</span> 表示 <span class="arithmatex">\(u\)</span> 子树里选 <span class="arithmatex">\(x\)</span> 个的方案数。</p>
+<p>暴力 dp 是很好做的，我们可以考虑枚举子树里分别选多少个。</p>
+<p>可以写出方程 <span class="arithmatex">\(dp(u, i + j) = \max\{dp(u, i) + dp(v, j) + 2w(u, v) \times min(k, k - j)\}\)</span>。</p>
+<p>后面那部分就是考虑 <span class="arithmatex">\(w(u, v)\)</span> 这条边，被下面子树里面的点经过了多少次，会做多少贡献。</p>
+<p>注意到这个方程有标准的闵科夫斯基和的形式，可以注意到两边都是上凸壳。</p>
+<p>所以我们固定 <span class="arithmatex">\(i\)</span>，考虑 <span class="arithmatex">\(j\)</span> 的贡献，然后问题转化为把 <span class="arithmatex">\(w\)</span> 那边贡献合并到 <span class="arithmatex">\(dp(v, j)\)</span> 上，然后再合并一次就好了。</p>
+<p>属于是比较基本的 Slope trick 的形式，之后要详细写一下。</p>
 <h3 id="gym100739e-life-as-a-monster">Gym100739E Life as a Monster<a class="headerlink" href="#gym100739e-life-as-a-monster" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <h3 id="cf319e-ping-pong">CF319E Ping-Pong<a class="headerlink" href="#cf319e-ping-pong" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <h3 id="cf1149c-tree-generatortm">CF1149C Tree Generator™<a class="headerlink" href="#cf1149c-tree-generatortm" title="Permanent link">ψ(｀∇´)ψ</a></h3>
