@@ -3611,6 +3611,8 @@
         
           
         
+          
+        
       
       
         
@@ -4382,7 +4384,21 @@
   
     <li class="md-nav__item">
       <a href="../../sol/mock/230813nj/" class="md-nav__link">
-        20230831 NanJing
+        20230813 NanJing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/230820B/" class="md-nav__link">
+        20230820 B
       </a>
     </li>
   
@@ -4972,6 +4988,27 @@
           <li class="md-nav__item">
   <a href="#part-41" class="md-nav__link">
     Part 4.1. 连通性问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-42" class="md-nav__link">
+    Part 4.2. 树上问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-43" class="md-nav__link">
+    Part 4.3. 路径相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-44" class="md-nav__link">
+    Part 4.4. 基环树
   </a>
   
 </li>
@@ -6407,13 +6444,27 @@
 <p>很久之前翻看 zxy 神仙的博客的时候发现了一篇 <a href="https://www.cnblogs.com/C202044zxy/p/15126199.html">zxy的思维技巧</a></p>
 <p>我觉得应该是我看过的所有 OI 相关博客里写的最好的一篇，受此文启发，开了这篇博客记录自己遇到的一些 trick。</p>
 <p>开这篇的时候应该是 2023/02/02，第一个版本的东西写的有点杂乱了，而且有些内容其实是有错误的，所以在 2023/07/27 重构了。</p>
+<div class="admonition abstract">
+<p class="admonition-title">TODO List</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> MockContest trick collection since 2023/06/28</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Atcoder &amp; Codeforces, 2023/07 &amp; 2023/08 (until 0820)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Cwoi misc problem collection, 2023/07 &amp; 2023/08 (until 0820)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 重构 Part 0.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 一些比较杂的<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> siz &gt;= ? 的子树</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NOI2016 网格</li>
+</ul>
+</li>
+</ul>
+</div>
 <!-- --- -->
 <!--  -->
 <!-- 这里是给学弟的一些话： -->
 <!--  -->
 <!-- 现在是 2023/07/26，离我退役应该还有 114 天。 -->
 <!--  -->
-<!-- 我最近发现，其实 cw 这边训练的体系有些问题，在技巧和知识体系方面有问题（） -->
+<!-- 我最近感觉，其实 cw 这边训练的体系有些问题，在技巧和知识体系方面有问题（） -->
 <!--  -->
 <!-- 这里面倒是记录了不少 trick，我的建议是，如果你觉得某个板块好像缺 trick 了，不妨到我这里来找找，不管是这里，对应的笔记，还是一些杂题（善用搜索功能） -->
 <!--  -->
@@ -6457,7 +6508,10 @@
 <li>也可以对于一个复杂的 <span class="arithmatex">\(\sum\sum\min\max\)</span> 这样的式子，我们尝试直接钦定出单个位置的答案，求和之后再推式子<a href="../../rec/atcf-for-2023-01-02/#abc290f-maximum-diameter">ABC290F - Maximum Diameter</a>，不然就是类似上面那样更换计算方式。</li>
 <li>是否要考虑分离变量？比如树状数组维护矩阵改矩阵和的时候，比如线段树维护方差的时候。</li>
 <li>考虑一下修改了一个位置之后，对答案的影响是什么？这里还是以 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a> 为例，这个题确实比较深刻。</li>
-<li>考虑一下，正着做很麻烦，能否考虑反着做，或者拆开做？</li>
+<li>考虑一下，正着做很麻烦，能否考虑反着做，或者拆开做？<ul>
+<li>更进一步的，如果说我们计算前面的贡献会影响到后面的贡献时，是不是可以考虑倒过来处理贡献：<a href="../../rec/tricks-for-2023-07-08/#cf264e-roadside-trees">CF264E-Roadside Trees</a></li>
+</ul>
+</li>
 <li>当前的式子，当前的一些变量，能不能存在其它等价的，可以方便计算的意义？比如用组合意义转化，或者是用类似 wqs 二分里给式子结合原问题找意义的这种？</li>
 <li>有的时候甚至可以考虑增加限制来缩减状态，但是仍然保证合法？类似<a href="../../sol/mock/230115C/#c">230115C-T3-实验</a>至少不好算，但是至少凑出还可以维护，或者是 <a href="../../sol/mock/230407C/#d">230407C-T4-Y老板的别墅</a> 这样为了计数方便加入限制的</li>
 <li>想清楚一类贡献什么时候会被计算，如果它可以被不同种情况的不同位置更新，是否要考虑钦定只计算某些部分：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
@@ -6501,6 +6555,13 @@
 <li>很多“插入”类的问题都有“相对次序不变的性质”，我们可以从这个方面找到问题的突破口：<a href="../../sol/mock/230414C/#t4">230414C-T4-ZYB玩字符串</a></li>
 <li>有一类问题，每次操作 <span class="arithmatex">\((i, j)\)</span> 不止会改变 <span class="arithmatex">\(a_i, a_j\)</span>，通常还伴有其他的限制，我们一般考虑，想办法通过这些限制找出一个“元操作”，消去/减少限制：<a href="../../rec/atcf-for-2023-03-04/#abc296f-simultaneous-swap">ABC296F-Simultaneous Swap</a></li>
 <li>有一类问题，它会要求你按照某个步骤利用某个东西生成某个东西，如果你能尝试维护这里面所谓的“不变量”，那么计算会很方便，当然还有一种想法是转化成图论问题，考虑答案的生成过程，并尝试压缩，合并相同的块/路径，以此达到优化的目的：<a href="../../sol/mock/230509C/#find-and-replace">230509C-T2-Find and Replace</a>。</li>
+<li>切比雪夫距离和曼哈顿距离是可以相互转化的：<a href="../../rec/tricks-for-2023-07-08/#gym100739e-life-as-a-monster">Gym100739E-Life as a Monster</a></li>
+<li>如果是在对序列做移动操作，我们很难计算贡献，所以不妨钦定一些元素已经不再移动，或者说考虑还没被移动的元素，进行贡献的分拆计算：<a href="../../rec/tricks-for-2023-07-08/#agc032d-rotation-sort">AGC032D-Rotation Sort</a></li>
+<li>交互题，目前来说我知道两种 trick：<ul>
+<li>很多时候可用的询问次数和 <span class="arithmatex">\(\log\)</span> 相关，这一般都提示是二进制啊，倍增啊什么的：<a href="../../rec/atcf-for-2022-11-12/#abc282f-union-of-two-sets">ABC282F-Union of Two Sets</a></li>
+<li>有的时候要问满足条件的一些元素，我们可以维护答案集合，通过不断的询问，一个个删除不可能成为答案的元素。<a href="../../rec/atcf-for-2023-07-08/#cf1856d-more-wrong">CF1856D-More Wrong</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="part-2">Part 2. 动态规划相关<a class="headerlink" href="#part-2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>建议先阅读 <a href="../../algor/dp/basis/">dp 基础</a>，先搞清楚 dp 的本质是什么。</p>
@@ -6608,6 +6669,20 @@
 <li>对于一个有向图连通性问题，不止可以考虑 Tarjan，在一定条件下还可以考虑先连出反向边，加边之后变成无向边，可以使用 dsu 维护：<a href="../../rec/atcf-for-2023-03-04/#abc295g-minimum-reachable-city">ABC295G-Minimum Reachable City</a></li>
 <li>通常对于一个联通块，维护了联通块信息，考虑合并的时候，会用到启发式合并，不然复杂度容易寄掉：<a href="../../sol/mock/230418C/#t2">230418C-T2-图</a>。</li>
 <li>对于一个连通性问题，dfs 树是一个很有力的工具，我们可以把许多问题拆分到 dfs 树上，用类似 Tarjan 的思想来处理问题：<a href="../../rec/tricks-for-2023-07-08/#cf19e-fairy">CF19E-Fairy</a></li>
+<li>无向图有耳分解当且仅当它是边双连通的，这个结论有一个很大的用处就是可以辅助我们找到 dp 的转移：<a href="../../rec/tricks-for-2023-07-08/#cf1155f-delivery-oligopoly">CF1155F-Delivery Oligopoly</a></li>
+</ul>
+<h3 id="part-42">Part 4.2. 树上问题<a class="headerlink" href="#part-42" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<ul>
+<li>树的括号序可以表达的不止有子树关系，还可以表达距离关系（甚至可以带权值）：<a href="../../rec/tricks-for-2023-07-08/#cf1149c-tree-generatortm">CF1149C-Tree Generator™</a></li>
+<li>轻子树的大小之和总数级别为 <span class="arithmatex">\(O(n \log n)\)</span>，这在一些需要在树上合并的问题中很常用，可以用于优化复杂度（dsu on tree）：<a href="../../rec/atcf-for-2023-07-08/#cf1856e2-permutree-hard-version">CF1856E2-PermuTree (hard version)</a></li>
+</ul>
+<h3 id="part-43">Part 4.3. 路径相关<a class="headerlink" href="#part-43" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<ul>
+<li>分层图最短路的时候，如果发现连边过多，可以考虑把这些边归类，看能不能新建一层，用一条边来表示：<a href="../../rec/tricks-for-2023-07-08/#hdu5582-journey-of-taku">HDU5582-Journey of Taku</a></li>
+</ul>
+<h3 id="part-44">Part 4.4. 基环树<a class="headerlink" href="#part-44" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<ul>
+<li>基环树相关问题有一个套路，先把树的部分做了，然后考虑合并到环上来做：<a href="../../rec/tricks-for-2023-07-08/#bzoj1950-link">BZOJ1950-Link</a></li>
 </ul>
 <h2 id="part-5">Part 5. 数据结构相关<a class="headerlink" href="#part-5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <h3 id="part-51">Part 5.1. 转化<a class="headerlink" href="#part-51" title="Permanent link">ψ(｀∇´)ψ</a></h3>
@@ -6640,7 +6715,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2023</span>
       
     
   </small>
