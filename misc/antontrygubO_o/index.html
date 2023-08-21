@@ -4796,44 +4796,17 @@
       
         <li class="md-nav__item">
   <a href="#part-0" class="md-nav__link">
-    Part 0. 如何分析题目
+    Part 0. 做题
   </a>
-  
-    <nav class="md-nav" aria-label="Part 0. 如何分析题目">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#part-01" class="md-nav__link">
-    Part 0.1. 阅读题面
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-02" class="md-nav__link">
-    Part 0.2. 转化问题以及观察结论和性质
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#part-03" class="md-nav__link">
-    Part 0.3. 思路的延续、切换以及思维空白窗口
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#part-1" class="md-nav__link">
-    Part 1. 一些难以归类的技巧
+    Part 1. 基础
   </a>
   
-    <nav class="md-nav" aria-label="Part 1. 一些难以归类的技巧">
+    <nav class="md-nav" aria-label="Part 1. 基础">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4852,8 +4825,49 @@
         
           <li class="md-nav__item">
   <a href="#part-13" class="md-nav__link">
-    Part 1.3. 乱搞
+    Part 1.3. 交互
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-14" class="md-nav__link">
+    Part 1.4. 难以归类的小技巧
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1.4. 难以归类的小技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-141" class="md-nav__link">
+    Part 1.4.1. 贡献计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-142" class="md-nav__link">
+    Part 1.4.2. 转化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-143" class="md-nav__link">
+    Part 1.4.3. 减少限制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-144" class="md-nav__link">
+    Part 1.4.4 各种乱搞
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6447,13 +6461,15 @@
 <div class="admonition abstract">
 <p class="admonition-title">TODO List</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> MockContest trick collection since 2023/06/28</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> MockContest trick collection since 2023/06/28</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Atcoder &amp; Codeforces, 2023/07 &amp; 2023/08 (until 0820)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Cwoi misc problem collection, 2023/07 &amp; 2023/08 (until 0820)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 重构 Part 0.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 重构 Part 0 &amp; 1.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 构造</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 一些比较杂的<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> siz &gt;= ? 的子树</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NOI2016 网格</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 0807 Permutation</li>
 </ul>
 </li>
 </ul>
@@ -6476,92 +6492,108 @@
 <!--  -->
 <!-- 你已经比我幸运太多了！加油吧！（另外补充一个彩蛋，如果没有问题，这段文字直到我退役以前应该都是不可见的（因为被我注释掉了）） -->
 
-<h2 id="part-0">Part 0. 如何分析题目<a class="headerlink" href="#part-0" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<h3 id="part-01">Part 0.1. 阅读题面<a class="headerlink" href="#part-01" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>拿到题首先应该做的是阅读题面，先形式化题面（很多时候形式化就代表了初步转化）。</p>
-<p>想清楚题目要求你做什么，这类问题有没有见过，有没有套路，如果见过类似的，这个题应该有什么变化？比如做过 <a href="../../rec/atcf-for-2022-11-12/#abc283f-permutation-distance">Permutation Distance</a> 之后再看到 <a href="../../sol/mock/230111C/#a">230111C-T1-小W与身高</a> 这样。</p>
-<p>不过要注意，不要看到类似的就直接开想，确定一下是不是一致的，不然容易因为激动都错题酿成悲剧。</p>
-<p>看清楚问题是 online 还是 offline？是 exists 还是 forall？</p>
-<p>没有套路的话是不是应该考虑转化/观察结论？（这个下面再说）</p>
-<p>当然，如果一个问题思考的时候脑袋里没有一种“清晰”的感觉，就尽量不要开始下一步，比如 <a href="../../sol/mock/230203C/#t1">230203C-T1-字符串</a>。</p>
-<p>观察数据范围也是一个很重要的点，可以在很大程度上快速判断对应 subtask 的时间复杂度以确定方向，比如 <a href="../../rec/atcf-for-2022-11-12/#abc282f-union-of-two-sets">Union of Two Sets</a> 这类交互，能通过交互题出题的局限性，根据数据范围快速判断做法（（（</p>
-<p>不过有的时候也不能被这个局限了：比如<a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a>，发现这个东西字符集是 <span class="arithmatex">\(26\)</span>，而且字符串长度 <span class="arithmatex">\(1e5\)</span>，以为复杂度是 <span class="arithmatex">\(26 \times 1e5\)</span>，结果实际上还要再多一个二分的 <span class="arithmatex">\(\log\)</span>。</p>
-<p>还有 <a href="../../sol/mock/230201C/#t2">230201C-T2-翻转</a>，这个也是被数据范围直接骗了，方向直接错完，本来就是暴力，想成状压 dp 了……</p>
-<p>所以观察数据范围来判定做法是下下策，只能在<strong>完全</strong>没有思路的情况下使用！</p>
-<p>不过你为了确定做法值不值得想下去，还是要看一下数据范围的，避免像 <a href="../../sol/other/usaco23janbronze/">USCAO23JAN Bronze T2</a> 这样，本来就是个语法暴力题，就因为把 <span class="arithmatex">\(10\)</span> 看成了 <span class="arithmatex">\(1e5\)</span>，想了大半天贪心，成为小丑。</p>
-<h3 id="part-02">Part 0.2. 转化问题以及观察结论和性质<a class="headerlink" href="#part-02" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>这个其实才是很多时候打开题目突破口的地方。</p>
-<p>有一些比较常用的技巧，在这里列举一下：</p>
-<ul>
-<li>最笨的方法就是考虑手玩样例，模拟一下题面的过程看看有没有启发，找找规律试试？比如：<a href="../../sol/mock/220518C/">220518C-T2-「客星璀璨之夜」</a> 这样？或者是类似 <a href="../../sol/mock/230113C/#coin">2301113C-T4-coin</a> 这种考虑把有联系的东西放在一起，观察到问题的本质？</li>
-<li>再进一步就是考虑观察答案的形式，合法解的形状，看看有没有什么启发，比如 <a href="../../rec/arc-vp-record/#e-young-maids">Young Maids</a>，考虑一个答案合法后对原问题决策的限制是什么？还是说比如 <a href="../../sol/mock/221025C/">221025C-T4-罪⼈挽歌</a></li>
-<li>要想清楚，什么东西才会造成贡献，一个位置什么时候合法，什么时候不合法，我们希望能类似拆开限制一样，让各个元素做的贡献尽量的减少对其它元素贡献的影响，这样更方便计算，比如类似 <a href="../../sol/mock/230203C/#t4">230203C-T4-交换</a> 的想法，很多时候也能类似下面 dp 里提到的 <a href="../../rec/atcf-for-2022-07-08/#cf1720d1-xor-subsequence-easy-version">Xor-Subsequence (easy version)</a> 一样用来排除不必要的状态。</li>
-<li>（接上一条）也可以考虑一下，如果我们考虑全局 or 每一段，本身就已经能满足答案的贡献，然后再考虑凑出来之后又出现的新的贡献（前提是开始的时候满足贡献的，拼凑起来之后也能满足贡献）：<a href="../../sol/other/noiol2022/#t1">NOIOnline2022TG-丹钓战</a>，<a href="../../rec/atcf-for-2023-03-04/#1c-music-festival">CF1801C-Music Festival</a></li>
-<li>对于一个最优化问题，思考一下，怎么样才能更加优秀，是不是要考虑贪心啊，dp啊之类的做法了？比如 <a href="../../sol/mock/230203C/#t3">230203C-T3-序列</a></li>
-<li>观察一个看起来啥都没有的问题，要考虑自己手动加上一些限制，写出“不是，就是，一定是，否则”这样的观察，然后考虑这些东西有啥用：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
-</ul>
-<p>这些是用于转化问题的，或者说已经接近直接的做法了：</p>
-<ul>
-<li>有多个复合的限制条件的时候，考虑把限制条件拆开维护：<a href="../../rec/atcf-for-2022-11-12/#abc283f-permutation-distance">Permutation Distance</a>。</li>
-<li>考虑更换贡献的计算方式，选择不那么直观的贡献拆开维护？类似 Manacher 这样，只考虑以一个位置为中心的所有回文串，进一步说这个是钦定一个类似 dp 中“阶段”的基底，找到一个计算贡献的基准。</li>
-<li>或者考虑累加影响，批量处理贡献？比如 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a>，计算答案的时候就是反过来，考虑基准对于所有能产生贡献的点累加一个权值，最后离线在所有点算一下权值即可</li>
-<li>也可以对于一个复杂的 <span class="arithmatex">\(\sum\sum\min\max\)</span> 这样的式子，我们尝试直接钦定出单个位置的答案，求和之后再推式子<a href="../../rec/atcf-for-2023-01-02/#abc290f-maximum-diameter">ABC290F - Maximum Diameter</a>，不然就是类似上面那样更换计算方式。</li>
-<li>是否要考虑分离变量？比如树状数组维护矩阵改矩阵和的时候，比如线段树维护方差的时候。</li>
-<li>考虑一下修改了一个位置之后，对答案的影响是什么？这里还是以 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a> 为例，这个题确实比较深刻。</li>
-<li>考虑一下，正着做很麻烦，能否考虑反着做，或者拆开做？<ul>
-<li>更进一步的，如果说我们计算前面的贡献会影响到后面的贡献时，是不是可以考虑倒过来处理贡献：<a href="../../rec/tricks-for-2023-07-08/#cf264e-roadside-trees">CF264E-Roadside Trees</a></li>
-</ul>
-</li>
-<li>当前的式子，当前的一些变量，能不能存在其它等价的，可以方便计算的意义？比如用组合意义转化，或者是用类似 wqs 二分里给式子结合原问题找意义的这种？</li>
-<li>有的时候甚至可以考虑增加限制来缩减状态，但是仍然保证合法？类似<a href="../../sol/mock/230115C/#c">230115C-T3-实验</a>至少不好算，但是至少凑出还可以维护，或者是 <a href="../../sol/mock/230407C/#d">230407C-T4-Y老板的别墅</a> 这样为了计数方便加入限制的</li>
-<li>想清楚一类贡献什么时候会被计算，如果它可以被不同种情况的不同位置更新，是否要考虑钦定只计算某些部分：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
-<li>对于一个序列或者是什么东西，做多次变换，我们通常可以考虑，原序列对多次操作之后的序列哪些位置会有贡献，贡献是怎么样的 <a href="../../sol/mock/230407C/#c">230407C-T3-进化</a> </li>
-<li>如果一个最优化问题处理起来十分困难，不妨尝试找到最优化问题的单调性，将其转化为判定问题来求解，记住，大部分时候判定难度远低于最优化：<a href="../../sol/mock/230430C/#square">230430C-T3-Square</a>。</li>
-</ul>
-<h3 id="part-03">Part 0.3. 思路的延续、切换以及思维空白窗口<a class="headerlink" href="#part-03" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>有性质，有想法之后，应该考虑的就是，怎么样把它应用到原问题上。</p>
-<p>还有，这些东西是否能保证正确性？有没有反例？有没有特殊情况？考虑一下先？</p>
-<p>如果当前思路虽然很清晰，但就是卡在一个点，知道应该把它弄成什么形式，但是确实没有办法做到，就需要考虑重启思路，或者是观察思维链上是不是有什么地方出问题了，比如：<a href="../../sol/mock/230201C/#t2">230201C-T2-翻转</a></p>
-<p>思维空白的时候，有两种办法，一种是观察题面，另外一种就是考虑重新理一遍思路。</p>
-<p>长时间的思维空白会导致脱出状态。</p>
-<p>如果感觉思路有点混乱了，或者说卡在关键点但是不知道怎么做了，也需要重新理一下思路，而且不能太快直接过过去，慢一点，不着急。</p>
-<h2 id="part-1">Part 1. 一些难以归类的技巧<a class="headerlink" href="#part-1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h2 id="part-0">Part 0. 做题<a class="headerlink" href="#part-0" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<p><strong>！！强调！！：</strong> 这里的技巧是做题的技巧，不是思维的技巧，要注意区分。</p>
+<p>首先是我觉得一个应该被放在首位的东西：</p>
+<blockquote>
+<p>怎么好做就怎么猜结论 —— zjk</p>
+</blockquote>
+<p>拿到题第一个事情还是先读懂题面，手玩样例确认没有问题。</p>
+<blockquote>
+<p>如果一个题太难了不会做，那就再读题。</p>
+<p>如果一个题太简单了，一定要再读题。</p>
+</blockquote>
+<p>二者出现在这里的理由都很简单，我不止一次遭遇过因为读错题浪费时间或者是丢掉不该丢的分的惨案了。</p>
+<p>然后就是看一看数据范围，大概心里有个底，不一定要按照数据范围来猜做法，可以先想，然后排除或者优化。</p>
+<p>出思路这部分个人认为就是最玄学的，也是 OI 最喜欢考察的部分。</p>
+<p>如果说这道题有似曾相识的感觉，还是和上面一样，再读一遍确认一下。</p>
+<p>然后如果没能看出思路，那么就要开始进行套路枚举了。</p>
+<p>简单来说，我们先 bfs 枚举做法，然后对于每个做法 dfs 下去考虑，思考能不能做，问题出在哪里。</p>
+<p>然后如果 dfs 有救，在更深层再次 bfs，当然以上的过程都是记忆化搜索，如果所有套路都行不通了，那就枚举新的套路，或者说开始猜做法。</p>
+<p>要不然就迭代加深，再来一次，并且摒弃大部分之前的想法，不要想当然的就顺着之前的思路走，一步步确定好再往下。</p>
+<p>如果这还是想不到，那确实就只能靠启发和人类智慧了。</p>
+<p>一般来说这个过程不要超过 30 分钟，20 分钟是一个比较理想的时长。</p>
+<p>如果超过了，那么看看这题暴力值不值得拿，先打个暴力确保有分。</p>
+<p>等思路确认之后，就是实现部分了，这个就可以看同目录下的：<a href="../code/">如何有逻辑的实现思路</a>。</p>
+<p>调试的时候也按照实现的顺序来调试，会比较有条理。</p>
+<h2 id="part-1">Part 1. 基础<a class="headerlink" href="#part-1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <h3 id="part-11">Part 1.1. 贪心<a class="headerlink" href="#part-11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>正常想法其实应该是，对于一看就是贪心，但是策略不明显的题，应该把所有可能策略拿出来，不然反证，不然 exc arg，不然范围放缩，反正就应该求出来什么情况下什么最优，然后再来考虑怎么写代码。</p>
-<p>也就是说，要确保你的结论的正确和合理。</p>
-<p>而不是一个劲的瞎想结论，这样命中效率很低。</p>
+<p>贪心其实是一个比较玄学的问题啊！</p>
+<p>很多时候最优策略不是能一眼看出来的，我们需要尝试枚举最优策略，或者说猜。</p>
+<p>然后再考虑严谨的证明，如果只是拿不出反例，那就不要认为这个策略是正确的（除非真的是走投无路了不然不要写这类做法）。</p>
+<p>常见的策略在<a href="../../algor/basic/greedy/">这里</a>已经提到了，可以翻阅一下。</p>
+<p>这里记录一些不常见的 trick。</p>
 <p>『= = = = = = = = = = = = = = = =』</p>
 <ul>
 <li>一种拆分的贪心思想：可以按照某种“重要程度”分开考虑，然后对于每一种情况分开考虑，最后直接暴力复合：<a href="../../sol/other/thupc2023-pre/#a-">THUPC2023-pre-A-大富翁</a></li>
 <li>如果一个题，没法很好的通过贪心来快速确定一些必选策略，或者说排除冗杂（也就是有不少特例），此时我们可以考虑直接枚举每一个位置，对他直接通过暴力或者维护信息算答案：<a href="../../rec/atcf-for-2023-03-04/#1b-buying-gifts">CF1801B - Buying gifts</a>，<a href="../../sol/mock/230322C/#brackets">230322C-T2-Brackets</a>。或者是我们就直接考虑 dp：<a href="../../rec/atcf-for-2023-03-04/#1c-music-festival">CF1801C-Music Festival</a> (换句话说，我们可以直接考虑在整个状态空间里取最优解，而不是一个劲的考虑局部最优解)</li>
 </ul>
 <h3 id="part-12">Part 1.2. 构造<a class="headerlink" href="#part-12" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>其实构造属于比较 adhoc 的题目，不过还是存在一定的套路。</p>
+<blockquote>
+<p>gugugu</p>
+</blockquote>
+<p>UOJ 群文件构造选讲。</p>
+<h3 id="part-13">Part 1.3. 交互<a class="headerlink" href="#part-13" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>交互题出于题目本身的特点，很多时候出不出太多新意，遇到过的都是藏一个什么东西让你问出来，或者通过询问进行操作？</p>
+<p>这里就记录了我遇到的所有交互题用到的 trick。</p>
+<p>当然大部分交互题都还是需要寻找问题的性质，不能局限于此。</p>
+<p>『= = = = = = = = = = = = = = = =』</p>
 <ul>
-<li>假设答案存在，应该是怎么样的？</li>
-<li>那么，答案不存在的时候应该是怎么样？</li>
-<li>有没有什么特殊的方式，能够让条件被很好的满足？</li>
-<li>可不可以放宽或者缩小题目的限制以便更好的构造？</li>
-</ul>
-<h3 id="part-13">Part 1.3. 乱搞<a class="headerlink" href="#part-13" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<ul>
-<li>对于一个序列做很多个 independent problem 的时候一般都会要考虑从上一个状态继承，或者是考虑先整体做一遍再计算 ignore 一些操作之后的影响之类的
-：<a href="../../rec/atcf-for-2022-11-12/#abc281d-max-multiple">Least Elements</a>，<a href="../../sol/mock/230203C/#t2">230203C-T2-排列</a>。</li>
-<li>如果是通过打表找规律，找到了 <span class="arithmatex">\(k = c\)</span> （常数）的规律，可以考虑把式子中的常数项换成 <span class="arithmatex">\(k\)</span> 相关的式子，进而推出通项公式：<a href="../../sol/other/thupc2023-pre/#b-">THUPC2023-pre-B - 拧螺丝</a></li>
-<li>有些时候我们可以考虑忽略部分限制，直接对于一部分限制做完，然后再一一调整满足其它限制，不过在这个过程中通常就可以看出复合后的做法了：<a href="404.html">Lost Cows</a></li>
-<li>对于一个会跳来跳去，算一下方案数，经过的路径长度之类的问题，可以很容易的想到利用倍增维护：<a href="404.html">CF1809F - Traveling in Berland</a>（这题题解还没写）。</li>
-<li>如果一个问题要你合并一堆东西，而你只会暴力，请务必直接启发式合并：<a href="../../sol/mock/230331C/#favorite-colors">230331C-T2-Favorite Colors</a>。</li>
-<li>类似 CDQ 和点分治的这种“只考虑一种简单情况，其他分治处理”的思想，可以多拿来思考思考。</li>
-<li>很多“插入”类的问题都有“相对次序不变的性质”，我们可以从这个方面找到问题的突破口：<a href="../../sol/mock/230414C/#t4">230414C-T4-ZYB玩字符串</a></li>
-<li>有一类问题，每次操作 <span class="arithmatex">\((i, j)\)</span> 不止会改变 <span class="arithmatex">\(a_i, a_j\)</span>，通常还伴有其他的限制，我们一般考虑，想办法通过这些限制找出一个“元操作”，消去/减少限制：<a href="../../rec/atcf-for-2023-03-04/#abc296f-simultaneous-swap">ABC296F-Simultaneous Swap</a></li>
-<li>有一类问题，它会要求你按照某个步骤利用某个东西生成某个东西，如果你能尝试维护这里面所谓的“不变量”，那么计算会很方便，当然还有一种想法是转化成图论问题，考虑答案的生成过程，并尝试压缩，合并相同的块/路径，以此达到优化的目的：<a href="../../sol/mock/230509C/#find-and-replace">230509C-T2-Find and Replace</a>。</li>
-<li>切比雪夫距离和曼哈顿距离是可以相互转化的：<a href="../../rec/tricks-for-2023-07-08/#gym100739e-life-as-a-monster">Gym100739E-Life as a Monster</a></li>
-<li>如果是在对序列做移动操作，我们很难计算贡献，所以不妨钦定一些元素已经不再移动，或者说考虑还没被移动的元素，进行贡献的分拆计算：<a href="../../rec/tricks-for-2023-07-08/#agc032d-rotation-sort">AGC032D-Rotation Sort</a></li>
-<li>交互题，目前来说我知道两种 trick：<ul>
 <li>很多时候可用的询问次数和 <span class="arithmatex">\(\log\)</span> 相关，这一般都提示是二进制啊，倍增啊什么的：<a href="../../rec/atcf-for-2022-11-12/#abc282f-union-of-two-sets">ABC282F-Union of Two Sets</a></li>
 <li>有的时候要问满足条件的一些元素，我们可以维护答案集合，通过不断的询问，一个个删除不可能成为答案的元素。<a href="../../rec/atcf-for-2023-07-08/#cf1856d-more-wrong">CF1856D-More Wrong</a></li>
 </ul>
+<h3 id="part-14">Part 1.4. 难以归类的小技巧<a class="headerlink" href="#part-14" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p><strong>！！强调！！：</strong> 这里的技巧一定是，难以归类的，一般和算法不沾边，但是是不可或缺的一步转化之类的东西，和做题的技巧要区分开。</p>
+<h4 id="part-141">Part 1.4.1. 贡献计算<a class="headerlink" href="#part-141" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>老生常谈了，这个东西通常是打开问题的第一步。</p>
+<p>感觉之后需要第三次总结，再把这里的东西具体化，理论化一点。</p>
+<p>『= = = = = = = = = = = = = = = =』</p>
+<ul>
+<li>对于一个序列做很多个 independent problem 的时候一般都会要考虑从上一个状态继承，或者是考虑先整体做一遍再计算 ignore 一些操作之后的影响之类的：<a href="../../rec/atcf-for-2022-11-12/#abc281d-max-multiple">Least Elements</a>，<a href="../../sol/mock/230203C/#t2">230203C-T2-排列</a>。</li>
+<li>要想清楚，什么东西才会造成贡献，一个位置什么时候合法，什么时候不合法，我们希望能类似拆开限制一样，让各个元素做的贡献尽量的减少对其它元素贡献的影响，这样更方便计算，比如类似 <a href="../../sol/mock/230203C/#t4">230203C-T4-交换</a> 的想法，很多时候也能类似下面 dp 里提到的 <a href="../../rec/atcf-for-2022-07-08/#cf1720d1-xor-subsequence-easy-version">Xor-Subsequence (easy version)</a> 一样用来排除不必要的状态。</li>
+<li>（接上一条）也可以考虑一下，如果我们考虑全局 or 每一段，本身就已经能满足答案的贡献，然后再考虑凑出来之后又出现的新的贡献（前提是开始的时候满足贡献的，拼凑起来之后也能满足贡献）：<a href="../../sol/other/noiol2022/#t1">NOIOnline2022TG-丹钓战</a>，<a href="../../rec/atcf-for-2023-03-04/#1c-music-festival">CF1801C-Music Festival</a></li>
+<li>考虑更换贡献的计算方式，选择不那么直观的贡献拆开维护？类似 Manacher 这样，只考虑以一个位置为中心的所有回文串，进一步说这个是钦定一个类似 dp 中“阶段”的基底，找到一个计算贡献的基准。</li>
+<li>或者考虑累加影响，批量处理贡献？比如 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a>，计算答案的时候就是反过来，考虑基准对于所有能产生贡献的点累加一个权值，最后离线在所有点算一下权值即可</li>
+<li>也可以对于一个复杂的 <span class="arithmatex">\(\sum\sum\min\max\)</span> 这样的式子，我们尝试直接钦定出单个位置的答案，求和之后再推式子<a href="../../rec/atcf-for-2023-01-02/#abc290f-maximum-diameter">ABC290F - Maximum Diameter</a>，不然就是类似上面那样更换计算方式。</li>
+<li>对于一个序列或者是什么东西，做多次变换，我们通常可以考虑，原序列对多次操作之后的序列哪些位置会有贡献，贡献是怎么样的 <a href="../../sol/mock/230407C/#c">230407C-T3-进化</a> </li>
+<li>想清楚一类贡献什么时候会被计算，如果它可以被不同种情况的不同位置更新，是否要考虑钦定只计算某些部分：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
+<li>考虑一下修改了一个位置之后，对答案的影响是什么？这里还是以 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a> 为例，这个题确实比较深刻。</li>
+</ul>
+<h4 id="part-142">Part 1.4.2. 转化<a class="headerlink" href="#part-142" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>感觉些东西比较奇妙，也不太好总结。</p>
+<p>『= = = = = = = = = = = = = = = =』</p>
+<ul>
+<li>切比雪夫距离和曼哈顿距离是可以相互转化的：<a href="../../rec/tricks-for-2023-07-08/#gym100739e-life-as-a-monster">Gym100739E-Life as a Monster</a></li>
+<li>如果一个最优化问题处理起来十分困难，将其转化为判定问题来求解，记住，大部分时候判定难度远低于最优化：<a href="../../sol/mock/230430C/#square">230430C-T3-Square</a>。</li>
+<li>当前的式子，当前的一些变量，能不能存在其它等价的，可以方便计算的意义？比如用组合意义转化，或者是用类似 wqs 二分里给式子结合原问题找意义的这种？</li>
+</ul>
+<h4 id="part-143">Part 1.4.3. 减少限制<a class="headerlink" href="#part-143" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>一句话总结这种思想就是，减少耦合度，简化问题。</p>
+<p>『= = = = = = = = = = = = = = = =』</p>
+<ul>
+<li>类似 CDQ 和点分治的这种“只考虑一种简单情况，其他分治处理”的思想，可以多拿来思考思考。</li>
+<li>如果是在对序列做移动操作，我们很难计算贡献，不妨钦定一些元素已经不再移动，或者说考虑还没被移动的元素，进行贡献的分拆计算：<a href="../../rec/tricks-for-2023-07-08/#agc032d-rotation-sort">AGC032D-Rotation Sort</a></li>
+<li>有一类问题，每次操作 <span class="arithmatex">\((i, j)\)</span> 不止会改变 <span class="arithmatex">\(a_i, a_j\)</span>，通常还伴有其他的限制，我们一般考虑，想办法通过这些限制找出一个“元操作”，消去/减少限制：<a href="../../rec/atcf-for-2023-03-04/#abc296f-simultaneous-swap">ABC296F-Simultaneous Swap</a></li>
+<li>有一类问题，它会要求你按照某个步骤利用某个东西生成某个东西，如果你能尝试维护这里面所谓的“不变量”，那么计算会很方便，当然还有一种想法是转化成图论问题，考虑答案的生成过程，并尝试压缩，合并相同的块/路径，以此达到优化的目的：<a href="../../sol/mock/230509C/#find-and-replace">230509C-T2-Find and Replace</a>。</li>
+<li>很多“插入”类的问题都有“相对次序不变的性质”，我们可以从这个方面找到问题的突破口：<a href="../../sol/mock/230414C/#t4">230414C-T4-ZYB玩字符串</a></li>
+<li>有些时候我们可以考虑忽略部分限制，直接对于一部分限制做完，然后再一一调整满足其它限制，不过在这个过程中通常就可以看出复合后的做法了：<a href="404.html">Lost Cows</a></li>
+<li>有的时候甚至可以考虑增加限制来缩减状态，但是仍然保证合法？类似<a href="../../sol/mock/230115C/#c">230115C-T3-实验</a>至少不好算，但是至少凑出还可以维护，或者是 <a href="../../sol/mock/230407C/#d">230407C-T4-Y老板的别墅</a> 这样为了计数方便加入限制的</li>
+<li>考虑一下，正着做很麻烦，能否考虑反着做，或者拆开做？<ul>
+<li>更进一步的，如果说我们计算前面的贡献会影响到后面的贡献时，是不是可以考虑倒过来处理贡献：<a href="../../rec/tricks-for-2023-07-08/#cf264e-roadside-trees">CF264E-Roadside Trees</a>，这也是一种“减少限制”的思想。</li>
+</ul>
 </li>
+<li>是否要考虑分离变量？比如树状数组维护矩阵改矩阵和的时候，比如线段树维护方差的时候。</li>
+</ul>
+<h4 id="part-144">Part 1.4.4 各种乱搞<a class="headerlink" href="#part-144" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<ul>
+<li>如果是通过打表找规律，找到了 <span class="arithmatex">\(k = c\)</span> （常数）的规律，可以考虑把式子中的常数项换成 <span class="arithmatex">\(k\)</span> 相关的式子，进而推出通项公式：<a href="../../sol/other/thupc2023-pre/#b-">THUPC2023-pre-B - 拧螺丝</a></li>
+<li>对于一个会跳来跳去，算一下方案数，经过的路径长度之类的问题，可以很容易的想到利用倍增维护：<a href="404.html">CF1809F - Traveling in Berland</a>（这题题解还没写）。</li>
+<li>如果一个问题要你合并一堆东西，而你只会暴力，请务必直接启发式合并：<a href="../../sol/mock/230331C/#favorite-colors">230331C-T2-Favorite Colors</a>。</li>
+<li>考虑手玩样例，模拟一下题面的过程看看有没有启发，找找规律试试？比如：<a href="../../sol/mock/220518C/">220518C-T2-「客星璀璨之夜」</a> 这样？或者是类似 <a href="../../sol/mock/230113C/#coin">2301113C-T4-coin</a> 这种考虑把有联系的东西放在一起，观察到问题的本质？</li>
+<li>考虑观察答案的形式，合法解的形状，看看有没有什么启发，比如 <a href="../../rec/arc-vp-record/#e-young-maids">Young Maids</a>，考虑一个答案合法后对原问题决策的限制是什么？还是说比如 <a href="../../sol/mock/221025C/">221025C-T4-罪⼈挽歌</a></li>
+<li>对于一个最优化问题，思考一下，怎么样才能更加优秀，是不是要考虑贪心啊，dp啊之类的做法了？比如 <a href="../../sol/mock/230203C/#t3">230203C-T3-序列</a></li>
+<li>观察一个看起来啥都没有的问题，要考虑自己手动加上一些限制，写出“不是，就是，一定是，否则”这样的观察，然后考虑这些东西有啥用：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
+<li>关于度数的问题，说不定可以考虑使用邻接矩阵存图，有时候会有神奇的效果：<a href="../../sol/mock/230802nj/#prank">230802NanJingT4-Prank</a></li>
 </ul>
 <h2 id="part-2">Part 2. 动态规划相关<a class="headerlink" href="#part-2" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>建议先阅读 <a href="../../algor/dp/basis/">dp 基础</a>，先搞清楚 dp 的本质是什么。</p>
@@ -6635,7 +6667,7 @@
 <ul>
 <li><a href="../../sol/mock/230430C/#label">230430C-T4-Label</a> 这个题，要通过直接观察 DP 数组本身，找到一大段本质相同的状态，来尝试压缩决策集合以达到优化复杂度的目的。</li>
 <li>费用提前计算的思想：<a href="../../algor/dp/opt/convex-optimize/#_2">任务安排</a>，这个可以理解成“懒操作”的反方向，看起来这是决策优化，其实实际上是改变了 dp 状态本身的定义，所以我也将其归类为状态优化。</li>
-<li>有些题，直接定义的状态状态数太大，没法转移，在一些合适的情况下可以考虑交换值域和答案维，然后进行 dp，通常会结合到类似根号平衡的思想，这个例题等改完杂题再来补上，fsy 和 lk 的讲义里应该有。</li>
+<li>有些题，直接定义的状态状态数太大，没法转移，在一些合适的情况下可以考虑交换值域和答案维，将问题转化为一个判定问题，优化复杂度，比如 <a href="../../sol/mock/230811nj/#complexity">230811NanJing-T1-Complexity(AGC033D)</a>，有时也会结合到根号平衡的思想。</li>
 </ul>
 <h4 id="part-222">Part 2.2.2 决策优化<a class="headerlink" href="#part-222" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>这种优化其实比较套路感觉，就简单写写吧，例题啥的到对应博客下面看就行。</p>
@@ -6670,6 +6702,7 @@
 <li>通常对于一个联通块，维护了联通块信息，考虑合并的时候，会用到启发式合并，不然复杂度容易寄掉：<a href="../../sol/mock/230418C/#t2">230418C-T2-图</a>。</li>
 <li>对于一个连通性问题，dfs 树是一个很有力的工具，我们可以把许多问题拆分到 dfs 树上，用类似 Tarjan 的思想来处理问题：<a href="../../rec/tricks-for-2023-07-08/#cf19e-fairy">CF19E-Fairy</a></li>
 <li>无向图有耳分解当且仅当它是边双连通的，这个结论有一个很大的用处就是可以辅助我们找到 dp 的转移：<a href="../../rec/tricks-for-2023-07-08/#cf1155f-delivery-oligopoly">CF1155F-Delivery Oligopoly</a></li>
+<li>有向图必经边可以通过出边标记的方式来求：<a href="../../sol/mock/230811nj/#changes">230811NanJing-T2-Changes(ARC092F)</a>，不过更好的方式是支配树？</li>
 </ul>
 <h3 id="part-42">Part 4.2. 树上问题<a class="headerlink" href="#part-42" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
@@ -6715,7 +6748,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
       
     
   </small>
