@@ -10,13 +10,13 @@
         <meta name="author" content="black_trees">
       
       
-        <link rel="canonical" href="https://enonya.github.io/rec/interesting/before-noip2022/">
+        <link rel="canonical" href="https://enonya.github.io/rec/sum/segtree-tricks/">
       
       
-        <link rel="prev" href="../comb-problem/">
+        <link rel="prev" href="../dp-edu/">
       
       
-        <link rel="next" href="../../../sol/">
+        <link rel="next" href="../small-upper-bound/">
       
       
       <link rel="icon" href="../../../img/Left.jpg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>NOIP2022 考前思维打开口胡合集 - Gensokyo Algorithm Research Institute</title>
+        <title>线段树的扩展运用 - Gensokyo Algorithm Research Institute</title>
       
     
     
@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Merriweather";--md-code-font:"Ubuntu Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#noip2022" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NOIP2022 考前思维打开口胡合集
+              线段树的扩展运用
             
           </span>
         </div>
@@ -4391,8 +4391,6 @@
       
         
       
-        
-      
     
     
       
@@ -4409,7 +4407,7 @@
             
   
   <span class="md-ellipsis">
-    一些有意思的小专题
+    难以归类的一些总结
   </span>
   
 
@@ -4419,7 +4417,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
-            一些有意思的小专题
+            难以归类的一些总结
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4429,71 +4427,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp-edu/" class="md-nav__link">
+      <a href="../dp-edu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Atcoder dp edu contest
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../segtree-tricks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    线段树的扩展运用
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../small-upper-bound/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    答案上界特别小的一类问题
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../comb-problem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    关于组合数学和计数的一些小问题
   </span>
   
 
@@ -4520,7 +4458,7 @@
           
   
   <span class="md-ellipsis">
-    NOIP2022 考前思维打开口胡合集
+    线段树的扩展运用
   </span>
   
 
@@ -4531,7 +4469,7 @@
         
   
   <span class="md-ellipsis">
-    NOIP2022 考前思维打开口胡合集
+    线段树的扩展运用
   </span>
   
 
@@ -4551,30 +4489,145 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#noip2022" class="md-nav__link">
-    NOIP2022 考前脑洞打开
+  <a href="#_1" class="md-nav__link">
+    区间加多项式
   </a>
   
-    <nav class="md-nav" aria-label="NOIP2022 考前脑洞打开">
+    <nav class="md-nav" aria-label="区间加多项式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cf518d-ilya-and-escalator" class="md-nav__link">
-    CF518D. Ilya and Escalator
+  <a href="#_2" class="md-nav__link">
+    区间加等差数列
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arc101ce" class="md-nav__link">
-    ARC101C(E)
+  <a href="#_3" class="md-nav__link">
+    区间加斐波那契
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arc076" class="md-nav__link">
-    ARC076
+  <a href="#_4" class="md-nav__link">
+    区间加等比数列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    区间查某些东西
+  </a>
+  
+    <nav class="md-nav" aria-label="区间查某些东西">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mex" class="md-nav__link">
+    区间 MEX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    区间方差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sin" class="md-nav__link">
+    区间 sin 和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcd" class="md-nav__link">
+    区间 GCD
+  </a>
+  
+    <nav class="md-nav" aria-label="区间 GCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    单点修改
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    区间修改
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    扩展类
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    维护矩阵乘法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gss" class="md-nav__link">
+    GSS 系列
+  </a>
+  
+    <nav class="md-nav" aria-label="GSS 系列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gss1-3" class="md-nav__link">
+    GSS1 &amp; 3 区间最大子段和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    类区间最大子段和问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gss4" class="md-nav__link">
+    GSS4 区间开方（下取整），区间求和
   </a>
   
 </li>
@@ -4588,6 +4641,46 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../small-upper-bound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    答案上界极小的一类问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orzei/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    十二重计数法
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4674,6 +4767,8 @@
       
         
           
+        
+      
         
       
         
@@ -5982,6 +6077,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../sol/mock/230826CQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20230826 CQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../sol/mock/230828B/" class="md-nav__link">
         
   
@@ -6621,11 +6736,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/menu/" class="md-nav__link">
+      <a href="../../../misc/rf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    初赛知识复习
+    初赛错题记录
   </span>
   
 
@@ -8393,40 +8508,128 @@
   
 
 
-  <h1>NOIP2022 考前思维打开口胡合集</h1>
+  <h1>线段树的扩展运用</h1>
 
-<h2 id="noip2022">NOIP2022 考前脑洞打开<a class="headerlink" href="#noip2022" title="Permanent link">ψ(｀∇´)ψ</a></h2>
-<p>大概是一个自己找的期望和容斥的小题单（也许会写）</p>
-<p>然后杨爷给的一堆交互（全部口胡用来换换脑子）</p>
-<p>可能会有 ARC076（和 hfy 一起打）。</p>
-<p>考前可能还要复习一些板子。数学，图论的为主，哦，还有二分。</p>
-<h3 id="cf518d-ilya-and-escalator">CF518D. Ilya and Escalator<a class="headerlink" href="#cf518d-ilya-and-escalator" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>简单的期望 dp，考虑设 <span class="arithmatex">\(dp(i)\)</span> 表示第 <span class="arithmatex">\(i\)</span> 秒在电梯上的人的期望。</p>
-<p>但是注意到 <span class="arithmatex">\(n\)</span> 对结果是有影响的，所以再加一个维度：<span class="arithmatex">\(dp(i, j)\)</span> 表示考虑第 <span class="arithmatex">\(i\)</span> 个人在队头，第 <span class="arithmatex">\(j\)</span> 秒的时候，电梯上的期望人数。</p>
-<p>之前我做期望 dp 的时候一直是直接用定义和条件展开式子，然后从上一个状态的定义式子里面直接附带上新的决策的影响，然后合并同类项推出式子。</p>
-<p>感觉这种做法比较蠢，可能是因为期望定义，概率的一些知识点有点忘了（whk 的概率，期望啥的都是差不多一年前这个时候学的了）。</p>
-<ul>
-<li>合事件 <span class="arithmatex">\(A\cup B\)</span> 发生的概率是 <span class="arithmatex">\(P(A) + P(B)\)</span>。</li>
-<li>积事件 <span class="arithmatex">\(A\cap B\)</span> 发生的概率是 <span class="arithmatex">\(P(A) \times P(B)\)</span>。</li>
-</ul>
-<p>然后期望的本质实际上是一种加权平均数，所以我们在转移的时候可以把期望当成随机变量的一种取值，可以用来“代表”所有的情况。</p>
-<p>嗯，然后推出状态转移方程：<span class="arithmatex">\(dp(i, j) = p \times (dp(i - 1, j - 1) + 1) + (1 - p) \times dp(i, j - 1)\)</span>。</p>
-<p>没了。</p>
-<h3 id="arc101ce">ARC101C(E)<a class="headerlink" href="#arc101ce" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>感觉也是很简单的套路，就是正难则反。</p>
-<p>我考虑算不合法的方案数，这个东西容斥一下，就强制某条边不合法，枚举条件构成的子集然后乘上容斥系数。</p>
-<p>这个东西可以用树上背包优化，但是具体的我不是很会，可能就是注意到不合法一定会造成一个个连通块的出现，用这个做 dp 算贡献。</p>
-<p>具体的我咕掉了，以后再改。</p>
-<h3 id="arc076">ARC076<a class="headerlink" href="#arc076" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>这个见 <a href="../../arc-vp-record/">ARC VP 集合</a>。</p>
-<p>话说这个集合里现在唯二的两次都是赛前打的，草。</p>
+<p>在线段树本身信息动手脚的题一般就三步：</p>
+<ol>
+<li>考虑怎么搞出具有幺半群性质的信息。（拆出多个信息（比如区间方差），或者想办法扩展一下信息来搞出结合律（比如 GSS&#8531;））</li>
+<li>考虑怎么写 Pushup （假设左右儿子信息都已得到，然后看父亲节点怎么搞，边界为叶子节点）</li>
+<li>考虑怎么写 Pushdown 和 Change。</li>
+</ol>
+<p>如果是利用转化，把复杂的信息转化成简单的信息在线段树上维护的话，就只能靠灵感或者积累了。（比如区间加多项式一类的）</p>
+<h2 id="_1">区间加多项式<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<p>区间加多项式都是转化成差分数组之后前缀和，所以一般都是单点查询。</p>
+<p>区间查询看看可不可做先。</p>
+<h3 id="_2">区间加等差数列<a class="headerlink" href="#_2" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>区间 <span class="arithmatex">\([l,r]\)</span> 加等差数列，等同于在<strong>差分数组</strong>上的 <span class="arithmatex">\([l + 1,r]\)</span> 做一次<strong>区间加</strong> <span class="arithmatex">\(d\)</span>，然后令 <span class="arithmatex">\(c[l] + \text{BEGIN}\)</span>，<span class="arithmatex">\(c[r+1] - \text{END}\)</span>。</p>
+<p><span class="arithmatex">\(\text{BEGIN,END}\)</span> 分别是首项和末项。</p>
+<p>单点询问只需要询问线段树上的 <span class="arithmatex">\(sum(1,pos)\)</span> 即可。</p>
+<p>例题: <a href="../../../../rec/atcf-for-2022-04/#cf1661d-progressions-covering">CF1661D Progressions Covering</a></p>
+<h3 id="_3">区间加斐波那契<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<blockquote>
+<p>这里鸽子了。</p>
+</blockquote>
+<h3 id="_4">区间加等比数列<a class="headerlink" href="#_4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<blockquote>
+<p>这里鸽子了。</p>
+</blockquote>
+<h2 id="_5">区间查某些东西<a class="headerlink" href="#_5" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="mex">区间 MEX<a class="headerlink" href="#mex" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>最简单的方法是考虑莫队。</p>
+<p>如果要求在线就直接上主席树（权值线段树二分显然可以做全局，然后可持久化之后能转成区间的）</p>
+<p>还有一种离线+线段树的暂时咕咕咕着，反正不如主席树或者莫队做法。</p>
+<h3 id="_6">区间方差<a class="headerlink" href="#_6" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>区间加法，区间询问方差。</p>
+<p>考虑拆柿子：</p>
+<p>定义平均数为 <span class="arithmatex">\(ava\)</span>。</p>
+<p>方差的定义是 <span class="arithmatex">\(\dfrac{1}{n} \sum\limits_{i = 1}^{n} (a_i - ava)^2\)</span></p>
+<p>然后显然这个非常不好维护（不具有幺半群的性质，线段树没法维护），所以考虑拆开，变成几个具有幺半群性质的信息的组合。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{1}{n} \sum\limits_{i = 1}^{n} (a_i - ava)^2 \\
+\dfrac{1}{n} \sum\limits_{i = 1}^{n} (a_i^2 - a_i \cdot ava + ava^2)\\
+\dfrac{1}{n} \cdot [\sum\limits_{i = 1}^{n} a_i^2 - ava\sum\limits_{i = 1}^n a_i + n \cdot ava^2]
+\end{aligned}
+\]</div>
+<p>于是如果不带修就只需要考虑维护区间和，区间平方和就行了。</p>
+<p>然后这里有一个区间加法。</p>
+<p>所以我们考虑维护一个 <span class="arithmatex">\(add\)</span>。</p>
+<p>显然区间加的时候和下放标记时，<span class="arithmatex">\(dat\)</span> 的变化是一致的，就是考虑当区间每一个元素都被加上 <span class="arithmatex">\(v\)</span> 之后，<span class="arithmatex">\(psum, sum\)</span> 怎么变了。</p>
+<p>然后区间和随便搞，考虑区间平方和 <span class="arithmatex">\(psum\)</span>：</p>
+<div class="arithmatex">\[
+\sum\limits_{i = 1}^n(a_i +  v)^2 - \sum\limits_{i = 1}^{n} a_i^2
+\]</div>
+<p>这个柿子很容易展开然后转化成能够 <span class="arithmatex">\(O(1)\)</span> 下传，且具有时间轴上的结合律的信息，于是标记部分就做完了。</p>
+<p>Pushup 很显然就是两个信息直接做加法，没了。</p>
+<h3 id="sin">区间 sin 和<a class="headerlink" href="#sin" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p><a href="https://www.luogu.com.cn/problem/P6327">区间加区间 sin 和</a></p>
+<p>思考好线段树的本质就行。</p>
+<p>首先肯定要打 Tag，就是一个维护加法 Tag。</p>
+<p>因为我要求的答案是 <span class="arithmatex">\(\sin\)</span> 和，为了出现结合律，需要用和角公式。</p>
+<p>所以信息只需要同时维护区间 <span class="arithmatex">\(\sin\)</span> 和还有 <span class="arithmatex">\(\cos\)</span> 和。</p>
+<p>考虑一下区间加 <span class="arithmatex">\(v\)</span> 之后一个区间的 <span class="arithmatex">\(\sin\)</span> 怎么变了，方便下传标记还有更新信息。</p>
+<p>先写出对于每一个元素的：</p>
+<p><span class="arithmatex">\(\sin (a + b) = \sin a \cos b  + \sin b \cos a\)</span></p>
+<p><span class="arithmatex">\(\cos (a + b)  =\cos a \cos b - \sin a \sin b\)</span></p>
+<p>那么 <span class="arithmatex">\(\sum \sin(a_i)\)</span> 就变成了 <span class="arithmatex">\(\sum \sin (a_i + v) = \sum (\sin a_i \cos v + \sin v \cos a_i)\)</span></p>
+<p>展开：<span class="arithmatex">\(\cos v\sum \sin a_i + \sin v \sum \cos a_i\)</span>，此时 <strong>独立了变量（维护的信息）和常量</strong> <span class="arithmatex">\(v\)</span>，很方便处理。</p>
+<p>同理：<span class="arithmatex">\(\sum \cos (a_i) =\sum \cos(a_i + v) = \cos v\sum \cos a_i - \sin v \sum \sin a_i\)</span>。</p>
+<p>注意到一个坑点就是 <span class="arithmatex">\(\cos\)</span> 还要用到原来更新前的 <span class="arithmatex">\(\sum \sin a_i\)</span>，所以要提前记录一下。</p>
+<p>然后 pushup 需要结合两个区间的 <span class="arithmatex">\(\sum \sin a_i, \sum \cos a_i\)</span>，直接加起来就可以了。</p>
+<p>然后就没了。</p>
+<h3 id="gcd">区间 GCD<a class="headerlink" href="#gcd" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_7">单点修改<a class="headerlink" href="#_7" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>这个很简单，因为 <span class="arithmatex">\(\gcd\)</span> 满足结合律 : <span class="arithmatex">\(\gcd(a, b, c) = \gcd(a, \gcd(b, c))\)</span>。</p>
+<p>而且有幺元 <span class="arithmatex">\(0\)</span>。</p>
+<p>所以直接做就行了。</p>
+<h4 id="_8">区间修改<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>考虑转化成单点修改，直接维护差分数组，可以做到单点改。</p>
+<p>然后发现 <span class="arithmatex">\(\gcd(a, b - a, c - b) = \gcd(a, b, c)\)</span>，所以直接询问差分数组的 <span class="arithmatex">\(\gcd\)</span> 就行了。</p>
+<p>然后显然对于一个询问 <span class="arithmatex">\([l, r]\)</span> 还要用到 <span class="arithmatex">\(a[l]\)</span>，所以再开一个树状数组维护 <span class="arithmatex">\(a\)</span> 就行了。</p>
+<p>注意如果 gcd 的参数有负数就直接把 abs 带上去算就行。</p>
+<h2 id="_9">扩展类<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="_10">维护矩阵乘法<a class="headerlink" href="#_10" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>直接看<a href="../../../algor/ds/segtree/#_19">这里</a>就行了。</p>
+<h2 id="gss">GSS 系列<a class="headerlink" href="#gss" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<h3 id="gss1-3">GSS1 &amp; 3 区间最大子段和<a class="headerlink" href="#gss1-3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>可以发现最大子段和没有明显的结合律。</p>
+<p>不过我们试着假设左右儿子的最大子段和都已经求出，考虑怎么 Pushup。</p>
+<p>那么其实也就三种情况，分别继承两边的，或者是左边取一段后缀，右边取一段前缀。</p>
+<p>显然不可能有别的情况更优秀了。</p>
+<p>所以需要维护一下每个子节点的最大前缀和，最大后缀和。</p>
+<p>然后最大前缀和也需要考虑 Pushup，</p>
+<p>显然就是左儿子的最大前缀和，或者是左儿子整体+右儿子的最大前缀和（因为子段是连续的，所以要选右儿子的最大前缀和就需要把左儿子整体选上）。</p>
+<p>然后有没有一种可能，就是我右儿子选完最大前缀和之后，有没有可能后面还能找一些接到前缀后面比这个更大？</p>
+<p>明显是蠢了，这里都是最大前缀和了，怎么可能嘛。</p>
+<p>然后还有一种情况就是全部都选上。</p>
+<p>最大后缀和同理即可。</p>
+<p>注意如果一个区间都是负数，最大子段和应该是最大值，而不是上面三种情况的任意一种。</p>
+<p>所以还需要维护一个区间最大值。</p>
+<p>此时最大子段和就有结合律了。</p>
+<p>GSS1 不带修，GSS3 带一个单点修，本质一样。</p>
+<h3 id="_11">类区间最大子段和问题<a class="headerlink" href="#_11" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>你有一个序列 <span class="arithmatex">\(a\)</span>，一个序列 <span class="arithmatex">\(b\)</span>。</p>
+<p>你每次需要求一个区间内的一种贡献的最大值，定义为 <span class="arithmatex">\(\max\{a_x + b_y\}, x \le y\)</span>。</p>
+<p>这个东西其实也和最大子段和差不多，我们发现这个信息其实是可以合并的，我们直接维护答案，显然大区间的答案可能是两个小区间的答案之一，还有一种情况是从两个小区间各取一些组成答案。</p>
+<p>所以对于每个节点，维护当前区间内最大的 <span class="arithmatex">\(a_x\)</span> 和最大的 <span class="arithmatex">\(b_y\)</span>，每次合并的时候，因为左右子树维护的区间是分开的，所以 <span class="arithmatex">\(x\le y\)</span> 的条件也可以被满足。</p>
+<p>然后答案就可以上传了，复杂度一个 log，也可以支持单点修改。</p>
+<h3 id="gss4">GSS4 区间开方（下取整），区间求和<a class="headerlink" href="#gss4" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>这题线段树也可以，虽然算是一个单独的 Trick，但毕竟是 GSS 系列的，就也写上了。</p>
+<p>首先从数列分块入门 5 可以得到一个结论，就是区间开方的次数是很少的，如果 1e18 级别开 6 ~ 7 次就够了。</p>
+<p>所以我们可以维护一个并查集，其中 <span class="arithmatex">\(pa(i)\)</span> 表示，<span class="arithmatex">\([i, n]\)</span> 之中，第一个不是 <span class="arithmatex">\(1\)</span> 的数的下标。</p>
+<p>初始指向自己。</p>
+<p>然后对于每个询问我们直接暴力在 <span class="arithmatex">\(a(i)\)</span> 上面单点开根号，如果遇到 <span class="arithmatex">\(1\)</span> 就直接跳 <span class="arithmatex">\(pa(i)\)</span>，因为开根号次数很少，然后多次操作之后要操作的数也很少。</p>
+<p>并查集基本可以看作均摊 <span class="arithmatex">\(O(1)\)</span> 的，所以这个东西复杂度非常优秀。</p>
+<p>然后区间和再用一个树状数组维护就可以了，因为我们已经把区间开方转化为了单点开方。</p>
+<p>这个就是一个很有意思的 Trick：对于这种操作多了之后“无效操作”变多的操作，可以考虑使用并查集记录一下每一个位置的下一个有效操作位置，把区间操作转化为单点操作。</p>
+<p>几个同类型的题： Luogu2391 白雪皑皑，CF920F Sum and Replace，51Nod1743 雪之国度。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2023</span>
       
     
   </small>

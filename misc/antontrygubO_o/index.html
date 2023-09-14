@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Merriweather";--md-code-font:"Ubuntu Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -4387,8 +4387,6 @@
       
         
       
-        
-      
     
     
       
@@ -4405,7 +4403,7 @@
             
   
   <span class="md-ellipsis">
-    一些有意思的小专题
+    难以归类的一些总结
   </span>
   
 
@@ -4415,7 +4413,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
-            一些有意思的小专题
+            难以归类的一些总结
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4425,7 +4423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/dp-edu/" class="md-nav__link">
+      <a href="../../rec/sum/dp-edu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4445,7 +4443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/interesting/segtree-tricks/" class="md-nav__link">
+      <a href="../../rec/sum/segtree-tricks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4465,11 +4463,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/interesting/small-upper-bound/" class="md-nav__link">
+      <a href="../../rec/sum/small-upper-bound/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    答案上界特别小的一类问题
+    答案上界极小的一类问题
   </span>
   
 
@@ -4485,31 +4483,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/interesting/comb-problem/" class="md-nav__link">
+      <a href="../../rec/sum/orzei/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    关于组合数学和计数的一些小问题
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../rec/interesting/before-noip2022/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NOIP2022 考前思维打开口胡合集
+    十二重计数法
   </span>
   
 
@@ -4600,6 +4578,8 @@
       
         
           
+        
+      
         
       
         
@@ -5908,6 +5888,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../sol/mock/230826CQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20230826 CQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sol/mock/230828B/" class="md-nav__link">
         
   
@@ -6871,11 +6871,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../menu/" class="md-nav__link">
+      <a href="../rf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    初赛知识复习
+    初赛错题记录
   </span>
   
 
@@ -8821,7 +8821,7 @@
 <li>有些 dp 虽然阶段是下标，但是它转移的时候，为了决策方便，需要更改一下等号左边的下标，方便转移，不然我们不好确定这个决策到底对答案产生了什么贡献：<a href="../../algor/dp/opt/data-structure-optimize/#cleaning-shifts">Cleaning Shifts</a> </li>
 <li>如果是树形 dp，可以利用 dfs 序的性质，把节点分成两类，用于很好的表达一些祖先关系，很多时候还可以用来减少枚举，直接一步到位：<a href="../../sol/mock/230224C/#d">230224C-T4-辣椒</a></li>
 <li>如果在树上使用斜率优化，要记得出子树之后回溯凸壳的状态：<a href="../../rec/convex-opt-practice/#harbingers">Harbingers</a></li>
-<li>期望 dp 在转移的时候可以把期望当成随机变量的一种取值，原理是乘法分配律：<a href="../../rec/interesting/before-noip2022/#cf518d-ilya-and-escalator">Ilya and Escalator</a>，具体可以看期望 dp 的讲稿。</li>
+<li>期望 dp 在转移的时候可以把期望当成随机变量的一种取值，原理是乘法分配律：<a href="../rec/interesting/before-noip2022.md#cf518d-ilya-and-escalator">Ilya and Escalator</a>，具体可以看期望 dp 的讲稿。</li>
 </ul>
 <h4 id="part-214">Part 2.1.4. 后效性<a class="headerlink" href="#part-214" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>其实我本来想把最优子结构，不重不漏，后效性都分别写出来。</p>
@@ -8912,7 +8912,7 @@
 <h3 id="part-51">Part 5.1. 转化<a class="headerlink" href="#part-51" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
 <li>对于一个比较复杂的，动态维护的问题，我们可以尝试利用 CDQ 分治，将动态的问题转化为静态的，其原理是利用分治的思想将一堆动态问题拆分成几个小的静态问题。</li>
-<li>有一类问题，虽然是区间操作，但是因为多次操作之后会有很多“无用”的操作，此时可以在区间操作中加一个剪枝优化，以达到类似单点改复杂度的效果：<a href="../../rec/interesting/segtree-tricks/#gss4">区间开根号，维护区间和</a>，<a href="../../sol/mock/230411C/#t2">区间取模，维护区间 Max</a></li>
+<li>有一类问题，虽然是区间操作，但是因为多次操作之后会有很多“无用”的操作，此时可以在区间操作中加一个剪枝优化，以达到类似单点改复杂度的效果：<a href="../rec/interesting/segtree-tricks.md#gss4">区间开根号，维护区间和</a>，<a href="../../sol/mock/230411C/#t2">区间取模，维护区间 Max</a></li>
 </ul>
 <h3 id="part-52">Part 5.2. 明确需要维护的信息<a class="headerlink" href="#part-52" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>维护的信息的区别会导致代码实现复杂度的区别。</p>
@@ -8926,8 +8926,8 @@
 </ul>
 <h3 id="part-54">Part 5.4. 维护方式(模型)<a class="headerlink" href="#part-54" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
-<li>对于维护的复杂的信息，通常我们需要考虑拆开进行维护，使得不满足一些可以维护的性质的信息变得可以维护（也是复合和分拆的思想）：<a href="../../rec/interesting/segtree-tricks/#_6">区间方差</a>，也可以说成是分离常量和变量，将变量分类维护。</li>
-<li>对于一些没有明显的结合律的信息，是不是可以考虑多添加一些信息，来使得这个信息具有结合律？比如说线段树当中的<a href="../../rec/interesting/segtree-tricks/#gss1-3">类区间最大子段和问题</a>。</li>
+<li>对于维护的复杂的信息，通常我们需要考虑拆开进行维护，使得不满足一些可以维护的性质的信息变得可以维护（也是复合和分拆的思想）：<a href="../rec/interesting/segtree-tricks.md#_6">区间方差</a>，也可以说成是分离常量和变量，将变量分类维护。</li>
+<li>对于一些没有明显的结合律的信息，是不是可以考虑多添加一些信息，来使得这个信息具有结合律？比如说线段树当中的<a href="../rec/interesting/segtree-tricks.md#gss1-3">类区间最大子段和问题</a>。</li>
 </ul>
 <h2 id="part-6">Part 6. 字符串相关<a class="headerlink" href="#part-6" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <ul>

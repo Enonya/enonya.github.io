@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://enonya.github.io/misc/astyle/">
       
       
-        <link rel="prev" href="../menu/">
+        <link rel="prev" href="../rf/">
       
       
         <link rel="next" href="../gdb-usage/">
@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Merriweather";--md-code-font:"Ubuntu Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -4382,8 +4382,6 @@
       
         
       
-        
-      
     
     
       
@@ -4400,7 +4398,7 @@
             
   
   <span class="md-ellipsis">
-    一些有意思的小专题
+    难以归类的一些总结
   </span>
   
 
@@ -4410,7 +4408,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
-            一些有意思的小专题
+            难以归类的一些总结
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4420,7 +4418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/dp-edu/" class="md-nav__link">
+      <a href="../../rec/sum/dp-edu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4440,7 +4438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/interesting/segtree-tricks/" class="md-nav__link">
+      <a href="../../rec/sum/segtree-tricks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4460,11 +4458,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/interesting/small-upper-bound/" class="md-nav__link">
+      <a href="../../rec/sum/small-upper-bound/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    答案上界特别小的一类问题
+    答案上界极小的一类问题
   </span>
   
 
@@ -4480,31 +4478,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rec/interesting/comb-problem/" class="md-nav__link">
+      <a href="../../rec/sum/orzei/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    关于组合数学和计数的一些小问题
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../rec/interesting/before-noip2022/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    NOIP2022 考前思维打开口胡合集
+    十二重计数法
   </span>
   
 
@@ -4595,6 +4573,8 @@
       
         
           
+        
+      
         
       
         
@@ -5903,6 +5883,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../sol/mock/230826CQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20230826 CQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sol/mock/230828B/" class="md-nav__link">
         
   
@@ -6544,11 +6544,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../menu/" class="md-nav__link">
+      <a href="../rf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    初赛知识复习
+    初赛错题记录
   </span>
   
 
@@ -8331,13 +8331,19 @@
 <p>怎么用感觉不用说，自己看下 docs 就行了。</p>
 <p>不过关于是否打大括号，这个就纯看我心情，不过这个 format 之后和我正常码风基本一致了？</p>
 <p><a class="md-button" href="../astyle-options.txt">Astyle-options.txt</a></p>
+<p>还是简单说一下代码风格比较好。</p>
+<p>括号是 Google 式的大括号不换行，<code>for if while</code> 之后不会有空格。</p>
+<p>分号，逗号，运算符后会有空格，<code>for if while</code> 后会空行，或者是按功能分块。</p>
+<p>不使用万能头，头文件按长度，字典序为关键字排序。</p>
+<p><code>#define endl '\n'</code>，通常关掉流同步，有时候会不打括号直接写一行。</p>
+<p>不过分依赖于 STL。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2023</span>
       
     
   </small>
