@@ -2962,7 +2962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algor/math/combinatorics/combination/" class="md-nav__link">
+      <a href="../../algor/math/combindoneatorics/combination.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3829,6 +3829,8 @@
       
         
       
+        
+      
     
     
       
@@ -4198,6 +4200,26 @@
   
   <span class="md-ellipsis">
     ATC & CF 选做(23Sep)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rec/abc-f-speed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABC F 手速加训
   </span>
   
 
@@ -8847,6 +8869,7 @@
 <p>很久之前翻看 zxy 神仙的博客的时候发现了一篇 <a href="https://www.cnblogs.com/C202044zxy/p/15126199.html">zxy的思维技巧</a></p>
 <p>我觉得应该是我看过的所有 OI 相关博客里写的最好的一篇，受此文启发，开了这篇博客记录自己遇到的一些 trick。</p>
 <p>开这篇的时候应该是 2023/02/02，第一个版本的东西写的有点杂乱了，而且有些内容其实是有错误的，所以在 2023/07/27 重构了。</p>
+<p>如果是算法本身泛化就能做的东西我不会放在这里，会直接放在 <code>/algor</code> 的对应位置。</p>
 <div class="admonition abstract">
 <p class="admonition-title">TODO List</p>
 <ul class="task-list">
@@ -8858,7 +8881,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 一些比较杂的<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> siz &gt;= ? 的子树</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NOI2016 网格</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 0807 Permutation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 0807 Permutation</li>
 </ul>
 </li>
 </ul>
@@ -8916,6 +8939,7 @@
 <ul>
 <li>一种拆分的贪心思想：可以按照某种“重要程度”分开考虑，然后对于每一种情况分开考虑，最后直接暴力复合：<a href="../../sol/other/thupc2023-pre/#a-">THUPC2023-pre-A-大富翁</a></li>
 <li>如果一个题，没法很好的通过贪心来快速确定一些必选策略，或者说排除冗杂（也就是有不少特例），此时我们可以考虑直接枚举每一个位置，对他直接通过暴力或者维护信息算答案：<a href="../../rec/atcf-for-2023-03-04/#1b-buying-gifts">CF1801B - Buying gifts</a>，<a href="../../sol/mock/230322C/#brackets">230322C-T2-Brackets</a>。或者是我们就直接考虑 dp：<a href="../../rec/atcf-for-2023-03-04/#1c-music-festival">CF1801C-Music Festival</a> (换句话说，我们可以直接考虑在整个状态空间里取最优解，而不是一个劲的考虑局部最优解)</li>
+<li>有一个及其重要的思想就是，我们需要找到问题中的“不会更劣”一类的性质，以此作为突破点找到贪心的方向，或者是其它更重要的性质：<a href="../../sol/mock/230813nj/#problem">230813NanJing-Problem</a>，<a href="../../sol/mock/230926NOIP/#learn">230927NOIP-Learn</a>。</li>
 </ul>
 <h3 id="part-12">Part 1.2. 构造<a class="headerlink" href="#part-12" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <blockquote>
@@ -8939,14 +8963,14 @@
 <p>『= = = = = = = = = = = = = = = =』</p>
 <ul>
 <li>对于一个序列做很多个 independent problem 的时候一般都会要考虑从上一个状态继承，或者是考虑先整体做一遍再计算 ignore 一些操作之后的影响之类的：<a href="../../rec/atcf-for-2022-11-12/#abc281d-max-multiple">Least Elements</a>，<a href="../../sol/mock/230203C/#t2">230203C-T2-排列</a>。</li>
-<li>要想清楚，什么东西才会造成贡献，一个位置什么时候合法，什么时候不合法，我们希望能类似拆开限制一样，让各个元素做的贡献尽量的减少对其它元素贡献的影响，这样更方便计算，比如类似 <a href="../../sol/mock/230203C/#t4">230203C-T4-交换</a> 的想法，很多时候也能类似下面 dp 里提到的 <a href="../../rec/atcf-for-2022-07-08/#cf1720d1-xor-subsequence-easy-version">Xor-Subsequence (easy version)</a> 一样用来排除不必要的状态。</li>
+<li>要想清楚，什么东西才会造成贡献，一个位置什么时候合法，什么时候不合法，我们希望能类似拆开限制一样，让各个元素做的贡献尽量的减少对其它元素贡献的影响，这样更方便计算，比如类似 <a href="../../sol/mock/230203C/#t4">230203C-T4-交换</a> 的想法，很多时候也能类似下面 dp 里提到的 <a href="../../rec/atcf-for-2022-07-08/#cf1720d1-xor-subsequence-easy-version">Xor-Subsequence (easy version)</a> 一样用来排除不必要的状态，又或者是尝试发现某些<strong>看起来</strong>对计算贡献有影响的信息实际上对计算贡献没用：<a href="../../sol/mock/230829CQ/#dream">230829ChongQing-T2-Dream</a>。</li>
 <li>（接上一条）也可以考虑一下，如果我们考虑全局 or 每一段，本身就已经能满足答案的贡献，然后再考虑凑出来之后又出现的新的贡献（前提是开始的时候满足贡献的，拼凑起来之后也能满足贡献）：<a href="../../sol/other/noiol2022/#t1">NOIOnline2022TG-丹钓战</a>，<a href="../../rec/atcf-for-2023-03-04/#1c-music-festival">CF1801C-Music Festival</a></li>
 <li>考虑更换贡献的计算方式，选择不那么直观的贡献拆开维护？类似 Manacher 这样，只考虑以一个位置为中心的所有回文串，进一步说这个是钦定一个类似 dp 中“阶段”的基底，找到一个计算贡献的基准。</li>
 <li>或者考虑累加影响，批量处理贡献？比如 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a>，计算答案的时候就是反过来，考虑基准对于所有能产生贡献的点累加一个权值，最后离线在所有点算一下权值即可</li>
 <li>也可以对于一个复杂的 <span class="arithmatex">\(\sum\sum\min\max\)</span> 这样的式子，我们尝试直接钦定出单个位置的答案，求和之后再推式子<a href="../../rec/atcf-for-2023-01-02/#abc290f-maximum-diameter">ABC290F - Maximum Diameter</a>，不然就是类似上面那样更换计算方式。</li>
 <li>对于一个序列或者是什么东西，做多次变换，我们通常可以考虑，原序列对多次操作之后的序列哪些位置会有贡献，贡献是怎么样的 <a href="../../sol/mock/230407C/#c">230407C-T3-进化</a> </li>
 <li>想清楚一类贡献什么时候会被计算，如果它可以被不同种情况的不同位置更新，是否要考虑钦定只计算某些部分：<a href="../../sol/mock/230117C/#d">230117C-T4-子图</a>。</li>
-<li>考虑一下修改了一个位置之后，对答案的影响是什么？这里还是以 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a> 为例，这个题确实比较深刻。</li>
+<li>考虑一下修改了一个位置之后，对答案的影响是什么？这里还是以 <a href="../../sol/mock/230201C/#t4">230201C-T4-回文串</a> 为例，这个题确实比较深刻。有些带修改的 dp 也需要用到这样的思想，ddp 算是一种，还有的就是直接暴力更新转移路径上的所有状态，比如 <a href="../../rec/abc-f-speed/">ABC321F-#(subset sum = K) with Add and Erase</a></li>
 </ul>
 <h4 id="part-142">Part 1.4.2. 转化<a class="headerlink" href="#part-142" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>感觉些东西比较奇妙，也不太好总结。</p>
@@ -9006,6 +9030,7 @@
 <li>如果题目中的要素比较多，但是知道一定的信息之后可以推出剩下的信息，我们可以在状态里省去对应的维度：<a href="../../algor/dp/basic/how-to-think/#_1">Mobile Service</a></li>
 <li>给一个序列，要求将其分成若干个子段，求某个代价的最大值这一类问题，如果题目没有限制你需要分多少段，可以直接设计 dp 状态为，考虑前 <span class="arithmatex">\(i\)</span> 个位置分割成若干段的代价最大是多少：<a href="../../rec/atcf-for-2022-04/#_1">Optimal Partition</a>，<a href="../../algor/dp/opt/convex-optimize/#_2">任务安排</a></li>
 <li>对于一类对子树整体操作的 dp 问题，设计状态时通常需要考虑子树外的贡献：<a href="../../sol/mock/230626B/#rugby">230626B-T4-Rugby(WIP)</a></li>
+<li>（接上一条）在考虑子树外的贡献的时候，因为不知道内外分别有多少贡献，可以考虑钦定贡献再做转移：<a href="../../sol/mock/230829CQ/#light">230829ChongQing-T4-Light</a></li>
 </ul>
 <h4 id="part-213">Part 2.1.3. 决策<a class="headerlink" href="#part-213" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>其实也可以把决策说成转移。</p>
@@ -9110,7 +9135,7 @@
 <h3 id="part-51">Part 5.1. 转化<a class="headerlink" href="#part-51" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
 <li>对于一个比较复杂的，动态维护的问题，我们可以尝试利用 CDQ 分治，将动态的问题转化为静态的，其原理是利用分治的思想将一堆动态问题拆分成几个小的静态问题。</li>
-<li>有一类问题，虽然是区间操作，但是因为多次操作之后会有很多“无用”的操作，此时可以在区间操作中加一个剪枝优化，以达到类似单点改复杂度的效果：<a href="../rec/interesting/segtree-tricks.md#gss4">区间开根号，维护区间和</a>，<a href="../../sol/mock/230411C/#t2">区间取模，维护区间 Max</a></li>
+<li>有一类问题，虽然是区间操作，但是因为多次操作之后会有很多“无用”的操作，此时可以在区间操作中加一个剪枝优化，以达到类似单点改复杂度的效果：<a href="../rec/interesting/segtree-tricks.md#gss4">区间开根号，维护区间和</a>，<a href="../../sol/mock/230411C/#t2">区间取模，维护区间 Max</a>，<a href="https://www.luogu.com.cn/problem/P3747">[六省联考 2017] 相逢是问候</a>。</li>
 </ul>
 <h3 id="part-52">Part 5.2. 明确需要维护的信息<a class="headerlink" href="#part-52" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>维护的信息的区别会导致代码实现复杂度的区别。</p>
@@ -9137,7 +9162,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2023</span>
       
     
   </small>
