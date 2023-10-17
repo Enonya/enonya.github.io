@@ -2750,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algor/math/number-theory/euclidean.md" class="md-nav__link">
+      <a href="../../algor/math/number-theory/euclidean/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2982,7 +2982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algor/math/combindoneatorics/combination.md" class="md-nav__link">
+      <a href="../../algor/math/combinatorics/combination/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4541,6 +4541,8 @@
       
         
       
+        
+      
     
     
       
@@ -4662,6 +4664,26 @@
   
   <span class="md-ellipsis">
     有 Delay 的猜数问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rec/sum/lex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    求字典序第 k 小方案类问题
   </span>
   
 
@@ -5674,7 +5696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sol/mock/230530C.md" class="md-nav__link">
+      <a href="../../sol/mock/230530C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5734,7 +5756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sol/mock/230630B.md" class="md-nav__link">
+      <a href="../../sol/mock/230630B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5754,7 +5776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sol/mock/230704B.md" class="md-nav__link">
+      <a href="../../sol/mock/230704B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7415,6 +7437,8 @@
       
         
       
+        
+      
     
     
       
@@ -7516,6 +7540,26 @@
   
   <span class="md-ellipsis">
     NOIP2022
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CSP2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CSP2023
   </span>
   
 
@@ -9217,7 +9261,7 @@
 <li>有一类问题，每次操作 <span class="arithmatex">\((i, j)\)</span> 不止会改变 <span class="arithmatex">\(a_i, a_j\)</span>，通常还伴有其他的限制，我们一般考虑，想办法通过这些限制找出一个“元操作”，消去/减少限制：<a href="../../rec/atcf-for-2023-03-04/#abc296f-simultaneous-swap">ABC296F-Simultaneous Swap</a></li>
 <li>有一类问题，它会要求你按照某个步骤利用某个东西生成某个东西，如果你能尝试维护这里面所谓的“不变量”，那么计算会很方便，当然还有一种想法是转化成图论问题，考虑答案的生成过程，并尝试压缩，合并相同的块/路径，以此达到优化的目的：<a href="../../sol/mock/230509C/#find-and-replace">230509C-T2-Find and Replace</a>。</li>
 <li>很多“插入”类的问题都有“相对次序不变的性质”，我们可以从这个方面找到问题的突破口：<a href="../../sol/mock/230414C/#t4">230414C-T4-ZYB玩字符串</a></li>
-<li>有些时候我们可以考虑忽略部分限制，直接对于一部分限制做完，然后再一一调整满足其它限制，不过在这个过程中通常就可以看出复合后的做法了：<a href="404.html">Lost Cows</a></li>
+<li>有些时候我们可以考虑忽略部分限制，直接对于一部分限制做完，然后再一一调整满足其它限制，不过在这个过程中通常就可以看出复合后的做法了：<a href="">Lost Cows</a>（暂无链接）</li>
 <li>有的时候甚至可以考虑增加限制来缩减状态，但是仍然保证合法？类似<a href="../../sol/mock/230115C/#c">230115C-T3-实验</a>至少不好算，但是至少凑出还可以维护，或者是 <a href="../../sol/mock/230407C/#d">230407C-T4-Y老板的别墅</a> 这样为了计数方便加入限制的</li>
 <li>考虑一下，正着做很麻烦，能否考虑反着做，或者拆开做？<ul>
 <li>更进一步的，如果说我们计算前面的贡献会影响到后面的贡献时，是不是可以考虑倒过来处理贡献：<a href="../../rec/tricks-for-2023-07-08/#cf264e-roadside-trees">CF264E-Roadside Trees</a>，这也是一种“减少限制”的思想。</li>
@@ -9228,7 +9272,7 @@
 <h4 id="part-144">Part 1.4.4 各种乱搞<a class="headerlink" href="#part-144" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <ul>
 <li>如果是通过打表找规律，找到了 <span class="arithmatex">\(k = c\)</span> （常数）的规律，可以考虑把式子中的常数项换成 <span class="arithmatex">\(k\)</span> 相关的式子，进而推出通项公式：<a href="../../sol/other/thupc2023-pre/#b-">THUPC2023-pre-B - 拧螺丝</a></li>
-<li>对于一个会跳来跳去，算一下方案数，经过的路径长度之类的问题，可以很容易的想到利用倍增维护：<a href="404.html">CF1809F - Traveling in Berland</a>（这题题解还没写）。</li>
+<li>对于一个会跳来跳去，算一下方案数，经过的路径长度之类的问题，可以很容易的想到利用倍增维护：<a href="../../rec/tricks-for-2023-07-08/">CF1809F - Traveling in Berland</a>。</li>
 <li>如果一个问题要你合并一堆东西，而你只会暴力，请务必直接启发式合并：<a href="../../sol/mock/230331C/#favorite-colors">230331C-T2-Favorite Colors</a>。</li>
 <li>考虑手玩样例，模拟一下题面的过程看看有没有启发，找找规律试试？比如：<a href="../../sol/mock/220518C/">220518C-T2-「客星璀璨之夜」</a> 这样？或者是类似 <a href="../../sol/mock/230113C/#coin">2301113C-T4-coin</a> 这种考虑把有联系的东西放在一起，观察到问题的本质？</li>
 <li>考虑观察答案的形式，合法解的形状，看看有没有什么启发，比如 <a href="../../rec/arc-vp-record/#e-young-maids">Young Maids</a>，考虑一个答案合法后对原问题决策的限制是什么？还是说比如 <a href="../../sol/mock/221025C/">221025C-T4-罪⼈挽歌</a></li>
@@ -9272,7 +9316,7 @@
 <li>有些 dp 虽然阶段是下标，但是它转移的时候，为了决策方便，需要更改一下等号左边的下标，方便转移，不然我们不好确定这个决策到底对答案产生了什么贡献：<a href="../../algor/dp/opt/data-structure-optimize/#cleaning-shifts">Cleaning Shifts</a> </li>
 <li>如果是树形 dp，可以利用 dfs 序的性质，把节点分成两类，用于很好的表达一些祖先关系，很多时候还可以用来减少枚举，直接一步到位：<a href="../../sol/mock/230224C/#d">230224C-T4-辣椒</a></li>
 <li>如果在树上使用斜率优化，要记得出子树之后回溯凸壳的状态：<a href="../../rec/convex-opt-practice/#harbingers">Harbingers</a></li>
-<li>期望 dp 在转移的时候可以把期望当成随机变量的一种取值，原理是乘法分配律：<a href="../rec/interesting/before-noip2022.md#cf518d-ilya-and-escalator">Ilya and Escalator</a>，具体可以看期望 dp 的讲稿。</li>
+<li>期望 dp 在转移的时候可以把期望当成随机变量的一种取值，原理是乘法分配律：<a href="../../rec/sum/before-noip2022/#cf518d-ilya-and-escalator">Ilya and Escalator</a>，具体可以看期望 dp 的讲稿。</li>
 </ul>
 <h4 id="part-214">Part 2.1.4. 后效性<a class="headerlink" href="#part-214" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>其实我本来想把最优子结构，不重不漏，后效性都分别写出来。</p>
@@ -9363,7 +9407,7 @@
 <h3 id="part-51">Part 5.1. 转化<a class="headerlink" href="#part-51" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
 <li>对于一个比较复杂的，动态维护的问题，我们可以尝试利用 CDQ 分治，将动态的问题转化为静态的，其原理是利用分治的思想将一堆动态问题拆分成几个小的静态问题。</li>
-<li>有一类问题，虽然是区间操作，但是因为多次操作之后会有很多“无用”的操作，此时可以在区间操作中加一个剪枝优化，以达到类似单点改复杂度的效果：<a href="../rec/interesting/segtree-tricks.md#gss4">区间开根号，维护区间和</a>，<a href="../../sol/mock/230411C/#t2">区间取模，维护区间 Max</a>，<a href="https://www.luogu.com.cn/problem/P3747">[六省联考 2017] 相逢是问候</a>。</li>
+<li>有一类问题，虽然是区间操作，但是因为多次操作之后会有很多“无用”的操作，此时可以在区间操作中加一个剪枝优化，以达到类似单点改复杂度的效果：<a href="../../rec/sum/segtree-tricks/#gss4">区间开根号，维护区间和</a>，<a href="../../sol/mock/230411C/#t2">区间取模，维护区间 Max</a>，<a href="https://www.luogu.com.cn/problem/P3747">[六省联考 2017] 相逢是问候</a>。</li>
 </ul>
 <h3 id="part-52">Part 5.2. 明确需要维护的信息<a class="headerlink" href="#part-52" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>维护的信息的区别会导致代码实现复杂度的区别。</p>
@@ -9377,8 +9421,8 @@
 </ul>
 <h3 id="part-54">Part 5.4. 维护方式(模型)<a class="headerlink" href="#part-54" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <ul>
-<li>对于维护的复杂的信息，通常我们需要考虑拆开进行维护，使得不满足一些可以维护的性质的信息变得可以维护（也是复合和分拆的思想）：<a href="../rec/interesting/segtree-tricks.md#_6">区间方差</a>，也可以说成是分离常量和变量，将变量分类维护。</li>
-<li>对于一些没有明显的结合律的信息，是不是可以考虑多添加一些信息，来使得这个信息具有结合律？比如说线段树当中的<a href="../rec/interesting/segtree-tricks.md#gss1-3">类区间最大子段和问题</a>。</li>
+<li>对于维护的复杂的信息，通常我们需要考虑拆开进行维护，使得不满足一些可以维护的性质的信息变得可以维护（也是复合和分拆的思想）：<a href="../../rec/sum/segtree-tricks/#_6">区间方差</a>，也可以说成是分离常量和变量，将变量分类维护。</li>
+<li>对于一些没有明显的结合律的信息，是不是可以考虑多添加一些信息，来使得这个信息具有结合律？比如说线段树当中的<a href="../../rec/sum/segtree-tricks/#gss1-3">类区间最大子段和问题</a>。</li>
 </ul>
 <h2 id="part-6">Part 6. 字符串相关<a class="headerlink" href="#part-6" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <ul>
@@ -9390,7 +9434,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2023</span>
       
     
   </small>
