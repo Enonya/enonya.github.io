@@ -468,8 +468,6 @@
       
         
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -539,26 +537,6 @@
   
   <span class="md-ellipsis">
     🔒My memoir of OI
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../travel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    🔒Travel with Enonya
   </span>
   
 
@@ -4910,6 +4888,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -6281,6 +6269,106 @@
   
   <span class="md-ellipsis">
     20231010 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/231014NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231014 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/231016NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231016 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/231017NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231017 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/231019NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231019 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sol/mock/231023NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231023 NOIP
   </span>
   
 
@@ -8883,6 +8971,40 @@
 <p>综合考虑之后，我觉得应当尝试一下一个，尽量轻量级，配置上手很快，依赖其他第三方语言和软件极少的 Vim，并且，最重要的是，效率。</p>
 <p>有些之前觉得方便，实际上违背了初衷的习惯也可以改过来。</p>
 <p><a href="https://github.com/enonya/vim-tools">配置相关仓库</a>，不定期更新。</p>
+<hr />
+<p>考场 Vimrc:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">syntax</span> <span class="k">on</span>
+<span class="k">color</span> zellner
+<span class="k">set</span> <span class="nb">ai</span> <span class="k">ts</span><span class="p">=</span><span class="m">4</span> <span class="k">sts</span><span class="p">=</span><span class="m">4</span> <span class="k">sw</span><span class="p">=</span><span class="m">4</span> <span class="k">nu</span> <span class="nb">rnu</span> <span class="nb">mouse</span><span class="p">=</span><span class="k">a</span> <span class="k">ru</span>
+<span class="k">set</span> <span class="k">ar</span> <span class="nb">acd</span> <span class="nb">backup</span> <span class="nb">swapfile</span> <span class="nb">undofile</span> <span class="nb">nocompatible</span>
+<span class="k">set</span> <span class="nb">guifont</span><span class="p">=</span>Consolas:h12:cANSI
+<span class="k">set</span> <span class="nb">timeoutlen</span><span class="p">=</span><span class="m">666</span> <span class="nb">ttimeoutlen</span><span class="p">=</span><span class="m">0</span>
+<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
+<span class="k">set</span> <span class="nb">encoding</span><span class="p">=</span>utf<span class="m">-8</span>
+
+nmap F :<span class="k">e</span> ./<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+
+<span class="nb">inoremap</span> [ []<span class="p">&lt;</span>ESC<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> <span class="p">(</span> <span class="p">()&lt;</span>ESC<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> <span class="s2">&quot; &quot;</span>&quot;<span class="p">&lt;</span>ESC<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> <span class="s1">&#39; &#39;</span>&#39;<span class="p">&lt;</span>ESC<span class="p">&gt;</span><span class="k">i</span>
+<span class="nb">inoremap</span> {<span class="p">&lt;</span>CR<span class="p">&gt;</span> {}<span class="p">&lt;</span>ESC<span class="p">&gt;</span><span class="k">i</span><span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>ESC<span class="p">&gt;</span>O
+</code></pre></div></td></tr></table></div>
 <h2 id="c">C++<a class="headerlink" href="#c" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>这个是最基本的需求。</p>
 <p>正常来说需要的东西也就这些：</p>
@@ -8923,7 +9045,7 @@
 <p>因为我目前没有时间深入学习这个东西，所以我选择比较粗暴的方式，直接开一个 Terminal 编译，vim8.1 之后可以有内置的 <code>terminal</code>，比较方便</p>
 <p>反正有上下键，也不是很费时间，而且改一些选项也很快。</p>
 <p>但还有一个问题是，我经常在粘样例的时候把代码粘贴进去，这就导致我用↑找不到我的编译命令了。</p>
-<p>于是想到了一个办法！开两个终端！我真是天才！</p>
+<p>于是想到了一个办法！开两个终端！我是天才！</p>
 <p>第五点，我已经习惯了 GDB 这种命令行调试的模式，所以直接 Terminal 就行，也可以在 Vim8.1 过后使用 </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>packadd termdebug
 </code></pre></div></td></tr></table></div>
@@ -9090,13 +9212,16 @@ map <span class="p">&lt;</span>F10<span class="p">&gt;</span> <span class="p">&l
 <hr />
 <p>最近在适应 vim 的滚动，但是发现这个切屏一样的感觉，每次滚动完都反应不过来自己在那里（got lost）</p>
 <p>所以找到了之前用过的 smooth-scroll，挺好用的。</p>
+<hr />
+<p>在调试考场 vimrc 的时候发现可视模式如果使用上下左右移动会取消选择。</p>
+<p>经过测试发现是 nocompatible 没有开，这个是兼容 vi 的设置，看起来会导致这样那样的各种问题，还是开了为好。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 23, 2023</span>
       
     
   </small>
