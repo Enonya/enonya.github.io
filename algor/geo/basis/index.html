@@ -3682,6 +3682,13 @@
         
           <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
+    点到线段的距离
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
     点在直线的哪一侧
   </a>
   
@@ -3693,7 +3700,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     线线关系
   </a>
   
@@ -3701,14 +3708,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
+    求夹角
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
     判断平行/垂直
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     求交点
   </a>
   
@@ -3720,14 +3734,48 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
-    线圆关系
+  <a href="#_24" class="md-nav__link">
+    圆相关
+  </a>
+  
+    <nav class="md-nav" aria-label="圆相关">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    线与圆的位置关系
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
+  <a href="#_26" class="md-nav__link">
+    线与圆的交点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    圆与圆的位置关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    圆与圆的交点
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
     多边形相关
   </a>
   
@@ -3735,7 +3783,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     周长和面积
   </a>
   
@@ -3754,7 +3802,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     极角排序
   </a>
   
@@ -5202,6 +5250,8 @@
       
         
           
+        
+      
         
       
         
@@ -7039,6 +7089,26 @@
   
   <span class="md-ellipsis">
     20231106 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/231107NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231107 NOIP
   </span>
   
 
@@ -8918,6 +8988,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -9436,6 +9508,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/2023-11-07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neo Super Express
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -9575,6 +9667,7 @@
 <p>为了计算几何花了点时间把之前的文化课内容捡起来了，有点感叹。</p>
 <p>因为不知道有什么教程比较好，所以结构上基本是参考 OI-wiki 然后做了改进。</p>
 <p>内容的话，OI-wiki 也有些地方写的不好，所以大部分还是自己总结的。</p>
+<p><strong>本文的代码目前还未经过验证，仅供参考，未验证代码会有一个 FIX 标记</strong></p>
 <h2 id="_1">约定<a class="headerlink" href="#_1" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p><strong>能不写浮点数就不写浮点数。</strong></p>
 <p><strong>不需要拘泥于模板化，能用就行，学的时候模板化一点方便以后弄</strong></p>
@@ -9590,7 +9683,7 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-6</span><span class="p">;</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-8</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">sgn</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">eps</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="n">eps</span><span class="p">);</span>
 <span class="p">}</span>
@@ -9603,8 +9696,11 @@
 </code></pre></div></td></tr></table></div>
 <p>对于 <span class="arithmatex">\(\pi\)</span>，可以直接背下它的后几位小数值。</p>
 <p>更为通用的方式是：<code>const double pi = acos(-1.0);</code>，这是能用库函数得到的最接近 <span class="arithmatex">\(\pi\)</span> 的浮点数。</p>
-<p>然后是 <code>double atan2(double y, double x)</code> 这个函数，它的作用是返回 <span class="arithmatex">\(\arg x+yi\)</span>，弧度制。</p>
-<p>相比于 <code>atan()</code>，它的优势在于值域，它的值域是 <span class="arithmatex">\([-\pi, \pi]\)</span>；众所周知 <span class="arithmatex">\(\tan\)</span> 的值在一三，二四象限分别是相等的，而 <code>atan2</code> 则可以分辨出这个角到底是在哪个象限，并且对边界有处理。</p>
+<p>然后是 <code>double atan2(double y, double x)</code> 这个函数，它的作用是返回 <span class="arithmatex">\(\arg x+yi\)</span>，弧度制，或者说 <span class="arithmatex">\(\arctan(\dfrac{y}{x})\)</span>。</p>
+<p>相比于 <code>atan()</code>，它的优势在于值域，<code>atan2()</code> 的值域是 <span class="arithmatex">\([-\pi, \pi]\)</span>；</p>
+<p>众所周知 <span class="arithmatex">\(\tan\)</span> 的值在一三，二四象限分别是相等的，因为 <code>atan()</code> 不知道这个值到底是在哪个象限，所以标准会规定为这个角一定不在 <span class="arithmatex">\(y\)</span> 轴的左边，所以值域为 <span class="arithmatex">\([-\dfrac{\pi}{2},\dfrac{\pi}{2}]\)</span>。</p>
+<p>而 <code>atan2</code> 则可以分辨出这个角到底是在哪个象限，并且对边界有处理（因为你给了两个参数）。</p>
+<p><code>acos(), asin()</code> 也是一样的，他们的值域长度也都只有 <span class="arithmatex">\(\pi\)</span> ，<code>acos()</code> 只取了 <span class="arithmatex">\([0, \pi]\)</span>，<code>asin()</code> 只取了 <span class="arithmatex">\([-\dfrac{\pi}{2},\dfrac{\pi}{2}]\)</span>。</p>
 <h3 id="_3">数据记录<a class="headerlink" href="#_3" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>对于平面/空间中的一个点，我们直接记录其坐标，如果是极坐标系就记录极角和极径。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -9616,18 +9712,25 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 2D only.</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 2D only.</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="w">    </span><span class="n">Point</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">ix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">iy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">ix</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="n">iy</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 <span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 向量加要用</span>
 <span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 初始化向量要用</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rate</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rate</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rate</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 向量数乘要用</span>
 <span class="p">}</span><span class="w"> </span><span class="n">orig</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>对于平面/空间中的一个向量，使用向量的坐标表示，记录其坐标表示的坐标即可。</p>
+<p>有时候需要旋转一个向量，这个东西直接用和差角推一下就行。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -9653,7 +9756,21 @@
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Vector</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Vector</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">len</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="n">Vector</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">ed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">Point</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ed</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">st</span><span class="p">;</span>
@@ -9662,7 +9779,26 @@
 <span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="o">&amp;</span><span class="k">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 后面有构造函数会用到</span>
+<span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">rot</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">ny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nx</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ny</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 逆时针旋转</span>
+<span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">unit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="p">();</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 返回同方向的单位向量</span>
+<span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">vert</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">sgn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// 返回一个垂直于此向量的非零向量</span>
+<span class="w">      </span><span class="c1">// 若返回值为零向量则说明该向量也为零向量</span>
 <span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">toPoint</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span><span class="w"> </span><span class="n">zero</span><span class="p">;</span><span class="w"> </span>
 <span class="c1">// 个人习惯是构造函数用有向线段，等号用坐标。</span>
@@ -9673,12 +9809,7 @@
 <span class="p">}</span>
 <span class="kt">double</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="n">Vector</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// 2D</span>
-<span class="n">Vector3D</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="n">Vector3D</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Vector3D</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Vector3D</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
-<span class="w">                    </span><span class="n">a</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">z</span><span class="p">,</span>
-<span class="w">                    </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// 3D</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>对于平面/空间中的一条线段，直接记录两个端点就行。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -9728,7 +9859,58 @@
 <p>对于 <span class="arithmatex">\(\Delta ABC\)</span>，存在 <span class="arithmatex">\(a^2 = b^2 + c^2 + 2bc\cos A\)</span>。</p>
 <p>其它的两个公式通过轮换可以得到。</p>
 <h3 id="_8">其它公式<a class="headerlink" href="#_8" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<p>对于到角公式和夹角公式，因为我们一般使用向量去记录直线，所以没有必要记了，直接用向量求就行（原理是 <span class="arithmatex">\(\textbf{a}\cdot \textbf{b} = |\textbf{a}||\textbf{b}|\cos \theta\)</span>）。</p>
+<p>对于到角公式和夹角公式，因为我们一般使用向量去记录直线，所以没有必要记了，直接用向量求就行。</p>
+<p>直线的到角定义是 <span class="arithmatex">\(l1 \to l2\)</span> 逆时针转过的最小角，夹角定义为两个到角中的最小角。</p>
+<p>而向量的夹角定义不太一致，它的取值是 <span class="arithmatex">\([0, \pi]\)</span>，因为向量是具有方向的（这个夹角需要是两个向量形成的射线所构成的角）。</p>
+<ul>
+<li>向量夹角：直接用数量积就可以求，刚好 <code>acos()</code> 值域也对应的上。</li>
+<li>直线到角：考虑把两个方向向量调整到 <span class="arithmatex">\(y &gt; 0\)</span>，然后求一下叉积看一下方向，如果叉积为正，说明两向量夹角就是到角，否则如果为负，则到角为两向量夹角的补角。</li>
+<li>直线夹角：直接利用定义求出两个到角返回小的一个即可。</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">angle</span><span class="p">(</span><span class="n">Vector</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">acos</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">len</span><span class="p">()));</span>
+<span class="p">}</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">rad</span><span class="p">(</span><span class="n">Line</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Line</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">cs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">vec</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">angle</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">vec</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sgn</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">sgn</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">sgn</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">))</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sgn</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">theta</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">sgn</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">theta</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">angle</span><span class="p">(</span><span class="n">Line</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Line</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rad</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rad</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">ab</span><span class="p">,</span><span class="w"> </span><span class="n">ba</span><span class="p">))</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ab</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">ba</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
 <p>对于点到直线的距离公式，也没有必要记，我们可以通过向量来构造，这个等下会说。</p>
 <h3 id="_9">三角恒等变换<a class="headerlink" href="#_9" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <p>其实就是和差角，和差化积，万能公式什么的，高中应该都会涉及，我不想写了。</p>
@@ -9756,8 +9938,8 @@
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_15">转化<a class="headerlink" href="#_15" title="Permanent link">ψ(｀∇´)ψ</a></h4>
-<p>以上的三个距离之前是可以相互转化的，不过暂时先咕咕掉。</p>
-<p>在 <a href="../rec/tricks-for-2023-07-08.md#gym100739e-life-as-a-monster">Gym100739E-Life as a Monster</a> 这个题里会用到，有比较详细的推导。</p>
+<p>以上的三个距离是可以相互转化的，不过暂时先咕咕掉。</p>
+<p>在 <a href="../../../rec/tricks-for-2023-07-08/#gym100739e-life-as-a-monster">Gym100739E-Life as a Monster</a> 这个题里会用到，有比较详细的推导。</p>
 <h3 id="_16">点线关系<a class="headerlink" href="#_16" title="Permanent link">ψ(｀∇´)ψ</a></h3>
 <h4 id="_17">点到直线的距离<a class="headerlink" href="#_17" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>一定要注意的一个事情是我们是在使用坐标来表示向量，相当于是，把所有向量都变成 <span class="arithmatex">\((0, 0)\)</span> 起始再做运算。</p>
@@ -9773,7 +9955,31 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">vec</span><span class="p">.</span><span class="n">len</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="_18">点在直线的哪一侧<a class="headerlink" href="#_18" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<h4 id="_18">点到线段的距离<a class="headerlink" href="#_18" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p><span class="arithmatex">\(P \to AB\)</span>。</p>
+<p>需要考虑有没有垂足存在，可以考察构成的三角形中，两个底角是否存在钝角。</p>
+<p>然后转化成点到点的距离和点到线段的距离就行。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">dis</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Segment</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">ed</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">angle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">))))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">edis</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">angle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">))))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">edis</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dis</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">toLine</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="_19">点在直线的哪一侧<a class="headerlink" href="#_19" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>还是可以用叉积的性质，构造出 <span class="arithmatex">\(\vec{PQ}\)</span>，然后计算 <span class="arithmatex">\(s = \vec{PQ}\times \textbf{n}\)</span>。</p>
 <p>如果 <span class="arithmatex">\(s &gt; 0\)</span> 就是逆时针转，如果 <span class="arithmatex">\(s &lt; 0\)</span> 就是顺时针转，否则就是在线上。</p>
 <p>不过需要注意方向向量的方向，这个会对结果有影响，一般来说我们希望方向向量 <span class="arithmatex">\(y \ge 0\)</span>，在实现时请注意，这对应着上面实现中的 <code>void adjust()</code>。</p>
@@ -9783,8 +9989,10 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sgn</span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">pt</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">),</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">vec</span><span class="p">));</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_19">线线关系<a class="headerlink" href="#_19" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<h4 id="_20">判断平行/垂直<a class="headerlink" href="#_20" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<h3 id="_20">线线关系<a class="headerlink" href="#_20" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_21">求夹角<a class="headerlink" href="#_21" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>在上面已经说过了。</p>
+<h4 id="_22">判断平行/垂直<a class="headerlink" href="#_22" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>（直线）</p>
 <p>这个直接使用向量就行了！</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -9822,7 +10030,8 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">intersect</span><span class="p">(</span><span class="n">Segment</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Segment</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">intersect</span><span class="p">(</span><span class="n">Segment</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Segment</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">va</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">ed</span><span class="p">);</span>
 <span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">vb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ed</span><span class="p">);</span>
 <span class="w">    </span><span class="n">Line</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">toLine</span><span class="p">(),</span><span class="w"> </span><span class="n">lb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">toLine</span><span class="p">();</span>
@@ -9835,24 +10044,283 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">side</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">side</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">ed</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">))</span><span class="w"> </span>
 <span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">side</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">la</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">side</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">ed</span><span class="p">,</span><span class="w"> </span><span class="n">la</span><span class="p">));</span>
 <span class="p">}</span>
+<span class="c1">// FIX</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="_21">求交点<a class="headerlink" href="#_21" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<h4 id="_23">求交点<a class="headerlink" href="#_23" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>（直线）</p>
+<p>网上看到的大部分的博客都直接假定成线段来做。</p>
+<p>但实际上只知道方向向量和直线上一点并不一定能平移出两个相交的线段。</p>
+<p>考虑求出某一个点到交点的距离。</p>
+<p><img alt="1" src="../img/basis-1.png" /></p>
+<p>假定线上的两个点为 <span class="arithmatex">\(A,B\)</span>，我们考虑找出 <span class="arithmatex">\(AC\)</span> 这个距离。</p>
+<p>考虑以 <span class="arithmatex">\(\textbf{b}\)</span> 为底构造两个三角形，可以求出高构造出一个相似。</p>
+<p>如图所示，<span class="arithmatex">\(s1,s2\)</span> 都是可以直接叉积求出来的，然后 <span class="arithmatex">\(|TU|,|AS|\)</span> 的比值就是 <span class="arithmatex">\(|\textbf{a}|\)</span> 和 <span class="arithmatex">\(|AC|\)</span> 的比值。</p>
+<p>于是我们平移就可以了，因为叉积自带方向所以不需要额外关心了。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Point</span><span class="w"> </span><span class="nf">intersecion</span><span class="p">(</span><span class="n">Line</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Line</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">pt</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">pt</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">vec</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">pt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">vec</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rate</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <p>（线段）</p>
-<h3 id="_22">线圆关系<a class="headerlink" href="#_22" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<h3 id="_23">多边形相关<a class="headerlink" href="#_23" title="Permanent link">ψ(｀∇´)ψ</a></h3>
-<h4 id="_24">周长和面积<a class="headerlink" href="#_24" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>这个比直线好理解一点，但是代码可能略麻烦，建议直接转成直线求。</p>
+<p>我们有向量，有点，可以直接算很多东西，比如面积一类的。</p>
+<p><img alt="2" src="../img/basis-2.png" /></p>
+<p>仍旧是考虑通过某个已知的点平移求出交点。</p>
+<p>考虑构造定比分点的形式，这样能搞出某个点到交点的向量。</p>
+<p>显然存在 <span class="arithmatex">\(k\in \mathbb{R}\text{ s.t. } k\vec{CA} + (1 - k)\vec{CB} = \vec{CE}\)</span>。</p>
+<p>考虑怎么求出这个 <span class="arithmatex">\(k\)</span>，实际上就是求 <span class="arithmatex">\(T = \dfrac{|AE|}{|EB|}\)</span>。</p>
+<p>可以有 <span class="arithmatex">\(T = \dfrac{S_{\Delta AED}}{S_{\Delta DEB}} = \dfrac{S_{\Delta AEC}}{S_{\Delta{CEB}}}\)</span>。</p>
+<p>两个比例显然可以直接合并，于是 <span class="arithmatex">\(T = \dfrac{S_{\Delta ACD}}{S_{\Delta BCD}}\)</span>。</p>
+<p>显然这两个用向量叉积可计算（平行四边形面积一半，记得加绝对值），然后比值就可以计算了。</p>
+<p><span class="arithmatex">\(T = \dfrac{|\vec{AC}\times\vec{AD}|}{|\vec{BC}\times\vec{BD}|}\)</span>。</p>
+<p>然后 <span class="arithmatex">\(T = \dfrac{k}{1-k}\Rightarrow k = \dfrac{T}{T+1}\)</span>。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Point</span><span class="w"> </span><span class="nf">intersection</span><span class="p">(</span><span class="n">Segment</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Segment</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">intersection</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">toLine</span><span class="p">(),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">toLine</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="n">Point</span><span class="w"> </span><span class="nf">intersection</span><span class="p">(</span><span class="n">Segment</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Segment</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">intersect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">ed</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">st</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ed</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fabs</span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">)))</span>
+<span class="w">            </span><span class="o">/</span><span class="w"> </span><span class="n">fabs</span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">)));</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Vector</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">toPoint</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_24">圆相关<a class="headerlink" href="#_24" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_25">线与圆的位置关系<a class="headerlink" href="#_25" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>考虑 <span class="arithmatex">\(r\)</span> 和 <span class="arithmatex">\(dis(o, l)\)</span> 即可。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">side</span><span class="p">(</span><span class="n">Line</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">Circle</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dis</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 相离</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">equal</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 相切</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 相交</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="_26">线与圆的交点<a class="headerlink" href="#_26" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>先判断位置关系。</p>
+<p>如果相交，有圆心和线的距离，考虑勾股定理求出弦长。</p>
+<p>然后可以构造出圆心和垂足所在的直线，平移即可得到两个交点（代码中切点会被返回两次）</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">sqr</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intersections</span><span class="p">(</span><span class="n">Line</span><span class="w"> </span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">Circle</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">side</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span><span class="w"> </span><span class="n">orig</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sqr</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sqr</span><span class="p">(</span><span class="n">dis</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">)))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intersection</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">Line</span><span class="p">(</span><span class="n">C</span><span class="p">.</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">.</span><span class="n">vec</span><span class="p">.</span><span class="n">vert</span><span class="p">()));</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">L</span><span class="p">.</span><span class="n">vec</span><span class="p">.</span><span class="n">unit</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">l</span><span class="p">).</span><span class="n">toPoint</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// FIX;</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="_27">圆与圆的位置关系<a class="headerlink" href="#_27" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>考虑两个 <span class="arithmatex">\(r\)</span> 以及 <span class="arithmatex">\(o\)</span> 之间的距离的关系即可。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">side</span><span class="p">(</span><span class="n">Circle</span><span class="w"> </span><span class="n">C1</span><span class="p">,</span><span class="w"> </span><span class="n">Circle</span><span class="w"> </span><span class="n">C2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">odis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edis</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">o</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">odis</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 相离</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">equal</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">odis</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 外切</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="n">odis</span><span class="p">,</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">r</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 相交</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">equal</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">odis</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">equal</span><span class="p">(</span><span class="n">C2</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">odis</span><span class="p">))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// 内切</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">// 内含</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="_28">圆与圆的交点<a class="headerlink" href="#_28" title="Permanent link">ψ(｀∇´)ψ</a></h4>
+<p>如果圆是内切或者外切直接转化成求线和圆的交点。</p>
+<p>如果是相交的话，考虑连接某个交点和两个圆心。</p>
+<p>可以通过余弦定理求出该交点与某个圆心连线和圆心连线的夹角。</p>
+<p>于是把圆心连线的方向向量旋转到对应位置，长度变为半径，然后把圆心平移过去就行了。</p>
+<p>可以发现其实对相切的情况同样适用。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intersections</span><span class="p">(</span><span class="n">Circle</span><span class="w"> </span><span class="n">C1</span><span class="p">,</span><span class="w"> </span><span class="n">Cirle</span><span class="w"> </span><span class="n">C2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">side_c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">(</span><span class="n">C1</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">side_c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">side_c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span><span class="w"> </span><span class="n">orig</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">o</span><span class="p">).</span><span class="n">len</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acos</span><span class="p">((</span><span class="n">sqr</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sqr</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sqr</span><span class="p">(</span><span class="n">C2</span><span class="p">.</span><span class="n">r</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d</span><span class="p">));</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">o</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">o</span><span class="p">).</span><span class="n">unit</span><span class="p">().</span><span class="n">rot</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="p">).</span><span class="n">toPoint</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Point</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">o</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">C1</span><span class="p">.</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">C2</span><span class="p">.</span><span class="n">o</span><span class="p">).</span><span class="n">unit</span><span class="p">().</span><span class="n">rot</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">C1</span><span class="p">.</span><span class="n">r</span><span class="p">).</span><span class="n">toPoint</span><span class="p">()</span><span class="w"> </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_29">多边形相关<a class="headerlink" href="#_29" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<h4 id="_30">周长和面积<a class="headerlink" href="#_30" title="Permanent link">ψ(｀∇´)ψ</a></h4>
 <p>周长直接对于每一条边求和就行。</p>
 <p>面积的话用叉积的几何意义就行：<span class="arithmatex">\(S = \dfrac{1}{2}|\sum\limits_{i = 0}^{n - 1}\textbf{v}_i\times\textbf{v}_{(i + 1) \bmod n}|\)</span>。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">circum</span><span class="p">(</span><span class="n">Polygon</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sz</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">p</span><span class="p">[(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">sz</span><span class="p">]).</span><span class="n">len</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="n">Polygon</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="w"> </span><span class="n">p</span><span class="p">[(</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">sz</span><span class="p">]);</span><span class="w">   </span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sz</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">v</span><span class="p">((</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">sz</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="point-in-polygon">Point in Polygon<a class="headerlink" href="#point-in-polygon" title="Permanent link">ψ(｀∇´)ψ</a></h4>
-<h3 id="_25">极角排序<a class="headerlink" href="#_25" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>就是判一个点是不是在多边形内部。</p>
+<p>有两种常见做法，这里用的是更简单的一种回转数算法。</p>
+<p>回转数被定义为闭合曲线绕过某个点的次数，若回转数为 <span class="arithmatex">\(0\)</span> 则说明点在闭合曲线之外。</p>
+<p>考虑把这个点和多边形的所有点连起来，计算这些边相邻两个边的夹角之和，这个夹角是有方向的，符号和叉积符号一致。</p>
+<p>如果和为 <span class="arithmatex">\(0\)</span>，那么点在多边形外，否则在多边形内，回转数实际上就是代码中的 <code>ret</code> 除以 <span class="arithmatex">\(2\pi\)</span>。</p>
+<p>另外敬请注意，这里的 <code>Polygon</code> 并不要求以什么顺序存储，但为了规范，我们一般规定以逆时针顺序储存。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">inside</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Polygon</span><span class="w"> </span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">g</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">idx</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sz</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">angle</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">v</span><span class="p">((</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">sz</span><span class="p">))</span>
+<span class="w">                </span><span class="o">*</span><span class="w"> </span><span class="n">sgn</span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">v</span><span class="p">((</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">sz</span><span class="p">)));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sgn</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<p>当然如果要多判在边上或者是点上也是很容易的，这里略去。</p>
+<h3 id="_31">极角排序<a class="headerlink" href="#_31" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>对于给定的一个极坐标系，对所有点按极角排序。</p>
+<p>通常来说都是从直角坐标系转换而来。</p>
+<p>一种比较暴力的方式就是直接利用 <code>atan2</code> 求出极角，然后排序。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="nf">theta</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">polarSort</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">origin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cmp</span><span class="p">(</span><span class="n">theta</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="p">),</span><span class="w"> </span><span class="n">theta</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="p">))</span>
+<span class="w">            </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cmp</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]).</span><span class="n">len</span><span class="p">(),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">y</span><span class="p">]).</span><span class="n">len</span><span class="p">());</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<p>但这样有时候会被恶心出题人卡精度，很烦。</p>
+<p>另外注意到叉积可以判断方向，而极角排序实际上就是从极轴出发逆时针转。</p>
+<p>所以我们也可以直接看叉积的符号确定它们的关系。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">polarSort</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sgn</span><span class="p">(</span><span class="n">cross</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">y</span><span class="p">])))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">            </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cmp</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]).</span><span class="n">len</span><span class="p">(),</span><span class="w"> </span><span class="n">Vector</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">y</span><span class="p">]).</span><span class="n">len</span><span class="p">());</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+<span class="c1">// FIX</span>
+</code></pre></div></td></tr></table></div>
+<p>后者常数略大。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2023</span>
       
     
   </small>
