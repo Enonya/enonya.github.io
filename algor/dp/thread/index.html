@@ -1140,6 +1140,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#luogu5999-ceoi2016-kangaroo" class="md-nav__link">
+    Luogu5999 [CEOI2016] kangaroo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5176,6 +5183,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -6896,6 +6909,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/231110NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231110 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/231113NOIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231113 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/mock/231114NOIP.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20231114 NOIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7144,6 +7217,8 @@
       
         
       
+        
+      
     
     
       
@@ -7265,6 +7340,26 @@
   
   <span class="md-ellipsis">
     NOI2023 春季测试题解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sol/other/infoj-noip-2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InfOJ NOIp2023 模拟
   </span>
   
 
@@ -7721,6 +7816,8 @@
       
         
       
+        
+      
     
     
       
@@ -7842,6 +7939,26 @@
   
   <span class="md-ellipsis">
     CSP2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/NOIP2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NOIP2023
   </span>
   
 
@@ -8768,6 +8885,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -9306,6 +9429,66 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/2023-11-10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    欲望
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/2023-11-11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    无欲
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/2023-11-15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于 MS-VIM 颜色显示不正确的问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -9487,7 +9670,7 @@
 <p>路径长度这个也比较好理解，就是考虑每个线头的两端被拉长了这么多，但是要去掉虚拟线头的部分。</p>
 <p>然后就是合并线头的情况，和新增比较类似，选择任意两个相邻线头合并起来就行，路线延长还是一样的。</p>
 <p>转移形如 <span class="arithmatex">\(dp(i, j, k, d) \times (j - 1) \to dp(i + 1, j - 1, k + (A_{i + 1} - A_{i})(2j - d), d)\)</span>。</p>
-<p>如果是新增，那么它可以放在 <span class="arithmatex">\((2j - d)\)</span> 个端点的任意一个后面。</p>
+<p>如果是延长，那么连接处可以放在 <span class="arithmatex">\((2j - d)\)</span> 个端点的任意一个后面。</p>
 <p>转移形如 <span class="arithmatex">\(dp(i, j, k, d) \times (2j - d) \to dp(i + 1, j, k + (A_{i + 1} - A_{i})(2j - d), d)\)</span>。</p>
 <p>然后最后考虑将这个位置作为起点或者终点的情况，考虑它向左向右的情况分别转移即可。</p>
 <p>不过唯一的区别就是会不会增加虚拟线头。</p>
@@ -9788,13 +9971,16 @@
 </code></pre></div></td></tr></table></div>
 </details>
 <h3 id="loj2687balticoi-2013vim">LOJ2687「BalticOI 2013」Vim<a class="headerlink" href="#loj2687balticoi-2013vim" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>感觉非常简单！我就不写了！</p>
+<h3 id="luogu5999-ceoi2016-kangaroo">Luogu5999 [CEOI2016] kangaroo<a class="headerlink" href="#luogu5999-ceoi2016-kangaroo" title="Permanent link">ψ(｀∇´)ψ</a></h3>
+<p>感觉有点像是，不过我还没弄。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2023</span>
       
     
   </small>
