@@ -1,146 +1,105 @@
 /* encryptcontent/decrypt-contents.tpl.js */
 
-function base64url_decode(input) {
-    try {
-        const binString = atob(input.replace(/-/g, '+').replace(/_/g, '/'));
-        const binArray = Uint8Array.from(binString, (m) => m.codePointAt(0));
-        return new TextDecoder().decode(binArray);
-    }
-    catch (err) {
-        return false;
-    }
-}
-
-/* Decrypts the key from the key bundle. */
-function decrypt_key(pass, iv_b64, ciphertext_b64, salt_b64) {
-    let salt = CryptoJS.enc.Base64.parse(salt_b64),
-        kdfcfg = {keySize: 256 / 32,hasher: CryptoJS.algo.SHA256,iterations: encryptcontent_obfuscate ? 1 : 10000};
-    let kdfkey = CryptoJS.PBKDF2(pass, salt,kdfcfg);
-    let iv = CryptoJS.enc.Base64.parse(iv_b64),
-        ciphertext = CryptoJS.enc.Base64.parse(ciphertext_b64);
-    let encrypted = {ciphertext: ciphertext},
-        cfg = {iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7};
-    let key = CryptoJS.AES.decrypt(encrypted, kdfkey, cfg);
-
-    try {
-        let keystore = JSON.parse(key.toString(CryptoJS.enc.Utf8));
-        if (encryptcontent_id in keystore) {
-            return keystore;
-        } else {
-            //id not found in keystore
-            return false;
+/* Strips the padding character from decrypted content. */
+function strip_padding(padded_content, padding_char) {
+    for (var i = padded_content.length; i > 0; i--) {
+        if (padded_content[i - 1] !== padding_char) {
+            return padded_content.slice(0, i);
         }
+    }
+    return '';
+};
+
+/* Decrypts the content from the ciphertext bundle. */
+function decrypt_content(password, iv_b64, ciphertext_b64, padding_char) {
+    var key = CryptoJS.MD5(password),
+        iv = CryptoJS.enc.Base64.parse(iv_b64),
+        ciphertext = CryptoJS.enc.Base64.parse(ciphertext_b64),
+        bundle = {
+            key: key,
+            iv: iv,
+            ciphertext: ciphertext
+        };
+    var plaintext = CryptoJS.AES.decrypt(bundle, key, {
+        iv: iv,
+        padding: CryptoJS.pad.NoPadding
+    });
+    try {
+        return strip_padding(plaintext.toString(CryptoJS.enc.Utf8), padding_char);
     } catch (err) {
         // encoding failed; wrong password
         return false;
     }
 };
 
-/* Split key bundle and try to decrypt it */
-function decrypt_key_from_bundle(password, ciphertext_bundle, username) {
+/* Split cyphertext bundle and try to decrypt it */
+function decrypt_content_from_bundle(password, ciphertext_bundle) {
     // grab the ciphertext bundle and try to decrypt it
-    let user, pass;
-    let parts, keys, userhash;
     if (ciphertext_bundle) {
-        if (username) {
-            user = encodeURIComponent(username.toLowerCase());
-            userhash = CryptoJS.SHA256(user).toString(CryptoJS.enc.Base64);
+        let parts = ciphertext_bundle.split(';');
+        if (parts.length == 3) {
+            return decrypt_content(password, parts[0], parts[1], parts[2]);
         }
-        for (let i = 0; i < ciphertext_bundle.length; i++) {
-            pass = encodeURIComponent(password);
-            parts = ciphertext_bundle[i].split(';');
-            if (parts.length == 3) {
-                keys = decrypt_key(pass, parts[0], parts[1], parts[2]);
-                if (keys) {
-                    setCredentials(null, pass);
-                    return keys;
-                }
-            } else if (parts.length == 4 && username) {
-                if (parts[3] == userhash) {
-                    keys = decrypt_key(pass, parts[0], parts[1], parts[2]);
-                    if (keys) {
-                        setCredentials(user, pass);
-                        return keys;
-                    }
+    }
+    return false;
+};
+
+/* Set key:value with expire time in sessionStorage/localStorage */
+function setItemExpiry(key, value, ttl) {
+    const now = new Date()
+    const item = {
+        value: encodeURIComponent(value),
+        expiry: now.getTime() + ttl,
+    }
+    sessionStorage.setItem('encryptcontent_' + encodeURIComponent(key), JSON.stringify(item))
+};
+
+/* Delete key with specific name in sessionStorage/localStorage */
+function delItemName(key) {
+    sessionStorage.removeItem('encryptcontent_' + encodeURIComponent(key));
+};
+
+/* Get key:value from sessionStorage/localStorage */
+function getItemExpiry(key) {
+    let ret = {
+        value: null,
+        fallback: false
+    };
+    let remember_password;
+    remember_password = sessionStorage.getItem('encryptcontent_' + encodeURIComponent(key));
+    if (!remember_password) {
+        ret.fallback = true; //fallback is set to not display a "decryption failed" message
+        // fallback one level up
+        let last_slash = key.slice(0, -1).lastIndexOf('/')
+        if (last_slash !== -1 && last_slash > 0) {
+            let keyup = key.substring(0,last_slash+1);
+            remember_password = sessionStorage.getItem('encryptcontent_' + encodeURIComponent(keyup));
+        }
+        if (!remember_password) {
+            // fallback site_path
+            remember_password = sessionStorage.getItem('encryptcontent_' + encodeURIComponent(""));
+            if (!remember_password) {
+                // fallback global
+                remember_password = sessionStorage.getItem('encryptcontent_');
+                if (!remember_password) {
+                    //no password saved and no fallback found
+                    return null;
                 }
             }
         }
     }
-    return false;
-};
-
-/* Decrypts the content from the ciphertext bundle. */
-function decrypt_content(key, iv_b64, ciphertext_b64) {
-    let iv = CryptoJS.enc.Base64.parse(iv_b64),
-        ciphertext = CryptoJS.enc.Base64.parse(ciphertext_b64);
-    let encrypted = {ciphertext: ciphertext},
-        cfg = {iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7};
-    let plaintext = CryptoJS.AES.decrypt(encrypted, CryptoJS.enc.Hex.parse(key), cfg);
-    if(plaintext.sigBytes >= 0) {
-        try {
-            return plaintext.toString(CryptoJS.enc.Utf8)
-        } catch (err) {
-            // encoding failed; wrong key
-            return false;
-        }
-    } else {
-        // negative sigBytes; wrong key
-        return false;
-    }
-};
-
-/* Split cyphertext bundle and try to decrypt it */
-function decrypt_content_from_bundle(key, ciphertext_bundle) {
-    // grab the ciphertext bundle and try to decrypt it
-    if (ciphertext_bundle) {
-        let parts = ciphertext_bundle.split(';');
-        if (parts.length == 2) {
-            return decrypt_content(key, parts[0], parts[1]);
+    const item = JSON.parse(remember_password)
+    if (!ret.fallback) { //no need to do this if fallback was used
+        const now = new Date()
+        if (now.getTime() > item.expiry) {
+            // if the item is expired, delete the item from storage and return null
+            delItemName(key);
+            return null;
         }
     }
-    return false;
+    ret.value = decodeURIComponent(item.value);
+    return ret;
 };
-
-/* Save decrypted keystore to sessionStorage */
-function setKeys(keys_from_keystore) {
-    for (const id in keys_from_keystore) {
-        sessionStorage.setItem(id, keys_from_keystore[id]);
-    }
-};
-
-/* Delete key with specific name in sessionStorage */
-function delItemName(key) {
-    sessionStorage.removeItem(key);
-};
-
-function getItemName(key) {
-    return sessionStorage.getItem(key);
-};
-/* save username/password to sessionStorage/localStorage */
-function setCredentials(username, password) {
-    sessionStorage.setItem('encryptcontent_credentials', JSON.stringify({'user': username, 'password': password}));
-}
-
-/* try to get username/password from sessionStorage/localStorage */
-function getCredentials(username_input, password_input) {
-    const credentials = JSON.parse(sessionStorage.getItem('encryptcontent_credentials'));
-    if (credentials && !encryptcontent_obfuscate) {
-        if (credentials['user'] && username_input) {
-            username_input.value = decodeURIComponent(credentials['user']);
-        }
-        if (credentials['password']) {
-            password_input.value = decodeURIComponent(credentials['password']);
-        }
-        return true;
-    } else {
-        return false;
-    }
-}
-
-/*remove username/password from localStorage */
-function delCredentials() {
-    sessionStorage.removeItem('encryptcontent_credentials');
-}
 
 /* Reload scripts src after decryption process */
 function reload_js(src) {
@@ -180,7 +139,7 @@ function reload_js(src) {
 
 
 /* Decrypt speficique html entry from mkdocs configuration */
-function decrypt_somethings(key, encrypted_something) {
+function decrypt_somethings(password_value, encrypted_something) {
     var html_item = '';
     for (const [name, tag] of Object.entries(encrypted_something)) {
         if (tag[1] == 'id') {
@@ -191,9 +150,9 @@ function decrypt_somethings(key, encrypted_something) {
             console.log('WARNING: Unknow tag html found, check "encrypted_something" configuration.');
         }
         if (html_item[0]) {
-            for (let i = 0; i < html_item.length; i++) {
+            for (i = 0; i < html_item.length; i++) {
                 // grab the cipher bundle if something exist
-                let content = decrypt_content_from_bundle(key, html_item[i].innerHTML);
+                let content = decrypt_content_from_bundle(password_value, html_item[i].innerHTML);
                 if (content !== false) {
                     // success; display the decrypted content
                     html_item[i].innerHTML = content;
@@ -203,145 +162,100 @@ function decrypt_somethings(key, encrypted_something) {
             }
         }
     }
-    return html_item[0];
 };
 
 /* Decrypt content of a page */
-function decrypt_action(password_input, encrypted_content, decrypted_content, key_from_storage, username_input) {
-    let key=false;
-    let keys_from_keystore=false;
-
-    let user=false;
-    if (username_input) {
-        user = username_input.value;
-    }
-
-    if (key_from_storage !== false) {
-        key = key_from_storage;
-    } else {
-        keys_from_keystore = decrypt_key_from_bundle(password_input.value, encryptcontent_keystore, user);
-        if (keys_from_keystore) {
-            key = keys_from_keystore[encryptcontent_id];
-        }
-    }
-
-    let content = false;
-    if (key) {
-        content = decrypt_content_from_bundle(key, encrypted_content.innerHTML);
-    }
+function decrypt_action(password_input, encrypted_content, decrypted_content) {
+    // grab the ciphertext bundle
+    // and decrypt it
+    let content = decrypt_content_from_bundle(password_input.value, encrypted_content.innerHTML);
     if (content !== false) {
         // success; display the decrypted content
         decrypted_content.innerHTML = content;
-        encrypted_content.parentNode.removeChild(encrypted_content);
-
-        if (keys_from_keystore !== false) {
-            return keys_from_keystore
-        } else {
-            return key
-        }
+        // encrypted_content.parentNode.removeChild(encrypted_content);
+        // any post processing on the decrypted content should be done here
+        if (typeof MathJax === 'object') { MathJax.typesetPromise(); };
+        
+        
+        
+        return true
     } else {
         return false
     }
 };
 
-function decryptor_reaction(key_or_keys, password_input, fallback_used=false) {
-    let decrypted_element = document.getElementById("mkdocs-decrypted-content");
-    if (key_or_keys) {
-        let key;
-        if (typeof key_or_keys === "object") {
-            key = key_or_keys[encryptcontent_id];
-            setKeys(key_or_keys);
-            
-        } else {
-            key = key_or_keys;
+function decryptor_reaction(content_decrypted, password_input, fallback_used, set_global, save_cookie) {
+    let location_path;
+    if (set_global) {
+        location_path = "/"; //global password decrypts at "/{site_path}"
+    } else {
+        location_path = encryptcontent_path;
+    }
+    if (content_decrypted) {
+        // keep password value on sessionStorage/localStorage with specific path (relative)
+        if (set_global) {
+            setItemExpiry("", password_input.value, 1000*3600*1);
         }
-
+        else if (!fallback_used) {
+            setItemExpiry(location_path, password_input.value, 1000*3600*1);
+        }
         // continue to decrypt others parts
         
-
-        // any post processing on the decrypted content should be done here
-        if (typeof MathJax === 'object') { MathJax.typesetPromise();};
         
-        
-        
-        if (window.location.hash) { //jump to anchor if hash given after decryption
-            window.location.href = window.location.hash;
-        }
     } else {
-        // remove item on sessionStorage if decryption process fail (Invalid item)
-        if (!fallback_used) {
-            if (!encryptcontent_obfuscate) {
-                // create HTML element for the inform message
-                let mkdocs_decrypt_msg = document.getElementById('mkdocs-decrypt-msg');
-                mkdocs_decrypt_msg.textContent = decryption_failure_message;
-                password_input.value = '';
-                password_input.focus();
-            }
+        // remove item on sessionStorage/localStorage if decryption process fail (Invalid item)
+        if (!fallback_used || set_global) {
+            // create HTML element for the inform message
+            let mkdocs_decrypt_msg = document.getElementById('mkdocs-decrypt-msg');
+            mkdocs_decrypt_msg.textContent = decryption_failure_message;
+            delItemName(location_path);
         }
-        delItemName(encryptcontent_id);
+        password_input.value = '';
+        password_input.focus();
     }
 }
 
 /* Trigger decryption process */
 function init_decryptor() {
-    var username_input = document.getElementById('mkdocs-content-user');
     var password_input = document.getElementById('mkdocs-content-password');
     // adjust password field width to placeholder length
-    //if (password_input.hasAttribute('placeholder')) {
-    //    password_input.setAttribute('size', password_input.getAttribute('placeholder').length);
-    //}
+    password_input.setAttribute('size', password_input.getAttribute('placeholder').length);
     var encrypted_content = document.getElementById('mkdocs-encrypted-content');
     var decrypted_content = document.getElementById('mkdocs-decrypted-content');
-    let content_decrypted;
-    /* If remember_keys is set, try to use sessionStorage item to decrypt content when page is loaded */
-    let key_from_storage = getItemName(encryptcontent_id);
-    if (key_from_storage) {
-        content_decrypted = decrypt_action(
-            password_input, encrypted_content, decrypted_content, key_from_storage, username_input
+    /* If remember_password is set, try to use sessionStorage/localstorage item to decrypt content when page is loaded */
+    let password_cookie = getItemExpiry(encryptcontent_path);
+    if (password_cookie) {
+        password_input.value = password_cookie.value;
+        let content_decrypted = decrypt_action(
+            password_input, encrypted_content, decrypted_content
         );
-        /* try to get username/password from sessionStorage */
-        if (content_decrypted === false) {
-            let got_credentials = getCredentials(username_input, password_input);
-            if (got_credentials) {
-                content_decrypted = decrypt_action(
-                    password_input, encrypted_content, decrypted_content, false, username_input
-                );
-            }
-        }
-        decryptor_reaction(content_decrypted, password_input, true);
-    }
-    else {
-        let got_credentials = getCredentials(username_input, password_input);
-        if (got_credentials) {
-            content_decrypted = decrypt_action(
-                password_input, encrypted_content, decrypted_content, false, username_input
-            );
-            decryptor_reaction(content_decrypted, password_input, true);
-        }
+        decryptor_reaction(content_decrypted, password_input, password_cookie.fallback, false, false); //dont save cookie as it was loaded from cookie
     }
     /* If password_button is set, try decrypt content when button is press */
     let decrypt_button = document.getElementById("mkdocs-decrypt-button");
     if (decrypt_button) {
         decrypt_button.onclick = function(event) {
             event.preventDefault();
-            content_decrypted = decrypt_action(
-                password_input, encrypted_content, decrypted_content, false, username_input
+            let content_decrypted = decrypt_action(
+                password_input, encrypted_content, decrypted_content
             );
-            decryptor_reaction(content_decrypted, password_input);
+            decryptor_reaction(content_decrypted, password_input, false, false, true); //no fallback, save cookie
         };
     }
     /* Default, try decrypt content when key (ctrl) enter is press */
     password_input.addEventListener('keypress', function(event) {
+        let set_global = false;
         if (event.key === "Enter") {
+            if (event.ctrlKey) {
+                set_global = true;
+            }
             event.preventDefault();
-            content_decrypted = decrypt_action(
-                password_input, encrypted_content, decrypted_content, false, username_input
+            let content_decrypted = decrypt_action(
+                password_input, encrypted_content, decrypted_content
             );
-            decryptor_reaction(content_decrypted, password_input);
+            decryptor_reaction(content_decrypted, password_input, false, set_global, true); //no fallback, set_global?, save cookie
         }
     });
 }
-if (typeof base_url === 'undefined') {
-    var base_url = JSON.parse(document.getElementById('__config').textContent).base;
-}
+
 document.addEventListener('DOMContentLoaded', init_decryptor());
