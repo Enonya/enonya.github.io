@@ -6712,6 +6712,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -7154,6 +7158,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/2024-01-26/" class="md-nav__link">
+        猪肉脯与雪梨
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/2024-02-17/" class="md-nav__link">
+        神威(Kamui) 乐评
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7291,6 +7323,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#23-manipulation-of-sums" class="md-nav__link">
+    2.3 和式的处理 Manipulation of Sums
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7345,6 +7384,8 @@
         
           
             
+          
+        
           
         
           
@@ -7424,13 +7465,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../mug/fun/" class="md-nav__link">
+        Maimai DX 鬼歌记录(special thanks to CLAKAS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" type="checkbox" id="__nav_9_6" >
       
       
       
@@ -7449,7 +7504,7 @@
         </div>
       
       <nav class="md-nav" aria-label="Bms" data-md-level="2">
-        <label class="md-nav__title" for="__nav_9_5">
+        <label class="md-nav__title" for="__nav_9_6">
           <span class="md-nav__icon md-icon"></span>
           Bms
         </label>
@@ -7517,18 +7572,100 @@
 <p>那么也就等到之后再来详细叙述吧。</p>
 <p>不过 Iverson Bracket 也可以很好的帮助处理 <span class="arithmatex">\(a_{0}\)</span> 项，具体方式是，对于没有定义的条件，我们让 Iverson Bracket 返回 <span class="arithmatex">\(0\)</span>，这样就可以规避掉不少问题了！甚至还能够简化式子。</p>
 <p>比如你需要表示 <span class="arithmatex">\(\le N\)</span> 的素数的倒数之和：</p>
-<p><span class="arithmatex">\(\sum\limits_{p}^{}[p \text{is a prime}][p \le N] / p\)</span></p>
+<p><span class="arithmatex">\(\sum\limits_{p}^{}[p\text{ is a prime}][p \le N] / p\)</span></p>
 <p>因为我们处理的时候通常按顺序处理连乘的每一项，<span class="arithmatex">\(0\)</span> 在第一个括号就寄了，准确一点说这应该是约定俗成的。</p>
 <p>于是我们可以直接返回 <span class="arithmatex">\(0\)</span>，跳过这个项(term)的后半部分。</p>
 <h2 id="22-sums-and-recurrences">2.2 和式和递归式 Sums and Recurrences<a class="headerlink" href="#22-sums-and-recurrences" title="Permanent link">ψ(｀∇´)ψ</a></h2>
 <p>因为我没看 Chapter 1，所以 skip 掉了。</p>
+<h2 id="23-manipulation-of-sums">2.3 和式的处理 Manipulation of Sums<a class="headerlink" href="#23-manipulation-of-sums" title="Permanent link">ψ(｀∇´)ψ</a></h2>
+<p>对于和式，我们有三条简单且重要的运算律：</p>
+<ul>
+<li>分配律(distributive law)： <span class="arithmatex">\(\sum\limits_{k \in S}^{}ca_{k} = c\sum\limits_{k \in S}^{}a_{k}\)</span>。</li>
+<li>结合律(associative law)：<span class="arithmatex">\(\sum\limits_{k \in S}^{}a_{k} + \sum\limits_{k \in S}^{}b_{k} = \sum\limits_{k \in S}^{}a_{k} + b_{k}\)</span>。</li>
+<li>交换律(commutative law)：<span class="arithmatex">\(\sum\limits_{k \in S}^{}a_{k} = \sum\limits_{p(k) \in S}^{}a_{p(k)}\)</span>。</li>
+</ul>
+<p>第一条的作用大约就是把常数项移除某一个 <span class="arithmatex">\(\sum\)</span>。</p>
+<p>第二条的作用则是合并两个<strong>界限相同</strong>的 <span class="arithmatex">\(\sum\)</span>。</p>
+<p>第三条看着有点怪，似乎和我们平常说的交换律不太一样。</p>
+<p>但是实际上没有本质区别（只不过这种描述更形式化，利于思考），我们可以把 <span class="arithmatex">\(k\)</span> 替换成一个基于 <span class="arithmatex">\(S\)</span> 生成的映射 <span class="arithmatex">\(p(k)\)</span>，且所有 <span class="arithmatex">\(p(k)\)</span> 也如同所有 <span class="arithmatex">\(k\)</span> 一样构成了集合 <span class="arithmatex">\(S\)</span> 的一个排列(permutation)；</p>
+<p>这点非常重要，类似于一一映射，如果不满足这个条件，等式是无法成立的。 </p>
+<p>众所周知的求等差级数(arithmetic progression)的，据信是高斯小时候提出来的公式，实际上可以用这个做解释。</p>
+<p>我们考虑做一下变量代换，运用交换律，令 <span class="arithmatex">\(p(k) = n - k\)</span>（这实际上就是倒过来求和）：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+Sum = \sum\limits_{k = 0}^{n}(a + bk) &amp;= \sum\limits_{0\le (n - k)\le n}^{}(a + b(n - k)) \\
+&amp;= \sum\limits_{k = 0}^{n}(a + bn - bk) \\
+\end{aligned}
+\]</div>
+<p>我们希望得到的公式是不包含我们所枚举的 <span class="arithmatex">\(k\)</span> 的。</p>
+<p>注意到 <span class="arithmatex">\(\sum\limits_{k = 0}^{n}(a + bk)\)</span> 中有 <span class="arithmatex">\(+bk\)</span>，等号右边有 <span class="arithmatex">\(-bk\)</span>，尝试加起来：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+2Sum &amp;= \sum\limits_{k = 0}^{n}(a + bk + a + bn - bk) \\
+       &amp;= \sum\limits_{k = 0}^{n}(2a + bn) \\
+       &amp;= \sum\limits_{k = 0}^{n}2a + \sum\limits_{k = 0}^{n}bn\\
+       &amp;= 2a(n + 1) + b(n + 1) = (n + 1)(2a + b) \\
+\Rightarrow Sum&amp; = \dfrac{(2a + b)(n + 1)}{2} =\dfrac{1}{2}(a + (a + nb))(n + 1) 
+\end{aligned}
+\]</div>
+<p>这就是“首项加末项乘项数除以2”的形式，当然扩展也很容易，在此略去不提。</p>
+<p>这样的操作看起来不是那么的自然，但是仔细思考，关键的一步就在于消去变量 <span class="arithmatex">\(k\)</span>，而和式的基本运算律已经告诉了我们可以将此处的 <span class="arithmatex">\(k\)</span> 替换为 <span class="arithmatex">\(n - k\)</span>，这就有了将它消去的基础。</p>
+<p>当然，就算带上系数，这种方法仍然是适用的，毕竟只需要更改 <span class="arithmatex">\(Sum\)</span> 前的系数就行了（这和后面的扰动法有点类似）。</p>
+<p>有些时候交换律也可以用于放松排列的限制。</p>
+<p>比如我们对于所有偶数项求和，可能会写成：<span class="arithmatex">\(\sum\limits_{\substack{k \in S \\ k\text{ even}}}^{}a_{k}\)</span>。</p>
+<p>感觉 <span class="arithmatex">\(k \text{ even}\)</span> 放在这里很烦，我们希望的是每一个 <span class="arithmatex">\(\sum\limits_{}^{}\)</span> 都只有一个限制条件。</p>
+<p>当然，可以用 Iverson Bracket 放到后面，不过那样其实还是不太优雅。</p>
+<p>我们可以建立映射 <span class="arithmatex">\(p(k) = 2k\)</span>，枚举 <span class="arithmatex">\(p(k)\)</span>：<span class="arithmatex">\(\sum\limits_{\substack{2k \in S \\ 2k \text{ even}}}^{}a_{2k}\)</span>，因为 <span class="arithmatex">\(2k\)</span> 不管 <span class="arithmatex">\(k\)</span> 怎么取都是一个偶数（这意味着我们只需要满足 <span class="arithmatex">\(2k \in S\)</span> 的条件），所以我们可以写成 <span class="arithmatex">\(\sum\limits_{2k \in K}^{}a_{2k}\)</span>。</p>
+<hr />
+<p>有一个很显然的式子，假设 <span class="arithmatex">\(S,S^\prime\)</span> 是两个整数集。</p>
+<p>那么 <span class="arithmatex">\(\sum\limits_{k \in S}^{}a_{k} + \sum\limits_{k \in S^\prime}^{}a_{k} = \sum\limits_{k \in S \cap S^\prime}^{}a_{k} + \sum\limits_{k \in S\cup S^\prime}^{}a_{k}\)</span>。</p>
+<p>感觉没啥好说的。</p>
+<hr />
+<p>扰动法，高中数学教数列的时候也会提到这种方法，只不过被广泛的称作另一个名字——“错位相减法”。</p>
+<p>主要用于求解一些和式的封闭形式。</p>
+<p>具体来说，对于一个和式 <span class="arithmatex">\(S_{n} = \sum\limits_{k = 0}^{n} a_{k}\)</span>，我们将它写成两种不同的形式（一般是分别将首项和末项分离开来），然后尝试化简出封闭形式。</p>
+<p>形象一点的话就长这样：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_{n + 1} = S_{n} + a_{n + 1} &amp;= a_{0} + \sum\limits_{k = 1}^{n + 1}a_{k} \\
+&amp;= a_{0} + \sum\limits_{k = 0}^{n}a_{k + 1}
+\end{aligned}
+\]</div>
+<p>之后要做的事情大约就是，尝试把右边的 <span class="arithmatex">\(\sum\limits_{}^{}\)</span> 写成与 <span class="arithmatex">\(S_{n}\)</span> 相关的形式，把 <span class="arithmatex">\(a_{0}, a_{n + 1}\)</span> 单独放在一边。</p>
+<p>最经典的例子就是等差数列求和，或者说，求几何级数(geometric progression)的和。</p>
+<p>即 <span class="arithmatex">\(S_{n} = \sum\limits_{k = 0}^{n}a_{0}q^{k}\)</span>。</p>
+<p>可以照猫画虎写出：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_{n} + a_{n + 1} &amp;= a_{0} + \sum\limits_{k = 0}^{n}a_{k + 1} \\
+        &amp;= a_{0} + \sum\limits_{k = 0}^{n} a_{0}q^{k + 1} \\
+        &amp;= a_{0} + qS_{n} \\
+\Rightarrow S_{n} - qS_{n}&amp;=a_{0} - a_{n + 1} 
+\end{aligned}
+\]</div>
+<p>只需要把 <span class="arithmatex">\(1 - q\)</span> 除到右边，我们就能得到 <span class="arithmatex">\(S_{n}\)</span> 的封闭形式 <span class="arithmatex">\(S_{n} = \dfrac{a_{0} - a_{0}q^{n + 1}}{1 - q}\)</span>，当然，<span class="arithmatex">\(x \neq 1\)</span>。</p>
+<p>还能再给力点吗？比如 <span class="arithmatex">\(a_{k} = kx^k\)</span> 的 <span class="arithmatex">\(S_{n}\)</span>，其中 <span class="arithmatex">\(x\)</span> 为常数。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_{n} + a_{n + 1} &amp;= a_{0} + \sum\limits_{k = 0}^{n}a_{k + 1} \\
+        &amp;= a_{0} + \sum\limits_{k = 0}^{n} (k + 1)x^{k + 1} \\
+        &amp;= a_{0} + x\sum\limits_{k = 0}^{n} (k + 1)x^k \\
+        &amp;= a_{0} + xS_{n} + \sum\limits_{k = 0}^{n} x^k \\
+\Rightarrow S_{n} - xS_{n}&amp;= a_{0} - a_{n + 1} + G_{n} \\
+\end{aligned}
+\]</div>
+<p>其中 <span class="arithmatex">\(G_{n}\)</span> 是几何级数 <span class="arithmatex">\(\sum\limits_{k = 0}^{n}x_{k}\)</span> 的和。</p>
+<p>于是我们很容易写出 <span class="arithmatex">\(S_{n} = \dfrac{\dfrac{1 - x^{n + 1}}{1 - x} - (n + 1)x^{n + 1} }{1-x} = \dfrac{x - (n + 1)x^{n + 1} + nx^{n + 2}}{(1 - x)^2}\)</span>，不要忘记 <span class="arithmatex">\(x \neq 1\)</span>。</p>
+<p>当然，后者还有另一种推导方式，注意到 <span class="arithmatex">\(kx^{k}\)</span> 一股子求完导之后的味道：</p>
+<p>于是我们对 <span class="arithmatex">\(G_{n} \Rightarrow \sum\limits_{k = 0}^{n}x^{k} = \dfrac{1 - x^{n + 1}}{1 - x}\)</span> 两边求导：</p>
+<p><span class="arithmatex">\(\sum\limits_{k = 0}^{n}kx^{k - 1} = \dfrac{(1 - x)(-(n + 1)x^{n}) + 1 - x^{n + 1}}{(1 - x)^2}\)</span>，展开后似乎就是我们想要的式子。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2024</span>
       
     
   </small>
