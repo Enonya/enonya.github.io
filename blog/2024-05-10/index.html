@@ -7618,8 +7618,21 @@
 <p>关于 <span class="arithmatex">\(x\)</span> 和关于 <span class="arithmatex">\(y\)</span> 的部分分别因式分解：<span class="arithmatex">\((x_0 - a)(x - a) + (y_0 - b)(y - b) = r^2\)</span>。</p>
 <p>更一般的：<span class="arithmatex">\(Ax^2 + By^2 + Dx + Ey + F = 0\)</span>，写出来就是 <span class="arithmatex">\(Ax_0x + By_0y + \dfrac{D}{2}(x_0 + x) + \dfrac{E}{2}(y_0 + x) + F = 0\)</span>。</p>
 <hr />
+<p>善于找反例的人可能会想到，这里是按照“只有一个公共点”来思考的。</p>
+<p>而典中典是，过双曲线上某点与双曲线只有一个交点的直线不一定是过这个点的切线。</p>
+<p>它还可能和渐近线平行，或者说，因为双曲线是开口的，所以不相切也可以只有一个交点。</p>
+<p>那为什么这样求出来的一定是切线方程而不是这种特例呢？</p>
+<p>相切的定义其实类似于极限，是指直线截某个曲线的某两个交点无限接近直至重合的一种状态。</p>
+<p>不妨把切线当作一条特殊的弦来看待。</p>
+<p>比如说现在有条直线截双曲线一支有两个交点 <span class="arithmatex">\((x_1, y_1), (x_2, y_2)\)</span>，这个弦的方程是 <span class="arithmatex">\(\dfrac{x - x_1}{y - y_1} = \dfrac{x - x_2}{y - y_2}\)</span>。</p>
+<p>把这条弦的方程写成 <span class="arithmatex">\(\dfrac{r}{a^2}x - \dfrac{s}{b^2}y = 1\)</span> 的形式，我们其实就是构造了一个 filter <span class="arithmatex">\((r, s)\)</span>，然后能够筛掉不是 <span class="arithmatex">\((x_1, y_1)\)</span> 和 <span class="arithmatex">\((x_2, y_2)\)</span> 的所有元素。</p>
+<p>不妨让 <span class="arithmatex">\((r, s)\)</span> 这个点挪到双曲线上，然后这条弦同时就过 <span class="arithmatex">\((r, s)\)</span> 了，因为这条弦同时过 <span class="arithmatex">\((x_1, y_1), (x_2, y_2)\)</span>，可以发现这三个点重合了。</p>
+<p>于是这就成了过 <span class="arithmatex">\((r, s)\)</span> 这个点的切线。</p>
+<p>换句话说我们上面其实是按照“有两个公共点”来思考的，只不过这两个公共点刚好重合罢了。</p>
+<p>你可能会注意到这东西好像就是 <span class="arithmatex">\((r, s)\)</span> 的切点弦方程啊？</p>
+<p>不过上面并没有说明直线 <span class="arithmatex">\(&lt;(r,s), (x_1, y_1)&gt;\)</span> 是和双曲线相切的，需要说明一下相切才能说这个是切点弦方程。</p>
+<hr />
 <p>这种方法应该只适用于二次曲线，因为上面的思考要求这个切线不能和曲线有另一个交点。</p>
-<p>高次曲线还是老老实实求导联立吧，能不能算出来就是另外的问题了。</p>
 
   <hr>
 <div class="md-source-file">
